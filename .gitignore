@@ -144,4 +144,7 @@ Dependencies/
 ## Default profraw ##
 default.profraw
 
+## Vendor bundle ##
+vendor/bundle/
+
 # End of https://www.gitignore.io/api/xcode,swift,cocoapods,objective-c
