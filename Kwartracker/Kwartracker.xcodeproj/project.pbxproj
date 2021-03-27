@@ -13,6 +13,8 @@
 		163E5935260CB89100E54401 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 163E5934260CB89100E54401 /* Preview Assets.xcassets */; };
 		163E5940260CB89100E54401 /* KwartrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E593F260CB89100E54401 /* KwartrackerTests.swift */; };
 		163E594B260CB89100E54401 /* KwartrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E594A260CB89100E54401 /* KwartrackerUITests.swift */; };
+		163E5B64260F32A000E54401 /* Obfuscate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E5B63260F329F00E54401 /* Obfuscate.swift */; };
+		163E5B6C260F337600E54401 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E5B6B260F337600E54401 /* Secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		163E5946260CB89100E54401 /* KwartrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KwartrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		163E594A260CB89100E54401 /* KwartrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KwartrackerUITests.swift; sourceTree = "<group>"; };
 		163E594C260CB89100E54401 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		163E5B63260F329F00E54401 /* Obfuscate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obfuscate.swift; sourceTree = "<group>"; };
+		163E5B6B260F337600E54401 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,10 +99,16 @@
 		163E592C260CB88E00E54401 /* Kwartracker */ = {
 			isa = PBXGroup;
 			children = (
-				163E592D260CB88E00E54401 /* KwartrackerApp.swift */,
-				163E592F260CB88E00E54401 /* ContentView.swift */,
-				163E5931260CB89100E54401 /* Assets.xcassets */,
+				163E5B61260F2E0900E54401 /* App Main */,
+				163E5B70260F338600E54401 /* Constants */,
+				163E5B62260F328900E54401 /* Libraries */,
+				163E5964260CC12E00E54401 /* Network */,
+				163E5961260CBDCE00E54401 /* Models */,
+				163E5962260CBE0600E54401 /* Stores */,
+				163E5963260CBF0400E54401 /* Scenes */,
+				163E5B74260F34E400E54401 /* Resources */,
 				163E5936260CB89100E54401 /* Info.plist */,
+				163E5931260CB89100E54401 /* Assets.xcassets */,
 				163E5933260CB89100E54401 /* Preview Content */,
 			);
 			path = Kwartracker;
@@ -128,6 +138,66 @@
 				163E594C260CB89100E54401 /* Info.plist */,
 			);
 			path = KwartrackerUITests;
+			sourceTree = "<group>";
+		};
+		163E5961260CBDCE00E54401 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		163E5962260CBE0600E54401 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		163E5963260CBF0400E54401 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				163E592F260CB88E00E54401 /* ContentView.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		163E5964260CC12E00E54401 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		163E5B61260F2E0900E54401 /* App Main */ = {
+			isa = PBXGroup;
+			children = (
+				163E592D260CB88E00E54401 /* KwartrackerApp.swift */,
+			);
+			path = "App Main";
+			sourceTree = "<group>";
+		};
+		163E5B62260F328900E54401 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				163E5B63260F329F00E54401 /* Obfuscate.swift */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		163E5B70260F338600E54401 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				163E5B6B260F337600E54401 /* Secrets.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		163E5B74260F34E400E54401 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +330,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				163E5930260CB88E00E54401 /* ContentView.swift in Sources */,
+				163E5B6C260F337600E54401 /* Secrets.swift in Sources */,
+				163E5B64260F32A000E54401 /* Obfuscate.swift in Sources */,
 				163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
