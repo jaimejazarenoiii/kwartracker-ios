@@ -15,6 +15,21 @@
 		163E594B260CB89100E54401 /* KwartrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E594A260CB89100E54401 /* KwartrackerUITests.swift */; };
 		163E5B64260F32A000E54401 /* Obfuscate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E5B63260F329F00E54401 /* Obfuscate.swift */; };
 		163E5B6C260F337600E54401 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E5B6B260F337600E54401 /* Secrets.swift */; };
+		163E5B772610B09500E54401 /* ExampleMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E5B762610B09500E54401 /* ExampleMenuView.swift */; };
+		164E95E726121B6400D84B7F /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E95E626121B6400D84B7F /* Store.swift */; };
+		164E95EC2612224100D84B7F /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E95EB2612224100D84B7F /* AppState.swift */; };
+		164E95F226122BD200D84B7F /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E95F126122BD200D84B7F /* AppReducer.swift */; };
+		164E95FA26122BE200D84B7F /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E95F926122BE200D84B7F /* AppAction.swift */; };
+		164E95FF26122C5E00D84B7F /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E95FE26122C5E00D84B7F /* World.swift */; };
+		164E960426122C9600D84B7F /* ExampleMenuState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E960326122C9600D84B7F /* ExampleMenuState.swift */; };
+		164E96092612B03400D84B7F /* ExampleMenuAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E96082612B03400D84B7F /* ExampleMenuAction.swift */; };
+		164E960E2612B07800D84B7F /* ExampleMenuReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E960D2612B07800D84B7F /* ExampleMenuReducer.swift */; };
+		164E97B626145B6600D84B7F /* AddMenuFormModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97B526145B6600D84B7F /* AddMenuFormModalView.swift */; };
+		164E97D72614A86E00D84B7F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164E97D62614A86E00D84B7F /* Colors.xcassets */; };
+		164E97DC2614A92F00D84B7F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164E97DB2614A92F00D84B7F /* Images.xcassets */; };
+		164E97E82614AC2900D84B7F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 164E97EA2614AC2900D84B7F /* Localizable.strings */; };
+		164E97EF2614ACF000D84B7F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97ED2614ACF000D84B7F /* Strings.swift */; };
+		164E97F02614ACF000D84B7F /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97EE2614ACF000D84B7F /* Assets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +64,22 @@
 		163E594C260CB89100E54401 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		163E5B63260F329F00E54401 /* Obfuscate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obfuscate.swift; sourceTree = "<group>"; };
 		163E5B6B260F337600E54401 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		163E5B762610B09500E54401 /* ExampleMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleMenuView.swift; sourceTree = "<group>"; };
+		164E95E626121B6400D84B7F /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		164E95EB2612224100D84B7F /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		164E95F126122BD200D84B7F /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		164E95F926122BE200D84B7F /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
+		164E95FE26122C5E00D84B7F /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
+		164E960326122C9600D84B7F /* ExampleMenuState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleMenuState.swift; sourceTree = "<group>"; };
+		164E96082612B03400D84B7F /* ExampleMenuAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleMenuAction.swift; sourceTree = "<group>"; };
+		164E960D2612B07800D84B7F /* ExampleMenuReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleMenuReducer.swift; sourceTree = "<group>"; };
+		164E97B526145B6600D84B7F /* AddMenuFormModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMenuFormModalView.swift; sourceTree = "<group>"; };
+		164E97D62614A86E00D84B7F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		164E97DB2614A92F00D84B7F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		164E97E92614AC2900D84B7F /* fil-PH */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fil-PH"; path = "fil-PH.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		164E97EB2614AC3100D84B7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		164E97ED2614ACF000D84B7F /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		164E97EE2614ACF000D84B7F /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,11 +135,10 @@
 				163E5B62260F328900E54401 /* Libraries */,
 				163E5964260CC12E00E54401 /* Network */,
 				163E5961260CBDCE00E54401 /* Models */,
-				163E5962260CBE0600E54401 /* Stores */,
+				163E5962260CBE0600E54401 /* Store */,
 				163E5963260CBF0400E54401 /* Scenes */,
 				163E5B74260F34E400E54401 /* Resources */,
 				163E5936260CB89100E54401 /* Info.plist */,
-				163E5931260CB89100E54401 /* Assets.xcassets */,
 				163E5933260CB89100E54401 /* Preview Content */,
 			);
 			path = Kwartracker;
@@ -147,16 +177,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		163E5962260CBE0600E54401 /* Stores */ = {
+		163E5962260CBE0600E54401 /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				164E95F02612240800D84B7F /* Example Menu */,
+				164E95F126122BD200D84B7F /* AppReducer.swift */,
+				164E95F926122BE200D84B7F /* AppAction.swift */,
+				164E95EB2612224100D84B7F /* AppState.swift */,
+				164E95E626121B6400D84B7F /* Store.swift */,
+				164E95FE26122C5E00D84B7F /* World.swift */,
 			);
-			path = Stores;
+			path = Store;
 			sourceTree = "<group>";
 		};
 		163E5963260CBF0400E54401 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				163E5B752610B07000E54401 /* Example Menu */,
 				163E592F260CB88E00E54401 /* ContentView.swift */,
 			);
 			path = Scenes;
@@ -196,8 +233,49 @@
 		163E5B74260F34E400E54401 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				164E97EC2614ACF000D84B7F /* SwiftGen */,
+				163E5931260CB89100E54401 /* Assets.xcassets */,
+				164E97DB2614A92F00D84B7F /* Images.xcassets */,
+				164E97D62614A86E00D84B7F /* Colors.xcassets */,
+				164E97EA2614AC2900D84B7F /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		163E5B752610B07000E54401 /* Example Menu */ = {
+			isa = PBXGroup;
+			children = (
+				163E5B762610B09500E54401 /* ExampleMenuView.swift */,
+				164E97B426145B2C00D84B7F /* Add Menu Form Modal */,
+			);
+			path = "Example Menu";
+			sourceTree = "<group>";
+		};
+		164E95F02612240800D84B7F /* Example Menu */ = {
+			isa = PBXGroup;
+			children = (
+				164E960326122C9600D84B7F /* ExampleMenuState.swift */,
+				164E960D2612B07800D84B7F /* ExampleMenuReducer.swift */,
+				164E96082612B03400D84B7F /* ExampleMenuAction.swift */,
+			);
+			path = "Example Menu";
+			sourceTree = "<group>";
+		};
+		164E97B426145B2C00D84B7F /* Add Menu Form Modal */ = {
+			isa = PBXGroup;
+			children = (
+				164E97B526145B6600D84B7F /* AddMenuFormModalView.swift */,
+			);
+			path = "Add Menu Form Modal";
+			sourceTree = "<group>";
+		};
+		164E97EC2614ACF000D84B7F /* SwiftGen */ = {
+			isa = PBXGroup;
+			children = (
+				164E97ED2614ACF000D84B7F /* Strings.swift */,
+				164E97EE2614ACF000D84B7F /* Assets.swift */,
+			);
+			path = SwiftGen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +288,7 @@
 				163E5926260CB88E00E54401 /* Sources */,
 				163E5927260CB88E00E54401 /* Frameworks */,
 				163E5928260CB88E00E54401 /* Resources */,
+				164E97F42614AD5D00D84B7F /* SwiftGen */,
 			);
 			buildRules = (
 			);
@@ -285,6 +364,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"fil-PH",
 			);
 			mainGroup = 163E5921260CB88E00E54401;
 			productRefGroup = 163E592B260CB88E00E54401 /* Products */;
@@ -303,6 +383,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				164E97E82614AC2900D84B7F /* Localizable.strings in Resources */,
+				164E97D72614A86E00D84B7F /* Colors.xcassets in Resources */,
+				164E97DC2614A92F00D84B7F /* Images.xcassets in Resources */,
 				163E5935260CB89100E54401 /* Preview Assets.xcassets in Resources */,
 				163E5932260CB89100E54401 /* Assets.xcassets in Resources */,
 			);
@@ -324,15 +407,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		164E97F42614AD5D00D84B7F /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd $PROJECT_DIR/../\nswiftgen\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		163E5926260CB88E00E54401 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				163E5B772610B09500E54401 /* ExampleMenuView.swift in Sources */,
 				163E5930260CB88E00E54401 /* ContentView.swift in Sources */,
+				164E95EC2612224100D84B7F /* AppState.swift in Sources */,
 				163E5B6C260F337600E54401 /* Secrets.swift in Sources */,
+				164E95FF26122C5E00D84B7F /* World.swift in Sources */,
+				164E960426122C9600D84B7F /* ExampleMenuState.swift in Sources */,
+				164E95FA26122BE200D84B7F /* AppAction.swift in Sources */,
+				164E97EF2614ACF000D84B7F /* Strings.swift in Sources */,
+				164E95E726121B6400D84B7F /* Store.swift in Sources */,
 				163E5B64260F32A000E54401 /* Obfuscate.swift in Sources */,
+				164E97F02614ACF000D84B7F /* Assets.swift in Sources */,
+				164E97B626145B6600D84B7F /* AddMenuFormModalView.swift in Sources */,
+				164E96092612B03400D84B7F /* ExampleMenuAction.swift in Sources */,
+				164E95F226122BD200D84B7F /* AppReducer.swift in Sources */,
 				163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */,
+				164E960E2612B07800D84B7F /* ExampleMenuReducer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +482,18 @@
 			targetProxy = 163E5947260CB89100E54401 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		164E97EA2614AC2900D84B7F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				164E97E92614AC2900D84B7F /* fil-PH */,
+				164E97EB2614AC3100D84B7F /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		163E594D260CB89100E54401 /* Debug */ = {
@@ -419,13 +547,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -474,12 +603,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -493,7 +623,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Kwartracker/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Kwartracker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -514,7 +644,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Kwartracker/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Kwartracker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -533,7 +663,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = KwartrackerTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -554,7 +684,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = KwartrackerTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

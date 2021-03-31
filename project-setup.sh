@@ -73,14 +73,18 @@ bundle install --path vendor/bundle
 echo "💂 Install SwiftLint 💂"
 brew install swiftlint --verbose
 
+# Install SwiftGen
+echo "📐 Install SwiftGen 📐"
+brew install swiftgen --verbose
+
 # Install Cocopods dependencies
 echo "🍫 Install Cocoapods 🍫 \n"
 bundle exec pod install --verbose
 
 # Build xcode
-echo "🛠  Build xcode 🛠 \n"
+# echo "🛠  Build xcode 🛠 \n"
 # xcodebuild build -workspace Kwartracker.xcworkspace -scheme Kwartracker
-xcodebuild build -project $workspace -scheme $scheme
+# xcodebuild build -project $workspace -scheme $scheme
 
 # Display success message
 echo "🥳  Successfully setup project 🥳"

@@ -146,7 +146,7 @@ PreCommit:
     description: 'Check for oversized files'
     size_limit_bytes: 1_000_000
 
-#  SwiftLint:
+  SwiftLint:
     enabled: true
     description: 'Analyze with SwiftLint'
     required_executable: 'swiftlint'
