@@ -25,12 +25,12 @@
 		164E96092612B03400D84B7F /* ExampleMenuAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E96082612B03400D84B7F /* ExampleMenuAction.swift */; };
 		164E960E2612B07800D84B7F /* ExampleMenuReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E960D2612B07800D84B7F /* ExampleMenuReducer.swift */; };
 		164E97B626145B6600D84B7F /* AddMenuFormModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97B526145B6600D84B7F /* AddMenuFormModalView.swift */; };
-		164E97D72614A86E00D84B7F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164E97D62614A86E00D84B7F /* Colors.xcassets */; };
 		164E97DC2614A92F00D84B7F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164E97DB2614A92F00D84B7F /* Images.xcassets */; };
 		164E97E82614AC2900D84B7F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 164E97EA2614AC2900D84B7F /* Localizable.strings */; };
 		164E97EF2614ACF000D84B7F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97ED2614ACF000D84B7F /* Strings.swift */; };
 		164E97F02614ACF000D84B7F /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97EE2614ACF000D84B7F /* Assets.swift */; };
 		164E98712615804900D84B7F /* ExampleMenuTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E98702615804900D84B7F /* ExampleMenuTest.swift */; };
+		164E988D2615C4BA00D84B7F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164E988C2615C4BA00D84B7F /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,13 +75,13 @@
 		164E96082612B03400D84B7F /* ExampleMenuAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleMenuAction.swift; sourceTree = "<group>"; };
 		164E960D2612B07800D84B7F /* ExampleMenuReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleMenuReducer.swift; sourceTree = "<group>"; };
 		164E97B526145B6600D84B7F /* AddMenuFormModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMenuFormModalView.swift; sourceTree = "<group>"; };
-		164E97D62614A86E00D84B7F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		164E97DB2614A92F00D84B7F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		164E97E92614AC2900D84B7F /* fil-PH */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fil-PH"; path = "fil-PH.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		164E97EB2614AC3100D84B7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		164E97ED2614ACF000D84B7F /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		164E97EE2614ACF000D84B7F /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		164E98702615804900D84B7F /* ExampleMenuTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleMenuTest.swift; sourceTree = "<group>"; };
+		164E988C2615C4BA00D84B7F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,7 +239,7 @@
 				164E97EC2614ACF000D84B7F /* SwiftGen */,
 				163E5931260CB89100E54401 /* Assets.xcassets */,
 				164E97DB2614A92F00D84B7F /* Images.xcassets */,
-				164E97D62614A86E00D84B7F /* Colors.xcassets */,
+				164E988C2615C4BA00D84B7F /* Colors.xcassets */,
 				164E97EA2614AC2900D84B7F /* Localizable.strings */,
 			);
 			path = Resources;
@@ -395,8 +395,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				164E988D2615C4BA00D84B7F /* Colors.xcassets in Resources */,
 				164E97E82614AC2900D84B7F /* Localizable.strings in Resources */,
-				164E97D72614A86E00D84B7F /* Colors.xcassets in Resources */,
 				164E97DC2614A92F00D84B7F /* Images.xcassets in Resources */,
 				163E5935260CB89100E54401 /* Preview Assets.xcassets in Resources */,
 				163E5932260CB89100E54401 /* Assets.xcassets in Resources */,
@@ -436,7 +436,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$PROJECT_DIR/../bin/run-swiftgen.sh\n";
+			shellScript = "$PROJECT_DIR/bin/run-swiftgen.sh\n";
 		};
 		164E985B2615714500D84B7F /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;

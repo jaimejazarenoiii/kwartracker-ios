@@ -1,7 +1,7 @@
 ## refer here: https://github.com/SwiftGen/SwiftGen
 
-input_dir: Kwartracker/Kwartracker/Resources/
-output_dir: Kwartracker/Kwartracker/Resources/SwiftGen
+input_dir: Kwartracker/Resources/
+output_dir: Kwartracker/Resources/SwiftGen
 xcassets:
   inputs:
     - Assets.xcassets
