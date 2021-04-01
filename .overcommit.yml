@@ -244,9 +244,8 @@ PrePush:
     required: false
     quiet: false
 
-  ## set enable to true when ./bin/run-test.sh has created
   RunTestsWithFastlane:
-    enabled: false
+    enabled: true
     requires_files: false
     required: true
     quite: false
