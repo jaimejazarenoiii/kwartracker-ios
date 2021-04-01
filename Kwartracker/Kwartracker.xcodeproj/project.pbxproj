@@ -289,6 +289,7 @@
 				163E5927260CB88E00E54401 /* Frameworks */,
 				163E5928260CB88E00E54401 /* Resources */,
 				164E97F42614AD5D00D84B7F /* SwiftGen */,
+				164E985B2615714500D84B7F /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -424,7 +425,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd $PROJECT_DIR/../\nswiftgen\n";
+			shellScript = "$PROJECT_DIR/../bin/run-swiftgen.sh\n";
+		};
+		164E985B2615714500D84B7F /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
