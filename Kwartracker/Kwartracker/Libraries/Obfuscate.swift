@@ -20,7 +20,6 @@ class Obfuscate {
         self.salt = salt
     }
 
-
     // MARK: - Instance Methods
 
     /**
@@ -38,8 +37,8 @@ class Obfuscate {
 
         var encrypted = [UInt8]()
 
-        for t in text.enumerated() {
-            encrypted.append(t.element ^ cipher[t.offset % length])
+        for letter in text.enumerated() {
+            encrypted.append(letter.element ^ cipher[letter.offset % length])
         }
 
         return encrypted
@@ -60,8 +59,8 @@ class Obfuscate {
 
         var decrypted = [UInt8]()
 
-        for k in key.enumerated() {
-            decrypted.append(k.element ^ cipher[k.offset % length])
+        for number in key.enumerated() {
+            decrypted.append(number.element ^ cipher[number.offset % length])
         }
 
         return String(bytes: decrypted, encoding: .utf8)!

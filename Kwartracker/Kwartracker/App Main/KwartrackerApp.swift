@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct KwartrackerApp: App {
+    let store: AppStore = AppStore(initialState: .init(),
+                                   reducer: AppReducer.appReducer,
+                                   environment: World())
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ExampleMenuView()
+                .environmentObject(store)
         }
     }
 }

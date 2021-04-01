@@ -9,7 +9,7 @@ import Foundation
 
 enum Secrets {
     static let demoSecretEndpoint: String = {
-        Secrets.decode([123,123,12,31])
+        Secrets.decode([123, 123, 12, 31])
     }()
 
     private static func decode(_ encoded: [UInt8]) -> String {

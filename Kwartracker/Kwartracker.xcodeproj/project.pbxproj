@@ -30,6 +30,7 @@
 		164E97E82614AC2900D84B7F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 164E97EA2614AC2900D84B7F /* Localizable.strings */; };
 		164E97EF2614ACF000D84B7F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97ED2614ACF000D84B7F /* Strings.swift */; };
 		164E97F02614ACF000D84B7F /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97EE2614ACF000D84B7F /* Assets.swift */; };
+		164E98712615804900D84B7F /* ExampleMenuTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E98702615804900D84B7F /* ExampleMenuTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		164E97EB2614AC3100D84B7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		164E97ED2614ACF000D84B7F /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		164E97EE2614ACF000D84B7F /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		164E98702615804900D84B7F /* ExampleMenuTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleMenuTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 		163E593E260CB89100E54401 /* KwartrackerTests */ = {
 			isa = PBXGroup;
 			children = (
+				164E986F2615801100D84B7F /* Example Menu */,
 				163E593F260CB89100E54401 /* KwartrackerTests.swift */,
 				163E5941260CB89100E54401 /* Info.plist */,
 			);
@@ -276,6 +279,14 @@
 				164E97EE2614ACF000D84B7F /* Assets.swift */,
 			);
 			path = SwiftGen;
+			sourceTree = "<group>";
+		};
+		164E986F2615801100D84B7F /* Example Menu */ = {
+			isa = PBXGroup;
+			children = (
+				164E98702615804900D84B7F /* ExampleMenuTest.swift */,
+			);
+			path = "Example Menu";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -476,6 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				163E5940260CB89100E54401 /* KwartrackerTests.swift in Sources */,
+				164E98712615804900D84B7F /* ExampleMenuTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

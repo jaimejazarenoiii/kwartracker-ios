@@ -10,10 +10,22 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// Add New Menu
+  internal static let addNewMenu = L10n.tr("Localizable", "Add New Menu")
   /// Example
-  internal static let example = L10n.tr("Localizable", "example")
+  internal static let example = L10n.tr("Localizable", "Example")
+  /// Menu
+  internal static let menu = L10n.tr("Localizable", "Menu")
+  /// Menu: Tortang Talong
+  internal static let menuTortangTalong = L10n.tr("Localizable", "Menu: Tortang Talong")
+  /// New Menu
+  internal static let newMenu = L10n.tr("Localizable", "New Menu")
+  /// Php
+  internal static let php = L10n.tr("Localizable", "Php")
+  /// Price: ₱10.00
+  internal static let pricePlaceholder = L10n.tr("Localizable", "Price Placeholder")
   /// Test
-  internal static let test = L10n.tr("Localizable", "test")
+  internal static let test = L10n.tr("Localizable", "Test")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
