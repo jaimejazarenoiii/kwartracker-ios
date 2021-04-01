@@ -23,10 +23,7 @@ platform :ios do
 
   desc "Run tests using fastlane"
   lane :test do
-    scan(
-      project: "Kwartracker/Kwartracker.xcodeproj",
-      scheme: "Kwartracker"
-    )
+    scan(scheme: "Kwartracker")
   end
 
   after_all do |lane|
