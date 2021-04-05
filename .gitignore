@@ -146,5 +146,6 @@ default.profraw
 
 ## Vendor bundle ##
 vendor/bundle/
+.bundle/config
 
 # End of https://www.gitignore.io/api/xcode,swift,cocoapods,objective-c
