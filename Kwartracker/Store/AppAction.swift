@@ -7,6 +7,4 @@
 
 import Foundation
 
-enum AppAction {
-    case exampleMenu(action: ExampleMenuAction)
-}
+enum AppAction {}
