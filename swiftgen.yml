@@ -4,7 +4,6 @@ input_dir: Kwartracker/Resources/
 output_dir: Kwartracker/Resources/SwiftGen
 xcassets:
   inputs:
-    - Assets.xcassets
     - Images.xcassets
     - Colors.xcassets
   outputs:

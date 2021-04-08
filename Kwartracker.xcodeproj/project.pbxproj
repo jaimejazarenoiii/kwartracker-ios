@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01C4599C9A7E323393A985A8 /* Pods_Kwartracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED818F79E89B988D81BCB583 /* Pods_Kwartracker.framework */; };
 		163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E592D260CB88E00E54401 /* KwartrackerApp.swift */; };
 		163E5930260CB88E00E54401 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E592F260CB88E00E54401 /* ContentView.swift */; };
-		163E5932260CB89100E54401 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 163E5931260CB89100E54401 /* Assets.xcassets */; };
+		163E5932260CB89100E54401 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 163E5931260CB89100E54401 /* Images.xcassets */; };
 		163E5935260CB89100E54401 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 163E5934260CB89100E54401 /* Preview Assets.xcassets */; };
 		163E5940260CB89100E54401 /* KwartrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E593F260CB89100E54401 /* KwartrackerTests.swift */; };
 		163E594B260CB89100E54401 /* KwartrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E594A260CB89100E54401 /* KwartrackerUITests.swift */; };
@@ -20,11 +21,12 @@
 		164E95F226122BD200D84B7F /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E95F126122BD200D84B7F /* AppReducer.swift */; };
 		164E95FA26122BE200D84B7F /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E95F926122BE200D84B7F /* AppAction.swift */; };
 		164E95FF26122C5E00D84B7F /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E95FE26122C5E00D84B7F /* World.swift */; };
-		164E97DC2614A92F00D84B7F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164E97DB2614A92F00D84B7F /* Images.xcassets */; };
 		164E97E82614AC2900D84B7F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 164E97EA2614AC2900D84B7F /* Localizable.strings */; };
 		164E97EF2614ACF000D84B7F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97ED2614ACF000D84B7F /* Strings.swift */; };
 		164E97F02614ACF000D84B7F /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97EE2614ACF000D84B7F /* Assets.swift */; };
 		164E988D2615C4BA00D84B7F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164E988C2615C4BA00D84B7F /* Colors.xcassets */; };
+		C6EBF46F2D2673E8BB26CDD0 /* Pods_KwartrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871D96478355F54FCE26B798 /* Pods_KwartrackerTests.framework */; };
+		F20863A13DF8F83648F1F679 /* Pods_Kwartracker_KwartrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCB8AF702FC800A88CD37217 /* Pods_Kwartracker_KwartrackerUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +50,7 @@
 		163E592A260CB88E00E54401 /* Kwartracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kwartracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		163E592D260CB88E00E54401 /* KwartrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KwartrackerApp.swift; sourceTree = "<group>"; };
 		163E592F260CB88E00E54401 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		163E5931260CB89100E54401 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		163E5931260CB89100E54401 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		163E5934260CB89100E54401 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		163E5936260CB89100E54401 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		163E593B260CB89100E54401 /* KwartrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KwartrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,12 +66,20 @@
 		164E95F126122BD200D84B7F /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		164E95F926122BE200D84B7F /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
 		164E95FE26122C5E00D84B7F /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
-		164E97DB2614A92F00D84B7F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		164E97E92614AC2900D84B7F /* fil-PH */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fil-PH"; path = "fil-PH.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		164E97EB2614AC3100D84B7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		164E97ED2614ACF000D84B7F /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		164E97EE2614ACF000D84B7F /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		164E988C2615C4BA00D84B7F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		4921A024108C45D600FED608 /* Pods-Kwartracker-KwartrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker-KwartrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Kwartracker-KwartrackerUITests/Pods-Kwartracker-KwartrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		725D415F26B6657ED44F0856 /* Pods-KwartrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KwartrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-KwartrackerTests/Pods-KwartrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		871D96478355F54FCE26B798 /* Pods_KwartrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KwartrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B877281297A272F3F96493D6 /* Pods-Kwartracker-KwartrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker-KwartrackerUITests.release.xcconfig"; path = "Target Support Files/Pods-Kwartracker-KwartrackerUITests/Pods-Kwartracker-KwartrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B9F8AE2A5986609D8BAF9C0B /* Pods-KwartrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KwartrackerTests.release.xcconfig"; path = "Target Support Files/Pods-KwartrackerTests/Pods-KwartrackerTests.release.xcconfig"; sourceTree = "<group>"; };
+		CCB8AF702FC800A88CD37217 /* Pods_Kwartracker_KwartrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kwartracker_KwartrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFF3AB726F29C5B84E37D9C0 /* Pods-Kwartracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker.debug.xcconfig"; path = "Target Support Files/Pods-Kwartracker/Pods-Kwartracker.debug.xcconfig"; sourceTree = "<group>"; };
+		E542A9B7112EDC7D808C0170 /* Pods-Kwartracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker.release.xcconfig"; path = "Target Support Files/Pods-Kwartracker/Pods-Kwartracker.release.xcconfig"; sourceTree = "<group>"; };
+		ED818F79E89B988D81BCB583 /* Pods_Kwartracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kwartracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01C4599C9A7E323393A985A8 /* Pods_Kwartracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6EBF46F2D2673E8BB26CDD0 /* Pods_KwartrackerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F20863A13DF8F83648F1F679 /* Pods_Kwartracker_KwartrackerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +117,8 @@
 				163E593E260CB89100E54401 /* KwartrackerTests */,
 				163E5949260CB89100E54401 /* KwartrackerUITests */,
 				163E592B260CB88E00E54401 /* Products */,
+				F0EBAFEA83CAF686D55DF370 /* Frameworks */,
+				FBDD14E75727D540662415F6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,8 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				164E97EC2614ACF000D84B7F /* SwiftGen */,
-				163E5931260CB89100E54401 /* Assets.xcassets */,
-				164E97DB2614A92F00D84B7F /* Images.xcassets */,
+				163E5931260CB89100E54401 /* Images.xcassets */,
 				164E988C2615C4BA00D84B7F /* Colors.xcassets */,
 				164E97EA2614AC2900D84B7F /* Localizable.strings */,
 			);
@@ -239,6 +253,30 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		F0EBAFEA83CAF686D55DF370 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED818F79E89B988D81BCB583 /* Pods_Kwartracker.framework */,
+				CCB8AF702FC800A88CD37217 /* Pods_Kwartracker_KwartrackerUITests.framework */,
+				871D96478355F54FCE26B798 /* Pods_KwartrackerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FBDD14E75727D540662415F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DFF3AB726F29C5B84E37D9C0 /* Pods-Kwartracker.debug.xcconfig */,
+				E542A9B7112EDC7D808C0170 /* Pods-Kwartracker.release.xcconfig */,
+				4921A024108C45D600FED608 /* Pods-Kwartracker-KwartrackerUITests.debug.xcconfig */,
+				B877281297A272F3F96493D6 /* Pods-Kwartracker-KwartrackerUITests.release.xcconfig */,
+				725D415F26B6657ED44F0856 /* Pods-KwartrackerTests.debug.xcconfig */,
+				B9F8AE2A5986609D8BAF9C0B /* Pods-KwartrackerTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -246,6 +284,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 163E594F260CB89100E54401 /* Build configuration list for PBXNativeTarget "Kwartracker" */;
 			buildPhases = (
+				FD2C9776BC3EC6C945234B9F /* [CP] Check Pods Manifest.lock */,
 				163E5926260CB88E00E54401 /* Sources */,
 				163E5927260CB88E00E54401 /* Frameworks */,
 				163E5928260CB88E00E54401 /* Resources */,
@@ -265,6 +304,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 163E5952260CB89100E54401 /* Build configuration list for PBXNativeTarget "KwartrackerTests" */;
 			buildPhases = (
+				41B8F42A7624AD2DE64499CF /* [CP] Check Pods Manifest.lock */,
 				163E5937260CB89100E54401 /* Sources */,
 				163E5938260CB89100E54401 /* Frameworks */,
 				163E5939260CB89100E54401 /* Resources */,
@@ -283,6 +323,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 163E5955260CB89100E54401 /* Build configuration list for PBXNativeTarget "KwartrackerUITests" */;
 			buildPhases = (
+				4AFF850D3BE6E9AE2B4ADFB7 /* [CP] Check Pods Manifest.lock */,
 				163E5942260CB89100E54401 /* Sources */,
 				163E5943260CB89100E54401 /* Frameworks */,
 				163E5944260CB89100E54401 /* Resources */,
@@ -347,9 +388,8 @@
 			files = (
 				164E988D2615C4BA00D84B7F /* Colors.xcassets in Resources */,
 				164E97E82614AC2900D84B7F /* Localizable.strings in Resources */,
-				164E97DC2614A92F00D84B7F /* Images.xcassets in Resources */,
 				163E5935260CB89100E54401 /* Preview Assets.xcassets in Resources */,
-				163E5932260CB89100E54401 /* Assets.xcassets in Resources */,
+				163E5932260CB89100E54401 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +445,72 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		41B8F42A7624AD2DE64499CF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KwartrackerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4AFF850D3BE6E9AE2B4ADFB7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kwartracker-KwartrackerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD2C9776BC3EC6C945234B9F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kwartracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -591,6 +697,7 @@
 		};
 		163E5950260CB89100E54401 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFF3AB726F29C5B84E37D9C0 /* Pods-Kwartracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -612,6 +719,7 @@
 		};
 		163E5951260CB89100E54401 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E542A9B7112EDC7D808C0170 /* Pods-Kwartracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -633,6 +741,7 @@
 		};
 		163E5953260CB89100E54401 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 725D415F26B6657ED44F0856 /* Pods-KwartrackerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -654,6 +763,7 @@
 		};
 		163E5954260CB89100E54401 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9F8AE2A5986609D8BAF9C0B /* Pods-KwartrackerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -675,6 +785,7 @@
 		};
 		163E5956260CB89100E54401 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4921A024108C45D600FED608 /* Pods-Kwartracker-KwartrackerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -694,6 +805,7 @@
 		};
 		163E5957260CB89100E54401 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B877281297A272F3F96493D6 /* Pods-Kwartracker-KwartrackerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
