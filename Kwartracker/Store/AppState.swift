@@ -8,12 +8,5 @@
 import Foundation
 
 struct AppState {
-    var exampleMenu: ExampleMenuState
-
-    init() {
-        exampleMenu = ExampleMenuState(
-            menu: MenuItem.exampleMenu,
-            item: MenuItem(id: .init(), name: "", price: 0)
-        )
-    }
+    init() {}
 }
