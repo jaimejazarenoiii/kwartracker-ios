@@ -6,6 +6,7 @@ target 'Kwartracker' do
   use_frameworks!
 
   # Pods for Kwartracker
+  pod 'SwiftGen', '~> 6.4.0'
 
   target 'KwartrackerTests' do
     inherit! :search_paths
