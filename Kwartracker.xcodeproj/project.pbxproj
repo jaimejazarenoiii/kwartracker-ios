@@ -202,6 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				163E592F260CB88E00E54401 /* ContentView.swift */,
+				7AD9B8722626EC2A00CF0EA6 /* MainView.swift */,
+				7AD9B8692626EBA500CF0EA6 /* Sign-in Page */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -210,8 +212,6 @@
 			isa = PBXGroup;
 			children = (
 				163E592D260CB88E00E54401 /* KwartrackerApp.swift */,
-				7AD9B8722626EC2A00CF0EA6 /* MainView.swift */,
-				7AD9B8692626EBA500CF0EA6 /* Sign-in Page */,
 			);
 			path = "App Main";
 			sourceTree = "<group>";

@@ -13,12 +13,12 @@ struct BodyView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
-                Text("Welcome\nBack")
-                    .foregroundColor(Color(Asset.Colors.nightRider.color))
-                    .font(.system(size: 40))
-                    .fontWeight(.medium)
-            }
+            
+            Text("Welcome\nBack")
+                .foregroundColor(Color(Asset.Colors.nightRider.color))
+                .font(.system(size: 40))
+                .fontWeight(.medium)
+                .fixedSize(horizontal: false, vertical: true)
             
             UserField(textLabel: "Email", textValue: $email)
             UserField(textLabel: "Password", textValue: $password)
@@ -52,12 +52,15 @@ struct BodyView: View {
             Spacer()
         }
         .padding([.leading, .trailing], 30)
+        .padding(.top, 70)
     }
 }
 
 struct BodyView_Previews: PreviewProvider {
     static var previews: some View {
         BodyView()
+            .background(Color(Asset.Colors.solitudeGrey.color))
+            .previewLayout(.sizeThatFits)
     }
 }
 
