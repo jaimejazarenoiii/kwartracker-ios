@@ -25,6 +25,7 @@ struct NavigationHeaderView: View {
                                 .shadow(color: Color.black.opacity(0.3), radius: 5, x: 8, y: 5)
                         )
                 })
+                .padding(.trailing, 20)
                 
             
                 Text(navigationTitle)
@@ -39,7 +40,7 @@ struct NavigationHeaderView: View {
                 })
             }
         }
-        .padding([.leading, .trailing], 40)
+        .padding([.leading, .trailing], 30)
         .padding(.top, 10)
         .padding(.bottom, 10)
     }
