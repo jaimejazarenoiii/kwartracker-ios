@@ -11,7 +11,7 @@ struct ChangePasswordView: View {
     var body: some View {
         MainView {
             NavigationHeaderView(navigationTitle: "Change Password")
-                .padding(.bottom, -20)
+                .padding([.top, .bottom], 5)
         } content: {
             ChangePasswordBodyView()
         }
