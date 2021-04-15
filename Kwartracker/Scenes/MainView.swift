@@ -35,7 +35,7 @@ struct MainView<H: View, C: View>: View {
                         self.childSize = preferences
                     }
                 
-                let contentSizeTop = getSafeAreaInset().top + childSize.height
+                let contentSizeTop = (getSafeAreaInset().top / 2) + childSize.height
                 
                 ZStack {
                     Rectangle()
