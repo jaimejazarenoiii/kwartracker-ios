@@ -28,6 +28,10 @@
 		7FE718881CB43731FBDE3CA8 /* Pods_Kwartracker_KwartrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5FF1E2AB4ED121C5D59731 /* Pods_Kwartracker_KwartrackerUITests.framework */; };
 		9A063C037CD795723F7C8978 /* Pods_KwartrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */; };
 		A9CFE877880189ECE3F83CB8 /* Pods_Kwartracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D507178A90E22E9AB2ABF11A /* Pods_Kwartracker.framework */; };
+		C685F5F52628544900E1C37C /* SignUpBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C685F5F42628544900E1C37C /* SignUpBodyView.swift */; };
+		C685F5FD2628599A00E1C37C /* SignUpHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C685F5FC2628599A00E1C37C /* SignUpHeaderView.swift */; };
+		C685F60226285A0E00E1C37C /* SignUpFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C685F60126285A0E00E1C37C /* SignUpFooterView.swift */; };
+		C685F60726285A3A00E1C37C /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C685F60626285A3A00E1C37C /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +81,10 @@
 		6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KwartrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E15A147209E6A913358D61B /* Pods-KwartrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KwartrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-KwartrackerTests/Pods-KwartrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE5FF1E2AB4ED121C5D59731 /* Pods_Kwartracker_KwartrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kwartracker_KwartrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C685F5F42628544900E1C37C /* SignUpBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBodyView.swift; sourceTree = "<group>"; };
+		C685F5FC2628599A00E1C37C /* SignUpHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpHeaderView.swift; sourceTree = "<group>"; };
+		C685F60126285A0E00E1C37C /* SignUpFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFooterView.swift; sourceTree = "<group>"; };
+		C685F60626285A3A00E1C37C /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		D507178A90E22E9AB2ABF11A /* Pods_Kwartracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kwartracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD3E9E5BB7FB306F0A54B049 /* Pods-Kwartracker-KwartrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker-KwartrackerUITests.release.xcconfig"; path = "Target Support Files/Pods-Kwartracker-KwartrackerUITests/Pods-Kwartracker-KwartrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DF4D41E232EA75D22CD128E1 /* Pods-Kwartracker-KwartrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker-KwartrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Kwartracker-KwartrackerUITests/Pods-Kwartracker-KwartrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -193,6 +201,7 @@
 		163E5963260CBF0400E54401 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C685F5F32628508E00E1C37C /* Signup */,
 				163E592F260CB88E00E54401 /* ContentView.swift */,
 			);
 			path = Scenes;
@@ -264,6 +273,17 @@
 				6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C685F5F32628508E00E1C37C /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				C685F5FC2628599A00E1C37C /* SignUpHeaderView.swift */,
+				C685F5F42628544900E1C37C /* SignUpBodyView.swift */,
+				C685F60126285A0E00E1C37C /* SignUpFooterView.swift */,
+				C685F60626285A3A00E1C37C /* SignUpView.swift */,
+			);
+			path = Signup;
 			sourceTree = "<group>";
 		};
 		FBDD14E75727D540662415F6 /* Pods */ = {
@@ -523,15 +543,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				163E5930260CB88E00E54401 /* ContentView.swift in Sources */,
+				C685F60726285A3A00E1C37C /* SignUpView.swift in Sources */,
 				164E95EC2612224100D84B7F /* AppState.swift in Sources */,
+				C685F5FD2628599A00E1C37C /* SignUpHeaderView.swift in Sources */,
 				163E5B6C260F337600E54401 /* Secrets.swift in Sources */,
 				164E95FF26122C5E00D84B7F /* World.swift in Sources */,
+				C685F60226285A0E00E1C37C /* SignUpFooterView.swift in Sources */,
 				164E95FA26122BE200D84B7F /* AppAction.swift in Sources */,
 				164E97EF2614ACF000D84B7F /* Strings.swift in Sources */,
 				164E95E726121B6400D84B7F /* Store.swift in Sources */,
 				163E5B64260F32A000E54401 /* Obfuscate.swift in Sources */,
 				164E97F02614ACF000D84B7F /* Assets.swift in Sources */,
 				164E95F226122BD200D84B7F /* AppReducer.swift in Sources */,
+				C685F5F52628544900E1C37C /* SignUpBodyView.swift in Sources */,
 				163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
