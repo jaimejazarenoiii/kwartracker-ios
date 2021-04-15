@@ -11,6 +11,27 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
 
+  internal enum ChangePasswordPage {
+    /// Change Password
+    internal static let navigationTitle = L10n.tr("Localizable", "change_password_page.navigation_title")
+    internal enum ConfirmNewPassword {
+      /// Confirm new password
+      internal static let label = L10n.tr("Localizable", "change_password_page.confirm_new_password.label")
+      /// Enter again new password
+      internal static let placeholder = L10n.tr("Localizable", "change_password_page.confirm_new_password.placeholder")
+    }
+    internal enum NavigationButtonItem {
+      /// Save
+      internal static let save = L10n.tr("Localizable", "change_password_page.navigation_button_item.save")
+    }
+    internal enum NewPassword {
+      /// New password
+      internal static let label = L10n.tr("Localizable", "change_password_page.new_password.label")
+      /// Enter new password
+      internal static let placeholder = L10n.tr("Localizable", "change_password_page.new_password.placeholder")
+    }
+  }
+
   internal enum PopUpConfirmationModal {
     internal enum Button {
       /// Cancel

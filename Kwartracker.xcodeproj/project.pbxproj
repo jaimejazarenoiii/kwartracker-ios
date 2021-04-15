@@ -24,6 +24,9 @@
 		164E97EF2614ACF000D84B7F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97ED2614ACF000D84B7F /* Strings.swift */; };
 		164E97F02614ACF000D84B7F /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97EE2614ACF000D84B7F /* Assets.swift */; };
 		164E988D2615C4BA00D84B7F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164E988C2615C4BA00D84B7F /* Colors.xcassets */; };
+		24747FEC2628261A00C7A9A8 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24747FEB2628261A00C7A9A8 /* ChangePasswordView.swift */; };
+		247480032628281200C7A9A8 /* NavigationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247480022628281200C7A9A8 /* NavigationHeaderView.swift */; };
+		24748008262832B800C7A9A8 /* ChangePasswordBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24748007262832B800C7A9A8 /* ChangePasswordBodyView.swift */; };
 		290CA1B2261EABE400239EA7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 290CA1B1261EABE400239EA7 /* swiftgen.yml */; };
 		7A17D13226298678005BB190 /* UserField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13126298678005BB190 /* UserField.swift */; };
 		7A17D13A26298695005BB190 /* SNSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13926298695005BB190 /* SNSButton.swift */; };
@@ -91,6 +94,9 @@
 		164E97ED2614ACF000D84B7F /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		164E97EE2614ACF000D84B7F /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		164E988C2615C4BA00D84B7F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		24747FEB2628261A00C7A9A8 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
+		247480022628281200C7A9A8 /* NavigationHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHeaderView.swift; sourceTree = "<group>"; };
+		24748007262832B800C7A9A8 /* ChangePasswordBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordBodyView.swift; sourceTree = "<group>"; };
 		290CA1B1261EABE400239EA7 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		2B40F9CAECD52C6174D15F90 /* Pods-Kwartracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker.debug.xcconfig"; path = "Target Support Files/Pods-Kwartracker/Pods-Kwartracker.debug.xcconfig"; sourceTree = "<group>"; };
 		6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KwartrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,9 +238,11 @@
 		163E5963260CBF0400E54401 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				C6081ADA2652764B003BB9CB /* Enums */,
-				C6CDDCC92638134600CB1562 /* Reusable */,
-				C6CDDCAE263811DD00CB1562 /* Alert */,
+                C6081ADA2652764B003BB9CB /* Enums */,
+                C6CDDCC92638134600CB1562 /* Reusable */,
+                C6CDDCAE263811DD00CB1562 /* Alert */,
+				C6A089802637C6D200E6653E /* SignUp */,
+				24747FEA2628260200C7A9A8 /* Change-Password Page */,
 				163E592F260CB88E00E54401 /* ContentView.swift */,
 				7AD9B8722626EC2A00CF0EA6 /* SkeletalView.swift */,
 				7AD9B8692626EBA500CF0EA6 /* Sign-in Page */,
@@ -299,6 +307,24 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		24747FEA2628260200C7A9A8 /* Change-Password Page */ = {
+			isa = PBXGroup;
+			children = (
+				24747FEB2628261A00C7A9A8 /* ChangePasswordView.swift */,
+				24747FF32628262000C7A9A8 /* Content */,
+			);
+			path = "Change-Password Page";
+			sourceTree = "<group>";
+		};
+		24747FF32628262000C7A9A8 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				247480022628281200C7A9A8 /* NavigationHeaderView.swift */,
+				24748007262832B800C7A9A8 /* ChangePasswordBodyView.swift */,
+			);
+			path = Content;
 			sourceTree = "<group>";
 		};
 		326399AE9BF3387D065FB7BA /* Frameworks */ = {
@@ -688,7 +714,9 @@
 				C6CDDCE726381F6E00CB1562 /* MessageView.swift in Sources */,
 				163E5930260CB88E00E54401 /* ContentView.swift in Sources */,
 				7A17D13226298678005BB190 /* UserField.swift in Sources */,
-				C6CDDCB0263811F700CB1562 /* AlertView.swift in Sources */,
+                C6CDDCB0263811F700CB1562 /* AlertView.swift in Sources */,
+				24748008262832B800C7A9A8 /* ChangePasswordBodyView.swift in Sources */,
+				247480032628281200C7A9A8 /* NavigationHeaderView.swift in Sources */,
 				164E95EC2612224100D84B7F /* AppState.swift in Sources */,
 				C6249AA82637EB8C00C55B31 /* SignUpView.swift in Sources */,
 				C65699C32637C91400D24D2F /* SignUpFooterView.swift in Sources */,
@@ -715,6 +743,7 @@
 				164E95F226122BD200D84B7F /* AppReducer.swift in Sources */,
 				C65699C42637C91400D24D2F /* SignUpBodyView.swift in Sources */,
 				163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */,
+				24747FEC2628261A00C7A9A8 /* ChangePasswordView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

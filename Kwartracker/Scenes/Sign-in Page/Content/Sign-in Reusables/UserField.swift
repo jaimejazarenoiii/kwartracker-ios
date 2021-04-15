@@ -18,7 +18,7 @@ struct UserField: View {
     private let fieldSideMargin: CGFloat = 20
     
     var body: some View {
-        Text(fieldType.text)
+        Text(setLabel(fieldType.text))
             .font(.footnote)
             .foregroundColor(Color(Asset.Colors.spindleGrey.color))
             .padding(.top)
@@ -28,7 +28,7 @@ struct UserField: View {
                                   color: Color(Asset.Colors.solitudeGrey.color),
                                   shadowRadius: shadowRadius,
                                   shadowOffset: shadowOffset)
-            
+
             UserField
         }
     }
@@ -54,6 +54,8 @@ struct UserField: View {
     enum FieldType {
         case email
         case password
+        case newPassword
+        case confirmNewPassword
         
         var text: String {
             switch self {
@@ -61,6 +63,10 @@ struct UserField: View {
                 return L10n.SignUpPage.Label.email
             case .password:
                 return L10n.SignUpPage.Label.password
+            case .newPassword:
+                return L10n.ChangePasswordPage.NewPassword.label
+            case .confirmNewPassword:
+                return L10n.ChangePasswordPage.ConfirmNewPassword.label
             }
         }
         
@@ -70,7 +76,21 @@ struct UserField: View {
                 return L10n.SignInPage.Field.enterEmailAddress
             case .password:
                 return L10n.SignInPage.Field.enterPassword
+            case .newPassword:
+                return L10n.ChangePasswordPage.NewPassword.placeholder
+            case .confirmNewPassword:
+                return L10n.ChangePasswordPage.ConfirmNewPassword.placeholder
             }
+        }
+    }
+
+    func setLabel(_ label: String) -> String {
+        if label.contains("new password") {
+            return label.contains("again") ?
+                        L10n.ChangePasswordPage.ConfirmNewPassword.label :
+                        L10n.ChangePasswordPage.NewPassword.label
+        } else {
+            return label
         }
     }
 }
