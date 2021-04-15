@@ -18,11 +18,6 @@ struct MainView<H: View, C: View>: View {
         self.contentView = content()
     }
     
-    init(paddingTop: CGFloat, @ViewBuilder header: @escaping () -> H, @ViewBuilder content: @escaping () -> C) {
-        self.headerView = header()
-        self.contentView = content()
-    }
-    
     var body: some View {
         ScrollView {
             ZStack(alignment: Alignment(horizontal: .center, vertical: .top)) {
@@ -45,7 +40,7 @@ struct MainView<H: View, C: View>: View {
                 ZStack {
                     Rectangle()
                         .fill(Color(Asset.Colors.solitudeGrey.color))
-                        .clipShape(RoundedCorner(radius: 60, corners: [.topLeft, .topRight]))
+                        .cornerRadius(60, corners: [.topLeft, .topRight])
                     
                     contentView
                     
@@ -75,32 +70,5 @@ struct MainView<H: View, C: View>: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         SignInView()
-    }
-}
-
-extension View {
-    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
-        clipShape( RoundedCorner(radius: radius, corners: corners) )
-    }
-}
-
-struct RoundedCorner: Shape {
-    var radius: CGFloat = .infinity
-    var corners: UIRectCorner = .allCorners
-
-    func path(in rect: CGRect) -> Path {
-        let size = CGSize(width: radius, height: radius)
-        
-        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: size)
-        return Path(path.cgPath)
-    }
-}
-
-struct SizePreferenceKey: PreferenceKey {
-    typealias Value = CGSize
-    static var defaultValue: Value = .zero
-
-    static func reduce(value: inout Value, nextValue: () -> Value) {
-        value = nextValue()
     }
 }
