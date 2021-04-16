@@ -24,6 +24,9 @@
 		164E97EF2614ACF000D84B7F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97ED2614ACF000D84B7F /* Strings.swift */; };
 		164E97F02614ACF000D84B7F /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97EE2614ACF000D84B7F /* Assets.swift */; };
 		164E988D2615C4BA00D84B7F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164E988C2615C4BA00D84B7F /* Colors.xcassets */; };
+		247480262629619500C7A9A8 /* DeleteConfirmationAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247480252629619500C7A9A8 /* DeleteConfirmationAlertView.swift */; };
+		247480272629619500C7A9A8 /* DeleteConfirmationAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247480252629619500C7A9A8 /* DeleteConfirmationAlertView.swift */; };
+		247480282629619500C7A9A8 /* DeleteConfirmationAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247480252629619500C7A9A8 /* DeleteConfirmationAlertView.swift */; };
 		290CA1B2261EABE400239EA7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 290CA1B1261EABE400239EA7 /* swiftgen.yml */; };
 		7A17D13226298678005BB190 /* UserField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13126298678005BB190 /* UserField.swift */; };
 		7A17D13A26298695005BB190 /* SNSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13926298695005BB190 /* SNSButton.swift */; };
@@ -82,6 +85,7 @@
 		164E97ED2614ACF000D84B7F /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		164E97EE2614ACF000D84B7F /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		164E988C2615C4BA00D84B7F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		247480252629619500C7A9A8 /* DeleteConfirmationAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteConfirmationAlertView.swift; sourceTree = "<group>"; };
 		290CA1B1261EABE400239EA7 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		2B40F9CAECD52C6174D15F90 /* Pods-Kwartracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker.debug.xcconfig"; path = "Target Support Files/Pods-Kwartracker/Pods-Kwartracker.debug.xcconfig"; sourceTree = "<group>"; };
 		6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KwartrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -279,6 +283,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		247480242629615C00C7A9A8 /* Alert View */ = {
+			isa = PBXGroup;
+			children = (
+				24A3C91B262E75A7003262EF /* Content */,
+				247480252629619500C7A9A8 /* DeleteConfirmationAlertView.swift */,
+			);
+			path = "Alert View";
+			sourceTree = "<group>";
+		};
+		24A3C91B262E75A7003262EF /* Content */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
 		326399AE9BF3387D065FB7BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +323,7 @@
 		7AB88B1C262805C500E2DFD3 /* Custom Components */ = {
 			isa = PBXGroup;
 			children = (
+				247480242629615C00C7A9A8 /* Alert View */,
 				7AB88B23262806D400E2DFD3 /* View */,
 				7AB88B24262806E900E2DFD3 /* Shape */,
 				7AB88B26262806FC00E2DFD3 /* Preference Key */,
@@ -620,6 +641,7 @@
 				7AB88B1E262805F300E2DFD3 /* View+Extensions.swift in Sources */,
 				164E95FA26122BE200D84B7F /* AppAction.swift in Sources */,
 				7AB88B282628071C00E2DFD3 /* RoundedCorner.swift in Sources */,
+				247480262629619500C7A9A8 /* DeleteConfirmationAlertView.swift in Sources */,
 				164E97EF2614ACF000D84B7F /* Strings.swift in Sources */,
 				7AD9B8812626F17400CF0EA6 /* SignInContentView.swift in Sources */,
 				7A734D92262FFAA900557EF7 /* CustomRectangle.swift in Sources */,
@@ -637,6 +659,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				163E5940260CB89100E54401 /* KwartrackerTests.swift in Sources */,
+				247480272629619500C7A9A8 /* DeleteConfirmationAlertView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,6 +668,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				163E594B260CB89100E54401 /* KwartrackerUITests.swift in Sources */,
+				247480282629619500C7A9A8 /* DeleteConfirmationAlertView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
