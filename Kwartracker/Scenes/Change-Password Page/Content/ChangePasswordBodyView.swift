@@ -13,9 +13,9 @@ struct ChangePasswordBodyView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            UserField(textLabel: "New password", textValue: $password)
+            UserField(textLabel: L10n.newPassword, textValue: $password)
             Spacer().padding(.bottom, 20)
-            UserField(textLabel: "Confirm new password", textValue: $confirmPassword)
+            UserField(textLabel: L10n.confirmNewPassowrd, textValue: $confirmPassword)
             Spacer()
         }
         .padding([.leading, .trailing], 30)

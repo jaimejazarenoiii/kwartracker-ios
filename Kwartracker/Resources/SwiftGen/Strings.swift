@@ -10,6 +10,12 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// Change Password
+  internal static let changePassword = L10n.tr("Localizable", "change password")
+  /// Confirm new password
+  internal static let confirmNewPassowrd = L10n.tr("Localizable", "confirm new passowrd")
+  /// New password
+  internal static let newPassword = L10n.tr("Localizable", "new password")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

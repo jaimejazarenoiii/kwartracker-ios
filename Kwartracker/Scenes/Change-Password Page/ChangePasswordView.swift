@@ -10,7 +10,7 @@ import SwiftUI
 struct ChangePasswordView: View {
     var body: some View {
         MainView {
-            NavigationHeaderView(navigationTitle: "Change Password")
+            NavigationHeaderView(navigationTitle: L10n.changePassword)
                 .padding([.top, .bottom], 5)
         } content: {
             ChangePasswordBodyView()
