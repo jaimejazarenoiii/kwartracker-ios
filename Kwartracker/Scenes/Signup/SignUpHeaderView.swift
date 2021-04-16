@@ -22,7 +22,7 @@ struct SignUpHeaderView: View {
 struct SignUpHeaderView_Previews: PreviewProvider {
     static var previews: some View {
         SignUpHeaderView()
-            .background(Color("Teal"))
+            .background(Color(Asset.Colors.teal.color))
             .previewLayout(.sizeThatFits)
     }
 }

@@ -10,16 +10,19 @@ import SwiftUI
 struct SignUpFooterView: View {
     var body: some View {
         VStack {
+            Divider()
             HStack {
-                Text("Already have an account?")
+                Text(L10n.alreadyHaveAnAccount)
                     .font(.footnote)
                     .foregroundColor(Color(Asset.Colors.nightRider.color))
-                    .underline()
-                Text("Sign in")
-                    .font(.footnote)
-                    .foregroundColor(Color("Teal"))
-                    .underline()
-            }.padding([.top], 80)
+                Button(action: {
+                }) {
+                    Text(L10n.signIn)
+                        .font(.footnote)
+                        .foregroundColor(Color(Asset.Colors.teal.color))
+                        .underline()
+                }
+            }.padding([.top, .bottom], 15)
         }
     }
 }
@@ -27,6 +30,7 @@ struct SignUpFooterView: View {
 struct SignUpFooterView_Previews: PreviewProvider {
     static var previews: some View {
         SignUpFooterView()
+            .background(Color(.lightGray))
             .previewLayout(.sizeThatFits)
     }
 }

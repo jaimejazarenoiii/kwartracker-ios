@@ -13,29 +13,34 @@ struct SignUpBodyView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Create\nAccount").foregroundColor(Color(Asset.Colors.nightRider.color))
+            Text(L10n.createAccount).foregroundColor(Color(Asset.Colors.nightRider.color))
                 .font(.system(size: 40))
                 .fontWeight(.medium)
                 .fixedSize(horizontal: false, vertical: true)
-            UserField(textLabel: "Email", textValue: $email)
-            UserField(textLabel: "Password", textValue: $password)
-            SNSButton(action: "Sign in").padding(.top, 15)
+            UserField(textLabel: L10n.email, textValue: $email)
+            UserField(textLabel: L10n.password, textValue: $password)
+            SNSButton(action: L10n.signUp).padding(.top, 15)
             
-            HStack {
-                 Spacer()
-                 Text("or")
-                 Spacer()
-             }.padding(.top, 5)
-            
-            SNSButton(action: "Sign in with Google").padding(.top, 5)
-            SNSButton(action: "Sign in with Apple").padding(.top, 10)
             HStack {
                 Spacer()
-                Text("Sign in as guest")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
-                    .underline()
-            }.padding([.leading, .top], 20)
+                Text(L10n.or)
+                Spacer()
+             }.padding(.top, 5)
+            
+            SNSButton(action: L10n.signUpWithGoogle).padding(.top, 5)
+            SNSButton(action: L10n.signUpWithApple).padding(.top, 10)
+            HStack {
+                Spacer()
+                Button(action: {
+                }) {
+                    Text(L10n.signInAsGuest)
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                        .underline()
+                }
+            }
+            .padding([.leading, .top], 20)
+            .padding(.bottom, 50)
         }
         .padding([.leading, .trailing], 30)
         .padding(.top, 70)
@@ -65,22 +70,22 @@ struct UserField: View {
             
             RoundedRectangle(cornerRadius: radius)
                 .fill(Color(Asset.Colors.solitudeGrey.color))
-                .frame(height: 55, alignment: .center)
+                .frame(height: 50, alignment: .center)
                 .shadow(color: Color.black.opacity(0.2), radius: radius, x: 7, y: 7)
                 .shadow(color: Color.white.opacity(0.7), radius: radius, x: -5, y: -5)
             
-            if textLabel == "Email" {
-                TextField("", text: $textValue)
+            if textLabel == L10n.email {
+                TextField(L10n.enterEmailAddress, text: $textValue)
                     .background(Color(Asset.Colors.solitudeGrey.color))
-                    .frame(height: 55, alignment: .center)
+                    .frame(height: 50, alignment: .center)
                     .cornerRadius(radius)
                     .padding([.leading, .trailing], 20)
                     .textContentType(.emailAddress)
                     .keyboardType(.emailAddress)
             } else {
-                SecureField("", text: $textValue)
+                SecureField(L10n.enterPassword, text: $textValue)
                     .background(Color(Asset.Colors.solitudeGrey.color))
-                    .frame(height: 55, alignment: .center)
+                    .frame(height: 50, alignment: .center)
                     .cornerRadius(radius)
                     .padding([.leading, .trailing], 20)
             }
@@ -101,7 +106,7 @@ struct SNSButton: View {
                     .frame(height: 55)
                 
                 HStack {
-                    if action != "Sign in" {
+                    if action != L10n.signIn {
                         Image(systemName: whichSymbol())
                             .font(.system(size: 20))
                             .foregroundColor(Color.white)

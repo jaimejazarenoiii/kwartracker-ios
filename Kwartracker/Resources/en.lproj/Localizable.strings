@@ -1,1 +1,14 @@
 // English
+
+"createAccount" = "Create\nAccount";
+"email" = "Email";
+"enterEmailAddress" = "Enter email address";
+"password" = "Password";
+"enterPassword" = "Enter password";
+"signUp" = "Sign Up";
+"or" = "or";
+"signUpWithGoogle" = "Sign up with Google";
+"signUpWithApple" = "Sign up with Apple";
+"signInAsGuest" = "Sign in as guest";
+"signIn" = "Sign In";
+"alreadyHaveAnAccount" = "Already have an account?";
