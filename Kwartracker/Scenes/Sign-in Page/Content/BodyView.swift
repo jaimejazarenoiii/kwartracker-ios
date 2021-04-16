@@ -15,7 +15,7 @@ struct BodyView: View {
         VStack(alignment: .leading) {
             
             Text("Welcome\nBack")
-                .foregroundColor(Color(Asset.Colors.nightRider.color))
+                .foregroundColor(Color(Asset.Colors.charcoal.color))
                 .font(.system(size: 40))
                 .fontWeight(.medium)
                 .fixedSize(horizontal: false, vertical: true)
@@ -38,14 +38,14 @@ struct BodyView: View {
             HStack {
                 Text("Recover Password")
                     .font(.footnote)
-                    .foregroundColor(.secondary)
+                    .foregroundColor(Color(Asset.Colors.spindleGrey.color))
                     .underline()
                 
                 Spacer()
                 
                 Text("Sign in as guest")
                     .font(.footnote)
-                    .foregroundColor(.secondary)
+                    .foregroundColor(Color(Asset.Colors.spindleGrey.color))
                     .underline()
             }.padding(.top, 20)
             
@@ -56,14 +56,7 @@ struct BodyView: View {
     }
 }
 
-struct BodyView_Previews: PreviewProvider {
-    static var previews: some View {
-        BodyView()
-            .background(Color(Asset.Colors.solitudeGrey.color))
-            .previewLayout(.sizeThatFits)
-    }
-}
-
+// MARK: - UserField View
 struct UserField: View {
     let textLabel: String
     @Binding var textValue: String
@@ -71,30 +64,32 @@ struct UserField: View {
     var body: some View {
         Text(textLabel)
             .font(.footnote)
-            .foregroundColor(.secondary)
+            .foregroundColor(Color(Asset.Colors.spindleGrey.color))
             .padding(.top)
         
         ZStack {
+            let shadowRadius: CGFloat = 8
             let radius: CGFloat = 17
             
             RoundedRectangle(cornerRadius: radius)
                 .fill(Color(Asset.Colors.solitudeGrey.color))
-                .frame(height: 55, alignment: .center)
-                .shadow(color: Color.black.opacity(0.2), radius: radius, x: 7, y: 7)
-                .shadow(color: Color.white.opacity(0.7), radius: radius, x: -5, y: -5)
+                .frame(height: 48, alignment: .center)
+                .cornerRadius(17)
+                .shadow(color: Color.white.opacity(1), radius: shadowRadius, x: -6, y: -6)
+                .shadow(color: Color.black.opacity(0.15), radius: shadowRadius, x: 7, y: 7)
             
             if textLabel == "Email" {
-                TextField("", text: $textValue)
+                TextField("Enter email address", text: $textValue)
                     .background(Color(Asset.Colors.solitudeGrey.color))
-                    .frame(height: 55, alignment: .center)
+                    .frame(height: 48, alignment: .center)
                     .cornerRadius(radius)
                     .padding([.leading, .trailing], 20)
                     .textContentType(.emailAddress)
                     .keyboardType(.emailAddress)
             } else {
-                SecureField("", text: $textValue)
+                SecureField("Enter password", text: $textValue)
                     .background(Color(Asset.Colors.solitudeGrey.color))
-                    .frame(height: 55, alignment: .center)
+                    .frame(height: 48, alignment: .center)
                     .cornerRadius(radius)
                     .padding([.leading, .trailing], 20)
             }
@@ -103,6 +98,7 @@ struct UserField: View {
     }
 }
 
+// MARK: - SNS Button View
 struct SNSButton: View {
     let action: String
     
@@ -112,12 +108,14 @@ struct SNSButton: View {
         }, label: {
             ZStack {
                 RoundedRectangle(cornerRadius: 17)
-                    .fill(whichColor())
-                    .frame(height: 55)
+                    .fill(getColor())
+                    .frame(height: 48)
+                    .shadow(color: Color.white.opacity(1), radius: 8, x: -6, y: -6)
+                    .shadow(color: Color.black.opacity(0.15), radius: 8, x: 7, y: 7)
                 
                 HStack {
                     if action != "Sign in" {
-                        Image(systemName: whichSymbol())
+                        Image(action.contains("Google") ? Asset.Images.googleIcon.name : Asset.Images.appleIcon.name)
                             .font(.system(size: 20))
                             .foregroundColor(Color.white)
                     }
@@ -130,23 +128,21 @@ struct SNSButton: View {
         })
     }
     
-    func whichColor() -> Color {
+    func getColor() -> Color {
         if action.contains("Google") {
-            return Color.blue
+            return Color(Asset.Colors.blueberry.color)
         } else if action.contains("Apple") {
-            return Color.black
+            return Color(Asset.Colors.nightRider.color)
         } else {
             return Color(Asset.Colors.teal.color)
         }
     }
-    
-    func whichSymbol() -> String {
-        if action.contains("Google") {
-            return "g.circle"
-        } else if action.contains("Apple") {
-            return "applelogo"
-        } else {
-            return ""
-        }
+}
+
+struct BodyView_Previews: PreviewProvider {
+    static var previews: some View {
+        BodyView()
+            .background(Color(Asset.Colors.solitudeGrey.color))
+            .previewLayout(.sizeThatFits)
     }
 }
