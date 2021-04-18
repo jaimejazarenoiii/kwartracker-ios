@@ -24,6 +24,9 @@
 		164E97EF2614ACF000D84B7F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97ED2614ACF000D84B7F /* Strings.swift */; };
 		164E97F02614ACF000D84B7F /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97EE2614ACF000D84B7F /* Assets.swift */; };
 		164E988D2615C4BA00D84B7F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164E988C2615C4BA00D84B7F /* Colors.xcassets */; };
+		1683C9022629C76F00B1D4D8 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683C9012629C76F00B1D4D8 /* TransactionsView.swift */; };
+		1683C90B2629C7BB00B1D4D8 /* CircleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683C90A2629C7BB00B1D4D8 /* CircleButtonStyle.swift */; };
+		1683C9142629C81100B1D4D8 /* LinearGradient+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683C9132629C81100B1D4D8 /* LinearGradient+Extensions.swift */; };
 		290CA1B2261EABE400239EA7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 290CA1B1261EABE400239EA7 /* swiftgen.yml */; };
 		291DFF942632D61B00DAC0EF /* WalletOneCardCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291DFF932632D61B00DAC0EF /* WalletOneCardCenterView.swift */; };
 		29464F542637C3A100E6E082 /* PageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29464F532637C3A100E6E082 /* PageControlView.swift */; };
@@ -96,6 +99,9 @@
 		164E97ED2614ACF000D84B7F /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		164E97EE2614ACF000D84B7F /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		164E988C2615C4BA00D84B7F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		1683C9012629C76F00B1D4D8 /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
+		1683C90A2629C7BB00B1D4D8 /* CircleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonStyle.swift; sourceTree = "<group>"; };
+		1683C9132629C81100B1D4D8 /* LinearGradient+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinearGradient+Extensions.swift"; sourceTree = "<group>"; };
 		290CA1B1261EABE400239EA7 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		291DFF932632D61B00DAC0EF /* WalletOneCardCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletOneCardCenterView.swift; sourceTree = "<group>"; };
 		29464F532637C3A100E6E082 /* PageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlView.swift; sourceTree = "<group>"; };
@@ -242,6 +248,7 @@
 		163E5963260CBF0400E54401 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				1683C9002629C75700B1D4D8 /* Transactions */,
 				163E592F260CB88E00E54401 /* ContentView.swift */,
 				7AD9B8722626EC2A00CF0EA6 /* SkeletalView.swift */,
 				7AD9B8692626EBA500CF0EA6 /* Sign-in Page */,
@@ -293,6 +300,30 @@
 				164E97EE2614ACF000D84B7F /* Assets.swift */,
 			);
 			path = SwiftGen;
+			sourceTree = "<group>";
+		};
+		1683C9002629C75700B1D4D8 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				1683C9012629C76F00B1D4D8 /* TransactionsView.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		1683C9092629C7AB00B1D4D8 /* Button Style */ = {
+			isa = PBXGroup;
+			children = (
+				1683C90A2629C7BB00B1D4D8 /* CircleButtonStyle.swift */,
+			);
+			path = "Button Style";
+			sourceTree = "<group>";
+		};
+		1683C9122629C7FD00B1D4D8 /* Linear Gradient */ = {
+			isa = PBXGroup;
+			children = (
+				1683C9132629C81100B1D4D8 /* LinearGradient+Extensions.swift */,
+			);
+			path = "Linear Gradient";
 			sourceTree = "<group>";
 		};
 		16B24BAE261A8D170002065D /* Network */ = {
@@ -366,6 +397,8 @@
 			children = (
 				29AB67612645328400D375A6 /* Button Modifier */,
 				29AB674E264531B600D375A6 /* View Modefier */,
+				1683C9122629C7FD00B1D4D8 /* Linear Gradient */,
+				1683C9092629C7AB00B1D4D8 /* Button Style */,
 				7AB88B23262806D400E2DFD3 /* View */,
 				7AB88B24262806E900E2DFD3 /* Shape */,
 				7AB88B26262806FC00E2DFD3 /* Preference Key */,
@@ -694,6 +727,7 @@
 				29F6C1FE262ED69800DB2139 /* CardView.swift in Sources */,
 				163E5930260CB88E00E54401 /* ContentView.swift in Sources */,
 				7A17D13226298678005BB190 /* UserField.swift in Sources */,
+				1683C90B2629C7BB00B1D4D8 /* CircleButtonStyle.swift in Sources */,
 				164E95EC2612224100D84B7F /* AppState.swift in Sources */,
 				C6249AA82637EB8C00C55B31 /* SignUpView.swift in Sources */,
 				C65699C32637C91400D24D2F /* SignUpFooterView.swift in Sources */,
@@ -713,6 +747,7 @@
 				7AD9B8812626F17400CF0EA6 /* SignInContentView.swift in Sources */,
 				7AB1B91E26438C7C00853FAC /* RoundedCornerRectangle.swift in Sources */,
 				7A734D92262FFAA900557EF7 /* BWNeumorphicRectangle.swift in Sources */,
+				1683C9022629C76F00B1D4D8 /* TransactionsView.swift in Sources */,
 				7AD9B8892626F3A300CF0EA6 /* SignInView.swift in Sources */,
 				29464F542637C3A100E6E082 /* PageControlView.swift in Sources */,
 				291DFF942632D61B00DAC0EF /* WalletOneCardCenterView.swift in Sources */,
@@ -725,6 +760,7 @@
 				164E95F226122BD200D84B7F /* AppReducer.swift in Sources */,
 				C65699C42637C91400D24D2F /* SignUpBodyView.swift in Sources */,
 				163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */,
+				1683C9142629C81100B1D4D8 /* LinearGradient+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
