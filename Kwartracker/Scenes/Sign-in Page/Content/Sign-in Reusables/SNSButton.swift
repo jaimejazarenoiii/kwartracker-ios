@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct SNSButton: View {
-    let action: String
+    let text: String
+    let action: Action
     
     var body: some View {
         Button(action: {
@@ -22,13 +23,13 @@ struct SNSButton: View {
                     .shadow(color: Color.black.opacity(0.15), radius: 8, x: 7, y: 7)
                 
                 HStack {
-                    if action != "Sign in" {
-                        Image(action.contains("Google") ? Asset.Images.googleIcon.name : Asset.Images.appleIcon.name)
+                    if action != Action.signIn {
+                        Image(action == .signInGoogle ? Asset.Images.googleIcon.name : Asset.Images.appleIcon.name)
                             .font(.system(size: 20))
                             .foregroundColor(Color.white)
                     }
                     
-                    Text(action)
+                    Text(text)
                         .foregroundColor(.white)
                         .font(.system(size: 14))
                 }
@@ -37,12 +38,19 @@ struct SNSButton: View {
     }
     
     func getColor() -> Color {
-        if action.contains("Google") {
-            return Color(Asset.Colors.blueberry.color)
-        } else if action.contains("Apple") {
-            return Color(Asset.Colors.nightRider.color)
-        } else {
+        switch action {
+        case .signIn:
             return Color(Asset.Colors.teal.color)
+        case .signInGoogle:
+            return Color(Asset.Colors.blueberry.color)
+        case .signInApple:
+            return Color(Asset.Colors.nightRider.color)
         }
+    }
+    
+    enum Action {
+        case signIn
+        case signInGoogle
+        case signInApple
     }
 }

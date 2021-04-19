@@ -28,8 +28,8 @@ struct UserField: View {
                 .shadow(color: Color.white.opacity(1), radius: shadowRadius, x: -6, y: -6)
                 .shadow(color: Color.black.opacity(0.15), radius: shadowRadius, x: 7, y: 7)
             
-            if textLabel == "Email" {
-                TextField("Enter email address", text: $textValue)
+            if textLabel == L10n.email {
+                TextField(L10n.Enter.Email.address, text: $textValue)
                     .background(Color(Asset.Colors.solitudeGrey.color))
                     .frame(height: 48, alignment: .center)
                     .cornerRadius(radius)
@@ -37,7 +37,7 @@ struct UserField: View {
                     .textContentType(.emailAddress)
                     .keyboardType(.emailAddress)
             } else {
-                SecureField("Enter password", text: $textValue)
+                SecureField(L10n.Enter.password, text: $textValue)
                     .background(Color(Asset.Colors.solitudeGrey.color))
                     .frame(height: 48, alignment: .center)
                     .cornerRadius(radius)

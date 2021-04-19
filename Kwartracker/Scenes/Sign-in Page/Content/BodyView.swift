@@ -12,76 +12,81 @@ struct BodyView: View {
     @State private var password: String = ""
     
     var body: some View {
-        VStack(alignment: .leading) {
-            
-            Text("Welcome\nBack")
-                .foregroundColor(Color(Asset.Colors.charcoal.color))
-                .font(.system(size: 40))
-                .fontWeight(.medium)
-                .fixedSize(horizontal: false, vertical: true)
-            
-            UserField(textLabel: "Email", textValue: $email)
-            UserField(textLabel: "Password", textValue: $password)
-            
-            SNSButton(action: "Sign in").padding(.top, 15)
-            
-            HStack {
-                Spacer()
-                Text("or")
-                Spacer()
-            }.padding(.top, 5)
-            
-            SNSButton(action: "Sign in with Google").padding(.top, 5)
-            
-            SNSButton(action: "Sign in with Apple").padding(.top, 10)
-            
-            HStack {
-                Button(action: {
-                    
-                }, label: {
-                    Text("Recover password")
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(alignment: .leading) {
+                
+                Text(L10n.Welcome.back)
+                    .foregroundColor(Color(Asset.Colors.charcoal.color))
+                    .font(.system(size: 45))
+                    .fontWeight(.medium)
+                    .fixedSize(horizontal: false, vertical: true)
+                
+                UserField(textLabel: L10n.email, textValue: $email)
+                UserField(textLabel: L10n.password, textValue: $password)
+                
+                SNSButton(text: L10n.Sign.in, action: .signIn).padding(.top, 15)
+                
+                HStack {
+                    Spacer()
+                    Text("or")
                         .font(.footnote)
-                        .foregroundColor(Color(Asset.Colors.spindleGrey.color))
-                        .underline()
-                })
+                    Spacer()
+                }.padding(.top, 5)
                 
-                Spacer()
+                SNSButton(text: L10n.Sign.In.With.google, action: .signInGoogle)
+                    .padding(.top, 6)
                 
-                Button(action: {
+                SNSButton(text: L10n.Sign.In.With.apple, action: .signInApple)
+                    .padding(.top, 13)
+                
+                HStack {
+                    Button(action: {
+                        
+                    }, label: {
+                        Text(L10n.Recover.password)
+                            .font(.footnote)
+                            .foregroundColor(Color(Asset.Colors.spindleGrey.color))
+                            .underline()
+                    })
                     
-                }, label: {
-                    Text("Sign in as guest")
-                        .font(.footnote)
-                        .foregroundColor(Color(Asset.Colors.spindleGrey.color))
-                        .underline()
-                })
-            }.padding(.top, 25)
-            
-            Divider()
-                .padding([.leading, .trailing], -30)
-                .padding(.top, 25)
-            
-            HStack {
-                Spacer()
-                
-                Text("No account yet?")
-                    .font(.footnote)
-                
-                Button(action: {
+                    Spacer()
                     
-                }, label: {
-                    Text("Sign Up")
-                        .font(.footnote)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color("Teal"))
-                        .underline()
-                })
+                    Button(action: {
+                        
+                    }, label: {
+                        Text(L10n.Sign.In.As.guest)
+                            .font(.footnote)
+                            .foregroundColor(Color(Asset.Colors.spindleGrey.color))
+                            .underline()
+                    })
+                }.padding(.top, 25)
                 
-                Spacer()
-            }.padding([.top, .bottom], 27)
+                Divider()
+                    .padding([.leading, .trailing], -30)
+                    .padding(.top, 25)
+                
+                HStack {
+                    Spacer()
+                    
+                    Text(L10n.No.Account.yet)
+                        .font(.footnote)
+                    
+                    Button(action: {
+                        
+                    }, label: {
+                        Text(L10n.Sign.up)
+                            .font(.footnote)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color(Asset.Colors.teal.color))
+                            .underline()
+                    })
+                    
+                    Spacer()
+                }.padding([.top, .bottom], 20)
+            }
+            .padding([.leading, .trailing], 30)
+            .padding(.top, 70)
         }
-        .padding([.leading, .trailing], 30)
-        .padding(.top, 70)
     }
 }
 

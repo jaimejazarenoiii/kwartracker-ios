@@ -42,10 +42,9 @@ struct MainView<H: View, C: View>: View {
                     .cornerRadius(60, corners: [.topLeft, .topRight])
                     .edgesIgnoringSafeArea(.all)
                 
-                ScrollView(.vertical, showsIndicators: false) {
-                    contentView
-                }
-                .padding(.top, 5)
+                
+                contentView
+                    .padding(.top, 5)
             }
             .padding(.top, contentSizeTop)
             
