@@ -44,7 +44,7 @@ struct SNSButton: View {
         case .signInGoogle:
             return Color(Asset.Colors.blueberry.color)
         case .signInApple:
-            return Color(Asset.Colors.nightRider.color)
+            return Color.black.opacity(0.9)
         }
     }
     

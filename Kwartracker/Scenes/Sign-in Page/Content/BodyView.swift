@@ -16,7 +16,7 @@ struct BodyView: View {
             VStack(alignment: .leading) {
                 
                 Text(L10n.Welcome.back)
-                    .foregroundColor(Color(Asset.Colors.charcoal.color))
+                    .foregroundColor(Color(Asset.Colors.nightRider.color))
                     .font(.system(size: 45))
                     .fontWeight(.medium)
                     .fixedSize(horizontal: false, vertical: true)
@@ -28,8 +28,9 @@ struct BodyView: View {
                 
                 HStack {
                     Spacer()
-                    Text("or")
+                    Text(L10n.or)
                         .font(.footnote)
+                        .foregroundColor(Color(Asset.Colors.charcoal.color))
                     Spacer()
                 }.padding(.top, 5)
                 
@@ -70,6 +71,7 @@ struct BodyView: View {
                     
                     Text(L10n.No.Account.yet)
                         .font(.footnote)
+                        .foregroundColor(Color(Asset.Colors.nightRider.color))
                     
                     Button(action: {
                         
