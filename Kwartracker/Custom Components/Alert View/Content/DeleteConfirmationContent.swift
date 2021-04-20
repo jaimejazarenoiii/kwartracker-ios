@@ -28,7 +28,6 @@ struct DeleteConfirmationContent: View {
                 },
                 icon: {}
             ).padding(.bottom, 30)
-            
         }
         .background(
             RoundedRectangle(cornerRadius: 30)
