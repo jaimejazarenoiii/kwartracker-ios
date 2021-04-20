@@ -11,8 +11,6 @@ struct MainView<H: View, C: View>: View {
     private let headerView: H
     private let contentView: C
     
-    @State private var childSize: CGSize = .zero
-    
     init(@ViewBuilder header: @escaping () -> H, @ViewBuilder content: @escaping () -> C) {
         self.headerView = header()
         self.contentView = content()
@@ -22,31 +20,21 @@ struct MainView<H: View, C: View>: View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .top)) {
             Color(Asset.Colors.teal.color)
             
-            headerView
-                .padding(.top, getSafeAreaInset().top)
-                .background(
-                    GeometryReader { proxy in
-                        Color.clear
-                            .preference(key: SizePreferenceKey.self, value: proxy.size)
-                    }
-                )
-                .onPreferenceChange(SizePreferenceKey.self) { preferences in
-                    self.childSize = preferences
-                }
-            
-            let contentSizeTop = (getSafeAreaInset().top / 2) + childSize.height
-            
-            ZStack {
-                Rectangle()
-                    .fill(Color(Asset.Colors.solitudeGrey.color))
-                    .cornerRadius(60, corners: [.topLeft, .topRight])
-                    .edgesIgnoringSafeArea(.all)
+            VStack {
+                headerView
+                    .padding(.top, getSafeAreaInset().top)
                 
-                
-                contentView
-                    .padding(.top, 5)
+                ZStack {
+                    Rectangle()
+                        .fill(Color(Asset.Colors.solitudeGrey.color))
+                        .cornerRadius(60, corners: [.topLeft, .topRight])
+                        .edgesIgnoringSafeArea(.bottom)
+                    
+                    contentView
+                        .padding(.top, 5)
+                    
+                }.padding(.top)
             }
-            .padding(.top, contentSizeTop)
             
         }
         .ignoresSafeArea()
