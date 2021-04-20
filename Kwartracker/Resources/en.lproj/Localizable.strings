@@ -1,14 +1,14 @@
 // English
 
-"createAccount" = "Create\nAccount";
+"create.account" = "Create\nAccount";
 "email" = "Email";
-"enterEmailAddress" = "Enter email address";
+"enter.email.address" = "Enter email address";
 "password" = "Password";
-"enterPassword" = "Enter password";
-"signUp" = "Sign Up";
+"enter.password" = "Enter password";
+"sign.up" = "Sign Up";
 "or" = "or";
-"signUpWithGoogle" = "Sign up with Google";
-"signUpWithApple" = "Sign up with Apple";
-"signInAsGuest" = "Sign in as guest";
-"signIn" = "Sign In";
-"alreadyHaveAnAccount" = "Already have an account?";
+"sign.up.with.google" = "Sign up with Google";
+"sign.up.with.apple" = "Sign up with Apple";
+"sign.in.as.guest" = "Sign in as guest";
+"sign.in" = "Sign In";
+"already.have.an.account" = "Already have an account?";
