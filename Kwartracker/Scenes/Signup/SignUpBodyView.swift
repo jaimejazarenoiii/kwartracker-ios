@@ -13,13 +13,13 @@ struct SignUpBodyView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(L10n.createAccount).foregroundColor(Color(Asset.Colors.nightRider.color))
+            Text(L10n.Create.account).foregroundColor(Color(Asset.Colors.nightRider.color))
                 .font(.system(size: 40))
                 .fontWeight(.medium)
                 .fixedSize(horizontal: false, vertical: true)
             UserField(textLabel: L10n.email, textValue: $email)
             UserField(textLabel: L10n.password, textValue: $password)
-            SNSButton(action: L10n.signUp).padding(.top, 15)
+            SNSButton(action: L10n.Sign.up).padding(.top, 15)
             
             HStack {
                 Spacer()
@@ -27,13 +27,13 @@ struct SignUpBodyView: View {
                 Spacer()
              }.padding(.top, 5)
             
-            SNSButton(action: L10n.signUpWithGoogle).padding(.top, 5)
-            SNSButton(action: L10n.signUpWithApple).padding(.top, 10)
+            SNSButton(action: L10n.Sign.Up.With.google).padding(.top, 5)
+            SNSButton(action: L10n.Sign.Up.With.apple).padding(.top, 10)
             HStack {
                 Spacer()
                 Button(action: {
                 }) {
-                    Text(L10n.signInAsGuest)
+                    Text(L10n.Sign.In.As.guest)
                         .font(.footnote)
                         .foregroundColor(.secondary)
                         .underline()
@@ -75,7 +75,7 @@ struct UserField: View {
                 .shadow(color: Color.white.opacity(0.7), radius: radius, x: -5, y: -5)
             
             if textLabel == L10n.email {
-                TextField(L10n.enterEmailAddress, text: $textValue)
+                TextField(L10n.Enter.Email.address, text: $textValue)
                     .background(Color(Asset.Colors.solitudeGrey.color))
                     .frame(height: 50, alignment: .center)
                     .cornerRadius(radius)
@@ -83,7 +83,7 @@ struct UserField: View {
                     .textContentType(.emailAddress)
                     .keyboardType(.emailAddress)
             } else {
-                SecureField(L10n.enterPassword, text: $textValue)
+                SecureField(L10n.Enter.password, text: $textValue)
                     .background(Color(Asset.Colors.solitudeGrey.color))
                     .frame(height: 50, alignment: .center)
                     .cornerRadius(radius)
@@ -106,7 +106,7 @@ struct SNSButton: View {
                     .frame(height: 55)
                 
                 HStack {
-                    if action != L10n.signIn {
+                    if action != L10n.Sign.in {
                         Image(systemName: whichSymbol())
                             .font(.system(size: 20))
                             .foregroundColor(Color.white)
