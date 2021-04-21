@@ -24,7 +24,7 @@ struct BodyView: View {
                 UserField(textLabel: L10n.email, textValue: $email)
                 UserField(textLabel: L10n.password, textValue: $password)
                 
-                SNSButton(text: L10n.Sign.in, action: .signIn).padding(.top, 15)
+                SNSButton(action: .signIn).padding(.top, 15)
                 
                 HStack {
                     Spacer()
@@ -34,10 +34,10 @@ struct BodyView: View {
                     Spacer()
                 }.padding(.top, 5)
                 
-                SNSButton(text: L10n.Sign.In.With.google, action: .signInGoogle)
+                SNSButton(action: .signInGoogle)
                     .padding(.top, 6)
                 
-                SNSButton(text: L10n.Sign.In.With.apple, action: .signInApple)
+                SNSButton(action: .signInApple)
                     .padding(.top, 13)
                 
                 HStack {
