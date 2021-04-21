@@ -14,6 +14,7 @@ struct SNSButton: View {
     private let shadowRadius: CGFloat = 8
     private let shadowOffset = CGPoint(x: 6, y: 6)
     private let rectRadius: CGFloat = 17
+    private let fontSize: CGFloat = 14
     
     var body: some View {
         Button(action: actionHandler, label: {
@@ -26,13 +27,12 @@ struct SNSButton: View {
                 HStack {
                     if actionLabel != Action.signIn {
                         Image(actionLabel == .signInGoogle ? Asset.Images.googleIcon.name : Asset.Images.appleIcon.name)
-                            .font(.system(size: 20))
                             .foregroundColor(Color.white)
                     }
                     
                     Text(actionLabel.text)
                         .foregroundColor(.white)
-                        .font(.system(size: 14))
+                        .font(.system(size: fontSize))
                 }
             }
         })

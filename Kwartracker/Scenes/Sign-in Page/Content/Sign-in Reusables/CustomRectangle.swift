@@ -30,7 +30,7 @@ struct BWNeumorphicRectangle: View {
         RoundedRectangle(cornerRadius: rectRadius)
             .fill(color)
             .frame(height: height)
-            .shadow(color: Color.white.opacity(1), radius: shadowRadius, x: -shadowOffset.x, y: -shadowOffset.y)
+            .shadow(color: Color.white, radius: shadowRadius, x: -shadowOffset.x, y: -shadowOffset.y)
             .shadow(color: Color.black.opacity(0.2), radius: shadowRadius, x: shadowOffset.x, y: shadowOffset.y)
     }
 }

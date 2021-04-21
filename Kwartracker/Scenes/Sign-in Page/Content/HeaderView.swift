@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct HeaderView: View {
+    private let leadingMargin: CGFloat = 40
+    private let contentSpacing: CGFloat = 10
+    
     var body: some View {
         VStack {
-            HStack(spacing: 10) {
+            HStack(spacing: contentSpacing) {
                 Image(Asset.Images.headerLogoIcon.name)
                 Spacer()
             }
-            .padding(.leading, 40)
+            .padding(.leading, leadingMargin)
         }
     }
 }

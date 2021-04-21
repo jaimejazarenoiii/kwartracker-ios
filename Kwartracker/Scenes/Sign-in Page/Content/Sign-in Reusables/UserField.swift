@@ -14,6 +14,8 @@ struct UserField: View {
     private let shadowRadius: CGFloat = 8
     private let shadowOffset = CGPoint(x: 6, y: 6)
     private let rectRadius: CGFloat = 17
+    private let fieldHeight: CGFloat = 48
+    private let fieldSideMargin: CGFloat = 20
     
     var body: some View {
         Text(fieldType.text)
@@ -34,9 +36,9 @@ struct UserField: View {
     var UserField: some View {
         createField(for: fieldType)
             .background(Color(Asset.Colors.solitudeGrey.color))
-            .frame(height: 48, alignment: .center)
+            .frame(height: fieldHeight, alignment: .center)
             .cornerRadius(rectRadius)
-            .padding([.leading, .trailing], 20)
+            .padding([.leading, .trailing], fieldSideMargin)
     }
     
     func createField(for field: FieldType) -> some View {

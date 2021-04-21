@@ -11,10 +11,16 @@ struct BodyView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     
+    private let headerTextFontSize: CGFloat = 45
+    private let sideMargin: CGFloat = 30
+    private let topHeadMargin: CGFloat = 70
+    private let snsOrTopMargin: CGFloat = 5
+    private let footNoteTopMargin: CGFloat = 25
+    
     private var HeaderText: some View {
         Text(L10n.Welcome.back)
             .foregroundColor(Color(Asset.Colors.nightRider.color))
-            .font(.system(size: 45))
+            .font(.system(size: headerTextFontSize))
             .fontWeight(.medium)
             .fixedSize(horizontal: false, vertical: true)
     }
@@ -37,7 +43,7 @@ struct BodyView: View {
                     .font(.footnote)
                     .foregroundColor(Color(Asset.Colors.charcoal.color))
                 Spacer()
-            }.padding(.top, 5)
+            }.padding(.top, snsOrTopMargin)
             
             SNSButton(actionHandler: {}, actionLabel: .signInGoogle)
             
@@ -54,11 +60,11 @@ struct BodyView: View {
                 Spacer()
                 
                 FootnoteButton(action: {}, text: L10n.Sign.In.As.guest)
-            }.padding(.top, 25)
+            }.padding(.top, footNoteTopMargin)
             
             Divider()
-                .padding([.leading, .trailing], -30)
-                .padding(.top, 25)
+                .padding([.leading, .trailing], -sideMargin)
+                .padding(.top, footNoteTopMargin)
             
             HStack {
                 Spacer()
@@ -71,7 +77,7 @@ struct BodyView: View {
                                color: Color(Asset.Colors.teal.color))
                 
                 Spacer()
-            }.padding([.top, .bottom], 20)
+            }.padding([.top, .bottom], footNoteTopMargin)
         }
     }
     
@@ -87,8 +93,8 @@ struct BodyView: View {
                 
                 FootNoteActions
             }
-            .padding([.leading, .trailing], 30)
-            .padding(.top, 70)
+            .padding([.leading, .trailing], sideMargin)
+            .padding(.top, topHeadMargin)
         }
     }
 }
