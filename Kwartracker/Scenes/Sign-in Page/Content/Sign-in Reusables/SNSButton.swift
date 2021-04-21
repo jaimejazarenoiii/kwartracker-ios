@@ -8,30 +8,29 @@
 import SwiftUI
 
 struct SNSButton: View {
-    let action: Action
+    let actionHandler: (() -> Void)
+    let actionLabel: Action
     
     private let shadowRadius: CGFloat = 8
-    private let shadowOffset = CGPoint(x: -6, y: -6)
+    private let shadowOffset = CGPoint(x: 6, y: 6)
+    private let rectRadius: CGFloat = 17
     
     var body: some View {
-        Button(action: {
-            
-        }, label: {
+        Button(action: actionHandler, label: {
             ZStack {
-                RoundedRectangle(cornerRadius: 17)
-                    .fill(action.color)
-                    .frame(height: 48)
-                    .shadow(color: Color.white.opacity(1), radius: shadowRadius, x: -shadowOffset.x, y: -shadowOffset.y)
-                    .shadow(color: Color.black.opacity(0.15), radius: shadowRadius, x: shadowOffset.x, y: shadowOffset.x)
+                BWNeumorphicRectangle(rectRadius: rectRadius,
+                                      color: actionLabel.color,
+                                      shadowRadius: shadowRadius,
+                                      shadowOffset: shadowOffset)
                 
                 HStack {
-                    if action != Action.signIn {
-                        Image(action == .signInGoogle ? Asset.Images.googleIcon.name : Asset.Images.appleIcon.name)
+                    if actionLabel != Action.signIn {
+                        Image(actionLabel == .signInGoogle ? Asset.Images.googleIcon.name : Asset.Images.appleIcon.name)
                             .font(.system(size: 20))
                             .foregroundColor(Color.white)
                     }
                     
-                    Text(action.text)
+                    Text(actionLabel.text)
                         .foregroundColor(.white)
                         .font(.system(size: 14))
                 }

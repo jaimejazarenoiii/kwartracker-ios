@@ -8,40 +8,55 @@
 import SwiftUI
 
 struct UserField: View {
-    let textLabel: String
+    let fieldType: FieldType
     @Binding var textValue: String
     
+    private let shadowRadius: CGFloat = 8
+    private let shadowOffset = CGPoint(x: 6, y: 6)
+    private let rectRadius: CGFloat = 17
+    
     var body: some View {
-        Text(textLabel)
+        Text(fieldType.text)
             .font(.footnote)
             .foregroundColor(Color(Asset.Colors.spindleGrey.color))
             .padding(.top)
         
         ZStack {
-            let shadowRadius: CGFloat = 8
-            let radius: CGFloat = 17
+            BWNeumorphicRectangle(rectRadius: rectRadius,
+                                  color: Color(Asset.Colors.solitudeGrey.color),
+                                  shadowRadius: shadowRadius,
+                                  shadowOffset: shadowOffset)
             
-            RoundedRectangle(cornerRadius: radius)
-                .fill(Color(Asset.Colors.solitudeGrey.color))
-                .frame(height: 48, alignment: .center)
-                .cornerRadius(17)
-                .shadow(color: Color.white.opacity(1), radius: shadowRadius, x: -6, y: -6)
-                .shadow(color: Color.black.opacity(0.15), radius: shadowRadius, x: 7, y: 7)
-            
-            if textLabel == L10n.email {
-                TextField(L10n.Enter.Email.address, text: $textValue)
-                    .background(Color(Asset.Colors.solitudeGrey.color))
-                    .frame(height: 48, alignment: .center)
-                    .cornerRadius(radius)
-                    .padding([.leading, .trailing], 20)
-                    .textContentType(.emailAddress)
-                    .keyboardType(.emailAddress)
-            } else {
-                SecureField(L10n.Enter.password, text: $textValue)
-                    .background(Color(Asset.Colors.solitudeGrey.color))
-                    .frame(height: 48, alignment: .center)
-                    .cornerRadius(radius)
-                    .padding([.leading, .trailing], 20)
+            UserField
+        }
+    }
+    
+    var UserField: some View {
+        createField(for: fieldType)
+            .background(Color(Asset.Colors.solitudeGrey.color))
+            .frame(height: 48, alignment: .center)
+            .cornerRadius(rectRadius)
+            .padding([.leading, .trailing], 20)
+    }
+    
+    func createField(for field: FieldType) -> some View {
+        if field == .email {
+            return AnyView(TextField(field.text, text: $textValue))
+        } else {
+            return AnyView(SecureField(field.text, text: $textValue))
+        }
+    }
+    
+    enum FieldType {
+        case email
+        case password
+        
+        var text: String {
+            switch self {
+            case .email:
+                return L10n.Enter.Email.address
+            case .password:
+                return L10n.Enter.password
             }
         }
     }

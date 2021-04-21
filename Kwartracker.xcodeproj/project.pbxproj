@@ -27,6 +27,7 @@
 		290CA1B2261EABE400239EA7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 290CA1B1261EABE400239EA7 /* swiftgen.yml */; };
 		7A17D13226298678005BB190 /* UserField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13126298678005BB190 /* UserField.swift */; };
 		7A17D13A26298695005BB190 /* SNSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13926298695005BB190 /* SNSButton.swift */; };
+		7A734D92262FFAA900557EF7 /* CustomRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A734D91262FFAA900557EF7 /* CustomRectangle.swift */; };
 		7AB88B1E262805F300E2DFD3 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB88B1D262805F300E2DFD3 /* View+Extensions.swift */; };
 		7AB88B282628071C00E2DFD3 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB88B272628071C00E2DFD3 /* RoundedCorner.swift */; };
 		7AB88B302628072600E2DFD3 /* SizePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB88B2F2628072600E2DFD3 /* SizePreferenceKey.swift */; };
@@ -86,6 +87,7 @@
 		6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KwartrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A17D13126298678005BB190 /* UserField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserField.swift; sourceTree = "<group>"; };
 		7A17D13926298695005BB190 /* SNSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSButton.swift; sourceTree = "<group>"; };
+		7A734D91262FFAA900557EF7 /* CustomRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRectangle.swift; sourceTree = "<group>"; };
 		7AB88B1D262805F300E2DFD3 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		7AB88B272628071C00E2DFD3 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		7AB88B2F2628072600E2DFD3 /* SizePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizePreferenceKey.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 			children = (
 				7A17D13126298678005BB190 /* UserField.swift */,
 				7A17D13926298695005BB190 /* SNSButton.swift */,
+				7A734D91262FFAA900557EF7 /* CustomRectangle.swift */,
 			);
 			path = "Sign-in Reusables";
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				164E97EF2614ACF000D84B7F /* Strings.swift in Sources */,
 				7AD9B8812626F17400CF0EA6 /* BodyView.swift in Sources */,
 				7AB88B302628072600E2DFD3 /* SizePreferenceKey.swift in Sources */,
+				7A734D92262FFAA900557EF7 /* CustomRectangle.swift in Sources */,
 				7AD9B8892626F3A300CF0EA6 /* SignInView.swift in Sources */,
 				164E95E726121B6400D84B7F /* Store.swift in Sources */,
 				163E5B64260F32A000E54401 /* Obfuscate.swift in Sources */,

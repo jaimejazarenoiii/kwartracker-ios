@@ -25,10 +25,7 @@ struct SkeletonStructure<H: View, C: View>: View {
                     .padding(.top, getSafeAreaInset().top)
                 
                 ZStack {
-                    Rectangle()
-                        .fill(Color(Asset.Colors.solitudeGrey.color))
-                        .cornerRadius(60, corners: [.topLeft, .topRight])
-                        .edgesIgnoringSafeArea(.bottom)
+                    RoundedCornerRectangle(radius: 60, corner: [.topLeft, .topRight])
                     
                     contentView
                         .padding(.top, 5)
@@ -39,15 +36,22 @@ struct SkeletonStructure<H: View, C: View>: View {
         .ignoresSafeArea()
     }
     
+    
+    // Check if running on preview mode or running on a device
+    // https://stackoverflow.com/questions/58759987/how-do-you-check-if-swiftui-is-in-preview-mode
     func getSafeAreaInset() -> UIEdgeInsets {
-        // Check if is in preview mode
+        // Set preview environment key
         let previewEnvironmentKey = "XCODE_RUNNING_FOR_PREVIEWS"
         
-        if ProcessInfo.processInfo.environment[previewEnvironment] == "1" {
-            // iPhone 11 insets
+        // Check if device is runnning on preview mode
+        if ProcessInfo.processInfo.environment[previewEnvironmentKey] == "1" {
+            // Set default safe insets for iPhone 11
             return UIEdgeInsets(top: 48, left: 0, bottom: 34, right: 0)
+            
         } else {
+            // Use running device safe area insets
             let window = UIApplication.shared.windows[0]
+            
             return window.safeAreaInsets
         }
     }
