@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainView<H: View, C: View>: View {
+struct SkeletonStructure<H: View, C: View>: View {
     private let headerView: H
     private let contentView: C
     
@@ -35,14 +35,13 @@ struct MainView<H: View, C: View>: View {
                     
                 }.padding(.top)
             }
-            
         }
         .ignoresSafeArea()
     }
     
     func getSafeAreaInset() -> UIEdgeInsets {
         // Check if is in preview mode
-        let previewEnvironment = "XCODE_RUNNING_FOR_PREVIEWS"
+        let previewEnvironmentKey = "XCODE_RUNNING_FOR_PREVIEWS"
         
         if ProcessInfo.processInfo.environment[previewEnvironment] == "1" {
             // iPhone 11 insets

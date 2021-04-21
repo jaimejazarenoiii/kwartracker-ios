@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SignInView: View {
     var body: some View {
-        MainView {
+        SkeletonStructure {
             HeaderView()
         } content: {
             BodyView()
