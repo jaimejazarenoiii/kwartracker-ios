@@ -11,6 +11,9 @@ struct SkeletonStructure<H: View, C: View>: View {
     private let headerView: H
     private let contentView: C
     
+    private let rectRadius: CGFloat = 60
+    private let contentTopSpace: CGFloat = 5
+    
     init(@ViewBuilder header: @escaping () -> H, @ViewBuilder content: @escaping () -> C) {
         self.headerView = header()
         self.contentView = content()
@@ -25,10 +28,10 @@ struct SkeletonStructure<H: View, C: View>: View {
                     .padding(.top, getSafeAreaInset().top)
                 
                 ZStack {
-                    RoundedCornerRectangle(radius: 60, corner: [.topLeft, .topRight])
+                    RoundedCornerRectangle(radius: rectRadius, corner: [.topLeft, .topRight])
                     
                     contentView
-                        .padding(.top, 5)
+                        .padding(.top, contentTopSpace)
                     
                 }.padding(.top)
             }
@@ -45,7 +48,7 @@ struct SkeletonStructure<H: View, C: View>: View {
         
         // Check if device is runnning on preview mode
         if ProcessInfo.processInfo.environment[previewEnvironmentKey] == "1" {
-            // Set default safe insets for iPhone 11
+            // Set default safe insets to iPhone 11
             return UIEdgeInsets(top: 48, left: 0, bottom: 34, right: 0)
             
         } else {
