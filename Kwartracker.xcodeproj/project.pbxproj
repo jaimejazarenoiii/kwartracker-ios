@@ -28,6 +28,7 @@
 		7FE718881CB43731FBDE3CA8 /* Pods_Kwartracker_KwartrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5FF1E2AB4ED121C5D59731 /* Pods_Kwartracker_KwartrackerUITests.framework */; };
 		9A063C037CD795723F7C8978 /* Pods_KwartrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */; };
 		A9CFE877880189ECE3F83CB8 /* Pods_Kwartracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D507178A90E22E9AB2ABF11A /* Pods_Kwartracker.framework */; };
+		C65F7D58262EF1080075329F /* SNSType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F7D57262EF1080075329F /* SNSType.swift */; };
 		C685F5F52628544900E1C37C /* SignUpBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C685F5F42628544900E1C37C /* SignUpBodyView.swift */; };
 		C685F5FD2628599A00E1C37C /* SignUpHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C685F5FC2628599A00E1C37C /* SignUpHeaderView.swift */; };
 		C685F60226285A0E00E1C37C /* SignUpFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C685F60126285A0E00E1C37C /* SignUpFooterView.swift */; };
@@ -81,6 +82,7 @@
 		6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KwartrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E15A147209E6A913358D61B /* Pods-KwartrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KwartrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-KwartrackerTests/Pods-KwartrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE5FF1E2AB4ED121C5D59731 /* Pods_Kwartracker_KwartrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kwartracker_KwartrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C65F7D57262EF1080075329F /* SNSType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSType.swift; sourceTree = "<group>"; };
 		C685F5F42628544900E1C37C /* SignUpBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBodyView.swift; sourceTree = "<group>"; };
 		C685F5FC2628599A00E1C37C /* SignUpHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpHeaderView.swift; sourceTree = "<group>"; };
 		C685F60126285A0E00E1C37C /* SignUpFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFooterView.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 		163E592C260CB88E00E54401 /* Kwartracker */ = {
 			isa = PBXGroup;
 			children = (
+				C65F7D55262EF0DE0075329F /* Sources */,
 				163E5B61260F2E0900E54401 /* App Main */,
 				163E5B70260F338600E54401 /* Constants */,
 				163E5B62260F328900E54401 /* Libraries */,
@@ -273,6 +276,22 @@
 				6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C65F7D55262EF0DE0075329F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C65F7D56262EF0E70075329F /* Enums */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		C65F7D56262EF0E70075329F /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				C65F7D57262EF1080075329F /* SNSType.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		C685F5F32628508E00E1C37C /* Signup */ = {
@@ -556,6 +575,7 @@
 				164E97F02614ACF000D84B7F /* Assets.swift in Sources */,
 				164E95F226122BD200D84B7F /* AppReducer.swift in Sources */,
 				C685F5F52628544900E1C37C /* SignUpBodyView.swift in Sources */,
+				C65F7D58262EF1080075329F /* SNSType.swift in Sources */,
 				163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

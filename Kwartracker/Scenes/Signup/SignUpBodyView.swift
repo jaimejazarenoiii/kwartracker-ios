@@ -12,38 +12,37 @@ struct SignUpBodyView: View {
     @State private var password: String = ""
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(L10n.Create.account).foregroundColor(Color(Asset.Colors.nightRider.color))
-                .font(.system(size: 40))
-                .fontWeight(.medium)
-                .fixedSize(horizontal: false, vertical: true)
-            UserField(textLabel: L10n.email, textValue: $email)
-            UserField(textLabel: L10n.password, textValue: $password)
-            SNSButton(action: L10n.Sign.up).padding(.top, 15)
-            
-            HStack {
-                Spacer()
-                Text(L10n.or)
-                Spacer()
-             }.padding(.top, 5)
-            
-            SNSButton(action: L10n.Sign.Up.With.google).padding(.top, 5)
-            SNSButton(action: L10n.Sign.Up.With.apple).padding(.top, 10)
-            HStack {
-                Spacer()
-                Button(action: {
-                }) {
-                    Text(L10n.Sign.In.As.guest)
-                        .font(.footnote)
-                        .foregroundColor(.secondary)
-                        .underline()
+        ScrollView {
+            VStack(alignment: .leading) {
+                Text(L10n.Create.account).foregroundColor(Color(Asset.Colors.nightRider.color))
+                    .font(.system(size: 40))
+                    .fontWeight(.medium)
+                    .fixedSize(horizontal: false, vertical: true)
+                UserField(textLabel: L10n.email, textValue: $email)
+                UserField(textLabel: L10n.password, textValue: $password)
+                SNSButton(action: .signUp).padding(.top, 15)
+                HStack {
+                    Spacer()
+                    Text(L10n.or)
+                    Spacer()
+                 }.padding(.top, 5)
+                SNSButton(action: .google).padding(.top, 5)
+                SNSButton(action: .apple).padding(.top, 10)
+                HStack {
+                    Spacer()
+                    Button(action: {
+                    }) {
+                        Text(L10n.Sign.In.As.guest)
+                            .font(.footnote)
+                            .foregroundColor(.secondary)
+                            .underline()
+                    }
                 }
+                .padding([.leading, .top], 20)
             }
-            .padding([.leading, .top], 20)
-            .padding(.bottom, 50)
+            .padding([.leading, .trailing], 30)
+            .padding(.top, 70)
         }
-        .padding([.leading, .trailing], 30)
-        .padding(.top, 70)
     }
 }
 
@@ -75,7 +74,9 @@ struct UserField: View {
                 .shadow(color: Color.white.opacity(0.7), radius: radius, x: -5, y: -5)
             
             if textLabel == L10n.email {
-                TextField(L10n.Enter.Email.address, text: $textValue)
+                TextField("", text: $textValue)
+                    .modifier(PlaceholderStyle(showPlaceHolder: textValue.isEmpty,
+                                               placeholder: L10n.Enter.Email.address))
                     .background(Color(Asset.Colors.solitudeGrey.color))
                     .frame(height: 50, alignment: .center)
                     .cornerRadius(radius)
@@ -83,7 +84,9 @@ struct UserField: View {
                     .textContentType(.emailAddress)
                     .keyboardType(.emailAddress)
             } else {
-                SecureField(L10n.Enter.password, text: $textValue)
+                SecureField("", text: $textValue)
+                    .modifier(PlaceholderStyle(showPlaceHolder: textValue.isEmpty,
+                                               placeholder: L10n.Enter.password))
                     .background(Color(Asset.Colors.solitudeGrey.color))
                     .frame(height: 50, alignment: .center)
                     .cornerRadius(radius)
@@ -93,8 +96,25 @@ struct UserField: View {
     }
 }
 
+struct PlaceholderStyle: ViewModifier {
+    var showPlaceHolder: Bool
+    var placeholder: String
+
+    public func body(content: Content) -> some View {
+        ZStack(alignment: .leading) {
+            if showPlaceHolder {
+                Text(placeholder)
+                    .italic()
+                    .foregroundColor(.secondary)
+            }
+            content
+                .foregroundColor(Color.black)
+        }
+    }
+}
+
 struct SNSButton: View {
-    let action: String
+    let action: SNSType
     
     var body: some View {
         Button(action: {
@@ -102,42 +122,20 @@ struct SNSButton: View {
         }, label: {
             ZStack {
                 RoundedRectangle(cornerRadius: 17)
-                    .fill(whichColor())
+                    .fill(action.color)
                     .frame(height: 55)
                 
                 HStack {
-                    if action != L10n.Sign.in {
-                        Image(systemName: whichSymbol())
-                            .font(.system(size: 20))
-                            .foregroundColor(Color.white)
-                    }
+                    Image(action.image)
+                        .font(.system(size: 20))
+                        .foregroundColor(Color.white)
                     
-                    Text(action)
+                    Text(action.nameValue)
                         .foregroundColor(.white)
                         .font(.system(size: 14))
                 }
             }
         })
-    }
-    
-    func whichColor() -> Color {
-        if action.contains("Google") {
-            return Color.blue
-        } else if action.contains("Apple") {
-            return Color.black
-        } else {
-            return Color(Asset.Colors.teal.color)
-        }
-    }
-    
-    func whichSymbol() -> String {
-        if action.contains("Google") {
-            return "g.circle"
-        } else if action.contains("Apple") {
-            return "applelogo"
-        } else {
-            return ""
-        }
     }
 }
 

@@ -10,7 +10,7 @@ import SwiftUI
 struct SignUpView: View {
     var body: some View {
         VStack {
-            SignUpHeaderView().background(Color("Teal"))
+            SignUpHeaderView().background(Color(Asset.Colors.teal.color))
             SignUpBodyView()
             SignUpFooterView()
         }
