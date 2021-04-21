@@ -26,7 +26,7 @@ struct BodyView: View {
         }
     }
     
-    var SNSActions: some View {
+    private var SNSActions: some View {
         Group {
             SNSButton(actionHandler: {}, actionLabel: .signIn)
                 .padding(.top)
@@ -46,7 +46,7 @@ struct BodyView: View {
         }
     }
     
-    var FootNoteActions: some View {
+    private var FootNoteActions: some View {
         Group {
             HStack {
                 FootnoteButton(action: {}, text: L10n.Recover.password)
