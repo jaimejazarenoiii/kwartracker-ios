@@ -12,7 +12,7 @@ struct SignUpBodyView: View {
     @State private var password: String = ""
     
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack(alignment: .leading) {
                 Text(L10n.Create.account).foregroundColor(Color(Asset.Colors.nightRider.color))
                     .font(.system(size: 40))
@@ -40,8 +40,7 @@ struct SignUpBodyView: View {
                 }
                 .padding([.leading, .top], 20)
             }
-            .padding([.leading, .trailing], 30)
-            .padding(.top, 70)
+            .padding(.all, 30)
         }
     }
 }

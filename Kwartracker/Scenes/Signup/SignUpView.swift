@@ -9,11 +9,15 @@ import SwiftUI
 
 struct SignUpView: View {
     var body: some View {
-        VStack {
-            SignUpHeaderView().background(Color(Asset.Colors.teal.color))
-            SignUpBodyView()
-            SignUpFooterView()
+        SkeletonStructure {
+            SignUpHeaderView()
+        } content: {
+            VStack {
+                SignUpBodyView()
+                SignUpFooterView()
+            }
         }
+        
     }
 }
 

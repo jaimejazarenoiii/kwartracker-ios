@@ -33,6 +33,7 @@
 		C685F5FD2628599A00E1C37C /* SignUpHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C685F5FC2628599A00E1C37C /* SignUpHeaderView.swift */; };
 		C685F60226285A0E00E1C37C /* SignUpFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C685F60126285A0E00E1C37C /* SignUpFooterView.swift */; };
 		C685F60726285A3A00E1C37C /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C685F60626285A3A00E1C37C /* SignUpView.swift */; };
+		C6C2D44826317BDF007EB15D /* SkeletonStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C2D44726317BDF007EB15D /* SkeletonStructure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		C685F5FC2628599A00E1C37C /* SignUpHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpHeaderView.swift; sourceTree = "<group>"; };
 		C685F60126285A0E00E1C37C /* SignUpFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFooterView.swift; sourceTree = "<group>"; };
 		C685F60626285A3A00E1C37C /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		C6C2D44726317BDF007EB15D /* SkeletonStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonStructure.swift; sourceTree = "<group>"; };
 		D507178A90E22E9AB2ABF11A /* Pods_Kwartracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kwartracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD3E9E5BB7FB306F0A54B049 /* Pods-Kwartracker-KwartrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker-KwartrackerUITests.release.xcconfig"; path = "Target Support Files/Pods-Kwartracker-KwartrackerUITests/Pods-Kwartracker-KwartrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DF4D41E232EA75D22CD128E1 /* Pods-Kwartracker-KwartrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker-KwartrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Kwartracker-KwartrackerUITests/Pods-Kwartracker-KwartrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				16B24BAF261A8D1C0002065D /* Models */,
 				163E5962260CBE0600E54401 /* Store */,
 				163E5963260CBF0400E54401 /* Scenes */,
+				C6C2D44726317BDF007EB15D /* SkeletonStructure.swift */,
 				163E5B74260F34E400E54401 /* Resources */,
 				163E5936260CB89100E54401 /* Info.plist */,
 				163E5933260CB89100E54401 /* Preview Content */,
@@ -564,6 +567,7 @@
 				163E5930260CB88E00E54401 /* ContentView.swift in Sources */,
 				C685F60726285A3A00E1C37C /* SignUpView.swift in Sources */,
 				164E95EC2612224100D84B7F /* AppState.swift in Sources */,
+				C6C2D44826317BDF007EB15D /* SkeletonStructure.swift in Sources */,
 				C685F5FD2628599A00E1C37C /* SignUpHeaderView.swift in Sources */,
 				163E5B6C260F337600E54401 /* Secrets.swift in Sources */,
 				164E95FF26122C5E00D84B7F /* World.swift in Sources */,

@@ -22,7 +22,7 @@ struct SignUpFooterView: View {
                         .foregroundColor(Color(Asset.Colors.teal.color))
                         .underline()
                 }
-            }.padding([.top, .bottom], 15)
+            }.padding([.top, .bottom], 30)
         }
     }
 }
