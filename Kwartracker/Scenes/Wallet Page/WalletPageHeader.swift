@@ -7,32 +7,36 @@
 
 import SwiftUI
 
+// This is a temporary header
 struct WalletPageHeader: View {
     var body: some View {
-        HStack {
-            Button(action: {
-            }) {
-                Image(Asset.Images.arrowLeftIcon.name)
-                    .renderingMode(.template)
+        ZStack {
+            Color(Asset.Colors.teal.name)
+            HStack {
+                Button(action: {
+                }) {
+                    Image(Asset.Images.arrowLeftIcon.name)
+                        .renderingMode(.template)
+                        .foregroundColor(.white)
+                }
+                .frame(width: 40, height: 40)
+                .buttonStyle(RoundTealButtonStyle())
+                Spacer()
+                Text("My Wallets")
+                    .font(.title3)
+                    .bold()
                     .foregroundColor(.white)
-            }
-            .frame(width: 40, height: 40)
-            .buttonStyle(RoundTealButtonStyle())
-            Spacer()
-            Text("My Wallets")
-                .font(.title3)
-                .bold()
-                .foregroundColor(.white)
-            Spacer()
-            Button(action: {
-            }) {
-                Image(Asset.Images.addIcon.name)
-                    .renderingMode(.template)
-                    .foregroundColor(Color(Asset.Colors.teal.name))
-            }
-            .frame(width: 40, height: 40)
-            .buttonStyle(RoundWhiteButtonStyle())
-        }.frame(height: 45)
+                Spacer()
+                Button(action: {
+                }) {
+                    Image(Asset.Images.addIcon.name)
+                        .renderingMode(.template)
+                        .foregroundColor(Color(Asset.Colors.teal.name))
+                }
+                .frame(width: 40, height: 40)
+                .buttonStyle(RoundWhiteButtonStyle())
+            }.padding([.trailing, .leading], 30)
+        }.frame(height: 50)
     }
 }
 

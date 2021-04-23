@@ -25,8 +25,10 @@ struct CardView: View {
                         .modifier(CardLabelValue())
                 }.padding([.top, .bottom], 2)
             }.padding([.leading], 16)
-        }.frame(width: 228,
-                height: 155)
+        }
+        .frame(width: 228, height: 155)
+        .shadow(color: Color(Asset.Colors.mintGreen.name).opacity(0.3),
+            radius: 5, x: 0, y: 15)
     }
 }
 
@@ -49,7 +51,6 @@ struct CardLabelValue: ViewModifier {
             .frame(minHeight: 27)
     }
 }
-
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
