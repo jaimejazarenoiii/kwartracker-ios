@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		163E594B260CB89100E54401 /* KwartrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E594A260CB89100E54401 /* KwartrackerUITests.swift */; };
 		163E5B64260F32A000E54401 /* Obfuscate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E5B63260F329F00E54401 /* Obfuscate.swift */; };
 		163E5B6C260F337600E54401 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E5B6B260F337600E54401 /* Secrets.swift */; };
+		163FC8262634D7E600E15C2B /* TealRoundedRectangleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163FC8252634D7E600E15C2B /* TealRoundedRectangleButtonStyle.swift */; };
 		164E95E726121B6400D84B7F /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E95E626121B6400D84B7F /* Store.swift */; };
 		164E95EC2612224100D84B7F /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E95EB2612224100D84B7F /* AppState.swift */; };
 		164E95F226122BD200D84B7F /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E95F126122BD200D84B7F /* AppReducer.swift */; };
@@ -27,6 +28,10 @@
 		1683C9022629C76F00B1D4D8 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683C9012629C76F00B1D4D8 /* TransactionsView.swift */; };
 		1683C90B2629C7BB00B1D4D8 /* CircleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683C90A2629C7BB00B1D4D8 /* CircleButtonStyle.swift */; };
 		1683C9142629C81100B1D4D8 /* LinearGradient+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683C9132629C81100B1D4D8 /* LinearGradient+Extensions.swift */; };
+		16C5C7782635347A00F33B72 /* TransactionRowContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C7772635347A00F33B72 /* TransactionRowContent.swift */; };
+		16C5C77D2635349F00F33B72 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C77C2635349F00F33B72 /* Transaction.swift */; };
+		16C5C782263534EA00F33B72 /* Imageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C781263534EA00F33B72 /* Imageable.swift */; };
+		16C5C787263534FE00F33B72 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C786263534FE00F33B72 /* Wallet.swift */; };
 		290CA1B2261EABE400239EA7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 290CA1B1261EABE400239EA7 /* swiftgen.yml */; };
 		291DFF942632D61B00DAC0EF /* WalletOneCardCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291DFF932632D61B00DAC0EF /* WalletOneCardCenterView.swift */; };
 		29464F542637C3A100E6E082 /* PageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29464F532637C3A100E6E082 /* PageControlView.swift */; };
@@ -89,6 +94,7 @@
 		163E594C260CB89100E54401 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		163E5B63260F329F00E54401 /* Obfuscate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obfuscate.swift; sourceTree = "<group>"; };
 		163E5B6B260F337600E54401 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		163FC8252634D7E600E15C2B /* TealRoundedRectangleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TealRoundedRectangleButtonStyle.swift; sourceTree = "<group>"; };
 		164E95E626121B6400D84B7F /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		164E95EB2612224100D84B7F /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		164E95F126122BD200D84B7F /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
@@ -102,6 +108,10 @@
 		1683C9012629C76F00B1D4D8 /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
 		1683C90A2629C7BB00B1D4D8 /* CircleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonStyle.swift; sourceTree = "<group>"; };
 		1683C9132629C81100B1D4D8 /* LinearGradient+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinearGradient+Extensions.swift"; sourceTree = "<group>"; };
+		16C5C7772635347A00F33B72 /* TransactionRowContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRowContent.swift; sourceTree = "<group>"; };
+		16C5C77C2635349F00F33B72 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		16C5C781263534EA00F33B72 /* Imageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imageable.swift; sourceTree = "<group>"; };
+		16C5C786263534FE00F33B72 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		290CA1B1261EABE400239EA7 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		291DFF932632D61B00DAC0EF /* WalletOneCardCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletOneCardCenterView.swift; sourceTree = "<group>"; };
 		29464F532637C3A100E6E082 /* PageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlView.swift; sourceTree = "<group>"; };
@@ -306,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				1683C9012629C76F00B1D4D8 /* TransactionsView.swift */,
+				16C5C7772635347A00F33B72 /* TransactionRowContent.swift */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -314,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				1683C90A2629C7BB00B1D4D8 /* CircleButtonStyle.swift */,
+				163FC8252634D7E600E15C2B /* TealRoundedRectangleButtonStyle.swift */,
 			);
 			path = "Button Style";
 			sourceTree = "<group>";
@@ -336,6 +348,9 @@
 		16B24BAF261A8D1C0002065D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				16C5C77C2635349F00F33B72 /* Transaction.swift */,
+				16C5C781263534EA00F33B72 /* Imageable.swift */,
+				16C5C786263534FE00F33B72 /* Wallet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -493,6 +508,7 @@
 				163E5928260CB88E00E54401 /* Resources */,
 				164E97F42614AD5D00D84B7F /* SwiftGen */,
 				164E985B2615714500D84B7F /* SwiftLint */,
+				F8FB59075B8061FBD1F67FFB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -530,6 +546,7 @@
 				163E5942260CB89100E54401 /* Sources */,
 				163E5943260CB89100E54401 /* Frameworks */,
 				163E5944260CB89100E54401 /* Resources */,
+				DF07303641F9B72456B1F831 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -716,6 +733,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DF07303641F9B72456B1F831 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kwartracker-KwartrackerUITests/Pods-Kwartracker-KwartrackerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kwartracker-KwartrackerUITests/Pods-Kwartracker-KwartrackerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kwartracker-KwartrackerUITests/Pods-Kwartracker-KwartrackerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8FB59075B8061FBD1F67FFB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kwartracker/Pods-Kwartracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kwartracker/Pods-Kwartracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kwartracker/Pods-Kwartracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -725,9 +776,11 @@
 			files = (
 				7A7FA1322637B70A00484F51 /* FootnoteButton.swift in Sources */,
 				29F6C1FE262ED69800DB2139 /* CardView.swift in Sources */,
+				16C5C787263534FE00F33B72 /* Wallet.swift in Sources */,
 				163E5930260CB88E00E54401 /* ContentView.swift in Sources */,
 				7A17D13226298678005BB190 /* UserField.swift in Sources */,
 				1683C90B2629C7BB00B1D4D8 /* CircleButtonStyle.swift in Sources */,
+				16C5C77D2635349F00F33B72 /* Transaction.swift in Sources */,
 				164E95EC2612224100D84B7F /* AppState.swift in Sources */,
 				C6249AA82637EB8C00C55B31 /* SignUpView.swift in Sources */,
 				C65699C32637C91400D24D2F /* SignUpFooterView.swift in Sources */,
@@ -748,6 +801,7 @@
 				7AB1B91E26438C7C00853FAC /* RoundedCornerRectangle.swift in Sources */,
 				7A734D92262FFAA900557EF7 /* BWNeumorphicRectangle.swift in Sources */,
 				1683C9022629C76F00B1D4D8 /* TransactionsView.swift in Sources */,
+				163FC8262634D7E600E15C2B /* TealRoundedRectangleButtonStyle.swift in Sources */,
 				7AD9B8892626F3A300CF0EA6 /* SignInView.swift in Sources */,
 				29464F542637C3A100E6E082 /* PageControlView.swift in Sources */,
 				291DFF942632D61B00DAC0EF /* WalletOneCardCenterView.swift in Sources */,
@@ -759,6 +813,8 @@
 				164E97F02614ACF000D84B7F /* Assets.swift in Sources */,
 				164E95F226122BD200D84B7F /* AppReducer.swift in Sources */,
 				C65699C42637C91400D24D2F /* SignUpBodyView.swift in Sources */,
+				16C5C782263534EA00F33B72 /* Imageable.swift in Sources */,
+				16C5C7782635347A00F33B72 /* TransactionRowContent.swift in Sources */,
 				163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */,
 				1683C9142629C81100B1D4D8 /* LinearGradient+Extensions.swift in Sources */,
 			);
