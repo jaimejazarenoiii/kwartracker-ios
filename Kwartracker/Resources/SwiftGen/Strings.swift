@@ -96,6 +96,13 @@ internal enum L10n {
     }
   }
 
+  internal enum TransactionsPage {
+    /// Transactions
+    internal static let titleBar = L10n.tr("Localizable", "transactions_page.title_bar")
+    /// Search Transaction
+    internal static let transactionSearchPlaceholder = L10n.tr("Localizable", "transactions_page.transaction_search_placeholder")
+  }
+
   internal enum Wallet {
     internal enum ActionButton {
       /// Add Transaction

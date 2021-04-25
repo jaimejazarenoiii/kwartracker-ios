@@ -1,5 +1,4 @@
 // English
-
 "sign_in_page.title.welcome_back" = "Welcome\nBack";
 "sign_in_page.label.email" = "Email";
 "sign_in_page.field.enter_email_address" = "Enter email address";
@@ -32,3 +31,5 @@
 "card.title.available_balance" = "Available Balance";
 "wallet.action_button.edit_wallet" = "Edit Wallet";
 "wallet.action_button.add_transaction" = "Add Transaction";
+"transactions_page.title_bar" = "Transactions";
+"transactions_page.transaction_search_placeholder" = "Search Transaction";

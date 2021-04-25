@@ -1,5 +1,4 @@
 // Filipino
-
 "sign_in_page.title.welcome_back" = "Welcome\nBack";
 "sign_in_page.label.email" = "Email";
 "sign_in_page.field.enter_email_address" = "Enter email address";
@@ -26,4 +25,5 @@
 "sign_up_page.button.sign_up_guest" = "Sign in as guest";
 "sign_up_page.label.already_have_an_account" = "Already have an account?";
 "sign_up_page.button.sign_in" = "Sign In";
-
+"transactions_page.title_bar" = "Transactions";
+"transactions_page.transaction_search_placeholder" = "Search Transaction";
