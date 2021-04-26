@@ -16,7 +16,6 @@ struct BodyView: View {
     private let topHeadMargin: CGFloat = 70
     private let snsOrTopMargin: CGFloat = 5
     private let footNoteTopMargin: CGFloat = 25
-    private let scrollKey = "scroll"
     
     private var HeaderText: some View {
         Text(L10n.Welcome.back)
@@ -96,14 +95,7 @@ struct BodyView: View {
             }
             .padding([.leading, .trailing], sideMargin)
             .padding(.top, topHeadMargin)
-            
-            GeometryReader { proxy in
-                Color.clear.preference(key: ScrollViewOffsetPreferenceKey.self,
-                                       value: proxy.frame(in: .named(scrollKey)).minY)
-            }
-            
         }
-        .coordinateSpace(name: scrollKey)
     }
 }
 
