@@ -8,41 +8,8 @@
 import SwiftUI
 
 struct TransactionsView: View {
+    @EnvironmentObject var store: AppStore
     @State var searchTransaction: String = ""
-    var transactions: [Transaction] = [
-        Transaction(
-            id: 1,
-            title: "March 15 Payroll",
-            category: .init(title: "Salary"),
-            amount: 10000,
-            wallet: Wallet(),
-            rawDateTime: "Mar 15, 2021"
-        ),
-        Transaction(
-            id: 2,
-            title: "House Rental",
-            category: .init(title: "BILLS"),
-            amount: 5000,
-            wallet: Wallet(),
-            rawDateTime: "Mar 15, 2021"
-        ),
-        Transaction(
-            id: 3,
-            title: "Sideline Payment",
-            category: .init(title: "Salary"),
-            amount: 10000,
-            wallet: Wallet(),
-            rawDateTime: "Mar 10, 2021"
-        ),
-        Transaction(
-            id: 4,
-            title: "Sideline Payment",
-            category: .init(title: "Salary"),
-            amount: 100000,
-            wallet: Wallet(),
-            rawDateTime: "Mar 10, 2021"
-        ),
-    ]
 
     init() {
         setUpContentAppearance()
@@ -145,15 +112,13 @@ struct TransactionsView: View {
                             .frame(height: 20)
 
                         List {
-                            ForEach(transactions, id: \.id) { transaction in
-                                let day = "\(transaction.dateTime?.day ?? 1)"
-                                let month = transaction.dateTime?.toFormat("MMM") ?? ""
+                            ForEach(store.state.transactionState.transactions, id: \.id) { transaction in
                                 TransactionRowContent(
-                                    month: month,
-                                    day: day,
+                                    month: transaction.getMonth(),
+                                    day: transaction.getDay(),
                                     category: transaction.category.title,
                                     categoryTitle: transaction.title,
-                                    amount: transaction.amount
+                                    amount: transaction.amountCurrencyDisplay
                                 )
                             }
                         }
@@ -167,15 +132,4 @@ struct TransactionsView: View {
         UITableView.appearance().backgroundColor = .clear
         UITableViewCell.appearance().backgroundColor = .clear
     }
-}
-
-struct Category {
-    var icon: Imageable? = nil
-    var title: String
-    var childCategories: [Category] = []
-}
-
-enum Currency: String {
-    case philippinePeso = "₱"
-    case usDollar = "$"
 }
