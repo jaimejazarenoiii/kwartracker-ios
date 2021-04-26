@@ -1,3 +1,5 @@
 // Filipino
 "transactions_page.title_bar" = "Transactions";
 "transactions_page.transaction_search_placeholder" = "Search Transaction";
+"transactions_page.add_amount" = "+ %@";
+"transactions_page.deduct_amount" = "- %@";

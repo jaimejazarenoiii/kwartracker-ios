@@ -12,6 +12,14 @@ import Foundation
 internal enum L10n {
 
   internal enum TransactionsPage {
+    /// + %@
+    internal static func addAmount(_ p1: Any) -> String {
+      return L10n.tr("Localizable", "transactions_page.add_amount", String(describing: p1))
+    }
+    /// - %@
+    internal static func deductAmount(_ p1: Any) -> String {
+      return L10n.tr("Localizable", "transactions_page.deduct_amount", String(describing: p1))
+    }
     /// Transactions
     internal static let titleBar = L10n.tr("Localizable", "transactions_page.title_bar")
     /// Search Transaction
