@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct SizePreferenceKey: PreferenceKey {
-    typealias Value = CGSize
+struct ScrollViewOffsetPreferenceKey: PreferenceKey {
+    typealias Value = CGFloat
     static var defaultValue: Value = .zero
 
     static func reduce(value: inout Value, nextValue: () -> Value) {

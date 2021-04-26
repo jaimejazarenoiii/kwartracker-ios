@@ -11,8 +11,12 @@ struct SkeletonStructure<H: View, C: View>: View {
     private let headerView: H
     private let contentView: C
     
-    private let rectRadius: CGFloat = 60
-    private let contentTopSpace: CGFloat = 5
+    private let defaultRectRadius: CGFloat = 60
+    private let defaultHeaderSpace: CGFloat = 10
+    
+    @State private var scrollViewHeight = CGFloat.zero
+    @State private var rectRadius: CGFloat = 60
+    @State private var headerSpace: CGFloat = 10
     
     init(@ViewBuilder header: @escaping () -> H, @ViewBuilder content: @escaping () -> C) {
         self.headerView = header()
@@ -31,14 +35,35 @@ struct SkeletonStructure<H: View, C: View>: View {
                     RoundedCornerRectangle(radius: rectRadius, corner: [.topLeft, .topRight])
                     
                     contentView
-                        .padding(.top, contentTopSpace)
+                        .onPreferenceChange(ScrollViewOffsetPreferenceKey.self) { value in
+                            DispatchQueue.main.async {
+                                self.scrollOffsetChanged(size: value)
+                            }
+                        }
                     
-                }.padding(.top)
+                }.padding(.top, headerSpace)
             }
         }
         .ignoresSafeArea()
     }
     
+    func scrollOffsetChanged(size: CGFloat) {
+        scrollViewHeight = scrollViewHeight == .zero ? size : scrollViewHeight
+        
+        let scrollOffset = -(size - scrollViewHeight)
+        
+        let isOverMinRadius = scrollOffset < 0
+        let isOverMaxRadius =  scrollOffset > defaultRectRadius
+        let radiusOffset = isOverMinRadius ? 0 : isOverMaxRadius ? defaultRectRadius : scrollOffset
+        
+        rectRadius = defaultRectRadius - radiusOffset
+        
+        let isOverMinSpace = scrollOffset/2 < 0
+        let isOverMaxSpace = scrollOffset/2 > defaultHeaderSpace
+        let spaceOffset = isOverMinSpace ? 0 : isOverMaxSpace ? defaultHeaderSpace : scrollOffset/2
+        
+        headerSpace = defaultHeaderSpace - spaceOffset
+    }
     
     // Check if running on preview mode or running on a device
     // https://stackoverflow.com/questions/58759987/how-do-you-check-if-swiftui-is-in-preview-mode
