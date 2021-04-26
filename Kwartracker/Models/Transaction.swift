@@ -30,5 +30,16 @@ struct Transaction {
         formatter.locale = Locale(identifier: wallet.currency.rawValue)
         return formatter.string(from: NSNumber(value: amount)) ?? "0"
     }
+
+    func getRawDateTime(format: String = "yyyy-MM-dd") -> String? {
+        dateTime?.toFormat(format)
+    }
+
+    func getDay() -> String {
+        "\(dateTime?.day ?? 1)"
+    }
+
+    func getMonth() -> String {
+        getRawDateTime(format: "MMM") ?? ""
     }
 }
