@@ -14,5 +14,15 @@ enum AppReducer {
         action: AppAction,
         environment: World
     ) -> AnyPublisher<AppAction, Never> {
+        switch action {
+        case let .transactionsView(action):
+            return transactionsViewReducer(
+                state: &state.transactionState,
+                action: action,
+                environment: environment
+            )
+            .map(AppAction.transactionsView)
+            .eraseToAnyPublisher()
+        }
     }
 }
