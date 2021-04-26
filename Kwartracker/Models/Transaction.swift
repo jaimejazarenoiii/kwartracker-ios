@@ -23,5 +23,12 @@ struct Transaction {
     var dateTime: Date? {
         rawDateTime.toDate("yyyy-MM-dd")?.date
     }
+
+    var amountCurrencyDisplay: String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = Locale(identifier: wallet.currency.rawValue)
+        return formatter.string(from: NSNumber(value: amount)) ?? "0"
+    }
     }
 }
