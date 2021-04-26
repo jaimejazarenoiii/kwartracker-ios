@@ -21,6 +21,7 @@ struct Transaction {
     var photoImg: Imageable? = nil
 
     var dateTime: Date? {
-        rawDateTime.toDate("yyyy-MM-dd HH:mm")?.date
+        rawDateTime.toDate("yyyy-MM-dd")?.date
+    }
     }
 }
