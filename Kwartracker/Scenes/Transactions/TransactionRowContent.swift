@@ -12,7 +12,7 @@ struct TransactionRowContent: View {
     var day: String
     var category: String
     var categoryTitle: String
-    var amount: Double
+    var amount: String
 
     var body: some View {
         HStack {
@@ -50,8 +50,7 @@ struct TransactionRowContent: View {
 
             Spacer()
 
-            let amountInString = String(format: "%.2f", amount)
-            Text("+ \(amountInString)")
+            Text(L10n.TransactionsPage.addAmount(amount))
                 .foregroundColor(Color(Asset.Colors.niagaraGreen.color))
 
             Spacer()
@@ -66,6 +65,5 @@ struct TransactionRowContent: View {
         }
         .listRowBackground(Color.clear)
         .padding([.top, .bottom], 15)
-//        .lineSpacing(10)
     }
 }
