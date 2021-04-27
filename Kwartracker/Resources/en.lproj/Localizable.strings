@@ -1,14 +1,23 @@
 // English
+
 "sign_in_page.title.welcome_back" = "Welcome\nBack";
-"sign_in_page.label.email" = "Email";
-"sign_in_page.field.enter_email_address" = "Enter email address";
-"sign_in_page.label.password" = "Password";
-"sign_in_page.field.enter_password" = "Enter password";
 "sign_in_page.button.sign_in" = "Sign In";
-"sign_in_page.label.or" = "or";
 "sign_in_page.button.sign_in_google" = "Sign in with Google";
 "sign_in_page.button.sign_in_apple" = "Sign in with Apple";
 "sign_in_page.button.sign_in_guest" = "Sign in as guest";
 "sign_in_page.button.recover_password" = "Recover password";
 "sign_in_page.label.no_account_yet" = "No account yet?";
 "sign_in_page.button.sign_up" = "Sign Up";
+
+"label.create.account" = "Create\nAccount";
+"label.email" = "Email";
+"placeholder.enter.email.address" = "Enter email address";
+"label.password" = "Password";
+"placeholder.enter.password" = "Enter password";
+"button_label_sign.up" = "Sign Up";
+"label.or" = "or";
+"button_label_sign.up.with.google" = "Sign up with Google";
+"button_label_sign.up.with.apple" = "Sign up with Apple";
+"button_label_sign.in.as.guest" = "Sign in as guest";
+"button_label_sign.in" = "Sign In";
+"label.already.haveAn.account" = "Already have an account?";
