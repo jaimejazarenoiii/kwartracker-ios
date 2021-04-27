@@ -14,16 +14,16 @@ struct SignUpBodyView: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading) {
-                Text(L10n.Create.account).foregroundColor(Color(Asset.Colors.nightRider.color))
+                Text(L10n.Label.Create.account).foregroundColor(Color(Asset.Colors.nightRider.color))
                     .font(.system(size: 40))
                     .fontWeight(.medium)
                     .fixedSize(horizontal: false, vertical: true)
-                UserField(textLabel: L10n.email, textValue: $email)
-                UserField(textLabel: L10n.password, textValue: $password)
+                UserField(textLabel: L10n.Label.email, textValue: $email)
+                UserField(textLabel: L10n.Label.password, textValue: $password)
                 SNSButton(action: .signUp).padding(.top, 15)
                 HStack {
                     Spacer()
-                    Text(L10n.or)
+                    Text(L10n.Label.or)
                     Spacer()
                  }.padding(.top, 5)
                 SNSButton(action: .google).padding(.top, 5)
@@ -32,7 +32,7 @@ struct SignUpBodyView: View {
                     Spacer()
                     Button(action: {
                     }) {
-                        Text(L10n.Sign.In.As.guest)
+                        Text(L10n.ButtonLabelSign.In.As.guest)
                             .font(.footnote)
                             .foregroundColor(.secondary)
                             .underline()
@@ -72,10 +72,10 @@ struct UserField: View {
                 .shadow(color: Color.black.opacity(0.2), radius: radius, x: 7, y: 7)
                 .shadow(color: Color.white.opacity(0.7), radius: radius, x: -5, y: -5)
             
-            if textLabel == L10n.email {
+            if textLabel == L10n.Label.email {
                 TextField("", text: $textValue)
                     .modifier(PlaceholderStyle(showPlaceHolder: textValue.isEmpty,
-                                               placeholder: L10n.Enter.Email.address))
+                                               placeholder: L10n.Placeholder.Enter.Email.address))
                     .background(Color(Asset.Colors.solitudeGrey.color))
                     .frame(height: 50, alignment: .center)
                     .cornerRadius(radius)
@@ -85,7 +85,7 @@ struct UserField: View {
             } else {
                 SecureField("", text: $textValue)
                     .modifier(PlaceholderStyle(showPlaceHolder: textValue.isEmpty,
-                                               placeholder: L10n.Enter.password))
+                                               placeholder: L10n.Placeholder.Enter.password))
                     .background(Color(Asset.Colors.solitudeGrey.color))
                     .frame(height: 50, alignment: .center)
                     .cornerRadius(radius)
@@ -125,7 +125,7 @@ struct SNSButton: View {
                     .frame(height: 55)
                 
                 HStack {
-                    Image(action.image)
+                    Image(uiImage: action.image)
                         .font(.system(size: 20))
                         .foregroundColor(Color.white)
                     

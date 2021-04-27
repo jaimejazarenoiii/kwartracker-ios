@@ -1,14 +1,14 @@
 // Filipino
 
-"create.account" = "Create\nAccount";
-"email" = "Email";
-"enter.email.address" = "Enter email address";
-"password" = "Password";
-"enter.password" = "Enter password";
-"sign.up" = "Sign Up";
-"or" = "or";
-"sign.up.with.google" = "Sign up with Google";
-"sign.up.with.apple" = "Sign up with Apple";
-"sign.in.as.guest" = "Sign in as guest";
-"sign.in" = "Sign In";
-"already.have.an.account" = "Already have an account?";
+"label.create.account" = "Create\nAccount";
+"label.email" = "Email";
+"placeholder.enter.email.address" = "Enter email address";
+"label.password" = "Password";
+"placeholder.enter.password" = "Enter password";
+"button_label_sign.up" = "Sign Up";
+"label.or" = "or";
+"button_label_sign.up.with.google" = "Sign up with Google";
+"button_label_sign.up.with.apple" = "Sign up with Apple";
+"button_label_sign.in.as.guest" = "Sign in as guest";
+"button_label_sign.in" = "Sign In";
+"label.already.haveAn.account" = "Already have an account?";

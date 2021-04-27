@@ -17,7 +17,6 @@ struct SignUpView: View {
                 SignUpFooterView()
             }
         }
-        
     }
 }
 

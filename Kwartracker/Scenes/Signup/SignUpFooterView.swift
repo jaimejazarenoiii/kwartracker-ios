@@ -12,17 +12,18 @@ struct SignUpFooterView: View {
         VStack {
             Divider()
             HStack {
-                Text(L10n.Already.Have.An.account)
+                Text(L10n.Label.Already.HaveAn.account)
                     .font(.footnote)
                     .foregroundColor(Color(Asset.Colors.nightRider.color))
                 Button(action: {
                 }) {
-                    Text(L10n.Sign.in)
+                    Text(L10n.ButtonLabelSign.in)
                         .font(.footnote)
                         .foregroundColor(Color(Asset.Colors.teal.color))
                         .underline()
                 }
-            }.padding([.top, .bottom], 30)
+            }
+            .padding([.top, .bottom], 30)
         }
     }
 }

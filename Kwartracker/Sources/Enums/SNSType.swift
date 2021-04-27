@@ -25,25 +25,25 @@ enum SNSType: String {
         }
     }
     
-    var image: String {
+    var image: UIImage {
         switch self {
         case .google:
-            return "GoogleIcon"
+            return Asset.Images.googleIcon.image
         case.apple:
-            return "AppleIcon"
+            return Asset.Images.appleIcon.image
         case .signUp:
-            return ""
+            return UIImage()
         }
     }
     
     var nameValue: String {
         switch self {
         case .google:
-            return L10n.Sign.Up.With.google
+            return L10n.ButtonLabelSign.Up.With.google
         case.apple:
-            return L10n.Sign.Up.With.apple
+            return L10n.ButtonLabelSign.Up.With.apple
         case .signUp:
-            return L10n.Sign.up
+            return L10n.ButtonLabelSign.up
         }
 
     }

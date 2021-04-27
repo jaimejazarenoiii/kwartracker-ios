@@ -33,7 +33,8 @@ struct SkeletonStructure<H: View, C: View>: View {
                     contentView
                         .padding(.top, contentTopSpace)
                     
-                }.padding(.top)
+                }
+                .padding(.top)
             }
         }
         .ignoresSafeArea()
@@ -92,6 +93,6 @@ struct RoundedCorner: Shape {
 
 extension View {
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
-        clipShape( RoundedCorner(radius: radius, corners: corners) )
+        clipShape(RoundedCorner(radius: radius, corners: corners))
     }
 }
