@@ -8,10 +8,30 @@
 import SwiftUI
 
 struct CardView: View {
+    @State private var bubbleOpacity: Double = 0.18
+    @State private var bubbleRadiusBlur: CGFloat = 3.0
+    // value will be passed later
+    @State private var cardColorName: String = Asset.Colors.mintGreen.name
+    @Binding var cardSize: CGSize
+    
     var body: some View {
         ZStack(alignment: .leading) {
+            
             RoundedRectangle(cornerRadius: 25, style: .continuous)
-                .fill(Color(Asset.Colors.mintGreen.name))
+                .fill(Color(cardColorName))
+                .blur(radius: 1.0)
+            Circle()
+                .fill(Color.white)
+                .frame(width: 60)
+                .opacity(bubbleOpacity)
+                .offset(x: 130, y: -10)
+                .blur(radius: bubbleRadiusBlur)
+            Circle()
+                .fill(Color.white)
+                .frame(width: 140)
+                .opacity(bubbleOpacity)
+                .offset(x: 120, y: 50)
+                .blur(radius: bubbleRadiusBlur)
             VStack(alignment: .leading) {
                 Text("GOAL")
                     .modifier(CardLabel())
@@ -26,8 +46,9 @@ struct CardView: View {
                 }.padding([.top, .bottom], 2)
             }.padding([.leading], 16)
         }
-        .frame(width: 228, height: 155)
-        .shadow(color: Color(Asset.Colors.mintGreen.name).opacity(0.3),
+        .frame(width: cardSize.width, height: cardSize.height)
+        .clipped()
+        .shadow(color: Color(cardColorName).opacity(0.3),
             radius: 5, x: 0, y: 15)
     }
 }
@@ -49,11 +70,5 @@ struct CardLabelValue: ViewModifier {
             .foregroundColor(Color.white)
             .fixedSize(horizontal: false, vertical: true)
             .frame(minHeight: 27)
-    }
-}
-
-struct CardView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardView()
     }
 }
