@@ -12,3 +12,8 @@
 "sign_in_page.button.recover_password" = "Recover password";
 "sign_in_page.label.no_account_yet" = "No account yet?";
 "sign_in_page.button.sign_up" = "Sign Up";
+
+"button_label.success" = "Success";
+"button_label.delete" = "Delete";
+"button_label.exit" = "Exit";
+"button_label.cancel" = "Cancel";

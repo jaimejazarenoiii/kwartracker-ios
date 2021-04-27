@@ -11,6 +11,17 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
 
+  internal enum ButtonLabel {
+    /// Cancel
+    internal static let cancel = L10n.tr("Localizable", "button_label.cancel")
+    /// Delete
+    internal static let delete = L10n.tr("Localizable", "button_label.delete")
+    /// Exit
+    internal static let exit = L10n.tr("Localizable", "button_label.exit")
+    /// Success
+    internal static let success = L10n.tr("Localizable", "button_label.success")
+  }
+
   internal enum SignInPage {
     internal enum Button {
       /// Recover password
