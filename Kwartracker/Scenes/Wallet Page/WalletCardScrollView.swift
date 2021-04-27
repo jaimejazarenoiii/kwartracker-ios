@@ -11,7 +11,7 @@ struct WalletCardScrollView: View {
     @State private var scrollOffset: CGFloat = 0
     @State private var dragOffset: CGFloat = 0
     @State private var itemSpacing: CGFloat = 20
-    @State private var cardSize: CGSize = CGSize(width: 225, height: 155)
+    @State private var cardSize: CGSize = CGSize(width: 238, height: 155)
     @State private var page: Int = 1
     
     // value will be passed as parameter later

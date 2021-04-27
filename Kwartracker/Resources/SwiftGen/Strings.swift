@@ -11,6 +11,19 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
 
+  internal enum Card {
+    internal enum Title {
+      /// Availabel Balance
+      internal static let availableBalance = L10n.tr("Localizable", "card.title.available_balance")
+      /// Budget
+      internal static let budget = L10n.tr("Localizable", "card.title.budget")
+      /// Goal
+      internal static let goal = L10n.tr("Localizable", "card.title.goal")
+      /// Savings
+      internal static let savings = L10n.tr("Localizable", "card.title.savings")
+    }
+  }
+
   internal enum SignInPage {
     internal enum Button {
       /// Recover password

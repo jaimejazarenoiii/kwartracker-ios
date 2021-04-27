@@ -10,36 +10,36 @@ import SwiftUI
 struct CardView: View {
     @State private var bubbleOpacity: Double = 0.18
     @State private var bubbleRadiusBlur: CGFloat = 3.0
+    @State private var cornerRadius: CGFloat = 25
     // value will be passed later
     @State private var cardColorName: String = Asset.Colors.mintGreen.name
     @Binding var cardSize: CGSize
     
     var body: some View {
         ZStack(alignment: .leading) {
-            
-            RoundedRectangle(cornerRadius: 25, style: .continuous)
-                .fill(Color(cardColorName))
-                .blur(radius: 1.0)
+            Color(cardColorName).blur(radius: 1.0)
             Circle()
                 .fill(Color.white)
                 .frame(width: 60)
                 .opacity(bubbleOpacity)
-                .offset(x: 130, y: -10)
+                .offset(x: cardSize.width / 1.7,
+                        y: -(cardSize.height / 10))
                 .blur(radius: bubbleRadiusBlur)
             Circle()
                 .fill(Color.white)
                 .frame(width: 140)
                 .opacity(bubbleOpacity)
-                .offset(x: 120, y: 50)
+                .offset(x: cardSize.width / 2,
+                        y: cardSize.height / 2.8)
                 .blur(radius: bubbleRadiusBlur)
             VStack(alignment: .leading) {
-                Text("GOAL")
+                Text(L10n.Card.Title.goal.uppercased())
                     .modifier(CardLabel())
                 Text("Trip to Japan")
                     .modifier(CardLabelValue())
                 
                 VStack(alignment: .leading) {
-                    Text("AVAILABLE BALANCE")
+                    Text(L10n.Card.Title.availableBalance.uppercased())
                         .modifier(CardLabel())
                     Text("₱ 10,000.00")
                         .modifier(CardLabelValue())
@@ -47,6 +47,7 @@ struct CardView: View {
             }.padding([.leading], 16)
         }
         .frame(width: cardSize.width, height: cardSize.height)
+        .cornerRadius(cornerRadius)
         .clipped()
         .shadow(color: Color(cardColorName).opacity(0.3),
             radius: 5, x: 0, y: 15)
