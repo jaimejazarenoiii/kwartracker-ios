@@ -33,7 +33,8 @@ struct SkeletonStructure<H: View, C: View>: View {
                     contentView
                         .padding(.top, contentTopSpace)
                     
-                }.padding(.top)
+                }
+                .padding(.top)
             }
         }
         .ignoresSafeArea()

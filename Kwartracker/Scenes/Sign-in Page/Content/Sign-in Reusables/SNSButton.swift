@@ -25,8 +25,8 @@ struct SNSButton: View {
                                       shadowOffset: shadowOffset)
                 
                 HStack {
-                    if actionLabel != Action.signIn {
-                        Image(actionLabel == .signInGoogle ? Asset.Images.googleIcon.name : Asset.Images.appleIcon.name)
+                    if let image = actionLabel.image {
+                        Image(uiImage: image)
                             .foregroundColor(Color.white)
                     }
                     
@@ -62,6 +62,17 @@ struct SNSButton: View {
                 return L10n.Sign.In.With.google
             case .signInApple:
                 return L10n.Sign.In.With.apple
+            }
+        }
+        
+        var image: UIImage? {
+            switch self {
+            case .signIn:
+                return nil
+            case .signInGoogle:
+                return Asset.Images.googleIcon.image
+            case .signInApple:
+                return Asset.Images.appleIcon.image
             }
         }
     }

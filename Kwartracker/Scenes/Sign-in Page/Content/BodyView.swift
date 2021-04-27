@@ -43,7 +43,8 @@ struct BodyView: View {
                     .font(.footnote)
                     .foregroundColor(Color(Asset.Colors.charcoal.color))
                 Spacer()
-            }.padding(.top, snsOrTopMargin)
+            }
+            .padding(.top, snsOrTopMargin)
             
             SNSButton(actionHandler: {}, actionLabel: .signInGoogle)
             
@@ -60,7 +61,8 @@ struct BodyView: View {
                 Spacer()
                 
                 FootnoteButton(action: {}, text: L10n.Sign.In.As.guest)
-            }.padding(.top, footNoteTopMargin)
+            }
+            .padding(.top, footNoteTopMargin)
             
             Divider()
                 .padding([.leading, .trailing], -sideMargin)
@@ -77,7 +79,8 @@ struct BodyView: View {
                                color: Color(Asset.Colors.teal.color))
                 
                 Spacer()
-            }.padding([.top, .bottom], footNoteTopMargin)
+            }
+            .padding([.top, .bottom], footNoteTopMargin)
         }
     }
     
@@ -96,24 +99,6 @@ struct BodyView: View {
             .padding([.leading, .trailing], sideMargin)
             .padding(.top, topHeadMargin)
         }
-    }
-}
-
-private struct FootnoteButton: View {
-    let action: () -> Void
-    let text: String
-    
-    var fontWeight: Font.Weight = .regular
-    var color: Color = Color(Asset.Colors.spindleGrey.color)
-    
-    var body: some View {
-        Button(action: {}, label: {
-            Text(text)
-                .font(.footnote)
-                .fontWeight(fontWeight)
-                .foregroundColor(color)
-                .underline()
-        })
     }
 }
 
