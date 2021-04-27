@@ -12,8 +12,8 @@ struct WalletPageView: View {
         VStack {
             ScrollView(showsIndicators: true) {
                 VStack {
-                    WalletPageHeader()
                     WalletCardScrollView()
+                    WalletActionButtonView()
                 }
             }
             

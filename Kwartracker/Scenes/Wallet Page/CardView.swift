@@ -44,7 +44,7 @@ struct CardView: View {
                     Text("₱ 10,000.00")
                         .modifier(CardLabelValue())
                 }.padding([.top, .bottom], 2)
-            }.padding([.leading], 16)
+            }.padding([.leading], 25)
         }
         .frame(width: cardSize.width, height: cardSize.height)
         .cornerRadius(cornerRadius)

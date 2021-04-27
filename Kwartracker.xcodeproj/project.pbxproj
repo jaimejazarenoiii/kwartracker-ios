@@ -39,8 +39,8 @@
 		7AD9B8892626F3A300CF0EA6 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9B8882626F3A300CF0EA6 /* SignInView.swift */; };
 		291DFF942632D61B00DAC0EF /* WalletCardScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291DFF932632D61B00DAC0EF /* WalletCardScrollView.swift */; };
 		29464F542637C3A100E6E082 /* PageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29464F532637C3A100E6E082 /* PageControlView.swift */; };
+		29464F5926380F3400E6E082 /* WalletActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29464F5826380F3400E6E082 /* WalletActionButtonView.swift */; };
 		29AE102D262EAF5D00B383CF /* WalletPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AE102C262EAF5D00B383CF /* WalletPageView.swift */; };
-		29F6C1F9262ECA5600DB2139 /* WalletPageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F6C1F8262ECA5600DB2139 /* WalletPageHeader.swift */; };
 		29F6C1FE262ED69800DB2139 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F6C1FD262ED69800DB2139 /* CardView.swift */; };
 		7FE718881CB43731FBDE3CA8 /* Pods_Kwartracker_KwartrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5FF1E2AB4ED121C5D59731 /* Pods_Kwartracker_KwartrackerUITests.framework */; };
 		9A063C037CD795723F7C8978 /* Pods_KwartrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */; };
@@ -95,8 +95,8 @@
 		290CA1B1261EABE400239EA7 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		291DFF932632D61B00DAC0EF /* WalletCardScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCardScrollView.swift; sourceTree = "<group>"; };
 		29464F532637C3A100E6E082 /* PageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlView.swift; sourceTree = "<group>"; };
+		29464F5826380F3400E6E082 /* WalletActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletActionButtonView.swift; sourceTree = "<group>"; };
 		29AE102C262EAF5D00B383CF /* WalletPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPageView.swift; sourceTree = "<group>"; };
-		29F6C1F8262ECA5600DB2139 /* WalletPageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPageHeader.swift; sourceTree = "<group>"; };
 		29F6C1FD262ED69800DB2139 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		2B40F9CAECD52C6174D15F90 /* Pods-Kwartracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker.debug.xcconfig"; path = "Target Support Files/Pods-Kwartracker/Pods-Kwartracker.debug.xcconfig"; sourceTree = "<group>"; };
 		6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KwartrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -305,10 +305,10 @@
 			isa = PBXGroup;
 			children = (
 				29AE102C262EAF5D00B383CF /* WalletPageView.swift */,
+				29464F5826380F3400E6E082 /* WalletActionButtonView.swift */,
 				291DFF932632D61B00DAC0EF /* WalletCardScrollView.swift */,
 				29464F532637C3A100E6E082 /* PageControlView.swift */,
 				29F6C1FD262ED69800DB2139 /* CardView.swift */,
-				29F6C1F8262ECA5600DB2139 /* WalletPageHeader.swift */,
 			);
 			path = "Wallet Page";
 			sourceTree = "<group>";
@@ -676,7 +676,6 @@
 				164E95FF26122C5E00D84B7F /* World.swift in Sources */,
 				7AB1B91C2643887500853FAC /* SignInFooterView.swift in Sources */,
 				7AB88B1E262805F300E2DFD3 /* View+Extensions.swift in Sources */,
-				29F6C1F9262ECA5600DB2139 /* WalletPageHeader.swift in Sources */,
 				29AE102D262EAF5D00B383CF /* WalletPageView.swift in Sources */,
 				164E95FA26122BE200D84B7F /* AppAction.swift in Sources */,
 				7AB88B282628071C00E2DFD3 /* RoundedCorner.swift in Sources */,
@@ -689,6 +688,7 @@
 				291DFF942632D61B00DAC0EF /* WalletCardScrollView.swift in Sources */,
 				164E95E726121B6400D84B7F /* Store.swift in Sources */,
 				163E5B64260F32A000E54401 /* Obfuscate.swift in Sources */,
+				29464F5926380F3400E6E082 /* WalletActionButtonView.swift in Sources */,
 				164E97F02614ACF000D84B7F /* Assets.swift in Sources */,
 				164E95F226122BD200D84B7F /* AppReducer.swift in Sources */,
 				C65699C42637C91400D24D2F /* SignUpBodyView.swift in Sources */,
