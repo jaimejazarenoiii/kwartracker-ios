@@ -18,7 +18,7 @@ struct BodyView: View {
     private let footNoteTopMargin: CGFloat = 25
     
     private var HeaderText: some View {
-        Text(L10n.Welcome.back)
+        Text(L10n.SignInPage.Title.welcomeBack)
             .foregroundColor(Color(Asset.Colors.nightRider.color))
             .font(.system(size: headerTextFontSize))
             .fontWeight(.medium)
@@ -39,7 +39,7 @@ struct BodyView: View {
             
             HStack {
                 Spacer()
-                Text(L10n.or)
+                Text(L10n.SignInPage.Label.or)
                     .font(.footnote)
                     .foregroundColor(Color(Asset.Colors.charcoal.color))
                 Spacer()
@@ -56,11 +56,11 @@ struct BodyView: View {
     private var FootNoteActions: some View {
         Group {
             HStack {
-                FootnoteButton(action: {}, text: L10n.Recover.password)
+                FootnoteButton(action: {}, text: L10n.SignInPage.Button.recoverPassword)
                 
                 Spacer()
                 
-                FootnoteButton(action: {}, text: L10n.Sign.In.As.guest)
+                FootnoteButton(action: {}, text: L10n.SignInPage.Button.signInGuest)
             }
             .padding(.top, footNoteTopMargin)
             
@@ -71,12 +71,12 @@ struct BodyView: View {
             HStack {
                 Spacer()
                 
-                Text(L10n.No.Account.yet)
+                Text(L10n.SignInPage.Label.noAccountYet)
                     .font(.footnote)
                     .foregroundColor(Color(Asset.Colors.nightRider.color))
                 
-                FootnoteButton(action: {}, text: L10n.Sign.up, fontWeight: .bold,
-                               color: Color(Asset.Colors.teal.color))
+                FootnoteButton(action: {}, text: L10n.SignInPage.Button.signUp,
+                               fontWeight: .bold, color: Color(Asset.Colors.teal.color))
                 
                 Spacer()
             }

@@ -42,7 +42,7 @@ struct SkeletonStructure<H: View, C: View>: View {
     
     
     // Check if running on preview mode or running on a device
-    // https://stackoverflow.com/questions/58759987/how-do-you-check-if-swiftui-is-in-preview-mode
+    // https://stackoverflow.com/a/61741858
     func getSafeAreaInset() -> UIEdgeInsets {
         // Set preview environment key
         let previewEnvironmentKey = "XCODE_RUNNING_FOR_PREVIEWS"

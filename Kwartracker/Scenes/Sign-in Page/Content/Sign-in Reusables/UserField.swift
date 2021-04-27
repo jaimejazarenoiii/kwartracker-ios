@@ -56,9 +56,9 @@ struct UserField: View {
         var text: String {
             switch self {
             case .email:
-                return L10n.Enter.Email.address
+                return L10n.SignInPage.Field.enterEmailAddress
             case .password:
-                return L10n.Enter.password
+                return L10n.SignInPage.Field.enterPassword
             }
         }
     }

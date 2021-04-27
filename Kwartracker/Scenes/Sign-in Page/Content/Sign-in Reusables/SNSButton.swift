@@ -57,11 +57,11 @@ struct SNSButton: View {
         var text: String {
             switch self {
             case .signIn:
-                return L10n.Sign.in
+                return L10n.SignInPage.Button.signIn
             case .signInGoogle:
-                return L10n.Sign.In.With.google
+                return L10n.SignInPage.Button.signInGoogle
             case .signInApple:
-                return L10n.Sign.In.With.apple
+                return L10n.SignInPage.Button.signInApple
             }
         }
         
