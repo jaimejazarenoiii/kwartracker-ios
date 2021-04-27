@@ -30,3 +30,5 @@
 "card.title.budget" = "Budget";
 "card.title.goal" = "Goal";
 "card.title.available_balance" = "Available Balance";
+"wallet.action_button.edit_wallet" = "Edit Wallet";
+"wallet.action_button.add_transaction" = "Add Transaction";

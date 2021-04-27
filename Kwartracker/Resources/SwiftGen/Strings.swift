@@ -13,7 +13,7 @@ internal enum L10n {
 
   internal enum Card {
     internal enum Title {
-      /// Availabel Balance
+      /// Available Balance
       internal static let availableBalance = L10n.tr("Localizable", "card.title.available_balance")
       /// Budget
       internal static let budget = L10n.tr("Localizable", "card.title.budget")
@@ -93,6 +93,15 @@ internal enum L10n {
     internal enum Title {
       /// Create\nAccount
       internal static let createAccount = L10n.tr("Localizable", "sign_up_page.title.create_account")
+    }
+  }
+
+  internal enum Wallet {
+    internal enum ActionButton {
+      /// Add Transaction
+      internal static let addTransaction = L10n.tr("Localizable", "wallet.action_button.add_transaction")
+      /// Edit Wallet
+      internal static let editWallet = L10n.tr("Localizable", "wallet.action_button.edit_wallet")
     }
   }
 }
