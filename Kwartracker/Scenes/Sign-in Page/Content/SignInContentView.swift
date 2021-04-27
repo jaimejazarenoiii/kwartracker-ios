@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BodyView: View {
+struct SignInContentView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     
@@ -102,9 +102,9 @@ struct BodyView: View {
     }
 }
 
-struct BodyView_Previews: PreviewProvider {
+struct SignInContentView_Previews: PreviewProvider {
     static var previews: some View {
-        BodyView()
+        SignInContentView()
             .background(Color(Asset.Colors.solitudeGrey.color))
             .previewLayout(.sizeThatFits)
     }
