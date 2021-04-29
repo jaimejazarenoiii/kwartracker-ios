@@ -1,5 +1,5 @@
 //
-//  AlertButton.swift
+//  ButtonView.swift
 //  Kwartracker
 //
 //  Created by Veverly Mae Ricaza Veverly on 4/27/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AlertButton: View {
+struct ButtonView: View {
     let actionHandler: (() -> Void)
     let actionLabel: Action
     

@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct MainAlertView: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            ImageView(imageType: .success)
+            MessageView(messageType: .success)
+            ButtonView(actionHandler: {}, actionLabel: .success)
+        }
     }
 }
 

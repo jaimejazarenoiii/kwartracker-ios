@@ -32,6 +32,7 @@ internal enum Asset {
     internal static let spindleGrey = ColorAsset(name: "SpindleGrey")
     internal static let teal = ColorAsset(name: "Teal")
     internal static let turquoise = ColorAsset(name: "Turquoise")
+    internal static let whiteOpacity = ColorAsset(name: "WhiteOpacity")
   }
   internal enum Images {
     internal static let addIcon = ImageAsset(name: "AddIcon")

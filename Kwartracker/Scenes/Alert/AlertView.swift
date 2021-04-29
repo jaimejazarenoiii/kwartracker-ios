@@ -9,12 +9,17 @@ import SwiftUI
 
 struct AlertView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        MainAlertView()
+            .frame(width: 220, height: 240, alignment: .center)
+            .padding(.horizontal)
+            .fixedSize(horizontal: false, vertical: true)
+            .background(Color(Asset.Colors.nightRider.color))
+            .cornerRadius(20)
     }
 }
 
 struct AlertView_Previews: PreviewProvider {
     static var previews: some View {
-        AlertView()
+        AlertView().foregroundColor(Color.clear)
     }
 }
