@@ -11,6 +11,27 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
 
+  internal enum AlertSheet {
+    internal enum Body {
+      /// It has been successfully deleted.
+      internal static let itHasBeenSuccessfullyDeleted = L10n.tr("Localizable", "alert_sheet.body.it_has_been_successfully_deleted")
+      /// Your password has been changed.
+      internal static let yourPasswordHasBeenChanged = L10n.tr("Localizable", "alert_sheet.body.your_password_has_been_changed")
+    }
+    internal enum Option {
+      /// Cool
+      internal static let cool = L10n.tr("Localizable", "alert_sheet.option.cool")
+      /// Exit
+      internal static let exit = L10n.tr("Localizable", "alert_sheet.option.exit")
+    }
+    internal enum Title {
+      /// Deleted
+      internal static let deleted = L10n.tr("Localizable", "alert_sheet.title.deleted")
+      /// Success
+      internal static let success = L10n.tr("Localizable", "alert_sheet.title.success")
+    }
+  }
+
   internal enum SignInPage {
     internal enum Button {
       /// Recover password

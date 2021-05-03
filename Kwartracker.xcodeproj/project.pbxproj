@@ -24,6 +24,11 @@
 		164E97EF2614ACF000D84B7F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97ED2614ACF000D84B7F /* Strings.swift */; };
 		164E97F02614ACF000D84B7F /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97EE2614ACF000D84B7F /* Assets.swift */; };
 		164E988D2615C4BA00D84B7F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164E988C2615C4BA00D84B7F /* Colors.xcassets */; };
+		249F554F263FCE470081A38F /* TemporaryContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F554E263FCE470081A38F /* TemporaryContentView.swift */; };
+		249F5551263FCE630081A38F /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F5550263FCE630081A38F /* PopupView.swift */; };
+		249F5556263FD7C30081A38F /* PopupContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F5555263FD7C30081A38F /* PopupContentView.swift */; };
+		249F555A263FDD890081A38F /* DeleteSuccesfullyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F5559263FDD890081A38F /* DeleteSuccesfullyView.swift */; };
+		249F555C263FE0540081A38F /* ChangePasswordSuccessfullyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249F555B263FE0540081A38F /* ChangePasswordSuccessfullyView.swift */; };
 		290CA1B2261EABE400239EA7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 290CA1B1261EABE400239EA7 /* swiftgen.yml */; };
 		7A17D13226298678005BB190 /* UserField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13126298678005BB190 /* UserField.swift */; };
 		7A17D13A26298695005BB190 /* SNSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13926298695005BB190 /* SNSButton.swift */; };
@@ -87,6 +92,11 @@
 		164E97ED2614ACF000D84B7F /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		164E97EE2614ACF000D84B7F /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		164E988C2615C4BA00D84B7F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		249F554E263FCE470081A38F /* TemporaryContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryContentView.swift; sourceTree = "<group>"; };
+		249F5550263FCE630081A38F /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
+		249F5555263FD7C30081A38F /* PopupContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupContentView.swift; sourceTree = "<group>"; };
+		249F5559263FDD890081A38F /* DeleteSuccesfullyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteSuccesfullyView.swift; sourceTree = "<group>"; };
+		249F555B263FE0540081A38F /* ChangePasswordSuccessfullyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordSuccessfullyView.swift; sourceTree = "<group>"; };
 		290CA1B1261EABE400239EA7 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		2B40F9CAECD52C6174D15F90 /* Pods-Kwartracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker.debug.xcconfig"; path = "Target Support Files/Pods-Kwartracker/Pods-Kwartracker.debug.xcconfig"; sourceTree = "<group>"; };
 		6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KwartrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,7 +234,8 @@
 		163E5963260CBF0400E54401 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				C6A089802637C6D200E6653E /* SignUp */,
+                C6A089802637C6D200E6653E /* SignUp */,
+				249F5546263FC6DE0081A38F /* Popup-Confirmation */,
 				163E592F260CB88E00E54401 /* ContentView.swift */,
 				7AD9B8722626EC2A00CF0EA6 /* AuthLayoutView.swift */,
 				7AD9B8692626EBA500CF0EA6 /* Sign-in Page */,
@@ -288,6 +299,34 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		249F5546263FC6DE0081A38F /* Popup-Confirmation */ = {
+			isa = PBXGroup;
+			children = (
+				249F5549263FC8760081A38F /* Content */,
+				249F554E263FCE470081A38F /* TemporaryContentView.swift */,
+			);
+			path = "Popup-Confirmation";
+			sourceTree = "<group>";
+		};
+		249F5549263FC8760081A38F /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				249F5552263FD6A20081A38F /* Popup-Confirmation Reusables */,
+				249F5550263FCE630081A38F /* PopupView.swift */,
+				249F5559263FDD890081A38F /* DeleteSuccesfullyView.swift */,
+				249F555B263FE0540081A38F /* ChangePasswordSuccessfullyView.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		249F5552263FD6A20081A38F /* Popup-Confirmation Reusables */ = {
+			isa = PBXGroup;
+			children = (
+				249F5555263FD7C30081A38F /* PopupContentView.swift */,
+			);
+			path = "Popup-Confirmation Reusables";
 			sourceTree = "<group>";
 		};
 		326399AE9BF3387D065FB7BA /* Frameworks */ = {
@@ -641,12 +680,14 @@
 			files = (
 				7A7FA1322637B70A00484F51 /* FootnoteButton.swift in Sources */,
 				163E5930260CB88E00E54401 /* ContentView.swift in Sources */,
+				249F554F263FCE470081A38F /* TemporaryContentView.swift in Sources */,
 				7A17D13226298678005BB190 /* UserField.swift in Sources */,
 				164E95EC2612224100D84B7F /* AppState.swift in Sources */,
 				C6249AA82637EB8C00C55B31 /* SignUpView.swift in Sources */,
 				C65699C32637C91400D24D2F /* SignUpFooterView.swift in Sources */,
 				7AD9B8732626EC2A00CF0EA6 /* AuthLayoutView.swift in Sources */,
 				7AD9B86B2626EC0000CF0EA6 /* SignInHeaderView.swift in Sources */,
+				249F555C263FE0540081A38F /* ChangePasswordSuccessfullyView.swift in Sources */,
 				7A17D13A26298695005BB190 /* SNSButton.swift in Sources */,
 				163E5B6C260F337600E54401 /* Secrets.swift in Sources */,
 				164E95FF26122C5E00D84B7F /* World.swift in Sources */,
@@ -654,6 +695,8 @@
 				7AB88B1E262805F300E2DFD3 /* View+Extensions.swift in Sources */,
 				164E95FA26122BE200D84B7F /* AppAction.swift in Sources */,
 				7AB88B282628071C00E2DFD3 /* RoundedCorner.swift in Sources */,
+				249F5556263FD7C30081A38F /* PopupContentView.swift in Sources */,
+				249F555A263FDD890081A38F /* DeleteSuccesfullyView.swift in Sources */,
 				164E97EF2614ACF000D84B7F /* Strings.swift in Sources */,
 				7AD9B8812626F17400CF0EA6 /* SignInContentView.swift in Sources */,
 				7AB1B91E26438C7C00853FAC /* RoundedCornerRectangle.swift in Sources */,
@@ -663,7 +706,8 @@
 				163E5B64260F32A000E54401 /* Obfuscate.swift in Sources */,
 				164E97F02614ACF000D84B7F /* Assets.swift in Sources */,
 				164E95F226122BD200D84B7F /* AppReducer.swift in Sources */,
-				C65699C42637C91400D24D2F /* SignUpBodyView.swift in Sources */,
+                C65699C42637C91400D24D2F /* SignUpBodyView.swift in Sources */,
+                249F5551263FCE630081A38F /* PopupView.swift in Sources */,
 				163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
