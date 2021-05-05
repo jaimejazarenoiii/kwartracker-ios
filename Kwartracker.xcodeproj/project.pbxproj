@@ -25,6 +25,15 @@
 		164E97F02614ACF000D84B7F /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97EE2614ACF000D84B7F /* Assets.swift */; };
 		164E988D2615C4BA00D84B7F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164E988C2615C4BA00D84B7F /* Colors.xcassets */; };
 		290CA1B2261EABE400239EA7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 290CA1B1261EABE400239EA7 /* swiftgen.yml */; };
+		7A17D13226298678005BB190 /* UserField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13126298678005BB190 /* UserField.swift */; };
+		7A17D13A26298695005BB190 /* SNSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13926298695005BB190 /* SNSButton.swift */; };
+		7AB88B1E262805F300E2DFD3 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB88B1D262805F300E2DFD3 /* View+Extensions.swift */; };
+		7AB88B282628071C00E2DFD3 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB88B272628071C00E2DFD3 /* RoundedCorner.swift */; };
+		7AB88B302628072600E2DFD3 /* SizePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB88B2F2628072600E2DFD3 /* SizePreferenceKey.swift */; };
+		7AD9B86B2626EC0000CF0EA6 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9B86A2626EC0000CF0EA6 /* HeaderView.swift */; };
+		7AD9B8732626EC2A00CF0EA6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9B8722626EC2A00CF0EA6 /* MainView.swift */; };
+		7AD9B8812626F17400CF0EA6 /* BodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9B8802626F17400CF0EA6 /* BodyView.swift */; };
+		7AD9B8892626F3A300CF0EA6 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9B8882626F3A300CF0EA6 /* SignInView.swift */; };
 		7FE718881CB43731FBDE3CA8 /* Pods_Kwartracker_KwartrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5FF1E2AB4ED121C5D59731 /* Pods_Kwartracker_KwartrackerUITests.framework */; };
 		9A063C037CD795723F7C8978 /* Pods_KwartrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */; };
 		A9CFE877880189ECE3F83CB8 /* Pods_Kwartracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D507178A90E22E9AB2ABF11A /* Pods_Kwartracker.framework */; };
@@ -75,6 +84,15 @@
 		290CA1B1261EABE400239EA7 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		2B40F9CAECD52C6174D15F90 /* Pods-Kwartracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker.debug.xcconfig"; path = "Target Support Files/Pods-Kwartracker/Pods-Kwartracker.debug.xcconfig"; sourceTree = "<group>"; };
 		6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KwartrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A17D13126298678005BB190 /* UserField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserField.swift; sourceTree = "<group>"; };
+		7A17D13926298695005BB190 /* SNSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSButton.swift; sourceTree = "<group>"; };
+		7AB88B1D262805F300E2DFD3 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		7AB88B272628071C00E2DFD3 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		7AB88B2F2628072600E2DFD3 /* SizePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizePreferenceKey.swift; sourceTree = "<group>"; };
+		7AD9B86A2626EC0000CF0EA6 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		7AD9B8722626EC2A00CF0EA6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		7AD9B8802626F17400CF0EA6 /* BodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyView.swift; sourceTree = "<group>"; };
+		7AD9B8882626F3A300CF0EA6 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		9E15A147209E6A913358D61B /* Pods-KwartrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KwartrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-KwartrackerTests/Pods-KwartrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE5FF1E2AB4ED121C5D59731 /* Pods_Kwartracker_KwartrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kwartracker_KwartrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D507178A90E22E9AB2ABF11A /* Pods_Kwartracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kwartracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +164,7 @@
 				163E5962260CBE0600E54401 /* Store */,
 				163E5963260CBF0400E54401 /* Scenes */,
 				163E5B74260F34E400E54401 /* Resources */,
+				7AB88B1C262805C500E2DFD3 /* Custom Components */,
 				163E5936260CB89100E54401 /* Info.plist */,
 				163E5933260CB89100E54401 /* Preview Content */,
 			);
@@ -194,6 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				163E592F260CB88E00E54401 /* ContentView.swift */,
+				7AD9B8722626EC2A00CF0EA6 /* MainView.swift */,
+				7AD9B8692626EBA500CF0EA6 /* Sign-in Page */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -264,6 +285,68 @@
 				6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7A17D1302629863A005BB190 /* Sign-in Reusables */ = {
+			isa = PBXGroup;
+			children = (
+				7A17D13126298678005BB190 /* UserField.swift */,
+				7A17D13926298695005BB190 /* SNSButton.swift */,
+			);
+			path = "Sign-in Reusables";
+			sourceTree = "<group>";
+		};
+		7AB88B1C262805C500E2DFD3 /* Custom Components */ = {
+			isa = PBXGroup;
+			children = (
+				7AB88B23262806D400E2DFD3 /* View */,
+				7AB88B24262806E900E2DFD3 /* Shape */,
+				7AB88B26262806FC00E2DFD3 /* Preference Key */,
+			);
+			path = "Custom Components";
+			sourceTree = "<group>";
+		};
+		7AB88B23262806D400E2DFD3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7AB88B1D262805F300E2DFD3 /* View+Extensions.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7AB88B24262806E900E2DFD3 /* Shape */ = {
+			isa = PBXGroup;
+			children = (
+				7AB88B272628071C00E2DFD3 /* RoundedCorner.swift */,
+			);
+			path = Shape;
+			sourceTree = "<group>";
+		};
+		7AB88B26262806FC00E2DFD3 /* Preference Key */ = {
+			isa = PBXGroup;
+			children = (
+				7AB88B2F2628072600E2DFD3 /* SizePreferenceKey.swift */,
+			);
+			path = "Preference Key";
+			sourceTree = "<group>";
+		};
+		7AD9B8692626EBA500CF0EA6 /* Sign-in Page */ = {
+			isa = PBXGroup;
+			children = (
+				7AD9B8882626F3A300CF0EA6 /* SignInView.swift */,
+				7AD9B8972626F43F00CF0EA6 /* Content */,
+			);
+			path = "Sign-in Page";
+			sourceTree = "<group>";
+		};
+		7AD9B8972626F43F00CF0EA6 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				7AD9B86A2626EC0000CF0EA6 /* HeaderView.swift */,
+				7AD9B8802626F17400CF0EA6 /* BodyView.swift */,
+				7A17D1302629863A005BB190 /* Sign-in Reusables */,
+			);
+			path = Content;
 			sourceTree = "<group>";
 		};
 		FBDD14E75727D540662415F6 /* Pods */ = {
@@ -523,11 +606,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				163E5930260CB88E00E54401 /* ContentView.swift in Sources */,
+				7A17D13226298678005BB190 /* UserField.swift in Sources */,
 				164E95EC2612224100D84B7F /* AppState.swift in Sources */,
+				7AD9B8732626EC2A00CF0EA6 /* MainView.swift in Sources */,
+				7AD9B86B2626EC0000CF0EA6 /* HeaderView.swift in Sources */,
+				7A17D13A26298695005BB190 /* SNSButton.swift in Sources */,
 				163E5B6C260F337600E54401 /* Secrets.swift in Sources */,
 				164E95FF26122C5E00D84B7F /* World.swift in Sources */,
+				7AB88B1E262805F300E2DFD3 /* View+Extensions.swift in Sources */,
 				164E95FA26122BE200D84B7F /* AppAction.swift in Sources */,
+				7AB88B282628071C00E2DFD3 /* RoundedCorner.swift in Sources */,
 				164E97EF2614ACF000D84B7F /* Strings.swift in Sources */,
+				7AD9B8812626F17400CF0EA6 /* BodyView.swift in Sources */,
+				7AB88B302628072600E2DFD3 /* SizePreferenceKey.swift in Sources */,
+				7AD9B8892626F3A300CF0EA6 /* SignInView.swift in Sources */,
 				164E95E726121B6400D84B7F /* Store.swift in Sources */,
 				163E5B64260F32A000E54401 /* Obfuscate.swift in Sources */,
 				164E97F02614ACF000D84B7F /* Assets.swift in Sources */,
