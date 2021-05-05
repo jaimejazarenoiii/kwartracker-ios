@@ -24,7 +24,7 @@ struct TransactionRowContent: View {
                 VStack {
                     Text(month)
                         .frame(height: 8)
-                        .font(.system(size: 12))
+                        .font(.system(size: 8, weight: .medium))
 
                     Text(day)
                         .frame(height: 20)
@@ -43,7 +43,6 @@ struct TransactionRowContent: View {
                         .font(.system(size: 12, weight: .bold))
                         .foregroundColor(Color(Asset.Colors.teal.color))
                 }
-
                 Text(categoryTitle)
                     .font(.system(size: 15))
             }
@@ -61,7 +60,7 @@ struct TransactionRowContent: View {
                 Image(uiImage: Asset.Images.arrowRightIcon.image)
                     .frame(width: 5, height: 5)
             })
-            .buttonStyle(CircleButtonStyle(buttonColor: .white))
+            .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.solitudeGrey.color, padding: 10))
         }
         .listRowBackground(Color.clear)
         .padding([.top, .bottom], 15)
