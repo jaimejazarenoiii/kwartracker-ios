@@ -9,9 +9,10 @@ import SwiftUI
 
 struct CircleButtonStyle: ButtonStyle {
     var buttonColor: UIColor
+    var padding: CGFloat = 15
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .padding(15)
+            .padding(padding)
             .contentShape(Circle())
             .background(
                 Group {
