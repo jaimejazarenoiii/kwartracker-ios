@@ -10,6 +10,7 @@ import SwiftUI
 struct BodyView: View {
     @State private var email: String = ""
     @State private var password: String = ""
+    @State var showingSignIn = false
     
     private let headerTextFontSize: CGFloat = 45
     private let sideMargin: CGFloat = 30
@@ -34,8 +35,13 @@ struct BodyView: View {
     
     private var SNSActions: some View {
         Group {
-            SNSButton(actionHandler: {}, actionLabel: .signIn)
-                .padding(.top)
+            SNSButton(actionHandler: {
+                self.showingSignIn.toggle()
+            }, actionLabel: .signIn)
+            .padding(.top)
+            .fullScreenCover(isPresented: $showingSignIn) {
+                AlertView()
+            }
             
             HStack {
                 Spacer()
