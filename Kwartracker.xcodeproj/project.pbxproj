@@ -25,6 +25,7 @@
 		164E97EF2614ACF000D84B7F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97ED2614ACF000D84B7F /* Strings.swift */; };
 		164E97F02614ACF000D84B7F /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97EE2614ACF000D84B7F /* Assets.swift */; };
 		164E988D2615C4BA00D84B7F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164E988C2615C4BA00D84B7F /* Colors.xcassets */; };
+		166A9CC32643775C00805A16 /* TransactionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166A9CC22643775C00805A16 /* TransactionsTests.swift */; };
 		1683C9022629C76F00B1D4D8 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683C9012629C76F00B1D4D8 /* TransactionsView.swift */; };
 		1683C90B2629C7BB00B1D4D8 /* CircleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683C90A2629C7BB00B1D4D8 /* CircleButtonStyle.swift */; };
 		1683C9142629C81100B1D4D8 /* LinearGradient+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683C9132629C81100B1D4D8 /* LinearGradient+Extensions.swift */; };
@@ -94,6 +95,7 @@
 		164E97ED2614ACF000D84B7F /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		164E97EE2614ACF000D84B7F /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		164E988C2615C4BA00D84B7F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		166A9CC22643775C00805A16 /* TransactionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTests.swift; sourceTree = "<group>"; };
 		1683C9012629C76F00B1D4D8 /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
 		1683C90A2629C7BB00B1D4D8 /* CircleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonStyle.swift; sourceTree = "<group>"; };
 		1683C9132629C81100B1D4D8 /* LinearGradient+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinearGradient+Extensions.swift"; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 			children = (
 				163E593F260CB89100E54401 /* KwartrackerTests.swift */,
 				163E5941260CB89100E54401 /* Info.plist */,
+				166A9CC22643775C00805A16 /* TransactionsTests.swift */,
 			);
 			path = KwartrackerTests;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 		163E5962260CBE0600E54401 /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				166A9CC72643789F00805A16 /* Transactions */,
 				164E95F126122BD200D84B7F /* AppReducer.swift */,
 				164E95F926122BE200D84B7F /* AppAction.swift */,
 				164E95EB2612224100D84B7F /* AppState.swift */,
@@ -289,13 +293,20 @@
 			path = SwiftGen;
 			sourceTree = "<group>";
 		};
+		166A9CC72643789F00805A16 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				16C5C79F26362D3500F33B72 /* TransactionsViewState.swift */,
+				16C5C7A426362E5300F33B72 /* TransactionsViewAction.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
 		1683C9002629C75700B1D4D8 /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
 				1683C9012629C76F00B1D4D8 /* TransactionsView.swift */,
 				16C5C7772635347A00F33B72 /* TransactionRowContent.swift */,
-				16C5C79F26362D3500F33B72 /* TransactionsViewState.swift */,
-				16C5C7A426362E5300F33B72 /* TransactionsViewAction.swift */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -368,8 +379,8 @@
 				7AB88B23262806D400E2DFD3 /* View */,
 				7AB88B24262806E900E2DFD3 /* Shape */,
 				7AB88B26262806FC00E2DFD3 /* Preference Key */,
-                1683C9122629C7FD00B1D4D8 /* Linear Gradient */,
-                1683C9092629C7AB00B1D4D8 /* Button Style */,
+				1683C9122629C7FD00B1D4D8 /* Linear Gradient */,
+				1683C9092629C7AB00B1D4D8 /* Button Style */,
 			);
 			path = "Custom Components";
 			sourceTree = "<group>";
@@ -711,8 +722,8 @@
 			files = (
 				16C5C787263534FE00F33B72 /* Wallet.swift in Sources */,
 				163E5930260CB88E00E54401 /* ContentView.swift in Sources */,
-                1683C90B2629C7BB00B1D4D8 /* CircleButtonStyle.swift in Sources */,
-                16C5C77D2635349F00F33B72 /* Transaction.swift in Sources */,
+				1683C90B2629C7BB00B1D4D8 /* CircleButtonStyle.swift in Sources */,
+				16C5C77D2635349F00F33B72 /* Transaction.swift in Sources */,
 				7A17D13226298678005BB190 /* UserField.swift in Sources */,
 				164E95EC2612224100D84B7F /* AppState.swift in Sources */,
 				7AD9B8732626EC2A00CF0EA6 /* MainView.swift in Sources */,
@@ -748,6 +759,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				166A9CC32643775C00805A16 /* TransactionsTests.swift in Sources */,
 				163E5940260CB89100E54401 /* KwartrackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
