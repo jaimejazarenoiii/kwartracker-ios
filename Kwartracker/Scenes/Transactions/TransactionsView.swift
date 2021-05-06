@@ -119,6 +119,7 @@ struct TransactionsView: View {
                     }
                 }
             }
+            .padding(.top, 10)
         }
     }
 
