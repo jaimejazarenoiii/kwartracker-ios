@@ -31,7 +31,7 @@ struct AuthLayoutView<H: View, C: View>: View {
                     RoundedCornerRectangle(radius: rectRadius, corner: [.topLeft, .topRight])
                     
                     contentView
-                        .padding(.top, contentTopSpace)
+                        .clipShape(RoundedRectangle(cornerRadius: rectRadius))
                     
                 }
                 .padding(.top)

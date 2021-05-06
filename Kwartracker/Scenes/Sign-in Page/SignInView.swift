@@ -12,7 +12,7 @@ struct SignInView: View {
         AuthLayoutView {
             SignInHeaderView()
         } content: {
-            VStack {
+            VStack(spacing: 0) {
                 SignInContentView()
                 SignInFooterView()
             }
