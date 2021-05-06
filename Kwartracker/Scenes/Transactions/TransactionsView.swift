@@ -111,8 +111,10 @@ struct TransactionsView: View {
                         Spacer()
                             .frame(height: 20)
 
-                        List(store.state.transactionState.transactions, id: \.id) {
-                            TransactionRowContent(transaction: $0)
+                        List {
+                            ForEach(store.state.transactionState.transactions, id: \.id) {
+                                TransactionRowContent(transaction: $0)
+                            }
                         }
                     }
                 }
