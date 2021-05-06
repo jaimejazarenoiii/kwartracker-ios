@@ -42,4 +42,24 @@ struct Transaction {
     func getMonth() -> String {
         getRawDateTime(format: "MMM") ?? ""
     }
+
+    func createTransactionErrorMessage() -> String? {
+        if !title.isEmpty &&
+            !category.title.isEmpty &&
+            dateTime != nil {
+            return nil
+        }
+        return "Please fill up required fields (title, category)"
+    }
+}
+
+extension Transaction {
+    static let unitTestTransaction = Transaction(id: 1,
+                                                 title: "Side hustle",
+                                                 category: Category(title: "Money on hand"),
+                                                 amount: 5000,
+                                                 rawDateTime: "2021-04-01")
+    static let unitTestInvalidTransaction = Transaction(id: 0,
+                                                        title: "Side hustle",
+                                                        category: Category(title: "Money on hand"))
 }

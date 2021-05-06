@@ -12,6 +12,7 @@ import Combine
 struct TransactionsViewState {
     var transactions: [Transaction] = sampleTransactions
     var transaction: Transaction? = nil
+    var transactionErrorMessage: String = ""
 }
 
 func transactionsViewReducer(
@@ -21,14 +22,23 @@ func transactionsViewReducer(
 ) -> AnyPublisher<TransactionsViewAction, Never> {
     switch action {
     case .add(let transaction):
-        state.transactions.append(transaction)
+        if let errorMessage = transaction.createTransactionErrorMessage(),
+           !errorMessage.isEmpty {
+            state.transactionErrorMessage = errorMessage
+        } else {
+            state.transactions.append(transaction)
+        }
     case .edit(let transaction):
         if let index = state.transactions.enumerated().first(where: { $0.element.id == transaction.id })?.offset {
             state.transactions[index] = transaction
+        } else {
+            state.transactionErrorMessage = "Transaction item does not exist."
         }
     case .delete(let index):
-        if index < state.transactions.count {
+        if index < state.transactions.count && index >= 0 {
             state.transactions.remove(at: index)
+        } else {
+            state.transactionErrorMessage = "Transaction item does not exist."
         }
     }
     return Empty().eraseToAnyPublisher()
@@ -69,4 +79,6 @@ extension TransactionsViewState {
             rawDateTime: "2021-03-05"
         )
     ]
+
+    static let unitTestState = TransactionsViewState(transactions: TransactionsViewState.sampleTransactions)
 }

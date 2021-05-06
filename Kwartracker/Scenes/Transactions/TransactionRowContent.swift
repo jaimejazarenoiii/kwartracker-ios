@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct TransactionRowContent: View {
-    var month: String
-    var day: String
-    var category: String
-    var categoryTitle: String
-    var amount: String
+    var transaction: Transaction
 
     var body: some View {
         HStack {
@@ -22,11 +18,11 @@ struct TransactionRowContent: View {
                     .frame(width: 40, height: 40)
 
                 VStack {
-                    Text(month)
+                    Text(transaction.getMonth())
                         .frame(height: 8)
                         .font(.system(size: 8, weight: .medium))
 
-                    Text(day)
+                    Text(transaction.getDay())
                         .frame(height: 20)
                         .font(.system(size: 16, weight: .bold))
                         .foregroundColor(Color(Asset.Colors.teal.color))
@@ -39,17 +35,17 @@ struct TransactionRowContent: View {
             VStack(alignment: .leading) {
                 HStack {
                     Image(uiImage: Asset.Images.salaryIcon.image)
-                    Text(category)
+                    Text(transaction.category.title)
                         .font(.system(size: 12, weight: .bold))
                         .foregroundColor(Color(Asset.Colors.teal.color))
                 }
-                Text(categoryTitle)
+                Text(transaction.title)
                     .font(.system(size: 15))
             }
 
             Spacer()
 
-            Text(L10n.TransactionsPage.addAmount(amount))
+            Text(L10n.TransactionsPage.addAmount(transaction.amountCurrencyDisplay))
                 .foregroundColor(Color(Asset.Colors.niagaraGreen.color))
 
             Spacer()
