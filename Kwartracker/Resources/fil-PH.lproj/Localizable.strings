@@ -1,4 +1,17 @@
 // Filipino
+"welcome.back" = "Welcome\nBack";
+"email" = "Email";
+"enter.email.address" = "Enter email address";
+"password" = "Password";
+"enter.password" = "Enter password";
+"sign.in" = "Sign In";
+"or" = "or";
+"sign.in.with.google" = "Sign in with Google";
+"sign.in.with.apple" = "Sign in with Apple";
+"recover.password" = "Recover password";
+"sign.in.as.guest" = "Sign in as guest";
+"no.account.yet" = "No account yet?";
+"sign.up" = "Sign Up";
 "transactions_page.title_bar" = "Transactions";
 "transactions_page.transaction_search_placeholder" = "Search Transaction";
 "transactions_page.add_amount" = "+ %@";

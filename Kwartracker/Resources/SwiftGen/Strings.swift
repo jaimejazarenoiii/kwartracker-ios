@@ -10,6 +10,52 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// Email
+  internal static let email = L10n.tr("Localizable", "email")
+  /// or
+  internal static let or = L10n.tr("Localizable", "or")
+  /// Password
+  internal static let password = L10n.tr("Localizable", "password")
+
+  internal enum Enter {
+    /// Enter password
+    internal static let password = L10n.tr("Localizable", "enter.password")
+    internal enum Email {
+      /// Enter email address
+      internal static let address = L10n.tr("Localizable", "enter.email.address")
+    }
+  }
+
+  internal enum No {
+    internal enum Account {
+      /// No account yet?
+      internal static let yet = L10n.tr("Localizable", "no.account.yet")
+    }
+  }
+
+  internal enum Recover {
+    /// Recover password
+    internal static let password = L10n.tr("Localizable", "recover.password")
+  }
+
+  internal enum Sign {
+    /// Sign In
+    internal static let `in` = L10n.tr("Localizable", "sign.in")
+    /// Sign Up
+    internal static let up = L10n.tr("Localizable", "sign.up")
+    internal enum In {
+      internal enum As {
+        /// Sign in as guest
+        internal static let guest = L10n.tr("Localizable", "sign.in.as.guest")
+      }
+      internal enum With {
+        /// Sign in with Apple
+        internal static let apple = L10n.tr("Localizable", "sign.in.with.apple")
+        /// Sign in with Google
+        internal static let google = L10n.tr("Localizable", "sign.in.with.google")
+      }
+    }
+  }
 
   internal enum TransactionsPage {
     /// + %@
@@ -24,6 +70,11 @@ internal enum L10n {
     internal static let titleBar = L10n.tr("Localizable", "transactions_page.title_bar")
     /// Search Transaction
     internal static let transactionSearchPlaceholder = L10n.tr("Localizable", "transactions_page.transaction_search_placeholder")
+  }
+
+  internal enum Welcome {
+    /// Welcome\nBack
+    internal static let back = L10n.tr("Localizable", "welcome.back")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

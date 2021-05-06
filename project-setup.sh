@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# Kwartracker.xcworkspace
-workspace="Kwartracker.xcodeproj"
+# Workspace and scheme
+workspace="Kwartracker.xcworkspace"
 scheme="Kwartracker"
 
 # Check if user only wants to run unit tests

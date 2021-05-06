@@ -19,37 +19,36 @@ struct MainView<H: View, C: View>: View {
     }
     
     var body: some View {
-        ScrollView {
-            ZStack(alignment: Alignment(horizontal: .center, vertical: .top)) {
-                Color(Asset.Colors.teal.color)
-                
-                headerView
-                    .padding(.top, getSafeAreaInset().top)
-                    .background(
-                        GeometryReader { proxy in
-                            Color.clear
-                                .preference(key: SizePreferenceKey.self, value: proxy.size)
-                        }
-                    )
-                    .onPreferenceChange(SizePreferenceKey.self) { preferences in
-                        self.childSize = preferences
+        ZStack(alignment: Alignment(horizontal: .center, vertical: .top)) {
+            Color(Asset.Colors.teal.color)
+            
+            headerView
+                .padding(.top, getSafeAreaInset().top)
+                .background(
+                    GeometryReader { proxy in
+                        Color.clear
+                            .preference(key: SizePreferenceKey.self, value: proxy.size)
                     }
-                
-                let contentSizeTop = (getSafeAreaInset().top / 2) + childSize.height
-                
-                ZStack {
-                    Rectangle()
-                        .fill(Color(Asset.Colors.solitudeGrey.color))
-                        .cornerRadius(60, corners: [.topLeft, .topRight])
-                    
-                    contentView
-                    
+                )
+                .onPreferenceChange(SizePreferenceKey.self) { preferences in
+                    self.childSize = preferences
                 }
-                .padding(.top, contentSizeTop)
-                    
+            
+            let contentSizeTop = (getSafeAreaInset().top / 2) + childSize.height
+            
+            ZStack {
+                Rectangle()
+                    .fill(Color(Asset.Colors.solitudeGrey.color))
+                    .cornerRadius(60, corners: [.topLeft, .topRight])
+                    .edgesIgnoringSafeArea(.all)
+                
+                
+                contentView
+                    .padding(.top, 5)
             }
+            .padding(.top, contentSizeTop)
+            
         }
-        .background(Color(Asset.Colors.solitudeGrey.color))
         .ignoresSafeArea()
     }
     

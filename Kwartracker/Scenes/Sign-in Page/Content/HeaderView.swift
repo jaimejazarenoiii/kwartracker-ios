@@ -14,7 +14,7 @@ struct HeaderView: View {
                 Image(Asset.Images.headerLogoIcon.name)
                 Spacer()
             }
-            .padding(.leading, 50)
+            .padding(.leading, 40)
         }
     }
 }
@@ -22,7 +22,7 @@ struct HeaderView: View {
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
         HeaderView()
-            .background(Color("Teal"))
+            .background(Color(Asset.Colors.teal.color))
             .previewLayout(.sizeThatFits)
     }
 }
