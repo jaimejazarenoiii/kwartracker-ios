@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SkeletonStructure<H: View, C: View>: View {
+struct AuthLayoutView<H: View, C: View>: View {
     private let headerView: H
     private let contentView: C
     

@@ -9,10 +9,13 @@ import SwiftUI
 
 struct SignInView: View {
     var body: some View {
-        SkeletonStructure {
+        AuthLayoutView {
             SignInHeaderView()
         } content: {
-            SignInContentView()
+            VStack {
+                SignInContentView()
+                SignInFooterView()
+            }
         }
     }
 }

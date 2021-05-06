@@ -62,24 +62,6 @@ struct SignInContentView: View {
                 
                 FootnoteButton(action: {}, text: L10n.SignInPage.Button.signInGuest)
             }
-            .padding(.top, footNoteTopMargin)
-            
-            Divider()
-                .padding([.leading, .trailing], -sideMargin)
-                .padding(.top, footNoteTopMargin)
-            
-            HStack {
-                Spacer()
-                
-                Text(L10n.SignInPage.Label.noAccountYet)
-                    .font(.footnote)
-                    .foregroundColor(Color(Asset.Colors.nightRider.color))
-                
-                FootnoteButton(action: {}, text: L10n.SignInPage.Button.signUp,
-                               fontWeight: .bold, color: Color(Asset.Colors.teal.color))
-                
-                Spacer()
-            }
             .padding([.top, .bottom], footNoteTopMargin)
         }
     }
