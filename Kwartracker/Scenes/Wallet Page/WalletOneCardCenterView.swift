@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WalletCardScrollView: View {
+struct WalletOneCardCenterView: View {
     @State private var scrollOffset: CGFloat = 0
     @State private var dragOffset: CGFloat = 0
     @State private var itemSpacing: CGFloat = 20
@@ -92,6 +92,6 @@ struct WalletCardScrollView: View {
 
 struct WalletCardScrollView_Previews: PreviewProvider {
     static var previews: some View {
-        WalletCardScrollView()
+        WalletOneCardCenterView()
     }
 }

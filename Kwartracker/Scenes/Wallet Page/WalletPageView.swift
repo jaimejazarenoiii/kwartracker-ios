@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct WalletPageView: View {
+    @State private var topMargin: CGFloat = 30
     var body: some View {
-        VStack {
+        AuthLayoutView {
+            SignInHeaderView()
+        } content: {
             ScrollView(showsIndicators: true) {
                 VStack {
-                    WalletCardScrollView()
+                    WalletOneCardCenterView()
                     WalletActionButtonView()
                 }
-            }
-            
+                .padding(.top, topMargin)
+            }.background(Color.white)
         }
     }
 }
