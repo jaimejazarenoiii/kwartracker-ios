@@ -9,8 +9,8 @@ import SwiftUI
 
 struct SignUpView: View {
     var body: some View {
-        SkeletonStructure {
-            HeaderView()
+        AuthLayoutView {
+            SignInHeaderView()
         } content: {
             VStack {
                 SignUpBodyView()

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SkeletonStructure<H: View, C: View>: View {
+struct AuthLayoutView<H: View, C: View>: View {
     private let headerView: H
     private let contentView: C
     
@@ -31,7 +31,7 @@ struct SkeletonStructure<H: View, C: View>: View {
                     RoundedCornerRectangle(radius: rectRadius, corner: [.topLeft, .topRight])
                     
                     contentView
-                        .padding(.top, contentTopSpace)
+                        .clipShape(RoundedRectangle(cornerRadius: rectRadius))
                     
                 }
                 .padding(.top)

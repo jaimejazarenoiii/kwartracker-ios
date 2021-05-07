@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BodyView: View {
+struct SignInContentView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     
@@ -62,24 +62,6 @@ struct BodyView: View {
                 
                 FootnoteButton(action: {}, text: L10n.SignInPage.Button.signInGuest)
             }
-            .padding(.top, footNoteTopMargin)
-            
-            Divider()
-                .padding([.leading, .trailing], -sideMargin)
-                .padding(.top, footNoteTopMargin)
-            
-            HStack {
-                Spacer()
-                
-                Text(L10n.SignInPage.Label.noAccountYet)
-                    .font(.footnote)
-                    .foregroundColor(Color(Asset.Colors.nightRider.color))
-                
-                FootnoteButton(action: {}, text: L10n.SignInPage.Button.signUp,
-                               fontWeight: .bold, color: Color(Asset.Colors.teal.color))
-                
-                Spacer()
-            }
             .padding([.top, .bottom], footNoteTopMargin)
         }
     }
@@ -102,9 +84,9 @@ struct BodyView: View {
     }
 }
 
-struct BodyView_Previews: PreviewProvider {
+struct SignInContentView_Previews: PreviewProvider {
     static var previews: some View {
-        BodyView()
+        SignInContentView()
             .background(Color(Asset.Colors.solitudeGrey.color))
             .previewLayout(.sizeThatFits)
     }
