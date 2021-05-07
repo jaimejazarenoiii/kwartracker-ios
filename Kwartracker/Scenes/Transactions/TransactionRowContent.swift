@@ -58,7 +58,6 @@ struct TransactionRowContent: View {
             })
             .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.solitudeGrey.color, padding: 10))
         }
-        .listRowBackground(Color.clear)
         .padding([.top, .bottom], 15)
     }
 }

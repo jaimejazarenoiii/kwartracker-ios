@@ -13,6 +13,7 @@ struct TransactionsViewState {
     var transactions: [Transaction] = sampleTransactions
     var transaction: Transaction? = nil
     var transactionErrorMessage: String = ""
+    var fetchRequestState: APIRequestState = .notStarted
 }
 
 func transactionsViewReducer(
@@ -40,6 +41,10 @@ func transactionsViewReducer(
         } else {
             state.transactionErrorMessage = "Transaction item does not exist."
         }
+    case .refreshTransactions:
+        break
+    case .loadMoreTransactions(let page):
+        break
     }
     return Empty().eraseToAnyPublisher()
 }

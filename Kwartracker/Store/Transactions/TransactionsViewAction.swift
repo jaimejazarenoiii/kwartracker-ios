@@ -11,4 +11,6 @@ enum TransactionsViewAction {
     case add(transaction: Transaction)
     case edit(transaction: Transaction)
     case delete(index: Int)
+    case loadMoreTransactions(page: Int)
+    case refreshTransactions
 }
