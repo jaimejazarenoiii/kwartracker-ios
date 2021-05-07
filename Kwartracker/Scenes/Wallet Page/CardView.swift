@@ -53,23 +53,3 @@ struct CardView: View {
             radius: 5, x: 0, y: 15)
     }
 }
-
-struct CardLabel: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .font(.system(size: 12, weight: .medium))
-            .foregroundColor(Color.white.opacity(0.5))
-            .fixedSize(horizontal: false, vertical: true)
-            .frame(minHeight: 15)
-    }
-}
-
-struct CardLabelValue: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .font(.system(size: 21, weight: .medium))
-            .foregroundColor(Color.white)
-            .fixedSize(horizontal: false, vertical: true)
-            .frame(minHeight: 27)
-    }
-}

@@ -28,47 +28,6 @@ struct WalletActionButtonView: View {
     }
 }
 
-struct ActionButtonWithLabel: View {
-    @State private var buttonSize: CGFloat = 30
-    @State private var padding: CGFloat = 10
-    @Binding var iconName: String
-    @Binding var iconColor: String
-    @Binding var label: String
-    var body: some View {
-        HStack {
-            Button(action: {
-            }) {
-                Image(iconName)
-                    .renderingMode(.template)
-                    .foregroundColor(Color(iconColor))
-            }
-            .frame(width: buttonSize)
-            .buttonStyle(RoundWhiteButtonStyle(paddingSize: $padding))
-            Text(label)
-                .font(.system(size: 12,
-                              weight: .bold))
-                .foregroundColor(Color(iconColor))
-        }
-    }
-}
-
-
-struct RoundWhiteButtonStyle: ButtonStyle {
-    @Binding var paddingSize: CGFloat
-    func makeBody(configuration: Self.Configuration) -> some View {
-        configuration.label
-            .padding(paddingSize)
-            .background(
-                Circle()
-                    .fill(Color.white)
-                    .shadow(color: Color.black.opacity(0.2),
-                        radius: 10, x: 5, y: 5)
-                    .shadow(color: Color.white.opacity(0.7),
-                        radius: 10, x: -5, y: -5)
-        )
-    }
-}
-
 struct WalletActionButtonView_Previews: PreviewProvider {
     static var previews: some View {
         WalletActionButtonView()

@@ -28,6 +28,10 @@
 		291DFF942632D61B00DAC0EF /* WalletOneCardCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291DFF932632D61B00DAC0EF /* WalletOneCardCenterView.swift */; };
 		29464F542637C3A100E6E082 /* PageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29464F532637C3A100E6E082 /* PageControlView.swift */; };
 		29464F5926380F3400E6E082 /* WalletActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29464F5826380F3400E6E082 /* WalletActionButtonView.swift */; };
+		29AB6750264531EB00D375A6 /* CardLabelModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB674F264531EB00D375A6 /* CardLabelModifier.swift */; };
+		29AB67582645322700D375A6 /* CardValueModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB67572645322700D375A6 /* CardValueModifier.swift */; };
+		29AB675D2645326400D375A6 /* ActionButtonWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB675C2645326400D375A6 /* ActionButtonWithLabel.swift */; };
+		29AB67632645329400D375A6 /* RoundWhiteButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB67622645329300D375A6 /* RoundWhiteButtonModifier.swift */; };
 		29AE102D262EAF5D00B383CF /* WalletPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AE102C262EAF5D00B383CF /* WalletPageView.swift */; };
 		29F6C1FE262ED69800DB2139 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F6C1FD262ED69800DB2139 /* CardView.swift */; };
 		7A17D13226298678005BB190 /* UserField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13126298678005BB190 /* UserField.swift */; };
@@ -96,6 +100,10 @@
 		291DFF932632D61B00DAC0EF /* WalletOneCardCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletOneCardCenterView.swift; sourceTree = "<group>"; };
 		29464F532637C3A100E6E082 /* PageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlView.swift; sourceTree = "<group>"; };
 		29464F5826380F3400E6E082 /* WalletActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletActionButtonView.swift; sourceTree = "<group>"; };
+		29AB674F264531EB00D375A6 /* CardLabelModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLabelModifier.swift; sourceTree = "<group>"; };
+		29AB67572645322700D375A6 /* CardValueModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardValueModifier.swift; sourceTree = "<group>"; };
+		29AB675C2645326400D375A6 /* ActionButtonWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonWithLabel.swift; sourceTree = "<group>"; };
+		29AB67622645329300D375A6 /* RoundWhiteButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundWhiteButtonModifier.swift; sourceTree = "<group>"; };
 		29AE102C262EAF5D00B383CF /* WalletPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPageView.swift; sourceTree = "<group>"; };
 		29F6C1FD262ED69800DB2139 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		2B40F9CAECD52C6174D15F90 /* Pods-Kwartracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker.debug.xcconfig"; path = "Target Support Files/Pods-Kwartracker/Pods-Kwartracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -301,6 +309,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		29AB674E264531B600D375A6 /* View Modefier */ = {
+			isa = PBXGroup;
+			children = (
+				29AB674F264531EB00D375A6 /* CardLabelModifier.swift */,
+				29AB67572645322700D375A6 /* CardValueModifier.swift */,
+			);
+			path = "View Modefier";
+			sourceTree = "<group>";
+		};
+		29AB67612645328400D375A6 /* Button Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				29AB67622645329300D375A6 /* RoundWhiteButtonModifier.swift */,
+			);
+			path = "Button Modifier";
+			sourceTree = "<group>";
+		};
 		29AE102B262EAF3D00B383CF /* Wallet Page */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +334,7 @@
 				291DFF932632D61B00DAC0EF /* WalletOneCardCenterView.swift */,
 				29464F532637C3A100E6E082 /* PageControlView.swift */,
 				29F6C1FD262ED69800DB2139 /* CardView.swift */,
+				29AB675C2645326400D375A6 /* ActionButtonWithLabel.swift */,
 			);
 			path = "Wallet Page";
 			sourceTree = "<group>";
@@ -338,6 +364,8 @@
 		7AB88B1C262805C500E2DFD3 /* Custom Components */ = {
 			isa = PBXGroup;
 			children = (
+				29AB67612645328400D375A6 /* Button Modifier */,
+				29AB674E264531B600D375A6 /* View Modefier */,
 				7AB88B23262806D400E2DFD3 /* View */,
 				7AB88B24262806E900E2DFD3 /* Shape */,
 				7AB88B26262806FC00E2DFD3 /* Preference Key */,
@@ -673,8 +701,10 @@
 				7AD9B86B2626EC0000CF0EA6 /* SignInHeaderView.swift in Sources */,
 				7A17D13A26298695005BB190 /* SNSButton.swift in Sources */,
 				163E5B6C260F337600E54401 /* Secrets.swift in Sources */,
+				29AB67632645329400D375A6 /* RoundWhiteButtonModifier.swift in Sources */,
 				164E95FF26122C5E00D84B7F /* World.swift in Sources */,
 				7AB1B91C2643887500853FAC /* SignInFooterView.swift in Sources */,
+				29AB675D2645326400D375A6 /* ActionButtonWithLabel.swift in Sources */,
 				7AB88B1E262805F300E2DFD3 /* View+Extensions.swift in Sources */,
 				29AE102D262EAF5D00B383CF /* WalletPageView.swift in Sources */,
 				164E95FA26122BE200D84B7F /* AppAction.swift in Sources */,
@@ -686,7 +716,9 @@
 				7AD9B8892626F3A300CF0EA6 /* SignInView.swift in Sources */,
 				29464F542637C3A100E6E082 /* PageControlView.swift in Sources */,
 				291DFF942632D61B00DAC0EF /* WalletOneCardCenterView.swift in Sources */,
+				29AB6750264531EB00D375A6 /* CardLabelModifier.swift in Sources */,
 				164E95E726121B6400D84B7F /* Store.swift in Sources */,
+				29AB67582645322700D375A6 /* CardValueModifier.swift in Sources */,
 				163E5B64260F32A000E54401 /* Obfuscate.swift in Sources */,
 				29464F5926380F3400E6E082 /* WalletActionButtonView.swift in Sources */,
 				164E97F02614ACF000D84B7F /* Assets.swift in Sources */,
