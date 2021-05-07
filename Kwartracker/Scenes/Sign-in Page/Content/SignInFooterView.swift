@@ -24,7 +24,7 @@ struct SignInFooterView: View {
                 Button(action: {
                     self.showingSignUp.toggle()
                 }) {
-                    Text(L10n.ButtonLabelSign.in)
+                    Text(L10n.ButtonLabelSign.up)
                         .font(.footnote)
                         .foregroundColor(Color(Asset.Colors.teal.color))
                         .underline()
