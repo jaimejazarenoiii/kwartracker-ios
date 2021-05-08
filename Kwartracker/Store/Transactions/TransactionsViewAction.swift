@@ -13,4 +13,5 @@ enum TransactionsViewAction {
     case delete(index: Int)
     case loadMoreTransactions(page: Int)
     case refreshTransactions
+    case setLoadmoreShown(show: Bool)
 }

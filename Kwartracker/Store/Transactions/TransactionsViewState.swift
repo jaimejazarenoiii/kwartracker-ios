@@ -14,6 +14,7 @@ struct TransactionsViewState {
     var transaction: Transaction? = nil
     var transactionErrorMessage: String = ""
     var fetchRequestState: APIRequestState = .notStarted
+    var shouldShowLoadmore: Bool = false
 }
 
 func transactionsViewReducer(
@@ -43,7 +44,10 @@ func transactionsViewReducer(
         }
     case .refreshTransactions:
         break
-    case .loadMoreTransactions(let page):
+    case .loadMoreTransactions:
+        break
+    case .setLoadmoreShown(let show):
+        state.shouldShowLoadmore = show
         break
     }
     return Empty().eraseToAnyPublisher()

@@ -19,7 +19,7 @@ struct CircularLoaderView: View {
             .rotationEffect(.init(degrees: animate ? 360 : 0))
             .animation(Animation.linear(duration: 0.7).repeatForever(autoreverses: false))
             .onAppear {
-                animate.toggle()
+                animate = true
             }
     }
 }
