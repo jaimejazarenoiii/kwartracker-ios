@@ -13,12 +13,12 @@ struct TransactionRowContent: View {
     var body: some View {
         HStack {
             ZStack {
-                RoundedRectangle(cornerRadius: 15)
+                RoundedRectangle(cornerRadius: 14)
                     .fill(Color(Asset.Colors.mysticBlueGrey.color))
                     .frame(width: 40, height: 40)
 
                 VStack {
-                    Text(transaction.getMonth())
+                    Text(transaction.getMonth().uppercased())
                         .frame(height: 8)
                         .font(.system(size: 8, weight: .medium))
 
@@ -32,9 +32,12 @@ struct TransactionRowContent: View {
             Spacer()
                 .frame(width: 10)
 
-            VStack(alignment: .leading) {
-                HStack {
+            VStack(alignment: .leading, spacing: 1) {
+                HStack(alignment: .center, spacing: 3) {
                     Image(uiImage: Asset.Images.salaryIcon.image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 12)
                     Text(transaction.category.title)
                         .font(.system(size: 12, weight: .bold))
                         .foregroundColor(Color(Asset.Colors.teal.color))
@@ -46,6 +49,7 @@ struct TransactionRowContent: View {
             Spacer()
 
             Text(L10n.TransactionsPage.addAmount(transaction.amountCurrencyDisplay))
+                .font(.system(size: 15))
                 .foregroundColor(Color(Asset.Colors.niagaraGreen.color))
 
             Spacer()
@@ -58,7 +62,6 @@ struct TransactionRowContent: View {
             })
             .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.solitudeGrey.color, padding: 10))
         }
-        .listRowBackground(Color.clear)
-        .padding([.top, .bottom], 15)
+        .padding([.top, .bottom], 0)
     }
 }
