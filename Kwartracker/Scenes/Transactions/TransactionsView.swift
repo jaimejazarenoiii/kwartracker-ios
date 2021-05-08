@@ -10,6 +10,7 @@ import SwiftUI
 struct TransactionsView: View {
     @EnvironmentObject var store: AppStore
     @State var searchTransaction: String = ""
+    @State var presentCreateModal: Bool = false
 
     init() {
         setUpContentAppearance()
@@ -17,9 +18,6 @@ struct TransactionsView: View {
 
     var body: some View {
         ZStack {
-            Color(Asset.Colors.teal.color)
-                .ignoresSafeArea(.all)
-
             VStack {
                 HStack {
                     Spacer()
@@ -44,6 +42,9 @@ struct TransactionsView: View {
                     Spacer()
 
                     Button(action: {
+                        withAnimation {
+                            presentCreateModal.toggle()
+                        }
                     }, label: {
                         Image(uiImage: Asset.Images.addIconTeal.image)
                             .frame(width: 10, height: 10)
@@ -58,11 +59,6 @@ struct TransactionsView: View {
                     .frame(height: 30)
 
                 ZStack {
-                    Rectangle()
-                        .fill(Color(Asset.Colors.solitudeGrey.color))
-                        .cornerRadius(45, corners: [.topLeft, .topRight])
-                        .edgesIgnoringSafeArea(.bottom)
-
                     VStack {
                         Spacer()
                             .frame(height: 30)
@@ -118,9 +114,21 @@ struct TransactionsView: View {
                         }
                     }
                 }
+                .background(
+                    Rectangle()
+                        .fill(Color(Asset.Colors.solitudeGrey.color))
+                        .cornerRadius(45, corners: [.topLeft, .topRight])
+                        .edgesIgnoringSafeArea(.bottom)
+                )
             }
             .padding(.top, 10)
+
+            CreateTransactionFormModalView(isPresented: $presentCreateModal)
         }
+        .background(
+            Color(Asset.Colors.teal.color)
+                .ignoresSafeArea(.all)
+        )
     }
 
     private func setUpContentAppearance() {
