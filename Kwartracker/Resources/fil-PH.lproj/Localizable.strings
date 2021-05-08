@@ -29,3 +29,11 @@
 "transactions_page.transaction_search_placeholder" = "Search Transaction";
 "transactions_page.add_amount" = "+ %@";
 "transactions_page.deduct_amount" = "- %@";
+"transactions_create_form_modal.button_title.apply" = "Apply";
+"transactions_create_form_modal.input_field.date_range" = "This week";
+"transactions_create_form_modal.input_field.category" = "Select category";
+"transactions_create_form_modal.input_field.wallet_type" = "All wallet";
+"transactions_create_form_modal.input_label.date_range" = "Date range";
+"transactions_create_form_modal.input_label.category" = "Category";
+"transactions_create_form_modal.input_label.wallet_type" = "Wallet Type";
+"transactions_create_form_modal.title" = "Default date range";

@@ -25,6 +25,9 @@
 		164E97EF2614ACF000D84B7F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97ED2614ACF000D84B7F /* Strings.swift */; };
 		164E97F02614ACF000D84B7F /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97EE2614ACF000D84B7F /* Assets.swift */; };
 		164E988D2615C4BA00D84B7F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164E988C2615C4BA00D84B7F /* Colors.xcassets */; };
+		1652AED526469EBD003542CD /* RoundedRectangleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652AED426469EBC003542CD /* RoundedRectangleButtonStyle.swift */; };
+		1652AEE42646A52E003542CD /* CreateTransactionFormModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652AEE32646A52E003542CD /* CreateTransactionFormModalView.swift */; };
+		1652AEED2646A67D003542CD /* SelectableFieldForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652AEEC2646A67D003542CD /* SelectableFieldForm.swift */; };
 		166A9CC32643775C00805A16 /* TransactionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166A9CC22643775C00805A16 /* TransactionsTests.swift */; };
 		1683C9022629C76F00B1D4D8 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683C9012629C76F00B1D4D8 /* TransactionsView.swift */; };
 		1683C90B2629C7BB00B1D4D8 /* CircleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683C90A2629C7BB00B1D4D8 /* CircleButtonStyle.swift */; };
@@ -98,6 +101,9 @@
 		164E97ED2614ACF000D84B7F /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		164E97EE2614ACF000D84B7F /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		164E988C2615C4BA00D84B7F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		1652AED426469EBC003542CD /* RoundedRectangleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleButtonStyle.swift; sourceTree = "<group>"; };
+		1652AEE32646A52E003542CD /* CreateTransactionFormModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionFormModalView.swift; sourceTree = "<group>"; };
+		1652AEEC2646A67D003542CD /* SelectableFieldForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableFieldForm.swift; sourceTree = "<group>"; };
 		166A9CC22643775C00805A16 /* TransactionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTests.swift; sourceTree = "<group>"; };
 		1683C9012629C76F00B1D4D8 /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
 		1683C90A2629C7BB00B1D4D8 /* CircleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonStyle.swift; sourceTree = "<group>"; };
@@ -299,6 +305,22 @@
 			path = SwiftGen;
 			sourceTree = "<group>";
 		};
+		1652AEE22646A51A003542CD /* Create Transaction Form */ = {
+			isa = PBXGroup;
+			children = (
+				1652AEE32646A52E003542CD /* CreateTransactionFormModalView.swift */,
+			);
+			path = "Create Transaction Form";
+			sourceTree = "<group>";
+		};
+		1652AEEB2646A669003542CD /* Form Inputs */ = {
+			isa = PBXGroup;
+			children = (
+				1652AEEC2646A67D003542CD /* SelectableFieldForm.swift */,
+			);
+			path = "Form Inputs";
+			sourceTree = "<group>";
+		};
 		166A9CC72643789F00805A16 /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +333,7 @@
 		1683C9002629C75700B1D4D8 /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
+				1652AEE22646A51A003542CD /* Create Transaction Form */,
 				1683C9012629C76F00B1D4D8 /* TransactionsView.swift */,
 				16C5C7772635347A00F33B72 /* TransactionRowContent.swift */,
 			);
@@ -322,6 +345,7 @@
 			children = (
 				1683C90A2629C7BB00B1D4D8 /* CircleButtonStyle.swift */,
 				163FC8252634D7E600E15C2B /* TealRoundedRectangleButtonStyle.swift */,
+				1652AED426469EBC003542CD /* RoundedRectangleButtonStyle.swift */,
 			);
 			path = "Button Style";
 			sourceTree = "<group>";
@@ -385,6 +409,7 @@
 		7AB88B1C262805C500E2DFD3 /* Custom Components */ = {
 			isa = PBXGroup;
 			children = (
+				1652AEEB2646A669003542CD /* Form Inputs */,
 				7AB88B23262806D400E2DFD3 /* View */,
 				7AB88B24262806E900E2DFD3 /* Shape */,
 				7AB88B26262806FC00E2DFD3 /* Preference Key */,
@@ -735,11 +760,14 @@
 				1683C90B2629C7BB00B1D4D8 /* CircleButtonStyle.swift in Sources */,
 				16C5C77D2635349F00F33B72 /* Transaction.swift in Sources */,
 				7A17D13226298678005BB190 /* UserField.swift in Sources */,
+				1652AED526469EBD003542CD /* RoundedRectangleButtonStyle.swift in Sources */,
 				164E95EC2612224100D84B7F /* AppState.swift in Sources */,
 				7AD9B8732626EC2A00CF0EA6 /* AuthLayoutView.swift in Sources */,
 				7AD9B86B2626EC0000CF0EA6 /* SignInHeaderView.swift in Sources */,
+				1652AEED2646A67D003542CD /* SelectableFieldForm.swift in Sources */,
 				7A17D13A26298695005BB190 /* SNSButton.swift in Sources */,
 				163E5B6C260F337600E54401 /* Secrets.swift in Sources */,
+				1652AEE42646A52E003542CD /* CreateTransactionFormModalView.swift in Sources */,
 				164E95FF26122C5E00D84B7F /* World.swift in Sources */,
 				7AB1B91C2643887500853FAC /* SignInFooterView.swift in Sources */,
 				7AB88B1E262805F300E2DFD3 /* View+Extensions.swift in Sources */,
@@ -748,8 +776,8 @@
 				7AB88B282628071C00E2DFD3 /* RoundedCorner.swift in Sources */,
 				16C5C7982636296600F33B72 /* Currency.swift in Sources */,
 				164E97EF2614ACF000D84B7F /* Strings.swift in Sources */,
-                1683C9022629C76F00B1D4D8 /* TransactionsView.swift in Sources */,
-                163FC8262634D7E600E15C2B /* TealRoundedRectangleButtonStyle.swift in Sources */,
+				1683C9022629C76F00B1D4D8 /* TransactionsView.swift in Sources */,
+				163FC8262634D7E600E15C2B /* TealRoundedRectangleButtonStyle.swift in Sources */,
 				7AD9B8812626F17400CF0EA6 /* SignInContentView.swift in Sources */,
 				7AB1B91E26438C7C00853FAC /* RoundedCornerRectangle.swift in Sources */,
 				7A734D92262FFAA900557EF7 /* BWNeumorphicRectangle.swift in Sources */,
