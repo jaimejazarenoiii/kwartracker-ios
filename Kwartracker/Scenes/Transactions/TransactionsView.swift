@@ -42,9 +42,6 @@ struct TransactionsView: View {
                     Spacer()
 
                     Button(action: {
-                        withAnimation {
-                            presentCreateModal.toggle()
-                        }
                     }, label: {
                         Image(uiImage: Asset.Images.addIconTeal.image)
                             .frame(width: 10, height: 10)
@@ -93,6 +90,9 @@ struct TransactionsView: View {
                                 )
 
                             Button(action: {
+                                withAnimation {
+                                    presentCreateModal.toggle()
+                                }
                             }) {
                                 Image(uiImage: Asset.Images.filterIcon.image)
                             }
@@ -123,7 +123,7 @@ struct TransactionsView: View {
             }
             .padding(.top, 10)
 
-            CreateTransactionFormModalView(isPresented: $presentCreateModal)
+            SearchTransactionFormModalView(isPresented: $presentCreateModal)
         }
         .background(
             Color(Asset.Colors.teal.color)

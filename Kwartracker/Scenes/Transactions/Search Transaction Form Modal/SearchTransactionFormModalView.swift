@@ -1,5 +1,5 @@
 //
-//  CreateTransactionFormModalView.swift
+//  SearchTransactionFormModalView.swift
 //  Kwartracker
 //
 //  Created by Jacob on 5/8/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CreateTransactionFormModalView: View {
+struct SearchTransactionFormModalView: View {
     @EnvironmentObject var store: AppStore
     @Binding var isPresented: Bool
 
