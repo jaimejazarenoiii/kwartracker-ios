@@ -28,6 +28,7 @@
 		1652AED526469EBD003542CD /* RoundedRectangleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652AED426469EBC003542CD /* RoundedRectangleButtonStyle.swift */; };
 		1652AEE42646A52E003542CD /* CreateTransactionFormModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652AEE32646A52E003542CD /* CreateTransactionFormModalView.swift */; };
 		1652AEED2646A67D003542CD /* SelectableFieldForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652AEEC2646A67D003542CD /* SelectableFieldForm.swift */; };
+		16606D292647966B005F2CF5 /* OptionSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16606D282647966B005F2CF5 /* OptionSelectView.swift */; };
 		166A9CC32643775C00805A16 /* TransactionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166A9CC22643775C00805A16 /* TransactionsTests.swift */; };
 		1683C9022629C76F00B1D4D8 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683C9012629C76F00B1D4D8 /* TransactionsView.swift */; };
 		1683C90B2629C7BB00B1D4D8 /* CircleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683C90A2629C7BB00B1D4D8 /* CircleButtonStyle.swift */; };
@@ -131,6 +132,7 @@
 		1652AED426469EBC003542CD /* RoundedRectangleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleButtonStyle.swift; sourceTree = "<group>"; };
 		1652AEE32646A52E003542CD /* CreateTransactionFormModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionFormModalView.swift; sourceTree = "<group>"; };
 		1652AEEC2646A67D003542CD /* SelectableFieldForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableFieldForm.swift; sourceTree = "<group>"; };
+		16606D282647966B005F2CF5 /* OptionSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelectView.swift; sourceTree = "<group>"; };
 		166A9CC22643775C00805A16 /* TransactionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTests.swift; sourceTree = "<group>"; };
 		1683C9012629C76F00B1D4D8 /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
 		1683C90A2629C7BB00B1D4D8 /* CircleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonStyle.swift; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				1652AEEC2646A67D003542CD /* SelectableFieldForm.swift */,
+				16606D282647966B005F2CF5 /* OptionSelectView.swift */,
 			);
 			path = "Form Inputs";
 			sourceTree = "<group>";
@@ -950,6 +953,7 @@
 				29AB675D2645326400D375A6 /* WalletActionButtonWithLabel.swift in Sources */,
 				7AB88B1E262805F300E2DFD3 /* View+Extensions.swift in Sources */,
 				29AE102D262EAF5D00B383CF /* WalletPageView.swift in Sources */,
+				16606D292647966B005F2CF5 /* OptionSelectView.swift in Sources */,
 				164E95FA26122BE200D84B7F /* AppAction.swift in Sources */,
 				2932755A264E266F00E8BA8B /* ProgressView.swift in Sources */,
 				16C5C7A026362D3500F33B72 /* TransactionsViewState.swift in Sources */,
