@@ -16,125 +16,119 @@ struct TransactionsView: View {
     }
 
     var body: some View {
-        ZStack {
-            Color(Asset.Colors.teal.color)
-                .ignoresSafeArea(.all)
+        NavigationView {
+            ZStack {
+                Color(Asset.Colors.teal.color)
+                    .ignoresSafeArea(.all)
 
-            VStack {
-                HStack {
-                    Spacer()
-                        .frame(width: 30)
-
-                    Button(action: {
-                    }) {
-                        Image(uiImage: Asset.Images.arrowLeftIconWhite.image)
-                            .frame(width: 10, height: 10)
+                VStack {
+                    NavigationBarView(
+                        title: L10n.TransactionsPage.titleBar) {
+                        Button(action: {
+                        }) {
+                            Image(uiImage: Asset.Images.arrowLeftIconWhite.image)
+                                .frame(width: 10, height: 10)
+                        }
+                        .buttonStyle(
+                            CircleButtonStyle(buttonColor: Asset.Colors.teal.color)
+                        )
+                    } rightBarViewContent: {
+                        Button(action: {
+                        }) {
+                            Image(uiImage: Asset.Images.addIconTeal.image)
+                                .frame(width: 10, height: 10)
+                        }
+                        .buttonStyle(CircleButtonStyle(buttonColor: .white))
                     }
-                    .buttonStyle(
-                        CircleButtonStyle(buttonColor: Asset.Colors.teal.color)
-                    )
 
                     Spacer()
+                        .frame(height: 30)
 
-                    Text(L10n.TransactionsPage.titleBar)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .font(.title2)
+                    ZStack {
+                        Rectangle()
+                            .fill(Color(Asset.Colors.solitudeGrey.color))
+                            .cornerRadius(45, corners: [.topLeft, .topRight])
+                            .edgesIgnoringSafeArea(.bottom)
 
-                    Spacer()
-
-                    Button(action: {
-                    }, label: {
-                        Image(uiImage: Asset.Images.addIconTeal.image)
-                            .frame(width: 10, height: 10)
-                    })
-                    .buttonStyle(CircleButtonStyle(buttonColor: .white))
-
-                    Spacer()
-                        .frame(width: 30)
-                }
-
-                Spacer()
-                    .frame(height: 30)
-
-                ZStack {
-                    Rectangle()
-                        .fill(Color(Asset.Colors.solitudeGrey.color))
-                        .cornerRadius(45, corners: [.topLeft, .topRight])
-                        .edgesIgnoringSafeArea(.bottom)
-
-                    VStack {
-                        Spacer()
-                            .frame(height: 30)
-
-                        HStack {
+                        VStack {
                             Spacer()
-                                .frame(width: 30)
+                                .frame(height: 30)
 
-                            RoundedRectangle(cornerRadius: 15)
-                                .fill(Color(Asset.Colors.solitudeGrey.color))
-                                .frame(height: 48)
-                                .shadow(color: Color.black.opacity(0.2), radius: 15, x: 7, y: 7)
-                                .shadow(color: Color.white.opacity(0.7), radius: 15, x: -5, y: -5)
-                                .overlay(
-                                    HStack {
-                                        TextField(
-                                            L10n.TransactionsPage.transactionSearchPlaceholder,
-                                            text: $searchTransaction
-                                        )
-                                        .background(Color.clear)
-                                        .frame(height: 48, alignment: .center)
-                                        .padding(.leading, 20)
-                                        .keyboardType(.default)
+                            HStack {
+                                Spacer()
+                                    .frame(width: 30)
 
-                                        Spacer()
+                                RoundedRectangle(cornerRadius: 15)
+                                    .fill(Color(Asset.Colors.solitudeGrey.color))
+                                    .frame(height: 48)
+                                    .shadow(color: Color.black.opacity(0.2), radius: 15, x: 7, y: 7)
+                                    .shadow(color: Color.white.opacity(0.7), radius: 15, x: -5, y: -5)
+                                    .overlay(
+                                        HStack {
+                                            TextField(
+                                                L10n.TransactionsPage.transactionSearchPlaceholder,
+                                                text: $searchTransaction
+                                            )
+                                            .background(Color.clear)
+                                            .frame(height: 48, alignment: .center)
+                                            .padding(.leading, 20)
+                                            .keyboardType(.default)
 
-                                        Image(uiImage: Asset.Images.searchIcon.image)
-                                            .resizable()
-                                            .frame(width: 20, height: 20)
-                                            .padding(.trailing, 20)
-                                    }
+                                            Spacer()
+
+                                            Image(uiImage: Asset.Images.searchIcon.image)
+                                                .resizable()
+                                                .frame(width: 20, height: 20)
+                                                .padding(.trailing, 20)
+                                        }
+                                    )
+
+                                Button(action: {
+                                }) {
+                                    Image(uiImage: Asset.Images.filterIcon.image)
+                                }
+                                .buttonStyle(
+                                    TealRoundedRectangleButtonStyle()
                                 )
 
-                            Button(action: {
-                            }) {
-                                Image(uiImage: Asset.Images.filterIcon.image)
+                                Spacer()
+                                    .frame(width: 30)
                             }
-                            .buttonStyle(
-                                TealRoundedRectangleButtonStyle()
-                            )
 
                             Spacer()
-                                .frame(width: 30)
-                        }
+                                .frame(height: 20)
 
-                        Spacer()
-                            .frame(height: 20)
-
-                        List {
-                            ForEach(store.state.transactionState.transactions, id: \.id) {
-                                TransactionRowContent(transaction: $0)
-                            }
-                            if store.state.transactionState.shouldShowLoadmore {
-                                HStack {
-                                    Spacer()
-                                    CircularLoaderView()
-                                        .frame(width: 30, height: 30)
-                                    Spacer()
+                            List {
+                                ForEach(store.state.transactionState.transactions, id: \.id) { transaction in
+                                    NavigationLink(
+                                        destination: TransactionDetailView(transaction: transaction),
+                                        label: {
+                                            TransactionRowContent(transaction: transaction)
+                                        })
                                 }
-                                .padding(.top, 10)
+                                if store.state.transactionState.shouldShowLoadmore {
+                                    HStack {
+                                        Spacer()
+                                        CircularLoaderView()
+                                            .frame(width: 30, height: 30)
+                                        Spacer()
+                                    }
+                                    .padding(.top, 10)
+                                }
                             }
+                            .listStyle(InsetListStyle())
                         }
-                        .listStyle(InsetListStyle())
                     }
                 }
+                .padding(.top, 10)
             }
-            .padding(.top, 10)
+            .navigationBarHidden(true)
         }
     }
 
     private func setUpContentAppearance() {
         UITableView.appearance().backgroundColor = .clear
         UITableViewCell.appearance().backgroundColor = .clear
+        UITableViewCell.appearance().selectionStyle = .none
     }
 }

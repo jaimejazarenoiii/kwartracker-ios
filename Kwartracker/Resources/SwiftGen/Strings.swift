@@ -94,6 +94,23 @@ internal enum L10n {
     }
   }
 
+  internal enum TransactionDetailPage {
+    /// Transaction
+    internal static let titleBar = L10n.tr("Localizable", "transaction_detail_page.title_bar")
+    internal enum Label {
+      /// Added to wallet
+      internal static let addedToWallet = L10n.tr("Localizable", "transaction_detail_page.label.added_to_wallet")
+      /// Category
+      internal static let category = L10n.tr("Localizable", "transaction_detail_page.label.category")
+      /// Spent with
+      internal static let spentWith = L10n.tr("Localizable", "transaction_detail_page.label.spent_with")
+      /// Transaction date
+      internal static let transactionDate = L10n.tr("Localizable", "transaction_detail_page.label.transaction_date")
+      /// Transaction type
+      internal static let transactionType = L10n.tr("Localizable", "transaction_detail_page.label.transaction_type")
+    }
+  }
+
   internal enum TransactionsPage {
     /// + %@
     internal static func addAmount(_ p1: Any) -> String {

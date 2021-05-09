@@ -25,6 +25,12 @@
 "sign_in_page.button.recover_password" = "Recover password";
 "sign_in_page.label.no_account_yet" = "No account yet?";
 "sign_in_page.button.sign_up" = "Sign Up";
+"transaction_detail_page.label.added_to_wallet" = "Added to wallet";
+"transaction_detail_page.label.category" = "Category";
+"transaction_detail_page.label.transaction_date" = "Transaction date";
+"transaction_detail_page.label.spent_with" = "Spent with";
+"transaction_detail_page.label.transaction_type" = "Transaction type";
+"transaction_detail_page.title_bar" = "Transaction";
 "transactions_page.title_bar" = "Transactions";
 "transactions_page.transaction_search_placeholder" = "Search Transaction";
 "transactions_page.add_amount" = "+ %@";

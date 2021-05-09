@@ -25,6 +25,8 @@
 		164E97EF2614ACF000D84B7F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97ED2614ACF000D84B7F /* Strings.swift */; };
 		164E97F02614ACF000D84B7F /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97EE2614ACF000D84B7F /* Assets.swift */; };
 		164E988D2615C4BA00D84B7F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164E988C2615C4BA00D84B7F /* Colors.xcassets */; };
+		16606D462647B5FF005F2CF5 /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16606D452647B5FF005F2CF5 /* TransactionDetailView.swift */; };
+		16606D4B2647C0F9005F2CF5 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16606D4A2647C0F9005F2CF5 /* NavigationBarView.swift */; };
 		166A9CC32643775C00805A16 /* TransactionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166A9CC22643775C00805A16 /* TransactionsTests.swift */; };
 		1683C9022629C76F00B1D4D8 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683C9012629C76F00B1D4D8 /* TransactionsView.swift */; };
 		1683C90B2629C7BB00B1D4D8 /* CircleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683C90A2629C7BB00B1D4D8 /* CircleButtonStyle.swift */; };
@@ -100,6 +102,8 @@
 		164E97ED2614ACF000D84B7F /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		164E97EE2614ACF000D84B7F /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		164E988C2615C4BA00D84B7F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		16606D452647B5FF005F2CF5 /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
+		16606D4A2647C0F9005F2CF5 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		166A9CC22643775C00805A16 /* TransactionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTests.swift; sourceTree = "<group>"; };
 		1683C9012629C76F00B1D4D8 /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
 		1683C90A2629C7BB00B1D4D8 /* CircleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonStyle.swift; sourceTree = "<group>"; };
@@ -303,6 +307,14 @@
 			path = SwiftGen;
 			sourceTree = "<group>";
 		};
+		16606D3C2647B5BF005F2CF5 /* Transaction Detail */ = {
+			isa = PBXGroup;
+			children = (
+				16606D452647B5FF005F2CF5 /* TransactionDetailView.swift */,
+			);
+			path = "Transaction Detail";
+			sourceTree = "<group>";
+		};
 		166A9CC72643789F00805A16 /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +327,7 @@
 		1683C9002629C75700B1D4D8 /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
+				16606D3C2647B5BF005F2CF5 /* Transaction Detail */,
 				1683C9012629C76F00B1D4D8 /* TransactionsView.swift */,
 				16C5C7772635347A00F33B72 /* TransactionRowContent.swift */,
 			);
@@ -404,6 +417,7 @@
 			children = (
 				7AB88B1D262805F300E2DFD3 /* View+Extensions.swift */,
 				169DA4712644C8A60063204F /* CircularLoaderView.swift */,
+				16606D4A2647C0F9005F2CF5 /* NavigationBarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -767,6 +781,8 @@
 				163E5B64260F32A000E54401 /* Obfuscate.swift in Sources */,
 				16C5C782263534EA00F33B72 /* Imageable.swift in Sources */,
 				164E97F02614ACF000D84B7F /* Assets.swift in Sources */,
+				16606D4B2647C0F9005F2CF5 /* NavigationBarView.swift in Sources */,
+				16606D462647B5FF005F2CF5 /* TransactionDetailView.swift in Sources */,
 				164E95F226122BD200D84B7F /* AppReducer.swift in Sources */,
 				16C5C7922636293900F33B72 /* Category.swift in Sources */,
 				16C5C7782635347A00F33B72 /* TransactionRowContent.swift in Sources */,
