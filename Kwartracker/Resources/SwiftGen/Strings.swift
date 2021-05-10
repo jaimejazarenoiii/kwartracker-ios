@@ -11,57 +11,6 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
 
-  internal enum ButtonLabelSign {
-    /// Sign In
-    internal static let `in` = L10n.tr("Localizable", "button_label_sign.in")
-    /// Sign Up
-    internal static let up = L10n.tr("Localizable", "button_label_sign.up")
-    internal enum In {
-      internal enum As {
-        /// Sign in as guest
-        internal static let guest = L10n.tr("Localizable", "button_label_sign.in.as.guest")
-      }
-    }
-    internal enum Up {
-      internal enum With {
-        /// Sign up with Apple
-        internal static let apple = L10n.tr("Localizable", "button_label_sign.up.with.apple")
-        /// Sign up with Google
-        internal static let google = L10n.tr("Localizable", "button_label_sign.up.with.google")
-      }
-    }
-  }
-
-  internal enum Label {
-    /// Email
-    internal static let email = L10n.tr("Localizable", "label.email")
-    /// or
-    internal static let or = L10n.tr("Localizable", "label.or")
-    /// Password
-    internal static let password = L10n.tr("Localizable", "label.password")
-    internal enum Already {
-      internal enum HaveAn {
-        /// Already have an account?
-        internal static let account = L10n.tr("Localizable", "label.already.haveAn.account")
-      }
-    }
-    internal enum Create {
-      /// Create\nAccount
-      internal static let account = L10n.tr("Localizable", "label.create.account")
-    }
-  }
-
-  internal enum Placeholder {
-    internal enum Enter {
-      /// Enter password
-      internal static let password = L10n.tr("Localizable", "placeholder.enter.password")
-      internal enum Email {
-        /// Enter email address
-        internal static let address = L10n.tr("Localizable", "placeholder.enter.email.address")
-      }
-    }
-  }
-
   internal enum SignInPage {
     internal enum Button {
       /// Recover password
@@ -77,13 +26,60 @@ internal enum L10n {
       /// Sign Up
       internal static let signUp = L10n.tr("Localizable", "sign_in_page.button.sign_up")
     }
+    internal enum Field {
+      /// Enter email address
+      internal static let enterEmailAddress = L10n.tr("Localizable", "sign_in_page.field.enter_email_address")
+      /// Enter password
+      internal static let enterPassword = L10n.tr("Localizable", "sign_in_page.field.enter_password")
+    }
     internal enum Label {
+      /// Email
+      internal static let email = L10n.tr("Localizable", "sign_in_page.label.email")
       /// No account yet?
       internal static let noAccountYet = L10n.tr("Localizable", "sign_in_page.label.no_account_yet")
+      /// or
+      internal static let or = L10n.tr("Localizable", "sign_in_page.label.or")
+      /// Password
+      internal static let password = L10n.tr("Localizable", "sign_in_page.label.password")
     }
     internal enum Title {
       /// Welcome\nBack
       internal static let welcomeBack = L10n.tr("Localizable", "sign_in_page.title.welcome_back")
+    }
+  }
+
+  internal enum SignUpPage {
+    internal enum Button {
+      /// Sign In
+      internal static let signIn = L10n.tr("Localizable", "sign_up_page.button.sign_in")
+      /// Sign Up
+      internal static let signUp = L10n.tr("Localizable", "sign_up_page.button.sign_up")
+      /// Sign up with Apple
+      internal static let signUpApple = L10n.tr("Localizable", "sign_up_page.button.sign_up_apple")
+      /// Sign up with Google
+      internal static let signUpGoogle = L10n.tr("Localizable", "sign_up_page.button.sign_up_google")
+      /// Sign in as guest
+      internal static let signUpGuest = L10n.tr("Localizable", "sign_up_page.button.sign_up_guest")
+    }
+    internal enum Field {
+      /// Enter email address
+      internal static let enterEmailAddress = L10n.tr("Localizable", "sign_up_page.field.enter_email_address")
+      /// Enter password
+      internal static let enterPassword = L10n.tr("Localizable", "sign_up_page.field.enter_password")
+    }
+    internal enum Label {
+      /// Already have an account?
+      internal static let alreadyHaveAnAccount = L10n.tr("Localizable", "sign_up_page.label.already_have_an_account")
+      /// Email
+      internal static let email = L10n.tr("Localizable", "sign_up_page.label.email")
+      /// or
+      internal static let or = L10n.tr("Localizable", "sign_up_page.label.or")
+      /// Password
+      internal static let password = L10n.tr("Localizable", "sign_up_page.label.password")
+    }
+    internal enum Title {
+      /// Create\nAccount
+      internal static let createAccount = L10n.tr("Localizable", "sign_up_page.title.create_account")
     }
   }
 }

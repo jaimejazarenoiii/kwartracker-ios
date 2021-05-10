@@ -66,11 +66,11 @@ struct SNSButton: View {
             case .signInApple:
                 return L10n.SignInPage.Button.signInApple
             case .signUp:
-                return L10n.ButtonLabelSign.up
+                return L10n.SignUpPage.Button.signUp
             case .signUpGoogle:
-                return L10n.ButtonLabelSign.Up.With.google
+                return L10n.SignUpPage.Button.signUpGoogle
             case .signUpApple:
-                return L10n.ButtonLabelSign.Up.With.apple
+                return L10n.SignUpPage.Button.signUpApple
             }
         }
         

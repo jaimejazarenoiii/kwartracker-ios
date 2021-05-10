@@ -39,7 +39,7 @@ struct SignInContentView: View {
             
             HStack {
                 Spacer()
-                Text(L10n.Label.or)
+                Text(L10n.SignInPage.Label.or)
                     .font(.footnote)
                     .foregroundColor(Color(Asset.Colors.charcoal.color))
                 Spacer()

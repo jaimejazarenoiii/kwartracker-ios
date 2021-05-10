@@ -14,13 +14,13 @@ struct SignUpFooterView: View {
         VStack {
             Divider()
             HStack {
-                Text(L10n.Label.Already.HaveAn.account)
+                Text(L10n.SignUpPage.Label.alreadyHaveAnAccount)
                     .font(.footnote)
                     .foregroundColor(Color(Asset.Colors.nightRider.color))
                 Button(action: {
                     self.showingSignIn.toggle()
                 }) {
-                    Text(L10n.ButtonLabelSign.in)
+                    Text(L10n.SignUpPage.Button.signIn)
                         .font(.footnote)
                         .foregroundColor(Color(Asset.Colors.teal.color))
                         .underline()

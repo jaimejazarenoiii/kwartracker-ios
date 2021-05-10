@@ -58,18 +58,18 @@ struct UserField: View {
         var text: String {
             switch self {
             case .email:
-                return L10n.Label.email
+                return L10n.SignUpPage.Label.email
             case .password:
-                return L10n.Label.password
+                return L10n.SignUpPage.Label.password
             }
         }
         
         var placeholder: String {
             switch self {
             case .email:
-                return L10n.Placeholder.Enter.Email.address
+                return L10n.SignInPage.Field.enterEmailAddress
             case .password:
-                return L10n.Placeholder.Enter.password
+                return L10n.SignInPage.Field.enterPassword
             }
         }
     }

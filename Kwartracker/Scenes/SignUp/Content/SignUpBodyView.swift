@@ -14,7 +14,7 @@ struct SignUpBodyView: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading) {
-                Text(L10n.Label.Create.account).foregroundColor(Color(Asset.Colors.nightRider.color))
+                Text(L10n.SignUpPage.Title.createAccount).foregroundColor(Color(Asset.Colors.nightRider.color))
                     .font(.system(size: 40))
                     .fontWeight(.medium)
                     .fixedSize(horizontal: false, vertical: true)
@@ -24,7 +24,7 @@ struct SignUpBodyView: View {
                     SNSButton(actionHandler: {}, actionLabel: .signUp).padding(.top, 15)
                     HStack {
                         Spacer()
-                        Text(L10n.Label.or)
+                        Text(L10n.SignUpPage.Label.or)
                         Spacer()
                      }.padding(.top, 5)
                     SNSButton(actionHandler: {}, actionLabel: .signUpGoogle)
@@ -36,7 +36,7 @@ struct SignUpBodyView: View {
                         Spacer()
                         Button(action: {
                         }) {
-                            Text(L10n.ButtonLabelSign.In.As.guest)
+                            Text(L10n.SignUpPage.Button.signUpGuest)
                                 .font(.footnote)
                                 .foregroundColor(.secondary)
                                 .underline()
