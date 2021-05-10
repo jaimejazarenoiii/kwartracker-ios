@@ -12,7 +12,7 @@ struct BWNeumorphicRectangle: View {
     let color: Color
     let shadowRadius: CGFloat
     let shadowOffset: CGPoint
-    let height: CGFloat = 48
+    let height: CGFloat
     let blackOpacity: Double = 0.15
     
     var body: some View {

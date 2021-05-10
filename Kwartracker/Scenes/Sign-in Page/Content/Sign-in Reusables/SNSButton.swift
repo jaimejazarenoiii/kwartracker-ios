@@ -15,6 +15,7 @@ struct SNSButton: View {
     private let shadowOffset = CGPoint(x: 6, y: 6)
     private let rectRadius: CGFloat = 17
     private let fontSize: CGFloat = 14
+    private let frameHeigt: CGFloat = 48
     
     var body: some View {
         Button(action: actionHandler, label: {
@@ -22,7 +23,8 @@ struct SNSButton: View {
                 BWNeumorphicRectangle(rectRadius: rectRadius,
                                       color: actionLabel.color,
                                       shadowRadius: shadowRadius,
-                                      shadowOffset: shadowOffset)
+                                      shadowOffset: shadowOffset,
+                                      height: frameHeigt)
                 
                 HStack {
                     if let image = actionLabel.image {

@@ -27,7 +27,8 @@ struct UserField: View {
             BWNeumorphicRectangle(rectRadius: rectRadius,
                                   color: Color(Asset.Colors.solitudeGrey.color),
                                   shadowRadius: shadowRadius,
-                                  shadowOffset: shadowOffset)
+                                  shadowOffset: shadowOffset,
+                                  height: fieldHeight)
             
             UserField
         }
