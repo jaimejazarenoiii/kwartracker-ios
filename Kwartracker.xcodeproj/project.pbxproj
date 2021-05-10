@@ -27,13 +27,15 @@
 		290CA1B2261EABE400239EA7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 290CA1B1261EABE400239EA7 /* swiftgen.yml */; };
 		7A17D13226298678005BB190 /* UserField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13126298678005BB190 /* UserField.swift */; };
 		7A17D13A26298695005BB190 /* SNSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13926298695005BB190 /* SNSButton.swift */; };
-		7A734D92262FFAA900557EF7 /* CustomRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A734D91262FFAA900557EF7 /* CustomRectangle.swift */; };
+		7A734D92262FFAA900557EF7 /* BWNeumorphicRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A734D91262FFAA900557EF7 /* BWNeumorphicRectangle.swift */; };
 		7A7FA1322637B70A00484F51 /* FootnoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7FA1312637B70A00484F51 /* FootnoteButton.swift */; };
+		7AB1B91C2643887500853FAC /* SignInFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1B91B2643887500853FAC /* SignInFooterView.swift */; };
+		7AB1B91E26438C7C00853FAC /* RoundedCornerRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1B91D26438C7C00853FAC /* RoundedCornerRectangle.swift */; };
 		7AB88B1E262805F300E2DFD3 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB88B1D262805F300E2DFD3 /* View+Extensions.swift */; };
 		7AB88B282628071C00E2DFD3 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB88B272628071C00E2DFD3 /* RoundedCorner.swift */; };
-		7AD9B86B2626EC0000CF0EA6 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9B86A2626EC0000CF0EA6 /* HeaderView.swift */; };
-		7AD9B8732626EC2A00CF0EA6 /* SkeletonStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9B8722626EC2A00CF0EA6 /* SkeletonStructure.swift */; };
-		7AD9B8812626F17400CF0EA6 /* BodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9B8802626F17400CF0EA6 /* BodyView.swift */; };
+		7AD9B86B2626EC0000CF0EA6 /* SignInHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9B86A2626EC0000CF0EA6 /* SignInHeaderView.swift */; };
+		7AD9B8732626EC2A00CF0EA6 /* AuthLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9B8722626EC2A00CF0EA6 /* AuthLayoutView.swift */; };
+		7AD9B8812626F17400CF0EA6 /* SignInContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9B8802626F17400CF0EA6 /* SignInContentView.swift */; };
 		7AD9B8892626F3A300CF0EA6 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9B8882626F3A300CF0EA6 /* SignInView.swift */; };
 		7FE718881CB43731FBDE3CA8 /* Pods_Kwartracker_KwartrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5FF1E2AB4ED121C5D59731 /* Pods_Kwartracker_KwartrackerUITests.framework */; };
 		9A063C037CD795723F7C8978 /* Pods_KwartrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */; };
@@ -92,13 +94,15 @@
 		6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KwartrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A17D13126298678005BB190 /* UserField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserField.swift; sourceTree = "<group>"; };
 		7A17D13926298695005BB190 /* SNSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSButton.swift; sourceTree = "<group>"; };
-		7A734D91262FFAA900557EF7 /* CustomRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRectangle.swift; sourceTree = "<group>"; };
+		7A734D91262FFAA900557EF7 /* BWNeumorphicRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BWNeumorphicRectangle.swift; sourceTree = "<group>"; };
 		7A7FA1312637B70A00484F51 /* FootnoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootnoteButton.swift; sourceTree = "<group>"; };
+		7AB1B91B2643887500853FAC /* SignInFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFooterView.swift; sourceTree = "<group>"; };
+		7AB1B91D26438C7C00853FAC /* RoundedCornerRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerRectangle.swift; sourceTree = "<group>"; };
 		7AB88B1D262805F300E2DFD3 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		7AB88B272628071C00E2DFD3 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
-		7AD9B86A2626EC0000CF0EA6 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		7AD9B8722626EC2A00CF0EA6 /* SkeletonStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonStructure.swift; sourceTree = "<group>"; };
-		7AD9B8802626F17400CF0EA6 /* BodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyView.swift; sourceTree = "<group>"; };
+		7AD9B86A2626EC0000CF0EA6 /* SignInHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInHeaderView.swift; sourceTree = "<group>"; };
+		7AD9B8722626EC2A00CF0EA6 /* AuthLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthLayoutView.swift; sourceTree = "<group>"; };
+		7AD9B8802626F17400CF0EA6 /* SignInContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInContentView.swift; sourceTree = "<group>"; };
 		7AD9B8882626F3A300CF0EA6 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		9E15A147209E6A913358D61B /* Pods-KwartrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KwartrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-KwartrackerTests/Pods-KwartrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE5FF1E2AB4ED121C5D59731 /* Pods_Kwartracker_KwartrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kwartracker_KwartrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,7 +231,7 @@
 				C6CDDCC92638134600CB1562 /* Reusable */,
 				C6CDDCAE263811DD00CB1562 /* Alert */,
 				163E592F260CB88E00E54401 /* ContentView.swift */,
-				7AD9B8722626EC2A00CF0EA6 /* SkeletonStructure.swift */,
+				7AD9B8722626EC2A00CF0EA6 /* AuthLayoutView.swift */,
 				7AD9B8692626EBA500CF0EA6 /* Sign-in Page */,
 			);
 			path = Scenes;
@@ -306,7 +310,8 @@
 			children = (
 				7A17D13126298678005BB190 /* UserField.swift */,
 				7A17D13926298695005BB190 /* SNSButton.swift */,
-				7A734D91262FFAA900557EF7 /* CustomRectangle.swift */,
+				7AB1B91D26438C7C00853FAC /* RoundedCornerRectangle.swift */,
+				7A734D91262FFAA900557EF7 /* BWNeumorphicRectangle.swift */,
 				7A7FA1312637B70A00484F51 /* FootnoteButton.swift */,
 			);
 			path = "Sign-in Reusables";
@@ -357,8 +362,9 @@
 		7AD9B8972626F43F00CF0EA6 /* Content */ = {
 			isa = PBXGroup;
 			children = (
-				7AD9B86A2626EC0000CF0EA6 /* HeaderView.swift */,
-				7AD9B8802626F17400CF0EA6 /* BodyView.swift */,
+				7AD9B86A2626EC0000CF0EA6 /* SignInHeaderView.swift */,
+				7AD9B8802626F17400CF0EA6 /* SignInContentView.swift */,
+				7AB1B91B2643887500853FAC /* SignInFooterView.swift */,
 				7A17D1302629863A005BB190 /* Sign-in Reusables */,
 			);
 			path = Content;
@@ -654,19 +660,21 @@
 				C656239C263AB3CD00001E9F /* ImageView.swift in Sources */,
 				C6CDDCB0263811F700CB1562 /* AlertView.swift in Sources */,
 				164E95EC2612224100D84B7F /* AppState.swift in Sources */,
-				7AD9B8732626EC2A00CF0EA6 /* SkeletonStructure.swift in Sources */,
-				7AD9B86B2626EC0000CF0EA6 /* HeaderView.swift in Sources */,
+				7AD9B8732626EC2A00CF0EA6 /* AuthLayoutView.swift in Sources */,
+				7AD9B86B2626EC0000CF0EA6 /* SignInHeaderView.swift in Sources */,
 				7A17D13A26298695005BB190 /* SNSButton.swift in Sources */,
 				C6CDDCCB2638135B00CB1562 /* ButtonView.swift in Sources */,
 				163E5B6C260F337600E54401 /* Secrets.swift in Sources */,
 				164E95FF26122C5E00D84B7F /* World.swift in Sources */,
 				C6CDDCC52638125C00CB1562 /* MainAlertView.swift in Sources */,
+				7AB1B91C2643887500853FAC /* SignInFooterView.swift in Sources */,
 				7AB88B1E262805F300E2DFD3 /* View+Extensions.swift in Sources */,
 				164E95FA26122BE200D84B7F /* AppAction.swift in Sources */,
 				7AB88B282628071C00E2DFD3 /* RoundedCorner.swift in Sources */,
 				164E97EF2614ACF000D84B7F /* Strings.swift in Sources */,
-				7AD9B8812626F17400CF0EA6 /* BodyView.swift in Sources */,
-				7A734D92262FFAA900557EF7 /* CustomRectangle.swift in Sources */,
+				7AD9B8812626F17400CF0EA6 /* SignInContentView.swift in Sources */,
+				7AB1B91E26438C7C00853FAC /* RoundedCornerRectangle.swift in Sources */,
+				7A734D92262FFAA900557EF7 /* BWNeumorphicRectangle.swift in Sources */,
 				7AD9B8892626F3A300CF0EA6 /* SignInView.swift in Sources */,
 				164E95E726121B6400D84B7F /* Store.swift in Sources */,
 				163E5B64260F32A000E54401 /* Obfuscate.swift in Sources */,

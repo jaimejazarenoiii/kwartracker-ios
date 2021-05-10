@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HeaderView: View {
+struct SignInHeaderView: View {
     private let leadingMargin: CGFloat = 40
     private let contentSpacing: CGFloat = 10
     
@@ -22,9 +22,9 @@ struct HeaderView: View {
     }
 }
 
-struct HeaderView_Previews: PreviewProvider {
+struct SignInHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView()
+        SignInHeaderView()
             .background(Color(Asset.Colors.teal.color))
             .previewLayout(.sizeThatFits)
     }
