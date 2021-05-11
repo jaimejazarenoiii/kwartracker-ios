@@ -8,16 +8,11 @@
 import SwiftUI
 
 struct AuthLayoutView<H: View, C: View>: View {
-    private let headerView: H
-    private let contentView: C
+    @ViewBuilder let headerView: H
+    @ViewBuilder let contentView: C
     
     private let rectRadius: CGFloat = 60
     private let contentTopSpace: CGFloat = 5
-    
-    init(@ViewBuilder header: @escaping () -> H, @ViewBuilder content: @escaping () -> C) {
-        self.headerView = header()
-        self.contentView = content()
-    }
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .top)) {
