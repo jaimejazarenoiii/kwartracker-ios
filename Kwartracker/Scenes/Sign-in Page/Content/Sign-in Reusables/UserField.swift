@@ -35,6 +35,8 @@ struct UserField: View {
     
     var UserField: some View {
         createField(for: fieldType)
+            .modifier(PlaceholderStyle(showPlaceHolder: textValue.isEmpty,
+                                       placeholder: fieldType.placeholder))
             .background(Color(Asset.Colors.solitudeGrey.color))
             .frame(height: fieldHeight, alignment: .center)
             .cornerRadius(rectRadius)
@@ -43,9 +45,9 @@ struct UserField: View {
     
     func createField(for field: FieldType) -> some View {
         if field == .email {
-            return AnyView(TextField(field.text, text: $textValue))
+            return AnyView(TextField("", text: $textValue))
         } else {
-            return AnyView(SecureField(field.text, text: $textValue))
+            return AnyView(SecureField("", text: $textValue))
         }
     }
     
@@ -56,10 +58,36 @@ struct UserField: View {
         var text: String {
             switch self {
             case .email:
+                return L10n.SignUpPage.Label.email
+            case .password:
+                return L10n.SignUpPage.Label.password
+            }
+        }
+        
+        var placeholder: String {
+            switch self {
+            case .email:
                 return L10n.SignInPage.Field.enterEmailAddress
             case .password:
                 return L10n.SignInPage.Field.enterPassword
             }
+        }
+    }
+}
+
+struct PlaceholderStyle: ViewModifier {
+    var showPlaceHolder: Bool
+    var placeholder: String
+
+    public func body(content: Content) -> some View {
+        ZStack(alignment: .leading) {
+            if showPlaceHolder {
+                Text(placeholder)
+                    .italic()
+                    .foregroundColor(.secondary)
+            }
+            content
+                .foregroundColor(Color.black)
         }
     }
 }

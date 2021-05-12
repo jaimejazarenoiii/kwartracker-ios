@@ -42,14 +42,17 @@ struct SNSButton: View {
         case signIn
         case signInGoogle
         case signInApple
+        case signUp
+        case signUpGoogle
+        case signUpApple
         
         var color: Color {
             switch self {
-            case .signIn:
+            case .signIn, .signUp:
                 return Color(Asset.Colors.teal.color)
-            case .signInGoogle:
+            case .signInGoogle, .signUpGoogle:
                 return Color(Asset.Colors.blueberry.color)
-            case .signInApple:
+            case .signInApple, .signUpApple:
                 return Color.black.opacity(0.9)
             }
         }
@@ -62,16 +65,22 @@ struct SNSButton: View {
                 return L10n.SignInPage.Button.signInGoogle
             case .signInApple:
                 return L10n.SignInPage.Button.signInApple
+            case .signUp:
+                return L10n.SignUpPage.Button.signUp
+            case .signUpGoogle:
+                return L10n.SignUpPage.Button.signUpGoogle
+            case .signUpApple:
+                return L10n.SignUpPage.Button.signUpApple
             }
         }
         
         var image: UIImage? {
             switch self {
-            case .signIn:
+            case .signIn, .signUp:
                 return nil
-            case .signInGoogle:
+            case .signInGoogle, .signUpGoogle:
                 return Asset.Images.googleIcon.image
-            case .signInApple:
+            case .signInApple, .signUpApple:
                 return Asset.Images.appleIcon.image
             }
         }
