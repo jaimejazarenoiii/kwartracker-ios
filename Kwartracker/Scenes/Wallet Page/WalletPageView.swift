@@ -8,24 +8,36 @@
 import SwiftUI
 
 struct WalletPageView: View {
-    @State private var topMargin: CGFloat = 30
+    @EnvironmentObject var store: AppStore
+    @State private var margin: CGFloat = 30
+    private var separator: UIColor = Asset.Colors.spindleGrey.color
+    private var separatorHeight: CGFloat = 0.5
     var body: some View {
         AuthLayoutView {
-            SignInHeaderView()
+            WalletNavigationView(navigationTitle: L10n.Wallet.Title.myWallet)
         } content: {
             ScrollView(showsIndicators: true) {
                 VStack {
                     WalletOneCardCenterView()
                     WalletActionButtonView()
+                    
+                    Spacer()
+                        .frame(height: margin)
+                    
+                    WalletSectionHeader()
+                    
+                    Spacer()
+                        .frame(height: margin)
+                    ForEach(store.state.transactionState.transactions, id: \.id) {
+                        TransactionRowContent(transaction: $0)
+                        Rectangle()
+                            .fill(Color(separator))
+                            .frame(height: separatorHeight)
+                    }
+                    .frame(width: UIScreen.main.bounds.width * 0.8)
                 }
-                .padding(.top, topMargin)
-            }.background(Color.white)
+                .padding(.top, margin)
+            }.background(Color(Asset.Colors.solitudeGrey.color))
         }
-    }
-}
-
-struct WalletPageView_Previews: PreviewProvider {
-    static var previews: some View {
-        WalletPageView()
     }
 }

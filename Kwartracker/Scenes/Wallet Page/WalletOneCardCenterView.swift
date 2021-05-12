@@ -11,7 +11,8 @@ struct WalletOneCardCenterView: View {
     @State private var scrollOffset: CGFloat = 0
     @State private var dragOffset: CGFloat = 0
     @State private var itemSpacing: CGFloat = 20
-    @State private var cardSize: CGSize = CGSize(width: 238, height: 155)
+    @State private var baseSize: CGSize = CGSize(width: 238, height: 155)
+    @State private var cardSize: CGSize = .zero
     @State private var page: Int = 1
     
     // value will be passed as parameter later
@@ -19,6 +20,12 @@ struct WalletOneCardCenterView: View {
     
     ///https://levelup.gitconnected.com/snap-to-item-scrolling-debccdcbb22f
     init() {
+        let maxWidth: CGFloat = 238
+        let calculatedWidth = UIScreen.main.bounds.width * 0.65
+        let newWidth = maxWidth < calculatedWidth ? maxWidth : calculatedWidth
+        let calculatedHeight = self.setHeightRatio(width: newWidth,
+                                                   baseSize: baseSize)
+        self._cardSize = State(initialValue: CGSize(width: calculatedWidth, height: calculatedHeight))
         // Calculate Total Content Width
         let contentWidth: CGFloat = CGFloat(items) * cardSize.width + CGFloat(items - 1) * itemSpacing
         let screenWidth = UIScreen.main.bounds.width

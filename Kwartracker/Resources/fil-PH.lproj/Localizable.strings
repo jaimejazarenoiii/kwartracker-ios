@@ -25,7 +25,17 @@
 "sign_up_page.button.sign_up_guest" = "Sign in as guest";
 "sign_up_page.label.already_have_an_account" = "Already have an account?";
 "sign_up_page.button.sign_in" = "Sign In";
+"card.title.savings" = "Savings";
+"card.title.budget" = "Budget";
+"card.title.goal" = "Goal";
+"card.title.available_balance" = "Available Balance";
+"wallet.action_button.edit_wallet" = "Edit Wallet";
+"wallet.action_button.add_transaction" = "Add Transaction";
 "transactions_page.title_bar" = "Transactions";
 "transactions_page.transaction_search_placeholder" = "Search Transaction";
 "transactions_page.add_amount" = "+ %@";
 "transactions_page.deduct_amount" = "- %@";
+"view_all" = "View All";
+"wallet.action_button.edit_wallet" = "Edit Wallet";
+"wallet.action_button.add_transaction" = "Add Transaction";
+"wallet.title.my_wallet" = "My Wallets";

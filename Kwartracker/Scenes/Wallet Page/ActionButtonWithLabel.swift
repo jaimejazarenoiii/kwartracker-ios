@@ -16,13 +16,13 @@ struct ActionButtonWithLabel: View {
     var body: some View {
         HStack {
             Button(action: {
-            }) {
+            }, label: {
                 Image(iconName)
                     .renderingMode(.template)
                     .foregroundColor(Color(iconColor))
-            }
-            .frame(width: buttonSize)
-            .buttonStyle(RoundWhiteButtonStyle(paddingSize: $padding))
+                    .frame(width: 10, height: 10)
+            })
+            .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.solitudeGrey.color, padding: 10))
             Text(label)
                 .font(.system(size: 12,
                               weight: .bold))

@@ -35,3 +35,7 @@
 "transactions_page.transaction_search_placeholder" = "Search Transaction";
 "transactions_page.add_amount" = "+ %@";
 "transactions_page.deduct_amount" = "- %@";
+"view_all" = "View All";
+"wallet.action_button.edit_wallet" = "Edit Wallet";
+"wallet.action_button.add_transaction" = "Add Transaction";
+"wallet.title.my_wallet" = "My Wallets";

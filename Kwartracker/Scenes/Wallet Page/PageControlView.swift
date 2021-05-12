@@ -17,7 +17,7 @@ struct PageControl: View {
                 RoundedRectangle(cornerRadius: 5, style: .continuous)
                     .fill(index == self.index ?
                             Color(Asset.Colors.teal.name) :
-                            Color(Asset.Colors.solitudeGrey.name))
+                            Color(Asset.Colors.solitudeGreyShade2.name))
                     .frame(width: index == self.index ? 20 : 10,
                            height: 10)
             }

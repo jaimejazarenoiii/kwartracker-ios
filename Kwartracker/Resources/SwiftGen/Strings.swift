@@ -10,6 +10,8 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// View All
+  internal static let viewAll = L10n.tr("Localizable", "view_all")
 
   internal enum Card {
     internal enum Title {
@@ -117,6 +119,10 @@ internal enum L10n {
       internal static let addTransaction = L10n.tr("Localizable", "wallet.action_button.add_transaction")
       /// Edit Wallet
       internal static let editWallet = L10n.tr("Localizable", "wallet.action_button.edit_wallet")
+    }
+    internal enum Title {
+      /// My Wallets
+      internal static let myWallet = L10n.tr("Localizable", "wallet.title.my_wallet")
     }
   }
 }
