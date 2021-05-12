@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		163DABCC264B59CA00DCBB47 /* BrowsePhotoField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163DABCB264B59CA00DCBB47 /* BrowsePhotoField.swift */; };
 		163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E592D260CB88E00E54401 /* KwartrackerApp.swift */; };
 		163E5930260CB88E00E54401 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E592F260CB88E00E54401 /* ContentView.swift */; };
 		163E5932260CB89100E54401 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 163E5931260CB89100E54401 /* Images.xcassets */; };
@@ -80,6 +81,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		163DABCB264B59CA00DCBB47 /* BrowsePhotoField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsePhotoField.swift; sourceTree = "<group>"; };
 		163E592A260CB88E00E54401 /* Kwartracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kwartracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		163E592D260CB88E00E54401 /* KwartrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KwartrackerApp.swift; sourceTree = "<group>"; };
 		163E592F260CB88E00E54401 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				16895013264AC06B00EED051 /* SelectableFieldForm.swift */,
+				163DABCB264B59CA00DCBB47 /* BrowsePhotoField.swift */,
 			);
 			path = "Form Inputs";
 			sourceTree = "<group>";
@@ -779,6 +782,7 @@
 				163E5930260CB88E00E54401 /* ContentView.swift in Sources */,
 				1683C90B2629C7BB00B1D4D8 /* CircleButtonStyle.swift in Sources */,
 				169DA46D2644C76F0063204F /* APIRequestState.swift in Sources */,
+				163DABCC264B59CA00DCBB47 /* BrowsePhotoField.swift in Sources */,
 				16C5C77D2635349F00F33B72 /* Transaction.swift in Sources */,
 				7A17D13226298678005BB190 /* UserField.swift in Sources */,
 				164E95EC2612224100D84B7F /* AppState.swift in Sources */,
