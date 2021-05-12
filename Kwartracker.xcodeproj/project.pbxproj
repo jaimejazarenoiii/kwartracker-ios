@@ -35,6 +35,7 @@
 		1683C9142629C81100B1D4D8 /* LinearGradient+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683C9132629C81100B1D4D8 /* LinearGradient+Extensions.swift */; };
 		16895014264AC06B00EED051 /* SelectableFieldForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16895013264AC06B00EED051 /* SelectableFieldForm.swift */; };
 		16895023264AC0B600EED051 /* RoundedRectangleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16895022264AC0B600EED051 /* RoundedRectangleButtonStyle.swift */; };
+		16895034264AC78100EED051 /* TextFieldForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16895033264AC78100EED051 /* TextFieldForm.swift */; };
 		169DA46D2644C76F0063204F /* APIRequestState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169DA46C2644C76F0063204F /* APIRequestState.swift */; };
 		169DA4722644C8A60063204F /* CircularLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169DA4712644C8A60063204F /* CircularLoaderView.swift */; };
 		16C5C7782635347A00F33B72 /* TransactionRowContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C7772635347A00F33B72 /* TransactionRowContent.swift */; };
@@ -116,6 +117,7 @@
 		1683C9132629C81100B1D4D8 /* LinearGradient+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinearGradient+Extensions.swift"; sourceTree = "<group>"; };
 		16895013264AC06B00EED051 /* SelectableFieldForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableFieldForm.swift; sourceTree = "<group>"; };
 		16895022264AC0B600EED051 /* RoundedRectangleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleButtonStyle.swift; sourceTree = "<group>"; };
+		16895033264AC78100EED051 /* TextFieldForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldForm.swift; sourceTree = "<group>"; };
 		169DA46C2644C76F0063204F /* APIRequestState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestState.swift; sourceTree = "<group>"; };
 		169DA4712644C8A60063204F /* CircularLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularLoaderView.swift; sourceTree = "<group>"; };
 		16C5C7772635347A00F33B72 /* TransactionRowContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRowContent.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				16895013264AC06B00EED051 /* SelectableFieldForm.swift */,
+				16895033264AC78100EED051 /* TextFieldForm.swift */,
 				163DABCB264B59CA00DCBB47 /* BrowsePhotoField.swift */,
 			);
 			path = "Form Inputs";
@@ -799,6 +802,7 @@
 				16C5C7A026362D3500F33B72 /* TransactionsViewState.swift in Sources */,
 				169DA4722644C8A60063204F /* CircularLoaderView.swift in Sources */,
 				7AB88B282628071C00E2DFD3 /* RoundedCorner.swift in Sources */,
+				16895034264AC78100EED051 /* TextFieldForm.swift in Sources */,
 				16C5C7982636296600F33B72 /* Currency.swift in Sources */,
 				164E97EF2614ACF000D84B7F /* Strings.swift in Sources */,
 				1683C9022629C76F00B1D4D8 /* TransactionsView.swift in Sources */,
