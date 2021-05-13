@@ -7,19 +7,6 @@
 
 import SwiftUI
 
-enum AddTransactionPageViewType {
-    case chooseWalletPage
-    case addTransactionForm
-
-    var shouldShowWalletPage: Bool {
-        self == .chooseWalletPage
-    }
-
-    var shouldShowAddTransactionForm: Bool {
-        self == .addTransactionForm
-    }
-}
-
 struct AddTransactionView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var showTransactionPageType: AddTransactionPageViewType = .chooseWalletPage
@@ -148,6 +135,21 @@ struct AddTransactionView: View {
         .navigationBarHidden(true)
         .onAppear {
             showTransactionPageType = .chooseWalletPage
+        }
+    }
+}
+
+extension AddTransactionView {
+    enum AddTransactionPageViewType {
+        case chooseWalletPage
+        case addTransactionForm
+
+        var shouldShowWalletPage: Bool {
+            self == .chooseWalletPage
+        }
+
+        var shouldShowAddTransactionForm: Bool {
+            self == .addTransactionForm
         }
     }
 }
