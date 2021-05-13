@@ -41,6 +41,8 @@
 		291DFF942632D61B00DAC0EF /* WalletOneCardCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291DFF932632D61B00DAC0EF /* WalletOneCardCenterView.swift */; };
 		29464F542637C3A100E6E082 /* PageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29464F532637C3A100E6E082 /* PageControlView.swift */; };
 		29464F5926380F3400E6E082 /* WalletActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29464F5826380F3400E6E082 /* WalletActionButtonView.swift */; };
+		29A8991B264CA53100671237 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A8991A264CA53100671237 /* SnapshotHelper.swift */; };
+		29A89920264CA55C00671237 /* WalletPageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A8991F264CA55C00671237 /* WalletPageUITests.swift */; };
 		29AB6750264531EB00D375A6 /* CardLabelModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB674F264531EB00D375A6 /* CardLabelModifier.swift */; };
 		29AB67582645322700D375A6 /* CardValueModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB67572645322700D375A6 /* CardValueModifier.swift */; };
 		29AB675D2645326400D375A6 /* ActionButtonWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB675C2645326400D375A6 /* ActionButtonWithLabel.swift */; };
@@ -128,6 +130,8 @@
 		291DFF932632D61B00DAC0EF /* WalletOneCardCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletOneCardCenterView.swift; sourceTree = "<group>"; };
 		29464F532637C3A100E6E082 /* PageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlView.swift; sourceTree = "<group>"; };
 		29464F5826380F3400E6E082 /* WalletActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletActionButtonView.swift; sourceTree = "<group>"; };
+		29A8991A264CA53100671237 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		29A8991F264CA55C00671237 /* WalletPageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPageUITests.swift; sourceTree = "<group>"; };
 		29AB674F264531EB00D375A6 /* CardLabelModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLabelModifier.swift; sourceTree = "<group>"; };
 		29AB67572645322700D375A6 /* CardValueModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardValueModifier.swift; sourceTree = "<group>"; };
 		29AB675C2645326400D375A6 /* ActionButtonWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonWithLabel.swift; sourceTree = "<group>"; };
@@ -253,6 +257,8 @@
 		163E5949260CB89100E54401 /* KwartrackerUITests */ = {
 			isa = PBXGroup;
 			children = (
+				29A8991A264CA53100671237 /* SnapshotHelper.swift */,
+				29A8991F264CA55C00671237 /* WalletPageUITests.swift */,
 				163E594A260CB89100E54401 /* KwartrackerUITests.swift */,
 				163E594C260CB89100E54401 /* Info.plist */,
 			);
@@ -877,6 +883,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				163E594B260CB89100E54401 /* KwartrackerUITests.swift in Sources */,
+				29A8991B264CA53100671237 /* SnapshotHelper.swift in Sources */,
+				29A89920264CA55C00671237 /* WalletPageUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1079,6 +1087,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UH6TFVQ36D;
 				INFOPLIST_FILE = KwartrackerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1101,6 +1110,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UH6TFVQ36D;
 				INFOPLIST_FILE = KwartrackerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1122,6 +1132,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UH6TFVQ36D;
 				INFOPLIST_FILE = KwartrackerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1142,6 +1153,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UH6TFVQ36D;
 				INFOPLIST_FILE = KwartrackerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
