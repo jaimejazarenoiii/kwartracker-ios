@@ -17,6 +17,47 @@ internal enum L10n {
   /// Password
   internal static let password = L10n.tr("Localizable", "password")
 
+  internal enum AddTransactionPage {
+    /// Add Transaction
+    internal static let titleBar = L10n.tr("Localizable", "add_transaction_page.title_bar")
+    internal enum Button {
+      /// Add
+      internal static let add = L10n.tr("Localizable", "add_transaction_page.button.add")
+      /// Next
+      internal static let next = L10n.tr("Localizable", "add_transaction_page.button.next")
+    }
+    internal enum FieldInput {
+      /// Enter transaction name
+      internal static let enterTransactionName = L10n.tr("Localizable", "add_transaction_page.field_input.enter_transaction_name")
+      /// Select Category
+      internal static let selectCategory = L10n.tr("Localizable", "add_transaction_page.field_input.select_category")
+      /// DD / MM / YYYY
+      internal static let selectDate = L10n.tr("Localizable", "add_transaction_page.field_input.select_date")
+      /// Select transaction type
+      internal static let selectTransactionType = L10n.tr("Localizable", "add_transaction_page.field_input.select_transaction_type")
+      /// Enter name of person
+      internal static let spentWithThisPerson = L10n.tr("Localizable", "add_transaction_page.field_input.spent_with_this_person")
+      /// Select wallet to add
+      internal static let whichWalletDoYouWantToAdd = L10n.tr("Localizable", "add_transaction_page.field_input.which_wallet_do_you_want_to_add")
+    }
+    internal enum FieldLabel {
+      /// Category
+      internal static let categoy = L10n.tr("Localizable", "add_transaction_page.field_label.categoy")
+      /// Enter amount
+      internal static let enterAmount = L10n.tr("Localizable", "add_transaction_page.field_label.enter_amount")
+      /// Select date
+      internal static let selectDate = L10n.tr("Localizable", "add_transaction_page.field_label.select_date")
+      /// Spent with this person
+      internal static let spentWithThisPerson = L10n.tr("Localizable", "add_transaction_page.field_label.spent_with_this_person")
+      /// Transaction name
+      internal static let transactionName = L10n.tr("Localizable", "add_transaction_page.field_label.transaction_name")
+      /// Transaction type
+      internal static let transactionType = L10n.tr("Localizable", "add_transaction_page.field_label.transaction_type")
+      /// Which wallet do you want it to add?
+      internal static let whichWalletDoYouWantToAdd = L10n.tr("Localizable", "add_transaction_page.field_label.which_wallet_do_you_want_to_add")
+    }
+  }
+
   internal enum Enter {
     /// Enter password
     internal static let password = L10n.tr("Localizable", "enter.password")
