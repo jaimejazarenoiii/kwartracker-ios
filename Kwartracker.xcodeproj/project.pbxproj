@@ -53,6 +53,9 @@
 		7FE718881CB43731FBDE3CA8 /* Pods_Kwartracker_KwartrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5FF1E2AB4ED121C5D59731 /* Pods_Kwartracker_KwartrackerUITests.framework */; };
 		9A063C037CD795723F7C8978 /* Pods_KwartrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */; };
 		A9CFE877880189ECE3F83CB8 /* Pods_Kwartracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D507178A90E22E9AB2ABF11A /* Pods_Kwartracker.framework */; };
+		C6249AA82637EB8C00C55B31 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6249AA72637EB8C00C55B31 /* SignUpView.swift */; };
+		C65699C32637C91400D24D2F /* SignUpFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65699C12637C91400D24D2F /* SignUpFooterView.swift */; };
+		C65699C42637C91400D24D2F /* SignUpBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65699C22637C91400D24D2F /* SignUpBodyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +130,9 @@
 		7AD9B8882626F3A300CF0EA6 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		9E15A147209E6A913358D61B /* Pods-KwartrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KwartrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-KwartrackerTests/Pods-KwartrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE5FF1E2AB4ED121C5D59731 /* Pods_Kwartracker_KwartrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kwartracker_KwartrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6249AA72637EB8C00C55B31 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		C65699C12637C91400D24D2F /* SignUpFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFooterView.swift; sourceTree = "<group>"; };
+		C65699C22637C91400D24D2F /* SignUpBodyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpBodyView.swift; sourceTree = "<group>"; };
 		D507178A90E22E9AB2ABF11A /* Pods_Kwartracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kwartracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD3E9E5BB7FB306F0A54B049 /* Pods-Kwartracker-KwartrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker-KwartrackerUITests.release.xcconfig"; path = "Target Support Files/Pods-Kwartracker-KwartrackerUITests/Pods-Kwartracker-KwartrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DF4D41E232EA75D22CD128E1 /* Pods-Kwartracker-KwartrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker-KwartrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Kwartracker-KwartrackerUITests/Pods-Kwartracker-KwartrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -248,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				1683C9002629C75700B1D4D8 /* Transactions */,
+				C6A089802637C6D200E6653E /* SignUp */,
 				163E592F260CB88E00E54401 /* ContentView.swift */,
 				7AD9B8722626EC2A00CF0EA6 /* AuthLayoutView.swift */,
 				7AD9B8692626EBA500CF0EA6 /* Sign-in Page */,
@@ -435,6 +442,24 @@
 				7A17D1302629863A005BB190 /* Sign-in Reusables */,
 			);
 			path = Content;
+			sourceTree = "<group>";
+		};
+		C65699C02637C8EE00D24D2F /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				C65699C22637C91400D24D2F /* SignUpBodyView.swift */,
+				C65699C12637C91400D24D2F /* SignUpFooterView.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		C6A089802637C6D200E6653E /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				C65699C02637C8EE00D24D2F /* Content */,
+				C6249AA72637EB8C00C55B31 /* SignUpView.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		FBDD14E75727D540662415F6 /* Pods */ = {
@@ -736,6 +761,8 @@
 				16C5C77D2635349F00F33B72 /* Transaction.swift in Sources */,
 				7A17D13226298678005BB190 /* UserField.swift in Sources */,
 				164E95EC2612224100D84B7F /* AppState.swift in Sources */,
+				C6249AA82637EB8C00C55B31 /* SignUpView.swift in Sources */,
+				C65699C32637C91400D24D2F /* SignUpFooterView.swift in Sources */,
 				7AD9B8732626EC2A00CF0EA6 /* AuthLayoutView.swift in Sources */,
 				7AD9B86B2626EC0000CF0EA6 /* SignInHeaderView.swift in Sources */,
 				7A17D13A26298695005BB190 /* SNSButton.swift in Sources */,
@@ -762,6 +789,7 @@
 				164E95F226122BD200D84B7F /* AppReducer.swift in Sources */,
 				16C5C7922636293900F33B72 /* Category.swift in Sources */,
 				16C5C7782635347A00F33B72 /* TransactionRowContent.swift in Sources */,
+				C65699C42637C91400D24D2F /* SignUpBodyView.swift in Sources */,
 				163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */,
 				1683C9142629C81100B1D4D8 /* LinearGradient+Extensions.swift in Sources */,
 			);

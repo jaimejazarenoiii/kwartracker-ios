@@ -10,52 +10,6 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
-  /// Email
-  internal static let email = L10n.tr("Localizable", "email")
-  /// or
-  internal static let or = L10n.tr("Localizable", "or")
-  /// Password
-  internal static let password = L10n.tr("Localizable", "password")
-
-  internal enum Enter {
-    /// Enter password
-    internal static let password = L10n.tr("Localizable", "enter.password")
-    internal enum Email {
-      /// Enter email address
-      internal static let address = L10n.tr("Localizable", "enter.email.address")
-    }
-  }
-
-  internal enum No {
-    internal enum Account {
-      /// No account yet?
-      internal static let yet = L10n.tr("Localizable", "no.account.yet")
-    }
-  }
-
-  internal enum Recover {
-    /// Recover password
-    internal static let password = L10n.tr("Localizable", "recover.password")
-  }
-
-  internal enum Sign {
-    /// Sign In
-    internal static let `in` = L10n.tr("Localizable", "sign.in")
-    /// Sign Up
-    internal static let up = L10n.tr("Localizable", "sign.up")
-    internal enum In {
-      internal enum As {
-        /// Sign in as guest
-        internal static let guest = L10n.tr("Localizable", "sign.in.as.guest")
-      }
-      internal enum With {
-        /// Sign in with Apple
-        internal static let apple = L10n.tr("Localizable", "sign.in.with.apple")
-        /// Sign in with Google
-        internal static let google = L10n.tr("Localizable", "sign.in.with.google")
-      }
-    }
-  }
 
   internal enum SignInPage {
     internal enum Button {
@@ -94,6 +48,41 @@ internal enum L10n {
     }
   }
 
+  internal enum SignUpPage {
+    internal enum Button {
+      /// Sign In
+      internal static let signIn = L10n.tr("Localizable", "sign_up_page.button.sign_in")
+      /// Sign Up
+      internal static let signUp = L10n.tr("Localizable", "sign_up_page.button.sign_up")
+      /// Sign up with Apple
+      internal static let signUpApple = L10n.tr("Localizable", "sign_up_page.button.sign_up_apple")
+      /// Sign up with Google
+      internal static let signUpGoogle = L10n.tr("Localizable", "sign_up_page.button.sign_up_google")
+      /// Sign in as guest
+      internal static let signUpGuest = L10n.tr("Localizable", "sign_up_page.button.sign_up_guest")
+    }
+    internal enum Field {
+      /// Enter email address
+      internal static let enterEmailAddress = L10n.tr("Localizable", "sign_up_page.field.enter_email_address")
+      /// Enter password
+      internal static let enterPassword = L10n.tr("Localizable", "sign_up_page.field.enter_password")
+    }
+    internal enum Label {
+      /// Already have an account?
+      internal static let alreadyHaveAnAccount = L10n.tr("Localizable", "sign_up_page.label.already_have_an_account")
+      /// Email
+      internal static let email = L10n.tr("Localizable", "sign_up_page.label.email")
+      /// or
+      internal static let or = L10n.tr("Localizable", "sign_up_page.label.or")
+      /// Password
+      internal static let password = L10n.tr("Localizable", "sign_up_page.label.password")
+    }
+    internal enum Title {
+      /// Create\nAccount
+      internal static let createAccount = L10n.tr("Localizable", "sign_up_page.title.create_account")
+    }
+  }
+
   internal enum TransactionsPage {
     /// + %@
     internal static func addAmount(_ p1: Any) -> String {
@@ -107,11 +96,6 @@ internal enum L10n {
     internal static let titleBar = L10n.tr("Localizable", "transactions_page.title_bar")
     /// Search Transaction
     internal static let transactionSearchPlaceholder = L10n.tr("Localizable", "transactions_page.transaction_search_placeholder")
-  }
-
-  internal enum Welcome {
-    /// Welcome\nBack
-    internal static let back = L10n.tr("Localizable", "welcome.back")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
