@@ -25,7 +25,7 @@ struct WalletOneCardCenterView: View {
         let newWidth = maxWidth < calculatedWidth ? maxWidth : calculatedWidth
         let calculatedHeight = self.setHeightRatio(width: newWidth,
                                                    baseSize: baseSize)
-        self._cardSize = State(initialValue: CGSize(width: calculatedWidth, height: calculatedHeight))
+        self._cardSize = State(initialValue: CGSize(width: newWidth, height: calculatedHeight))
         // Calculate Total Content Width
         let contentWidth: CGFloat = CGFloat(items) * cardSize.width + CGFloat(items - 1) * itemSpacing
         let screenWidth = UIScreen.main.bounds.width
