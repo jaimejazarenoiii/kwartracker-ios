@@ -1,4 +1,4 @@
-// Filipino
+// English
 "sign_in_page.title.welcome_back" = "Welcome\nBack";
 "sign_in_page.label.email" = "Email";
 "sign_in_page.field.enter_email_address" = "Enter email address";
@@ -41,3 +41,6 @@
 "wallet.title.my_wallet" = "My Wallets";
 "wallet.target.to_target_amount" = "to target amount";
 "wallet.target.to_target_date" = "to target date";
+"wallet.type.budget" = "Budget";
+"wallet.type.goal" = "Goal";
+"wallet.type.savings" = "Savings";

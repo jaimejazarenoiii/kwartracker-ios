@@ -13,7 +13,7 @@ struct Transaction {
     var title: String = ""
     var category: Category
     var amount: Double = 0
-    var wallet: Wallet = Wallet()
+    var wallet: Wallet = Wallet(id: 0)
     var rawDateTime: String = ""
     var recurring: Bool = false
     var with: String = ""

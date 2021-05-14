@@ -131,6 +131,15 @@ internal enum L10n {
       internal static let myWallet = L10n.tr("Localizable", "wallet.title.my_wallet")
     }
   }
+
+  internal enum WalletType {
+    /// Budget
+    internal static let budget = L10n.tr("Localizable", "wallet_type.budget")
+    /// Goal
+    internal static let goal = L10n.tr("Localizable", "wallet_type.goal")
+    /// Savings
+    internal static let savings = L10n.tr("Localizable", "wallet_type.savings")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
