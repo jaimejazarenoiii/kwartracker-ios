@@ -16,6 +16,16 @@ struct CardTargetView: View {
     private let baseFrame: CGSize = CGSize(width: 315, height: 90)
     private let progressBarSize: CGSize = CGSize(width: 275, height: 12)
     private let separatorSize: CGSize = CGSize(width: 1, height: 50)
+    private var targetValue: String = ""
+    private var wallet: Wallet
+    
+    init(wallet: Wallet) {
+        self.wallet = wallet
+        let year = wallet.targetDateCount?.year ?? 0
+        let month = wallet.targetDateCount?.month ?? 0
+        let day = wallet.targetDateCount?.day ?? 0
+        targetValue = "\(year)Y: \(month)M: \(day)D"
+    }
     
     var body: some View {
         ZStack(alignment: .leading) {
@@ -23,13 +33,15 @@ struct CardTargetView: View {
                                                baseSize: baseFrame)), cornerRadius: rectRadius)
             VStack {
                 HStack {
-                    TargetViewLabel(bottomLabel: L10n.Wallet.Target.toTargetAmount)
+                    TargetViewLabel(bottomLabel: L10n.Wallet.Target.toTargetAmount,
+                                    targetValue: wallet.total.withCommas)
                     Rectangle()
                         .fill(Color(Asset.Colors.iron.color))
                         .frame(width: separatorSize.width,
                                height: separatorSize.height)
                         .padding([.leading, .trailing], margin)
-                    TargetViewLabel(bottomLabel: L10n.Wallet.Target.toTargetDate)
+                    TargetViewLabel(bottomLabel: L10n.Wallet.Target.toTargetDate,
+                                    targetValue: targetValue)
                 }
                 
                 ProgressView(rectFrame: progressBarSize)
@@ -38,11 +50,5 @@ struct CardTargetView: View {
         }
         .frame(width: frameWidth,
                height: self.setHeightRatio(width: frameWidth, baseSize: baseFrame))
-    }
-}
-
-struct WalletTargetView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardTargetView()
     }
 }

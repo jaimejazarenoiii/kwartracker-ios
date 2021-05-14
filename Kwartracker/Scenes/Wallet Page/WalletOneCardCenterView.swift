@@ -8,27 +8,29 @@
 import SwiftUI
 
 struct WalletOneCardCenterView: View {
-    @State private var margin: CGFloat = 30
+    private var wallets = [Wallet]()
+    private var wallet = Wallet(id: 0)
+    private var baseSize: CGSize = CGSize(width: 238, height: 155)
+    private var itemSpacing: CGFloat = 20
+    private var margin: CGFloat = 30
     @State private var scrollOffset: CGFloat = 0
     @State private var dragOffset: CGFloat = 0
-    @State private var itemSpacing: CGFloat = 20
-    @State private var baseSize: CGSize = CGSize(width: 238, height: 155)
     @State private var cardSize: CGSize = .zero
     @State private var page: Int = 1
-    
-    // value will be passed as parameter later
-    @State private var items: Int = 5
+    @State private var showTargetView: Bool = false
     
     ///https://levelup.gitconnected.com/snap-to-item-scrolling-debccdcbb22f
-    init() {
+    init(wallets: [Wallet]) {
         let maxWidth: CGFloat = 238
         let calculatedWidth = UIScreen.main.bounds.width * 0.65
         let newWidth = maxWidth < calculatedWidth ? maxWidth : calculatedWidth
         let calculatedHeight = self.setHeightRatio(width: newWidth,
                                                    baseSize: baseSize)
-        self._cardSize = State(initialValue: CGSize(width: newWidth, height: calculatedHeight))
+        self._cardSize = State(initialValue: CGSize(width: newWidth,
+                                                   height: calculatedHeight))
+        self.wallets = wallets
         // Calculate Total Content Width
-        let contentWidth: CGFloat = CGFloat(items) * cardSize.width + CGFloat(items - 1) * itemSpacing
+        let contentWidth: CGFloat = CGFloat(wallets.count) * cardSize.width + CGFloat(wallets.count - 1) * itemSpacing
         let screenWidth = UIScreen.main.bounds.width
         
         // Set Initial Offset to first Item
@@ -41,8 +43,8 @@ struct WalletOneCardCenterView: View {
     var body: some View {
         VStack {
             HStack(spacing: itemSpacing) {
-                ForEach(0..<items) { _ in
-                    CardView(cardSize: $cardSize)
+                ForEach(wallets, id: \.id) { wallet in
+                    CardView(cardSize: cardSize, wallet: wallet)
                 }
             }
             .frame(width: UIScreen.main.bounds.width)
@@ -60,7 +62,7 @@ struct WalletOneCardCenterView: View {
                     }
                 })
             )
-            CardPageControlView(index: $page, maxIndex: items)
+            CardPageControlView(index: $page, maxIndex: wallets.count)
                 .padding([.top, .bottom], margin)
             
             WalletActionButtonView()
@@ -68,7 +70,9 @@ struct WalletOneCardCenterView: View {
             Spacer()
                 .frame(height: margin)
             
-            CardTargetView()
+            if showTargetView {
+                CardTargetView(wallet: wallets[page - 1])
+            }
         }
     }
     
@@ -78,7 +82,8 @@ struct WalletOneCardCenterView: View {
         dragOffset = 0
         
         // Now calculate which item to snap to
-        let contentWidth: CGFloat = CGFloat(items) * cardSize.width + CGFloat(items - 1) * itemSpacing
+        let contentWidth: CGFloat = CGFloat(wallets.count) *
+            cardSize.width + CGFloat(wallets.count - 1) * itemSpacing
         let screenWidth = UIScreen.main.bounds.width
         
         // Center position of current offset
@@ -94,10 +99,12 @@ struct WalletOneCardCenterView: View {
             index = CGFloat(Int(index))
         }
         // Protect from scrolling out of bounds
-        index = min(index, CGFloat(items) - 1)
+        index = min(index, CGFloat(wallets.count) - 1)
         index = max(index, 0)
         
-        page = abs(Int(index - CGFloat(items)))
+        page = abs(Int(index - CGFloat(wallets.count)))
+        let type = wallets[page - 1].type
+        showTargetView = (type == WalletType.goal.rawValue)
         
         // Set final offset (snapping to item)
         let newOffset = index * cardSize.width
@@ -108,11 +115,5 @@ struct WalletOneCardCenterView: View {
             + itemSpacing
         
         return newOffset
-    }
-}
-
-struct WalletCardScrollView_Previews: PreviewProvider {
-    static var previews: some View {
-        WalletOneCardCenterView()
     }
 }

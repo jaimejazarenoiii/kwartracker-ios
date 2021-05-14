@@ -18,7 +18,7 @@ struct WalletPageView: View {
         } content: {
             ScrollView(showsIndicators: true) {
                 VStack {
-                    WalletOneCardCenterView()
+                    WalletOneCardCenterView(wallets: store.state.walletState.wallets)
                     
                     Spacer()
                         .frame(height: margin)

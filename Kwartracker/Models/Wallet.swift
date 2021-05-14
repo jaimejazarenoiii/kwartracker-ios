@@ -19,16 +19,11 @@ struct Wallet {
         targetRawDate.toDate("yyyy-MM-dd")?.date
     }
     
-    func getRawDateTime(format: String = "yyyy-MM-dd") -> String? {
-        dateTime?.toFormat(format)
-    }
+    var targetDateCount: DateComponents? {
+        guard let date = dateTime else { return nil }
 
-    func getDay() -> String {
-        "\(dateTime?.day ?? 1)"
-    }
-
-    func getMonth() -> String {
-        getRawDateTime(format: "MMM") ?? ""
+        let diffs = Calendar.current.dateComponents([.year, .month, .day], from: Date(), to: date)
+        return diffs
     }
 
     func createTransactionErrorMessage() -> String? {

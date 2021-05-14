@@ -13,7 +13,8 @@ struct CardView: View {
     @State private var cornerRadius: CGFloat = 25
     // value will be passed later
     @State private var cardColorName: String = Asset.Colors.mintGreen.name
-    @Binding var cardSize: CGSize
+    var cardSize: CGSize
+    var wallet: Wallet
     
     var body: some View {
         ZStack(alignment: .leading) {
@@ -33,15 +34,15 @@ struct CardView: View {
                         y: cardSize.height / 2.8)
                 .blur(radius: bubbleRadiusBlur)
             VStack(alignment: .leading) {
-                Text(L10n.Card.Title.goal.uppercased())
+                Text(wallet.type.uppercased())
                     .modifier(CardLabel())
-                Text("Trip to Japan")
+                Text(wallet.title)
                     .modifier(CardLabelValue())
                 
                 VStack(alignment: .leading) {
                     Text(L10n.Card.Title.availableBalance.uppercased())
                         .modifier(CardLabel())
-                    Text("₱ 10,000.00")
+                    Text(wallet.total.withCommas)
                         .modifier(CardLabelValue())
                 }.padding([.top, .bottom], 2)
             }.padding([.leading], 25)
