@@ -39,3 +39,5 @@
 "wallet.action_button.edit_wallet" = "Edit Wallet";
 "wallet.action_button.add_transaction" = "Add Transaction";
 "wallet.title.my_wallet" = "My Wallets";
+"wallet.target.to_target_amount" = "to target amount";
+"wallet.target.to_target_date" = "to target date";

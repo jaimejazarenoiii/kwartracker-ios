@@ -19,7 +19,6 @@ struct WalletPageView: View {
             ScrollView(showsIndicators: true) {
                 VStack {
                     WalletOneCardCenterView()
-                    WalletActionButtonView()
                     
                     Spacer()
                         .frame(height: margin)

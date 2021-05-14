@@ -15,12 +15,12 @@ struct WalletActionButtonView: View {
     @State private var addTransactionLabel: String = L10n.Wallet.ActionButton.addTransaction
     var body: some View {
         HStack {
-            ActionButtonWithLabel(iconName: $editIconName,
+            WalletActionButtonWithLabel(iconName: $editIconName,
                                   iconColor: $iconColor,
                                   label: $editLabel)
             Spacer()
             
-            ActionButtonWithLabel(iconName: $addTransactionIcon,
+            WalletActionButtonWithLabel(iconName: $addTransactionIcon,
                                   iconColor: $iconColor,
                                   label: $addTransactionLabel)
         }

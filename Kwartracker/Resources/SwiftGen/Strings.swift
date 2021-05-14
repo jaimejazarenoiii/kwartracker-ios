@@ -120,6 +120,12 @@ internal enum L10n {
       /// Edit Wallet
       internal static let editWallet = L10n.tr("Localizable", "wallet.action_button.edit_wallet")
     }
+    internal enum Target {
+      /// to target amount
+      internal static let toTargetAmount = L10n.tr("Localizable", "wallet.target.to_target_amount")
+      /// to target date
+      internal static let toTargetDate = L10n.tr("Localizable", "wallet.target.to_target_date")
+    }
     internal enum Title {
       /// My Wallets
       internal static let myWallet = L10n.tr("Localizable", "wallet.title.my_wallet")

@@ -1,5 +1,5 @@
 //
-//  ActionButtonWithLabel.swift
+//  WalletActionButtonWithLabel.swift
 //  Kwartracker
 //
 //  Created by Leah Joy Ylaya on 5/7/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ActionButtonWithLabel: View {
+struct WalletActionButtonWithLabel: View {
     @State private var buttonSize: CGFloat = 30
     @State private var padding: CGFloat = 10
     @Binding var iconName: String

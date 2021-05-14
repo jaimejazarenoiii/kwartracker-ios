@@ -1,5 +1,5 @@
 //
-//  PageControlView.swift
+//  CardPageControlView.swift
 //  Kwartracker
 //
 //  Created by Leah Joy Ylaya on 4/27/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PageControl: View {
+struct CardPageControlView: View {
     @Binding var index: Int
     let maxIndex: Int
 
