@@ -40,6 +40,7 @@
 		290CA1B2261EABE400239EA7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 290CA1B1261EABE400239EA7 /* swiftgen.yml */; };
 		291DFF942632D61B00DAC0EF /* WalletOneCardCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291DFF932632D61B00DAC0EF /* WalletOneCardCenterView.swift */; };
 		29464F542637C3A100E6E082 /* PageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29464F532637C3A100E6E082 /* PageControlView.swift */; };
+		29327568264E2AF000E8BA8B /* NeumorphismEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29327567264E2AF000E8BA8B /* NeumorphismEffect.swift */; };
 		29464F5926380F3400E6E082 /* WalletActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29464F5826380F3400E6E082 /* WalletActionButtonView.swift */; };
 		29A8991B264CA53100671237 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A8991A264CA53100671237 /* SnapshotHelper.swift */; };
 		29A89920264CA55C00671237 /* WalletPageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A8991F264CA55C00671237 /* WalletPageUITests.swift */; };
@@ -129,6 +130,7 @@
 		290CA1B1261EABE400239EA7 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		291DFF932632D61B00DAC0EF /* WalletOneCardCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletOneCardCenterView.swift; sourceTree = "<group>"; };
 		29464F532637C3A100E6E082 /* PageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlView.swift; sourceTree = "<group>"; };
+		29327567264E2AF000E8BA8B /* NeumorphismEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphismEffect.swift; sourceTree = "<group>"; };
 		29464F5826380F3400E6E082 /* WalletActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletActionButtonView.swift; sourceTree = "<group>"; };
 		29A8991A264CA53100671237 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		29A8991F264CA55C00671237 /* WalletPageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPageUITests.swift; sourceTree = "<group>"; };
@@ -396,6 +398,14 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		29327566264E2AC500E8BA8B /* Neumorphic Views */ = {
+			isa = PBXGroup;
+			children = (
+				29327567264E2AF000E8BA8B /* NeumorphismEffect.swift */,
+			);
+			path = "Neumorphic Views";
+			sourceTree = "<group>";
+		};
 		29AB674E264531B600D375A6 /* View Modefier */ = {
 			isa = PBXGroup;
 			children = (
@@ -453,6 +463,7 @@
 		7AB88B1C262805C500E2DFD3 /* Custom Components */ = {
 			isa = PBXGroup;
 			children = (
+				29327566264E2AC500E8BA8B /* Neumorphic Views */,
 				29AB67612645328400D375A6 /* Button Modifier */,
 				29AB674E264531B600D375A6 /* View Modefier */,
 				1683C9122629C7FD00B1D4D8 /* Linear Gradient */,
@@ -834,6 +845,7 @@
 				163E5B6C260F337600E54401 /* Secrets.swift in Sources */,
 				29AB67632645329400D375A6 /* RoundWhiteButtonModifier.swift in Sources */,
 				164E95FF26122C5E00D84B7F /* World.swift in Sources */,
+				29327568264E2AF000E8BA8B /* NeumorphismEffect.swift in Sources */,
 				7AB1B91C2643887500853FAC /* SignInFooterView.swift in Sources */,
 				29AB675D2645326400D375A6 /* ActionButtonWithLabel.swift in Sources */,
 				7AB88B1E262805F300E2DFD3 /* View+Extensions.swift in Sources */,
