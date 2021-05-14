@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum WalletTypes: String {
+enum WalletType: String {
     case budget = "Budget"
     case goal = "Goal"
     case savings = "Savings"
