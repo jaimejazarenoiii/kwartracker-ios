@@ -11,7 +11,7 @@ struct AlertView: View {
     var body: some View {
         ZStack {
             Color.gray.opacity(0.4).edgesIgnoringSafeArea(.all)
-            MainAlertView()
+            MainAlertView(dialogStatus: .success)
                 .frame(width: 220, height: 240, alignment: .center)
                 .padding(.horizontal)
                 .fixedSize(horizontal: false, vertical: true)

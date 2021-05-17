@@ -13,11 +13,6 @@
 "sign_in_page.label.no_account_yet" = "No account yet?";
 "sign_in_page.button.sign_up" = "Sign Up";
 
-"button_label.success" = "Success";
-"button_label.delete" = "Delete";
-"button_label.exit" = "Exit";
-"button_label.cancel" = "Cancel";
-
 "pop_up_confirmation_modal.title.success" = "Success";
 "pop_up_confirmation_modal.label.message.success" = "New category has been added.";
 "pop_up_confirmation_modal.title.delete" = "Deleted";

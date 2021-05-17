@@ -9,17 +9,18 @@ import SwiftUI
 
 struct MainAlertView: View {
     
+    let dialogStatus: DialogStatus
+    
     var body: some View {
         VStack {
-            ImageView(imageType: .success)
-            MessageView(messageType: .success)
-            ButtonView(actionHandler: {}, actionLabel: .success)
+            MessageView(state: dialogStatus)
+            ButtonView(actionHandler: {}, actionLabel: dialogStatus)
         }
     }
 }
 
 struct MainAlertView_Previews: PreviewProvider {
     static var previews: some View {
-        MainAlertView()
+        MainAlertView(dialogStatus: .success)
     }
 }
