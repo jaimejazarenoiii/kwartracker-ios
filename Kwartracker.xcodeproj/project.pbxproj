@@ -49,6 +49,7 @@
 		29327593264E729000E8BA8B /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29327592264E729000E8BA8B /* Double+Extension.swift */; };
 		29464F542637C3A100E6E082 /* CardPageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29464F532637C3A100E6E082 /* CardPageControlView.swift */; };
 		29464F5926380F3400E6E082 /* WalletActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29464F5826380F3400E6E082 /* WalletActionButtonView.swift */; };
+		2965572C26525E0F00C30257 /* KNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2965572B26525E0F00C30257 /* KNavigationView.swift */; };
 		29A8991B264CA53100671237 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A8991A264CA53100671237 /* SnapshotHelper.swift */; };
 		29A89920264CA55C00671237 /* WalletPageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A8991F264CA55C00671237 /* WalletPageUITests.swift */; };
 		29AB6750264531EB00D375A6 /* CardLabelModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB674F264531EB00D375A6 /* CardLabelModifier.swift */; };
@@ -56,7 +57,6 @@
 		29AB675D2645326400D375A6 /* WalletActionButtonWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB675C2645326400D375A6 /* WalletActionButtonWithLabel.swift */; };
 		29AB67632645329400D375A6 /* RoundWhiteButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB67622645329300D375A6 /* RoundWhiteButtonModifier.swift */; };
 		29AE102D262EAF5D00B383CF /* WalletPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AE102C262EAF5D00B383CF /* WalletPageView.swift */; };
-		29D35FA0264BE45A00C4DD48 /* WalletNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D35F9F264BE45A00C4DD48 /* WalletNavigationView.swift */; };
 		29D35FA5264BEDB500C4DD48 /* WalletSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D35FA4264BEDB500C4DD48 /* WalletSectionHeader.swift */; };
 		29F6C1FE262ED69800DB2139 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F6C1FD262ED69800DB2139 /* CardView.swift */; };
 		7A17D13226298678005BB190 /* UserField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13126298678005BB190 /* UserField.swift */; };
@@ -146,6 +146,7 @@
 		29327592264E729000E8BA8B /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		29464F532637C3A100E6E082 /* CardPageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPageControlView.swift; sourceTree = "<group>"; };
 		29464F5826380F3400E6E082 /* WalletActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletActionButtonView.swift; sourceTree = "<group>"; };
+		2965572B26525E0F00C30257 /* KNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KNavigationView.swift; sourceTree = "<group>"; };
 		29A8991A264CA53100671237 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		29A8991F264CA55C00671237 /* WalletPageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPageUITests.swift; sourceTree = "<group>"; };
 		29AB674F264531EB00D375A6 /* CardLabelModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLabelModifier.swift; sourceTree = "<group>"; };
@@ -153,7 +154,6 @@
 		29AB675C2645326400D375A6 /* WalletActionButtonWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletActionButtonWithLabel.swift; sourceTree = "<group>"; };
 		29AB67622645329300D375A6 /* RoundWhiteButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundWhiteButtonModifier.swift; sourceTree = "<group>"; };
 		29AE102C262EAF5D00B383CF /* WalletPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPageView.swift; sourceTree = "<group>"; };
-		29D35F9F264BE45A00C4DD48 /* WalletNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletNavigationView.swift; sourceTree = "<group>"; };
 		29D35FA4264BEDB500C4DD48 /* WalletSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSectionHeader.swift; sourceTree = "<group>"; };
 		29F6C1FD262ED69800DB2139 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		2B40F9CAECD52C6174D15F90 /* Pods-Kwartracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker.debug.xcconfig"; path = "Target Support Files/Pods-Kwartracker/Pods-Kwartracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -474,7 +474,6 @@
 				29327548264E193700E8BA8B /* Card Views */,
 				29464F5826380F3400E6E082 /* WalletActionButtonView.swift */,
 				29AB675C2645326400D375A6 /* WalletActionButtonWithLabel.swift */,
-				29D35F9F264BE45A00C4DD48 /* WalletNavigationView.swift */,
 				291DFF932632D61B00DAC0EF /* WalletOneCardCenterView.swift */,
 				29AE102C262EAF5D00B383CF /* WalletPageView.swift */,
 				29D35FA4264BEDB500C4DD48 /* WalletSectionHeader.swift */,
@@ -524,6 +523,7 @@
 			isa = PBXGroup;
 			children = (
 				7AB88B1D262805F300E2DFD3 /* View+Extensions.swift */,
+				2965572B26525E0F00C30257 /* KNavigationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -880,7 +880,6 @@
 				163E5930260CB88E00E54401 /* ContentView.swift in Sources */,
 				7A17D13226298678005BB190 /* UserField.swift in Sources */,
 				1683C90B2629C7BB00B1D4D8 /* CircleButtonStyle.swift in Sources */,
-				29D35FA0264BE45A00C4DD48 /* WalletNavigationView.swift in Sources */,
 				16C5C77D2635349F00F33B72 /* Transaction.swift in Sources */,
 				164E95EC2612224100D84B7F /* AppState.swift in Sources */,
 				C6249AA82637EB8C00C55B31 /* SignUpView.swift in Sources */,
@@ -929,6 +928,7 @@
 				16C5C7922636293900F33B72 /* Category.swift in Sources */,
 				16C5C7782635347A00F33B72 /* TransactionRowContent.swift in Sources */,
 				163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */,
+				2965572C26525E0F00C30257 /* KNavigationView.swift in Sources */,
 				1683C9142629C81100B1D4D8 /* LinearGradient+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
