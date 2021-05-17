@@ -14,10 +14,22 @@
 "sign_in_page.label.no_account_yet" = "No account yet?";
 "sign_in_page.button.sign_up" = "Sign Up";
 
-
 "pop_up_confirmation_modal.title.success" = "Success";
 "pop_up_confirmation_modal.label.message.success" = "New category has been added.";
 "pop_up_confirmation_modal.title.delete" = "Deleted";
 "pop_up_confirmation_modal.label.message.delete" = "It has been successfully deleted.";
 "pop_up_confirmation_modal.title.confirmation" = "Confirmation";
 "pop_up_confirmation_modal.label.message.confirmation" = "Are you sure you want to delete this?";
+
+"sign_up_page.title.create_account" = "Create\nAccount";
+"sign_up_page.label.email" = "Email";
+"sign_up_page.field.enter_email_address" = "Enter email address";
+"sign_up_page.label.password" = "Password";
+"sign_up_page.field.enter_password" = "Enter password";
+"sign_up_page.button.sign_up" = "Sign Up";
+"sign_up_page.label.or" = "or";
+"sign_up_page.button.sign_up_google" = "Sign up with Google";
+"sign_up_page.button.sign_up_apple" = "Sign up with Apple";
+"sign_up_page.button.sign_up_guest" = "Sign in as guest";
+"sign_up_page.label.already_have_an_account" = "Already have an account?";
+"sign_up_page.button.sign_in" = "Sign In";

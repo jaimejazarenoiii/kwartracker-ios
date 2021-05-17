@@ -68,6 +68,41 @@ internal enum L10n {
       internal static let welcomeBack = L10n.tr("Localizable", "sign_in_page.title.welcome_back")
     }
   }
+
+  internal enum SignUpPage {
+    internal enum Button {
+      /// Sign In
+      internal static let signIn = L10n.tr("Localizable", "sign_up_page.button.sign_in")
+      /// Sign Up
+      internal static let signUp = L10n.tr("Localizable", "sign_up_page.button.sign_up")
+      /// Sign up with Apple
+      internal static let signUpApple = L10n.tr("Localizable", "sign_up_page.button.sign_up_apple")
+      /// Sign up with Google
+      internal static let signUpGoogle = L10n.tr("Localizable", "sign_up_page.button.sign_up_google")
+      /// Sign in as guest
+      internal static let signUpGuest = L10n.tr("Localizable", "sign_up_page.button.sign_up_guest")
+    }
+    internal enum Field {
+      /// Enter email address
+      internal static let enterEmailAddress = L10n.tr("Localizable", "sign_up_page.field.enter_email_address")
+      /// Enter password
+      internal static let enterPassword = L10n.tr("Localizable", "sign_up_page.field.enter_password")
+    }
+    internal enum Label {
+      /// Already have an account?
+      internal static let alreadyHaveAnAccount = L10n.tr("Localizable", "sign_up_page.label.already_have_an_account")
+      /// Email
+      internal static let email = L10n.tr("Localizable", "sign_up_page.label.email")
+      /// or
+      internal static let or = L10n.tr("Localizable", "sign_up_page.label.or")
+      /// Password
+      internal static let password = L10n.tr("Localizable", "sign_up_page.label.password")
+    }
+    internal enum Title {
+      /// Create\nAccount
+      internal static let createAccount = L10n.tr("Localizable", "sign_up_page.title.create_account")
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
