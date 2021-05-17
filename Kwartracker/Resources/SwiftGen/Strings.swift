@@ -22,6 +22,27 @@ internal enum L10n {
     internal static let success = L10n.tr("Localizable", "button_label.success")
   }
 
+  internal enum PopUpConfirmationModal {
+    internal enum Label {
+      internal enum Message {
+        /// Are you sure you want to delete this?
+        internal static let confirmation = L10n.tr("Localizable", "pop_up_confirmation_modal.label.message.confirmation")
+        /// It has been successfully deleted.
+        internal static let delete = L10n.tr("Localizable", "pop_up_confirmation_modal.label.message.delete")
+        /// New category has been added.
+        internal static let success = L10n.tr("Localizable", "pop_up_confirmation_modal.label.message.success")
+      }
+    }
+    internal enum Title {
+      /// Confirmation
+      internal static let confirmation = L10n.tr("Localizable", "pop_up_confirmation_modal.title.confirmation")
+      /// Deleted
+      internal static let delete = L10n.tr("Localizable", "pop_up_confirmation_modal.title.delete")
+      /// Success
+      internal static let success = L10n.tr("Localizable", "pop_up_confirmation_modal.title.success")
+    }
+  }
+
   internal enum SignInPage {
     internal enum Button {
       /// Recover password

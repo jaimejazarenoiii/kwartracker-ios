@@ -12,7 +12,7 @@ struct ImageView: View {
     let imageType: ImageType
     
     var body: some View {
-        VStack{
+        VStack {
             Image(uiImage: imageType.image)
         }
     }

@@ -18,3 +18,10 @@
 "button_label.delete" = "Delete";
 "button_label.exit" = "Exit";
 "button_label.cancel" = "Cancel";
+
+"pop_up_confirmation_modal.title.success" = "Success";
+"pop_up_confirmation_modal.label.message.success" = "New category has been added.";
+"pop_up_confirmation_modal.title.delete" = "Deleted";
+"pop_up_confirmation_modal.label.message.delete" = "It has been successfully deleted.";
+"pop_up_confirmation_modal.title.confirmation" = "Confirmation";
+"pop_up_confirmation_modal.label.message.confirmation" = "Are you sure you want to delete this?";

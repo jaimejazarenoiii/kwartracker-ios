@@ -23,12 +23,9 @@ struct ButtonView: View {
                                       color: Color(Asset.Colors.blueberry.color),
                                       shadowRadius: shadowRadius,
                                       shadowOffset: shadowOffset)
-                
-                HStack {
-                    Text(actionLabel.text)
-                        .foregroundColor(.white)
-                        .font(.system(size: fontSize))
-                }
+                Text(actionLabel.text)
+                    .foregroundColor(.white)
+                    .font(.system(size: fontSize))
             }
         })
     }

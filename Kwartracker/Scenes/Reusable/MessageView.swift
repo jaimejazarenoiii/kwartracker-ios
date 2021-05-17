@@ -33,22 +33,22 @@ struct MessageView: View {
         var title: String {
             switch self {
             case .success:
-                return "Success"
+                return L10n.PopUpConfirmationModal.Title.success
             case .deleted:
-                return "Confirmation"
+                return L10n.PopUpConfirmationModal.Title.delete
             case .confirmation:
-                return "Deleted"
+                return L10n.PopUpConfirmationModal.Title.confirmation
             }
         }
         
         var message: String {
             switch self {
             case .success:
-                return "New category has been added."
+                return L10n.PopUpConfirmationModal.Label.Message.success
             case .deleted:
-                return "It has been successfully deleted."
+                return L10n.PopUpConfirmationModal.Label.Message.delete
             case .confirmation:
-                return "Are you sure you want to delete this?"
+                return L10n.PopUpConfirmationModal.Label.Message.confirmation
             }
         }
     }
