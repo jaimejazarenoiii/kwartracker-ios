@@ -11,9 +11,9 @@ struct SignInContentView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     
-    private let headerTextFontSize: CGFloat = 45
+    private let headerTextFontSize: CGFloat = 40
     private let sideMargin: CGFloat = 30
-    private let topHeadMargin: CGFloat = 70
+    private let topHeadMargin: CGFloat = 20
     private let snsOrTopMargin: CGFloat = 5
     private let footNoteTopMargin: CGFloat = 25
     
@@ -61,24 +61,6 @@ struct SignInContentView: View {
                 Spacer()
                 
                 FootnoteButton(action: {}, text: L10n.SignInPage.Button.signInGuest)
-            }
-            .padding(.top, footNoteTopMargin)
-            
-            Divider()
-                .padding([.leading, .trailing], -sideMargin)
-                .padding(.top, footNoteTopMargin)
-            
-            HStack {
-                Spacer()
-                
-                Text(L10n.SignInPage.Label.noAccountYet)
-                    .font(.footnote)
-                    .foregroundColor(Color(Asset.Colors.nightRider.color))
-                
-                FootnoteButton(action: {}, text: L10n.SignInPage.Button.signUp,
-                               fontWeight: .bold, color: Color(Asset.Colors.teal.color))
-                
-                Spacer()
             }
             .padding([.top, .bottom], footNoteTopMargin)
         }

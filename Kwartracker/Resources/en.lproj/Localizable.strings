@@ -1,4 +1,5 @@
 // English
+
 "sign_in_page.title.welcome_back" = "Welcome\nBack";
 "sign_in_page.label.email" = "Email";
 "sign_in_page.field.enter_email_address" = "Enter email address";
@@ -12,6 +13,19 @@
 "sign_in_page.button.recover_password" = "Recover password";
 "sign_in_page.label.no_account_yet" = "No account yet?";
 "sign_in_page.button.sign_up" = "Sign Up";
+
+"sign_up_page.title.create_account" = "Create\nAccount";
+"sign_up_page.label.email" = "Email";
+"sign_up_page.field.enter_email_address" = "Enter email address";
+"sign_up_page.label.password" = "Password";
+"sign_up_page.field.enter_password" = "Enter password";
+"sign_up_page.button.sign_up" = "Sign Up";
+"sign_up_page.label.or" = "or";
+"sign_up_page.button.sign_up_google" = "Sign up with Google";
+"sign_up_page.button.sign_up_apple" = "Sign up with Apple";
+"sign_up_page.button.sign_up_guest" = "Sign in as guest";
+"sign_up_page.label.already_have_an_account" = "Already have an account?";
+"sign_up_page.button.sign_in" = "Sign In";
 
 // Delete Confirmation Alert
 "alert_sheet.title.confirmation" = "Confirmation";
