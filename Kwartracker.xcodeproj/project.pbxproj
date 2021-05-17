@@ -24,6 +24,12 @@
 		164E97EF2614ACF000D84B7F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97ED2614ACF000D84B7F /* Strings.swift */; };
 		164E97F02614ACF000D84B7F /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97EE2614ACF000D84B7F /* Assets.swift */; };
 		164E988D2615C4BA00D84B7F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164E988C2615C4BA00D84B7F /* Colors.xcassets */; };
+		16CCE71D264EB00000345778 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 16CCE71C264EB00000345778 /* SwiftDate */; };
+		16CCE730264F78B000345778 /* SampleSignInAndSignUp.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16CCE72F264F78B000345778 /* SampleSignInAndSignUp.graphql */; };
+		16CCE740264F820F00345778 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CCE73F264F820F00345778 /* API.swift */; };
+		16CCE7452651E4F900345778 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 16CCE7442651E4F900345778 /* KeychainSwift */; };
+		16CCE7492651E53400345778 /* KeyChainKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CCE7482651E53400345778 /* KeyChainKeys.swift */; };
+		16CCE74D2651E57700345778 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CCE74C2651E57700345778 /* Network.swift */; };
 		16CD1B03264901F100272FCA /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 16CD1B02264901F100272FCA /* Apollo */; };
 		16CD1B05264901F100272FCA /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 16CD1B04264901F100272FCA /* ApolloWebSocket */; };
 		290CA1B2261EABE400239EA7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 290CA1B1261EABE400239EA7 /* swiftgen.yml */; };
@@ -61,6 +67,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		16CCE70C264EAE0F00345778 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		163E592A260CB88E00E54401 /* Kwartracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kwartracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		163E592D260CB88E00E54401 /* KwartrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KwartrackerApp.swift; sourceTree = "<group>"; };
@@ -86,7 +105,11 @@
 		164E97ED2614ACF000D84B7F /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		164E97EE2614ACF000D84B7F /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		164E988C2615C4BA00D84B7F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		16CD1B16264907F300272FCA /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		16CCE726264EBD6800345778 /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		16CCE72F264F78B000345778 /* SampleSignInAndSignUp.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SampleSignInAndSignUp.graphql; sourceTree = "<group>"; };
+		16CCE73F264F820F00345778 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		16CCE7482651E53400345778 /* KeyChainKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainKeys.swift; sourceTree = "<group>"; };
+		16CCE74C2651E57700345778 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		290CA1B1261EABE400239EA7 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		2B40F9CAECD52C6174D15F90 /* Pods-Kwartracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker.debug.xcconfig"; path = "Target Support Files/Pods-Kwartracker/Pods-Kwartracker.debug.xcconfig"; sourceTree = "<group>"; };
 		6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KwartrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,7 +139,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16CCE71D264EB00000345778 /* SwiftDate in Frameworks */,
 				A9CFE877880189ECE3F83CB8 /* Pods_Kwartracker.framework in Frameworks */,
+				16CCE7452651E4F900345778 /* KeychainSwift in Frameworks */,
 				16CD1B05264901F100272FCA /* ApolloWebSocket in Frameworks */,
 				16CD1B03264901F100272FCA /* Apollo in Frameworks */,
 			);
@@ -177,7 +202,9 @@
 				163E5B74260F34E400E54401 /* Resources */,
 				7AB88B1C262805C500E2DFD3 /* Custom Components */,
 				163E5936260CB89100E54401 /* Info.plist */,
-				16CD1B16264907F300272FCA /* schema.json */,
+				16CCE726264EBD6800345778 /* schema.json */,
+				16CCE72F264F78B000345778 /* SampleSignInAndSignUp.graphql */,
+				16CCE73F264F820F00345778 /* API.swift */,
 				163E5933260CB89100E54401 /* Preview Content */,
 			);
 			path = Kwartracker;
@@ -251,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				163E5B6B260F337600E54401 /* Secrets.swift */,
+				16CCE7482651E53400345778 /* KeyChainKeys.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -278,6 +306,7 @@
 		16B24BAE261A8D170002065D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				16CCE74C2651E57700345778 /* Network.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -384,13 +413,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 163E594F260CB89100E54401 /* Build configuration list for PBXNativeTarget "Kwartracker" */;
 			buildPhases = (
-				16CD1B292649096F00272FCA /* Apollo CLI */,
 				212A3F62359ED7E67B9CFF95 /* [CP] Check Pods Manifest.lock */,
+				16CD1B292649096F00272FCA /* Apollo CLI */,
 				163E5926260CB88E00E54401 /* Sources */,
 				163E5927260CB88E00E54401 /* Frameworks */,
 				163E5928260CB88E00E54401 /* Resources */,
 				164E97F42614AD5D00D84B7F /* SwiftGen */,
 				164E985B2615714500D84B7F /* SwiftLint */,
+				16CCE70C264EAE0F00345778 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -400,6 +430,8 @@
 			packageProductDependencies = (
 				16CD1B02264901F100272FCA /* Apollo */,
 				16CD1B04264901F100272FCA /* ApolloWebSocket */,
+				16CCE71C264EB00000345778 /* SwiftDate */,
+				16CCE7442651E4F900345778 /* KeychainSwift */,
 			);
 			productName = Kwartracker;
 			productReference = 163E592A260CB88E00E54401 /* Kwartracker.app */;
@@ -477,6 +509,8 @@
 			mainGroup = 163E5921260CB88E00E54401;
 			packageReferences = (
 				16CD1B01264901F100272FCA /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				16CCE71B264EB00000345778 /* XCRemoteSwiftPackageReference "SwiftDate" */,
+				16CCE7432651E4F900345778 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 163E592B260CB88E00E54401 /* Products */;
 			projectDirPath = "";
@@ -499,6 +533,7 @@
 				164E97E82614AC2900D84B7F /* Localizable.strings in Resources */,
 				163E5935260CB89100E54401 /* Preview Assets.xcassets in Resources */,
 				163E5932260CB89100E54401 /* Images.xcassets in Resources */,
+				16CCE730264F78B000345778 /* SampleSignInAndSignUp.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,7 +606,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n";
+			shellScript = "# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://staging-kwartracker.jaimejazarenoiii.me/graphql\"\n";
 		};
 		212A3F62359ED7E67B9CFF95 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -646,6 +681,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16CCE74D2651E57700345778 /* Network.swift in Sources */,
 				7A7FA1322637B70A00484F51 /* FootnoteButton.swift in Sources */,
 				163E5930260CB88E00E54401 /* ContentView.swift in Sources */,
 				7A17D13226298678005BB190 /* UserField.swift in Sources */,
@@ -654,6 +690,7 @@
 				7AD9B86B2626EC0000CF0EA6 /* SignInHeaderView.swift in Sources */,
 				7A17D13A26298695005BB190 /* SNSButton.swift in Sources */,
 				163E5B6C260F337600E54401 /* Secrets.swift in Sources */,
+				16CCE7492651E53400345778 /* KeyChainKeys.swift in Sources */,
 				164E95FF26122C5E00D84B7F /* World.swift in Sources */,
 				7AB1B91C2643887500853FAC /* SignInFooterView.swift in Sources */,
 				7AB88B1E262805F300E2DFD3 /* View+Extensions.swift in Sources */,
@@ -668,6 +705,7 @@
 				163E5B64260F32A000E54401 /* Obfuscate.swift in Sources */,
 				164E97F02614ACF000D84B7F /* Assets.swift in Sources */,
 				164E95F226122BD200D84B7F /* AppReducer.swift in Sources */,
+				16CCE740264F820F00345778 /* API.swift in Sources */,
 				163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1006,6 +1044,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		16CCE71B264EB00000345778 /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftDate.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		16CCE7432651E4F900345778 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 19.0.0;
+			};
+		};
 		16CD1B01264901F100272FCA /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
@@ -1017,6 +1071,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		16CCE71C264EB00000345778 /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16CCE71B264EB00000345778 /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
+		16CCE7442651E4F900345778 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16CCE7432651E4F900345778 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
 		16CD1B02264901F100272FCA /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 16CD1B01264901F100272FCA /* XCRemoteSwiftPackageReference "apollo-ios" */;
