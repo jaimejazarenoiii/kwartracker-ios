@@ -44,7 +44,7 @@ struct WalletOneCardCenterView: View {
         VStack {
             HStack(spacing: itemSpacing) {
                 ForEach(wallets, id: \.id) { wallet in
-                    CardView(cardSize: cardSize, wallet: wallet)
+                    CardView(size: cardSize, wallet: wallet)
                 }
             }
             .frame(width: UIScreen.main.bounds.width)

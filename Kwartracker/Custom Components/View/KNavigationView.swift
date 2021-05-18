@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct KNavigationView<B: View>: View {
+    private var buttonSize: CGFloat = 10
+    private var space: CGFloat = 30
     var navigationTitle: String
     var destinationView: AnyView?
     var rightButton: B?
@@ -26,12 +28,12 @@ struct KNavigationView<B: View>: View {
     var body: some View {
         HStack {
             Spacer()
-                .frame(width: 30)
+                .frame(width: space)
 
             Button(action: {
             }) {
                 Image(uiImage: Asset.Images.arrowLeftIconWhite.image)
-                    .frame(width: 10, height: 10)
+                    .frame(width: buttonSize, height: buttonSize)
             }
             .buttonStyle(
                 CircleButtonStyle(buttonColor: Asset.Colors.teal.color)
@@ -55,7 +57,7 @@ struct KNavigationView<B: View>: View {
             }
             
             Spacer()
-                .frame(width: 30)
+                .frame(width: space)
         }
         .background(Color(Asset.Colors.teal.color))
     }

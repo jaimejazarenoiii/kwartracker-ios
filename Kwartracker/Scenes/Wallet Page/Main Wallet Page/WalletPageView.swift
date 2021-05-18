@@ -17,7 +17,7 @@ struct WalletPageView: View {
         NavigationView {
             AuthLayoutView {
                 KNavigationView(L10n.Wallet.Title.myWallet,
-                                destination: AnyView(TransactionsView()),
+                                destination: AnyView(AddNewWalletPage()),
                                 buttonToggle: $buttonToggle) {
                     Button(action: {
                         buttonToggle.toggle()
