@@ -11,8 +11,9 @@ struct WalletPageView: View {
     @EnvironmentObject var store: AppStore
     @State private var margin: CGFloat = 30
     @State private var buttonToggle: Bool = false
-    private var separator: UIColor = Asset.Colors.spindleGrey.color
-    private var separatorHeight: CGFloat = 0.5
+    private let separator: UIColor = Asset.Colors.spindleGrey.color
+    private let separatorHeight: CGFloat = 0.5
+    private let headerIconSize: CGFloat = 10
     var body: some View {
         NavigationView {
             AuthLayoutView {
@@ -23,7 +24,7 @@ struct WalletPageView: View {
                         buttonToggle.toggle()
                     }, label: {
                         Image(uiImage: Asset.Images.addIconTeal.image)
-                            .frame(width: 10, height: 10)
+                            .frame(width: headerIconSize, height: headerIconSize)
                     })
                     .buttonStyle(CircleButtonStyle(buttonColor: .white))
                 }
