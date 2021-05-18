@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct TealRoundedRectangleButtonStyle: ButtonStyle {
+struct RoundedRectangleButtonStyle: ButtonStyle {
+    let fillColor: UIColor
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding(15)
@@ -16,7 +17,7 @@ struct TealRoundedRectangleButtonStyle: ButtonStyle {
                 Group {
                     if configuration.isPressed {
                         RoundedRectangle(cornerRadius: 15)
-                            .fill(Color(Asset.Colors.teal.color))
+                            .fill(Color(fillColor))
                             .overlay(
                                 RoundedRectangle(cornerRadius: 8)
                                     .stroke(Color.gray, lineWidth: 4)
@@ -26,14 +27,14 @@ struct TealRoundedRectangleButtonStyle: ButtonStyle {
                             )
                             .overlay(
                                 RoundedRectangle(cornerRadius: 15)
-                                    .stroke(Color(Asset.Colors.teal.color), lineWidth: 8)
+                                    .stroke(Color(fillColor), lineWidth: 8)
                                     .blur(radius: 4)
                                     .offset(x: -2, y: -2)
                                     .mask(RoundedRectangle(cornerRadius: 8).fill(LinearGradient(.clear, .black)))
                             )
                     } else {
                         RoundedRectangle(cornerRadius: 15)
-                            .fill(Color(Asset.Colors.teal.color))
+                            .fill(Color(fillColor))
                             .shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
                             .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
                     }
