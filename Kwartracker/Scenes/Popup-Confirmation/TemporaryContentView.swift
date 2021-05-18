@@ -11,6 +11,8 @@ struct TemporaryContentView: View {
     @State private var deleteButton = false
     @State private var successButton = false
     
+    private let contentVariables = PopupContentVariables()
+    
     var body: some View {
         /*
          * Contents in this file are temporary,
@@ -24,8 +26,8 @@ struct TemporaryContentView: View {
                }, label: {
                 Text(L10n.AlertSheet.Title.deleted)
                })
-               .zIndex(deleteButton ? 1 : 0)
-               .blur(radius: deleteButton ? 15 : 0)
+               .zIndex(deleteButton ? contentVariables.show : contentVariables.hide)
+               .blur(radius: deleteButton ? contentVariables.blurRadius : CGFloat(contentVariables.hide))
                .modifier(PopupView(showAlert: deleteButton,
                                 alignment: .center,
                                 direction: .top,
@@ -38,13 +40,13 @@ struct TemporaryContentView: View {
                }, label: {
                 Text(L10n.AlertSheet.Title.success)
                })
-               .blur(radius: successButton ? 15 : 0)
+               .blur(radius: deleteButton ? contentVariables.blurRadius : CGFloat(contentVariables.hide))
                .modifier(PopupView(showAlert: successButton,
                                    alignment: .center,
                                    direction: .bottom,
                                    content: { ChangePasswordSuccessfullyView(showAlert: $successButton) }))
             }
-            .opacity(deleteButton ? 0 : 1)
+            .opacity(deleteButton ? contentVariables.hide : contentVariables.show)
         }
     }
 }
@@ -53,4 +55,10 @@ struct TemporaryContentView_Previews: PreviewProvider {
     static var previews: some View {
         TemporaryContentView()
     }
+}
+
+private struct PopupContentVariables {
+    let blurRadius: CGFloat = 15
+    let show: Double = 1
+    let hide: Double = 0
 }
