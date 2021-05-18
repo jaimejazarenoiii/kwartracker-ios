@@ -9,34 +9,56 @@ import SwiftUI
 
 struct RoundedRectangleButtonStyle: ButtonStyle {
     let fillColor: UIColor
+
+    private let defaultPadding: CGFloat = 15
+    private let cornerRadius: CGFloat = 15
+    private let strokeLineWidth: CGFloat = 4
+    private let shadowRadius: CGFloat = 8
+    private let blackOpacity: Double = 0.2
+    private let whiteOpacity: Double = 0.7
+
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .padding(15)
-            .contentShape(RoundedRectangle(cornerRadius: 15))
+            .padding(defaultPadding)
+            .contentShape(RoundedRectangle(cornerRadius: cornerRadius))
             .background(
                 Group {
                     if configuration.isPressed {
-                        RoundedRectangle(cornerRadius: 15)
+                        RoundedRectangle(cornerRadius: cornerRadius)
                             .fill(Color(fillColor))
                             .overlay(
-                                RoundedRectangle(cornerRadius: 8)
-                                    .stroke(Color.gray, lineWidth: 4)
-                                    .blur(radius: 4)
-                                    .offset(x: 2, y: 2)
-                                    .mask(RoundedRectangle(cornerRadius: 8).fill(LinearGradient(.black, .clear)))
+                                RoundedRectangle(cornerRadius: cornerRadius)
+                                    .stroke(Color.gray, lineWidth: strokeLineWidth)
+                                    .blur(radius: cornerRadius)
+                                    .offset(x: strokeLineWidth / 2, y: strokeLineWidth / 2)
+                                    .mask(RoundedRectangle(cornerRadius: cornerRadius)
+                                            .fill(LinearGradient(.black, .clear))
+                                    )
                             )
                             .overlay(
-                                RoundedRectangle(cornerRadius: 15)
-                                    .stroke(Color(fillColor), lineWidth: 8)
-                                    .blur(radius: 4)
-                                    .offset(x: -2, y: -2)
-                                    .mask(RoundedRectangle(cornerRadius: 8).fill(LinearGradient(.clear, .black)))
+                                RoundedRectangle(cornerRadius: cornerRadius)
+                                    .stroke(Color(fillColor), lineWidth: strokeLineWidth)
+                                    .blur(radius: cornerRadius)
+                                    .offset(x: -(strokeLineWidth / 2), y: -(strokeLineWidth / 2))
+                                    .mask(RoundedRectangle(cornerRadius: cornerRadius)
+                                            .fill(LinearGradient(.clear, .black))
+                                    )
                             )
                     } else {
-                        RoundedRectangle(cornerRadius: 15)
+                        RoundedRectangle(cornerRadius: cornerRadius)
                             .fill(Color(fillColor))
-                            .shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
-                            .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
+                            .shadow(
+                                color: Color.black.opacity(blackOpacity),
+                                radius: shadowRadius,
+                                x: shadowRadius,
+                                y: shadowRadius
+                            )
+                            .shadow(
+                                color: Color.white.opacity(whiteOpacity),
+                                radius: shadowRadius,
+                                x: -(shadowRadius / 2),
+                                y: -(shadowRadius / 2)
+                            )
                     }
                 }
             )
