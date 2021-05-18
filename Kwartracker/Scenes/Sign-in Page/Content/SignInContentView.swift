@@ -14,7 +14,7 @@ struct SignInContentView: View {
     
     private let headerTextFontSize: CGFloat = 40
     private let sideMargin: CGFloat = 30
-    private let topHeadMargin: CGFloat = 20
+    private let topHeadMargin: CGFloat = 70
     private let snsOrTopMargin: CGFloat = 5
     private let footNoteTopMargin: CGFloat = 25
     
