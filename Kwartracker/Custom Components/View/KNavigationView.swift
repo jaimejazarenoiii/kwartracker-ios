@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct KNavigationView<B: View>: View {
+    @Environment(\.presentationMode) var presentationMode
     private var buttonSize: CGFloat = 10
     private var space: CGFloat = 30
     var navigationTitle: String
@@ -31,6 +32,7 @@ struct KNavigationView<B: View>: View {
                 .frame(width: space)
 
             Button(action: {
+                self.presentationMode.wrappedValue.dismiss()
             }) {
                 Image(uiImage: Asset.Images.arrowLeftIconWhite.image)
                     .frame(width: buttonSize, height: buttonSize)
