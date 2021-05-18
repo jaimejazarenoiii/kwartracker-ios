@@ -14,7 +14,6 @@ struct SignInView: View {
         } content: {
             VStack(spacing: 0) {
                 SignInContentView()
-                SignInFooterView()
             }
         }
     }
