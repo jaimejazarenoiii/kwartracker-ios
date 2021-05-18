@@ -12,10 +12,14 @@ import Foundation
 internal enum L10n {
   /// Currency
   internal static let currency = L10n.tr("Localizable", "currency")
+  /// No
+  internal static let no = L10n.tr("Localizable", "no")
   /// Save
   internal static let save = L10n.tr("Localizable", "save")
   /// View All
   internal static let viewAll = L10n.tr("Localizable", "view_all")
+  /// Yes
+  internal static let yes = L10n.tr("Localizable", "yes")
 
   internal enum Card {
     internal enum Title {
@@ -150,6 +154,8 @@ internal enum L10n {
       internal static let editWallet = L10n.tr("Localizable", "wallet.action_button.edit_wallet")
     }
     internal enum Label {
+      /// Include in overall total balance?
+      internal static let includeOverallTotalBalance = L10n.tr("Localizable", "wallet.label.include_overall_total_balance")
       /// Wallet Name
       internal static let walletName = L10n.tr("Localizable", "wallet.label.wallet_name")
       /// Wallet Type

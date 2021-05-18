@@ -41,6 +41,8 @@
 		16C5C7982636296600F33B72 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C7972636296600F33B72 /* Currency.swift */; };
 		16C5C7A026362D3500F33B72 /* TransactionsViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C79F26362D3500F33B72 /* TransactionsViewState.swift */; };
 		16C5C7A526362E5300F33B72 /* TransactionsViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C7A426362E5300F33B72 /* TransactionsViewAction.swift */; };
+		2902D8A926538F26009B6288 /* KToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2902D8A826538F26009B6288 /* KToggleView.swift */; };
+		2902D8D7265395E4009B6288 /* ToggleViewModefier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2902D8D6265395E4009B6288 /* ToggleViewModefier.swift */; };
 		290CA1B2261EABE400239EA7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 290CA1B1261EABE400239EA7 /* swiftgen.yml */; };
 		2914E4E22652678F00F911EE /* AddNewWalletPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2914E4E12652678F00F911EE /* AddNewWalletPage.swift */; };
 		291DFF942632D61B00DAC0EF /* WalletOneCardCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291DFF932632D61B00DAC0EF /* WalletOneCardCenterView.swift */; };
@@ -145,6 +147,8 @@
 		16C5C7972636296600F33B72 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		16C5C79F26362D3500F33B72 /* TransactionsViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewState.swift; sourceTree = "<group>"; };
 		16C5C7A426362E5300F33B72 /* TransactionsViewAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewAction.swift; sourceTree = "<group>"; };
+		2902D8A826538F26009B6288 /* KToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KToggleView.swift; sourceTree = "<group>"; };
+		2902D8D6265395E4009B6288 /* ToggleViewModefier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleViewModefier.swift; sourceTree = "<group>"; };
 		290CA1B1261EABE400239EA7 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		2914E4E12652678F00F911EE /* AddNewWalletPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewWalletPage.swift; sourceTree = "<group>"; };
 		291DFF932632D61B00DAC0EF /* WalletOneCardCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletOneCardCenterView.swift; sourceTree = "<group>"; };
@@ -377,6 +381,8 @@
 		1652AEEB2646A669003542CD /* Form Inputs */ = {
 			isa = PBXGroup;
 			children = (
+				2902D8A826538F26009B6288 /* KToggleView.swift */,
+				29725CC526535FB9003A1CFA /* KTextfield.swift */,
 				1652AEEC2646A67D003542CD /* SelectableFieldForm.swift */,
 				16606D282647966B005F2CF5 /* OptionSelectView.swift */,
 			);
@@ -510,6 +516,7 @@
 			children = (
 				29AB674F264531EB00D375A6 /* CardLabelModifier.swift */,
 				29AB67572645322700D375A6 /* CardValueModifier.swift */,
+				2902D8D6265395E4009B6288 /* ToggleViewModefier.swift */,
 			);
 			path = "View Modefier";
 			sourceTree = "<group>";
@@ -576,7 +583,6 @@
 			children = (
 				7AB88B1D262805F300E2DFD3 /* View+Extensions.swift */,
 				2965572B26525E0F00C30257 /* KNavigationView.swift */,
-				29725CC526535FB9003A1CFA /* KTextfield.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -937,6 +943,7 @@
 				7A17D13226298678005BB190 /* UserField.swift in Sources */,
 				1652AED526469EBD003542CD /* RoundedRectangleButtonStyle.swift in Sources */,
 				164E95EC2612224100D84B7F /* AppState.swift in Sources */,
+				2902D8A926538F26009B6288 /* KToggleView.swift in Sources */,
 				C6249AA82637EB8C00C55B31 /* SignUpView.swift in Sources */,
 				29327593264E729000E8BA8B /* Double+Extension.swift in Sources */,
 				C65699C32637C91400D24D2F /* SignUpFooterView.swift in Sources */,
@@ -951,6 +958,7 @@
 				29327568264E2AF000E8BA8B /* NeumorphismEffect.swift in Sources */,
 				7AB1B91C2643887500853FAC /* SignInFooterView.swift in Sources */,
 				29AB675D2645326400D375A6 /* WalletActionButtonWithLabel.swift in Sources */,
+				2902D8D7265395E4009B6288 /* ToggleViewModefier.swift in Sources */,
 				7AB88B1E262805F300E2DFD3 /* View+Extensions.swift in Sources */,
 				29AE102D262EAF5D00B383CF /* WalletPageView.swift in Sources */,
 				16606D292647966B005F2CF5 /* OptionSelectView.swift in Sources */,

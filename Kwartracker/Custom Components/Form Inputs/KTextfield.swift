@@ -20,7 +20,7 @@ struct KTextfield: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(textLabel)
-                .font(.footnote)
+                .font(.system(size: 15))
                 .foregroundColor(Color(Asset.Colors.spindleGrey.color))
                 .padding(.top)
             
@@ -39,8 +39,6 @@ struct KTextfield: View {
                     .padding([.leading, .trailing], fieldSideMargin)
             }
         }
-        .padding([.trailing, .leading],
-                 UIScreen.main.bounds.width * 0.07)
     }
 }
 

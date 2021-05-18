@@ -4,6 +4,7 @@
 "card.title.goal" = "Goal";
 "card.title.available_balance" = "Available Balance";
 "currency" = "Currency";
+"no" = "No";
 "save" = "Save";
 "sign_in_page.title.welcome_back" = "Welcome\nBack";
 "sign_in_page.label.email" = "Email";
@@ -46,6 +47,7 @@
 "view_all" = "View All";
 "wallet.action_button.edit_wallet" = "Edit Wallet";
 "wallet.action_button.add_transaction" = "Add Transaction";
+"wallet.label.include_overall_total_balance" = "Include in overall total balance?";
 "wallet.label.wallet_name" = "Wallet Name";
 "wallet.label.wallet_type" = "Wallet Type";
 "wallet.placeholder.enter_wallet_name" = "Enter wallet name";
@@ -58,3 +60,4 @@
 "wallet_type.budget" = "Budget";
 "wallet_type.goal" = "Goal";
 "wallet_type.savings" = "Savings";
+"yes" = "Yes";
