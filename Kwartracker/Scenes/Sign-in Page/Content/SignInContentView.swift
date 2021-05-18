@@ -10,6 +10,7 @@ import SwiftUI
 struct SignInContentView: View {
     @State private var email: String = ""
     @State private var password: String = ""
+    @State var showingSignUp = false
     
     private let headerTextFontSize: CGFloat = 45
     private let sideMargin: CGFloat = 30
@@ -66,6 +67,33 @@ struct SignInContentView: View {
         }
     }
     
+    private var FooterView: some View {
+        Group {
+            Divider()
+            
+            HStack {
+                Spacer()
+                
+                Text(L10n.SignInPage.Label.noAccountYet)
+                    .font(.footnote)
+                    .foregroundColor(Color(Asset.Colors.nightRider.color))
+                Button(action: {
+                    self.showingSignUp.toggle()
+                }) {
+                    Text(L10n.SignInPage.Button.signUp)
+                        .font(.footnote)
+                        .foregroundColor(Color(Asset.Colors.teal.color))
+                        .underline()
+                }.fullScreenCover(isPresented: $showingSignUp) {
+                    SignUpView()
+                }
+                
+                Spacer()
+            }
+            .padding([.top, .bottom], footNoteTopMargin)
+        }
+    }
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
@@ -77,6 +105,8 @@ struct SignInContentView: View {
                 SNSActions
                 
                 FootNoteActions
+                
+                FooterView
             }
             .padding([.leading, .trailing], sideMargin)
             .padding(.top, topHeadMargin)
