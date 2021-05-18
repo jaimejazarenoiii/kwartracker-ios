@@ -50,6 +50,7 @@
 		29464F542637C3A100E6E082 /* CardPageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29464F532637C3A100E6E082 /* CardPageControlView.swift */; };
 		29464F5926380F3400E6E082 /* WalletActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29464F5826380F3400E6E082 /* WalletActionButtonView.swift */; };
 		2965572C26525E0F00C30257 /* KNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2965572B26525E0F00C30257 /* KNavigationView.swift */; };
+		29725CC626535FB9003A1CFA /* KTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29725CC526535FB9003A1CFA /* KTextfield.swift */; };
 		29A8991B264CA53100671237 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A8991A264CA53100671237 /* SnapshotHelper.swift */; };
 		29A89920264CA55C00671237 /* WalletPageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A8991F264CA55C00671237 /* WalletPageUITests.swift */; };
 		29AB6750264531EB00D375A6 /* CardLabelModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB674F264531EB00D375A6 /* CardLabelModifier.swift */; };
@@ -524,6 +525,7 @@
 			children = (
 				7AB88B1D262805F300E2DFD3 /* View+Extensions.swift */,
 				2965572B26525E0F00C30257 /* KNavigationView.swift */,
+				29725CC526535FB9003A1CFA /* KTextfield.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -930,6 +932,7 @@
 				163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */,
 				2965572C26525E0F00C30257 /* KNavigationView.swift in Sources */,
 				1683C9142629C81100B1D4D8 /* LinearGradient+Extensions.swift in Sources */,
+				29725CC626535FB9003A1CFA /* KTextfield.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
