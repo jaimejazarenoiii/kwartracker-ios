@@ -13,6 +13,7 @@ struct AddNewWalletPage: View {
     @State private var cardName: String = ""
     @State private var cardType: String = ""
     @State private var cardCurrency: String = ""
+    @State private var savedTo: String = ""
     @State private var includeTotalBalanceFlag: Bool = true
     private let spacing: CGFloat = 30
     
@@ -56,6 +57,7 @@ struct AddNewWalletPage: View {
                     AddWalletFieldsView(walletNameValue: $cardName,
                                         walletCurrency: $cardCurrency,
                                         walletTypeValue: $cardType,
+                                        savedToValue: $savedTo,
                                         includeTotalBalanceFlag: $includeTotalBalanceFlag)
                 }
             }

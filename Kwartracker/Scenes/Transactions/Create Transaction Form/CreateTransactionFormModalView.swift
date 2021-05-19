@@ -37,14 +37,17 @@ struct CreateTransactionFormModalView: View {
 
                 VStack(spacing: 20) {
                     SelectableFieldForm(
+                        menuPresenting: Binding.constant(false),
                         label: L10n.TransactionsCreateFormModal.InputLabel.dateRange,
                         selectLabel: L10n.TransactionsCreateFormModal.InputField.dateRange
                     )
                     SelectableFieldForm(
+                        menuPresenting: Binding.constant(false),
                         label: L10n.TransactionsCreateFormModal.InputLabel.walletType,
                         selectLabel: L10n.TransactionsCreateFormModal.InputField.walletType
                     )
                     SelectableFieldForm(
+                        menuPresenting: Binding.constant(false),
                         label: L10n.TransactionsCreateFormModal.InputLabel.category,
                         selectLabel: L10n.TransactionsCreateFormModal.InputField.category
                     )

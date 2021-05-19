@@ -16,6 +16,8 @@ internal enum L10n {
   internal static let no = L10n.tr("Localizable", "no")
   /// Save
   internal static let save = L10n.tr("Localizable", "save")
+  /// Saved to
+  internal static let savedTo = L10n.tr("Localizable", "saved_to")
   /// View All
   internal static let viewAll = L10n.tr("Localizable", "view_all")
   /// Yes

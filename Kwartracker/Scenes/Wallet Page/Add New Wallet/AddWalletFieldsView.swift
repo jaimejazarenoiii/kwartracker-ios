@@ -11,7 +11,10 @@ struct AddWalletFieldsView: View {
     @Binding var walletNameValue: String
     @Binding var walletCurrency: String
     @Binding var walletTypeValue: String
+    @Binding var savedToValue: String
     @Binding var includeTotalBalanceFlag: Bool
+    @State private var walletTypeMenuPresenting: Bool = false
+    @State private var currencyMenuPresenting: Bool = false
     private let spacing: CGFloat = 30
 
     var body: some View {
@@ -24,17 +27,41 @@ struct AddWalletFieldsView: View {
                 .frame(height: spacing)
             
             SelectableFieldForm(
-                    label: L10n.currency,
-                    selectLabel: L10n.Wallet.Placeholder.selectWalletCurrency
+                menuPresenting: $currencyMenuPresenting,
+                label: L10n.currency,
+                selectLabel: L10n.Wallet.Placeholder.selectWalletCurrency
                 )
             
             Spacer()
                 .frame(height: spacing)
             
+            // not final. used for testing only
             SelectableFieldForm(
-                    label: L10n.Wallet.Label.walletType,
-                    selectLabel: L10n.Wallet.Placeholder.selectWalletType
-                )
+                menuPresenting: $walletTypeMenuPresenting,
+                label: L10n.Wallet.Label.walletType,
+                selectLabel: walletTypeValue.isEmpty ? L10n.Wallet.Placeholder.selectWalletType : walletTypeValue
+            )
+            .actionSheet(isPresented: $walletTypeMenuPresenting) {
+                ActionSheet(
+                    title: Text(L10n.Wallet.Label.walletType), buttons: [
+                        .default(Text(WalletType.savings.rawValue)) {
+                            self.walletTypeValue = WalletType.savings.rawValue
+                        },
+                        .default(Text(WalletType.budget.rawValue)) {
+                            self.walletTypeValue = WalletType.budget.rawValue
+                        },
+                        .cancel()
+                ])
+            }
+            
+            Spacer()
+                .frame(height: spacing)
+            
+            if !walletTypeValue.isEmpty {
+                KTextfield(textValue: $savedToValue,
+                           textLabel: L10n.savedTo,
+                           textPlaceHolder: L10n.savedTo)
+            }
             
             Spacer()
                 .frame(height: spacing)
@@ -54,6 +81,7 @@ struct AddWalletFieldsView_Previews: PreviewProvider {
         AddWalletFieldsView(walletNameValue: Binding.constant(""),
                             walletCurrency: Binding.constant(""),
                             walletTypeValue: Binding.constant(""),
+                            savedToValue: Binding.constant(""),
                             includeTotalBalanceFlag: Binding.constant(true))
     }
 }

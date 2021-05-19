@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SelectableFieldForm: View {
+    @Binding var menuPresenting: Bool
     var label: String
     var selectLabel: String
 
@@ -17,7 +18,9 @@ struct SelectableFieldForm: View {
                 .foregroundColor(Color(Asset.Colors.spindleGrey.color))
                 .font(.system(size: 15))
             ZStack {
-                Button(action: {}) {
+                Button(action: {
+                    menuPresenting.toggle()
+                }) {
                     HStack {
                         Spacer()
                             .frame(width: 16)

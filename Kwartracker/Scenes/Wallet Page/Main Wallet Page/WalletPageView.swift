@@ -55,5 +55,6 @@ struct WalletPageView: View {
             
         }
         .navigationBarHidden(true)
+        .modifier(DismissingKeyboard())
     }
 }
