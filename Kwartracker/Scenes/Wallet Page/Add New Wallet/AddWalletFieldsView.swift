@@ -10,7 +10,7 @@ import SwiftUI
 struct AddWalletFieldsView: View {
     @Binding var walletNameValue: String
     @Binding var walletCurrency: String
-    @Binding var walletTypeValue: String
+    @Binding var walletTypeValue: WalletType
     @Binding var savedToValue: String
     @Binding var includeTotalBalanceFlag: Bool
     @State private var walletTypeMenuPresenting: Bool = false
@@ -39,16 +39,17 @@ struct AddWalletFieldsView: View {
             SelectableFieldForm(
                 menuPresenting: $walletTypeMenuPresenting,
                 label: L10n.Wallet.Label.walletType,
-                selectLabel: walletTypeValue.isEmpty ? L10n.Wallet.Placeholder.selectWalletType : walletTypeValue
+                selectLabel: walletTypeValue == .none ?
+                    L10n.Wallet.Placeholder.selectWalletType : walletTypeValue.stringValue
             )
             .actionSheet(isPresented: $walletTypeMenuPresenting) {
                 ActionSheet(
                     title: Text(L10n.Wallet.Label.walletType), buttons: [
-                        .default(Text(WalletType.savings.rawValue)) {
-                            self.walletTypeValue = WalletType.savings.rawValue
+                        .default(Text(WalletType.savings.stringValue)) {
+                            self.walletTypeValue = .savings
                         },
-                        .default(Text(WalletType.budget.rawValue)) {
-                            self.walletTypeValue = WalletType.budget.rawValue
+                        .default(Text(WalletType.budget.stringValue)) {
+                            self.walletTypeValue = .budget
                         },
                         .cancel()
                 ])
@@ -57,7 +58,7 @@ struct AddWalletFieldsView: View {
             Spacer()
                 .frame(height: spacing)
             
-            if !walletTypeValue.isEmpty {
+            if walletTypeValue != .none {
                 KTextfield(textValue: $savedToValue,
                            textLabel: L10n.savedTo,
                            textPlaceHolder: L10n.savedTo)
@@ -80,7 +81,7 @@ struct AddWalletFieldsView_Previews: PreviewProvider {
     static var previews: some View {
         AddWalletFieldsView(walletNameValue: Binding.constant(""),
                             walletCurrency: Binding.constant(""),
-                            walletTypeValue: Binding.constant(""),
+                            walletTypeValue: Binding.constant(WalletType.none),
                             savedToValue: Binding.constant(""),
                             includeTotalBalanceFlag: Binding.constant(true))
     }

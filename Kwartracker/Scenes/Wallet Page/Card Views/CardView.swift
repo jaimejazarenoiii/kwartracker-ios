@@ -16,7 +16,7 @@ struct CardView: View {
     @State private var bubbleRadiusBlur: CGFloat = 3.0
     @State private var cornerRadius: CGFloat = 25
     
-    @Binding var walletType: String
+    @Binding var walletType: WalletType
     @Binding var walletName: String
     
     var cardSize: CGSize
@@ -25,24 +25,26 @@ struct CardView: View {
     init(size: CGSize, wallet: Wallet) {
         self.cardSize = size
         self.wallet = wallet
+        let type = WalletType(rawValue: wallet.type ?? 0) ?? .none
         
-        self._walletType = Binding.constant(wallet.type)
+        self._walletType = Binding.constant(type)
         self._walletName = Binding.constant(wallet.title)
     }
     
-    init(name: Binding<String>, type: Binding<String>, size: CGSize) {
+    init(name: Binding<String>, type: Binding<WalletType>, size: CGSize) {
         self._walletName = name
         self._walletType = type
         self.cardSize = size
     }
     
     private var cardColor: Color {
-        if walletType == WalletType.savings.rawValue {
-            return Color(Asset.Colors.teal.color)
-        } else if walletType == WalletType.budget.rawValue {
+        switch walletType {
+        case .budget:
             return Color(Asset.Colors.romanRed.color)
-        } else {
+        case .goal:
             return Color(Asset.Colors.mintGreen.color)
+        case .none, .savings:
+            return Color(Asset.Colors.teal.color)
         }
     }
     
@@ -64,7 +66,7 @@ struct CardView: View {
                         y: cardSize.height / 2.8)
                 .blur(radius: bubbleRadiusBlur)
             VStack(alignment: .leading) {
-                Text(walletType.uppercased())
+                Text(walletType.stringValue.uppercased())
                     .modifier(CardLabel())
                 Text(walletName)
                     .modifier(CardLabelValue())

@@ -11,7 +11,7 @@ struct AddNewWalletPage: View {
     @State private var buttonToggle: Bool = false
     @State private var cardSize: CGSize = .zero
     @State private var cardName: String = ""
-    @State private var cardType: String = ""
+    @State private var cardType: WalletType = .none
     @State private var cardCurrency: String = ""
     @State private var savedTo: String = ""
     @State private var includeTotalBalanceFlag: Bool = true

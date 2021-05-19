@@ -10,7 +10,7 @@ import Foundation
 struct Wallet {
     var id: Int
     var title: String = ""
-    var type: String = ""
+    var type: Int?
     var currency: Currency = .philippinePeso
     var total: Double = 0
     var targetRawDate: String = ""
@@ -28,7 +28,7 @@ struct Wallet {
 
     func createTransactionErrorMessage() -> String? {
         if !title.isEmpty &&
-            !type.isEmpty &&
+            type != nil &&
             dateTime != nil {
             return nil
         }
