@@ -15,8 +15,6 @@ struct CardView: View {
     @State private var bubbleOpacity: Double = 0.18
     @State private var bubbleRadiusBlur: CGFloat = 3.0
     @State private var cornerRadius: CGFloat = 25
-    // value will be passed later
-    @State private var cardColorName: String = Asset.Colors.mintGreen.name
     
     @Binding var walletType: String
     @Binding var walletName: String
@@ -38,9 +36,19 @@ struct CardView: View {
         self.cardSize = size
     }
     
+    private var cardColor: Color {
+        if walletType == WalletType.savings.rawValue {
+            return Color(Asset.Colors.teal.color)
+        } else if walletType == WalletType.budget.rawValue {
+            return Color(Asset.Colors.romanRed.color)
+        } else {
+            return Color(Asset.Colors.mintGreen.color)
+        }
+    }
+    
     var body: some View {
         ZStack(alignment: .leading) {
-            Color(cardColorName).blur(radius: 1.0)
+            cardColor.blur(radius: 1.0)
             Circle()
                 .fill(Color.white)
                 .frame(width: smallBubbleWidth)
@@ -77,7 +85,7 @@ struct CardView: View {
         .frame(width: cardSize.width, height: cardSize.height)
         .cornerRadius(cornerRadius)
         .clipped()
-        .shadow(color: Color(cardColorName).opacity(0.3),
+        .shadow(color: cardColor.opacity(0.3),
             radius: 5, x: 0, y: 15)
     }
 }
