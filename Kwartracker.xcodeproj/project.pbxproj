@@ -46,6 +46,7 @@
 		290CA1B2261EABE400239EA7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 290CA1B1261EABE400239EA7 /* swiftgen.yml */; };
 		2914E4E22652678F00F911EE /* AddNewWalletPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2914E4E12652678F00F911EE /* AddNewWalletPage.swift */; };
 		291DFF942632D61B00DAC0EF /* WalletOneCardCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291DFF932632D61B00DAC0EF /* WalletOneCardCenterView.swift */; };
+		29307E8B2653B69B00397F85 /* AddWalletUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29307E8A2653B69B00397F85 /* AddWalletUITest.swift */; };
 		29327541264E13D800E8BA8B /* CardTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29327540264E13D800E8BA8B /* CardTargetView.swift */; };
 		2932755A264E266F00E8BA8B /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29327559264E266F00E8BA8B /* ProgressView.swift */; };
 		29327568264E2AF000E8BA8B /* NeumorphismEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29327567264E2AF000E8BA8B /* NeumorphismEffect.swift */; };
@@ -152,6 +153,7 @@
 		290CA1B1261EABE400239EA7 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		2914E4E12652678F00F911EE /* AddNewWalletPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewWalletPage.swift; sourceTree = "<group>"; };
 		291DFF932632D61B00DAC0EF /* WalletOneCardCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletOneCardCenterView.swift; sourceTree = "<group>"; };
+		29307E8A2653B69B00397F85 /* AddWalletUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWalletUITest.swift; sourceTree = "<group>"; };
 		29327540264E13D800E8BA8B /* CardTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTargetView.swift; sourceTree = "<group>"; };
 		29327559264E266F00E8BA8B /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		29327567264E2AF000E8BA8B /* NeumorphismEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphismEffect.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 			children = (
 				29A8991A264CA53100671237 /* SnapshotHelper.swift */,
 				29A8991F264CA55C00671237 /* WalletPageUITests.swift */,
+				29307E8A2653B69B00397F85 /* AddWalletUITest.swift */,
 				163E594A260CB89100E54401 /* KwartrackerUITests.swift */,
 				163E594C260CB89100E54401 /* Info.plist */,
 			);
@@ -1017,6 +1020,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29307E8B2653B69B00397F85 /* AddWalletUITest.swift in Sources */,
 				163E594B260CB89100E54401 /* KwartrackerUITests.swift in Sources */,
 				29A8991B264CA53100671237 /* SnapshotHelper.swift in Sources */,
 				29A89920264CA55C00671237 /* WalletPageUITests.swift in Sources */,

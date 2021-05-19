@@ -16,7 +16,7 @@ struct KwartrackerApp: App {
     var body: some Scene {
         WindowGroup {
 //            SignInView()
-            TransactionsView()
+            WalletPageView()
                 .environmentObject(store)
         }
     }

@@ -19,6 +19,7 @@ struct AddWalletFieldsView: View {
             KTextfield(textValue: $walletNameValue,
                        textLabel: L10n.Wallet.Label.walletType,
                        textPlaceHolder: L10n.Wallet.Placeholder.enterWalletName)
+                .accessibilityIdentifier("walletName") // use for ui test
             Spacer()
                 .frame(height: spacing)
             

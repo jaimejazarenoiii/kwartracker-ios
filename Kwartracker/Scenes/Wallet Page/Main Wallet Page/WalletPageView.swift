@@ -27,6 +27,7 @@ struct WalletPageView: View {
                             .frame(width: headerIconSize, height: headerIconSize)
                     })
                     .buttonStyle(CircleButtonStyle(buttonColor: .white))
+                    .accessibility(identifier: "addNewWallet") // use for ui testing
                 }
             } content: {
                 ScrollView(showsIndicators: true) {
