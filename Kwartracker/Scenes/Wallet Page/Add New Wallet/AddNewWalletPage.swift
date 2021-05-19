@@ -61,7 +61,7 @@ struct AddNewWalletPage: View {
                                         includeTotalBalanceFlag: $includeTotalBalanceFlag)
                 }
             }
+            .adaptsToKeyboard()
         }
-
     }
 }
