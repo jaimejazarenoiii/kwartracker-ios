@@ -45,9 +45,7 @@ struct SNSButton: View {
         case signUp
         case signUpGoogle
         case signUpApple
-        case success
-        case delete
-        
+    
         var color: Color {
             switch self {
             case .signInGoogle, .signUpGoogle:
@@ -73,10 +71,6 @@ struct SNSButton: View {
                 return L10n.SignUpPage.Button.signUpGoogle
             case .signUpApple:
                 return L10n.SignUpPage.Button.signUpApple
-            case .success:
-                return L10n.AlertSheet.Option.cool
-            case .delete:
-                return L10n.AlertSheet.Option.exit
             }
         }
         

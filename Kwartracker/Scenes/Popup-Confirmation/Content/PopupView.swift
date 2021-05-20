@@ -7,45 +7,42 @@
 
 import SwiftUI
 
-struct PopupView<T: View>: ViewModifier {
-    let popup: T
-    let showAlert: Bool
-    let alignment: Alignment
-    let direction: Direction
-
-    init(showAlert: Bool, alignment: Alignment, direction: Direction, @ViewBuilder content: () -> T) {
-        self.showAlert = showAlert
-        self.alignment = alignment
-        self.direction = direction
-        popup = content()
-    }
-
-    func body(content: Content) -> some View {
-        content
-            .overlay(popupContent())
-    }
-
-    @ViewBuilder private func popupContent() -> some View {
-        GeometryReader { geometry in
-            if showAlert {
-                popup
-                    .animation(.spring())
-                    .transition(.offset(x: 0, y: direction.offset(popupFrame: geometry.frame(in: .global))))
-                    .frame(width: geometry.size.width, height: geometry.size.height, alignment: alignment)
-            }
-        }
-    }
+struct PopupView: View {
+    @Binding var show: Bool
+    let alertType: AlertType
+    let bodyText: String
     
-    enum Direction {
-        case top, bottom
-
-        func offset(popupFrame: CGRect) -> CGFloat {
-            switch self {
-            case .top:
-                return -popupFrame.maxY
-            case .bottom:
-                return UIScreen.main.bounds.height - popupFrame.minY
-            }
+    var body: some View {
+        VStack {
+            PopupContentView(show: $show, alertType: alertType, bodyText: bodyText)
         }
+        .animation(.spring())
+        .background(popupBackground())
+    }
+}
+
+private extension View {
+    @ViewBuilder func popupBackground() -> some View {
+        let shadowXaxis: CGFloat = 7
+        let shadowYaxis: CGFloat = 7
+        let shadowRadius: CGFloat = 8
+        let cornerRadius: CGFloat = 45
+        let shadowColorOpacity: Double = 0.3
+        
+        RoundedCornerRectangle(radius: cornerRadius, corner: .allCorners)
+            .shadow(
+                color: Color.white.opacity(shadowColorOpacity),
+                radius: shadowRadius,
+                x: -shadowXaxis,
+                y: -shadowYaxis
+            )
+            .shadow(
+                color: Color.black.opacity(shadowColorOpacity),
+                radius: shadowRadius,
+                x: shadowXaxis,
+                y: shadowYaxis
+            )
+            .padding()
+            .frame(height: UIScreen.main.bounds.height / 2.5)
     }
 }
