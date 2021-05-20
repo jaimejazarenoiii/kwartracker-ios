@@ -12,6 +12,16 @@ import Foundation
 internal enum L10n {
 
   internal enum PopUpConfirmationModal {
+    internal enum Button {
+      /// Cancel
+      internal static let cancel = L10n.tr("Localizable", "pop_up_confirmation_modal.button.cancel")
+      /// Delete
+      internal static let delete = L10n.tr("Localizable", "pop_up_confirmation_modal.button.delete")
+      /// Exit
+      internal static let exit = L10n.tr("Localizable", "pop_up_confirmation_modal.button.exit")
+      /// Success
+      internal static let success = L10n.tr("Localizable", "pop_up_confirmation_modal.button.success")
+    }
     internal enum Label {
       internal enum Message {
         /// Are you sure you want to delete this?

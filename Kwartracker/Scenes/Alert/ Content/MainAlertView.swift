@@ -14,7 +14,7 @@ struct MainAlertView: View {
     var body: some View {
         VStack {
             MessageView(state: dialogStatus)
-            ButtonView(actionHandler: {}, actionLabel: dialogStatus)
+            ButtonView(actionHandler: {}, actionLabel: .success)
         }
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ButtonView: View {
     let actionHandler: (() -> Void)
-    let actionLabel: DialogStatus
+    let actionLabel: Action
     
     private let shadowRadius: CGFloat = 8
     private let shadowOffset = CGPoint(x: 6, y: 6)
@@ -23,10 +23,30 @@ struct ButtonView: View {
                                       color: Color(Asset.Colors.blueberry.color),
                                       shadowRadius: shadowRadius,
                                       shadowOffset: shadowOffset)
-                Text(actionLabel.title)
+                Text(actionLabel.text)
                     .foregroundColor(.white)
                     .font(.system(size: fontSize))
             }
         })
+    }
+    
+    enum Action {
+        case success
+        case delete
+        case cancel
+        case exit
+        
+        var text: String {
+            switch self {
+            case .success:
+                return L10n.PopUpConfirmationModal.Button.success
+            case .delete:
+                return L10n.PopUpConfirmationModal.Button.delete
+            case .cancel:
+                return L10n.PopUpConfirmationModal.Button.cancel
+            case .exit:
+                return L10n.PopUpConfirmationModal.Button.exit
+            }
+        }
     }
 }
