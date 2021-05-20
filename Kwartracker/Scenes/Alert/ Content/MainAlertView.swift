@@ -16,6 +16,8 @@ struct MainAlertView: View {
             MessageView(state: dialogStatus)
             ButtonView(actionHandler: {}, actionLabel: .success)
         }
+        .padding(.all, 20)
+        .frame(width: 220, height: 240, alignment: .center)
     }
 }
 

@@ -12,7 +12,6 @@ struct AlertView: View {
         ZStack {
             Color.gray.opacity(0.4).edgesIgnoringSafeArea(.all)
             MainAlertView(dialogStatus: .success)
-                .frame(width: 220, height: 240, alignment: .center)
                 .padding(.horizontal)
                 .fixedSize(horizontal: false, vertical: true)
                 .background(Color.white)
