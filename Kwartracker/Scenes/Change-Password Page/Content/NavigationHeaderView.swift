@@ -63,12 +63,10 @@ private struct NavigationContent: View {
                      )
             })
             .padding(.trailing, floor(backButtonSize / 2))
-
             Text(navigationTitle)
                 .foregroundColor(.white)
                 .fontWeight(.bold)
                 .frame(maxWidth: .infinity)
-            
             Button(action: {}, label: {
                 Text(L10n.ChangePasswordPage.NavigationButtonItem.save)
                     .fontWeight(.bold)

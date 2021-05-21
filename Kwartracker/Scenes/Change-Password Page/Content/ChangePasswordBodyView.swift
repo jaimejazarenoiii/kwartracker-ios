@@ -36,9 +36,7 @@ private struct UserFields: View {
         Group {
             UserField(fieldType: .newPassword, textValue: $password)
                 .padding(.horizontal, horizontalMargin)
-
             Spacer().frame(maxHeight: horizontalMargin)
-            
             UserField(fieldType: .confirmNewPassword, textValue: $confirmPassword)
                 .padding(.horizontal, horizontalMargin)
         }
