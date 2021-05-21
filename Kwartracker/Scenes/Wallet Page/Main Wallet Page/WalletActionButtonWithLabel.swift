@@ -13,9 +13,11 @@ struct WalletActionButtonWithLabel: View {
     @Binding var iconName: String
     @Binding var iconColor: String
     @Binding var label: String
+    @Binding var buttonTap: Bool
     var body: some View {
         HStack {
             Button(action: {
+                buttonTap.toggle()
             }, label: {
                 Image(iconName)
                     .renderingMode(.template)

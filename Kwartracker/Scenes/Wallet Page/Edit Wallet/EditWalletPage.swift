@@ -1,33 +1,25 @@
 //
-//  AddNewWalletPage.swift
+//  EditWalletPage.swift
 //  Kwartracker
 //
-//  Created by Leah Joy Ylaya on 5/17/21.
+//  Created by Leah Joy Ylaya on 5/21/21.
 //
 
 import SwiftUI
 
-struct AddNewWalletPage: View {
+struct EditWalletPage: View {
     @State private var buttonToggle: Bool = false
     @State private var cardSize: CGSize = .zero
-    @State private var cardName: String = ""
-    @State private var cardType: WalletType = .none
-    @State private var cardCurrency: Currency?
-    @State private var savedTo: String = ""
     @State private var includeTotalBalanceFlag: Bool = true
     
     private let spacing: CGFloat = 30
     private let disableOpacityValue: Double = 0.48
     private let enableOpacityValue: Double = 1
     private var baseSize: CGSize = CGSize(width: 238, height: 155)
-    private var isSaveButtonEnabled: Bool {
-        return !cardName.isEmpty &&
-            cardCurrency != nil &&
-            !savedTo.isEmpty &&
-            cardType != .none
-    }
+    @State private var wallet: Wallet
     
-    init() {
+    init(wallet: Wallet) {
+        self._wallet = State(initialValue: wallet)
         let maxWidth: CGFloat = 238
         let calculatedWidth = UIScreen.main.bounds.width * 0.65
         let newWidth = maxWidth < calculatedWidth ? maxWidth : calculatedWidth
@@ -35,7 +27,6 @@ struct AddNewWalletPage: View {
                                                    baseSize: baseSize)
         self._cardSize = State(initialValue: CGSize(width: newWidth,
                                                    height: calculatedHeight))
-        
     }
     
     var body: some View {
@@ -44,34 +35,32 @@ struct AddNewWalletPage: View {
                             destination: AnyView(TransactionsView()),
                             buttonToggle: $buttonToggle) {
                 Button(action: {
-                    if isSaveButtonEnabled {
+                    if wallet.isAllowedToSave {
                         buttonToggle.toggle()
                     }
                 }, label: {
                     Text(L10n.save)
                         .foregroundColor(Color(Asset.Colors.solitudeGrey.color)
-                                            .opacity(isSaveButtonEnabled ?
+                                            .opacity(wallet.isAllowedToSave ?
                                                         enableOpacityValue :
                                                         disableOpacityValue))
                         .font(.system(size: 16,
                                       weight: .bold))
-                }).disabled(isSaveButtonEnabled)
+                }).disabled(wallet.isAllowedToSave)
             }
         } body: {
             ScrollView(showsIndicators: true) {
                 VStack {
                     Spacer()
                         .frame(height: spacing)
-                    CardView(name: $cardName,
-                             type: $cardType,
-                             size: cardSize)
+                    CardView(size: cardSize, wallet: wallet)
                     Spacer()
                         .frame(height: spacing)
-                    AddWalletFieldsView(walletNameValue: $cardName,
-                                        walletCurrency: $cardCurrency,
-                                        walletTypeValue: $cardType,
-                                        savedToValue: $savedTo,
-                                        includeTotalBalanceFlag: $includeTotalBalanceFlag)
+                    AddWalletFieldsView(walletNameValue: $wallet.title,
+                                        walletCurrency: $wallet.currency,
+                                        walletTypeValue: $wallet.type,
+                                        savedToValue: $wallet.savedTo,
+                                        includeTotalBalanceFlag: $wallet.includeToOverallTotalBalance)
                 }
             }
             .adaptsToKeyboard()

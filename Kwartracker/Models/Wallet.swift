@@ -10,10 +10,19 @@ import Foundation
 struct Wallet {
     var id: Int
     var title: String = ""
-    var type: Int?
-    var currency: Currency = .philippinePeso
+    var type: WalletType = .none
+    var currency: Currency?
     var total: Double = 0
     var targetRawDate: String = ""
+    var savedTo: String = ""
+    var includeToOverallTotalBalance: Bool = true
+    
+    var isAllowedToSave: Bool {
+        return !title.isEmpty &&
+            !savedTo.isEmpty &&
+            type != .none &&
+            currency != nil
+    }
     
     var dateTime: Date? {
         targetRawDate.toDate("yyyy-MM-dd")?.date
@@ -26,9 +35,9 @@ struct Wallet {
         return diffs
     }
 
-    func createTransactionErrorMessage() -> String? {
+    func createWalletErrorMessage() -> String? {
         if !title.isEmpty &&
-            type != nil &&
+            currency != nil &&
             dateTime != nil {
             return nil
         }

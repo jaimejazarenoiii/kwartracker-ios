@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddWalletFieldsView: View {
     @Binding var walletNameValue: String
-    @Binding var walletCurrency: String
+    @Binding var walletCurrency: Currency?
     @Binding var walletTypeValue: WalletType
     @Binding var savedToValue: String
     @Binding var includeTotalBalanceFlag: Bool
@@ -29,17 +29,17 @@ struct AddWalletFieldsView: View {
             SelectableFieldForm(
                 menuPresenting: $currencyMenuPresenting,
                 label: L10n.currency,
-                selectLabel: walletCurrency.isEmpty ?
-                    L10n.Wallet.Placeholder.selectWalletCurrency : walletCurrency
+                selectLabel: walletCurrency == nil ?
+                    L10n.Wallet.Placeholder.selectWalletCurrency : walletCurrency!.rawValue
             )
             .actionSheet(isPresented: $currencyMenuPresenting) {
                 ActionSheet(
                     title: Text(L10n.currency.capitalized), buttons: [
                         .default(Text(Currency.usDollar.rawValue)) {
-                            self.walletCurrency = Currency.usDollar.rawValue
+                            self.walletCurrency = Currency.usDollar
                         },
                         .default(Text(Currency.philippinePeso.rawValue)) {
-                            self.walletCurrency = Currency.philippinePeso.rawValue
+                            self.walletCurrency = Currency.philippinePeso
                         },
                         .cancel()
                 ])
@@ -93,7 +93,7 @@ struct AddWalletFieldsView: View {
 struct AddWalletFieldsView_Previews: PreviewProvider {
     static var previews: some View {
         AddWalletFieldsView(walletNameValue: Binding.constant(""),
-                            walletCurrency: Binding.constant(""),
+                            walletCurrency: Binding.constant(nil),
                             walletTypeValue: Binding.constant(WalletType.none),
                             savedToValue: Binding.constant(""),
                             includeTotalBalanceFlag: Binding.constant(true))

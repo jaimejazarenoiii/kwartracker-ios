@@ -25,9 +25,8 @@ struct CardView: View {
     init(size: CGSize, wallet: Wallet) {
         self.cardSize = size
         self.wallet = wallet
-        let type = WalletType(rawValue: wallet.type ?? 0) ?? .none
         
-        self._walletType = Binding.constant(type)
+        self._walletType = Binding.constant(wallet.type)
         self._walletName = Binding.constant(wallet.title)
     }
     
