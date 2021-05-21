@@ -31,7 +31,7 @@ struct AddNewWalletPage: View {
     }
     
     var body: some View {
-        AuthLayoutView {
+        SkeletalView {
             KNavigationView(L10n.Wallet.Title.addWallet,
                             destination: AnyView(TransactionsView()),
                             buttonToggle: $buttonToggle) {
@@ -44,7 +44,7 @@ struct AddNewWalletPage: View {
                                       weight: .bold))
                 })
             }
-        } content: {
+        } body: {
             ScrollView(showsIndicators: true) {
                 VStack {
                     Spacer()

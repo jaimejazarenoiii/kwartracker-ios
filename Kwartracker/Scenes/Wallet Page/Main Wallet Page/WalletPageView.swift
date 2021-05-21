@@ -16,7 +16,7 @@ struct WalletPageView: View {
     private let headerIconSize: CGFloat = 10
     var body: some View {
         NavigationView {
-            AuthLayoutView {
+            SkeletalView {
                 KNavigationView(L10n.Wallet.Title.myWallet,
                                 destination: AnyView(AddNewWalletPage()),
                                 buttonToggle: $buttonToggle) {
@@ -29,7 +29,7 @@ struct WalletPageView: View {
                     .buttonStyle(CircleButtonStyle(buttonColor: .white))
                     .accessibility(identifier: "addNewWallet") // use for ui testing
                 }
-            } content: {
+            } body: {
                 ScrollView(showsIndicators: true) {
                     VStack {
                         WalletOneCardCenterView(wallets: store.state.walletState.wallets)
