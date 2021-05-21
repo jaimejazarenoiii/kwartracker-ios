@@ -29,8 +29,21 @@ struct AddWalletFieldsView: View {
             SelectableFieldForm(
                 menuPresenting: $currencyMenuPresenting,
                 label: L10n.currency,
-                selectLabel: L10n.Wallet.Placeholder.selectWalletCurrency
-                )
+                selectLabel: walletCurrency.isEmpty ?
+                    L10n.Wallet.Placeholder.selectWalletCurrency : walletCurrency
+            )
+            .actionSheet(isPresented: $currencyMenuPresenting) {
+                ActionSheet(
+                    title: Text(L10n.currency.capitalized), buttons: [
+                        .default(Text(Currency.usDollar.rawValue)) {
+                            self.walletCurrency = Currency.usDollar.rawValue
+                        },
+                        .default(Text(Currency.philippinePeso.rawValue)) {
+                            self.walletCurrency = Currency.philippinePeso.rawValue
+                        },
+                        .cancel()
+                ])
+            }
             
             Spacer()
                 .frame(height: spacing)

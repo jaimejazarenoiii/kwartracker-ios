@@ -15,9 +15,17 @@ struct AddNewWalletPage: View {
     @State private var cardCurrency: String = ""
     @State private var savedTo: String = ""
     @State private var includeTotalBalanceFlag: Bool = true
-    private let spacing: CGFloat = 30
     
+    private let spacing: CGFloat = 30
+    private let disableOpacityValue: Double = 0.48
+    private let enableOpacityValue: Double = 1
     private var baseSize: CGSize = CGSize(width: 238, height: 155)
+    private var isSaveButtonEnabled: Bool {
+        return !cardName.isEmpty &&
+            !cardCurrency.isEmpty &&
+            !savedTo.isEmpty &&
+            cardType != .none
+    }
     
     init() {
         let maxWidth: CGFloat = 238
@@ -36,13 +44,18 @@ struct AddNewWalletPage: View {
                             destination: AnyView(TransactionsView()),
                             buttonToggle: $buttonToggle) {
                 Button(action: {
-                    buttonToggle.toggle()
+                    if isSaveButtonEnabled {
+                        buttonToggle.toggle()
+                    }
                 }, label: {
                     Text(L10n.save)
-                        .foregroundColor(Color(Asset.Colors.solitudeGrey.color))
+                        .foregroundColor(Color(Asset.Colors.solitudeGrey.color)
+                                            .opacity(isSaveButtonEnabled ?
+                                                        enableOpacityValue :
+                                                        disableOpacityValue))
                         .font(.system(size: 16,
                                       weight: .bold))
-                })
+                }).disabled(isSaveButtonEnabled)
             }
         } body: {
             ScrollView(showsIndicators: true) {
