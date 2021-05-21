@@ -70,6 +70,7 @@ struct SignInContentView: View {
     private var FooterView: some View {
         Group {
             Divider()
+                .padding([.leading, .trailing], -sideMargin)
             
             HStack {
                 Spacer()
