@@ -11,10 +11,12 @@ struct AddWalletFieldsView: View {
     @Binding var walletNameValue: String
     @Binding var walletCurrency: String
     @Binding var walletTypeValue: WalletType
+    @Binding var targetAmountValue: String
     @Binding var savedToValue: String
     @Binding var includeTotalBalanceFlag: Bool
     @State private var walletTypeMenuPresenting: Bool = false
     @State private var currencyMenuPresenting: Bool = false
+    @State private var calendarPresenting: Bool = false
     private let spacing: CGFloat = 30
 
     var body: some View {
@@ -23,6 +25,27 @@ struct AddWalletFieldsView: View {
                        textLabel: L10n.Wallet.Label.walletType,
                        textPlaceHolder: L10n.Wallet.Placeholder.enterWalletName)
                 .accessibilityIdentifier("walletName") // use for ui test
+            
+            CurrencySelector
+            
+            WalletTypeSelector
+            
+            GoalField
+            
+            Spacer()
+                .frame(height: spacing)
+            
+            KToggleView(isActive: $includeTotalBalanceFlag,
+                        headerLabel: L10n.Wallet.Label.includeOverallTotalBalance,
+                        leftLabel: L10n.yes.uppercased(),
+                        rightLabel: L10n.no.uppercased())
+        }
+        .padding([.trailing, .leading, .bottom],
+                 UIScreen.main.bounds.width * 0.07)
+    }
+    
+    private var CurrencySelector: some View {
+        Group {
             Spacer()
                 .frame(height: spacing)
             
@@ -44,7 +67,11 @@ struct AddWalletFieldsView: View {
                         .cancel()
                 ])
             }
-            
+        }
+    }
+    
+    private var WalletTypeSelector: some View {
+        Group {
             Spacer()
                 .frame(height: spacing)
             
@@ -64,10 +91,17 @@ struct AddWalletFieldsView: View {
                         .default(Text(WalletType.budget.stringValue)) {
                             self.walletTypeValue = .budget
                         },
+                        .default(Text(WalletType.goal.stringValue)) {
+                            self.walletTypeValue = .goal
+                        },
                         .cancel()
                 ])
             }
-            
+        }
+    }
+    
+    private var GoalField: some View {
+        Group {
             Spacer()
                 .frame(height: spacing)
             
@@ -75,27 +109,29 @@ struct AddWalletFieldsView: View {
                 KTextfield(textValue: $savedToValue,
                            textLabel: L10n.savedTo,
                            textPlaceHolder: L10n.savedTo)
+                
+                if walletTypeValue == .goal {
+                    
+                    Spacer()
+                        .frame(height: spacing)
+                    
+                    KTextfield(textValue: $targetAmountValue,
+                               textLabel: L10n.Wallet.Label.targetAmount,
+                               textPlaceHolder: L10n.Wallet.Placeholder.enterYourTargetAmount
+                    )
+                    
+                    Spacer()
+                        .frame(height: spacing)
+                    
+                    if !walletCurrency.isEmpty {
+                        SelectableFieldForm(
+                            menuPresenting: $calendarPresenting,
+                            label: L10n.Wallet.Label.targetAmount,
+                            selectLabel: L10n.Wallet.Placeholder.targetDate
+                        )
+                    }
+                }
             }
-            
-            Spacer()
-                .frame(height: spacing)
-            
-            KToggleView(isActive: $includeTotalBalanceFlag,
-                        headerLabel: L10n.Wallet.Label.includeOverallTotalBalance,
-                        leftLabel: L10n.yes.uppercased(),
-                        rightLabel: L10n.no.uppercased())
         }
-        .padding([.trailing, .leading],
-                 UIScreen.main.bounds.width * 0.07)
-    }
-}
-
-struct AddWalletFieldsView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddWalletFieldsView(walletNameValue: Binding.constant(""),
-                            walletCurrency: Binding.constant(""),
-                            walletTypeValue: Binding.constant(WalletType.none),
-                            savedToValue: Binding.constant(""),
-                            includeTotalBalanceFlag: Binding.constant(true))
     }
 }
