@@ -13,9 +13,9 @@ struct WalletPageView: View {
     private var separator: UIColor = Asset.Colors.spindleGrey.color
     private var separatorHeight: CGFloat = 0.5
     var body: some View {
-        AuthLayoutView {
+        SkeletalView {
             WalletNavigationView(navigationTitle: L10n.Wallet.Title.myWallet)
-        } content: {
+        } body: {
             ScrollView(showsIndicators: true) {
                 VStack {
                     WalletOneCardCenterView(wallets: store.state.walletState.wallets)
