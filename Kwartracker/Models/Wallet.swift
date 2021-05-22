@@ -13,6 +13,7 @@ struct Wallet {
     var type: WalletType = .none
     var currency: Currency?
     var total: Double = 0
+    var targetAmount: Double = 0
     var targetRawDate: String = ""
     var savedTo: String = ""
     var includeToOverallTotalBalance: Bool = true
@@ -22,6 +23,13 @@ struct Wallet {
             !savedTo.isEmpty &&
             type != .none &&
             currency != nil
+    }
+    
+    var totalMoneyWithCommas: String {
+        get {
+            targetAmount.amountOnCurrency(currency: currency?.rawValue ??
+                                    Currency.philippinePeso.rawValue)
+        }
     }
     
     var dateTime: Date? {

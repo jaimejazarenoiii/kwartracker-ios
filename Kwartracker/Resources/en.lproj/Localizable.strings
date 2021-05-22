@@ -49,11 +49,15 @@
 "wallet.action_button.edit_wallet" = "Edit Wallet";
 "wallet.action_button.add_transaction" = "Add Transaction";
 "wallet.label.include_overall_total_balance" = "Include in overall total balance?";
+"wallet.label.target_amount" = "Target Amount";
+"wallet.label.target_date" = "Target Date";
 "wallet.label.wallet_name" = "Wallet Name";
 "wallet.label.wallet_type" = "Wallet Type";
 "wallet.placeholder.enter_wallet_name" = "Enter wallet name";
+"wallet.placeholder.enter_your_target_amount" = "Enter your target amount";
 "wallet.placeholder.select_wallet_currency" = "Select wallet currency";
 "wallet.placeholder.select_wallet_type" = "Select wallet type";
+"wallet.placeholder.target_date" = "DD / MM / YYYY";
 "wallet.target.to_target_amount" = "to target amount";
 "wallet.target.to_target_date" = "to target date";
 "wallet.title.add_wallet" = "Add Wallet";

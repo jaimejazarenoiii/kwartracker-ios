@@ -59,6 +59,7 @@ struct EditWalletPage: View {
                     AddWalletFieldsView(walletNameValue: $wallet.title,
                                         walletCurrency: $wallet.currency,
                                         walletTypeValue: $wallet.type,
+                                        targetAmountValue: $wallet.totalMoneyWithCommas,
                                         savedToValue: $wallet.savedTo,
                                         includeTotalBalanceFlag: $wallet.includeToOverallTotalBalance)
                 }

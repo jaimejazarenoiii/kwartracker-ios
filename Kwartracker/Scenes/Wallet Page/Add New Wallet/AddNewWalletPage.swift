@@ -13,6 +13,7 @@ struct AddNewWalletPage: View {
     @State private var cardName: String = ""
     @State private var cardType: WalletType = .none
     @State private var cardCurrency: Currency?
+    @State private var targetAmount: String = ""
     @State private var savedTo: String = ""
     @State private var includeTotalBalanceFlag: Bool = true
     
@@ -70,6 +71,7 @@ struct AddNewWalletPage: View {
                     AddWalletFieldsView(walletNameValue: $cardName,
                                         walletCurrency: $cardCurrency,
                                         walletTypeValue: $cardType,
+                                        targetAmountValue: $targetAmount,
                                         savedToValue: $savedTo,
                                         includeTotalBalanceFlag: $includeTotalBalanceFlag)
                 }
