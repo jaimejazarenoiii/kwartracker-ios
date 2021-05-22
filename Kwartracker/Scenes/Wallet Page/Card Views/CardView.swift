@@ -74,7 +74,8 @@ struct CardView: View {
                     VStack(alignment: .leading) {
                         Text(L10n.Card.Title.availableBalance.uppercased())
                             .modifier(CardLabel())
-                        Text(wallet!.total.withCommas)
+                        Text(wallet!.total.amountOnCurrency(currency: wallet!.currency?.rawValue ??
+                                                                Currency.philippinePeso.rawValue))
                             .modifier(CardLabelValue())
                     }.padding([.top, .bottom], 2)
                 } else {

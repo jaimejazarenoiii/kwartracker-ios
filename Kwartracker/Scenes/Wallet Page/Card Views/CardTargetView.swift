@@ -34,7 +34,7 @@ struct CardTargetView: View {
             VStack {
                 HStack {
                     TargetViewLabel(bottomLabel: L10n.Wallet.Target.toTargetAmount,
-                                    targetValue: wallet.total.withCommas)
+                                    targetValue: wallet.remainingAmountNeeded)
                     Rectangle()
                         .fill(Color(Asset.Colors.iron.color))
                         .frame(width: separatorSize.width,

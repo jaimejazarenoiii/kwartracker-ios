@@ -25,11 +25,21 @@ struct Wallet {
             currency != nil
     }
     
-    var totalMoneyWithCommas: String {
+    var targetAmountWithCommas: String {
         get {
             targetAmount.amountOnCurrency(currency: currency?.rawValue ??
                                     Currency.philippinePeso.rawValue)
         }
+        set {
+            targetAmount = newValue.toDoubleWith(currency: currency?.rawValue ??
+                                    Currency.philippinePeso.rawValue)
+        }
+    }
+    
+    var remainingAmountNeeded: String {
+        let amount = targetAmount - total
+        return amount.amountOnCurrency(currency: currency?.rawValue ??
+                                        Currency.philippinePeso.rawValue)
     }
     
     var dateTime: Date? {
