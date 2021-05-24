@@ -37,6 +37,7 @@ struct SNSButton: View {
             }
         })
     }
+    
     enum Action {
         case signIn
         case signInGoogle
@@ -44,9 +45,7 @@ struct SNSButton: View {
         case signUp
         case signUpGoogle
         case signUpApple
-        case delete
-        case cancel
-
+        
         var color: Color {
             switch self {
             case .signIn, .signUp:
@@ -55,10 +54,6 @@ struct SNSButton: View {
                 return Color(Asset.Colors.blueberry.color)
             case .signInApple, .signUpApple:
                 return Color.black.opacity(0.9)
-            case .delete:
-                return Color(Asset.Colors.teal.color)
-            case .cancel:
-                return Color(Asset.Colors.spindleGrey.color)
             }
         }
         
@@ -76,21 +71,17 @@ struct SNSButton: View {
                 return L10n.SignUpPage.Button.signUpGoogle
             case .signUpApple:
                 return L10n.SignUpPage.Button.signUpApple
-            case .delete:
-                return L10n.AlertSheet.Option.delete
-            case .cancel:
-                return L10n.AlertSheet.Option.cancel
             }
         }
         
         var image: UIImage? {
             switch self {
+            case .signIn, .signUp:
+                return nil
             case .signInGoogle, .signUpGoogle:
                 return Asset.Images.googleIcon.image
             case .signInApple, .signUpApple:
                 return Asset.Images.appleIcon.image
-            default:
-                return nil
             }
         }
     }

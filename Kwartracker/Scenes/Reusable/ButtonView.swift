@@ -53,8 +53,10 @@ struct ButtonView: View {
             switch self {
             case .cancel:
                 return Color(Asset.Colors.spindleGrey.color)
-            default:
+            case .delete:
                 return Color(Asset.Colors.teal.color)
+            default:
+                return Color(Asset.Colors.blueberry.color)
             }
         }
     }
