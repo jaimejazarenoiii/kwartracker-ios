@@ -54,8 +54,8 @@ struct OptionSelectView: View {
                 .frame(maxHeight: UIScreen.main.bounds.height / 1.7)
             }
             .padding([.leading, .trailing], 10)
-            .frame(width: presented ? UIScreen.main.bounds.width : 0,
-                   height: presented ? UIScreen.main.bounds.height : 0)
+            .frame(idealWidth: presented ? UIScreen.main.bounds.width : 0,
+                   maxHeight: presented ? UIScreen.main.bounds.height : 0)
         }
         .background(
             Rectangle()
