@@ -45,3 +45,13 @@
 "change_password_page.new_password.placeholder" = "Enter new password";
 "change_password_page.confirm_new_password.label" = "Confirm new password";
 "change_password_page.confirm_new_password.placeholder" = "Enter again new password";
+
+// Edit profile page
+"edit_profile_page.navigation_title" = "My Profile";
+"edit_profile_page.navigation_button_item.save" = "Save";
+"edit_profile_page.button.change_photo" = "Change photo";
+"edit_profile_page.label.last_name" = "Last name";
+"edit_profile_page.label.first_name" = "First name";
+"edit_profile_page.label.contact_number" = "Contact number";
+"edit_profile_page.label.birthdate" = "Birthdate";
+"edit_profile_page.label.address" = "Address";
