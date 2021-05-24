@@ -9,15 +9,19 @@ import SwiftUI
 
 struct NavigationHeaderView: View {
     let navigationTitle: String
+    let navigationButton: String
 
     var body: some View {
-        NavigationContent(navigationTitle: navigationTitle)
+        NavigationContent(navigationTitle: navigationTitle, navigationButton: navigationButton)
     }
 }
 
 struct NavigationHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationHeaderView(navigationTitle: L10n.ChangePasswordPage.navigationTitle)
+        NavigationHeaderView(
+            navigationTitle: L10n.ChangePasswordPage.navigationTitle,
+            navigationButton: L10n.ChangePasswordPage.NavigationButtonItem.save
+        )
             .background(Color(Asset.Colors.teal.color))
             .previewLayout(.sizeThatFits)
     }
@@ -25,6 +29,7 @@ struct NavigationHeaderView_Previews: PreviewProvider {
 
 private struct NavigationContent: View {
     let navigationTitle: String
+    let navigationButton: String
     let horizontalMargin: CGFloat = 40
     let verticalMargin: CGFloat = 20
     let colorOpacity: Double = 0.3
@@ -68,7 +73,7 @@ private struct NavigationContent: View {
                 .fontWeight(.bold)
                 .frame(maxWidth: .infinity)
             Button(action: {}, label: {
-                Text(L10n.ChangePasswordPage.NavigationButtonItem.save)
+                Text(navigationButton)
                     .fontWeight(.bold)
                     .foregroundColor(.white).opacity(colorOpacity)
             })

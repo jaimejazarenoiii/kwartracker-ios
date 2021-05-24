@@ -27,6 +27,10 @@
 		16CCE83C26523F2400345778 /* ConfirmationAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CCE83926523F2400345778 /* ConfirmationAlertView.swift */; };
 		16CCE83D26523F2400345778 /* DeleteConfirmationContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CCE83A26523F2400345778 /* DeleteConfirmationContent.swift */; };
 		16CCE83E26523F2400345778 /* DeleteConfirmationAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CCE83B26523F2400345778 /* DeleteConfirmationAlertView.swift */; };
+		244A3B7E263A644E00D8B08B /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244A3B7D263A644E00D8B08B /* EditProfileView.swift */; };
+		244A3B81263A652500D8B08B /* EditProfileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244A3B80263A652500D8B08B /* EditProfileContentView.swift */; };
+		245FFEE62654B71400042B3E /* FieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245FFEE52654B71400042B3E /* FieldType.swift */; };
+		246D7236265B54CE0011F960 /* BirthdateField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246D7235265B54CE0011F960 /* BirthdateField.swift */; };
 		24747FEC2628261A00C7A9A8 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24747FEB2628261A00C7A9A8 /* ChangePasswordView.swift */; };
 		247480032628281200C7A9A8 /* NavigationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247480022628281200C7A9A8 /* NavigationHeaderView.swift */; };
 		24748008262832B800C7A9A8 /* ChangePasswordBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24748007262832B800C7A9A8 /* ChangePasswordBodyView.swift */; };
@@ -99,6 +103,10 @@
 		164E97ED2614ACF000D84B7F /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		164E97EE2614ACF000D84B7F /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		164E988C2615C4BA00D84B7F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		244A3B7D263A644E00D8B08B /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		244A3B80263A652500D8B08B /* EditProfileContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileContentView.swift; sourceTree = "<group>"; };
+		245FFEE52654B71400042B3E /* FieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldType.swift; sourceTree = "<group>"; };
+		246D7235265B54CE0011F960 /* BirthdateField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdateField.swift; sourceTree = "<group>"; };
 		24747FEB2628261A00C7A9A8 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		247480022628281200C7A9A8 /* NavigationHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHeaderView.swift; sourceTree = "<group>"; };
 		24748007262832B800C7A9A8 /* ChangePasswordBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordBodyView.swift; sourceTree = "<group>"; };
@@ -249,8 +257,7 @@
                 C6CDDCC92638134600CB1562 /* Reusable */,
                 C6CDDCAE263811DD00CB1562 /* Alert */,
                 24747FEA2628260200C7A9A8 /* Change-Password Page */,
-				C6081ADA2652764B003BB9CB /* Enums */,
-				C6CDDCC92638134600CB1562 /* Reusable */,
+                244A3B7C263A642B00D8B08B /* Edit-Profile Page */,
 				C6CDDCAE263811DD00CB1562 /* Alert */,
 				242950A426578AC50075C054 /* Popup Confirmation */,
 				163E592F260CB88E00E54401 /* ContentView.swift */,
@@ -345,6 +352,23 @@
             path = Content;
             sourceTree = "<group>";
         };
+		244A3B7C263A642B00D8B08B /* Edit-Profile Page */ = {
+			isa = PBXGroup;
+			children = (
+				244A3B7F263A64F500D8B08B /* Content */,
+				244A3B7D263A644E00D8B08B /* EditProfileView.swift */,
+			);
+			path = "Edit-Profile Page";
+			sourceTree = "<group>";
+		};
+		244A3B7F263A64F500D8B08B /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				244A3B80263A652500D8B08B /* EditProfileContentView.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
 		24747FEA2628260200C7A9A8 /* Change-Password Page */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +473,7 @@
 		C6081ADA2652764B003BB9CB /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				245FFEE52654B71400042B3E /* FieldType.swift */,
 				C6081ADB2652765E003BB9CB /* DialogStatus.swift */,
 			);
 			path = Enums;
@@ -494,6 +519,7 @@
 			children = (
 				C6CDDCCA2638135B00CB1562 /* ButtonView.swift */,
 				C6CDDCE626381F6E00CB1562 /* MessageView.swift */,
+				246D7235265B54CE0011F960 /* BirthdateField.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -754,11 +780,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				244A3B7E263A644E00D8B08B /* EditProfileView.swift in Sources */,
 				7A7FA1322637B70A00484F51 /* FootnoteButton.swift in Sources */,
 				C6CDDCE726381F6E00CB1562 /* MessageView.swift in Sources */,
 				163E5930260CB88E00E54401 /* ContentView.swift in Sources */,
 				7A17D13226298678005BB190 /* UserField.swift in Sources */,
-                C6CDDCB0263811F700CB1562 /* AlertView.swift in Sources */,
+				C6CDDCB0263811F700CB1562 /* AlertView.swift in Sources */,
 				24748008262832B800C7A9A8 /* ChangePasswordBodyView.swift in Sources */,
 				247480032628281200C7A9A8 /* NavigationHeaderView.swift in Sources */,
 				164E95EC2612224100D84B7F /* AppState.swift in Sources */,
@@ -781,11 +808,14 @@
 				16CCE83E26523F2400345778 /* DeleteConfirmationAlertView.swift in Sources */,
 				7AB88B282628071C00E2DFD3 /* RoundedCorner.swift in Sources */,
 				164E97EF2614ACF000D84B7F /* Strings.swift in Sources */,
+				244A3B81263A652500D8B08B /* EditProfileContentView.swift in Sources */,
+				246D7236265B54CE0011F960 /* BirthdateField.swift in Sources */,
 				7AD9B8812626F17400CF0EA6 /* SignInContentView.swift in Sources */,
 				7AB1B91E26438C7C00853FAC /* RoundedCornerRectangle.swift in Sources */,
 				7A734D92262FFAA900557EF7 /* BWNeumorphicRectangle.swift in Sources */,
 				7AD9B8892626F3A300CF0EA6 /* SignInView.swift in Sources */,
 				164E95E726121B6400D84B7F /* Store.swift in Sources */,
+				245FFEE62654B71400042B3E /* FieldType.swift in Sources */,
 				163E5B64260F32A000E54401 /* Obfuscate.swift in Sources */,
 				164E97F02614ACF000D84B7F /* Assets.swift in Sources */,
 				164E95F226122BD200D84B7F /* AppReducer.swift in Sources */,

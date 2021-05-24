@@ -49,6 +49,31 @@ internal enum L10n {
     }
   }
 
+  internal enum EditProfilePage {
+    /// My Profile
+    internal static let navigationTitle = L10n.tr("Localizable", "edit_profile_page.navigation_title")
+    internal enum Button {
+      /// Change photo
+      internal static let changePhoto = L10n.tr("Localizable", "edit_profile_page.button.change_photo")
+    }
+    internal enum Label {
+      /// Address
+      internal static let address = L10n.tr("Localizable", "edit_profile_page.label.address")
+      /// Birthdate
+      internal static let birthdate = L10n.tr("Localizable", "edit_profile_page.label.birthdate")
+      /// Contact number
+      internal static let contactNumber = L10n.tr("Localizable", "edit_profile_page.label.contact_number")
+      /// First name
+      internal static let firstName = L10n.tr("Localizable", "edit_profile_page.label.first_name")
+      /// Last name
+      internal static let lastName = L10n.tr("Localizable", "edit_profile_page.label.last_name")
+    }
+    internal enum NavigationButtonItem {
+      /// Save
+      internal static let save = L10n.tr("Localizable", "edit_profile_page.navigation_button_item.save")
+    }
+  }
+
   internal enum PopUpConfirmationModal {
     internal enum Button {
       /// Cancel
