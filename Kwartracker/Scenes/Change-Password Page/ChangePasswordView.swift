@@ -9,12 +9,11 @@ import SwiftUI
 
 struct ChangePasswordView: View {
     var body: some View {
-        MainView {
-            NavigationHeaderView(navigationTitle: L10n.changePassword)
-                .padding([.top, .bottom], 5)
-        } content: {
+        SkeletalView(header: {
+            NavigationHeaderView(navigationTitle: L10n.ChangePasswordPage.navigationTitle)
+        }, body: {
             ChangePasswordBodyView()
-        }
+        })
     }
 }
 

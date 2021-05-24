@@ -1,4 +1,47 @@
 // English
-"change password" = "Change Password";
-"new password" = "New password";
-"confirm new passowrd" = "Confirm new password";
+
+"sign_in_page.title.welcome_back" = "Welcome\nBack";
+"sign_in_page.label.email" = "Email";
+"sign_in_page.field.enter_email_address" = "Enter email address";
+"sign_in_page.label.password" = "Password";
+"sign_in_page.field.enter_password" = "Enter password";
+"sign_in_page.button.sign_in" = "Sign In";
+"sign_in_page.label.or" = "or";
+"sign_in_page.button.sign_in_google" = "Sign in with Google";
+"sign_in_page.button.sign_in_apple" = "Sign in with Apple";
+"sign_in_page.button.sign_in_guest" = "Sign in as guest";
+"sign_in_page.button.recover_password" = "Recover password";
+"sign_in_page.label.no_account_yet" = "No account yet?";
+"sign_in_page.button.sign_up" = "Sign Up";
+
+"pop_up_confirmation_modal.title.success" = "Success";
+"pop_up_confirmation_modal.label.message.success" = "New category has been added.";
+"pop_up_confirmation_modal.title.delete" = "Deleted";
+"pop_up_confirmation_modal.label.message.delete" = "It has been successfully deleted.";
+"pop_up_confirmation_modal.title.confirmation" = "Confirmation";
+"pop_up_confirmation_modal.label.message.confirmation" = "Are you sure you want to delete this?";
+"pop_up_confirmation_modal.button.success" = "Success";
+"pop_up_confirmation_modal.button.delete" = "Delete";
+"pop_up_confirmation_modal.button.exit" = "Exit";
+"pop_up_confirmation_modal.button.cancel" = "Cancel";
+
+"sign_up_page.title.create_account" = "Create\nAccount";
+"sign_up_page.label.email" = "Email";
+"sign_up_page.field.enter_email_address" = "Enter email address";
+"sign_up_page.label.password" = "Password";
+"sign_up_page.field.enter_password" = "Enter password";
+"sign_up_page.button.sign_up" = "Sign Up";
+"sign_up_page.label.or" = "or";
+"sign_up_page.button.sign_up_google" = "Sign up with Google";
+"sign_up_page.button.sign_up_apple" = "Sign up with Apple";
+"sign_up_page.button.sign_up_guest" = "Sign in as guest";
+"sign_up_page.label.already_have_an_account" = "Already have an account?";
+"sign_up_page.button.sign_in" = "Sign In";
+
+// Change password page
+"change_password_page.navigation_title" = "Change Password";
+"change_password_page.navigation_button_item.save" = "Save";
+"change_password_page.new_password.label" = "New password";
+"change_password_page.new_password.placeholder" = "Enter new password";
+"change_password_page.confirm_new_password.label" = "Confirm new password";
+"change_password_page.confirm_new_password.placeholder" = "Enter again new password";

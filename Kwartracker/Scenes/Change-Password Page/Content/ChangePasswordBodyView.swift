@@ -8,23 +8,37 @@
 import SwiftUI
 
 struct ChangePasswordBodyView: View {
-    @State private var password: String = ""
-    @State private var confirmPassword: String = ""
-    
+    private let topMargin: CGFloat = 20
+
     var body: some View {
         VStack(alignment: .leading) {
-            UserField(textLabel: L10n.newPassword, textValue: $password)
-            Spacer().padding(.bottom, 20)
-            UserField(textLabel: L10n.confirmNewPassowrd, textValue: $confirmPassword)
+            UserFields()
             Spacer()
         }
-        .padding([.leading, .trailing], 30)
-        .padding(.top, 40)
+        .padding()
+        .padding(.top, topMargin)
     }
 }
 
 struct ChangePasswordBodyView_Previews: PreviewProvider {
     static var previews: some View {
         ChangePasswordBodyView()
+    }
+}
+
+private struct UserFields: View {
+    @State private var password: String = ""
+    @State private var confirmPassword: String = ""
+
+    private let horizontalMargin: CGFloat = 15
+
+    var body: some View {
+        Group {
+            UserField(fieldType: .newPassword, textValue: $password)
+                .padding(.horizontal, horizontalMargin)
+            Spacer().frame(maxHeight: horizontalMargin)
+            UserField(fieldType: .confirmNewPassword, textValue: $confirmPassword)
+                .padding(.horizontal, horizontalMargin)
+        }
     }
 }
