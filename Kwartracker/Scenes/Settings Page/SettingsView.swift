@@ -15,7 +15,7 @@ struct SettingsView: View {
                 navigationButton: ""
             )
         }, body: {
-            SetttingsBodyView()
+            SettingsBodyView()
         })
     }
 }

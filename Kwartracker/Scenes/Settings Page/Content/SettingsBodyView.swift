@@ -1,5 +1,5 @@
 //
-//  SetttingsBodyView.swift
+//  SettingsBodyView.swift
 //  Kwartracker
 //
 //  Created by Mickale Saturre on 5/24/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SetttingsBodyView: View {
+struct SettingsBodyView: View {
     @State var isCategoryLinkActive = false
     @State var isLoginSecurityLinkActive = false
 
@@ -28,7 +28,7 @@ struct SetttingsBodyView: View {
 
 struct SetttingsBodyView_Previews: PreviewProvider {
     static var previews: some View {
-        SetttingsBodyView()
+        SettingsBodyView()
     }
 }
 
