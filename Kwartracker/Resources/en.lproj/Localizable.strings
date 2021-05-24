@@ -45,3 +45,12 @@
 "change_password_page.new_password.placeholder" = "Enter new password";
 "change_password_page.confirm_new_password.label" = "Confirm new password";
 "change_password_page.confirm_new_password.placeholder" = "Enter again new password";
+
+// Side Menu page
+"side_menu.label.home" = "Home";
+"side_menu.label.transaction" = "Transaction";
+"side_menu.label.wallets" = "Wallets";
+"side_menu.label.reports" = "Reports";
+"side_menu.label.myProfile" = "My Profile";
+"side_menu.label.settings" = "Settings";
+"side_menu.label.logout" = "Logout";

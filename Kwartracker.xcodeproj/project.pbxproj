@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		047E2ACB265B815400D1EB9C /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E2ACA265B815400D1EB9C /* SideMenuView.swift */; };
+		047E2AD0265B82B700D1EB9C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E2ACF265B82B700D1EB9C /* ProfileView.swift */; };
+		047E2AFE265B8D8700D1EB9C /* MenuRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E2AFD265B8D8700D1EB9C /* MenuRowView.swift */; };
+		047E2B3B265B9C1B00D1EB9C /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E2B3A265B9C1B00D1EB9C /* SideMenu.swift */; };
 		163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E592D260CB88E00E54401 /* KwartrackerApp.swift */; };
 		163E5930260CB88E00E54401 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E592F260CB88E00E54401 /* ContentView.swift */; };
 		163E5932260CB89100E54401 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 163E5931260CB89100E54401 /* Images.xcassets */; };
@@ -43,13 +47,13 @@
 		9A063C037CD795723F7C8978 /* Pods_KwartrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */; };
 		A9CFE877880189ECE3F83CB8 /* Pods_Kwartracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D507178A90E22E9AB2ABF11A /* Pods_Kwartracker.framework */; };
 		C6081ADC2652765E003BB9CB /* DialogStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6081ADB2652765E003BB9CB /* DialogStatus.swift */; };
+		C6249AA82637EB8C00C55B31 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6249AA72637EB8C00C55B31 /* SignUpView.swift */; };
+		C65699C32637C91400D24D2F /* SignUpFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65699C12637C91400D24D2F /* SignUpFooterView.swift */; };
+		C65699C42637C91400D24D2F /* SignUpBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65699C22637C91400D24D2F /* SignUpBodyView.swift */; };
 		C6CDDCB0263811F700CB1562 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CDDCAF263811F700CB1562 /* AlertView.swift */; };
 		C6CDDCC52638125C00CB1562 /* MainAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CDDCC42638125C00CB1562 /* MainAlertView.swift */; };
 		C6CDDCCB2638135B00CB1562 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CDDCCA2638135B00CB1562 /* ButtonView.swift */; };
 		C6CDDCE726381F6E00CB1562 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CDDCE626381F6E00CB1562 /* MessageView.swift */; };
-		C6249AA82637EB8C00C55B31 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6249AA72637EB8C00C55B31 /* SignUpView.swift */; };
-		C65699C32637C91400D24D2F /* SignUpFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65699C12637C91400D24D2F /* SignUpFooterView.swift */; };
-		C65699C42637C91400D24D2F /* SignUpBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65699C22637C91400D24D2F /* SignUpBodyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		047E2ACA265B815400D1EB9C /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		047E2ACF265B82B700D1EB9C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		047E2AFD265B8D8700D1EB9C /* MenuRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRowView.swift; sourceTree = "<group>"; };
+		047E2B3A265B9C1B00D1EB9C /* SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		163E592A260CB88E00E54401 /* Kwartracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kwartracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		163E592D260CB88E00E54401 /* KwartrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KwartrackerApp.swift; sourceTree = "<group>"; };
 		163E592F260CB88E00E54401 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,13 +122,13 @@
 		9E15A147209E6A913358D61B /* Pods-KwartrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KwartrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-KwartrackerTests/Pods-KwartrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE5FF1E2AB4ED121C5D59731 /* Pods_Kwartracker_KwartrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kwartracker_KwartrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6081ADB2652765E003BB9CB /* DialogStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogStatus.swift; sourceTree = "<group>"; };
+		C6249AA72637EB8C00C55B31 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		C65699C12637C91400D24D2F /* SignUpFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFooterView.swift; sourceTree = "<group>"; };
+		C65699C22637C91400D24D2F /* SignUpBodyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpBodyView.swift; sourceTree = "<group>"; };
 		C6CDDCAF263811F700CB1562 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		C6CDDCC42638125C00CB1562 /* MainAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAlertView.swift; sourceTree = "<group>"; };
 		C6CDDCCA2638135B00CB1562 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		C6CDDCE626381F6E00CB1562 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
-		C6249AA72637EB8C00C55B31 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		C65699C12637C91400D24D2F /* SignUpFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFooterView.swift; sourceTree = "<group>"; };
-		C65699C22637C91400D24D2F /* SignUpBodyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpBodyView.swift; sourceTree = "<group>"; };
 		D507178A90E22E9AB2ABF11A /* Pods_Kwartracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kwartracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD3E9E5BB7FB306F0A54B049 /* Pods-Kwartracker-KwartrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker-KwartrackerUITests.release.xcconfig"; path = "Target Support Files/Pods-Kwartracker-KwartrackerUITests/Pods-Kwartracker-KwartrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DF4D41E232EA75D22CD128E1 /* Pods-Kwartracker-KwartrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker-KwartrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Kwartracker-KwartrackerUITests/Pods-Kwartracker-KwartrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +164,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		047E2AC9265B807700D1EB9C /* Side Menu */ = {
+			isa = PBXGroup;
+			children = (
+				047E2ACA265B815400D1EB9C /* SideMenuView.swift */,
+			);
+			path = "Side Menu";
+			sourceTree = "<group>";
+		};
 		163E5921260CB88E00E54401 = {
 			isa = PBXGroup;
 			children = (
@@ -238,9 +254,10 @@
 		163E5963260CBF0400E54401 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-                C6081ADA2652764B003BB9CB /* Enums */,
-                C6CDDCC92638134600CB1562 /* Reusable */,
-                C6CDDCAE263811DD00CB1562 /* Alert */,
+				047E2AC9265B807700D1EB9C /* Side Menu */,
+				C6081ADA2652764B003BB9CB /* Enums */,
+				C6CDDCC92638134600CB1562 /* Reusable */,
+				C6CDDCAE263811DD00CB1562 /* Alert */,
 				24747FEA2628260200C7A9A8 /* Change-Password Page */,
 				163E592F260CB88E00E54401 /* ContentView.swift */,
 				7AD9B8722626EC2A00CF0EA6 /* SkeletalView.swift */,
@@ -400,13 +417,31 @@
 			path = Content;
 			sourceTree = "<group>";
 		};
-
 		C6081ADA2652764B003BB9CB /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				047E2B3A265B9C1B00D1EB9C /* SideMenu.swift */,
 				C6081ADB2652765E003BB9CB /* DialogStatus.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		C65699C02637C8EE00D24D2F /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				C65699C22637C91400D24D2F /* SignUpBodyView.swift */,
+				C65699C12637C91400D24D2F /* SignUpFooterView.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		C6A089802637C6D200E6653E /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				C65699C02637C8EE00D24D2F /* Content */,
+				C6249AA72637EB8C00C55B31 /* SignUpView.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		C6CDDCAE263811DD00CB1562 /* Alert */ = {
@@ -431,26 +466,10 @@
 			children = (
 				C6CDDCCA2638135B00CB1562 /* ButtonView.swift */,
 				C6CDDCE626381F6E00CB1562 /* MessageView.swift */,
+				047E2ACF265B82B700D1EB9C /* ProfileView.swift */,
+				047E2AFD265B8D8700D1EB9C /* MenuRowView.swift */,
 			);
 			path = Reusable;
-            sourceTree = "<group>";
-        };
-		C65699C02637C8EE00D24D2F /* Content */ = {
-			isa = PBXGroup;
-			children = (
-				C65699C22637C91400D24D2F /* SignUpBodyView.swift */,
-				C65699C12637C91400D24D2F /* SignUpFooterView.swift */,
-			);
-			path = Content;
-			sourceTree = "<group>";
-		};
-		C6A089802637C6D200E6653E /* SignUp */ = {
-			isa = PBXGroup;
-			children = (
-				C65699C02637C8EE00D24D2F /* Content */,
-				C6249AA72637EB8C00C55B31 /* SignUpView.swift */,
-			);
-			path = SignUp;
 			sourceTree = "<group>";
 		};
 		FBDD14E75727D540662415F6 /* Pods */ = {
@@ -713,21 +732,24 @@
 				C6CDDCE726381F6E00CB1562 /* MessageView.swift in Sources */,
 				163E5930260CB88E00E54401 /* ContentView.swift in Sources */,
 				7A17D13226298678005BB190 /* UserField.swift in Sources */,
-                C6CDDCB0263811F700CB1562 /* AlertView.swift in Sources */,
+				047E2AFE265B8D8700D1EB9C /* MenuRowView.swift in Sources */,
+				C6CDDCB0263811F700CB1562 /* AlertView.swift in Sources */,
 				24748008262832B800C7A9A8 /* ChangePasswordBodyView.swift in Sources */,
 				247480032628281200C7A9A8 /* NavigationHeaderView.swift in Sources */,
 				164E95EC2612224100D84B7F /* AppState.swift in Sources */,
+				047E2B3B265B9C1B00D1EB9C /* SideMenu.swift in Sources */,
 				C6249AA82637EB8C00C55B31 /* SignUpView.swift in Sources */,
 				C65699C32637C91400D24D2F /* SignUpFooterView.swift in Sources */,
 				7AD9B8732626EC2A00CF0EA6 /* SkeletalView.swift in Sources */,
 				7AD9B86B2626EC0000CF0EA6 /* SignInHeaderView.swift in Sources */,
+				047E2AD0265B82B700D1EB9C /* ProfileView.swift in Sources */,
 				7A17D13A26298695005BB190 /* SNSButton.swift in Sources */,
 				C6081ADC2652765E003BB9CB /* DialogStatus.swift in Sources */,
 				C6CDDCCB2638135B00CB1562 /* ButtonView.swift in Sources */,
 				163E5B6C260F337600E54401 /* Secrets.swift in Sources */,
 				164E95FF26122C5E00D84B7F /* World.swift in Sources */,
 				C6CDDCC52638125C00CB1562 /* MainAlertView.swift in Sources */,
-				7AB1B91C2643887500853FAC /* SignInFooterView.swift in Sources */,
+				047E2ACB265B815400D1EB9C /* SideMenuView.swift in Sources */,
 				7AB88B1E262805F300E2DFD3 /* View+Extensions.swift in Sources */,
 				164E95FA26122BE200D84B7F /* AppAction.swift in Sources */,
 				7AB88B282628071C00E2DFD3 /* RoundedCorner.swift in Sources */,
