@@ -249,7 +249,6 @@
 				C6081ADA2652764B003BB9CB /* Enums */,
 				C6CDDCC92638134600CB1562 /* Reusable */,
 				C6CDDCAE263811DD00CB1562 /* Alert */,
-				245FFEE42654B6EC00042B3E /* Enums */,
 				244A3B7C263A642B00D8B08B /* Edit-Profile Page */,
 				24747FEA2628260200C7A9A8 /* Change-Password Page */,
 				163E592F260CB88E00E54401 /* ContentView.swift */,
@@ -333,14 +332,6 @@
 				244A3B80263A652500D8B08B /* EditProfileContentView.swift */,
 			);
 			path = Content;
-			sourceTree = "<group>";
-		};
-		245FFEE42654B6EC00042B3E /* Enums */ = {
-			isa = PBXGroup;
-			children = (
-				245FFEE52654B71400042B3E /* FieldType.swift */,
-			);
-			path = Enums;
 			sourceTree = "<group>";
 		};
 		24747FEA2628260200C7A9A8 /* Change-Password Page */ = {
@@ -438,6 +429,7 @@
 		C6081ADA2652764B003BB9CB /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				245FFEE52654B71400042B3E /* FieldType.swift */,
 				C6081ADB2652765E003BB9CB /* DialogStatus.swift */,
 			);
 			path = Enums;
