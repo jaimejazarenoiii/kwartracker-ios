@@ -34,6 +34,8 @@
 		24747FEC2628261A00C7A9A8 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24747FEB2628261A00C7A9A8 /* ChangePasswordView.swift */; };
 		247480032628281200C7A9A8 /* NavigationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247480022628281200C7A9A8 /* NavigationHeaderView.swift */; };
 		24748008262832B800C7A9A8 /* ChangePasswordBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24748007262832B800C7A9A8 /* ChangePasswordBodyView.swift */; };
+		24AC7C8E265B716500CE4282 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C8D265B716500CE4282 /* SettingsView.swift */; };
+		24AC7C90265B718900CE4282 /* SettingsBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C8F265B718900CE4282 /* SettingsBodyView.swift */; };
         242950A626578AF10075C054 /* PopupConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242950A526578AF10075C054 /* PopupConfirmationView.swift */; };
         242950A926578CEF0075C054 /* PopupContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242950A826578CEF0075C054 /* PopupContentView.swift */; };
 		290CA1B2261EABE400239EA7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 290CA1B1261EABE400239EA7 /* swiftgen.yml */; };
@@ -110,6 +112,8 @@
 		24747FEB2628261A00C7A9A8 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		247480022628281200C7A9A8 /* NavigationHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHeaderView.swift; sourceTree = "<group>"; };
 		24748007262832B800C7A9A8 /* ChangePasswordBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordBodyView.swift; sourceTree = "<group>"; };
+		24AC7C8D265B716500CE4282 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		24AC7C8F265B718900CE4282 /* SettingsBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBodyView.swift; sourceTree = "<group>"; };
         242950A526578AF10075C054 /* PopupConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupConfirmationView.swift; sourceTree = "<group>"; };
         242950A826578CEF0075C054 /* PopupContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupContentView.swift; sourceTree = "<group>"; };
 		290CA1B1261EABE400239EA7 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
@@ -253,6 +257,7 @@
 		163E5963260CBF0400E54401 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+                24AC7C8B265B713C00CE4282 /* Settings Page */,
                 C6081ADA2652764B003BB9CB /* Enums */,
                 C6CDDCC92638134600CB1562 /* Reusable */,
                 C6CDDCAE263811DD00CB1562 /* Alert */,
@@ -387,6 +392,23 @@
 			path = Content;
 			sourceTree = "<group>";
 		};
+		24AC7C8B265B713C00CE4282 /* Settings Page */ = {
+			isa = PBXGroup;
+			children = (
+				24AC7C8C265B714500CE4282 /* Content */,
+				24AC7C8D265B716500CE4282 /* SettingsView.swift */,
+			);
+			path = "Settings Page";
+			sourceTree = "<group>";
+		};
+		24AC7C8C265B714500CE4282 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				24AC7C8F265B718900CE4282 /* SettingsBodyView.swift */,
+			);
+			path = Content;
+            sourceTree = "<group>";
+        };
 		16CCE83826523F2400345778 /* Alert View Reusables */ = {
 			isa = PBXGroup;
 			children = (
@@ -788,6 +810,7 @@
 				C6CDDCB0263811F700CB1562 /* AlertView.swift in Sources */,
 				24748008262832B800C7A9A8 /* ChangePasswordBodyView.swift in Sources */,
 				247480032628281200C7A9A8 /* NavigationHeaderView.swift in Sources */,
+				24AC7C90265B718900CE4282 /* SettingsBodyView.swift in Sources */,
 				164E95EC2612224100D84B7F /* AppState.swift in Sources */,
 				C6249AA82637EB8C00C55B31 /* SignUpView.swift in Sources */,
 				C65699C32637C91400D24D2F /* SignUpFooterView.swift in Sources */,
@@ -823,6 +846,7 @@
 				242950A626578AF10075C054 /* PopupConfirmationView.swift in Sources */,
 				163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */,
 				24747FEC2628261A00C7A9A8 /* ChangePasswordView.swift in Sources */,
+				24AC7C8E265B716500CE4282 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

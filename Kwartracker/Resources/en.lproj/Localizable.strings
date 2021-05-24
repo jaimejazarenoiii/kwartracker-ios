@@ -61,3 +61,8 @@
 "edit_profile_page.label.contact_number" = "Contact number";
 "edit_profile_page.label.birthdate" = "Birthdate";
 "edit_profile_page.label.address" = "Address";
+
+// Settings Page
+"settings_page.navigation_title" = "Settings";
+"settings_page.navigation_item.login_and_security" = "Login and Security";
+"settings_page.navigation_item.categories" = "Categories";

@@ -77,6 +77,7 @@ private struct NavigationContent: View {
                     .fontWeight(.bold)
                     .foregroundColor(.white).opacity(colorOpacity)
             })
+            .frame(width: navigationButton.isEmpty ? backButtonSize : .infinity, alignment: .center)
         }
         .padding(.horizontal, horizontalMargin)
         .padding(.vertical, verticalMargin)
