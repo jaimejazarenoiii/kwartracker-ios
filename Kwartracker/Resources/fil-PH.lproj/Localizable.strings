@@ -45,3 +45,8 @@
 "change_password_page.new_password.placeholder" = "Enter new password";
 "change_password_page.confirm_new_password.label" = "Confirm new password";
 "change_password_page.confirm_new_password.placeholder" = "Enter again new password";
+
+// Settings Page
+"settings_page.navigation_title" = "Settings";
+"settings_page.navigation_item.login_and_security" = "Login and Security";
+"edit_profile_page.navigation_item.categories" = "Categories";

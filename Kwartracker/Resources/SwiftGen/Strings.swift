@@ -88,6 +88,17 @@ internal enum L10n {
     }
   }
 
+  internal enum SettingsPage {
+    /// Settings
+    internal static let navigationTitle = L10n.tr("Localizable", "settings_page.navigation_title")
+    internal enum NavigationItem {
+      /// Categories
+      internal static let categories = L10n.tr("Localizable", "settings_page.navigation_item.categories")
+      /// Login and Security
+      internal static let loginAndSecurity = L10n.tr("Localizable", "settings_page.navigation_item.login_and_security")
+    }
+  }
+
   internal enum SignInPage {
     internal enum Button {
       /// Recover password
