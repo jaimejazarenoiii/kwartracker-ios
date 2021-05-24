@@ -14,13 +14,14 @@ struct SetttingsBodyView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationItem(isActive: $isCategoryLinkActive,
+                Spacer().frame(height: 30)
+                NavigationItem(isActive: $isLoginSecurityLinkActive,
                                nagivationLabel: L10n.SettingsPage.NavigationItem.loginAndSecurity)
                 NavigationItem(isActive: $isCategoryLinkActive,
                                nagivationLabel: L10n.SettingsPage.NavigationItem.categories)
                 Spacer()
             }
-            .position(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.midY / 1.8)
+            .navigationBarHidden(true)
         }
     }
 }
