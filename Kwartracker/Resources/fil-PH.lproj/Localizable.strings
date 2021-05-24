@@ -38,6 +38,14 @@
 "sign_up_page.label.already_have_an_account" = "Already have an account?";
 "sign_up_page.button.sign_in" = "Sign In";
 
+// Change password page
+"change_password_page.navigation_title" = "Change Password";
+"change_password_page.navigation_button_item.save" = "Save";
+"change_password_page.new_password.label" = "New password";
+"change_password_page.new_password.placeholder" = "Enter new password";
+"change_password_page.confirm_new_password.label" = "Confirm new password";
+"change_password_page.confirm_new_password.placeholder" = "Enter again new password";
+
 // Delete Confirmation Alert
 "alert_sheet.title.confirmation" = "Confirmation";
 "alert_sheet.body.are_you_sure_you_want_to_delete_this" = "Are you sure you want to delete this?";

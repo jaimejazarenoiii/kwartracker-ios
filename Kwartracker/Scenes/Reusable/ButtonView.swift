@@ -20,7 +20,7 @@ struct ButtonView: View {
         Button(action: actionHandler, label: {
             ZStack {
                 BWNeumorphicRectangle(rectRadius: rectRadius,
-                                      color: Color(Asset.Colors.blueberry.color),
+                                      color: actionLabel.buttonColor,
                                       shadowRadius: shadowRadius,
                                       shadowOffset: shadowOffset)
                 Text(actionLabel.text)
@@ -46,6 +46,17 @@ struct ButtonView: View {
                 return L10n.PopUpConfirmationModal.Button.cancel
             case .exit:
                 return L10n.PopUpConfirmationModal.Button.exit
+            }
+        }
+        
+        var buttonColor: Color {
+            switch self {
+            case .cancel:
+                return Color(Asset.Colors.spindleGrey.color)
+            case .delete:
+                return Color(Asset.Colors.teal.color)
+            default:
+                return Color(Asset.Colors.blueberry.color)
             }
         }
     }

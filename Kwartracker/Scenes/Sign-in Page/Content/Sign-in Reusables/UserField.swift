@@ -28,11 +28,10 @@ struct UserField: View {
                                   color: Color(Asset.Colors.solitudeGrey.color),
                                   shadowRadius: shadowRadius,
                                   shadowOffset: shadowOffset)
-            
             UserField
         }
     }
-    
+
     var UserField: some View {
         createField(for: fieldType)
             .modifier(PlaceholderStyle(showPlaceHolder: textValue.isEmpty,
@@ -54,6 +53,8 @@ struct UserField: View {
     enum FieldType {
         case email
         case password
+        case newPassword
+        case confirmNewPassword
         
         var text: String {
             switch self {
@@ -61,6 +62,10 @@ struct UserField: View {
                 return L10n.SignUpPage.Label.email
             case .password:
                 return L10n.SignUpPage.Label.password
+            case .newPassword:
+                return L10n.ChangePasswordPage.NewPassword.label
+            case .confirmNewPassword:
+                return L10n.ChangePasswordPage.ConfirmNewPassword.label
             }
         }
         
@@ -70,6 +75,10 @@ struct UserField: View {
                 return L10n.SignInPage.Field.enterEmailAddress
             case .password:
                 return L10n.SignInPage.Field.enterPassword
+            case .newPassword:
+                return L10n.ChangePasswordPage.NewPassword.placeholder
+            case .confirmNewPassword:
+                return L10n.ChangePasswordPage.ConfirmNewPassword.placeholder
             }
         }
     }
