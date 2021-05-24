@@ -71,14 +71,19 @@ private extension UserField {
     }
 }
 
-struct PlaceholderStyle: ViewModifier {
+private struct PlaceholderStyle: ViewModifier {
     var showPlaceHolder: Bool
     var placeholder: String
 
     public func body(content: Content) -> some View {
-        Text(placeholder)
-            .italic()
-            .foregroundColor(.secondary)
-            .frame(maxWidth: .infinity, alignment: .leading)
+        ZStack(alignment: .leading) {
+            if showPlaceHolder {
+                Text(placeholder)
+                    .italic()
+                    .foregroundColor(.secondary)
+            }
+            content
+                .foregroundColor(Color.black)
+        }
     }
 }

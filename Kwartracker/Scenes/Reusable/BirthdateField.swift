@@ -16,6 +16,7 @@ struct BirthdateField: View {
     private let leadingSideMargin: CGFloat = 20
     private let calendarContainerSize: CGFloat = 40
     private let calendarCotnainerRadius: CGFloat = 13
+    let calendarIcon = Asset.Images.calendarIcon.image.withRenderingMode(.alwaysTemplate).withTintColor(.white)
 
     var body: some View {
         HStack {
@@ -25,8 +26,7 @@ struct BirthdateField: View {
                 .foregroundColor(Color(Asset.Colors.spindleGrey.color).opacity(colorOpacity))
                 .frame(width: calendarContainerSize, height: calendarContainerSize, alignment: .center)
                 .background(
-                    Image(uiImage: Asset.Images.calendarIcon.image
-                                              .withRenderingMode(.alwaysTemplate).withTintColor(.white))
+                    Image(uiImage: calendarIcon)
                         .resizable()
                         .foregroundColor(Color(Asset.Colors.spindleGrey.color))
                         .frame(width: calendarImageSize, height: calendarImageSize, alignment: .center)
