@@ -90,6 +90,7 @@
 		29AE102D262EAF5D00B383CF /* WalletPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AE102C262EAF5D00B383CF /* WalletPageView.swift */; };
 		29D35FA5264BEDB500C4DD48 /* WalletSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D35FA4264BEDB500C4DD48 /* WalletSectionHeader.swift */; };
 		29F04570265CA33300842C8B /* PlaceholderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F0456F265CA33300842C8B /* PlaceholderStyle.swift */; };
+		29F0457B265CB46300842C8B /* BackgroundBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F0457A265CB46300842C8B /* BackgroundBlurView.swift */; };
 		29F32958265B9F8500C1F807 /* Calendar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F32957265B9F8500C1F807 /* Calendar+Extension.swift */; };
 		29F3295D265B9FAF00C1F807 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F3295C265B9FAF00C1F807 /* DateFormatter+Extension.swift */; };
 		29F32963265BA01000C1F807 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F32962265BA01000C1F807 /* WeekView.swift */; };
@@ -227,6 +228,7 @@
 		29AE102C262EAF5D00B383CF /* WalletPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPageView.swift; sourceTree = "<group>"; };
 		29D35FA4264BEDB500C4DD48 /* WalletSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSectionHeader.swift; sourceTree = "<group>"; };
 		29F0456F265CA33300842C8B /* PlaceholderStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderStyle.swift; sourceTree = "<group>"; };
+		29F0457A265CB46300842C8B /* BackgroundBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundBlurView.swift; sourceTree = "<group>"; };
 		29F32957265B9F8500C1F807 /* Calendar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Extension.swift"; sourceTree = "<group>"; };
 		29F3295C265B9FAF00C1F807 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		29F32962265BA01000C1F807 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
@@ -788,6 +790,7 @@
 				29F0456F265CA33300842C8B /* PlaceholderStyle.swift */,
 				29F32957265B9F8500C1F807 /* Calendar+Extension.swift */,
 				29F3295C265B9FAF00C1F807 /* DateFormatter+Extension.swift */,
+				29F0457A265CB46300842C8B /* BackgroundBlurView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1175,6 +1178,7 @@
 				29327541264E13D800E8BA8B /* CardTargetView.swift in Sources */,
 				29F32963265BA01000C1F807 /* WeekView.swift in Sources */,
 				244A3B7E263A644E00D8B08B /* EditProfileView.swift in Sources */,
+				29F0457B265CB46300842C8B /* BackgroundBlurView.swift in Sources */,
 				7A7FA1322637B70A00484F51 /* FootnoteButton.swift in Sources */,
 				29F6C1FE262ED69800DB2139 /* CardView.swift in Sources */,
 				293679EE2657A49600AD115C /* EditWalletPage.swift in Sources */,
