@@ -90,6 +90,14 @@
 		29AE102D262EAF5D00B383CF /* WalletPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AE102C262EAF5D00B383CF /* WalletPageView.swift */; };
 		29D35FA5264BEDB500C4DD48 /* WalletSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D35FA4264BEDB500C4DD48 /* WalletSectionHeader.swift */; };
 		29F6C1FE262ED69800DB2139 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F6C1FD262ED69800DB2139 /* CardView.swift */; };
+		29F04570265CA33300842C8B /* PlaceholderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F0456F265CA33300842C8B /* PlaceholderStyle.swift */; };
+		29F32958265B9F8500C1F807 /* Calendar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F32957265B9F8500C1F807 /* Calendar+Extension.swift */; };
+		29F3295D265B9FAF00C1F807 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F3295C265B9FAF00C1F807 /* DateFormatter+Extension.swift */; };
+		29F32963265BA01000C1F807 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F32962265BA01000C1F807 /* WeekView.swift */; };
+		29F3296B265BA04200C1F807 /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F3296A265BA04200C1F807 /* MonthView.swift */; };
+		29F32970265BA0EC00C1F807 /* CalendarTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F3296F265BA0EC00C1F807 /* CalendarTableView.swift */; };
+		29F3297E265BA63B00C1F807 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F3297D265BA63B00C1F807 /* DayView.swift */; };
+		29F32986265BAA2300C1F807 /* MainCalendarViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F32985265BAA2300C1F807 /* MainCalendarViewPage.swift */; };
 		7A17D13226298678005BB190 /* UserField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13126298678005BB190 /* UserField.swift */; };
 		7A17D13A26298695005BB190 /* SNSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13926298695005BB190 /* SNSButton.swift */; };
 		7A734D92262FFAA900557EF7 /* BWNeumorphicRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A734D91262FFAA900557EF7 /* BWNeumorphicRectangle.swift */; };
@@ -221,6 +229,14 @@
 		29AE102C262EAF5D00B383CF /* WalletPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPageView.swift; sourceTree = "<group>"; };
 		29D35FA4264BEDB500C4DD48 /* WalletSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSectionHeader.swift; sourceTree = "<group>"; };
 		29F6C1FD262ED69800DB2139 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		29F0456F265CA33300842C8B /* PlaceholderStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderStyle.swift; sourceTree = "<group>"; };
+		29F32957265B9F8500C1F807 /* Calendar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Extension.swift"; sourceTree = "<group>"; };
+		29F3295C265B9FAF00C1F807 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
+		29F32962265BA01000C1F807 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
+		29F3296A265BA04200C1F807 /* MonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthView.swift; sourceTree = "<group>"; };
+		29F3296F265BA0EC00C1F807 /* CalendarTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableView.swift; sourceTree = "<group>"; };
+		29F3297D265BA63B00C1F807 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		29F32985265BAA2300C1F807 /* MainCalendarViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarViewPage.swift; sourceTree = "<group>"; };
 		2B40F9CAECD52C6174D15F90 /* Pods-Kwartracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker.debug.xcconfig"; path = "Target Support Files/Pods-Kwartracker/Pods-Kwartracker.debug.xcconfig"; sourceTree = "<group>"; };
 		6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KwartrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A17D13126298678005BB190 /* UserField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserField.swift; sourceTree = "<group>"; };
@@ -369,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				1683C9002629C75700B1D4D8 /* Transactions */,
+				29F32961265B9FDF00C1F807 /* Calendar */,
 				24AC7C8B265B713C00CE4282 /* Settings Page */,
 				C6081ADA2652764B003BB9CB /* Enums */,
 				C6CDDCC92638134600CB1562 /* Reusable */,
@@ -729,6 +746,18 @@
 			path = Content;
 			sourceTree = "<group>";
 		};
+		29F32961265B9FDF00C1F807 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				29F3296F265BA0EC00C1F807 /* CalendarTableView.swift */,
+				29F32985265BAA2300C1F807 /* MainCalendarViewPage.swift */,
+				29F3296A265BA04200C1F807 /* MonthView.swift */,
+				29F32962265BA01000C1F807 /* WeekView.swift */,
+				29F3297D265BA63B00C1F807 /* DayView.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
 		326399AE9BF3387D065FB7BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -774,6 +803,9 @@
 			children = (
 				7AB88B1D262805F300E2DFD3 /* View+Extensions.swift */,
 				2965572B26525E0F00C30257 /* KNavigationView.swift */,
+				29F0456F265CA33300842C8B /* PlaceholderStyle.swift */,
+				29F32957265B9F8500C1F807 /* Calendar+Extension.swift */,
+				29F3295C265B9FAF00C1F807 /* DateFormatter+Extension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1159,11 +1191,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				29327541264E13D800E8BA8B /* CardTargetView.swift in Sources */,
+				29F32963265BA01000C1F807 /* WeekView.swift in Sources */,
+				244A3B7E263A644E00D8B08B /* EditProfileView.swift in Sources */,
 				7A7FA1322637B70A00484F51 /* FootnoteButton.swift in Sources */,
 				29F6C1FE262ED69800DB2139 /* CardView.swift in Sources */,
 				293679EE2657A49600AD115C /* EditWalletPage.swift in Sources */,
 				16C5C787263534FE00F33B72 /* Wallet.swift in Sources */,
 				163E5930260CB88E00E54401 /* ContentView.swift in Sources */,
+				29F3295D265B9FAF00C1F807 /* DateFormatter+Extension.swift in Sources */,
 				7A17D13226298678005BB190 /* UserField.swift in Sources */,
 				1683C90B2629C7BB00B1D4D8 /* CircleButtonStyle.swift in Sources */,
 				16C5C77D2635349F00F33B72 /* Transaction.swift in Sources */,
@@ -1180,6 +1215,7 @@
 				C6249AA82637EB8C00C55B31 /* SignUpView.swift in Sources */,
 				29327593264E729000E8BA8B /* Double+Extension.swift in Sources */,
 				C65699C32637C91400D24D2F /* SignUpFooterView.swift in Sources */,
+				29F32970265BA0EC00C1F807 /* CalendarTableView.swift in Sources */,
 				7AD9B8732626EC2A00CF0EA6 /* SkeletalView.swift in Sources */,
 				16FC4F3E265C7E0F00D1B7E2 /* DeleteConfirmationContent.swift in Sources */,
 				7AD9B86B2626EC0000CF0EA6 /* SignInHeaderView.swift in Sources */,
@@ -1216,12 +1252,17 @@
 				29327571264E3D5C00E8BA8B /* TargetViewLabel.swift in Sources */,
 				29725CC126535DD2003A1CFA /* AddWalletFieldsView.swift in Sources */,
 				16C5C7982636296600F33B72 /* Currency.swift in Sources */,
+				29F3296B265BA04200C1F807 /* MonthView.swift in Sources */,
+				29F32958265B9F8500C1F807 /* Calendar+Extension.swift in Sources */,
 				164E97EF2614ACF000D84B7F /* Strings.swift in Sources */,
 				1683C9022629C76F00B1D4D8 /* TransactionsView.swift in Sources */,
 				163FC8262634D7E600E15C2B /* TealRoundedRectangleButtonStyle.swift in Sources */,
 				244A3B81263A652500D8B08B /* EditProfileContentView.swift in Sources */,
 				246D7236265B54CE0011F960 /* BirthdateField.swift in Sources */,
 				7AD9B8812626F17400CF0EA6 /* SignInContentView.swift in Sources */,
+				29F04570265CA33300842C8B /* PlaceholderStyle.swift in Sources */,
+				29F32986265BAA2300C1F807 /* MainCalendarViewPage.swift in Sources */,
+				29F3297E265BA63B00C1F807 /* DayView.swift in Sources */,
 				16FC4F4B265C7F6700D1B7E2 /* CircleButtonStyle.swift in Sources */,
 				7AB1B91E26438C7C00853FAC /* RoundedCornerRectangle.swift in Sources */,
 				7A734D92262FFAA900557EF7 /* BWNeumorphicRectangle.swift in Sources */,
