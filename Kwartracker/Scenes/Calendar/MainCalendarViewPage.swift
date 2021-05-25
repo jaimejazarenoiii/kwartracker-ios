@@ -14,6 +14,7 @@ struct MainCalendarViewPage: View {
     private let rectRadius: CGFloat = 17
     private let fontSize: CGFloat = 14
     private let modalSize: CGSize = CGSize(width: 315, height: 500)
+    private let buttonSize: CGFloat = 10
     private var year: DateInterval {
         calendar.dateInterval(of: .month, for: Date())!
     }
@@ -33,7 +34,7 @@ struct MainCalendarViewPage: View {
                             shadowRadius: shadowRadius,
                             shadowOffset: shadowOffset)
                         
-                        Text("Apply")
+                        Text(L10n.Button.Label.apply)
                             .foregroundColor(.white)
                             .font(.system(size: fontSize))
                     }
@@ -45,7 +46,7 @@ struct MainCalendarViewPage: View {
                     ZStack {
                         Image(uiImage: Asset.Images.closeIcon.image)
                             .resizable()
-                            .frame(width: 10, height: 10)
+                            .frame(width: buttonSize, height: buttonSize)
                     }
                     
                 })
