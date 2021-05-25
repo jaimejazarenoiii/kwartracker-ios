@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		047B510A265D0D8E009158F7 /* SideBarStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B5109265D0D8E009158F7 /* SideBarStack.swift */; };
+		047B5116265D0E62009158F7 /* TransactionHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B5115265D0E62009158F7 /* TransactionHistoryView.swift */; };
 		047E2ACB265B815400D1EB9C /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E2ACA265B815400D1EB9C /* SideMenuView.swift */; };
 		047E2AD0265B82B700D1EB9C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E2ACF265B82B700D1EB9C /* ProfileView.swift */; };
 		047E2AFE265B8D8700D1EB9C /* MenuRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E2AFD265B8D8700D1EB9C /* MenuRowView.swift */; };
@@ -74,6 +76,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		047B5109265D0D8E009158F7 /* SideBarStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarStack.swift; sourceTree = "<group>"; };
+		047B5115265D0E62009158F7 /* TransactionHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryView.swift; sourceTree = "<group>"; };
 		047E2ACA265B815400D1EB9C /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		047E2ACF265B82B700D1EB9C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		047E2AFD265B8D8700D1EB9C /* MenuRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRowView.swift; sourceTree = "<group>"; };
@@ -164,6 +168,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		047B5114265D0E41009158F7 /* Transaction History */ = {
+			isa = PBXGroup;
+			children = (
+				047B5115265D0E62009158F7 /* TransactionHistoryView.swift */,
+			);
+			path = "Transaction History";
+			sourceTree = "<group>";
+		};
 		047E2AC9265B807700D1EB9C /* Side Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +266,7 @@
 		163E5963260CBF0400E54401 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				047B5114265D0E41009158F7 /* Transaction History */,
 				047E2AC9265B807700D1EB9C /* Side Menu */,
 				C6081ADA2652764B003BB9CB /* Enums */,
 				C6CDDCC92638134600CB1562 /* Reusable */,
@@ -468,6 +481,7 @@
 				C6CDDCE626381F6E00CB1562 /* MessageView.swift */,
 				047E2ACF265B82B700D1EB9C /* ProfileView.swift */,
 				047E2AFD265B8D8700D1EB9C /* MenuRowView.swift */,
+				047B5109265D0D8E009158F7 /* SideBarStack.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -729,6 +743,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A7FA1322637B70A00484F51 /* FootnoteButton.swift in Sources */,
+				047B5116265D0E62009158F7 /* TransactionHistoryView.swift in Sources */,
 				C6CDDCE726381F6E00CB1562 /* MessageView.swift in Sources */,
 				163E5930260CB88E00E54401 /* ContentView.swift in Sources */,
 				7A17D13226298678005BB190 /* UserField.swift in Sources */,
@@ -737,6 +752,7 @@
 				24748008262832B800C7A9A8 /* ChangePasswordBodyView.swift in Sources */,
 				247480032628281200C7A9A8 /* NavigationHeaderView.swift in Sources */,
 				164E95EC2612224100D84B7F /* AppState.swift in Sources */,
+				047B510A265D0D8E009158F7 /* SideBarStack.swift in Sources */,
 				047E2B3B265B9C1B00D1EB9C /* SideMenu.swift in Sources */,
 				C6249AA82637EB8C00C55B31 /* SignUpView.swift in Sources */,
 				C65699C32637C91400D24D2F /* SignUpFooterView.swift in Sources */,

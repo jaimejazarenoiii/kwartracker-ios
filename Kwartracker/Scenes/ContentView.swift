@@ -8,9 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var showSidebar: Bool = false
+        
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        let drag = DragGesture()
+            .onEnded {
+                if $0.translation.width < -100 {
+                    withAnimation {
+                        self.showSidebar = false
+                    }
+                }
+            }
+        return SideBarStack(sidebarWidth: 300, showSidebar: $showSidebar) {
+            SideMenuView()
+        } content: {
+            TransactionHistoryView(showSidebar: $showSidebar)
+        }
+        .edgesIgnoringSafeArea(.all)
+        .gesture(drag)
     }
 }
 
