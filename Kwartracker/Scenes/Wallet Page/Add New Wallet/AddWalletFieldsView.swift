@@ -130,6 +130,11 @@ struct AddWalletFieldsView: View {
                         label: L10n.Wallet.Label.targetAmount,
                         selectLabel: L10n.Wallet.Placeholder.targetDate
                     )
+                    .fullScreenCover(isPresented: $calendarPresenting, content: {
+                        MainCalendarViewPage()
+                            .background(BackgroundBlurView())
+                            .ignoresSafeArea()
+                    })
                 }
             }
         }
