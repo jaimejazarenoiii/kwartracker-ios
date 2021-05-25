@@ -15,50 +15,56 @@ struct MainCalendarViewPage: View {
     private let fontSize: CGFloat = 14
     private let modalSize: CGSize = CGSize(width: 315, height: 500)
     private let buttonSize: CGFloat = 10
+    private let radius: CGFloat = 0.5
     private var year: DateInterval {
         calendar.dateInterval(of: .month, for: Date())!
     }
     var body: some View {
         ZStack {
-            Color(Asset.Colors.solitudeGrey.color)
-            VStack {
-                CalendarTableView(interval: self.year) { date in
-                    DayView(day: String(self.calendar.component(.day, from: date)))
-                }
-                
-                Button(action: {}, label: {
-                    ZStack {
-                        BWNeumorphicRectangle(
-                            rectRadius: rectRadius,
-                            color: Color(Asset.Colors.teal.color),
-                            shadowRadius: shadowRadius,
-                            shadowOffset: shadowOffset)
+            Color.clear
+                .blur(radius: radius)
+                .ignoresSafeArea()
+            ZStack {
+                Color(Asset.Colors.solitudeGrey.color)
+                VStack {
+                    CalendarTableView(interval: self.year) { date in
+                        DayView(day: String(self.calendar.component(.day, from: date)))
+                    }
+                    
+                    Button(action: {}, label: {
+                        ZStack {
+                            BWNeumorphicRectangle(
+                                rectRadius: rectRadius,
+                                color: Color(Asset.Colors.teal.color),
+                                shadowRadius: shadowRadius,
+                                shadowOffset: shadowOffset)
+                            
+                            Text(L10n.Button.Label.apply)
+                                .foregroundColor(.white)
+                                .font(.system(size: fontSize))
+                        }
                         
-                        Text(L10n.Button.Label.apply)
-                            .foregroundColor(.white)
-                            .font(.system(size: fontSize))
-                    }
+                    })
+                    .padding()
                     
-                })
+                    Button(action: {}, label: {
+                        ZStack {
+                            Image(uiImage: Asset.Images.closeIcon.image)
+                                .resizable()
+                                .frame(width: buttonSize, height: buttonSize)
+                        }
+                        
+                    })
+                    .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.solitudeGrey.color, padding: 10))
+                }
                 .padding()
-                
-                Button(action: {}, label: {
-                    ZStack {
-                        Image(uiImage: Asset.Images.closeIcon.image)
-                            .resizable()
-                            .frame(width: buttonSize, height: buttonSize)
-                    }
-                    
-                })
-                .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.solitudeGrey.color, padding: 10))
             }
-            .padding()
+            .frame(width: modalSize.width,
+                   height: modalSize.height)
+            .cornerRadius(rectRadius)
+            .shadow(color: Color.black.opacity(0.2), radius: shadowRadius, x: shadowOffset.x, y: shadowOffset.y)
+            .shadow(color: Color.white.opacity(0.7), radius: shadowRadius, x: -shadowOffset.x, y: -shadowOffset.y)
         }
-        .frame(width: modalSize.width,
-               height: modalSize.height)
-        .cornerRadius(rectRadius)
-        .shadow(color: Color.black.opacity(0.2), radius: shadowRadius, x: shadowOffset.x, y: shadowOffset.y)
-        .shadow(color: Color.white.opacity(0.7), radius: shadowRadius, x: -shadowOffset.x, y: -shadowOffset.y)
     }
 }
 
