@@ -44,6 +44,7 @@
 		24AC7C8E265B716500CE4282 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C8D265B716500CE4282 /* SettingsView.swift */; };
 		24AC7C90265B718900CE4282 /* SettingsBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C8F265B718900CE4282 /* SettingsBodyView.swift */; };
 		290CA1B2261EABE400239EA7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 290CA1B1261EABE400239EA7 /* swiftgen.yml */; };
+		29F04570265CA33300842C8B /* PlaceholderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F0456F265CA33300842C8B /* PlaceholderStyle.swift */; };
 		29F32958265B9F8500C1F807 /* Calendar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F32957265B9F8500C1F807 /* Calendar+Extension.swift */; };
 		29F3295D265B9FAF00C1F807 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F3295C265B9FAF00C1F807 /* DateFormatter+Extension.swift */; };
 		29F32963265BA01000C1F807 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F32962265BA01000C1F807 /* WeekView.swift */; };
@@ -134,6 +135,7 @@
 		24AC7C8D265B716500CE4282 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		24AC7C8F265B718900CE4282 /* SettingsBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBodyView.swift; sourceTree = "<group>"; };
 		290CA1B1261EABE400239EA7 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		29F0456F265CA33300842C8B /* PlaceholderStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderStyle.swift; sourceTree = "<group>"; };
 		29F32957265B9F8500C1F807 /* Calendar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Extension.swift"; sourceTree = "<group>"; };
 		29F3295C265B9FAF00C1F807 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		29F32962265BA01000C1F807 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
@@ -449,18 +451,6 @@
 			path = Content;
 			sourceTree = "<group>";
 		};
-		29F32961265B9FDF00C1F807 /* Calendar */ = {
-			isa = PBXGroup;
-			children = (
-				29F3296F265BA0EC00C1F807 /* CalendarTableView.swift */,
-				29F32985265BAA2300C1F807 /* MainCalendarViewPage.swift */,
-				29F3296A265BA04200C1F807 /* MonthView.swift */,
-				29F32962265BA01000C1F807 /* WeekView.swift */,
-				29F3297D265BA63B00C1F807 /* DayView.swift */,
-			);
-			path = Calendar;
-			sourceTree = "<group>";
-		};
 		24AC7C8B265B713C00CE4282 /* Settings Page */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,6 +466,18 @@
 				24AC7C8F265B718900CE4282 /* SettingsBodyView.swift */,
 			);
 			path = Content;
+			sourceTree = "<group>";
+		};
+		29F32961265B9FDF00C1F807 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				29F3296F265BA0EC00C1F807 /* CalendarTableView.swift */,
+				29F32985265BAA2300C1F807 /* MainCalendarViewPage.swift */,
+				29F3296A265BA04200C1F807 /* MonthView.swift */,
+				29F32962265BA01000C1F807 /* WeekView.swift */,
+				29F3297D265BA63B00C1F807 /* DayView.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		326399AE9BF3387D065FB7BA /* Frameworks */ = {
@@ -517,6 +519,7 @@
 			isa = PBXGroup;
 			children = (
 				7AB88B1D262805F300E2DFD3 /* View+Extensions.swift */,
+				29F0456F265CA33300842C8B /* PlaceholderStyle.swift */,
 				29F32957265B9F8500C1F807 /* Calendar+Extension.swift */,
 				29F3295C265B9FAF00C1F807 /* DateFormatter+Extension.swift */,
 			);
@@ -906,6 +909,7 @@
 				244A3B81263A652500D8B08B /* EditProfileContentView.swift in Sources */,
 				246D7236265B54CE0011F960 /* BirthdateField.swift in Sources */,
 				7AD9B8812626F17400CF0EA6 /* SignInContentView.swift in Sources */,
+				29F04570265CA33300842C8B /* PlaceholderStyle.swift in Sources */,
 				29F32986265BAA2300C1F807 /* MainCalendarViewPage.swift in Sources */,
 				29F3297E265BA63B00C1F807 /* DayView.swift in Sources */,
 				16FC4F4B265C7F6700D1B7E2 /* CircleButtonStyle.swift in Sources */,
