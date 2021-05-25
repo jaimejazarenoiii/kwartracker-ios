@@ -11,6 +11,23 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
 
+  internal enum AlertSheet {
+    internal enum Body {
+      /// Are you sure you want to delete this?
+      internal static let areYouSureYouWantToDeleteThis = L10n.tr("Localizable", "alert_sheet.body.are_you_sure_you_want_to_delete_this")
+    }
+    internal enum Option {
+      /// Cancel
+      internal static let cancel = L10n.tr("Localizable", "alert_sheet.option.cancel")
+      /// Delete
+      internal static let delete = L10n.tr("Localizable", "alert_sheet.option.delete")
+    }
+    internal enum Title {
+      /// Confirmation
+      internal static let confirmation = L10n.tr("Localizable", "alert_sheet.title.confirmation")
+    }
+  }
+
   internal enum ChangePasswordPage {
     /// Change Password
     internal static let navigationTitle = L10n.tr("Localizable", "change_password_page.navigation_title")
@@ -29,6 +46,31 @@ internal enum L10n {
       internal static let label = L10n.tr("Localizable", "change_password_page.new_password.label")
       /// Enter new password
       internal static let placeholder = L10n.tr("Localizable", "change_password_page.new_password.placeholder")
+    }
+  }
+
+  internal enum EditProfilePage {
+    /// My Profile
+    internal static let navigationTitle = L10n.tr("Localizable", "edit_profile_page.navigation_title")
+    internal enum Button {
+      /// Change photo
+      internal static let changePhoto = L10n.tr("Localizable", "edit_profile_page.button.change_photo")
+    }
+    internal enum Label {
+      /// Address
+      internal static let address = L10n.tr("Localizable", "edit_profile_page.label.address")
+      /// Birthdate
+      internal static let birthdate = L10n.tr("Localizable", "edit_profile_page.label.birthdate")
+      /// Contact number
+      internal static let contactNumber = L10n.tr("Localizable", "edit_profile_page.label.contact_number")
+      /// First name
+      internal static let firstName = L10n.tr("Localizable", "edit_profile_page.label.first_name")
+      /// Last name
+      internal static let lastName = L10n.tr("Localizable", "edit_profile_page.label.last_name")
+    }
+    internal enum NavigationButtonItem {
+      /// Save
+      internal static let save = L10n.tr("Localizable", "edit_profile_page.navigation_button_item.save")
     }
   }
 
@@ -60,6 +102,17 @@ internal enum L10n {
       internal static let delete = L10n.tr("Localizable", "pop_up_confirmation_modal.title.delete")
       /// Success
       internal static let success = L10n.tr("Localizable", "pop_up_confirmation_modal.title.success")
+    }
+  }
+
+  internal enum SettingsPage {
+    /// Settings
+    internal static let navigationTitle = L10n.tr("Localizable", "settings_page.navigation_title")
+    internal enum NavigationItem {
+      /// Categories
+      internal static let categories = L10n.tr("Localizable", "settings_page.navigation_item.categories")
+      /// Login and Security
+      internal static let loginAndSecurity = L10n.tr("Localizable", "settings_page.navigation_item.login_and_security")
     }
   }
 
