@@ -13,7 +13,6 @@ struct SignInView: View {
             SignInHeaderView()
         }, body: {
             SignInContentView()
-            SignInFooterView()
         })
     }
 }

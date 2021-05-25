@@ -91,12 +91,14 @@ struct UserField: View {
                     .padding([.leading, .trailing], 20)
                     .textContentType(.emailAddress)
                     .keyboardType(.emailAddress)
+                    PlaceholderTextField.init(placeholder: textLabel, text: $textValue)
             } else {
                 SecureField("", text: $textValue)
                     .background(Color(Asset.Colors.solitudeGrey.color))
                     .frame(height: 55, alignment: .center)
                     .cornerRadius(radius)
                     .padding([.leading, .trailing], 20)
+                    PlaceholderTextField.init(placeholder: textLabel, text: $textValue)
             }
                 
         }
@@ -147,6 +149,25 @@ struct SNSButton: View {
             return "applelogo"
         } else {
             return ""
+        }
+    }
+}
+
+struct PlaceholderTextField: View {
+    let placeholder: String
+    @Binding var text: String
+    let internalPadding: CGFloat = 5
+
+    var body: some View {
+        ZStack(alignment: .topLeading) {
+            if text.isEmpty {
+                Text(placeholder)
+                    .foregroundColor(Color.primary.opacity(0.25))
+                    .italic()
+                    .font(.system(size: 15))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding([.leading, .trailing], 20)
+            }
         }
     }
 }
