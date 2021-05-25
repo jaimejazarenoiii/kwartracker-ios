@@ -91,7 +91,7 @@ struct MonthView<DateView>: View where DateView: View {
                 }
                 .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.solitudeGrey.color, padding: sidePadding))
             }
-            .padding([.leading, .trailing], sidePadding)
+            .padding(sidePadding)
     }
     
     func changeDateBy(_ months: Int) {

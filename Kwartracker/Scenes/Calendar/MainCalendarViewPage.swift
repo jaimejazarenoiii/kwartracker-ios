@@ -17,6 +17,7 @@ struct MainCalendarViewPage: View {
     private let modalSize: CGSize = CGSize(width: 315, height: 500)
     private let buttonSize: CGFloat = 10
     private let radius: CGFloat = 0.5
+    private let margin: CGFloat = 10
     private var year: DateInterval {
         calendar.dateInterval(of: .month, for: Date())!
     }
@@ -58,7 +59,7 @@ struct MainCalendarViewPage: View {
                         }
                         
                     })
-                    .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.solitudeGrey.color, padding: 10))
+                    .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.solitudeGrey.color, padding: margin))
                 }
                 .padding()
             }
