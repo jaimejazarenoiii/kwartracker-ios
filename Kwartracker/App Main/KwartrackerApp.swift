@@ -15,8 +15,6 @@ struct KwartrackerApp: App {
 
     var body: some Scene {
         WindowGroup {
-//            SignInView()
-//            SideMenuView()
             ContentView()
         }
     }

@@ -60,6 +60,7 @@ internal enum Asset {
     internal static let trashIcon = ImageAsset(name: "TrashIcon")
     internal static let walletIcon = ImageAsset(name: "WalletIcon")
     internal static let icSample = ImageAsset(name: "ic_sample")
+    internal static let sampleImage = ImageAsset(name: "sampleImage")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
