@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainCalendarViewPage: View {
     @Environment(\.calendar) var calendar
+    @Environment(\.presentationMode) var presentationMode
     private let shadowRadius: CGFloat = 8
     private let shadowOffset = CGPoint(x: 6, y: 6)
     private let rectRadius: CGFloat = 17
@@ -47,7 +48,9 @@ struct MainCalendarViewPage: View {
                     })
                     .padding()
                     
-                    Button(action: {}, label: {
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }, label: {
                         ZStack {
                             Image(uiImage: Asset.Images.closeIcon.image)
                                 .resizable()
