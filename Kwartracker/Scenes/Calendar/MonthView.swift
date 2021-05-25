@@ -64,14 +64,14 @@ struct MonthView<DateView>: View where DateView: View {
         
         return
             HStack {
-                // icon will be updated later
                 Button(action: {
                     self.changeDateBy(-1)
                 }) {
                     Image(uiImage: Asset.Images.arrowLeftIcon.image)
                         .resizable()
-                        .frame(width: 30, height: 30)
+                        .frame(width: sidePadding, height: sidePadding)
                 }
+                .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.solitudeGrey.color, padding: sidePadding))
                 
                 Spacer()
                 
@@ -82,14 +82,14 @@ struct MonthView<DateView>: View where DateView: View {
                 
                 Spacer()
                 
-                // icon will be updated later
                 Button(action: {
                     self.changeDateBy(1)
                 }) {
                     Image(uiImage: Asset.Images.arrowRightIcon.image)
                         .resizable()
-                        .frame(width: 30, height: 30)
+                        .frame(width: sidePadding, height: sidePadding)
                 }
+                .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.solitudeGrey.color, padding: sidePadding))
             }
             .padding([.leading, .trailing], sidePadding)
     }

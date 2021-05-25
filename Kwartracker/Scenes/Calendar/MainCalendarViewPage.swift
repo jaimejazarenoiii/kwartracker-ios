@@ -9,11 +9,11 @@ import SwiftUI
 
 struct MainCalendarViewPage: View {
     @Environment(\.calendar) var calendar
-    private let frameHeight: CGFloat = 500
     private let shadowRadius: CGFloat = 8
     private let shadowOffset = CGPoint(x: 6, y: 6)
     private let rectRadius: CGFloat = 17
     private let fontSize: CGFloat = 14
+    private let modalSize: CGSize = CGSize(width: 315, height: 500)
     private var year: DateInterval {
         calendar.dateInterval(of: .month, for: Date())!
     }
@@ -41,21 +41,23 @@ struct MainCalendarViewPage: View {
                 })
                 .padding()
                 
-                // will be updated later
                 Button(action: {}, label: {
                     ZStack {
                         Image(uiImage: Asset.Images.closeIcon.image)
                             .resizable()
-                            .frame(width: 30, height: 30)
+                            .frame(width: 10, height: 10)
                     }
                     
                 })
+                .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.solitudeGrey.color, padding: 10))
             }
             .padding()
         }
-        .frame(width: UIScreen.main.bounds.width * 0.8,
-               height: frameHeight)
+        .frame(width: modalSize.width,
+               height: modalSize.height)
         .cornerRadius(rectRadius)
+        .shadow(color: Color.black.opacity(0.2), radius: shadowRadius, x: shadowOffset.x, y: shadowOffset.y)
+        .shadow(color: Color.white.opacity(0.7), radius: shadowRadius, x: -shadowOffset.x, y: -shadowOffset.y)
     }
 }
 
