@@ -15,7 +15,7 @@ struct ProfileView: View {
                 .frame(width: 40, height: 40, alignment: .center)
                 .clipShape(Circle())
             Text("Samantha Tagli")
-                .font(.system(size: 16, weight: .medium, design: .default))
+                .font(.system(size: 18, weight: .medium, design: .default))
                 .foregroundColor(Color(.white))
         }
     }

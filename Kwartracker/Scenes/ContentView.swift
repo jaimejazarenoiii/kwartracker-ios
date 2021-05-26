@@ -12,6 +12,8 @@ struct ContentView: View {
     @State var showSidebar: Bool = false
         
     var body: some View {
+        
+        //https://blckbirds.com/post/side-menu-hamburger-menu-in-swiftui/
         let drag = DragGesture()
             .onEnded {
                 if $0.translation.width < -100 {
@@ -20,6 +22,7 @@ struct ContentView: View {
                     }
                 }
             }
+        
         return SideBarStack(sidebarWidth: 300, showSidebar: $showSidebar) {
             SideMenuView()
         } content: {

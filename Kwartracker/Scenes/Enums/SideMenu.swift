@@ -21,7 +21,7 @@ enum SideMenu: CaseIterable, Identifiable {
     case myProfile
     case settings
     
-    var id: String { UUID().uuidString}
+    var id: UUID { UUID() }
     
     var text: String {
         switch self {

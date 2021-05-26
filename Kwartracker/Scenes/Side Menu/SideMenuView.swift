@@ -8,23 +8,35 @@
 import SwiftUI
 
 struct SideMenuView: View {
+    
+    @State private var selectedItemId: UUID?
+    @State private var sideMenu: SideMenu?
         
     init() {
         UITableView.appearance().backgroundColor = Asset.Colors.teal.color
-        UITableView.appearance().separatorStyle = .none
     }
 
     var body: some View {
         VStack(alignment: .leading) {
             ProfileView()
-                .padding([.leading, .top], 20)
+                    .padding([.leading, .top], 20)
             List {
-                ForEach(SideMenu.allCases) {
-                    MenuRowView(sideMenu: $0)
-                        .padding([.leading, .trailing], 5)
+                ForEach(SideMenu.sideMenuList) { item in
+                    Button(action: {
+                        self.selectedItemId = item.id
+                    }) {
+                        HStack {
+                            Image(uiImage: item.image)
+                                .resizable()
+                                .frame(width: 16, height: 14, alignment: .center)
+                            Text(item.text)
+                                .font(.system(size: 16))
+                                .foregroundColor(Color(.white))
+                        }.padding([.top, .bottom], 10)
+                    }
                 }
                 .listRowBackground(Color(Asset.Colors.teal.color))
-            }
+            }.listStyle(SidebarListStyle())
             Button(action: {}) {
                 HStack {
                     Image(uiImage: Asset.Images.powerIcon.image)

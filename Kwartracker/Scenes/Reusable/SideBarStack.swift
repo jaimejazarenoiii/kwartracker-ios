@@ -7,9 +7,10 @@
 
 import SwiftUI
 
+//https://betterprogramming.pub/create-a-sidebar-menu-180ca218eaf2
 struct SideBarStack<SidebarContent: View, Content: View>: View {
     
-@Binding var showSidebar: Bool
+    @Binding var showSidebar: Bool
 
     let sidebarContent: SidebarContent
     let mainContent: Content
