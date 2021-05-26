@@ -60,7 +60,8 @@ struct MonthView<DateView>: View where DateView: View {
         let component = calendar.component(.month, from: month)
         let formatter = component == 1 ? DateFormatter.monthAndYear : .month
         let fontSize: CGFloat = 14
-        let sidePadding: CGFloat = 10
+        let padding: CGFloat = 10
+        let sidePadding: CGFloat = 25
         
         return
             HStack {
@@ -69,9 +70,9 @@ struct MonthView<DateView>: View where DateView: View {
                 }) {
                     Image(uiImage: Asset.Images.arrowLeftIcon.image)
                         .resizable()
-                        .frame(width: sidePadding, height: sidePadding)
+                        .frame(width: padding, height: padding)
                 }
-                .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.solitudeGrey.color, padding: sidePadding))
+                .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.solitudeGrey.color, padding: padding))
                 
                 Spacer()
                 
@@ -87,11 +88,12 @@ struct MonthView<DateView>: View where DateView: View {
                 }) {
                     Image(uiImage: Asset.Images.arrowRightIcon.image)
                         .resizable()
-                        .frame(width: sidePadding, height: sidePadding)
+                        .frame(width: padding, height: padding)
                 }
-                .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.solitudeGrey.color, padding: sidePadding))
+                .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.solitudeGrey.color, padding: padding))
             }
-            .padding(sidePadding)
+            .padding([.leading, .trailing], sidePadding)
+            .padding([.top, .bottom], padding)
     }
     
     func changeDateBy(_ months: Int) {
