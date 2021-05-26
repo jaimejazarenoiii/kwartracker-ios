@@ -44,10 +44,7 @@
 		24AC7C8E265B716500CE4282 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C8D265B716500CE4282 /* SettingsView.swift */; };
 		24AC7C90265B718900CE4282 /* SettingsBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C8F265B718900CE4282 /* SettingsBodyView.swift */; };
 		290CA1B2261EABE400239EA7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 290CA1B1261EABE400239EA7 /* swiftgen.yml */; };
-		29ED9D43265E2D4D004C303E /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 29ED9D42265E2D4D004C303E /* SwiftDate */; };
-		29ED9D45265E2D4D004C303E /* SwiftDateDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 29ED9D44265E2D4D004C303E /* SwiftDateDynamic */; };
-		29ED9D47265E2D4D004C303E /* SwiftDateDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 29ED9D44265E2D4D004C303E /* SwiftDateDynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		29ED9D49265E2D4D004C303E /* SwiftDateStatic in Frameworks */ = {isa = PBXBuildFile; productRef = 29ED9D48265E2D4D004C303E /* SwiftDateStatic */; };
+		29ED9DA8265E34EA004C303E /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 29ED9DA7265E34EA004C303E /* SwiftDate */; };
 		7A17D13226298678005BB190 /* UserField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13126298678005BB190 /* UserField.swift */; };
 		7A17D13A26298695005BB190 /* SNSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13926298695005BB190 /* SNSButton.swift */; };
 		7A734D92262FFAA900557EF7 /* BWNeumorphicRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A734D91262FFAA900557EF7 /* BWNeumorphicRectangle.swift */; };
@@ -96,7 +93,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				29ED9D47265E2D4D004C303E /* SwiftDateDynamic in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,10 +176,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29ED9D43265E2D4D004C303E /* SwiftDate in Frameworks */,
+				29ED9DA8265E34EA004C303E /* SwiftDate in Frameworks */,
 				A9CFE877880189ECE3F83CB8 /* Pods_Kwartracker.framework in Frameworks */,
-				29ED9D49265E2D4D004C303E /* SwiftDateStatic in Frameworks */,
-				29ED9D45265E2D4D004C303E /* SwiftDateDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,9 +631,7 @@
 			);
 			name = Kwartracker;
 			packageProductDependencies = (
-				29ED9D42265E2D4D004C303E /* SwiftDate */,
-				29ED9D44265E2D4D004C303E /* SwiftDateDynamic */,
-				29ED9D48265E2D4D004C303E /* SwiftDateStatic */,
+				29ED9DA7265E34EA004C303E /* SwiftDate */,
 			);
 			productName = Kwartracker;
 			productReference = 163E592A260CB88E00E54401 /* Kwartracker.app */;
@@ -716,7 +708,7 @@
 			);
 			mainGroup = 163E5921260CB88E00E54401;
 			packageReferences = (
-				29ED9D41265E2D4D004C303E /* XCRemoteSwiftPackageReference "SwiftDate" */,
+				29ED9DA6265E34EA004C303E /* XCRemoteSwiftPackageReference "SwiftDate" */,
 			);
 			productRefGroup = 163E592B260CB88E00E54401 /* Products */;
 			projectDirPath = "";
@@ -1254,7 +1246,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		29ED9D41265E2D4D004C303E /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+		29ED9DA6265E34EA004C303E /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/malcommac/SwiftDate.git";
 			requirement = {
@@ -1265,20 +1257,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		29ED9D42265E2D4D004C303E /* SwiftDate */ = {
+		29ED9DA7265E34EA004C303E /* SwiftDate */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 29ED9D41265E2D4D004C303E /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			package = 29ED9DA6265E34EA004C303E /* XCRemoteSwiftPackageReference "SwiftDate" */;
 			productName = SwiftDate;
-		};
-		29ED9D44265E2D4D004C303E /* SwiftDateDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 29ED9D41265E2D4D004C303E /* XCRemoteSwiftPackageReference "SwiftDate" */;
-			productName = SwiftDateDynamic;
-		};
-		29ED9D48265E2D4D004C303E /* SwiftDateStatic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 29ED9D41265E2D4D004C303E /* XCRemoteSwiftPackageReference "SwiftDate" */;
-			productName = SwiftDateStatic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
