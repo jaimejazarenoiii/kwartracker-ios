@@ -43,6 +43,8 @@
 		24748008262832B800C7A9A8 /* ChangePasswordBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24748007262832B800C7A9A8 /* ChangePasswordBodyView.swift */; };
 		24AC7C8E265B716500CE4282 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C8D265B716500CE4282 /* SettingsView.swift */; };
 		24AC7C90265B718900CE4282 /* SettingsBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C8F265B718900CE4282 /* SettingsBodyView.swift */; };
+		24AC7C94265CAED200CE4282 /* LoginAndSecurityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C93265CAED200CE4282 /* LoginAndSecurityView.swift */; };
+		24AC7C96265CB12700CE4282 /* LoginAndSecuritBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C95265CB12700CE4282 /* LoginAndSecuritBodyView.swift */; };
 		290CA1B2261EABE400239EA7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 290CA1B1261EABE400239EA7 /* swiftgen.yml */; };
 		29ED9DA8265E34EA004C303E /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 29ED9DA7265E34EA004C303E /* SwiftDate */; };
 		7A17D13226298678005BB190 /* UserField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13126298678005BB190 /* UserField.swift */; };
@@ -140,6 +142,8 @@
 		24748007262832B800C7A9A8 /* ChangePasswordBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordBodyView.swift; sourceTree = "<group>"; };
 		24AC7C8D265B716500CE4282 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		24AC7C8F265B718900CE4282 /* SettingsBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBodyView.swift; sourceTree = "<group>"; };
+		24AC7C93265CAED200CE4282 /* LoginAndSecurityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSecurityView.swift; sourceTree = "<group>"; };
+		24AC7C95265CB12700CE4282 /* LoginAndSecuritBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSecuritBodyView.swift; sourceTree = "<group>"; };
 		290CA1B1261EABE400239EA7 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		2B40F9CAECD52C6174D15F90 /* Pods-Kwartracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker.debug.xcconfig"; path = "Target Support Files/Pods-Kwartracker/Pods-Kwartracker.debug.xcconfig"; sourceTree = "<group>"; };
 		6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KwartrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -282,6 +286,7 @@
 		163E5963260CBF0400E54401 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				24AC7C91265CAEB600CE4282 /* Login and Security Page */,
 				24AC7C8B265B713C00CE4282 /* Settings Page */,
 				C6081ADA2652764B003BB9CB /* Enums */,
 				C6CDDCC92638134600CB1562 /* Reusable */,
@@ -462,6 +467,23 @@
 			isa = PBXGroup;
 			children = (
 				24AC7C8F265B718900CE4282 /* SettingsBodyView.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		24AC7C91265CAEB600CE4282 /* Login and Security Page */ = {
+			isa = PBXGroup;
+			children = (
+				24AC7C92265CAEC300CE4282 /* Content */,
+				24AC7C93265CAED200CE4282 /* LoginAndSecurityView.swift */,
+			);
+			path = "Login and Security Page";
+			sourceTree = "<group>";
+		};
+		24AC7C92265CAEC300CE4282 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				24AC7C95265CB12700CE4282 /* LoginAndSecuritBodyView.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -878,6 +900,7 @@
 				16CCE83C26523F2400345778 /* (null) in Sources */,
 				7A17D13A26298695005BB190 /* SNSButton.swift in Sources */,
 				C6081ADC2652765E003BB9CB /* DialogStatus.swift in Sources */,
+				24AC7C94265CAED200CE4282 /* LoginAndSecurityView.swift in Sources */,
 				C6CDDCCB2638135B00CB1562 /* ButtonView.swift in Sources */,
 				16FC4F43265C7EAC00D1B7E2 /* DeleteConfirmationAlertView.swift in Sources */,
 				16FC4F51265C7F9D00D1B7E2 /* LinearGradient+Extensions.swift in Sources */,
@@ -904,6 +927,7 @@
 				163E5B64260F32A000E54401 /* Obfuscate.swift in Sources */,
 				164E97F02614ACF000D84B7F /* Assets.swift in Sources */,
 				164E95F226122BD200D84B7F /* AppReducer.swift in Sources */,
+				24AC7C96265CB12700CE4282 /* LoginAndSecuritBodyView.swift in Sources */,
 				C65699C42637C91400D24D2F /* SignUpBodyView.swift in Sources */,
 				242950A626578AF10075C054 /* PopupConfirmationView.swift in Sources */,
 				163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */,
