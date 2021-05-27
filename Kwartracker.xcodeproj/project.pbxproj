@@ -41,9 +41,9 @@
 		16C5C7982636296600F33B72 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C7972636296600F33B72 /* Currency.swift */; };
 		16C5C7A026362D3500F33B72 /* TransactionsViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C79F26362D3500F33B72 /* TransactionsViewState.swift */; };
 		16C5C7A526362E5300F33B72 /* TransactionsViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C7A426362E5300F33B72 /* TransactionsViewAction.swift */; };
-		16CCE83C26523F2400345778 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		16CCE83D26523F2400345778 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		16CCE83E26523F2400345778 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		16CCE83C26523F2400345778 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		16CCE83D26523F2400345778 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		16CCE83E26523F2400345778 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
 		242950A626578AF10075C054 /* PopupConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242950A526578AF10075C054 /* PopupConfirmationView.swift */; };
 		242950A926578CEF0075C054 /* PopupContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242950A826578CEF0075C054 /* PopupContentView.swift */; };
 		244A3B7E263A644E00D8B08B /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244A3B7D263A644E00D8B08B /* EditProfileView.swift */; };
@@ -55,6 +55,8 @@
 		24748008262832B800C7A9A8 /* ChangePasswordBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24748007262832B800C7A9A8 /* ChangePasswordBodyView.swift */; };
 		24AC7C8E265B716500CE4282 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C8D265B716500CE4282 /* SettingsView.swift */; };
 		24AC7C90265B718900CE4282 /* SettingsBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C8F265B718900CE4282 /* SettingsBodyView.swift */; };
+		24AC7C94265CAED200CE4282 /* LoginAndSecurityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C93265CAED200CE4282 /* LoginAndSecurityView.swift */; };
+		24AC7C96265CB12700CE4282 /* LoginAndSecuritBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C95265CB12700CE4282 /* LoginAndSecuritBodyView.swift */; };
 		2902D8A926538F26009B6288 /* KToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2902D8A826538F26009B6288 /* KToggleView.swift */; };
 		2902D8D7265395E4009B6288 /* ToggleViewModefier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2902D8D6265395E4009B6288 /* ToggleViewModefier.swift */; };
 		290CA1B2261EABE400239EA7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 290CA1B1261EABE400239EA7 /* swiftgen.yml */; };
@@ -86,6 +88,7 @@
 		29AB67632645329400D375A6 /* RoundWhiteButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB67622645329300D375A6 /* RoundWhiteButtonModifier.swift */; };
 		29AE102D262EAF5D00B383CF /* WalletPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AE102C262EAF5D00B383CF /* WalletPageView.swift */; };
 		29D35FA5264BEDB500C4DD48 /* WalletSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D35FA4264BEDB500C4DD48 /* WalletSectionHeader.swift */; };
+		29ED9DA8265E34EA004C303E /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 29ED9DA7265E34EA004C303E /* SwiftPackageProductDependency */; };
 		29F04570265CA33300842C8B /* PlaceholderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F0456F265CA33300842C8B /* PlaceholderStyle.swift */; };
 		29F0457B265CB46300842C8B /* BackgroundBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F0457A265CB46300842C8B /* BackgroundBlurView.swift */; };
 		29F32958265B9F8500C1F807 /* Calendar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F32957265B9F8500C1F807 /* Calendar+Extension.swift */; };
@@ -96,10 +99,6 @@
 		29F3297E265BA63B00C1F807 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F3297D265BA63B00C1F807 /* DayView.swift */; };
 		29F32986265BAA2300C1F807 /* MainCalendarViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F32985265BAA2300C1F807 /* MainCalendarViewPage.swift */; };
 		29F6C1FE262ED69800DB2139 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F6C1FD262ED69800DB2139 /* CardView.swift */; };
-		24AC7C94265CAED200CE4282 /* LoginAndSecurityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C93265CAED200CE4282 /* LoginAndSecurityView.swift */; };
-		24AC7C96265CB12700CE4282 /* LoginAndSecuritBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C95265CB12700CE4282 /* LoginAndSecuritBodyView.swift */; };
-		290CA1B2261EABE400239EA7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 290CA1B1261EABE400239EA7 /* swiftgen.yml */; };
-		29ED9DA8265E34EA004C303E /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 29ED9DA7265E34EA004C303E /* SwiftDate */; };
 		7A17D13226298678005BB190 /* UserField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13126298678005BB190 /* UserField.swift */; };
 		7A17D13A26298695005BB190 /* SNSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13926298695005BB190 /* SNSButton.swift */; };
 		7A734D92262FFAA900557EF7 /* BWNeumorphicRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A734D91262FFAA900557EF7 /* BWNeumorphicRectangle.swift */; };
@@ -207,10 +206,10 @@
 		24748007262832B800C7A9A8 /* ChangePasswordBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordBodyView.swift; sourceTree = "<group>"; };
 		24AC7C8D265B716500CE4282 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		24AC7C8F265B718900CE4282 /* SettingsBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBodyView.swift; sourceTree = "<group>"; };
-		2902D8A826538F26009B6288 /* KToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KToggleView.swift; sourceTree = "<group>"; };
-		2902D8D6265395E4009B6288 /* ToggleViewModefier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleViewModefier.swift; sourceTree = "<group>"; };
 		24AC7C93265CAED200CE4282 /* LoginAndSecurityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSecurityView.swift; sourceTree = "<group>"; };
 		24AC7C95265CB12700CE4282 /* LoginAndSecuritBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSecuritBodyView.swift; sourceTree = "<group>"; };
+		2902D8A826538F26009B6288 /* KToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KToggleView.swift; sourceTree = "<group>"; };
+		2902D8D6265395E4009B6288 /* ToggleViewModefier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleViewModefier.swift; sourceTree = "<group>"; };
 		290CA1B1261EABE400239EA7 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		2914E4E12652678F00F911EE /* AddNewWalletPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewWalletPage.swift; sourceTree = "<group>"; };
 		291AFAAC2658AC0A00A001EE /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -285,7 +284,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29ED9DA8265E34EA004C303E /* SwiftDate in Frameworks */,
+				29ED9DA8265E34EA004C303E /* BuildFile in Frameworks */,
 				A9CFE877880189ECE3F83CB8 /* Pods_Kwartracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -613,6 +612,23 @@
 			path = Content;
 			sourceTree = "<group>";
 		};
+		24AC7C91265CAEB600CE4282 /* Login and Security Page */ = {
+			isa = PBXGroup;
+			children = (
+				24AC7C92265CAEC300CE4282 /* Content */,
+				24AC7C93265CAED200CE4282 /* LoginAndSecurityView.swift */,
+			);
+			path = "Login and Security Page";
+			sourceTree = "<group>";
+		};
+		24AC7C92265CAEC300CE4282 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				24AC7C95265CB12700CE4282 /* LoginAndSecuritBodyView.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
 		2914E4DF2652674F00F911EE /* Add New Wallet */ = {
 			isa = PBXGroup;
 			children = (
@@ -729,23 +745,6 @@
 				29F3297D265BA63B00C1F807 /* DayView.swift */,
 			);
 			path = Calendar;
-			sourceTree = "<group>";
-		};
-		24AC7C91265CAEB600CE4282 /* Login and Security Page */ = {
-			isa = PBXGroup;
-			children = (
-				24AC7C92265CAEC300CE4282 /* Content */,
-				24AC7C93265CAED200CE4282 /* LoginAndSecurityView.swift */,
-			);
-			path = "Login and Security Page";
-			sourceTree = "<group>";
-		};
-		24AC7C92265CAEC300CE4282 /* Content */ = {
-			isa = PBXGroup;
-			children = (
-				24AC7C95265CB12700CE4282 /* LoginAndSecuritBodyView.swift */,
-			);
-			path = Content;
 			sourceTree = "<group>";
 		};
 		326399AE9BF3387D065FB7BA /* Frameworks */ = {
@@ -922,7 +921,7 @@
 			);
 			name = Kwartracker;
 			packageProductDependencies = (
-				29ED9DA7265E34EA004C303E /* SwiftDate */,
+				29ED9DA7265E34EA004C303E /* SwiftPackageProductDependency */,
 			);
 			productName = Kwartracker;
 			productReference = 163E592A260CB88E00E54401 /* Kwartracker.app */;
@@ -955,7 +954,6 @@
 				163E5942260CB89100E54401 /* Sources */,
 				163E5943260CB89100E54401 /* Frameworks */,
 				163E5944260CB89100E54401 /* Resources */,
-				DF07303641F9B72456B1F831 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1000,7 +998,7 @@
 			);
 			mainGroup = 163E5921260CB88E00E54401;
 			packageReferences = (
-				29ED9DA6265E34EA004C303E /* XCRemoteSwiftPackageReference "SwiftDate" */,
+				29ED9DA6265E34EA004C303E /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 163E592B260CB88E00E54401 /* Products */;
 			projectDirPath = "";
@@ -1145,40 +1143,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DF07303641F9B72456B1F831 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Kwartracker-KwartrackerUITests/Pods-Kwartracker-KwartrackerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Kwartracker-KwartrackerUITests/Pods-Kwartracker-KwartrackerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kwartracker-KwartrackerUITests/Pods-Kwartracker-KwartrackerUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F8FB59075B8061FBD1F67FFB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Kwartracker/Pods-Kwartracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Kwartracker/Pods-Kwartracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kwartracker/Pods-Kwartracker-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1216,12 +1180,11 @@
 				7AD9B8732626EC2A00CF0EA6 /* SkeletalView.swift in Sources */,
 				7AD9B86B2626EC0000CF0EA6 /* SignInHeaderView.swift in Sources */,
 				1652AEED2646A67D003542CD /* SelectableFieldForm.swift in Sources */,
-				16CCE83C26523F2400345778 /* (null) in Sources */,
+				16CCE83C26523F2400345778 /* BuildFile in Sources */,
 				7A17D13A26298695005BB190 /* SNSButton.swift in Sources */,
 				C6081ADC2652765E003BB9CB /* DialogStatus.swift in Sources */,
 				24AC7C94265CAED200CE4282 /* LoginAndSecurityView.swift in Sources */,
 				C6CDDCCB2638135B00CB1562 /* ButtonView.swift in Sources */,
-				16FC4F51265C7F9D00D1B7E2 /* LinearGradient+Extensions.swift in Sources */,
 				163E5B6C260F337600E54401 /* Secrets.swift in Sources */,
 				29AB67632645329400D375A6 /* RoundWhiteButtonModifier.swift in Sources */,
 				1652AEE42646A52E003542CD /* CreateTransactionFormModalView.swift in Sources */,
@@ -1239,9 +1202,9 @@
 				16C5C7A026362D3500F33B72 /* TransactionsViewState.swift in Sources */,
 				2914E4E22652678F00F911EE /* AddNewWalletPage.swift in Sources */,
 				C6CDDCC52638125C00CB1562 /* MainAlertView.swift in Sources */,
-				16CCE83D26523F2400345778 /* (null) in Sources */,
+				16CCE83D26523F2400345778 /* BuildFile in Sources */,
 				242950A926578CEF0075C054 /* PopupContentView.swift in Sources */,
-				16CCE83E26523F2400345778 /* (null) in Sources */,
+				16CCE83E26523F2400345778 /* BuildFile in Sources */,
 				7AB88B282628071C00E2DFD3 /* RoundedCorner.swift in Sources */,
 				2932757F264E4AE800E8BA8B /* WalletViewActions.swift in Sources */,
 				29327571264E3D5C00E8BA8B /* TargetViewLabel.swift in Sources */,
@@ -1635,7 +1598,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		29ED9DA6265E34EA004C303E /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+		29ED9DA6265E34EA004C303E /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/malcommac/SwiftDate.git";
 			requirement = {
@@ -1646,9 +1609,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		29ED9DA7265E34EA004C303E /* SwiftDate */ = {
+		29ED9DA7265E34EA004C303E /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 29ED9DA6265E34EA004C303E /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			package = 29ED9DA6265E34EA004C303E /* RemoteSwiftPackageReference */;
 			productName = SwiftDate;
 		};
 /* End XCSwiftPackageProductDependency section */
