@@ -71,7 +71,7 @@ struct MonthView<DateView>: View where DateView: View {
                 }) {
                     Image(uiImage: Asset.Images.arrowLeftIcon.image)
                         .resizable()
-                        .frame(width: padding, height: padding)
+                        .frame(width: padding - 2, height: padding)
                 }
                 .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.solitudeGrey.color, padding: padding))
                 
@@ -89,7 +89,7 @@ struct MonthView<DateView>: View where DateView: View {
                 }) {
                     Image(uiImage: Asset.Images.arrowRightIcon.image)
                         .resizable()
-                        .frame(width: padding, height: padding)
+                        .frame(width: padding - 2, height: padding)
                 }
                 .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.solitudeGrey.color, padding: padding))
             }

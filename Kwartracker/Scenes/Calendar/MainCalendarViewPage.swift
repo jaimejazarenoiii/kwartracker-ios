@@ -13,6 +13,7 @@ struct MainCalendarViewPage: View {
     @Environment(\.presentationMode) var presentationMode
     @Binding var dateRawString: String
     @State private var dayButtonToggle: Bool = false
+    @State private var dateString: String = ""
     
     private let dateFormat: String = "yyyy-MM-dd"
     private let shadowRadius: CGFloat = 8
@@ -25,7 +26,10 @@ struct MainCalendarViewPage: View {
     
     private var dateFromStr: Date? {
         get {
-            dateRawString.toDate(dateFormat)?.date
+            if dateString.isEmpty {
+                return dateRawString.toDate(dateFormat)?.date
+            }
+            return dateString.toDate(dateFormat)?.date
         }
     }
     private var year: DateInterval {
@@ -39,7 +43,7 @@ struct MainCalendarViewPage: View {
             VStack {
                 CalendarTableView(interval: self.year) { date in
                     Button(action: {
-                        setNewSelectedDate(date)
+                        dateString = date.dateByAdding(1, .day).toFormat(dateFormat)
                     }, label: {
                         dayView(of: date)
                     })
@@ -76,7 +80,10 @@ struct MainCalendarViewPage: View {
         let buttonPadding: CGFloat = 10
         let buttonCornerRadius: CGFloat = 16
         return Group {
-            Button(action: {}, label: {
+            Button(action: {
+                self.dateRawString = self.dateString
+                self.presentationMode.wrappedValue.dismiss()
+            }, label: {
                 ZStack {
                     BWNeumorphicRectangle(
                         rectRadius: buttonCornerRadius,
@@ -109,24 +116,19 @@ struct MainCalendarViewPage: View {
     
     private func dayView(of date: Date) -> AnyView {
         let stringDay =  String(self.calendar.component(.day, from: date))
-        guard let targetDate = dateFromStr else {
+        let today = Date()
+        
+        guard let targetDate = dateFromStr,
+              today < targetDate else {
             return AnyView(DayView(day: stringDay))
         }
         
-        let range = Date()...targetDate
+        let range = today...targetDate
         if range.contains(date) {
            return AnyView(SelectedDayView(day: stringDay))
         } else {
            return AnyView(DayView(day: stringDay))
         }
-    }
-    
-    private func setNewSelectedDate(_ date: Date) {
-        let numDays = 1
-        let newDate = calendar.date(byAdding: .day,
-                                    value: numDays, to: date)
-        dateRawString = newDate!.toFormat(dateFormat)
-        
     }
 }
 
