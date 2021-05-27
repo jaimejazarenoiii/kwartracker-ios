@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,9 +31,6 @@
 		164E97F02614ACF000D84B7F /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97EE2614ACF000D84B7F /* Assets.swift */; };
 		164E988D2615C4BA00D84B7F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164E988C2615C4BA00D84B7F /* Colors.xcassets */; };
 		16CCE83E26523F2400345778 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		16FC4F3D265C7E0F00D1B7E2 /* ConfirmationAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FC4F3B265C7E0F00D1B7E2 /* ConfirmationAlertView.swift */; };
-		16FC4F3E265C7E0F00D1B7E2 /* DeleteConfirmationContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FC4F3C265C7E0F00D1B7E2 /* DeleteConfirmationContent.swift */; };
-		16FC4F43265C7EAC00D1B7E2 /* DeleteConfirmationAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FC4F42265C7EAC00D1B7E2 /* DeleteConfirmationAlertView.swift */; };
 		16FC4F4B265C7F6700D1B7E2 /* CircleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FC4F4A265C7F6700D1B7E2 /* CircleButtonStyle.swift */; };
 		16FC4F51265C7F9D00D1B7E2 /* LinearGradient+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FC4F50265C7F9D00D1B7E2 /* LinearGradient+Extensions.swift */; };
 		242950A626578AF10075C054 /* PopupConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242950A526578AF10075C054 /* PopupConfirmationView.swift */; };
@@ -47,7 +44,10 @@
 		24748008262832B800C7A9A8 /* ChangePasswordBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24748007262832B800C7A9A8 /* ChangePasswordBodyView.swift */; };
 		24AC7C8E265B716500CE4282 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C8D265B716500CE4282 /* SettingsView.swift */; };
 		24AC7C90265B718900CE4282 /* SettingsBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C8F265B718900CE4282 /* SettingsBodyView.swift */; };
+		24AC7C94265CAED200CE4282 /* LoginAndSecurityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C93265CAED200CE4282 /* LoginAndSecurityView.swift */; };
+		24AC7C96265CB12700CE4282 /* LoginAndSecuritBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C95265CB12700CE4282 /* LoginAndSecuritBodyView.swift */; };
 		290CA1B2261EABE400239EA7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 290CA1B1261EABE400239EA7 /* swiftgen.yml */; };
+		29ED9DA8265E34EA004C303E /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 29ED9DA7265E34EA004C303E /* SwiftDate */; };
 		7A17D13226298678005BB190 /* UserField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13126298678005BB190 /* UserField.swift */; };
 		7A17D13A26298695005BB190 /* SNSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13926298695005BB190 /* SNSButton.swift */; };
 		7A734D92262FFAA900557EF7 /* BWNeumorphicRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A734D91262FFAA900557EF7 /* BWNeumorphicRectangle.swift */; };
@@ -89,6 +89,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		29ED9D46265E2D4D004C303E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		047B5109265D0D8E009158F7 /* SideBarStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarStack.swift; sourceTree = "<group>"; };
 		047B5115265D0E62009158F7 /* TransactionHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryView.swift; sourceTree = "<group>"; };
@@ -120,9 +133,6 @@
 		164E97ED2614ACF000D84B7F /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		164E97EE2614ACF000D84B7F /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		164E988C2615C4BA00D84B7F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		16FC4F3B265C7E0F00D1B7E2 /* ConfirmationAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationAlertView.swift; sourceTree = "<group>"; };
-		16FC4F3C265C7E0F00D1B7E2 /* DeleteConfirmationContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteConfirmationContent.swift; sourceTree = "<group>"; };
-		16FC4F42265C7EAC00D1B7E2 /* DeleteConfirmationAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteConfirmationAlertView.swift; sourceTree = "<group>"; };
 		16FC4F4A265C7F6700D1B7E2 /* CircleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonStyle.swift; sourceTree = "<group>"; };
 		16FC4F50265C7F9D00D1B7E2 /* LinearGradient+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinearGradient+Extensions.swift"; sourceTree = "<group>"; };
 		242950A526578AF10075C054 /* PopupConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupConfirmationView.swift; sourceTree = "<group>"; };
@@ -136,6 +146,8 @@
 		24748007262832B800C7A9A8 /* ChangePasswordBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordBodyView.swift; sourceTree = "<group>"; };
 		24AC7C8D265B716500CE4282 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		24AC7C8F265B718900CE4282 /* SettingsBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBodyView.swift; sourceTree = "<group>"; };
+		24AC7C93265CAED200CE4282 /* LoginAndSecurityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSecurityView.swift; sourceTree = "<group>"; };
+		24AC7C95265CB12700CE4282 /* LoginAndSecuritBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSecuritBodyView.swift; sourceTree = "<group>"; };
 		290CA1B1261EABE400239EA7 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		2B40F9CAECD52C6174D15F90 /* Pods-Kwartracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker.debug.xcconfig"; path = "Target Support Files/Pods-Kwartracker/Pods-Kwartracker.debug.xcconfig"; sourceTree = "<group>"; };
 		6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KwartrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29ED9DA8265E34EA004C303E /* SwiftDate in Frameworks */,
 				A9CFE877880189ECE3F83CB8 /* Pods_Kwartracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +317,7 @@
 				04E071E8265E722A000DD4A2 /* Extensions */,
 				047B5114265D0E41009158F7 /* Transaction History */,
 				047E2AC9265B807700D1EB9C /* Side Menu */,
+				24AC7C91265CAEB600CE4282 /* Login and Security Page */,
 				24AC7C8B265B713C00CE4282 /* Settings Page */,
 				C6081ADA2652764B003BB9CB /* Enums */,
 				C6CDDCC92638134600CB1562 /* Reusable */,
@@ -377,38 +391,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		16CCE83626523F2400345778 /* Alert View */ = {
-			isa = PBXGroup;
-			children = (
-				16FC4F39265C7E0F00D1B7E2 /* Content */,
-				16FC4F42265C7EAC00D1B7E2 /* DeleteConfirmationAlertView.swift */,
-			);
-			path = "Alert View";
-			sourceTree = "<group>";
-		};
 		16FC4F38265C7D9000D1B7E2 /* Button Style */ = {
 			isa = PBXGroup;
 			children = (
 				16FC4F4A265C7F6700D1B7E2 /* CircleButtonStyle.swift */,
 			);
 			path = "Button Style";
-			sourceTree = "<group>";
-		};
-		16FC4F39265C7E0F00D1B7E2 /* Content */ = {
-			isa = PBXGroup;
-			children = (
-				16FC4F3A265C7E0F00D1B7E2 /* Alert View Reusables */,
-				16FC4F3C265C7E0F00D1B7E2 /* DeleteConfirmationContent.swift */,
-			);
-			path = Content;
-			sourceTree = "<group>";
-		};
-		16FC4F3A265C7E0F00D1B7E2 /* Alert View Reusables */ = {
-			isa = PBXGroup;
-			children = (
-				16FC4F3B265C7E0F00D1B7E2 /* ConfirmationAlertView.swift */,
-			);
-			path = "Alert View Reusables";
 			sourceTree = "<group>";
 		};
 		16FC4F4F265C7F8600D1B7E2 /* Linear Gradient */ = {
@@ -488,6 +476,23 @@
 			path = Content;
 			sourceTree = "<group>";
 		};
+		24AC7C91265CAEB600CE4282 /* Login and Security Page */ = {
+			isa = PBXGroup;
+			children = (
+				24AC7C92265CAEC300CE4282 /* Content */,
+				24AC7C93265CAED200CE4282 /* LoginAndSecurityView.swift */,
+			);
+			path = "Login and Security Page";
+			sourceTree = "<group>";
+		};
+		24AC7C92265CAEC300CE4282 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				24AC7C95265CB12700CE4282 /* LoginAndSecuritBodyView.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
 		326399AE9BF3387D065FB7BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,7 +520,6 @@
 			children = (
 				16FC4F4F265C7F8600D1B7E2 /* Linear Gradient */,
 				16FC4F38265C7D9000D1B7E2 /* Button Style */,
-				16CCE83626523F2400345778 /* Alert View */,
 				7AB88B23262806D400E2DFD3 /* View */,
 				7AB88B24262806E900E2DFD3 /* Shape */,
 				7AB88B26262806FC00E2DFD3 /* Preference Key */,
@@ -648,12 +652,16 @@
 				163E5928260CB88E00E54401 /* Resources */,
 				164E97F42614AD5D00D84B7F /* SwiftGen */,
 				164E985B2615714500D84B7F /* SwiftLint */,
+				29ED9D46265E2D4D004C303E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Kwartracker;
+			packageProductDependencies = (
+				29ED9DA7265E34EA004C303E /* SwiftDate */,
+			);
 			productName = Kwartracker;
 			productReference = 163E592A260CB88E00E54401 /* Kwartracker.app */;
 			productType = "com.apple.product-type.application";
@@ -728,6 +736,9 @@
 				"fil-PH",
 			);
 			mainGroup = 163E5921260CB88E00E54401;
+			packageReferences = (
+				29ED9DA6265E34EA004C303E /* XCRemoteSwiftPackageReference "SwiftDate" */,
+			);
 			productRefGroup = 163E592B260CB88E00E54401 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -895,13 +906,12 @@
 				C6249AA82637EB8C00C55B31 /* SignUpView.swift in Sources */,
 				C65699C32637C91400D24D2F /* SignUpFooterView.swift in Sources */,
 				7AD9B8732626EC2A00CF0EA6 /* SkeletalView.swift in Sources */,
-				16FC4F3E265C7E0F00D1B7E2 /* DeleteConfirmationContent.swift in Sources */,
 				7AD9B86B2626EC0000CF0EA6 /* SignInHeaderView.swift in Sources */,
 				047E2AD0265B82B700D1EB9C /* ProfileView.swift in Sources */,
 				7A17D13A26298695005BB190 /* SNSButton.swift in Sources */,
 				C6081ADC2652765E003BB9CB /* DialogStatus.swift in Sources */,
+				24AC7C94265CAED200CE4282 /* LoginAndSecurityView.swift in Sources */,
 				C6CDDCCB2638135B00CB1562 /* ButtonView.swift in Sources */,
-				16FC4F43265C7EAC00D1B7E2 /* DeleteConfirmationAlertView.swift in Sources */,
 				16FC4F51265C7F9D00D1B7E2 /* LinearGradient+Extensions.swift in Sources */,
 				163E5B6C260F337600E54401 /* Secrets.swift in Sources */,
 				164E95FF26122C5E00D84B7F /* World.swift in Sources */,
@@ -921,11 +931,11 @@
 				7A734D92262FFAA900557EF7 /* BWNeumorphicRectangle.swift in Sources */,
 				7AD9B8892626F3A300CF0EA6 /* SignInView.swift in Sources */,
 				164E95E726121B6400D84B7F /* Store.swift in Sources */,
-				16FC4F3D265C7E0F00D1B7E2 /* ConfirmationAlertView.swift in Sources */,
 				245FFEE62654B71400042B3E /* FieldType.swift in Sources */,
 				163E5B64260F32A000E54401 /* Obfuscate.swift in Sources */,
 				164E97F02614ACF000D84B7F /* Assets.swift in Sources */,
 				164E95F226122BD200D84B7F /* AppReducer.swift in Sources */,
+				24AC7C96265CB12700CE4282 /* LoginAndSecuritBodyView.swift in Sources */,
 				C65699C42637C91400D24D2F /* SignUpBodyView.swift in Sources */,
 				242950A626578AF10075C054 /* PopupConfirmationView.swift in Sources */,
 				163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */,
@@ -1266,6 +1276,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		29ED9DA6265E34EA004C303E /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftDate.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		29ED9DA7265E34EA004C303E /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 29ED9DA6265E34EA004C303E /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 163E5922260CB88E00E54401 /* Project object */;
 }

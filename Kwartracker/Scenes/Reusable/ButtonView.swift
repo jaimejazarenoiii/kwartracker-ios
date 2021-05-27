@@ -26,6 +26,7 @@ struct ButtonView: View {
                 Text(actionLabel.text)
                     .foregroundColor(.white)
                     .font(.system(size: fontSize))
+                    .fontWeight(actionLabel.self == .changePassword ? .bold : .regular)
             }
         })
     }
@@ -35,6 +36,7 @@ struct ButtonView: View {
         case delete
         case cancel
         case exit
+        case changePassword
         
         var text: String {
             switch self {
@@ -46,6 +48,8 @@ struct ButtonView: View {
                 return L10n.PopUpConfirmationModal.Button.cancel
             case .exit:
                 return L10n.PopUpConfirmationModal.Button.exit
+            case .changePassword:
+                return L10n.ChangePasswordPage.navigationTitle
             }
         }
         
@@ -53,7 +57,7 @@ struct ButtonView: View {
             switch self {
             case .cancel:
                 return Color(Asset.Colors.spindleGrey.color)
-            case .delete:
+            case .delete, .changePassword:
                 return Color(Asset.Colors.teal.color)
             default:
                 return Color(Asset.Colors.blueberry.color)
