@@ -23,7 +23,7 @@ struct SideMenuView: View {
             List {
                 ForEach(SideMenu.sideMenuList) { item in
                     Button(action: {
-                        self.selectedItemId = item.id
+                        selectedItemId = item.id
                     }) {
                         HStack {
                             Image(uiImage: item.image)
@@ -34,8 +34,7 @@ struct SideMenuView: View {
                                 .foregroundColor(Color(.white))
                         }.padding([.top, .bottom], 10)
                     }
-                }
-                .listRowBackground(Color(Asset.Colors.teal.color))
+                }.background(Color(.clear))
             }.listStyle(SidebarListStyle())
             Button(action: {}) {
                 HStack {
