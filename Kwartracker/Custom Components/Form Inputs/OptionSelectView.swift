@@ -16,46 +16,50 @@ struct OptionItem {
 struct OptionSelectView: View {
     @Binding var presented: Bool
     @Binding var options: [OptionItem]
+    @Binding var values: [String]
+    @Binding var selectedField: TransactionFieldType
 
     var body: some View {
         VStack {
-            VStack {
-                ScrollView(.vertical, showsIndicators: false) {
-                    ForEach(0..<options.count) { index in
-                        let option = options[index]
-
-                        VStack(alignment: .leading) {
-                            Spacer()
-                                .frame(height: 10)
-
-                            HStack(alignment: .center, spacing: 10) {
+            if presented {
+                VStack {
+                    ScrollView(.vertical, showsIndicators: false) {
+                        ForEach(0..<options.count) { index in
+                            let option = options[index]
+                            
+                            VStack(alignment: .leading) {
                                 Spacer()
-                                    .frame(width: 11)
-                                RoundedRectangle(cornerRadius: 10)
-                                    .fill(Color(Asset.Colors.teal.color))
-                                    .frame(width: 40, height: 40)
-                                Text(option.description)
-                                    .foregroundColor(Color(Asset.Colors.charcoal.color))
-                                    .font(.system(size: 16, weight: .medium))
+                                    .frame(height: 10)
+
+                                HStack(alignment: .center, spacing: 10) {
+                                    Spacer()
+                                        .frame(width: 11)
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .fill(Color(Asset.Colors.teal.color))
+                                        .frame(width: 40, height: 40)
+                                    Text(option.description)
+                                        .foregroundColor(Color(Asset.Colors.charcoal.color))
+                                        .font(.system(size: 16, weight: .medium))
+                                }
+                                Color(Asset.Colors.mysticBlueGrey.color)
+                                    .frame(height: 1)
                             }
-                            Color(Asset.Colors.mysticBlueGrey.color)
-                                .frame(height: 1)
+                            .onTapGesture {
+                                debugPrint("row is selected")
+                                values[selectedField.rawValue] = option.description
+                                presented = false
+                            }
+                            .background(
+                                Rectangle()
+                                    .fill(option.isSelected ? Color(Asset.Colors.mysticBlueGrey.color) : Color.clear)
+                                    .cornerRadius(10, corners: .allCorners)
+                            )
                         }
-                        .onTapGesture {
-                            debugPrint("row is selected")
-                        }
-                        .background(
-                            Rectangle()
-                                .fill(option.isSelected ? Color(Asset.Colors.mysticBlueGrey.color) : Color.clear)
-                                .cornerRadius(10, corners: .allCorners)
-                        )
                     }
+                    .frame(maxHeight: UIScreen.main.bounds.height / 1.7)
                 }
-                .frame(maxHeight: UIScreen.main.bounds.height / 1.7)
+                .padding([.leading, .trailing], 10)
             }
-            .padding([.leading, .trailing], 10)
-            .frame(idealWidth: presented ? UIScreen.main.bounds.width : 0,
-                   maxHeight: presented ? UIScreen.main.bounds.height : 0)
         }
         .background(
             Rectangle()

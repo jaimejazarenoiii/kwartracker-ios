@@ -8,20 +8,11 @@
 import SwiftUI
 
 struct SelectableFieldForm: View {
+    let defaultSelectionType: TransactionFieldType
     var label: String
     var selectLabel: String
-    @State private var showOptions: Bool = false
-    @State private var options: [OptionItem] = [
-        OptionItem(description: "test1", value: "1"),
-        OptionItem(description: "test2", value: "2"),
-        OptionItem(description: "test2", value: "2"),
-        OptionItem(description: "test2", value: "2"),
-        OptionItem(description: "test2", value: "2"),
-        OptionItem(description: "test2", value: "2"),
-        OptionItem(description: "test2", value: "2"),
-        OptionItem(description: "test2", value: "2"),
-        OptionItem(description: "test2", value: "2"),
-    ]
+    @Binding var showOptions: Bool
+    @Binding var transactionSelection: TransactionFieldType
 
     var body: some View {
         ZStack {
@@ -32,6 +23,7 @@ struct SelectableFieldForm: View {
                 ZStack {
                     Button(action: {
                         showOptions.toggle()
+                        transactionSelection = defaultSelectionType
                     }) {
                         HStack {
                             Spacer()
@@ -57,7 +49,6 @@ struct SelectableFieldForm: View {
                     )
                 }
             }
-            OptionSelectView(presented: $showOptions, options: $options)
         }
     }
 }
