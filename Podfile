@@ -6,7 +6,6 @@ target 'Kwartracker' do
   use_frameworks!
 
   # Pods for Kwartracker
-  pod 'SwiftDate'
 
   target 'KwartrackerTests' do
     inherit! :search_paths
