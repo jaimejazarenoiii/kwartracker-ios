@@ -10,14 +10,17 @@ import SwiftUI
 struct SettingsBodyView: View {
     @State var isCategoryLinkActive = false
     @State var isLoginSecurityLinkActive = false
+    @State private var action: Int? = 0
 
     var body: some View {
         NavigationView {
             VStack {
                 Spacer().frame(height: 30)
-                NavigationItem(isActive: $isLoginSecurityLinkActive,
+                NavigationItem(action: $action,
+                               identifier: 1,
                                nagivationLabel: L10n.SettingsPage.NavigationItem.loginAndSecurity)
-                NavigationItem(isActive: $isCategoryLinkActive,
+                NavigationItem(action: $action,
+                               identifier: 2,
                                nagivationLabel: L10n.SettingsPage.NavigationItem.categories)
                 Spacer()
             }
@@ -33,7 +36,8 @@ struct SetttingsBodyView_Previews: PreviewProvider {
 }
 
 private struct NavigationItem: View {
-    @Binding var isActive: Bool
+    @Binding var action: Int?
+    let identifier: Int
     let nagivationLabel: String
     private let shadowRadius: CGFloat = 8
     private let shadowOffset = CGPoint(x: 6, y: 6)
@@ -47,7 +51,9 @@ private struct NavigationItem: View {
 
     var body: some View {
         ZStack {
-            Button(action: { isActive.toggle() }) {
+            Button(action: {
+                action = identifier
+            }) {
                 ZStack {
                     BWNeumorphicRectangle(rectRadius: rectRadius,
                                           color: Color(Asset.Colors.teal.color),
@@ -71,9 +77,13 @@ private struct NavigationItem: View {
             }
         }
         .background(
-            NavigationLink(destination: Text(nagivationLabel), isActive: $isActive) {
+            NavigationLink(destination: Text(nagivationLabel)
+                            .navigationBarBackButtonHidden(true),
+                           tag: identifier,
+                           selection: $action) {
                 EmptyView()
-            }.hidden()
+            }
+            .hidden()
         )
     }
 }
