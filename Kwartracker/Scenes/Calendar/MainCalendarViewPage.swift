@@ -11,6 +11,10 @@ import SwiftUI
 struct MainCalendarViewPage: View {
     @Environment(\.calendar) var calendar
     @Environment(\.presentationMode) var presentationMode
+    @Binding var dateRawString: String
+    @State private var dayButtonToggle: Bool = false
+    
+    private let dateFormat: String = "yyyy-MM-dd"
     private let shadowRadius: CGFloat = 8
     private let shadowOffset = CGPoint(x: 6, y: 6)
     private let rectRadius: CGFloat = 30
@@ -18,6 +22,12 @@ struct MainCalendarViewPage: View {
     private let buttonSize: CGFloat = 10
     private let radius: CGFloat = 0.5
     private let padding: CGFloat = 25
+    
+    private var dateFromStr: Date? {
+        get {
+            dateRawString.toDate(dateFormat)?.date
+        }
+    }
     private var year: DateInterval {
         calendar.dateInterval(of: .month, for: Date())!
     }
@@ -28,7 +38,11 @@ struct MainCalendarViewPage: View {
                 .ignoresSafeArea()
             VStack {
                 CalendarTableView(interval: self.year) { date in
-                    DayView(day: String(self.calendar.component(.day, from: date)))
+                    Button(action: {
+                        setNewSelectedDate(date)
+                    }, label: {
+                        dayView(of: date)
+                    })
                 }
                 .padding([.top, .leading, .trailing],
                          padding)
@@ -44,11 +58,17 @@ struct MainCalendarViewPage: View {
                                height: proxy.size.height)
                         .position(x: proxy.size.width / 2,
                                   y: proxy.size.height / 2)
+                        .shadow(color: Color.black.opacity(0.2),
+                                radius: shadowRadius,
+                                x: shadowOffset.x,
+                                y: shadowOffset.y)
+                        .shadow(color: Color.white.opacity(0.7),
+                                radius: shadowRadius,
+                                x: -shadowOffset.x,
+                                y: -shadowOffset.y)
                 }
             )
             .padding()
-            .shadow(color: Color.black.opacity(0.2), radius: shadowRadius, x: shadowOffset.x, y: shadowOffset.y)
-            .shadow(color: Color.white.opacity(0.7), radius: shadowRadius, x: -shadowOffset.x, y: -shadowOffset.y)
         }
     }
     
@@ -86,10 +106,32 @@ struct MainCalendarViewPage: View {
                                            padding: buttonPadding))
         }
     }
+    
+    private func dayView(of date: Date) -> AnyView {
+        let stringDay =  String(self.calendar.component(.day, from: date))
+        guard let targetDate = dateFromStr else {
+            return AnyView(DayView(day: stringDay))
+        }
+        
+        let range = Date()...targetDate
+        if range.contains(date) {
+           return AnyView(SelectedDayView(day: stringDay))
+        } else {
+           return AnyView(DayView(day: stringDay))
+        }
+    }
+    
+    private func setNewSelectedDate(_ date: Date) {
+        let numDays = 1
+        let newDate = calendar.date(byAdding: .day,
+                                    value: numDays, to: date)
+        dateRawString = newDate!.toFormat(dateFormat)
+        
+    }
 }
 
 struct MainCalendarViewPage_Previews: PreviewProvider {
     static var previews: some View {
-        MainCalendarViewPage()
+        MainCalendarViewPage(dateRawString: Binding.constant("2021-06-30"))
     }
 }
