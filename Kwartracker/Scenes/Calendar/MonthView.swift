@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftDate
 
 struct MonthView<DateView>: View where DateView: View {
     @Environment(\.calendar) var calendar
@@ -57,8 +58,8 @@ struct MonthView<DateView>: View where DateView: View {
     }
 
     private var header: some View {
-        let component = calendar.component(.month, from: month)
-        let formatter = component == 1 ? DateFormatter.monthAndYear : .month
+        let component = calendar.component(.year, from: month)
+        let formatter = component != Date().year ? DateFormatter.monthAndYear : .month
         let fontSize: CGFloat = 14
         let padding: CGFloat = 10
         let sidePadding: CGFloat = 25
