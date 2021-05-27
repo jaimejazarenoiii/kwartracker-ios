@@ -123,3 +123,7 @@
 "settings_page.navigation_item.login_and_security" = "Login and Security";
 "edit_profile_page.navigation_item.categories" = "Categories";
 
+// Login And Security Page
+"login_and_security_page.label.email" = "Email Address";
+"login_and_security_page.dummy_data.email" = "email_email_email@emailemail.com";
+"login_and_security_page.dummy_data.password" = "***************";

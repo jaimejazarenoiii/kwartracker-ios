@@ -106,6 +106,19 @@ internal enum L10n {
     }
   }
 
+  internal enum LoginAndSecurityPage {
+    internal enum DummyData {
+      /// email_email_email@emailemail.com
+      internal static let email = L10n.tr("Localizable", "login_and_security_page.dummy_data.email")
+      /// ***************
+      internal static let password = L10n.tr("Localizable", "login_and_security_page.dummy_data.password")
+    }
+    internal enum Label {
+      /// Email Address
+      internal static let email = L10n.tr("Localizable", "login_and_security_page.label.email")
+    }
+  }
+
   internal enum PopUpConfirmationModal {
     internal enum Button {
       /// Cancel
