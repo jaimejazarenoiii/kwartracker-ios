@@ -61,6 +61,7 @@ struct EditWalletPage: View {
                                         walletTypeValue: $wallet.type,
                                         targetAmountValue: $wallet.targetAmountWithCommas,
                                         savedToValue: $wallet.savedTo,
+                                        targetDateStr: $wallet.targetRawDate,
                                         includeTotalBalanceFlag: $wallet.includeToOverallTotalBalance)
                 }
             }

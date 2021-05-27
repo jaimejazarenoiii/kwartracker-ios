@@ -13,6 +13,7 @@ struct AddWalletFieldsView: View {
     @Binding var walletTypeValue: WalletType
     @Binding var targetAmountValue: String
     @Binding var savedToValue: String
+    @Binding var targetDateStr: String
     @Binding var includeTotalBalanceFlag: Bool
     @State private var walletTypeMenuPresenting: Bool = false
     @State private var currencyMenuPresenting: Bool = false
@@ -128,10 +129,11 @@ struct AddWalletFieldsView: View {
                     SelectableFieldForm(
                         menuPresenting: $calendarPresenting,
                         label: L10n.Wallet.Label.targetAmount,
-                        selectLabel: L10n.Wallet.Placeholder.targetDate
+                        selectLabel: targetDateStr.isEmpty ?
+                            L10n.Wallet.Placeholder.targetDate : targetDateStr
                     )
                     .fullScreenCover(isPresented: $calendarPresenting, content: {
-                        MainCalendarViewPage()
+                        MainCalendarViewPage(dateRawString: $targetDateStr)
                             .background(BackgroundBlurView())
                             .ignoresSafeArea()
                     })
