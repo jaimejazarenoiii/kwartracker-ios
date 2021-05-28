@@ -20,8 +20,6 @@ struct MonthView<DateView>: View where DateView: View {
 
     init(
         month: Date,
-        showHeader: Bool = true,
-        localizedWeekdays: [String] = [],
         @ViewBuilder content: @escaping (Date) -> DateView
     ) {
         self._month = State(initialValue: month)
@@ -31,7 +29,7 @@ struct MonthView<DateView>: View where DateView: View {
     var body: some View {
         VStack {
             header
-            HStack {
+            HStack(spacing: padding) {
                 ForEach(0..<numberOfDaysInWeek, id: \.self) {index in
                     Text(getWeekDaysSorted()[index].uppercased())
                         .foregroundColor(Color(Asset.Colors.asureishWhite.color))

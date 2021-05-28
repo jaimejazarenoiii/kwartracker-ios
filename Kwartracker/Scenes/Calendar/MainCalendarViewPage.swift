@@ -8,7 +8,7 @@
 import SwiftUI
 
 // https://gist.github.com/mecid/f8859ea4bdbd02cf5d440d58e936faec
-struct MainCalendarViewPage: View {
+struct CalendarTableView: View {
     @Environment(\.calendar) var calendar
     @Environment(\.presentationMode) var presentationMode
     @Binding var dateRawString: String
@@ -35,18 +35,27 @@ struct MainCalendarViewPage: View {
     private var year: DateInterval {
         calendar.dateInterval(of: .month, for: Date())!
     }
+    
+    private var months: [Date] {
+        calendar.generateDates(
+            inside: year,
+            matching: DateComponents(day: 1, hour: 0, minute: 0, second: 0)
+        )
+    }
     var body: some View {
         ZStack {
             Color.clear
                 .blur(radius: radius)
                 .ignoresSafeArea()
             VStack {
-                CalendarTableView(interval: self.year) { date in
-                    Button(action: {
-                        dateString = date.dateByAdding(1, .day).toFormat(dateFormat)
-                    }, label: {
-                        dayView(of: date)
-                    })
+                ForEach(months, id: \.self) { month in
+                    MonthView(month: month) { date in
+                        Button(action: {
+                            dateString = date.dateByAdding(1, .day).toFormat(dateFormat)
+                        }, label: {
+                            dayView(of: date)
+                        })
+                    }
                 }
                 .padding([.top, .leading, .trailing],
                          padding)
@@ -134,6 +143,6 @@ struct MainCalendarViewPage: View {
 
 struct MainCalendarViewPage_Previews: PreviewProvider {
     static var previews: some View {
-        MainCalendarViewPage(dateRawString: Binding.constant("2021-06-30"))
+        CalendarTableView(dateRawString: Binding.constant("2021-06-30"))
     }
 }

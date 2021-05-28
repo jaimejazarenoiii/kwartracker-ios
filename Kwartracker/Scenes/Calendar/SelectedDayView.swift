@@ -11,7 +11,7 @@ struct SelectedDayView: View {
     private let size: CGFloat = 35
     private let fontSize: CGFloat = 12
     private let cornerRadius: CGFloat = 14
-    private let bottomMargin: CGFloat = 10
+    private let bottomMargin: CGFloat = 5
     var day: String
     var body: some View {
         Text(day)

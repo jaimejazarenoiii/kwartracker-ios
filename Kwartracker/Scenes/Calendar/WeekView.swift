@@ -11,7 +11,7 @@ struct WeekView<DateView>: View where DateView: View {
     @Environment(\.calendar) var calendar
     let week: Date
     let content: (Date) -> DateView
-    private let height: CGFloat = 37
+    private let height: CGFloat = 34
 
     init(week: Date, @ViewBuilder content: @escaping (Date) -> DateView) {
         self.week = week
@@ -29,7 +29,7 @@ struct WeekView<DateView>: View where DateView: View {
     }
 
     var body: some View {
-        HStack {
+        HStack(spacing: 4) {
             ForEach(days, id: \.self) { date in
                 HStack {
                     if self.calendar.isDate(self.week, equalTo: date, toGranularity: .month) {
