@@ -103,21 +103,11 @@ struct AddWalletFieldsView: View {
     
     private var GoalField: some View {
         Group {
-            Spacer()
-                .frame(height: spacing)
-            
             if walletTypeValue != .none {
-                KTextfield(textValue: $savedToValue,
-                           textLabel: L10n.savedTo,
-                           textPlaceHolder: L10n.savedTo)
-                
                 if walletTypeValue == .goal {
-                    
-                
                     if walletCurrency != nil {
                         Spacer()
                             .frame(height: spacing)
-                        
                         KTextfield(textValue: $targetAmountValue,
                                    textLabel: L10n.Wallet.Label.targetAmount,
                                    textPlaceHolder: L10n.Wallet.Placeholder.enterYourTargetAmount
@@ -138,6 +128,12 @@ struct AddWalletFieldsView: View {
                             .ignoresSafeArea()
                     })
                 }
+                Spacer()
+                    .frame(height: spacing)
+                KTextfield(textValue: $savedToValue,
+                           textLabel: L10n.savedTo,
+                           textPlaceHolder: L10n.savedTo)
+                
             }
         }
     }
