@@ -75,6 +75,7 @@
 		29AE102D262EAF5D00B383CF /* WalletPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AE102C262EAF5D00B383CF /* WalletPageView.swift */; };
 		29D35FA0264BE45A00C4DD48 /* WalletNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D35F9F264BE45A00C4DD48 /* WalletNavigationView.swift */; };
 		29D35FA5264BEDB500C4DD48 /* WalletSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D35FA4264BEDB500C4DD48 /* WalletSectionHeader.swift */; };
+		298536F32660DBAA0024A25C /* NeumorphicEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298536F22660DBAA0024A25C /* NeumorphicEffect.swift */; };
 		29ED9DA8265E34EA004C303E /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 29ED9DA7265E34EA004C303E /* SwiftDate */; };
 		29F6C1FE262ED69800DB2139 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F6C1FD262ED69800DB2139 /* CardView.swift */; };
 		7A17D13226298678005BB190 /* UserField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13126298678005BB190 /* UserField.swift */; };
@@ -203,6 +204,7 @@
 		29D35F9F264BE45A00C4DD48 /* WalletNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletNavigationView.swift; sourceTree = "<group>"; };
 		29D35FA4264BEDB500C4DD48 /* WalletSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSectionHeader.swift; sourceTree = "<group>"; };
 		29F6C1FD262ED69800DB2139 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		298536F22660DBAA0024A25C /* NeumorphicEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicEffect.swift; sourceTree = "<group>"; };
 		2B40F9CAECD52C6174D15F90 /* Pods-Kwartracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker.debug.xcconfig"; path = "Target Support Files/Pods-Kwartracker/Pods-Kwartracker.debug.xcconfig"; sourceTree = "<group>"; };
 		6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KwartrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A17D13126298678005BB190 /* UserField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserField.swift; sourceTree = "<group>"; };
@@ -620,6 +622,14 @@
 			path = "Wallet Page";
 			sourceTree = "<group>";
 		};
+		298536F12660DB8A0024A25C /* Neumorphic Views */ = {
+			isa = PBXGroup;
+			children = (
+				298536F22660DBAA0024A25C /* NeumorphicEffect.swift */,
+			);
+			path = "Neumorphic Views";
+			sourceTree = "<group>";
+		};
 		326399AE9BF3387D065FB7BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -648,6 +658,7 @@
 				29327592264E729000E8BA8B /* Double+Extension.swift */,
 				29AB67612645328400D375A6 /* Button Modifier */,
 				29AB674E264531B600D375A6 /* View Modefier */,
+				298536F12660DB8A0024A25C /* Neumorphic Views */,
 				16FC4F4F265C7F8600D1B7E2 /* Linear Gradient */,
 				16FC4F38265C7D9000D1B7E2 /* Button Style */,
 				7AB88B23262806D400E2DFD3 /* View */,
@@ -1053,6 +1064,7 @@
 				2932755A264E266F00E8BA8B /* ProgressView.swift in Sources */,
 				16C5C7A026362D3500F33B72 /* TransactionsViewState.swift in Sources */,
 				C6CDDCC52638125C00CB1562 /* MainAlertView.swift in Sources */,
+				298536F32660DBAA0024A25C /* NeumorphicEffect.swift in Sources */,
 				16CCE83D26523F2400345778 /* (null) in Sources */,
 				242950A926578CEF0075C054 /* PopupContentView.swift in Sources */,
 				16CCE83E26523F2400345778 /* (null) in Sources */,
