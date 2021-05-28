@@ -63,20 +63,9 @@ struct CalendarTableView: View {
             .padding([.leading, .trailing], padding)
             .background(
                 GeometryReader { proxy in
-                    RoundedRectangle(cornerRadius: rectRadius)
-                        .fill(Color(Asset.Colors.solitudeGrey.color))
-                        .frame(width: proxy.size.width * 0.85,
-                               height: proxy.size.height)
-                        .position(x: proxy.size.width / 2,
-                                  y: proxy.size.height / 2)
-                        .shadow(color: Color.black.opacity(0.2),
-                                radius: shadowRadius,
-                                x: shadowOffset.x,
-                                y: shadowOffset.y)
-                        .shadow(color: Color.white.opacity(0.7),
-                                radius: shadowRadius,
-                                x: -shadowOffset.x,
-                                y: -shadowOffset.y)
+                    NeumorphicEffect(rectSize:
+                                        CGSize(width: proxy.size.width * 0.85,
+                                               height: proxy.size.height))
                 }
             )
         }
