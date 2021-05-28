@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SideMenuView: View {
     
-    @State private var selectedItemId: UUID?
+    @State private var selectedItemId: String = ""
     @State private var sideMenu: SideMenu?
         
     init() {
@@ -22,18 +22,9 @@ struct SideMenuView: View {
                     .padding([.leading, .top], 20)
             List {
                 ForEach(SideMenu.sideMenuList) { item in
-                    Button(action: {
+                    ListButtonView(actionHandler: {
                         selectedItemId = item.id
-                    }) {
-                        HStack {
-                            Image(uiImage: item.image)
-                                .resizable()
-                                .frame(width: 16, height: 14, alignment: .center)
-                            Text(item.text)
-                                .font(.system(size: 16))
-                                .foregroundColor(Color(.white))
-                        }.padding([.top, .bottom], 10)
-                    }
+                    }, sideMenu: item, didTap: false)
                 }.background(Color(.clear))
             }.listStyle(SidebarListStyle())
             Button(action: {}) {
@@ -55,8 +46,25 @@ struct SideMenuView: View {
     }
 }
 
-struct SideMenuView_Previews: PreviewProvider {
-    static var previews: some View {
-        SideMenuView()
+struct ListButtonView: View {
+    let actionHandler: (() -> Void)
+    var sideMenu: SideMenu
+    @State var didTap: Bool
+    
+    var body: some View {
+        Button(action: {
+            self.didTap = true
+        }) {
+            HStack {
+                Image(uiImage: sideMenu.image)
+                    .resizable()
+                    .frame(width: 16, height: 14, alignment: .center)
+                Text(sideMenu.text)
+                    .font(.system(size: 16))
+                    .foregroundColor(.white)
+            }
+            .padding([.top, .bottom], 10)
+        }
     }
 }
+

@@ -24,7 +24,7 @@ struct ContentView: View {
             }
         
         return SideBarStack(sidebarWidth: 300, showSidebar: $showSidebar) {
-            SideMenuView()
+            SideMenuView().accentColor(.white)
         } content: {
             TransactionHistoryView(showSidebar: $showSidebar)
         }
