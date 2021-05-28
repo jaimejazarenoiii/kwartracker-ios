@@ -29,8 +29,8 @@ struct CardTargetView: View {
     
     var body: some View {
         ZStack(alignment: .leading) {
-            NeumorphicEffect(rectSize: CGSize(width: frameWidth, height: self.setHeightRatio(width: frameWidth,
-                                               baseSize: baseFrame)), cornerRadius: rectRadius)
+//            NeumorphicEffect(rectSize: CGSize(width: frameWidth, height: self.setHeightRatio(width: frameWidth,
+//                                               baseSize: baseFrame)), cornerRadius: rectRadius)
             VStack {
                 HStack {
                     TargetViewLabel(bottomLabel: L10n.Wallet.Target.toTargetAmount,
