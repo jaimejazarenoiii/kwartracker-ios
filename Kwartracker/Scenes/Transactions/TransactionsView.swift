@@ -10,6 +10,7 @@ import SwiftUI
 struct TransactionsView: View {
     @EnvironmentObject var store: AppStore
     @State var searchTransaction: String = ""
+    @State var presentSearchModal: Bool = false
 
     init() {
         setUpTableViewAppearance()
@@ -17,8 +18,6 @@ struct TransactionsView: View {
 
     var body: some View {
         ZStack {
-            Color(Asset.Colors.teal.color)
-                .ignoresSafeArea(.all)
 
             VStack {
                 TransactionsHeaderView()
@@ -27,22 +26,32 @@ struct TransactionsView: View {
                     .frame(height: 30)
 
                 ZStack {
-                    Rectangle()
-                        .fill(Color(Asset.Colors.solitudeGrey.color))
-                        .cornerRadius(45, corners: [.topLeft, .topRight])
-                        .edgesIgnoringSafeArea(.bottom)
-
                     VStack {
-                        TransactionsSearchBarView(searchTransaction: $searchTransaction)
+                        TransactionsSearchBarView(
+                            searchTransaction: $searchTransaction,
+                            presentSearchModal: $presentSearchModal
+                        )
                         TransactionsListView(
                             transactions: store.state.transactionState.transactions,
                             shouldShowLoadmore: store.state.transactionState.shouldShowLoadmore
                         )
                     }
                 }
+                .background(
+                    Rectangle()
+                        .fill(Color(Asset.Colors.solitudeGrey.color))
+                        .cornerRadius(45, corners: [.topLeft, .topRight])
+                        .edgesIgnoringSafeArea(.bottom)
+                )
             }
             .padding(.top, 10)
+
+            SearchTransactionFormModalView(isPresented: $presentSearchModal)
         }
+        .background(
+            Color(Asset.Colors.teal.color)
+                .ignoresSafeArea()
+        )
     }
 
     private func setUpTableViewAppearance() {
@@ -90,6 +99,7 @@ private struct TransactionsHeaderView: View {
 
 private struct TransactionsSearchBarView: View {
     @Binding var searchTransaction: String
+    @Binding var presentSearchModal: Bool
 
     var body: some View {
         Group {
@@ -126,6 +136,9 @@ private struct TransactionsSearchBarView: View {
                     )
 
                 Button(action: {
+                    withAnimation {
+                        presentSearchModal.toggle()
+                    }
                 }) {
                     Image(uiImage: Asset.Images.filterIcon.image)
                 }
