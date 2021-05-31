@@ -18,11 +18,11 @@ struct TransactionRowContent: View {
                     .frame(width: 40, height: 40)
 
                 VStack {
-                    Text(transaction.getMonth().uppercased())
+                    Text(transaction.monthDisplay.uppercased())
                         .frame(height: 8)
                         .font(.system(size: 8, weight: .medium))
 
-                    Text(transaction.getDay())
+                    Text(transaction.dayDisplay)
                         .frame(height: 20)
                         .font(.system(size: 16, weight: .bold))
                         .foregroundColor(Color(Asset.Colors.teal.color))
