@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SignInFooterView: View {
     private let footNoteTopMargin: CGFloat = 25
+    @State var showingSignUp = false
     
     var body: some View {
         VStack {
@@ -20,9 +21,16 @@ struct SignInFooterView: View {
                 Text(L10n.SignInPage.Label.noAccountYet)
                     .font(.footnote)
                     .foregroundColor(Color(Asset.Colors.nightRider.color))
-                
-                FootnoteButton(action: {}, text: L10n.SignInPage.Button.signUp,
-                               fontWeight: .bold, color: Color(Asset.Colors.teal.color))
+                Button(action: {
+                    self.showingSignUp.toggle()
+                }) {
+                    Text(L10n.SignInPage.Button.signUp)
+                        .font(.footnote)
+                        .foregroundColor(Color(Asset.Colors.teal.color))
+                        .underline()
+                }.fullScreenCover(isPresented: $showingSignUp) {
+                    SignUpView()
+                }
                 
                 Spacer()
             }
