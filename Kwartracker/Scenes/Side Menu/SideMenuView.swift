@@ -85,6 +85,6 @@ struct PrimaryButtonStyle: ButtonStyle {
             .font(.system(size: 16))
             .frame(maxWidth: .infinity, minHeight: height, maxHeight: height)
             .background(didPressed ? .white : Color(Asset.Colors.teal.color))
-            .cornerRadius(10)
+            .cornerRadius(20)
     }
 }
