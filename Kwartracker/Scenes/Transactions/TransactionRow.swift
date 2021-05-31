@@ -1,5 +1,5 @@
 //
-//  TransactionRowContent.swift
+//  TransactionRow.swift
 //  Kwartracker
 //
 //  Created by Jacob on 4/25/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TransactionRowContent: View {
+struct TransactionRow: View {
     var transaction: Transaction
 
     var body: some View {
