@@ -31,19 +31,19 @@ private struct LoginDetailsView: View {
     var body: some View {
         Group {
             VStack(alignment: .leading) {
-                TextGroup(text: L10n.LoginAndSecurityPage.Label.email,
+                TextGroupView(text: L10n.LoginAndSecurityPage.Label.email,
                           fontSize: fontSize,
                           bottomMargin: bottomMargin,
                           fontColor: Color(Asset.Colors.spindleGrey.color))
-                TextGroup(text: L10n.LoginAndSecurityPage.DummyData.email,
+                TextGroupView(text: L10n.LoginAndSecurityPage.DummyData.email,
                           fontSize: nil,
                           bottomMargin: nil,
                           fontColor: Color(Asset.Colors.nightRider.color))
-                TextGroup(text: L10n.SignInPage.Label.password,
+                TextGroupView(text: L10n.SignInPage.Label.password,
                           fontSize: fontSize,
                           bottomMargin: bottomMargin,
                           fontColor: Color(Asset.Colors.spindleGrey.color))
-                TextGroup(text: L10n.LoginAndSecurityPage.DummyData.password,
+                TextGroupView(text: L10n.LoginAndSecurityPage.DummyData.password,
                           fontSize: nil,
                           bottomMargin: nil,
                           fontColor: Color(Asset.Colors.nightRider.color))
@@ -54,23 +54,5 @@ private struct LoginDetailsView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
         }
-    }
-}
-
-private struct TextGroup: View {
-    let text: String
-    let fontSize: CGFloat?
-    let bottomMargin: CGFloat?
-    let fontColor: Color
-    
-    private let defaultFontSize: CGFloat = 17
-    private let defaultBottomMargin: CGFloat = 15
-
-    var body: some View {
-        Text(text)
-            .font(Font.system(size: fontSize ?? defaultFontSize))
-            .fontWeight(.bold)
-            .padding(.bottom, bottomMargin ?? defaultBottomMargin)
-            .foregroundColor(fontColor)
     }
 }

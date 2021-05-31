@@ -69,6 +69,15 @@ internal enum L10n {
     }
   }
 
+  internal enum CategoryDetailPage {
+    /// Category Parent
+    internal static let categoryParent = L10n.tr("Localizable", "category_detail_page.category_parent")
+    /// Category Parent Name
+    internal static let categoryParentName = L10n.tr("Localizable", "category_detail_page.category_parent_name")
+    /// Category Name
+    internal static let navigationTitle = L10n.tr("Localizable", "category_detail_page.navigation_title")
+  }
+
   internal enum ChangePasswordPage {
     /// Change Password
     internal static let navigationTitle = L10n.tr("Localizable", "change_password_page.navigation_title")
