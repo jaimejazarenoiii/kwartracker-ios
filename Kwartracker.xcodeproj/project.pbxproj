@@ -49,6 +49,10 @@
 		7A17D13A26298695005BB190 /* SNSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13926298695005BB190 /* SNSButton.swift */; };
 		7A734D92262FFAA900557EF7 /* BWNeumorphicRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A734D91262FFAA900557EF7 /* BWNeumorphicRectangle.swift */; };
 		7A7FA1322637B70A00484F51 /* FootnoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7FA1312637B70A00484F51 /* FootnoteButton.swift */; };
+		7AA77F1D2660D64000C700A2 /* EditButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA77F1C2660D64000C700A2 /* EditButtonView.swift */; };
+		7AA77F1F2660D6C200C700A2 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA77F1E2660D6C200C700A2 /* MyProfileView.swift */; };
+		7AA77F212660D77500C700A2 /* MyProfileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA77F202660D77500C700A2 /* MyProfileContentView.swift */; };
+		7AA77F242660ED6000C700A2 /* ProfilePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA77F232660ED6000C700A2 /* ProfilePictureView.swift */; };
 		7AB1B91E26438C7C00853FAC /* RoundedCornerRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1B91D26438C7C00853FAC /* RoundedCornerRectangle.swift */; };
 		7AB88B1E262805F300E2DFD3 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB88B1D262805F300E2DFD3 /* View+Extensions.swift */; };
 		7AB88B282628071C00E2DFD3 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB88B272628071C00E2DFD3 /* RoundedCorner.swift */; };
@@ -147,6 +151,10 @@
 		7A17D13926298695005BB190 /* SNSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSButton.swift; sourceTree = "<group>"; };
 		7A734D91262FFAA900557EF7 /* BWNeumorphicRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BWNeumorphicRectangle.swift; sourceTree = "<group>"; };
 		7A7FA1312637B70A00484F51 /* FootnoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootnoteButton.swift; sourceTree = "<group>"; };
+		7AA77F1C2660D64000C700A2 /* EditButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditButtonView.swift; sourceTree = "<group>"; };
+		7AA77F1E2660D6C200C700A2 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
+		7AA77F202660D77500C700A2 /* MyProfileContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileContentView.swift; sourceTree = "<group>"; };
+		7AA77F232660ED6000C700A2 /* ProfilePictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureView.swift; sourceTree = "<group>"; };
 		7AB1B91D26438C7C00853FAC /* RoundedCornerRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerRectangle.swift; sourceTree = "<group>"; };
 		7AB88B1D262805F300E2DFD3 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		7AB88B272628071C00E2DFD3 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
@@ -290,6 +298,7 @@
 				244A3B7C263A642B00D8B08B /* Edit-Profile Page */,
 				C6CDDCAE263811DD00CB1562 /* Alert */,
 				242950A426578AC50075C054 /* Popup Confirmation */,
+				7AA77F1B2660D56700C700A2 /* My Profile Page */,
 				163E592F260CB88E00E54401 /* ContentView.swift */,
 				7AD9B8722626EC2A00CF0EA6 /* SkeletalView.swift */,
 				7AD9B8692626EBA500CF0EA6 /* Sign-in Page */,
@@ -488,6 +497,23 @@
 			path = "Sign-in Reusables";
 			sourceTree = "<group>";
 		};
+		7AA77F1B2660D56700C700A2 /* My Profile Page */ = {
+			isa = PBXGroup;
+			children = (
+				7AA77F1E2660D6C200C700A2 /* MyProfileView.swift */,
+				7AA77F222660D77B00C700A2 /* Content */,
+			);
+			path = "My Profile Page";
+			sourceTree = "<group>";
+		};
+		7AA77F222660D77B00C700A2 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				7AA77F202660D77500C700A2 /* MyProfileContentView.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
 		7AB88B1C262805C500E2DFD3 /* Custom Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -591,8 +617,10 @@
 			isa = PBXGroup;
 			children = (
 				C6CDDCCA2638135B00CB1562 /* ButtonView.swift */,
+				7AA77F1C2660D64000C700A2 /* EditButtonView.swift */,
 				C6CDDCE626381F6E00CB1562 /* MessageView.swift */,
 				246D7235265B54CE0011F960 /* BirthdateField.swift */,
+				7AA77F232660ED6000C700A2 /* ProfilePictureView.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -891,7 +919,10 @@
 				16CCE83E26523F2400345778 /* (null) in Sources */,
 				7AB88B282628071C00E2DFD3 /* RoundedCorner.swift in Sources */,
 				164E97EF2614ACF000D84B7F /* Strings.swift in Sources */,
+				7AA77F1F2660D6C200C700A2 /* MyProfileView.swift in Sources */,
+				7AA77F1D2660D64000C700A2 /* EditButtonView.swift in Sources */,
 				244A3B81263A652500D8B08B /* EditProfileContentView.swift in Sources */,
+				7AA77F212660D77500C700A2 /* MyProfileContentView.swift in Sources */,
 				246D7236265B54CE0011F960 /* BirthdateField.swift in Sources */,
 				7AD9B8812626F17400CF0EA6 /* SignInContentView.swift in Sources */,
 				16FC4F4B265C7F6700D1B7E2 /* CircleButtonStyle.swift in Sources */,
@@ -906,6 +937,7 @@
 				24AC7C96265CB12700CE4282 /* LoginAndSecuritBodyView.swift in Sources */,
 				C65699C42637C91400D24D2F /* SignUpBodyView.swift in Sources */,
 				242950A626578AF10075C054 /* PopupConfirmationView.swift in Sources */,
+				7AA77F242660ED6000C700A2 /* ProfilePictureView.swift in Sources */,
 				163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */,
 				24747FEC2628261A00C7A9A8 /* ChangePasswordView.swift in Sources */,
 				24AC7C8E265B716500CE4282 /* SettingsView.swift in Sources */,

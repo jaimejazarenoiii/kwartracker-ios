@@ -118,6 +118,27 @@ internal enum L10n {
     }
   }
 
+  internal enum ProfilePage {
+    /// 2F ESY Bldg, corner Ma Cristina St and Juana Osmeña St, Cebu City, Cebu, Philippines 6000
+    internal static let dummyAddress = L10n.tr("Localizable", "profile_page.dummy_address")
+    /// January 01, 1998
+    internal static let dummyBirthdate = L10n.tr("Localizable", "profile_page.dummy_birthdate")
+    /// Samantha Mae Tagli
+    internal static let dummyName = L10n.tr("Localizable", "profile_page.dummy_name")
+    /// 09012345678
+    internal static let dummyNumber = L10n.tr("Localizable", "profile_page.dummy_number")
+    /// My Profile
+    internal static let title = L10n.tr("Localizable", "profile_page.title")
+    internal enum Label {
+      /// Address
+      internal static let address = L10n.tr("Localizable", "profile_page.label.address")
+      /// Birthdate
+      internal static let birthdate = L10n.tr("Localizable", "profile_page.label.birthdate")
+      /// Contact Number
+      internal static let contactNumber = L10n.tr("Localizable", "profile_page.label.contact_number")
+    }
+  }
+
   internal enum SettingsPage {
     /// Settings
     internal static let navigationTitle = L10n.tr("Localizable", "settings_page.navigation_title")
