@@ -80,6 +80,9 @@
 		24AC7C90265B718900CE4282 /* SettingsBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C8F265B718900CE4282 /* SettingsBodyView.swift */; };
 		24AC7C94265CAED200CE4282 /* LoginAndSecurityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C93265CAED200CE4282 /* LoginAndSecurityView.swift */; };
 		24AC7C96265CB12700CE4282 /* LoginAndSecuritBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C95265CB12700CE4282 /* LoginAndSecuritBodyView.swift */; };
+		24AC7C9C265F65FD00CE4282 /* CategoryBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C9B265F65FD00CE4282 /* CategoryBodyView.swift */; };
+		24AC7C9E265F661300CE4282 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7C9D265F661300CE4282 /* CategoryView.swift */; };
+		24AC7CAA2664BFF200CE4282 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7CA92664BFF200CE4282 /* CategoryListView.swift */; };
 		24AC7CC326663F6200CE4282 /* CustomToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7CC226663F6200CE4282 /* CustomToggle.swift */; };
 		290CA1B2261EABE400239EA7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 290CA1B1261EABE400239EA7 /* swiftgen.yml */; };
 		298536F32660DBAA0024A25C /* NeumorphicEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298536F22660DBAA0024A25C /* NeumorphicEffect.swift */; };
@@ -219,6 +222,9 @@
 		24AC7C8F265B718900CE4282 /* SettingsBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBodyView.swift; sourceTree = "<group>"; };
 		24AC7C93265CAED200CE4282 /* LoginAndSecurityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSecurityView.swift; sourceTree = "<group>"; };
 		24AC7C95265CB12700CE4282 /* LoginAndSecuritBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSecuritBodyView.swift; sourceTree = "<group>"; };
+		24AC7C9B265F65FD00CE4282 /* CategoryBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBodyView.swift; sourceTree = "<group>"; };
+		24AC7C9D265F661300CE4282 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		24AC7CA92664BFF200CE4282 /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
 		24AC7CC226663F6200CE4282 /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
 		290CA1B1261EABE400239EA7 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		298536F22660DBAA0024A25C /* NeumorphicEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicEffect.swift; sourceTree = "<group>"; };
@@ -405,6 +411,7 @@
 				047B5114265D0E41009158F7 /* Transaction History */,
 				047E2AC9265B807700D1EB9C /* Side Menu */,
 				1683C9002629C75700B1D4D8 /* Transactions */,
+				24AC7C97265F341A00CE4282 /* Category Page */,
 				24AC7C91265CAEB600CE4282 /* Login and Security Page */,
 				24AC7C8B265B713C00CE4282 /* Settings Page */,
 				C6081ADA2652764B003BB9CB /* Enums */,
@@ -692,6 +699,32 @@
 				24AC7CC226663F6200CE4282 /* CustomToggle.swift */,
 			);
 			path = Toggle;
+            sourceTree = "<group>";
+        };
+		24AC7C97265F341A00CE4282 /* Category Page */ = {
+			isa = PBXGroup;
+			children = (
+				24AC7C98265F342300CE4282 /* Content */,
+				24AC7C9D265F661300CE4282 /* CategoryView.swift */,
+			);
+			path = "Category Page";
+			sourceTree = "<group>";
+		};
+		24AC7C98265F342300CE4282 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				24AC7C9B265F65FD00CE4282 /* CategoryBodyView.swift */,
+				24AC7CA92664BFF200CE4282 /* CategoryListView.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		298536F12660DB8A0024A25C /* Neumorphic Views */ = {
+			isa = PBXGroup;
+			children = (
+				298536F22660DBAA0024A25C /* NeumorphicEffect.swift */,
+			);
+			path = "Neumorphic Views";
 			sourceTree = "<group>";
 		};
 		298536F12660DB8A0024A25C /* Neumorphic Views */ = {
@@ -1154,6 +1187,7 @@
 			files = (
 				16CCE74D2651E57700345778 /* Network.swift in Sources */,
 				16C5C787263534FE00F33B72 /* Wallet.swift in Sources */,
+				24AC7CAA2664BFF200CE4282 /* CategoryListView.swift in Sources */,
 				244A3B7E263A644E00D8B08B /* EditProfileView.swift in Sources */,
 				24AC7CC326663F6200CE4282 /* CustomToggle.swift in Sources */,
 				7A7FA1322637B70A00484F51 /* FootnoteButton.swift in Sources */,
@@ -1177,8 +1211,10 @@
 				047E2B3B265B9C1B00D1EB9C /* SideMenu.swift in Sources */,
 				C6249AA82637EB8C00C55B31 /* SignUpView.swift in Sources */,
 				C65699C32637C91400D24D2F /* SignUpFooterView.swift in Sources */,
+				24AC7C9C265F65FD00CE4282 /* CategoryBodyView.swift in Sources */,
 				7AD9B8732626EC2A00CF0EA6 /* SkeletalView.swift in Sources */,
-				7A21C8CF266785C40007D30F /* MyProfileHeaderView.swift in Sources */,
+                7A21C8CF266785C40007D30F /* MyProfileHeaderView.swift in Sources */,
+				24AC7C9E265F661300CE4282 /* CategoryView.swift in Sources */,
 				7AD9B86B2626EC0000CF0EA6 /* SignInHeaderView.swift in Sources */,
 				047E2AD0265B82B700D1EB9C /* ProfileView.swift in Sources */,
 				16895014264AC06B00EED051 /* SelectableFieldForm.swift in Sources */,
