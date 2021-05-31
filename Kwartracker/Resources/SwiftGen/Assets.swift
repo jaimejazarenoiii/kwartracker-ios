@@ -34,6 +34,7 @@ internal enum Asset {
     internal static let spindleGrey = ColorAsset(name: "SpindleGrey")
     internal static let teal = ColorAsset(name: "Teal")
     internal static let turquoise = ColorAsset(name: "Turquoise")
+    internal static let whiteOpacity = ColorAsset(name: "WhiteOpacity")
   }
   internal enum Images {
     internal static let addIcon = ImageAsset(name: "AddIcon")
@@ -63,6 +64,7 @@ internal enum Asset {
     internal static let trashIcon2 = ImageAsset(name: "TrashIcon-2")
     internal static let trashIcon = ImageAsset(name: "TrashIcon")
     internal static let walletIcon = ImageAsset(name: "WalletIcon")
+    internal static let sampleImage = ImageAsset(name: "sampleImage")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
