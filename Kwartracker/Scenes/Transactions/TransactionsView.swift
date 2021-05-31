@@ -101,7 +101,7 @@ struct TransactionsView: View {
                                 Image(uiImage: Asset.Images.filterIcon.image)
                             }
                             .buttonStyle(
-                                RoundedRectangleButtonStyle(fillColor: Asset.Colors.teal.color)
+                                RoundedRectangleButtonStyle(buttonColor: Asset.Colors.teal.color)
                             )
 
                             Spacer()
@@ -115,7 +115,17 @@ struct TransactionsView: View {
                             ForEach(store.state.transactionState.transactions, id: \.id) {
                                 TransactionRowContent(transaction: $0)
                             }
+                            if store.state.transactionState.shouldShowLoadmore {
+                                HStack {
+                                    Spacer()
+                                    CircularLoaderView()
+                                        .frame(width: 30, height: 30)
+                                    Spacer()
+                                }
+                                .padding(.top, 10)
+                            }
                         }
+                        .listStyle(InsetListStyle())
                     }
                 }
             }

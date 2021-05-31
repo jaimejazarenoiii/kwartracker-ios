@@ -29,6 +29,9 @@
 		1683C9022629C76F00B1D4D8 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683C9012629C76F00B1D4D8 /* TransactionsView.swift */; };
 		1683C90B2629C7BB00B1D4D8 /* CircleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683C90A2629C7BB00B1D4D8 /* CircleButtonStyle.swift */; };
 		1683C9142629C81100B1D4D8 /* LinearGradient+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683C9132629C81100B1D4D8 /* LinearGradient+Extensions.swift */; };
+		16895014264AC06B00EED051 /* SelectableFieldForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16895013264AC06B00EED051 /* SelectableFieldForm.swift */; };
+		169DA46D2644C76F0063204F /* APIRequestState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169DA46C2644C76F0063204F /* APIRequestState.swift */; };
+		169DA4722644C8A60063204F /* CircularLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169DA4712644C8A60063204F /* CircularLoaderView.swift */; };
 		16C5C7782635347A00F33B72 /* TransactionRowContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C7772635347A00F33B72 /* TransactionRowContent.swift */; };
 		16C5C77D2635349F00F33B72 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C77C2635349F00F33B72 /* Transaction.swift */; };
 		16C5C782263534EA00F33B72 /* Imageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C781263534EA00F33B72 /* Imageable.swift */; };
@@ -135,9 +138,14 @@
 		164E97EE2614ACF000D84B7F /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		164E988C2615C4BA00D84B7F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		166A9CC22643775C00805A16 /* TransactionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTests.swift; sourceTree = "<group>"; };
+		16796F0726646B6C00A99394 /* RoundedRectangleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleButtonStyle.swift; sourceTree = "<group>"; };
 		1683C9012629C76F00B1D4D8 /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
 		1683C90A2629C7BB00B1D4D8 /* CircleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonStyle.swift; sourceTree = "<group>"; };
 		1683C9132629C81100B1D4D8 /* LinearGradient+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinearGradient+Extensions.swift"; sourceTree = "<group>"; };
+		16895013264AC06B00EED051 /* SelectableFieldForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableFieldForm.swift; sourceTree = "<group>"; };
+		16895022264AC0B600EED051 /* RoundedRectangleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleButtonStyle.swift; sourceTree = "<group>"; };
+		169DA46C2644C76F0063204F /* APIRequestState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestState.swift; sourceTree = "<group>"; };
+		169DA4712644C8A60063204F /* CircularLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularLoaderView.swift; sourceTree = "<group>"; };
 		16C5C7772635347A00F33B72 /* TransactionRowContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRowContent.swift; sourceTree = "<group>"; };
 		16C5C77C2635349F00F33B72 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		16C5C781263534EA00F33B72 /* Imageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imageable.swift; sourceTree = "<group>"; };
@@ -231,6 +239,7 @@
 				163E592B260CB88E00E54401 /* Products */,
 				FBDD14E75727D540662415F6 /* Pods */,
 				326399AE9BF3387D065FB7BA /* Frameworks */,
+				16796F0426646B0000A99394 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -307,7 +316,6 @@
 			isa = PBXGroup;
 			children = (
 				1683C9002629C75700B1D4D8 /* Transactions */,
-				C6A089802637C6D200E6653E /* SignUp */,
 				24AC7C91265CAEB600CE4282 /* Login and Security Page */,
 				24AC7C8B265B713C00CE4282 /* Settings Page */,
 				C6081ADA2652764B003BB9CB /* Enums */,
@@ -377,6 +385,14 @@
 			path = Transactions;
 			sourceTree = "<group>";
 		};
+		16796F0426646B0000A99394 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				16895022264AC0B600EED051 /* RoundedRectangleButtonStyle.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		1683C9002629C75700B1D4D8 /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,6 +419,14 @@
 			path = "Linear Gradient";
 			sourceTree = "<group>";
 		};
+		16895012264AC05700EED051 /* Form Inputs */ = {
+			isa = PBXGroup;
+			children = (
+				16895013264AC06B00EED051 /* SelectableFieldForm.swift */,
+			);
+			path = "Form Inputs";
+			sourceTree = "<group>";
+		};
 		16B24BAE261A8D170002065D /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,14 +449,16 @@
 			isa = PBXGroup;
 			children = (
 				16C5C7972636296600F33B72 /* Currency.swift */,
+				169DA46C2644C76F0063204F /* APIRequestState.swift */,
 			);
 			path = Enums;
-            sourceTree = "<group>";
-        };
+			sourceTree = "<group>";
+		};
 		16FC4F38265C7D9000D1B7E2 /* Button Style */ = {
 			isa = PBXGroup;
 			children = (
 				16FC4F4A265C7F6700D1B7E2 /* CircleButtonStyle.swift */,
+				16796F0726646B6C00A99394 /* RoundedRectangleButtonStyle.swift */,
 			);
 			path = "Button Style";
 			sourceTree = "<group>";
@@ -556,6 +582,7 @@
 		7AB88B1C262805C500E2DFD3 /* Custom Components */ = {
 			isa = PBXGroup;
 			children = (
+				16895012264AC05700EED051 /* Form Inputs */,
 				16FC4F4F265C7F8600D1B7E2 /* Linear Gradient */,
 				16FC4F38265C7D9000D1B7E2 /* Button Style */,
 				7AB88B23262806D400E2DFD3 /* View */,
@@ -571,6 +598,7 @@
 			isa = PBXGroup;
 			children = (
 				7AB88B1D262805F300E2DFD3 /* View+Extensions.swift */,
+				169DA4712644C8A60063204F /* CircularLoaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -968,6 +996,7 @@
 				C6CDDCE726381F6E00CB1562 /* MessageView.swift in Sources */,
 				163E5930260CB88E00E54401 /* ContentView.swift in Sources */,
 				1683C90B2629C7BB00B1D4D8 /* CircleButtonStyle.swift in Sources */,
+				169DA46D2644C76F0063204F /* APIRequestState.swift in Sources */,
 				16C5C77D2635349F00F33B72 /* Transaction.swift in Sources */,
 				7A17D13226298678005BB190 /* UserField.swift in Sources */,
 				C6CDDCB0263811F700CB1562 /* AlertView.swift in Sources */,
@@ -979,7 +1008,8 @@
 				C65699C32637C91400D24D2F /* SignUpFooterView.swift in Sources */,
 				7AD9B8732626EC2A00CF0EA6 /* SkeletalView.swift in Sources */,
 				7AD9B86B2626EC0000CF0EA6 /* SignInHeaderView.swift in Sources */,
-				16CCE83C26523F2400345778 /* (null) in Sources */,
+				16895014264AC06B00EED051 /* SelectableFieldForm.swift in Sources */,
+				7A17D13A26298695005BB190 /* SNSButton.swift in Sources */,
 				7A17D13A26298695005BB190 /* SNSButton.swift in Sources */,
 				C6081ADC2652765E003BB9CB /* DialogStatus.swift in Sources */,
 				24AC7C94265CAED200CE4282 /* LoginAndSecurityView.swift in Sources */,
@@ -988,11 +1018,11 @@
 				163E5B6C260F337600E54401 /* Secrets.swift in Sources */,
 				164E95FF26122C5E00D84B7F /* World.swift in Sources */,
 				C6CDDCC52638125C00CB1562 /* MainAlertView.swift in Sources */,
-				16CCE83D26523F2400345778 /* (null) in Sources */,
 				7AB88B1E262805F300E2DFD3 /* View+Extensions.swift in Sources */,
 				242950A926578CEF0075C054 /* PopupContentView.swift in Sources */,
 				164E95FA26122BE200D84B7F /* AppAction.swift in Sources */,
 				16C5C7A026362D3500F33B72 /* TransactionsViewState.swift in Sources */,
+				169DA4722644C8A60063204F /* CircularLoaderView.swift in Sources */,
 				7AB88B282628071C00E2DFD3 /* RoundedCorner.swift in Sources */,
 				16C5C7982636296600F33B72 /* Currency.swift in Sources */,
 				164E97EF2614ACF000D84B7F /* Strings.swift in Sources */,

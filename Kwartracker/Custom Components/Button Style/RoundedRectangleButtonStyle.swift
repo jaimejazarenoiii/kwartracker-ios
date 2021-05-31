@@ -1,64 +1,43 @@
 //
-//  TealRoundedRectangleButtonStyle.swift
+//  RoundedRectangleButtonStyle.swift
 //  Kwartracker
 //
-//  Created by Jacob on 4/25/21.
+//  Created by Jacob on 5/8/21.
 //
 
 import SwiftUI
 
 struct RoundedRectangleButtonStyle: ButtonStyle {
-    let fillColor: UIColor
-
-    private let defaultPadding: CGFloat = 15
-    private let cornerRadius: CGFloat = 15
-    private let strokeLineWidth: CGFloat = 4
-    private let shadowRadius: CGFloat = 8
-    private let blackOpacity: Double = 0.2
-    private let whiteOpacity: Double = 0.7
-
+    var buttonColor: UIColor
+    var padding: CGFloat = 15
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .padding(defaultPadding)
-            .contentShape(RoundedRectangle(cornerRadius: cornerRadius))
+            .padding(padding)
+            .contentShape(RoundedRectangle(cornerRadius: 16))
             .background(
                 Group {
                     if configuration.isPressed {
-                        RoundedRectangle(cornerRadius: cornerRadius)
-                            .fill(Color(fillColor))
+                        RoundedRectangle(cornerRadius: 16)
+                            .fill(Color(buttonColor))
                             .overlay(
-                                RoundedRectangle(cornerRadius: cornerRadius)
-                                    .stroke(Color.gray, lineWidth: strokeLineWidth)
-                                    .blur(radius: cornerRadius)
-                                    .offset(x: strokeLineWidth / 2, y: strokeLineWidth / 2)
-                                    .mask(RoundedRectangle(cornerRadius: cornerRadius)
-                                            .fill(LinearGradient(.black, .clear))
-                                    )
+                                RoundedRectangle(cornerRadius: 16)
+                                    .stroke(Color.gray, lineWidth: 4)
+                                    .blur(radius: 4)
+                                    .offset(x: 2, y: 2)
+                                    .mask(RoundedRectangle(cornerRadius: 16).fill(LinearGradient(.black, .clear)))
                             )
                             .overlay(
-                                RoundedRectangle(cornerRadius: cornerRadius)
-                                    .stroke(Color(fillColor), lineWidth: strokeLineWidth)
-                                    .blur(radius: cornerRadius)
-                                    .offset(x: -(strokeLineWidth / 2), y: -(strokeLineWidth / 2))
-                                    .mask(RoundedRectangle(cornerRadius: cornerRadius)
-                                            .fill(LinearGradient(.clear, .black))
-                                    )
+                                RoundedRectangle(cornerRadius: 16)
+                                    .stroke(Color(buttonColor), lineWidth: 8)
+                                    .blur(radius: 4)
+                                    .offset(x: -2, y: -2)
+                                    .mask(Circle().fill(LinearGradient(.clear, .black)))
                             )
                     } else {
-                        RoundedRectangle(cornerRadius: cornerRadius)
-                            .fill(Color(fillColor))
-                            .shadow(
-                                color: Color.black.opacity(blackOpacity),
-                                radius: shadowRadius,
-                                x: shadowRadius,
-                                y: shadowRadius
-                            )
-                            .shadow(
-                                color: Color.white.opacity(whiteOpacity),
-                                radius: shadowRadius,
-                                x: -(shadowRadius / 2),
-                                y: -(shadowRadius / 2)
-                            )
+                        RoundedRectangle(cornerRadius: 16)
+                            .fill(Color(buttonColor))
+                            .shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
+                            .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
                     }
                 }
             )
