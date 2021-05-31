@@ -10,13 +10,13 @@ import SwiftUI
 struct NeumorphicEffect: View {
     var rectSize: CGSize
     var cornerRadius: CGFloat = 20
-    let backgroundColor: Color = Color(Asset.Colors.solitudeGrey.color)
-    let shadowOffset = CGPoint(x: 6, y: 6)
-    let blackOpacity: Double = 0.15
-    let position: CGFloat = 10
-    let shadowRadius: CGFloat = 5
-    let blurRadius: CGFloat = 15
-    let opacity: Double = 0.9
+    private let backgroundColor: Color = Color(Asset.Colors.solitudeGrey.color)
+    private let shadowOffset = CGPoint(x: 6, y: 6)
+    private let blackOpacity: Double = 0.15
+    private let position: CGFloat = 10
+    private let shadowRadius: CGFloat = 5
+    private let blurRadius: CGFloat = 15
+    private let opacity: Double = 0.9
     
     var body: some View {
         VStack {
