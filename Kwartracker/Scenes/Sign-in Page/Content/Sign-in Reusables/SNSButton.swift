@@ -45,7 +45,7 @@ struct SNSButton: View {
         case signUp
         case signUpGoogle
         case signUpApple
-        
+
         var color: Color {
             switch self {
             case .signIn, .signUp:
