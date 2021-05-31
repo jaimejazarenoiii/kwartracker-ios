@@ -101,7 +101,7 @@ struct TransactionsView: View {
                                 Image(uiImage: Asset.Images.filterIcon.image)
                             }
                             .buttonStyle(
-                                TealRoundedRectangleButtonStyle()
+                                RoundedRectangleButtonStyle(buttonColor: Asset.Colors.teal.color)
                             )
 
                             Spacer()

@@ -12,83 +12,47 @@ struct BodyView: View {
     @State private var password: String = ""
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            VStack(alignment: .leading) {
-
-                Text(L10n.Welcome.back)
-                    .foregroundColor(Color(Asset.Colors.nightRider.color))
-                    .font(.system(size: 45))
-                    .fontWeight(.medium)
-                    .fixedSize(horizontal: false, vertical: true)
-
-                UserField(textLabel: L10n.email, textValue: $email)
-                UserField(textLabel: L10n.password, textValue: $password)
-
-                SNSButton(text: L10n.Sign.in, action: .signIn).padding(.top, 15)
-
-                HStack {
-                    Spacer()
-                    Text(L10n.or)
-                        .font(.footnote)
-                        .foregroundColor(Color(Asset.Colors.charcoal.color))
-                    Spacer()
-                }.padding(.top, 5)
-
-                SNSButton(text: L10n.Sign.In.With.google, action: .signInGoogle)
-                    .padding(.top, 6)
-
-                SNSButton(text: L10n.Sign.In.With.apple, action: .signInApple)
-                    .padding(.top, 13)
-
-                HStack {
-                    Button(action: {
-
-                    }, label: {
-                        Text(L10n.Recover.password)
-                            .font(.footnote)
-                            .foregroundColor(Color(Asset.Colors.spindleGrey.color))
-                            .underline()
-                    })
-
-                    Spacer()
-
-                    Button(action: {
-
-                    }, label: {
-                        Text(L10n.Sign.In.As.guest)
-                            .font(.footnote)
-                            .foregroundColor(Color(Asset.Colors.spindleGrey.color))
-                            .underline()
-                    })
-                }.padding(.top, 25)
-
-                Divider()
-                    .padding([.leading, .trailing], -30)
-                    .padding(.top, 25)
-
-                HStack {
-                    Spacer()
-
-                    Text(L10n.No.Account.yet)
-                        .font(.footnote)
-                        .foregroundColor(Color(Asset.Colors.nightRider.color))
-
-                    Button(action: {
-
-                    }, label: {
-                        Text(L10n.Sign.up)
-                            .font(.footnote)
-                            .fontWeight(.bold)
-                            .foregroundColor(Color(Asset.Colors.teal.color))
-                            .underline()
-                    })
-
-                    Spacer()
-                }.padding([.top, .bottom], 20)
-            }
-            .padding([.leading, .trailing], 30)
-            .padding(.top, 70)
+        VStack(alignment: .leading) {
+            
+            Text("Welcome\nBack")
+                .foregroundColor(Color(Asset.Colors.nightRider.color))
+                .font(.system(size: 40))
+                .fontWeight(.medium)
+                .fixedSize(horizontal: false, vertical: true)
+            
+            UserField(textLabel: "Email", textValue: $email)
+            UserField(textLabel: "Password", textValue: $password)
+            
+            SNSButton(action: "Sign in").padding(.top, 15)
+            
+            HStack {
+                Spacer()
+                Text("or")
+                Spacer()
+            }.padding(.top, 5)
+            
+            SNSButton(action: "Sign in with Google").padding(.top, 5)
+            
+            SNSButton(action: "Sign in with Apple").padding(.top, 10)
+            
+            HStack {
+                Text("Recover Password")
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
+                    .underline()
+                
+                Spacer()
+                
+                Text("Sign in as guest")
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
+                    .underline()
+            }.padding(.top, 20)
+            
+            Spacer()
         }
+        .padding([.leading, .trailing], 30)
+        .padding(.top, 70)
     }
 }
 
@@ -97,5 +61,113 @@ struct BodyView_Previews: PreviewProvider {
         BodyView()
             .background(Color(Asset.Colors.solitudeGrey.color))
             .previewLayout(.sizeThatFits)
+    }
+}
+
+struct UserField: View {
+    let textLabel: String
+    @Binding var textValue: String
+    
+    var body: some View {
+        Text(textLabel)
+            .font(.footnote)
+            .foregroundColor(.secondary)
+            .padding(.top)
+        
+        ZStack {
+            let radius: CGFloat = 17
+            
+            RoundedRectangle(cornerRadius: radius)
+                .fill(Color(Asset.Colors.solitudeGrey.color))
+                .frame(height: 55, alignment: .center)
+                .shadow(color: Color.black.opacity(0.2), radius: radius, x: 7, y: 7)
+                .shadow(color: Color.white.opacity(0.7), radius: radius, x: -5, y: -5)
+            
+            if textLabel == "Email" {
+                TextField("", text: $textValue)
+                    .background(Color(Asset.Colors.solitudeGrey.color))
+                    .frame(height: 55, alignment: .center)
+                    .cornerRadius(radius)
+                    .padding([.leading, .trailing], 20)
+                    .textContentType(.emailAddress)
+                    .keyboardType(.emailAddress)
+                    PlaceholderTextField.init(placeholder: textLabel, text: $textValue)
+            } else {
+                SecureField("", text: $textValue)
+                    .background(Color(Asset.Colors.solitudeGrey.color))
+                    .frame(height: 55, alignment: .center)
+                    .cornerRadius(radius)
+                    .padding([.leading, .trailing], 20)
+                    PlaceholderTextField.init(placeholder: textLabel, text: $textValue)
+            }
+                
+        }
+    }
+}
+
+struct SNSButton: View {
+    let action: String
+    
+    var body: some View {
+        Button(action: {
+            
+        }, label: {
+            ZStack {
+                RoundedRectangle(cornerRadius: 17)
+                    .fill(whichColor())
+                    .frame(height: 55)
+                
+                HStack {
+                    if action != "Sign in" {
+                        Image(systemName: whichSymbol())
+                            .font(.system(size: 20))
+                            .foregroundColor(Color.white)
+                    }
+                    
+                    Text(action)
+                        .foregroundColor(.white)
+                        .font(.system(size: 14))
+                }
+            }
+        })
+    }
+    
+    func whichColor() -> Color {
+        if action.contains("Google") {
+            return Color.blue
+        } else if action.contains("Apple") {
+            return Color.black
+        } else {
+            return Color(Asset.Colors.teal.color)
+        }
+    }
+    
+    func whichSymbol() -> String {
+        if action.contains("Google") {
+            return "g.circle"
+        } else if action.contains("Apple") {
+            return "applelogo"
+        } else {
+            return ""
+        }
+    }
+}
+
+struct PlaceholderTextField: View {
+    let placeholder: String
+    @Binding var text: String
+    let internalPadding: CGFloat = 5
+
+    var body: some View {
+        ZStack(alignment: .topLeading) {
+            if text.isEmpty {
+                Text(placeholder)
+                    .foregroundColor(Color.primary.opacity(0.25))
+                    .italic()
+                    .font(.system(size: 15))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding([.leading, .trailing], 20)
+            }
+        }
     }
 }

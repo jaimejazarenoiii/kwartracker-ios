@@ -18,7 +18,7 @@ struct UserField: View {
     private let fieldSideMargin: CGFloat = 20
     
     var body: some View {
-        Text(fieldType.text)
+        Text(fieldType.placeholder)
             .font(.footnote)
             .foregroundColor(Color(Asset.Colors.spindleGrey.color))
             .padding(.top)
@@ -28,38 +28,62 @@ struct UserField: View {
                                   color: Color(Asset.Colors.solitudeGrey.color),
                                   shadowRadius: shadowRadius,
                                   shadowOffset: shadowOffset)
-            
-            UserField
+            UserField()
         }
     }
-    
-    var UserField: some View {
-        createField(for: fieldType)
+}
+
+private extension UserField {
+    func UserField() -> some View {
+        viewFor(field: fieldType)
             .background(Color(Asset.Colors.solitudeGrey.color))
             .frame(height: fieldHeight, alignment: .center)
             .cornerRadius(rectRadius)
-            .padding([.leading, .trailing], fieldSideMargin)
+            .padding([.leading, .trailing], fieldType == .birthDate ? 0 : fieldSideMargin)
     }
-    
-    func createField(for field: FieldType) -> some View {
-        if field == .email {
-            return AnyView(TextField(field.text, text: $textValue))
-        } else {
-            return AnyView(SecureField(field.text, text: $textValue))
+
+    @ViewBuilder
+    func viewFor(field: FieldType) -> some View {
+        switch field {
+        case .email, .lastName, .firstName, .contactNumber:
+            TextField(field.placeholder, text: $textValue)
+                .modifier(PlaceholderStyle(showPlaceHolder: textValue.isEmpty,
+                                           placeholder: fieldType.placeholder))
+        case .password:
+            SecureField(field.placeholder, text: $textValue)
+                .modifier(PlaceholderStyle(showPlaceHolder: textValue.isEmpty,
+                                           placeholder: fieldType.placeholder))
+        case .newPassword:
+            SecureField(field.placeholder, text: $textValue)
+                .modifier(PlaceholderStyle(showPlaceHolder: textValue.isEmpty,
+                                           placeholder: fieldType.placeholder))
+        case .confirmNewPassword:
+            SecureField(field.placeholder, text: $textValue)
+                .modifier(PlaceholderStyle(showPlaceHolder: textValue.isEmpty,
+                                           placeholder: fieldType.placeholder))
+        case .birthDate:
+            BirthdateField(textValue: $textValue, placeholder: field.placeholder)
+        case .address:
+            TextField(field.placeholder, text: $textValue)
+                .modifier(PlaceholderStyle(showPlaceHolder: textValue.isEmpty,
+                                           placeholder: fieldType.placeholder))
         }
     }
-    
-    enum FieldType {
-        case email
-        case password
-        
-        var text: String {
-            switch self {
-            case .email:
-                return L10n.SignInPage.Field.enterEmailAddress
-            case .password:
-                return L10n.SignInPage.Field.enterPassword
+}
+
+private struct PlaceholderStyle: ViewModifier {
+    var showPlaceHolder: Bool
+    var placeholder: String
+
+    public func body(content: Content) -> some View {
+        ZStack(alignment: .leading) {
+            if showPlaceHolder {
+                Text(placeholder)
+                    .italic()
+                    .foregroundColor(.secondary)
             }
+            content
+                .foregroundColor(Color.black)
         }
     }
 }

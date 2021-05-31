@@ -10,50 +10,122 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
-  /// Email
-  internal static let email = L10n.tr("Localizable", "email")
-  /// or
-  internal static let or = L10n.tr("Localizable", "or")
-  /// Password
-  internal static let password = L10n.tr("Localizable", "password")
 
-  internal enum Enter {
-    /// Enter password
-    internal static let password = L10n.tr("Localizable", "enter.password")
-    internal enum Email {
-      /// Enter email address
-      internal static let address = L10n.tr("Localizable", "enter.email.address")
+  internal enum AlertSheet {
+    internal enum Body {
+      /// Are you sure you want to delete this?
+      internal static let areYouSureYouWantToDeleteThis = L10n.tr("Localizable", "alert_sheet.body.are_you_sure_you_want_to_delete_this")
+    }
+    internal enum Option {
+      /// Cancel
+      internal static let cancel = L10n.tr("Localizable", "alert_sheet.option.cancel")
+      /// Delete
+      internal static let delete = L10n.tr("Localizable", "alert_sheet.option.delete")
+    }
+    internal enum Title {
+      /// Confirmation
+      internal static let confirmation = L10n.tr("Localizable", "alert_sheet.title.confirmation")
     }
   }
 
-  internal enum No {
-    internal enum Account {
-      /// No account yet?
-      internal static let yet = L10n.tr("Localizable", "no.account.yet")
+  internal enum ChangePasswordPage {
+    /// Change Password
+    internal static let navigationTitle = L10n.tr("Localizable", "change_password_page.navigation_title")
+    internal enum ConfirmNewPassword {
+      /// Confirm new password
+      internal static let label = L10n.tr("Localizable", "change_password_page.confirm_new_password.label")
+      /// Enter again new password
+      internal static let placeholder = L10n.tr("Localizable", "change_password_page.confirm_new_password.placeholder")
+    }
+    internal enum NavigationButtonItem {
+      /// Save
+      internal static let save = L10n.tr("Localizable", "change_password_page.navigation_button_item.save")
+    }
+    internal enum NewPassword {
+      /// New password
+      internal static let label = L10n.tr("Localizable", "change_password_page.new_password.label")
+      /// Enter new password
+      internal static let placeholder = L10n.tr("Localizable", "change_password_page.new_password.placeholder")
     }
   }
 
-  internal enum Recover {
-    /// Recover password
-    internal static let password = L10n.tr("Localizable", "recover.password")
+  internal enum EditProfilePage {
+    /// My Profile
+    internal static let navigationTitle = L10n.tr("Localizable", "edit_profile_page.navigation_title")
+    internal enum Button {
+      /// Change photo
+      internal static let changePhoto = L10n.tr("Localizable", "edit_profile_page.button.change_photo")
+    }
+    internal enum Label {
+      /// Address
+      internal static let address = L10n.tr("Localizable", "edit_profile_page.label.address")
+      /// Birthdate
+      internal static let birthdate = L10n.tr("Localizable", "edit_profile_page.label.birthdate")
+      /// Contact number
+      internal static let contactNumber = L10n.tr("Localizable", "edit_profile_page.label.contact_number")
+      /// First name
+      internal static let firstName = L10n.tr("Localizable", "edit_profile_page.label.first_name")
+      /// Last name
+      internal static let lastName = L10n.tr("Localizable", "edit_profile_page.label.last_name")
+    }
+    internal enum NavigationButtonItem {
+      /// Save
+      internal static let save = L10n.tr("Localizable", "edit_profile_page.navigation_button_item.save")
+    }
   }
 
-  internal enum Sign {
-    /// Sign In
-    internal static let `in` = L10n.tr("Localizable", "sign.in")
-    /// Sign Up
-    internal static let up = L10n.tr("Localizable", "sign.up")
-    internal enum In {
-      internal enum As {
-        /// Sign in as guest
-        internal static let guest = L10n.tr("Localizable", "sign.in.as.guest")
+  internal enum LoginAndSecurityPage {
+    internal enum DummyData {
+      /// email_email_email@emailemail.com
+      internal static let email = L10n.tr("Localizable", "login_and_security_page.dummy_data.email")
+      /// ***************
+      internal static let password = L10n.tr("Localizable", "login_and_security_page.dummy_data.password")
+    }
+    internal enum Label {
+      /// Email Address
+      internal static let email = L10n.tr("Localizable", "login_and_security_page.label.email")
+    }
+  }
+
+  internal enum PopUpConfirmationModal {
+    internal enum Button {
+      /// Cancel
+      internal static let cancel = L10n.tr("Localizable", "pop_up_confirmation_modal.button.cancel")
+      /// Delete
+      internal static let delete = L10n.tr("Localizable", "pop_up_confirmation_modal.button.delete")
+      /// Exit
+      internal static let exit = L10n.tr("Localizable", "pop_up_confirmation_modal.button.exit")
+      /// Success
+      internal static let success = L10n.tr("Localizable", "pop_up_confirmation_modal.button.success")
+    }
+    internal enum Label {
+      internal enum Message {
+        /// Are you sure you want to delete this?
+        internal static let confirmation = L10n.tr("Localizable", "pop_up_confirmation_modal.label.message.confirmation")
+        /// It has been successfully deleted.
+        internal static let delete = L10n.tr("Localizable", "pop_up_confirmation_modal.label.message.delete")
+        /// New category has been added.
+        internal static let success = L10n.tr("Localizable", "pop_up_confirmation_modal.label.message.success")
       }
-      internal enum With {
-        /// Sign in with Apple
-        internal static let apple = L10n.tr("Localizable", "sign.in.with.apple")
-        /// Sign in with Google
-        internal static let google = L10n.tr("Localizable", "sign.in.with.google")
-      }
+    }
+    internal enum Title {
+      /// Confirmation
+      internal static let confirmation = L10n.tr("Localizable", "pop_up_confirmation_modal.title.confirmation")
+      /// Deleted
+      internal static let delete = L10n.tr("Localizable", "pop_up_confirmation_modal.title.delete")
+      /// Success
+      internal static let success = L10n.tr("Localizable", "pop_up_confirmation_modal.title.success")
+    }
+  }
+
+  internal enum SettingsPage {
+    /// Settings
+    internal static let navigationTitle = L10n.tr("Localizable", "settings_page.navigation_title")
+    internal enum NavigationItem {
+      /// Categories
+      internal static let categories = L10n.tr("Localizable", "settings_page.navigation_item.categories")
+      /// Login and Security
+      internal static let loginAndSecurity = L10n.tr("Localizable", "settings_page.navigation_item.login_and_security")
     }
   }
 
@@ -94,6 +166,41 @@ internal enum L10n {
     }
   }
 
+  internal enum SignUpPage {
+    internal enum Button {
+      /// Sign In
+      internal static let signIn = L10n.tr("Localizable", "sign_up_page.button.sign_in")
+      /// Sign Up
+      internal static let signUp = L10n.tr("Localizable", "sign_up_page.button.sign_up")
+      /// Sign up with Apple
+      internal static let signUpApple = L10n.tr("Localizable", "sign_up_page.button.sign_up_apple")
+      /// Sign up with Google
+      internal static let signUpGoogle = L10n.tr("Localizable", "sign_up_page.button.sign_up_google")
+      /// Sign in as guest
+      internal static let signUpGuest = L10n.tr("Localizable", "sign_up_page.button.sign_up_guest")
+    }
+    internal enum Field {
+      /// Enter email address
+      internal static let enterEmailAddress = L10n.tr("Localizable", "sign_up_page.field.enter_email_address")
+      /// Enter password
+      internal static let enterPassword = L10n.tr("Localizable", "sign_up_page.field.enter_password")
+    }
+    internal enum Label {
+      /// Already have an account?
+      internal static let alreadyHaveAnAccount = L10n.tr("Localizable", "sign_up_page.label.already_have_an_account")
+      /// Email
+      internal static let email = L10n.tr("Localizable", "sign_up_page.label.email")
+      /// or
+      internal static let or = L10n.tr("Localizable", "sign_up_page.label.or")
+      /// Password
+      internal static let password = L10n.tr("Localizable", "sign_up_page.label.password")
+    }
+    internal enum Title {
+      /// Create\nAccount
+      internal static let createAccount = L10n.tr("Localizable", "sign_up_page.title.create_account")
+    }
+  }
+
   internal enum TransactionsPage {
     /// + %@
     internal static func addAmount(_ p1: Any) -> String {
@@ -107,11 +214,6 @@ internal enum L10n {
     internal static let titleBar = L10n.tr("Localizable", "transactions_page.title_bar")
     /// Search Transaction
     internal static let transactionSearchPlaceholder = L10n.tr("Localizable", "transactions_page.transaction_search_placeholder")
-  }
-
-  internal enum Welcome {
-    /// Welcome\nBack
-    internal static let back = L10n.tr("Localizable", "welcome.back")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
