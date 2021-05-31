@@ -103,11 +103,17 @@ struct TransactionsView: View {
 
                             List {
                                 ForEach(store.state.transactionState.transactions, id: \.id) { transaction in
-                                    NavigationLink(
-                                        destination: TransactionDetailView(transaction: transaction),
-                                        label: {
-                                            TransactionRowContent(transaction: transaction)
-                                        })
+                                    ZStack {
+                                        TransactionRowContent(transaction: transaction)
+                                        NavigationLink(
+                                            destination: TransactionDetailView(transaction: transaction),
+                                            label: {
+                                                EmptyView()
+                                            }
+                                        )
+                                        .hidden()
+                                    }
+                                    .listRowBackground(Color.clear)
                                 }
                                 if store.state.transactionState.shouldShowLoadmore {
                                     HStack {
