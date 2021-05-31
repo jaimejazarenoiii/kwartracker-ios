@@ -45,6 +45,8 @@ struct TransactionsView: View {
                     }
                 }
                 .padding(.top, 10)
+
+                SearchTransactionFormModalView(isPresented: $presentSearchModal)
             }
             .background(
                 Color(Asset.Colors.teal.color)
