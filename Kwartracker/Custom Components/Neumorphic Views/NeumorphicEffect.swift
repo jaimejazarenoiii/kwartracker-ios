@@ -47,7 +47,6 @@ struct NeumorphicEffect: View {
             )
 
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .shadow(color: Color.white, radius: shadowRadius,
                 x: -shadowOffset.x, y: -shadowOffset.y)
         .shadow(color: Color.black.opacity(blackOpacity),
