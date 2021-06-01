@@ -15,6 +15,11 @@ struct SideBarStack<SidebarContent: View, Content: View>: View {
     let sidebarContent: SidebarContent
     let mainContent: Content
     let sidebarWidth: CGFloat
+    let sideBarX: CGFloat = -1
+    let sideBarShowOpacity: Double = 0.01
+    let sideBarOpacity: Double = 0
+    let sideBar: CGFloat = 0
+    let animationSpeed: Double = 2
     
     init(sidebarWidth: CGFloat, showSidebar: Binding<Bool>,
          @ViewBuilder sidebar: ()->SidebarContent,
@@ -30,28 +35,28 @@ struct SideBarStack<SidebarContent: View, Content: View>: View {
         ZStack(alignment: .leading) {
             sidebarContent
                 .frame(width: sidebarWidth, alignment: .center)
-                .offset(x: showSidebar ? 0 : -1 * sidebarWidth, y: 0)
-                .animation(Animation.easeInOut.speed(2))
+                .offset(x: showSidebar ? sideBar : sideBarX * sidebarWidth, y: sideBar)
+                .animation(Animation.easeInOut.speed(animationSpeed))
             mainContent
                 .overlay(
                     Group {
                         if showSidebar {
                             Color.white
-                                .opacity(showSidebar ? 0.01 : 0)
+                                .opacity(showSidebar ? sideBarShowOpacity : sideBarOpacity)
                                 .onTapGesture {
                                     self.showSidebar = false
                                 }
                         } else {
                             Color.clear
-                            .opacity(showSidebar ? 0 : 0)
+                            .opacity(showSidebar ? sideBarOpacity : sideBarOpacity)
                             .onTapGesture {
                                 self.showSidebar = false
                             }
                         }
                     }
                 )
-                .offset(x: showSidebar ? sidebarWidth : 0, y: 0)
-                .animation(Animation.easeInOut.speed(2))
+                .offset(x: showSidebar ? sidebarWidth : sideBar, y: sideBar)
+                .animation(Animation.easeInOut.speed(animationSpeed))
         }
     }
 }
