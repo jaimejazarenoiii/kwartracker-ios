@@ -61,6 +61,7 @@ struct TransactionRow: View {
                     .frame(width: 5, height: 5)
             })
             .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.solitudeGrey.color, padding: 10))
+            .disabled(true)
         }
         .padding([.top, .bottom], 0)
     }

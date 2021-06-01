@@ -1,4 +1,21 @@
 // English
+"add_transaction_page.button.add" = "Add";
+"add_transaction_page.button.next" = "Next";
+"add_transaction_page.field_label.which_wallet_do_you_want_to_add" = "Which wallet do you want it to add?";
+"add_transaction_page.field_label.enter_amount" = "Enter amount";
+"add_transaction_page.field_label.transaction_name" = "Transaction name";
+"add_transaction_page.field_label.transaction_type" = "Transaction type";
+"add_transaction_page.field_label.categoy" = "Category";
+"add_transaction_page.field_label.select_date" = "Select date";
+"add_transaction_page.field_label.spent_with_this_person" = "Spent with this person";
+"add_transaction_page.field_input.which_wallet_do_you_want_to_add" = "Select wallet to add";
+"add_transaction_page.field_input.enter_transaction_name" = "Enter transaction name";
+"add_transaction_page.field_input.select_transaction_type" = "Select transaction type";
+"add_transaction_page.field_input.select_category" = "Select Category";
+"add_transaction_page.field_input.select_date" = "DD / MM / YYYY";
+"add_transaction_page.field_input.spent_with_this_person" = "Enter name of person";
+"add_transaction_page.title_bar" = "Add Transaction";
+
 "sign_in_page.title.welcome_back" = "Welcome\nBack";
 "sign_in_page.label.email" = "Email";
 "sign_in_page.field.enter_email_address" = "Enter email address";
@@ -37,6 +54,12 @@
 "sign_up_page.label.already_have_an_account" = "Already have an account?";
 "sign_up_page.button.sign_in" = "Sign In";
 
+"transaction_detail_page.label.added_to_wallet" = "Added to wallet";
+"transaction_detail_page.label.category" = "Category";
+"transaction_detail_page.label.transaction_date" = "Transaction date";
+"transaction_detail_page.label.spent_with" = "Spent with";
+"transaction_detail_page.label.transaction_type" = "Transaction type";
+"transaction_detail_page.title_bar" = "Transaction";
 "transactions_page.title_bar" = "Transactions";
 "transactions_page.transaction_search_placeholder" = "Search Transaction";
 "transactions_page.add_amount" = "+ %@";

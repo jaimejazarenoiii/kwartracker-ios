@@ -10,6 +10,7 @@ import SwiftUI
 struct TransactionsView: View {
     @EnvironmentObject var store: AppStore
     @State var searchTransaction: String = ""
+    @State var isAddTransactionLinkActive = false
     @State var presentSearchModal: Bool = false
 
     init() {
@@ -17,41 +18,43 @@ struct TransactionsView: View {
     }
 
     var body: some View {
-        ZStack {
+        NavigationView {
+            ZStack {
 
-            VStack {
-                TransactionsHeaderView()
+                VStack {
+                    TransactionsHeaderView()
 
-                Spacer()
-                    .frame(height: 30)
+                    Spacer()
+                        .frame(height: 30)
 
-                ZStack {
-                    VStack {
-                        TransactionsSearchBarView(
-                            searchTransaction: $searchTransaction,
-                            presentSearchModal: $presentSearchModal
-                        )
-                        TransactionsListView(
-                            transactions: store.state.transactionState.transactions,
-                            shouldShowLoadmore: store.state.transactionState.shouldShowLoadmore
-                        )
+                    ZStack {
+                        Rectangle()
+                            .fill(Color(Asset.Colors.solitudeGrey.color))
+                            .cornerRadius(45, corners: [.topLeft, .topRight])
+                            .edgesIgnoringSafeArea(.bottom)
+
+                        VStack {
+                            TransactionsSearchBarView(
+                                searchTransaction: $searchTransaction,
+                                presentSearchModal: $presentSearchModal
+                            )
+                            TransactionsListView(
+                                transactions: store.state.transactionState.transactions,
+                                shouldShowLoadmore: store.state.transactionState.shouldShowLoadmore
+                            )
+                        }
                     }
                 }
-                .background(
-                    Rectangle()
-                        .fill(Color(Asset.Colors.solitudeGrey.color))
-                        .cornerRadius(45, corners: [.topLeft, .topRight])
-                        .edgesIgnoringSafeArea(.bottom)
-                )
-            }
-            .padding(.top, 10)
+                .padding(.top, 10)
 
-            SearchTransactionFormModalView(isPresented: $presentSearchModal)
+                SearchTransactionFormModalView(isPresented: $presentSearchModal)
+            }
+            .background(
+                Color(Asset.Colors.teal.color)
+                    .ignoresSafeArea()
+            )
+            .navigationBarHidden(true)
         }
-        .background(
-            Color(Asset.Colors.teal.color)
-                .ignoresSafeArea()
-        )
     }
 
     private func setUpTableViewAppearance() {
@@ -61,11 +64,10 @@ struct TransactionsView: View {
 }
 
 private struct TransactionsHeaderView: View {
+    @State var isAddTransactionLinkActive: Bool = false
     var body: some View {
-        HStack {
-            Spacer()
-                .frame(width: 30)
-
+        NavigationBarView(
+            title: L10n.TransactionsPage.titleBar) {
             Button(action: {
             }) {
                 Image(uiImage: Asset.Images.arrowLeftIconWhite.image)
@@ -74,25 +76,20 @@ private struct TransactionsHeaderView: View {
             .buttonStyle(
                 CircleButtonStyle(buttonColor: Asset.Colors.teal.color)
             )
+        } rightBarViewContent: {
+            NavigationLink(
+                destination: AddTransactionView(),
+                isActive: $isAddTransactionLinkActive
+            ) {
+                Button(action: {
+                    isAddTransactionLinkActive.toggle()
+                }) {
+                    Image(uiImage: Asset.Images.addIconTeal.image)
+                        .frame(width: 10, height: 10)
+                }
+                .buttonStyle(CircleButtonStyle(buttonColor: .white))
+            }
 
-            Spacer()
-
-            Text(L10n.TransactionsPage.titleBar)
-                .fontWeight(.bold)
-                .foregroundColor(.white)
-                .font(.title2)
-
-            Spacer()
-
-            Button(action: {
-            }, label: {
-                Image(uiImage: Asset.Images.addIconTeal.image)
-                    .frame(width: 10, height: 10)
-            })
-            .buttonStyle(CircleButtonStyle(buttonColor: .white))
-
-            Spacer()
-                .frame(width: 30)
         }
     }
 }
@@ -163,8 +160,18 @@ private struct TransactionsListView: View {
                 .frame(height: 20)
 
             List {
-                ForEach(transactions, id: \.id) {
-                    TransactionRow(transaction: $0)
+                ForEach(transactions, id: \.id) { transaction in
+                    ZStack {
+                        TransactionRow(transaction: transaction)
+                        NavigationLink(
+                            destination: TransactionDetailView(transaction: transaction),
+                            label: {
+                                EmptyView()
+                            }
+                        )
+                        .hidden()
+                    }
+                    .listRowBackground(Color.clear)
                 }
                 LoaderView(shouldShowLoadmore: shouldShowLoadmore)
             }
