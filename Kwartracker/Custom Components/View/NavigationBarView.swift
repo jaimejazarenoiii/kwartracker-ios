@@ -23,20 +23,18 @@ struct NavigationBarView<LeftBarView: View, RightBarView: View>: View {
     }
 
     var body: some View {
-        HStack {
-            leftBarView
-
-            Spacer()
-
+        ZStack {
             Text(title)
                 .fontWeight(.bold)
                 .foregroundColor(.white)
                 .font(.title2)
 
-            Spacer()
-
-            rightBarView
+            HStack {
+                leftBarView
+                Spacer()
+                rightBarView
+            }
+            .padding([.leading, .trailing], 25)
         }
-        .padding([.leading, .trailing], 25)
     }
 }

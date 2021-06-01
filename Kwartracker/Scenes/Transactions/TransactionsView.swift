@@ -10,6 +10,7 @@ import SwiftUI
 struct TransactionsView: View {
     @EnvironmentObject var store: AppStore
     @State var searchTransaction: String = ""
+    @State var isAddTransactionLinkActive = false
     @State var presentSearchModal: Bool = false
 
     init() {
@@ -63,6 +64,7 @@ struct TransactionsView: View {
 }
 
 private struct TransactionsHeaderView: View {
+    @State var isAddTransactionLinkActive: Bool = false
     var body: some View {
         NavigationBarView(
             title: L10n.TransactionsPage.titleBar) {
@@ -75,12 +77,19 @@ private struct TransactionsHeaderView: View {
                 CircleButtonStyle(buttonColor: Asset.Colors.teal.color)
             )
         } rightBarViewContent: {
-            Button(action: {
-            }) {
-                Image(uiImage: Asset.Images.addIconTeal.image)
-                    .frame(width: 10, height: 10)
+            NavigationLink(
+                destination: AddTransactionView(),
+                isActive: $isAddTransactionLinkActive
+            ) {
+                Button(action: {
+                    isAddTransactionLinkActive.toggle()
+                }) {
+                    Image(uiImage: Asset.Images.addIconTeal.image)
+                        .frame(width: 10, height: 10)
+                }
+                .buttonStyle(CircleButtonStyle(buttonColor: .white))
             }
-            .buttonStyle(CircleButtonStyle(buttonColor: .white))
+
         }
     }
 }
