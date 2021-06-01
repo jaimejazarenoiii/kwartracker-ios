@@ -12,7 +12,7 @@ struct ProfileView: View {
     
     var body: some View {
         HStack {
-            Image(uiImage: Asset.Images.sampleImage.image)
+            Image(uiImage: Asset.Images.icSample.image)
                 .resizable()
                 .frame(width: frameSize, height: frameSize, alignment: .center)
                 .clipShape(Circle())

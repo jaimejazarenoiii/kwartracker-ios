@@ -77,6 +77,7 @@ struct ListButtonView: View {
         }) {
             HStack {
                 Image(uiImage: sideMenu.image)
+                    .renderingMode(.template)
                     .frame(width: size, height: imgHeight, alignment: .leading)
                     .foregroundColor(didTap ? Color(Asset.Colors.teal.color) : .white)
                     .padding(.leading, imagePadding)
