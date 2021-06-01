@@ -8,36 +8,23 @@
 import SwiftUI
 
 struct MyProfileContentView: View {
-    let name: String = L10n.ProfilePage.dummyName
+    let neumorphicBoxHeight: CGFloat = 190
+    let horizontalMargin: CGFloat = 30
+    let topMargin: CGFloat = 15
+    let editHorizontalMargin: CGFloat = -15
     
     var body: some View {
         VStack(alignment: .leading) {
             EditButtonView()
-                .padding(.horizontal, -15)
+                .padding(.horizontal, editHorizontalMargin)
             
-            ZStack {
-                NeumorphicEffect(rectSize: CGSize(width: UIScreen.main.bounds.width-60, height: 190))
-                
-                VStack {
-                    ProfilePictureView()
-                    
-                    Text(name)
-                        .font(.system(size: 15))
-                        .padding(.top)
-                }
-            }
-            .padding([.top, .bottom])
-            
-            ProfileDetailsLabel(label: L10n.ProfilePage.Label.contactNumber, value: L10n.ProfilePage.dummyNumber)
-            
-            ProfileDetailsLabel(label: L10n.ProfilePage.Label.birthdate, value: L10n.ProfilePage.dummyBirthdate)
-            
-            ProfileDetailsLabel(label: L10n.ProfilePage.Label.address, value: L10n.ProfilePage.dummyAddress)
+            MyProfileBoxView()
+            MyProfileDetailView()
             
             Spacer()
         }
-        .padding([.leading, .trailing], 30)
-        .padding(.top, 15)
+        .padding([.leading, .trailing], horizontalMargin)
+        .padding(.top, topMargin)
     }
 }
 
@@ -48,9 +35,46 @@ struct MyProfileContentView_Previews: PreviewProvider {
     }
 }
 
+private struct MyProfileBoxView: View {
+    let name: String = L10n.ProfilePage.dummyName
+    let neumorphicBoxHeight: CGFloat = 190
+    let horizontalMargin: CGFloat = 30
+    let fontSize: CGFloat = 15
+    
+    var body: some View {
+        ZStack {
+            NeumorphicEffect(rectSize: CGSize(width: UIScreen.main.bounds.width - (horizontalMargin * 2),
+                                              height: neumorphicBoxHeight))
+            
+            VStack {
+                ProfilePictureView()
+                
+                Text(name)
+                    .font(.system(size: fontSize))
+                    .padding(.top)
+            }
+        }
+        .padding([.top, .bottom])
+    }
+}
+
+
+private struct MyProfileDetailView: View {
+    var body: some View {
+        Group {
+            ProfileDetailsLabel(label: L10n.ProfilePage.Label.contactNumber, value: L10n.ProfilePage.dummyNumber)
+            ProfileDetailsLabel(label: L10n.ProfilePage.Label.birthdate, value: L10n.ProfilePage.dummyBirthdate)
+            ProfileDetailsLabel(label: L10n.ProfilePage.Label.address, value: L10n.ProfilePage.dummyAddress)
+        }
+    }
+}
+
+
 private struct ProfileDetailsLabel: View {
     let label: String
     let value: String
+    private let fontSize: CGFloat = 15
+    private let topMargin: CGFloat = 1
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -60,8 +84,8 @@ private struct ProfileDetailsLabel: View {
                 .padding(.top)
             
             Text(value)
-                .font(.system(size: 15))
-                .padding(.top, 1)
+                .font(.system(size: fontSize))
+                .padding(.top, topMargin)
         }
     }
 }
