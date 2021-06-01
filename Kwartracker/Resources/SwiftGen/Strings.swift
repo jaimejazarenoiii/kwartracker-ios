@@ -259,6 +259,31 @@ internal enum L10n {
     }
   }
 
+  internal enum TransactionsCreateFormModal {
+    /// Default date range
+    internal static let title = L10n.tr("Localizable", "transactions_create_form_modal.title")
+    internal enum ButtonTitle {
+      /// Apply
+      internal static let apply = L10n.tr("Localizable", "transactions_create_form_modal.button_title.apply")
+    }
+    internal enum InputField {
+      /// Select category
+      internal static let category = L10n.tr("Localizable", "transactions_create_form_modal.input_field.category")
+      /// This week
+      internal static let dateRange = L10n.tr("Localizable", "transactions_create_form_modal.input_field.date_range")
+      /// All wallet
+      internal static let walletType = L10n.tr("Localizable", "transactions_create_form_modal.input_field.wallet_type")
+    }
+    internal enum InputLabel {
+      /// Category
+      internal static let category = L10n.tr("Localizable", "transactions_create_form_modal.input_label.category")
+      /// Date range
+      internal static let dateRange = L10n.tr("Localizable", "transactions_create_form_modal.input_label.date_range")
+      /// Wallet Type
+      internal static let walletType = L10n.tr("Localizable", "transactions_create_form_modal.input_label.wallet_type")
+    }
+  }
+
   internal enum TransactionsPage {
     /// + %@
     internal static func addAmount(_ p1: Any) -> String {

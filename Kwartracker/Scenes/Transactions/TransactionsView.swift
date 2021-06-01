@@ -11,6 +11,7 @@ struct TransactionsView: View {
     @EnvironmentObject var store: AppStore
     @State var searchTransaction: String = ""
     @State var isAddTransactionLinkActive = false
+    @State var presentSearchModal: Bool = false
 
     init() {
         setUpTableViewAppearance()
@@ -19,8 +20,6 @@ struct TransactionsView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color(Asset.Colors.teal.color)
-                    .ignoresSafeArea(.all)
 
                 VStack {
                     TransactionsHeaderView()
@@ -35,7 +34,10 @@ struct TransactionsView: View {
                             .edgesIgnoringSafeArea(.bottom)
 
                         VStack {
-                            TransactionsSearchBarView(searchTransaction: $searchTransaction)
+                            TransactionsSearchBarView(
+                                searchTransaction: $searchTransaction,
+                                presentSearchModal: $presentSearchModal
+                            )
                             TransactionsListView(
                                 transactions: store.state.transactionState.transactions,
                                 shouldShowLoadmore: store.state.transactionState.shouldShowLoadmore
@@ -44,7 +46,13 @@ struct TransactionsView: View {
                     }
                 }
                 .padding(.top, 10)
+
+                SearchTransactionFormModalView(isPresented: $presentSearchModal)
             }
+            .background(
+                Color(Asset.Colors.teal.color)
+                    .ignoresSafeArea()
+            )
             .navigationBarHidden(true)
         }
     }
@@ -88,6 +96,7 @@ private struct TransactionsHeaderView: View {
 
 private struct TransactionsSearchBarView: View {
     @Binding var searchTransaction: String
+    @Binding var presentSearchModal: Bool
 
     var body: some View {
         Group {
@@ -124,6 +133,9 @@ private struct TransactionsSearchBarView: View {
                     )
 
                 Button(action: {
+                    withAnimation {
+                        presentSearchModal.toggle()
+                    }
                 }) {
                     Image(uiImage: Asset.Images.filterIcon.image)
                 }
