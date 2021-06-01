@@ -10,20 +10,22 @@ import SwiftUI
 struct ContentView: View {
     
     @State var showSidebar: Bool = false
+    let width: CGFloat = -100
+    let sideBarWidth: CGFloat = 300
         
     var body: some View {
         
         //https://blckbirds.com/post/side-menu-hamburger-menu-in-swiftui/
         let drag = DragGesture()
             .onEnded {
-                if $0.translation.width < -100 {
+                if $0.translation.width < width {
                     withAnimation {
                         self.showSidebar = false
                     }
                 }
             }
         
-        return SideBarStack(sidebarWidth: 300, showSidebar: $showSidebar) {
+        return SideBarStack(sidebarWidth: sideBarWidth, showSidebar: $showSidebar) {
             SideMenuView()
         } content: {
             TransactionHistoryView(showSidebar: $showSidebar)

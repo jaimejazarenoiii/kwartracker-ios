@@ -54,7 +54,8 @@ struct ListButtonView: View {
     let actionHandler: (() -> Void)
     var sideMenu: SideMenu
     @State var didTap: Bool = false
-    let height: CGFloat = 60
+    let imgHeight: CGFloat = 20
+    let size: CGFloat = 16
     
     var body: some View {
         Button(action: {
@@ -66,10 +67,11 @@ struct ListButtonView: View {
         }) {
             HStack {
                 Image(uiImage: sideMenu.image)
-                    .frame(width: 16, height: 14, alignment: .leading)
+                    .frame(width: size, height: imgHeight, alignment: .leading)
+                    .foregroundColor(didTap ? Color(Asset.Colors.teal.color) : .white)
                     .padding(.leading, 10)
                 Text(sideMenu.text)
-                    .font(.system(size: 16))
+                    .font(.system(size: size))
                     .foregroundColor(didTap ? Color(Asset.Colors.teal.color) : .white)
                 Spacer()
             }
@@ -79,12 +81,13 @@ struct ListButtonView: View {
 
 struct PrimaryButtonStyle: ButtonStyle {
     let height: CGFloat = 60
+    let buttonCornerRaduis: CGFloat = 20
     @State var didPressed: Bool = false
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .font(.system(size: 16))
             .frame(maxWidth: .infinity, minHeight: height, maxHeight: height)
             .background(didPressed ? .white : Color(Asset.Colors.teal.color))
-            .cornerRadius(20)
+            .cornerRadius(buttonCornerRaduis)
     }
 }

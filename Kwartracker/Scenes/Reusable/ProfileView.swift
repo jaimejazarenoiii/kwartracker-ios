@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ProfileView: View {
+    let frameSize: CGFloat = 40
+    
     var body: some View {
         HStack {
-            Image(uiImage: Asset.Images.icSample.image)
+            Image(uiImage: Asset.Images.sampleImage.image)
                 .resizable()
-                .frame(width: 40, height: 40, alignment: .center)
+                .frame(width: frameSize, height: frameSize, alignment: .center)
                 .clipShape(Circle())
             Text("Samantha Tagli")
                 .font(.system(size: 18, weight: .medium, design: .default))
