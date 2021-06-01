@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct MyProfileContentView: View {
-    let neumorphicBoxHeight: CGFloat = 190
-    let horizontalMargin: CGFloat = 30
-    let topMargin: CGFloat = 15
-    let editHorizontalMargin: CGFloat = -15
+    private let neumorphicBoxHeight: CGFloat = 190
+    private let horizontalMargin: CGFloat = 30
+    private let topMargin: CGFloat = 15
+    private let editHorizontalMargin: CGFloat = -15
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -37,9 +37,9 @@ struct MyProfileContentView_Previews: PreviewProvider {
 
 private struct MyProfileBoxView: View {
     let name: String = L10n.ProfilePage.dummyName
-    let neumorphicBoxHeight: CGFloat = 190
-    let horizontalMargin: CGFloat = 30
-    let fontSize: CGFloat = 15
+    private let neumorphicBoxHeight: CGFloat = 190
+    private let horizontalMargin: CGFloat = 30
+    private let fontSize: CGFloat = 15
     
     var body: some View {
         ZStack {
