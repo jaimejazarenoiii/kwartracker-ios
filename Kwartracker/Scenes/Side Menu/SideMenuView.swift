@@ -92,7 +92,7 @@ struct ListButtonView: View {
 struct PrimaryButtonStyle: ButtonStyle {
     let height: CGFloat = 60
     let buttonCornerRaduis: CGFloat = 20
-    let fontSize:CGFloat = 16
+    let fontSize: CGFloat = 16
     @State var didPressed: Bool = false
     
     func makeBody(configuration: Self.Configuration) -> some View {
