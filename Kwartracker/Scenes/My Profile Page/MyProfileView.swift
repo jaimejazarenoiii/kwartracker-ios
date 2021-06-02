@@ -23,13 +23,3 @@ struct MyProfileView_Previews: PreviewProvider {
         MyProfileView()
     }
 }
-
-struct MyProfileHeaderView: View {
-    var body: some View {
-        NavigationHeaderView(
-            navigationTitle: L10n.ProfilePage.title,
-            navigationButton: ""
-        )
-        .padding(.bottom, -10)
-    }
-}
