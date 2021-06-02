@@ -18,7 +18,7 @@ struct MyProfileContentView: View {
             EditButtonView()
                 .padding(.horizontal, editHorizontalMargin)
             
-            MyProfileBoxView()
+            MyProfileCardView()
             MyProfileDetailView()
             
             Spacer()
@@ -35,16 +35,17 @@ struct MyProfileContentView_Previews: PreviewProvider {
     }
 }
 
-private struct MyProfileBoxView: View {
+private struct MyProfileCardView: View {
     let name: String = L10n.ProfilePage.dummyName
-    private let neumorphicBoxHeight: CGFloat = 190
-    private let horizontalMargin: CGFloat = 30
+    private let cardHeight: CGFloat = 190
     private let fontSize: CGFloat = 15
+    private let horizontalMargin: CGFloat = 30
+    private let verticalMargin: CGFloat = 10
     
     var body: some View {
         ZStack {
             NeumorphicEffect(rectSize: CGSize(width: UIScreen.main.bounds.width - (horizontalMargin * 2),
-                                              height: neumorphicBoxHeight))
+                                              height: cardHeight))
             
             VStack {
                 ProfilePictureView()
@@ -54,7 +55,8 @@ private struct MyProfileBoxView: View {
                     .padding(.top)
             }
         }
-        .padding([.top, .bottom])
+        .frame(height: cardHeight)
+        .padding(.vertical, verticalMargin)
     }
 }
 
