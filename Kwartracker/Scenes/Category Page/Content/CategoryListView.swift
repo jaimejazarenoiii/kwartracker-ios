@@ -23,6 +23,7 @@ struct CategoryListView: View {
     private let verticalMargin: CGFloat = 8
     private let fontSize: CGFloat = 14
     private let leftMargin: CGFloat = 40
+    private let animationSpeed: Double = 2
 
     var body: some View {
         ZStack {
@@ -34,7 +35,7 @@ struct CategoryListView: View {
                 Text(title)
                     .font(.system(size: fontSize))
                     .onTapGesture {
-                        withAnimation(.spring().speed(2)) {
+                        withAnimation(.spring().speed(animationSpeed)) {
                             if subCategory != nil {
                                 show.toggle()
                             }

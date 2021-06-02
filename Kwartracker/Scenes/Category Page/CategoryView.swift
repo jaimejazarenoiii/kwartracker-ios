@@ -12,7 +12,7 @@ struct CategoryView: View {
         SkeletalView(header: {
             NavigationHeaderView(
                 navigationTitle: L10n.SettingsPage.NavigationItem.categories,
-                navigationButton: L10n.CategoryPage.NavigationButtonItem.addIcon
+                navigationButton: ""
             )
         }, body: {
             CategoryBodyView()

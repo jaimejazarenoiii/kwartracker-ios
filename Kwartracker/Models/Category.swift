@@ -25,6 +25,26 @@ struct Category: Identifiable {
                 Category(id: 13, title: "Category 1 Sub 3"),
             ]
         ),
+        Category(
+            id: 2,
+            icon: nil,
+            title: "Category 2",
+            childCategories: [
+                Category(id: 21, title: "Category 2 Sub 1"),
+                Category(id: 22, title: "Category 2 Sub 2"),
+                Category(id: 23, title: "Category 2 Sub 3"),
+            ]
+        ),
+        Category(
+            id: 3,
+            icon: nil,
+            title: "Category 3",
+            childCategories: [
+                Category(id: 31, title: "Category 3 Sub 1"),
+                Category(id: 32, title: "Category 3 Sub 2"),
+                Category(id: 33, title: "Category 3 Sub 3"),
+            ]
+        ),
     ]
     #endif
 }
