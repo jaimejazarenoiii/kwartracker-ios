@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MyProfileHeaderView: View {
     private let bottomPadding: CGFloat = -10
+    
     var body: some View {
         NavigationHeaderView(
             navigationTitle: L10n.ProfilePage.title,
