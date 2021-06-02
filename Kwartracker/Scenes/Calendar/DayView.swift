@@ -12,6 +12,7 @@ struct DayView: View {
     private let fontSize: CGFloat = 12
     private let cornerRadius: CGFloat = 14
     private let bottomMargin: CGFloat = 5
+    private let lineWidth: CGFloat = 1
     var day: String
     var body: some View {
         Text(day)
@@ -22,7 +23,7 @@ struct DayView: View {
             .overlay(
                 RoundedRectangle(cornerRadius: cornerRadius)
                     .stroke(Color(Asset.Colors.solitudeGreyShade2.color),
-                            lineWidth: 1)
+                            lineWidth: lineWidth)
             )
             .padding([.bottom], bottomMargin)
     }

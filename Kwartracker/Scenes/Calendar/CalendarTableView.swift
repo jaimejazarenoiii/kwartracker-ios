@@ -86,7 +86,7 @@ struct CalendarTableView: View {
                         shadowRadius: shadowRadius,
                         shadowOffset: shadowOffset)
                     
-                    Text(L10n.Button.Label.apply)
+                    Text(L10n.CalendarPage.Label.apply)
                         .foregroundColor(.white)
                         .font(.system(size: fontSize))
                 }

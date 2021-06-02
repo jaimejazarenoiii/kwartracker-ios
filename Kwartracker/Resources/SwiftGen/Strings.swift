@@ -28,10 +28,10 @@ internal enum L10n {
     }
   }
 
-  internal enum Button {
+  internal enum CalendarPage {
     internal enum Label {
       /// Apply
-      internal static let apply = L10n.tr("Localizable", "button.label.apply")
+      internal static let apply = L10n.tr("Localizable", "calendar_page.label.apply")
     }
   }
 
