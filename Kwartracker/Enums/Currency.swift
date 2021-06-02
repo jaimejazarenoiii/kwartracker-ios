@@ -7,7 +7,14 @@
 
 import Foundation
 
-enum Currency: String {
-    case philippinePeso = "fil_PH"
-    case usDollar = "en_US"
+enum Currency: Int {
+    case philippinePeso
+    case usDollar
+
+    var localeNumberFormat: String {
+        switch self {
+        case .philippinePeso: return "fil_PH"
+        case .usDollar: return "en_US"
+        }
+    }
 }

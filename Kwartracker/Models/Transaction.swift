@@ -27,7 +27,7 @@ struct Transaction {
     var amountCurrencyDisplay: String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
-        formatter.locale = Locale(identifier: wallet.currency.rawValue)
+        formatter.locale = Locale(identifier: wallet.currency.localeNumberFormat)
         return formatter.string(from: NSNumber(value: amount)) ?? "0"
     }
 
@@ -41,6 +41,17 @@ struct Transaction {
 
     func getMonth() -> String {
         getRawDateTime(format: "MMM") ?? ""
+    }
+
+    var dayDisplay: String {
+        if let day = dateTime?.day {
+            return "\(day)"
+        }
+        return "01"
+    }
+
+    var monthDisplay: String {
+        dateTime?.monthInString ?? "JAN"
     }
 
     func createTransactionErrorMessage() -> String? {
