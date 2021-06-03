@@ -151,4 +151,7 @@ vendor/bundle/
 ## Github store
 .DS_Store
 
+## Snapshot
+KwartrackerUITests/screenshots/
+
 # End of https://www.gitignore.io/api/xcode,swift,cocoapods,objective-c
