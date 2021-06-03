@@ -66,7 +66,6 @@
 		24AC7CC326663F6200CE4282 /* CustomToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AC7CC226663F6200CE4282 /* CustomToggle.swift */; };
 		290CA1B2261EABE400239EA7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 290CA1B1261EABE400239EA7 /* swiftgen.yml */; };
 		291DFF942632D61B00DAC0EF /* WalletOneCardCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291DFF932632D61B00DAC0EF /* WalletOneCardCenterView.swift */; };
-		293029A926678C030013557E /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293029A826678C030013557E /* MessageView.swift */; };
 		29327541264E13D800E8BA8B /* CardTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29327540264E13D800E8BA8B /* CardTargetView.swift */; };
 		2932755A264E266F00E8BA8B /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29327559264E266F00E8BA8B /* ProgressView.swift */; };
 		29327571264E3D5C00E8BA8B /* TargetViewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29327570264E3D5C00E8BA8B /* TargetViewLabel.swift */; };
@@ -76,19 +75,17 @@
 		29327593264E729000E8BA8B /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29327592264E729000E8BA8B /* Double+Extension.swift */; };
 		29464F542637C3A100E6E082 /* CardPageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29464F532637C3A100E6E082 /* CardPageControlView.swift */; };
 		29464F5926380F3400E6E082 /* WalletActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29464F5826380F3400E6E082 /* WalletActionButtonView.swift */; };
+		2947156A2668A5550067F481 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294715692668A5550067F481 /* MessageView.swift */; };
 		298536F32660DBAA0024A25C /* NeumorphicEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298536F22660DBAA0024A25C /* NeumorphicEffect.swift */; };
 		29A8991B264CA53100671237 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A8991A264CA53100671237 /* SnapshotHelper.swift */; };
 		29A89920264CA55C00671237 /* WalletPageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A8991F264CA55C00671237 /* WalletPageUITests.swift */; };
 		29AB6750264531EB00D375A6 /* CardLabelModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB674F264531EB00D375A6 /* CardLabelModifier.swift */; };
 		29AB67582645322700D375A6 /* CardValueModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB67572645322700D375A6 /* CardValueModifier.swift */; };
 		29AB675D2645326400D375A6 /* WalletActionButtonWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB675C2645326400D375A6 /* WalletActionButtonWithLabel.swift */; };
-		29AB67632645329400D375A6 /* RoundWhiteButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AB67622645329300D375A6 /* RoundWhiteButtonModifier.swift */; };
 		29AE102D262EAF5D00B383CF /* WalletPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AE102C262EAF5D00B383CF /* WalletPageView.swift */; };
-		29D35FA0264BE45A00C4DD48 /* WalletNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D35F9F264BE45A00C4DD48 /* WalletNavigationView.swift */; };
 		29D35FA5264BEDB500C4DD48 /* WalletSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D35FA4264BEDB500C4DD48 /* WalletSectionHeader.swift */; };
 		29ED9DA8265E34EA004C303E /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 29ED9DA7265E34EA004C303E /* SwiftDate */; };
 		29F6C1FE262ED69800DB2139 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F6C1FD262ED69800DB2139 /* CardView.swift */; };
-		29ED9DA8265E34EA004C303E /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 29ED9DA7265E34EA004C303E /* SwiftPackageProductDependency */; };
 		7A17D13226298678005BB190 /* UserField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13126298678005BB190 /* UserField.swift */; };
 		7A17D13A26298695005BB190 /* SNSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13926298695005BB190 /* SNSButton.swift */; };
 		7A734D92262FFAA900557EF7 /* BWNeumorphicRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A734D91262FFAA900557EF7 /* BWNeumorphicRectangle.swift */; };
@@ -110,7 +107,6 @@
 		C6CDDCB0263811F700CB1562 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CDDCAF263811F700CB1562 /* AlertView.swift */; };
 		C6CDDCC52638125C00CB1562 /* MainAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CDDCC42638125C00CB1562 /* MainAlertView.swift */; };
 		C6CDDCCB2638135B00CB1562 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CDDCCA2638135B00CB1562 /* ButtonView.swift */; };
-		C6CDDCE726381F6E00CB1562 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CDDCE626381F6E00CB1562 /* MessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,7 +207,6 @@
 		24AC7CC226663F6200CE4282 /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
 		290CA1B1261EABE400239EA7 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		291DFF932632D61B00DAC0EF /* WalletOneCardCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletOneCardCenterView.swift; sourceTree = "<group>"; };
-		293029A826678C030013557E /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		29327540264E13D800E8BA8B /* CardTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTargetView.swift; sourceTree = "<group>"; };
 		29327559264E266F00E8BA8B /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		29327570264E3D5C00E8BA8B /* TargetViewLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetViewLabel.swift; sourceTree = "<group>"; };
@@ -221,15 +216,14 @@
 		29327592264E729000E8BA8B /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		29464F532637C3A100E6E082 /* CardPageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPageControlView.swift; sourceTree = "<group>"; };
 		29464F5826380F3400E6E082 /* WalletActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletActionButtonView.swift; sourceTree = "<group>"; };
+		294715692668A5550067F481 /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		298536F22660DBAA0024A25C /* NeumorphicEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicEffect.swift; sourceTree = "<group>"; };
 		29A8991A264CA53100671237 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		29A8991F264CA55C00671237 /* WalletPageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPageUITests.swift; sourceTree = "<group>"; };
 		29AB674F264531EB00D375A6 /* CardLabelModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLabelModifier.swift; sourceTree = "<group>"; };
 		29AB67572645322700D375A6 /* CardValueModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardValueModifier.swift; sourceTree = "<group>"; };
 		29AB675C2645326400D375A6 /* WalletActionButtonWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletActionButtonWithLabel.swift; sourceTree = "<group>"; };
-		29AB67622645329300D375A6 /* RoundWhiteButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundWhiteButtonModifier.swift; sourceTree = "<group>"; };
 		29AE102C262EAF5D00B383CF /* WalletPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPageView.swift; sourceTree = "<group>"; };
-		29D35F9F264BE45A00C4DD48 /* WalletNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletNavigationView.swift; sourceTree = "<group>"; };
 		29D35FA4264BEDB500C4DD48 /* WalletSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSectionHeader.swift; sourceTree = "<group>"; };
 		29F6C1FD262ED69800DB2139 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		2B40F9CAECD52C6174D15F90 /* Pods-Kwartracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker.debug.xcconfig"; path = "Target Support Files/Pods-Kwartracker/Pods-Kwartracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -254,7 +248,6 @@
 		C6CDDCAF263811F700CB1562 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		C6CDDCC42638125C00CB1562 /* MainAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAlertView.swift; sourceTree = "<group>"; };
 		C6CDDCCA2638135B00CB1562 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
-		C6CDDCE626381F6E00CB1562 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		D507178A90E22E9AB2ABF11A /* Pods_Kwartracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kwartracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD3E9E5BB7FB306F0A54B049 /* Pods-Kwartracker-KwartrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker-KwartrackerUITests.release.xcconfig"; path = "Target Support Files/Pods-Kwartracker-KwartrackerUITests/Pods-Kwartracker-KwartrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DF4D41E232EA75D22CD128E1 /* Pods-Kwartracker-KwartrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kwartracker-KwartrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Kwartracker-KwartrackerUITests/Pods-Kwartracker-KwartrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -267,7 +260,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29ED9DA8265E34EA004C303E /* BuildFile in Frameworks */,
+				29ED9DA8265E34EA004C303E /* SwiftDate in Frameworks */,
 				A9CFE877880189ECE3F83CB8 /* Pods_Kwartracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -714,21 +707,12 @@
 			path = "View Modefier";
 			sourceTree = "<group>";
 		};
-		29AB67612645328400D375A6 /* Button Modifier */ = {
-			isa = PBXGroup;
-			children = (
-				29AB67622645329300D375A6 /* RoundWhiteButtonModifier.swift */,
-			);
-			path = "Button Modifier";
-			sourceTree = "<group>";
-		};
 		29AE102B262EAF3D00B383CF /* Wallet Page */ = {
 			isa = PBXGroup;
 			children = (
 				29327548264E193700E8BA8B /* Card Views */,
 				29464F5826380F3400E6E082 /* WalletActionButtonView.swift */,
 				29AB675C2645326400D375A6 /* WalletActionButtonWithLabel.swift */,
-				29D35F9F264BE45A00C4DD48 /* WalletNavigationView.swift */,
 				291DFF932632D61B00DAC0EF /* WalletOneCardCenterView.swift */,
 				29AE102C262EAF5D00B383CF /* WalletPageView.swift */,
 				29D35FA4264BEDB500C4DD48 /* WalletSectionHeader.swift */,
@@ -762,7 +746,6 @@
 			isa = PBXGroup;
 			children = (
 				29327592264E729000E8BA8B /* Double+Extension.swift */,
-				29AB67612645328400D375A6 /* Button Modifier */,
 				29AB674E264531B600D375A6 /* View Modefier */,
 				298536F12660DB8A0024A25C /* Neumorphic Views */,
 				24AC7CC126663F4400CE4282 /* Toggle */,
@@ -872,7 +855,7 @@
 			isa = PBXGroup;
 			children = (
 				C6CDDCCA2638135B00CB1562 /* ButtonView.swift */,
-				293029A826678C030013557E /* MessageView.swift */,
+				294715692668A5550067F481 /* MessageView.swift */,
 				246D7235265B54CE0011F960 /* BirthdateField.swift */,
 			);
 			path = Reusable;
@@ -912,7 +895,7 @@
 			);
 			name = Kwartracker;
 			packageProductDependencies = (
-				29ED9DA7265E34EA004C303E /* SwiftPackageProductDependency */,
+				29ED9DA7265E34EA004C303E /* SwiftDate */,
 			);
 			productName = Kwartracker;
 			productReference = 163E592A260CB88E00E54401 /* Kwartracker.app */;
@@ -989,7 +972,7 @@
 			);
 			mainGroup = 163E5921260CB88E00E54401;
 			packageReferences = (
-				29ED9DA6265E34EA004C303E /* RemoteSwiftPackageReference */,
+				29ED9DA6265E34EA004C303E /* XCRemoteSwiftPackageReference "SwiftDate" */,
 			);
 			productRefGroup = 163E592B260CB88E00E54401 /* Products */;
 			projectDirPath = "";
@@ -1146,7 +1129,6 @@
 				244A3B7E263A644E00D8B08B /* EditProfileView.swift in Sources */,
 				24AC7CC326663F6200CE4282 /* CustomToggle.swift in Sources */,
 				7A7FA1322637B70A00484F51 /* FootnoteButton.swift in Sources */,
-				C6CDDCE726381F6E00CB1562 /* MessageView.swift in Sources */,
 				29F6C1FE262ED69800DB2139 /* CardView.swift in Sources */,
 				16C5C787263534FE00F33B72 /* Wallet.swift in Sources */,
 				163E5930260CB88E00E54401 /* ContentView.swift in Sources */,
@@ -1155,7 +1137,6 @@
 				163DABCC264B59CA00DCBB47 /* BrowsePhotoField.swift in Sources */,
 				16C5C77D2635349F00F33B72 /* Transaction.swift in Sources */,
 				7A17D13226298678005BB190 /* UserField.swift in Sources */,
-				29D35FA0264BE45A00C4DD48 /* WalletNavigationView.swift in Sources */,
 				16796F372664870900A99394 /* Date+Extensions.swift in Sources */,
 				C6CDDCB0263811F700CB1562 /* AlertView.swift in Sources */,
 				24748008262832B800C7A9A8 /* ChangePasswordBodyView.swift in Sources */,
@@ -1166,7 +1147,6 @@
 				C6249AA82637EB8C00C55B31 /* SignUpView.swift in Sources */,
 				29327593264E729000E8BA8B /* Double+Extension.swift in Sources */,
 				C65699C32637C91400D24D2F /* SignUpFooterView.swift in Sources */,
-				293029A926678C030013557E /* MessageView.swift in Sources */,
 				7AD9B8732626EC2A00CF0EA6 /* SkeletalView.swift in Sources */,
 				7AD9B86B2626EC0000CF0EA6 /* SignInHeaderView.swift in Sources */,
 				16895014264AC06B00EED051 /* SelectableFieldForm.swift in Sources */,
@@ -1182,6 +1162,7 @@
 				29AB675D2645326400D375A6 /* WalletActionButtonWithLabel.swift in Sources */,
 				7AB88B1E262805F300E2DFD3 /* View+Extensions.swift in Sources */,
 				29AE102D262EAF5D00B383CF /* WalletPageView.swift in Sources */,
+				2947156A2668A5550067F481 /* MessageView.swift in Sources */,
 				164E95FA26122BE200D84B7F /* AppAction.swift in Sources */,
 				2932755A264E266F00E8BA8B /* ProgressView.swift in Sources */,
 				16C5C7A026362D3500F33B72 /* TransactionsViewState.swift in Sources */,
@@ -1585,7 +1566,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		29ED9DA6265E34EA004C303E /* RemoteSwiftPackageReference */ = {
+		29ED9DA6265E34EA004C303E /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/malcommac/SwiftDate.git";
 			requirement = {
@@ -1596,9 +1577,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		29ED9DA7265E34EA004C303E /* SwiftPackageProductDependency */ = {
+		29ED9DA7265E34EA004C303E /* SwiftDate */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 29ED9DA6265E34EA004C303E /* RemoteSwiftPackageReference */;
+			package = 29ED9DA6265E34EA004C303E /* XCRemoteSwiftPackageReference "SwiftDate" */;
 			productName = SwiftDate;
 		};
 /* End XCSwiftPackageProductDependency section */

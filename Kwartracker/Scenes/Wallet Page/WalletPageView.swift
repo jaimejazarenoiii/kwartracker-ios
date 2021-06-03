@@ -10,11 +10,39 @@ import SwiftUI
 struct WalletPageView: View {
     @EnvironmentObject var store: AppStore
     @State private var margin: CGFloat = 30
+    @State private var buttonToggle: Bool = false
     private var separator: UIColor = Asset.Colors.spindleGrey.color
     private var separatorHeight: CGFloat = 0.5
+    private var navIconSize: CGFloat = 10
     var body: some View {
         SkeletalView {
-            WalletNavigationView(navigationTitle: L10n.Wallet.Title.myWallet)
+            NavigationBarView(
+                title: L10n.Wallet.Title.myWallet) {
+                Button(action: {
+                }) {
+                    Image(uiImage: Asset.Images.arrowLeftIconWhite.image)
+                        .frame(width: navIconSize, height: navIconSize)
+                }
+                .buttonStyle(
+                    CircleButtonStyle(buttonColor: Asset.Colors.teal.color)
+                )
+            } rightBarViewContent: {
+                
+                NavigationLink(
+                    destination: TransactionsView(),
+                    isActive: $buttonToggle) {
+                    
+                    Button(action: {
+                        buttonToggle.toggle()
+                    }, label: {
+                        Image(uiImage: Asset.Images.addIcon.image)
+                            .renderingMode(.template)
+                            .foregroundColor(Color(Asset.Colors.teal.color))
+                            .frame(width: navIconSize, height: navIconSize)
+                    })
+                    .buttonStyle(CircleButtonStyle(buttonColor: .white))
+                }
+            }
         } body: {
             ScrollView(showsIndicators: true) {
                 VStack {
