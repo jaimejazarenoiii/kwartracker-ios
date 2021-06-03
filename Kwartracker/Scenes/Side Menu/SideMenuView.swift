@@ -12,7 +12,6 @@ struct SideMenuView: View {
     @State private var selectedItemId: String = ""
     @State private var sideMenu: SideMenu?
     
-    let profileViewPadding: CGFloat = 20
     let listTopBottom: CGFloat = 3
     let listLeftRight: CGFloat = 0
     let frameSize: CGFloat = 15
@@ -28,7 +27,6 @@ struct SideMenuView: View {
     var body: some View {
         VStack(alignment: .leading) {
             ProfileView()
-                .padding([.leading, .top], profileViewPadding)
             List {
                 ForEach(SideMenu.sideMenuList) { item in
                     ListButtonView(actionHandler: {
@@ -39,7 +37,6 @@ struct SideMenuView: View {
                                           bottom: listTopBottom, trailing: listLeftRight))
             }
             .listStyle(SidebarListStyle())
-            
             Button(action: {}) {
                 HStack {
                     Image(uiImage: Asset.Images.powerIcon.image)
