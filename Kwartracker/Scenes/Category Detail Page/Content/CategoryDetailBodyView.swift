@@ -66,8 +66,6 @@ private struct ParentCategoryDetailView: View {
                       bottomMargin: bottomMargin,
                       fontColor: Color(Asset.Colors.spindleGrey.color))
             TextGroupView(text: L10n.CategoryDetailPage.categoryParentName,
-                      fontSize: nil,
-                      bottomMargin: nil,
                       fontColor: Color(Asset.Colors.nightRider.color))
         }.padding(.horizontal)
     }

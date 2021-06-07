@@ -36,16 +36,12 @@ private struct LoginDetailsView: View {
                           bottomMargin: bottomMargin,
                           fontColor: Color(Asset.Colors.spindleGrey.color))
                 TextGroupView(text: L10n.LoginAndSecurityPage.DummyData.email,
-                          fontSize: nil,
-                          bottomMargin: nil,
                           fontColor: Color(Asset.Colors.nightRider.color))
                 TextGroupView(text: L10n.SignInPage.Label.password,
                           fontSize: fontSize,
                           bottomMargin: bottomMargin,
                           fontColor: Color(Asset.Colors.spindleGrey.color))
                 TextGroupView(text: L10n.LoginAndSecurityPage.DummyData.password,
-                          fontSize: nil,
-                          bottomMargin: nil,
                           fontColor: Color(Asset.Colors.nightRider.color))
 
                 ButtonView(actionHandler: {}, actionLabel: .changePassword)
