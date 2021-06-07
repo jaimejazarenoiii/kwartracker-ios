@@ -82,7 +82,6 @@
 "change_password_page.confirm_new_password.label" = "Confirm new password";
 "change_password_page.confirm_new_password.placeholder" = "Enter again new password";
 
-
 // Side Menu page
 "side_menu.label.home" = "Home";
 "side_menu.label.transaction" = "Transaction";
@@ -117,3 +116,13 @@
 "login_and_security_page.label.email" = "Email Address";
 "login_and_security_page.dummy_data.email" = "email_email_email@emailemail.com";
 "login_and_security_page.dummy_data.password" = "***************";
+
+// My profile
+"profile_page.title" = "My Profile";
+"profile_page.label.contact_number" = "Contact Number";
+"profile_page.label.birthdate" = "Birthdate";
+"profile_page.label.address" = "Address";
+"profile_page.dummy_name" = "Samantha Mae Tagli";
+"profile_page.dummy_number" = "09012345678";
+"profile_page.dummy_birthdate" = "January 01, 1998";
+"profile_page.dummy_address" = "2F ESY Bldg, corner Ma Cristina St and Juana Osmeña St, Cebu City, Cebu, Philippines 6000";
