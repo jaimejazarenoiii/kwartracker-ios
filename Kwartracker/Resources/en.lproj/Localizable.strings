@@ -82,6 +82,15 @@
 "change_password_page.confirm_new_password.label" = "Confirm new password";
 "change_password_page.confirm_new_password.placeholder" = "Enter again new password";
 
+// Side Menu page
+"side_menu.label.home" = "Home";
+"side_menu.label.transaction" = "Transaction";
+"side_menu.label.wallets" = "Wallets";
+"side_menu.label.reports" = "Reports";
+"side_menu.label.myProfile" = "My Profile";
+"side_menu.label.settings" = "Settings";
+"side_menu.label.logout" = "Logout";
+
 // Delete Confirmation Alert
 "alert_sheet.title.confirmation" = "Confirmation";
 "alert_sheet.body.are_you_sure_you_want_to_delete_this" = "Are you sure you want to delete this?";

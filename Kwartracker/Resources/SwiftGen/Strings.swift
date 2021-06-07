@@ -191,6 +191,25 @@ internal enum L10n {
     }
   }
 
+  internal enum SideMenu {
+    internal enum Label {
+      /// Home
+      internal static let home = L10n.tr("Localizable", "side_menu.label.home")
+      /// Logout
+      internal static let logout = L10n.tr("Localizable", "side_menu.label.logout")
+      /// My Profile
+      internal static let myProfile = L10n.tr("Localizable", "side_menu.label.myProfile")
+      /// Reports
+      internal static let reports = L10n.tr("Localizable", "side_menu.label.reports")
+      /// Settings
+      internal static let settings = L10n.tr("Localizable", "side_menu.label.settings")
+      /// Transaction
+      internal static let transaction = L10n.tr("Localizable", "side_menu.label.transaction")
+      /// Wallets
+      internal static let wallets = L10n.tr("Localizable", "side_menu.label.wallets")
+    }
+  }
+
   internal enum SignInPage {
     internal enum Button {
       /// Recover password

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		047B510A265D0D8E009158F7 /* SideBarStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B5109265D0D8E009158F7 /* SideBarStack.swift */; };
+		047B5116265D0E62009158F7 /* TransactionHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B5115265D0E62009158F7 /* TransactionHistoryView.swift */; };
+		047E2ACB265B815400D1EB9C /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E2ACA265B815400D1EB9C /* SideMenuView.swift */; };
+		047E2AD0265B82B700D1EB9C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E2ACF265B82B700D1EB9C /* ProfileView.swift */; };
+		047E2B3B265B9C1B00D1EB9C /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E2B3A265B9C1B00D1EB9C /* SideMenu.swift */; };
+		04E071EA265E7241000DD4A2 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E071E9265E7241000DD4A2 /* UIView+Extensions.swift */; };
 		163DABCC264B59CA00DCBB47 /* BrowsePhotoField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163DABCB264B59CA00DCBB47 /* BrowsePhotoField.swift */; };
 		163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E592D260CB88E00E54401 /* KwartrackerApp.swift */; };
 		163E5930260CB88E00E54401 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E592F260CB88E00E54401 /* ContentView.swift */; };
@@ -127,6 +133,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		047B5109265D0D8E009158F7 /* SideBarStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarStack.swift; sourceTree = "<group>"; };
+		047B5115265D0E62009158F7 /* TransactionHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryView.swift; sourceTree = "<group>"; };
+		047E2ACA265B815400D1EB9C /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		047E2ACF265B82B700D1EB9C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		047E2B3A265B9C1B00D1EB9C /* SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		04E071E9265E7241000DD4A2 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		163DABCB264B59CA00DCBB47 /* BrowsePhotoField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsePhotoField.swift; sourceTree = "<group>"; };
 		163E592A260CB88E00E54401 /* Kwartracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kwartracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		163E592D260CB88E00E54401 /* KwartrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KwartrackerApp.swift; sourceTree = "<group>"; };
@@ -258,6 +270,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		047B5114265D0E41009158F7 /* Transaction History */ = {
+			isa = PBXGroup;
+			children = (
+				047B5115265D0E62009158F7 /* TransactionHistoryView.swift */,
+			);
+			path = "Transaction History";
+			sourceTree = "<group>";
+		};
+		047E2AC9265B807700D1EB9C /* Side Menu */ = {
+			isa = PBXGroup;
+			children = (
+				047E2ACA265B815400D1EB9C /* SideMenuView.swift */,
+			);
+			path = "Side Menu";
+			sourceTree = "<group>";
+		};
+		04E071E8265E722A000DD4A2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				04E071E9265E7241000DD4A2 /* UIView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		163E5921260CB88E00E54401 = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +379,9 @@
 		163E5963260CBF0400E54401 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				04E071E8265E722A000DD4A2 /* Extensions */,
+				047B5114265D0E41009158F7 /* Transaction History */,
+				047E2AC9265B807700D1EB9C /* Side Menu */,
 				1683C9002629C75700B1D4D8 /* Transactions */,
 				24AC7C91265CAEB600CE4282 /* Login and Security Page */,
 				24AC7C8B265B713C00CE4282 /* Settings Page */,
@@ -745,6 +784,7 @@
 		C6081ADA2652764B003BB9CB /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				047E2B3A265B9C1B00D1EB9C /* SideMenu.swift */,
 				245FFEE52654B71400042B3E /* FieldType.swift */,
 				C6081ADB2652765E003BB9CB /* DialogStatus.swift */,
 			);
@@ -792,6 +832,8 @@
 				C6CDDCCA2638135B00CB1562 /* ButtonView.swift */,
 				7AA77F1C2660D64000C700A2 /* EditButtonView.swift */,
 				C6CDDCE626381F6E00CB1562 /* MessageView.swift */,
+				047E2ACF265B82B700D1EB9C /* ProfileView.swift */,
+				047B5109265D0D8E009158F7 /* SideBarStack.swift */,
 				246D7235265B54CE0011F960 /* BirthdateField.swift */,
 				7AA77F232660ED6000C700A2 /* ProfilePictureView.swift */,
 			);
@@ -1065,6 +1107,7 @@
 				244A3B7E263A644E00D8B08B /* EditProfileView.swift in Sources */,
 				24AC7CC326663F6200CE4282 /* CustomToggle.swift in Sources */,
 				7A7FA1322637B70A00484F51 /* FootnoteButton.swift in Sources */,
+				047B5116265D0E62009158F7 /* TransactionHistoryView.swift in Sources */,
 				C6CDDCE726381F6E00CB1562 /* MessageView.swift in Sources */,
 				163E5930260CB88E00E54401 /* ContentView.swift in Sources */,
 				1683C90B2629C7BB00B1D4D8 /* CircleButtonStyle.swift in Sources */,
@@ -1078,12 +1121,16 @@
 				247480032628281200C7A9A8 /* NavigationHeaderView.swift in Sources */,
 				167A050C2665214E008E9A5C /* RoundedRectangleButtonStyle.swift in Sources */,
 				24AC7C90265B718900CE4282 /* SettingsBodyView.swift in Sources */,
+				04E071EA265E7241000DD4A2 /* UIView+Extensions.swift in Sources */,
 				164E95EC2612224100D84B7F /* AppState.swift in Sources */,
+				047B510A265D0D8E009158F7 /* SideBarStack.swift in Sources */,
+				047E2B3B265B9C1B00D1EB9C /* SideMenu.swift in Sources */,
 				C6249AA82637EB8C00C55B31 /* SignUpView.swift in Sources */,
 				C65699C32637C91400D24D2F /* SignUpFooterView.swift in Sources */,
 				7AD9B8732626EC2A00CF0EA6 /* SkeletalView.swift in Sources */,
 				7A21C8CF266785C40007D30F /* MyProfileHeaderView.swift in Sources */,
 				7AD9B86B2626EC0000CF0EA6 /* SignInHeaderView.swift in Sources */,
+				047E2AD0265B82B700D1EB9C /* ProfileView.swift in Sources */,
 				16895014264AC06B00EED051 /* SelectableFieldForm.swift in Sources */,
 				7A17D13A26298695005BB190 /* SNSButton.swift in Sources */,
 				7A17D13A26298695005BB190 /* SNSButton.swift in Sources */,
@@ -1095,6 +1142,7 @@
 				1652AEE42646A52E003542CD /* SearchTransactionFormModalView.swift in Sources */,
 				164E95FF26122C5E00D84B7F /* World.swift in Sources */,
 				C6CDDCC52638125C00CB1562 /* MainAlertView.swift in Sources */,
+				047E2ACB265B815400D1EB9C /* SideMenuView.swift in Sources */,
 				298536F32660DBAA0024A25C /* NeumorphicEffect.swift in Sources */,
 				7AB88B1E262805F300E2DFD3 /* View+Extensions.swift in Sources */,
 				16606D292647966B005F2CF5 /* OptionSelectView.swift in Sources */,
