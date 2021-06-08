@@ -1,4 +1,20 @@
 // English
+"add_transaction_page.button.add" = "Add";
+"add_transaction_page.button.next" = "Next";
+"add_transaction_page.field_label.which_wallet_do_you_want_to_add" = "Which wallet do you want it to add?";
+"add_transaction_page.field_label.enter_amount" = "Enter amount";
+"add_transaction_page.field_label.transaction_name" = "Transaction name";
+"add_transaction_page.field_label.transaction_type" = "Transaction type";
+"add_transaction_page.field_label.categoy" = "Category";
+"add_transaction_page.field_label.select_date" = "Select date";
+"add_transaction_page.field_label.spent_with_this_person" = "Spent with this person";
+"add_transaction_page.field_input.which_wallet_do_you_want_to_add" = "Select wallet to add";
+"add_transaction_page.field_input.enter_transaction_name" = "Enter transaction name";
+"add_transaction_page.field_input.select_transaction_type" = "Select transaction type";
+"add_transaction_page.field_input.select_category" = "Select Category";
+"add_transaction_page.field_input.select_date" = "DD / MM / YYYY";
+"add_transaction_page.field_input.spent_with_this_person" = "Enter name of person";
+"add_transaction_page.title_bar" = "Add Transaction";
 
 "sign_in_page.title.welcome_back" = "Welcome\nBack";
 "sign_in_page.label.email" = "Email";
@@ -38,6 +54,26 @@
 "sign_up_page.label.already_have_an_account" = "Already have an account?";
 "sign_up_page.button.sign_in" = "Sign In";
 
+"transaction_detail_page.label.added_to_wallet" = "Added to wallet";
+"transaction_detail_page.label.category" = "Category";
+"transaction_detail_page.label.transaction_date" = "Transaction date";
+"transaction_detail_page.label.spent_with" = "Spent with";
+"transaction_detail_page.label.transaction_type" = "Transaction type";
+"transaction_detail_page.title_bar" = "Transaction";
+"transactions_page.title_bar" = "Transactions";
+"transactions_page.transaction_search_placeholder" = "Search Transaction";
+"transactions_page.add_amount" = "+ %@";
+"transactions_page.deduct_amount" = "- %@";
+
+"transactions_create_form_modal.button_title.apply" = "Apply";
+"transactions_create_form_modal.input_field.date_range" = "This week";
+"transactions_create_form_modal.input_field.category" = "Select category";
+"transactions_create_form_modal.input_field.wallet_type" = "All wallet";
+"transactions_create_form_modal.input_label.date_range" = "Date range";
+"transactions_create_form_modal.input_label.category" = "Category";
+"transactions_create_form_modal.input_label.wallet_type" = "Wallet Type";
+"transactions_create_form_modal.title" = "Default date range";
+
 // Change password page
 "change_password_page.navigation_title" = "Change Password";
 "change_password_page.navigation_button_item.save" = "Save";
@@ -45,6 +81,15 @@
 "change_password_page.new_password.placeholder" = "Enter new password";
 "change_password_page.confirm_new_password.label" = "Confirm new password";
 "change_password_page.confirm_new_password.placeholder" = "Enter again new password";
+
+// Side Menu page
+"side_menu.label.home" = "Home";
+"side_menu.label.transaction" = "Transaction";
+"side_menu.label.wallets" = "Wallets";
+"side_menu.label.reports" = "Reports";
+"side_menu.label.myProfile" = "My Profile";
+"side_menu.label.settings" = "Settings";
+"side_menu.label.logout" = "Logout";
 
 // Delete Confirmation Alert
 "alert_sheet.title.confirmation" = "Confirmation";
@@ -71,3 +116,13 @@
 "login_and_security_page.label.email" = "Email Address";
 "login_and_security_page.dummy_data.email" = "email_email_email@emailemail.com";
 "login_and_security_page.dummy_data.password" = "***************";
+
+// My profile
+"profile_page.title" = "My Profile";
+"profile_page.label.contact_number" = "Contact Number";
+"profile_page.label.birthdate" = "Birthdate";
+"profile_page.label.address" = "Address";
+"profile_page.dummy_name" = "Samantha Mae Tagli";
+"profile_page.dummy_number" = "09012345678";
+"profile_page.dummy_birthdate" = "January 01, 1998";
+"profile_page.dummy_address" = "2F ESY Bldg, corner Ma Cristina St and Juana Osmeña St, Cebu City, Cebu, Philippines 6000";

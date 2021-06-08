@@ -7,4 +7,6 @@
 
 import Foundation
 
-enum AppAction {}
+enum AppAction {
+    case transactionsView(action: TransactionsViewAction)
+}
