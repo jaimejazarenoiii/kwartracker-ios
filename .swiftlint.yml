@@ -71,6 +71,7 @@ line_length: 120
 excluded:
   - Pods/
   - vendor/bundle/
+  - Kwartracker/API.swift
 reporter: "xcode"
 custom_rules:
   localized_lensing:

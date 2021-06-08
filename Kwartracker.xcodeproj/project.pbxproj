@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		047B510A265D0D8E009158F7 /* SideBarStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B5109265D0D8E009158F7 /* SideBarStack.swift */; };
+		047B5116265D0E62009158F7 /* TransactionHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B5115265D0E62009158F7 /* TransactionHistoryView.swift */; };
+		047E2ACB265B815400D1EB9C /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E2ACA265B815400D1EB9C /* SideMenuView.swift */; };
+		047E2AD0265B82B700D1EB9C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E2ACF265B82B700D1EB9C /* ProfileView.swift */; };
+		047E2B3B265B9C1B00D1EB9C /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E2B3A265B9C1B00D1EB9C /* SideMenu.swift */; };
+		04E071EA265E7241000DD4A2 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E071E9265E7241000DD4A2 /* UIView+Extensions.swift */; };
 		163DABCC264B59CA00DCBB47 /* BrowsePhotoField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163DABCB264B59CA00DCBB47 /* BrowsePhotoField.swift */; };
 		163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E592D260CB88E00E54401 /* KwartrackerApp.swift */; };
 		163E5930260CB88E00E54401 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E592F260CB88E00E54401 /* ContentView.swift */; };
@@ -25,6 +31,17 @@
 		164E97EF2614ACF000D84B7F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97ED2614ACF000D84B7F /* Strings.swift */; };
 		164E97F02614ACF000D84B7F /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97EE2614ACF000D84B7F /* Assets.swift */; };
 		164E988D2615C4BA00D84B7F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164E988C2615C4BA00D84B7F /* Colors.xcassets */; };
+		16CCE71D264EB00000345778 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 16CCE71C264EB00000345778 /* SwiftDate */; };
+		16CCE730264F78B000345778 /* SampleSignInAndSignUp.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16CCE72F264F78B000345778 /* SampleSignInAndSignUp.graphql */; };
+		16CCE740264F820F00345778 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CCE73F264F820F00345778 /* API.swift */; };
+		16CCE7452651E4F900345778 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 16CCE7442651E4F900345778 /* KeychainSwift */; };
+		16CCE7492651E53400345778 /* KeyChainKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CCE7482651E53400345778 /* KeyChainKeys.swift */; };
+		16CCE74D2651E57700345778 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CCE74C2651E57700345778 /* Network.swift */; };
+		16CD1B03264901F100272FCA /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 16CD1B02264901F100272FCA /* Apollo */; };
+		16CD1B05264901F100272FCA /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 16CD1B04264901F100272FCA /* ApolloWebSocket */; };
+		16CCE83C26523F2400345778 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		16CCE83D26523F2400345778 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		16CCE83E26523F2400345778 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		1652AEE42646A52E003542CD /* SearchTransactionFormModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652AEE32646A52E003542CD /* SearchTransactionFormModalView.swift */; };
 		16606D292647966B005F2CF5 /* OptionSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16606D282647966B005F2CF5 /* OptionSelectView.swift */; };
 		16606D462647B5FF005F2CF5 /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16606D452647B5FF005F2CF5 /* TransactionDetailView.swift */; };
@@ -79,8 +96,13 @@
 		29ED9DA8265E34EA004C303E /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 29ED9DA7265E34EA004C303E /* SwiftPackageProductDependency */; };
 		7A17D13226298678005BB190 /* UserField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13126298678005BB190 /* UserField.swift */; };
 		7A17D13A26298695005BB190 /* SNSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13926298695005BB190 /* SNSButton.swift */; };
+		7A21C8CF266785C40007D30F /* MyProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A21C8CE266785C40007D30F /* MyProfileHeaderView.swift */; };
 		7A734D92262FFAA900557EF7 /* BWNeumorphicRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A734D91262FFAA900557EF7 /* BWNeumorphicRectangle.swift */; };
 		7A7FA1322637B70A00484F51 /* FootnoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7FA1312637B70A00484F51 /* FootnoteButton.swift */; };
+		7AA77F1D2660D64000C700A2 /* EditButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA77F1C2660D64000C700A2 /* EditButtonView.swift */; };
+		7AA77F1F2660D6C200C700A2 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA77F1E2660D6C200C700A2 /* MyProfileView.swift */; };
+		7AA77F212660D77500C700A2 /* MyProfileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA77F202660D77500C700A2 /* MyProfileContentView.swift */; };
+		7AA77F242660ED6000C700A2 /* ProfilePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA77F232660ED6000C700A2 /* ProfilePictureView.swift */; };
 		7AB1B91E26438C7C00853FAC /* RoundedCornerRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1B91D26438C7C00853FAC /* RoundedCornerRectangle.swift */; };
 		7AB88B1E262805F300E2DFD3 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB88B1D262805F300E2DFD3 /* View+Extensions.swift */; };
 		7AB88B282628071C00E2DFD3 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB88B272628071C00E2DFD3 /* RoundedCorner.swift */; };
@@ -132,6 +154,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		047B5109265D0D8E009158F7 /* SideBarStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarStack.swift; sourceTree = "<group>"; };
+		047B5115265D0E62009158F7 /* TransactionHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryView.swift; sourceTree = "<group>"; };
+		047E2ACA265B815400D1EB9C /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		047E2ACF265B82B700D1EB9C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		047E2B3A265B9C1B00D1EB9C /* SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		04E071E9265E7241000DD4A2 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		163DABCB264B59CA00DCBB47 /* BrowsePhotoField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsePhotoField.swift; sourceTree = "<group>"; };
 		163E592A260CB88E00E54401 /* Kwartracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kwartracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		163E592D260CB88E00E54401 /* KwartrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KwartrackerApp.swift; sourceTree = "<group>"; };
@@ -157,6 +185,11 @@
 		164E97ED2614ACF000D84B7F /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		164E97EE2614ACF000D84B7F /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		164E988C2615C4BA00D84B7F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		16CCE726264EBD6800345778 /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		16CCE72F264F78B000345778 /* SampleSignInAndSignUp.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SampleSignInAndSignUp.graphql; sourceTree = "<group>"; };
+		16CCE73F264F820F00345778 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		16CCE7482651E53400345778 /* KeyChainKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainKeys.swift; sourceTree = "<group>"; };
+		16CCE74C2651E57700345778 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		1652AEE32646A52E003542CD /* SearchTransactionFormModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTransactionFormModalView.swift; sourceTree = "<group>"; };
 		1652AEEC2646A67D003542CD /* SelectableFieldForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableFieldForm.swift; sourceTree = "<group>"; };
 		16606D282647966B005F2CF5 /* OptionSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelectView.swift; sourceTree = "<group>"; };
@@ -212,8 +245,13 @@
 		6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KwartrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A17D13126298678005BB190 /* UserField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserField.swift; sourceTree = "<group>"; };
 		7A17D13926298695005BB190 /* SNSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSButton.swift; sourceTree = "<group>"; };
+		7A21C8CE266785C40007D30F /* MyProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileHeaderView.swift; sourceTree = "<group>"; };
 		7A734D91262FFAA900557EF7 /* BWNeumorphicRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BWNeumorphicRectangle.swift; sourceTree = "<group>"; };
 		7A7FA1312637B70A00484F51 /* FootnoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootnoteButton.swift; sourceTree = "<group>"; };
+		7AA77F1C2660D64000C700A2 /* EditButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditButtonView.swift; sourceTree = "<group>"; };
+		7AA77F1E2660D6C200C700A2 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
+		7AA77F202660D77500C700A2 /* MyProfileContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileContentView.swift; sourceTree = "<group>"; };
+		7AA77F232660ED6000C700A2 /* ProfilePictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureView.swift; sourceTree = "<group>"; };
 		7AB1B91D26438C7C00853FAC /* RoundedCornerRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerRectangle.swift; sourceTree = "<group>"; };
 		7AB88B1D262805F300E2DFD3 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		7AB88B272628071C00E2DFD3 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
@@ -243,8 +281,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29ED9DA8265E34EA004C303E /* BuildFile in Frameworks */,
+				29ED9DA8265E34EA004C303E /* SwiftDate in Frameworks */,
 				A9CFE877880189ECE3F83CB8 /* Pods_Kwartracker.framework in Frameworks */,
+				16CCE7452651E4F900345778 /* KeychainSwift in Frameworks */,
+				16CD1B05264901F100272FCA /* ApolloWebSocket in Frameworks */,
+				16CD1B03264901F100272FCA /* Apollo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +308,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		047B5114265D0E41009158F7 /* Transaction History */ = {
+			isa = PBXGroup;
+			children = (
+				047B5115265D0E62009158F7 /* TransactionHistoryView.swift */,
+			);
+			path = "Transaction History";
+			sourceTree = "<group>";
+		};
+		047E2AC9265B807700D1EB9C /* Side Menu */ = {
+			isa = PBXGroup;
+			children = (
+				047E2ACA265B815400D1EB9C /* SideMenuView.swift */,
+			);
+			path = "Side Menu";
+			sourceTree = "<group>";
+		};
+		04E071E8265E722A000DD4A2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				04E071E9265E7241000DD4A2 /* UIView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		163E5921260CB88E00E54401 = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +369,9 @@
 				163E5B74260F34E400E54401 /* Resources */,
 				7AB88B1C262805C500E2DFD3 /* Custom Components */,
 				163E5936260CB89100E54401 /* Info.plist */,
+				16CCE726264EBD6800345778 /* schema.json */,
+				16CCE72F264F78B000345778 /* SampleSignInAndSignUp.graphql */,
+				16CCE73F264F820F00345778 /* API.swift */,
 				163E5933260CB89100E54401 /* Preview Content */,
 			);
 			path = Kwartracker;
@@ -353,6 +421,9 @@
 			isa = PBXGroup;
 			children = (
 				29F32961265B9FDF00C1F807 /* Calendar */,
+				04E071E8265E722A000DD4A2 /* Extensions */,
+				047B5114265D0E41009158F7 /* Transaction History */,
+				047E2AC9265B807700D1EB9C /* Side Menu */,
 				1683C9002629C75700B1D4D8 /* Transactions */,
 				24AC7C91265CAEB600CE4282 /* Login and Security Page */,
 				24AC7C8B265B713C00CE4282 /* Settings Page */,
@@ -362,6 +433,7 @@
 				244A3B7C263A642B00D8B08B /* Edit-Profile Page */,
 				C6CDDCAE263811DD00CB1562 /* Alert */,
 				242950A426578AC50075C054 /* Popup Confirmation */,
+				7AA77F1B2660D56700C700A2 /* My Profile Page */,
 				163E592F260CB88E00E54401 /* ContentView.swift */,
 				7AD9B8722626EC2A00CF0EA6 /* SkeletalView.swift */,
 				7AD9B8692626EBA500CF0EA6 /* Sign-in Page */,
@@ -390,6 +462,7 @@
 			isa = PBXGroup;
 			children = (
 				163E5B6B260F337600E54401 /* Secrets.swift */,
+				16CCE7482651E53400345778 /* KeyChainKeys.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -505,6 +578,7 @@
 		16B24BAE261A8D170002065D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				16CCE74C2651E57700345778 /* Network.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -644,20 +718,20 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
-		298536F12660DB8A0024A25C /* Neumorphic Views */ = {
-			isa = PBXGroup;
-			children = (
-				298536F22660DBAA0024A25C /* NeumorphicEffect.swift */,
-			);
-			path = "Neumorphic Views";
-			sourceTree = "<group>";
-		};
 		24AC7CC126663F4400CE4282 /* Toggle */ = {
 			isa = PBXGroup;
 			children = (
 				24AC7CC226663F6200CE4282 /* CustomToggle.swift */,
 			);
 			path = Toggle;
+			sourceTree = "<group>";
+		};
+		298536F12660DB8A0024A25C /* Neumorphic Views */ = {
+			isa = PBXGroup;
+			children = (
+				298536F22660DBAA0024A25C /* NeumorphicEffect.swift */,
+			);
+			path = "Neumorphic Views";
 			sourceTree = "<group>";
 		};
 		326399AE9BF3387D065FB7BA /* Frameworks */ = {
@@ -680,6 +754,24 @@
 				7A7FA1312637B70A00484F51 /* FootnoteButton.swift */,
 			);
 			path = "Sign-in Reusables";
+			sourceTree = "<group>";
+		};
+		7AA77F1B2660D56700C700A2 /* My Profile Page */ = {
+			isa = PBXGroup;
+			children = (
+				7AA77F1E2660D6C200C700A2 /* MyProfileView.swift */,
+				7AA77F222660D77B00C700A2 /* Content */,
+			);
+			path = "My Profile Page";
+			sourceTree = "<group>";
+		};
+		7AA77F222660D77B00C700A2 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				7A21C8CE266785C40007D30F /* MyProfileHeaderView.swift */,
+				7AA77F202660D77500C700A2 /* MyProfileContentView.swift */,
+			);
+			path = Content;
 			sourceTree = "<group>";
 		};
 		7AB88B1C262805C500E2DFD3 /* Custom Components */ = {
@@ -752,6 +844,7 @@
 		C6081ADA2652764B003BB9CB /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				047E2B3A265B9C1B00D1EB9C /* SideMenu.swift */,
 				245FFEE52654B71400042B3E /* FieldType.swift */,
 				C6081ADB2652765E003BB9CB /* DialogStatus.swift */,
 			);
@@ -797,8 +890,12 @@
 			isa = PBXGroup;
 			children = (
 				C6CDDCCA2638135B00CB1562 /* ButtonView.swift */,
+				7AA77F1C2660D64000C700A2 /* EditButtonView.swift */,
 				C6CDDCE626381F6E00CB1562 /* MessageView.swift */,
+				047E2ACF265B82B700D1EB9C /* ProfileView.swift */,
+				047B5109265D0D8E009158F7 /* SideBarStack.swift */,
 				246D7235265B54CE0011F960 /* BirthdateField.swift */,
+				7AA77F232660ED6000C700A2 /* ProfilePictureView.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -824,6 +921,7 @@
 			buildConfigurationList = 163E594F260CB89100E54401 /* Build configuration list for PBXNativeTarget "Kwartracker" */;
 			buildPhases = (
 				212A3F62359ED7E67B9CFF95 /* [CP] Check Pods Manifest.lock */,
+				16CD1B292649096F00272FCA /* Apollo CLI */,
 				163E5926260CB88E00E54401 /* Sources */,
 				163E5927260CB88E00E54401 /* Frameworks */,
 				163E5928260CB88E00E54401 /* Resources */,
@@ -837,7 +935,10 @@
 			);
 			name = Kwartracker;
 			packageProductDependencies = (
-				29ED9DA7265E34EA004C303E /* SwiftPackageProductDependency */,
+				16CD1B02264901F100272FCA /* Apollo */,
+				16CD1B04264901F100272FCA /* ApolloWebSocket */,
+				16CCE7442651E4F900345778 /* KeychainSwift */,
+				29ED9DA7265E34EA004C303E /* SwiftDate */,
 			);
 			productName = Kwartracker;
 			productReference = 163E592A260CB88E00E54401 /* Kwartracker.app */;
@@ -914,7 +1015,9 @@
 			);
 			mainGroup = 163E5921260CB88E00E54401;
 			packageReferences = (
-				29ED9DA6265E34EA004C303E /* RemoteSwiftPackageReference */,
+				16CD1B01264901F100272FCA /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				16CCE7432651E4F900345778 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				29ED9DA6265E34EA004C303E /* XCRemoteSwiftPackageReference "SwiftDate" */,
 			);
 			productRefGroup = 163E592B260CB88E00E54401 /* Products */;
 			projectDirPath = "";
@@ -937,6 +1040,7 @@
 				164E97E82614AC2900D84B7F /* Localizable.strings in Resources */,
 				163E5935260CB89100E54401 /* Preview Assets.xcassets in Resources */,
 				163E5932260CB89100E54401 /* Images.xcassets in Resources */,
+				16CCE730264F78B000345778 /* SampleSignInAndSignUp.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -992,6 +1096,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		16CD1B292649096F00272FCA /* Apollo CLI */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Apollo CLI";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://staging-kwartracker.jaimejazarenoiii.me/graphql\"\n";
 		};
 		212A3F62359ED7E67B9CFF95 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1067,11 +1189,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				29F32963265BA01000C1F807 /* WeekView.swift in Sources */,
+				16CCE74D2651E57700345778 /* Network.swift in Sources */,
 				16C5C787263534FE00F33B72 /* Wallet.swift in Sources */,
 				244A3B7E263A644E00D8B08B /* EditProfileView.swift in Sources */,
 				29F0457B265CB46300842C8B /* BackgroundBlurView.swift in Sources */,
 				24AC7CC326663F6200CE4282 /* CustomToggle.swift in Sources */,
 				7A7FA1322637B70A00484F51 /* FootnoteButton.swift in Sources */,
+				047B5116265D0E62009158F7 /* TransactionHistoryView.swift in Sources */,
 				C6CDDCE726381F6E00CB1562 /* MessageView.swift in Sources */,
 				163E5930260CB88E00E54401 /* ContentView.swift in Sources */,
 				29F3295D265B9FAF00C1F807 /* DateFormatter+Extension.swift in Sources */,
@@ -1086,11 +1210,16 @@
 				247480032628281200C7A9A8 /* NavigationHeaderView.swift in Sources */,
 				167A050C2665214E008E9A5C /* RoundedRectangleButtonStyle.swift in Sources */,
 				24AC7C90265B718900CE4282 /* SettingsBodyView.swift in Sources */,
+				04E071EA265E7241000DD4A2 /* UIView+Extensions.swift in Sources */,
 				164E95EC2612224100D84B7F /* AppState.swift in Sources */,
+				047B510A265D0D8E009158F7 /* SideBarStack.swift in Sources */,
+				047E2B3B265B9C1B00D1EB9C /* SideMenu.swift in Sources */,
 				C6249AA82637EB8C00C55B31 /* SignUpView.swift in Sources */,
 				C65699C32637C91400D24D2F /* SignUpFooterView.swift in Sources */,
 				7AD9B8732626EC2A00CF0EA6 /* SkeletalView.swift in Sources */,
+				7A21C8CF266785C40007D30F /* MyProfileHeaderView.swift in Sources */,
 				7AD9B86B2626EC0000CF0EA6 /* SignInHeaderView.swift in Sources */,
+				047E2AD0265B82B700D1EB9C /* ProfileView.swift in Sources */,
 				16895014264AC06B00EED051 /* SelectableFieldForm.swift in Sources */,
 				7A17D13A26298695005BB190 /* SNSButton.swift in Sources */,
 				7A17D13A26298695005BB190 /* SNSButton.swift in Sources */,
@@ -1100,11 +1229,12 @@
 				C6CDDCCB2638135B00CB1562 /* ButtonView.swift in Sources */,
 				16FC4F51265C7F9D00D1B7E2 /* LinearGradient+Extensions.swift in Sources */,
 				163E5B6C260F337600E54401 /* Secrets.swift in Sources */,
+				16CCE7492651E53400345778 /* KeyChainKeys.swift in Sources */,
 				1652AEE42646A52E003542CD /* SearchTransactionFormModalView.swift in Sources */,
 				164E95FF26122C5E00D84B7F /* World.swift in Sources */,
 				C6CDDCC52638125C00CB1562 /* MainAlertView.swift in Sources */,
+				047E2ACB265B815400D1EB9C /* SideMenuView.swift in Sources */,
 				298536F32660DBAA0024A25C /* NeumorphicEffect.swift in Sources */,
-				16CCE83D26523F2400345778 /* (null) in Sources */,
 				7AB88B1E262805F300E2DFD3 /* View+Extensions.swift in Sources */,
 				16606D292647966B005F2CF5 /* OptionSelectView.swift in Sources */,
 				242950A926578CEF0075C054 /* PopupContentView.swift in Sources */,
@@ -1117,8 +1247,11 @@
 				16895034264AC78100EED051 /* TextFieldForm.swift in Sources */,
 				16C5C7982636296600F33B72 /* Currency.swift in Sources */,
 				164E97EF2614ACF000D84B7F /* Strings.swift in Sources */,
+				7AA77F1F2660D6C200C700A2 /* MyProfileView.swift in Sources */,
+				7AA77F1D2660D64000C700A2 /* EditButtonView.swift in Sources */,
 				1683C9022629C76F00B1D4D8 /* TransactionsView.swift in Sources */,
 				244A3B81263A652500D8B08B /* EditProfileContentView.swift in Sources */,
+				7AA77F212660D77500C700A2 /* MyProfileContentView.swift in Sources */,
 				246D7236265B54CE0011F960 /* BirthdateField.swift in Sources */,
 				7AD9B8812626F17400CF0EA6 /* SignInContentView.swift in Sources */,
 				29F04570265CA33300842C8B /* PlaceholderStyle.swift in Sources */,
@@ -1138,11 +1271,13 @@
 				16606D4B2647C0F9005F2CF5 /* NavigationBarView.swift in Sources */,
 				16606D462647B5FF005F2CF5 /* TransactionDetailView.swift in Sources */,
 				164E95F226122BD200D84B7F /* AppReducer.swift in Sources */,
+				16CCE740264F820F00345778 /* API.swift in Sources */,
 				16C5C7922636293900F33B72 /* Category.swift in Sources */,
 				16C5C7782635347A00F33B72 /* TransactionRow.swift in Sources */,
 				24AC7C96265CB12700CE4282 /* LoginAndSecuritBodyView.swift in Sources */,
 				C65699C42637C91400D24D2F /* SignUpBodyView.swift in Sources */,
 				242950A626578AF10075C054 /* PopupConfirmationView.swift in Sources */,
+				7AA77F242660ED6000C700A2 /* ProfilePictureView.swift in Sources */,
 				163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */,
 				1683C9142629C81100B1D4D8 /* LinearGradient+Extensions.swift in Sources */,
 				24747FEC2628261A00C7A9A8 /* ChangePasswordView.swift in Sources */,
@@ -1485,20 +1620,51 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		29ED9DA6265E34EA004C303E /* RemoteSwiftPackageReference */ = {
+		29ED9DA6265E34EA004C303E /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/malcommac/SwiftDate.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 6.3.1;
+                minimumVersion = 6.3.1;
+			};
+		};
+		16CCE7432651E4F900345778 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 19.0.0;
+			};
+		};
+		16CD1B01264901F100272FCA /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.42.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		29ED9DA7265E34EA004C303E /* SwiftPackageProductDependency */ = {
+		16CCE7442651E4F900345778 /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 29ED9DA6265E34EA004C303E /* RemoteSwiftPackageReference */;
+			package = 16CCE7432651E4F900345778 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+		16CD1B02264901F100272FCA /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16CD1B01264901F100272FCA /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		16CD1B04264901F100272FCA /* ApolloWebSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16CD1B01264901F100272FCA /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloWebSocket;
+		};
+		29ED9DA7265E34EA004C303E /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 29ED9DA6265E34EA004C303E /* XCRemoteSwiftPackageReference "SwiftDate" */;
 			productName = SwiftDate;
 		};
 /* End XCSwiftPackageProductDependency section */

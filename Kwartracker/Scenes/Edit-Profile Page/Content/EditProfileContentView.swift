@@ -47,17 +47,13 @@ private struct UserFields: View {
 }
 
 private struct ProfileImage: View {
-    let imageSize: CGFloat = 100
     let fontSize: CGFloat = 12
     let topMargin: CGFloat = 50
 
     var body: some View {
         Button(action: {}, label: {
             VStack {
-                Image(uiImage: Asset.Images.sampleImage.image)
-                    .resizable()
-                    .frame(width: imageSize, height: imageSize, alignment: .center)
-                    .clipShape(Circle())
+                ProfilePictureView()
     
                 Text(L10n.EditProfilePage.Button.changePhoto)
                     .font(.system(size: fontSize))

@@ -15,7 +15,12 @@ struct KwartrackerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            CalendarTableView(dateRawString: Binding.constant("2021-06-30"))
+            if KeyChainKeys.isLoggedIn() {
+                // For the meantime, show text view
+                Text("You are logged in.")
+            } else {
+                SignInView()
+            }
         }
     }
 }

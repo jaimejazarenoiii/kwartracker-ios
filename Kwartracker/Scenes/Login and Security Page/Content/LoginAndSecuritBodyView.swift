@@ -24,24 +24,6 @@ struct LoginAndSecuritBodyView_Previews: PreviewProvider {
     }
 }
 
-private struct EditButtonView: View {
-    private let buttonSize: CGFloat = 15
-    private let buttonPadding: CGFloat = 13
-
-    var body: some View {
-        HStack {
-            Button(action: {}, label: {
-                Image(uiImage: Asset.Images.editIcon.image)
-                    .resizable()
-                    .frame(width: buttonSize, height: buttonSize, alignment: .center)
-            }).buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.solitudeGrey.color,
-                                             padding: buttonPadding))
-        }
-        .frame(maxWidth: .infinity, alignment: .trailing)
-        .padding([.top, .horizontal])
-    }
-}
-
 private struct LoginDetailsView: View {
     private let fontSize: CGFloat = 15
     private let bottomMargin: CGFloat = 8
