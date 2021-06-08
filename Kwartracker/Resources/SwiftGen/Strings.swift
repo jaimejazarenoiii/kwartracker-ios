@@ -174,6 +174,27 @@ internal enum L10n {
     }
   }
 
+  internal enum ProfilePage {
+    /// 2F ESY Bldg, corner Ma Cristina St and Juana Osmeña St, Cebu City, Cebu, Philippines 6000
+    internal static let dummyAddress = L10n.tr("Localizable", "profile_page.dummy_address")
+    /// January 01, 1998
+    internal static let dummyBirthdate = L10n.tr("Localizable", "profile_page.dummy_birthdate")
+    /// Samantha Mae Tagli
+    internal static let dummyName = L10n.tr("Localizable", "profile_page.dummy_name")
+    /// 09012345678
+    internal static let dummyNumber = L10n.tr("Localizable", "profile_page.dummy_number")
+    /// My Profile
+    internal static let title = L10n.tr("Localizable", "profile_page.title")
+    internal enum Label {
+      /// Address
+      internal static let address = L10n.tr("Localizable", "profile_page.label.address")
+      /// Birthdate
+      internal static let birthdate = L10n.tr("Localizable", "profile_page.label.birthdate")
+      /// Contact Number
+      internal static let contactNumber = L10n.tr("Localizable", "profile_page.label.contact_number")
+    }
+  }
+
   internal enum SettingsPage {
     /// Settings
     internal static let navigationTitle = L10n.tr("Localizable", "settings_page.navigation_title")
@@ -182,6 +203,25 @@ internal enum L10n {
       internal static let categories = L10n.tr("Localizable", "settings_page.navigation_item.categories")
       /// Login and Security
       internal static let loginAndSecurity = L10n.tr("Localizable", "settings_page.navigation_item.login_and_security")
+    }
+  }
+
+  internal enum SideMenu {
+    internal enum Label {
+      /// Home
+      internal static let home = L10n.tr("Localizable", "side_menu.label.home")
+      /// Logout
+      internal static let logout = L10n.tr("Localizable", "side_menu.label.logout")
+      /// My Profile
+      internal static let myProfile = L10n.tr("Localizable", "side_menu.label.myProfile")
+      /// Reports
+      internal static let reports = L10n.tr("Localizable", "side_menu.label.reports")
+      /// Settings
+      internal static let settings = L10n.tr("Localizable", "side_menu.label.settings")
+      /// Transaction
+      internal static let transaction = L10n.tr("Localizable", "side_menu.label.transaction")
+      /// Wallets
+      internal static let wallets = L10n.tr("Localizable", "side_menu.label.wallets")
     }
   }
 

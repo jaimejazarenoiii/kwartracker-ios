@@ -1,0 +1,18 @@
+mutation Authentication($signUpEmailInput: SignUpWithEmailInput!, $signInCredential: CredentialsInput!) {
+    signUpWithEmail(input: $signUpEmailInput) {
+        token
+    }
+
+    signInWithEmail(input: {credentials: $signInCredential}) {
+        token
+        user {
+            id
+            email
+            firstName
+            lastName
+            middleName
+            gender
+            age
+        }
+    }
+}
