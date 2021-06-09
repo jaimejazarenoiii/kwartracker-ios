@@ -35,7 +35,7 @@ struct CategoryListView: View {
                 Text(title)
                     .font(.system(size: fontSize))
                     .onTapGesture {
-                        withAnimation(.spring().speed(animationSpeed)) {
+                        withAnimation(Animation.spring().speed(animationSpeed)) {
                             if subCategory != nil {
                                 show.toggle()
                             }
