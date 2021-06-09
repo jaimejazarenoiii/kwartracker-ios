@@ -131,3 +131,6 @@
 "category_detail_page.navigation_title" = "Category Name";
 "category_detail_page.category_parent" = "Category Parent";
 "category_detail_page.category_parent_name" = "Category Parent Name";
+
+// Categories pages
+"category_page.search_item_placeholder" = "Search Category";
