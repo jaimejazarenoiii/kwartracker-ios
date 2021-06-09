@@ -45,28 +45,16 @@ private extension UserField {
     @ViewBuilder
     func viewFor(field: FieldType) -> some View {
         switch field {
-        case .email, .lastName, .firstName, .contactNumber:
+        case .email, .lastName, .firstName, .contactNumber, .address, .category:
             TextField(field.placeholder, text: $textValue)
                 .modifier(PlaceholderStyle(showPlaceHolder: textValue.isEmpty,
                                            placeholder: fieldType.placeholder))
-        case .password:
-            SecureField(field.placeholder, text: $textValue)
-                .modifier(PlaceholderStyle(showPlaceHolder: textValue.isEmpty,
-                                           placeholder: fieldType.placeholder))
-        case .newPassword:
-            SecureField(field.placeholder, text: $textValue)
-                .modifier(PlaceholderStyle(showPlaceHolder: textValue.isEmpty,
-                                           placeholder: fieldType.placeholder))
-        case .confirmNewPassword:
+        case .password, .newPassword, .confirmNewPassword:
             SecureField(field.placeholder, text: $textValue)
                 .modifier(PlaceholderStyle(showPlaceHolder: textValue.isEmpty,
                                            placeholder: fieldType.placeholder))
         case .birthDate:
             BirthdateField(textValue: $textValue, placeholder: field.placeholder)
-        case .address:
-            TextField(field.placeholder, text: $textValue)
-                .modifier(PlaceholderStyle(showPlaceHolder: textValue.isEmpty,
-                                           placeholder: fieldType.placeholder))
         }
     }
 }
