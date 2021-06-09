@@ -129,3 +129,11 @@
 "profile_page.dummy_number" = "09012345678";
 "profile_page.dummy_birthdate" = "January 01, 1998";
 "profile_page.dummy_address" = "2F ESY Bldg, corner Ma Cristina St and Juana Osmeña St, Cebu City, Cebu, Philippines 6000";
+
+// Category Detail Page
+"category_detail_page.navigation_title" = "Category Name";
+"category_detail_page.category_parent" = "Category Parent";
+"category_detail_page.category_parent_name" = "Category Parent Name";
+
+// Categories pages
+"category_page.search_item_placeholder" = "Search Category";
