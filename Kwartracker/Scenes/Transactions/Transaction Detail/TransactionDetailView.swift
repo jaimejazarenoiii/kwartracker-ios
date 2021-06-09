@@ -154,6 +154,6 @@ struct TransactionDetailView: View {
 
 struct TransactionDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionDetailView(transaction: Transaction(category: Category(title: "")))
+        TransactionDetailView(transaction: Transaction(category: Category(id: 1, title: "")))
     }
 }

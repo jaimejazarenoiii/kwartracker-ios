@@ -69,6 +69,11 @@ internal enum L10n {
     }
   }
 
+  internal enum CategoryPage {
+    /// Search Category
+    internal static let searchItemPlaceholder = L10n.tr("Localizable", "category_page.search_item_placeholder")
+  }
+
   internal enum ChangePasswordPage {
     /// Change Password
     internal static let navigationTitle = L10n.tr("Localizable", "change_password_page.navigation_title")
