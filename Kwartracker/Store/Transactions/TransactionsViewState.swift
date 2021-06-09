@@ -58,7 +58,7 @@ extension TransactionsViewState {
         Transaction(
             id: 1,
             title: "March 15 Payroll",
-            category: .init(title: "Salary"),
+            category: .init(id: 1, title: "Salary"),
             amount: 10000,
             wallet: Wallet(id: 1),
             rawDateTime: "2021-03-05"
@@ -66,7 +66,7 @@ extension TransactionsViewState {
         Transaction(
             id: 2,
             title: "House Rental",
-            category: .init(title: "BILLS"),
+            category: .init(id: 2, title: "BILLS"),
             amount: 5000,
             wallet: Wallet(id: 1),
             rawDateTime: "2021-03-05"
@@ -74,7 +74,7 @@ extension TransactionsViewState {
         Transaction(
             id: 3,
             title: "Sideline Payment",
-            category: .init(title: "Salary"),
+            category: .init(id: 3, title: "Salary"),
             amount: 10000,
             wallet: Wallet(id: 1),
             rawDateTime: "2021-03-05"
@@ -82,7 +82,7 @@ extension TransactionsViewState {
         Transaction(
             id: 4,
             title: "Sideline Payment",
-            category: .init(title: "Salary"),
+            category: .init(id: 4, title: "Salary"),
             amount: 100000,
             wallet: Wallet(id: 1),
             rawDateTime: "2021-03-05"

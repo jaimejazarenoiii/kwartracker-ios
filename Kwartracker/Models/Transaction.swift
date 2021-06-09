@@ -67,10 +67,10 @@ struct Transaction {
 extension Transaction {
     static let unitTestTransaction = Transaction(id: 1,
                                                  title: "Side hustle",
-                                                 category: Category(title: "Money on hand"),
+                                                 category: Category(id: 1, title: "Money on hand"),
                                                  amount: 5000,
                                                  rawDateTime: "2021-04-01")
     static let unitTestInvalidTransaction = Transaction(id: 0,
                                                         title: "Side hustle",
-                                                        category: Category(title: "Money on hand"))
+                                                        category: Category(id: 2, title: "Money on hand"))
 }

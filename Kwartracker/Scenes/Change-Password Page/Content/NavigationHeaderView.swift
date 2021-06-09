@@ -72,12 +72,20 @@ private struct NavigationContent: View {
                 .foregroundColor(.white)
                 .fontWeight(.bold)
                 .frame(maxWidth: .infinity)
-            Button(action: {}, label: {
-                Text(navigationButton)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white).opacity(colorOpacity)
-            })
-            .frame(width: navigationButton.isEmpty ? backButtonSize : .infinity, alignment: .center)
+            if navigationTitle != L10n.SettingsPage.NavigationItem.categories {
+                Button(action: {}, label: {
+                    Text(navigationButton)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white).opacity(colorOpacity)
+                })
+                .frame(width: navigationButton.isEmpty ? backButtonSize : .infinity, alignment: .center)
+            } else {
+                Button(action: {}, label: {
+                    Image(uiImage: Asset.Images.addIcon.image.withRenderingMode(.alwaysTemplate).withTintColor(.white))
+                        .foregroundColor(Color(Asset.Colors.teal.color))
+                })
+                .buttonStyle(CircleButtonStyle(buttonColor: .white))
+            }
         }
         .padding(.horizontal, horizontalMargin)
         .padding(.vertical, verticalMargin)

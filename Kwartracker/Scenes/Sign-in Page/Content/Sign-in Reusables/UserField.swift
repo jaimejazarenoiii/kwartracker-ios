@@ -71,7 +71,7 @@ private extension UserField {
     }
 }
 
-private struct PlaceholderStyle: ViewModifier {
+struct PlaceholderStyle: ViewModifier {
     var showPlaceHolder: Bool
     var placeholder: String
 
