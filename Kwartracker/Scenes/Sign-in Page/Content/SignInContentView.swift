@@ -19,6 +19,8 @@ struct SignInContentView: View {
     private let snsOrTopMargin: CGFloat = 5
     private let footNoteTopMargin: CGFloat = 25
     
+    @StateObject private var viewModel = SignInViewModel()
+    
     private var HeaderText: some View {
         Text(L10n.SignInPage.Title.welcomeBack)
             .foregroundColor(Color(Asset.Colors.nightRider.color))
@@ -29,18 +31,19 @@ struct SignInContentView: View {
     
     private var UserFields: some View {
         Group {
-            UserField(fieldType: .email, textValue: $email)
-            UserField(fieldType: .password, textValue: $password)
+            UserField(fieldType: .email, textValue: $viewModel.email)
+            UserField(fieldType: .password, textValue: $viewModel.password)
         }
     }
     
     private var SNSActions: some View {
         Group {
             SNSButton(actionHandler: {
-                self.showingSignIn.toggle()
+                self.viewModel.doUserLogin()
+                // self.showingSignIn.toggle()
             }, actionLabel: .signIn)
             .padding(.top)
-            .fullScreenCover(isPresented: $showingSignIn) {
+            .fullScreenCover(isPresented: $viewModel.isAuthenticated) {
                 AlertView()
             }
             
