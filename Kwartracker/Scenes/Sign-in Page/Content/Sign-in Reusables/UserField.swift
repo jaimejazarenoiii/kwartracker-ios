@@ -45,7 +45,13 @@ private extension UserField {
     @ViewBuilder
     func viewFor(field: FieldType) -> some View {
         switch field {
-        case .email, .lastName, .firstName, .contactNumber:
+        case .email:
+            TextField(field.placeholder, text: $textValue)
+                .autocapitalization(.none)
+                .keyboardType(.emailAddress)
+                .modifier(PlaceholderStyle(showPlaceHolder: textValue.isEmpty,
+                                           placeholder: fieldType.placeholder))
+        case .lastName, .firstName, .contactNumber:
             TextField(field.placeholder, text: $textValue)
                 .modifier(PlaceholderStyle(showPlaceHolder: textValue.isEmpty,
                                            placeholder: fieldType.placeholder))
