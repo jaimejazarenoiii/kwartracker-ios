@@ -24,9 +24,10 @@ final class SignInViewModel: ObservableObject {
             
             switch result {
             case .success(let graphQLResult):
-                print("Success! Result: \(graphQLResult)")
-                self.userInfo = graphQLResult.data?.signInWithEmail
-                self.isAuthenticated = true
+                if let data = graphQLResult.data?.signInWithEmail {
+                    self.userInfo = data
+                    self.isAuthenticated = true
+                }
             case .failure(let error):
                 print("Failure! Error: \(error)")
             }
