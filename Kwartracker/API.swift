@@ -422,3 +422,310 @@ public final class AuthenticationMutation: GraphQLMutation {
     }
   }
 }
+
+public final class SignInMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation SignIn($signInCredential: CredentialsInput!) {
+      signInWithEmail(input: {credentials: $signInCredential}) {
+        __typename
+        token
+        user {
+          __typename
+          id
+          email
+          firstName
+          lastName
+          middleName
+          gender
+          age
+        }
+      }
+    }
+    """
+
+  public let operationName: String = "SignIn"
+
+  public var signInCredential: CredentialsInput
+
+  public init(signInCredential: CredentialsInput) {
+    self.signInCredential = signInCredential
+  }
+
+  public var variables: GraphQLMap? {
+    return ["signInCredential": signInCredential]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("signInWithEmail", arguments: ["input": ["credentials": GraphQLVariable("signInCredential")]], type: .object(SignInWithEmail.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(signInWithEmail: SignInWithEmail? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "signInWithEmail": signInWithEmail.flatMap { (value: SignInWithEmail) -> ResultMap in value.resultMap }])
+    }
+
+    /// Sign in user
+    public var signInWithEmail: SignInWithEmail? {
+      get {
+        return (resultMap["signInWithEmail"] as? ResultMap).flatMap { SignInWithEmail(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "signInWithEmail")
+      }
+    }
+
+    public struct SignInWithEmail: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["AuthenticatedUser"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("token", type: .nonNull(.scalar(String.self))),
+          GraphQLField("user", type: .nonNull(.object(User.selections))),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(token: String, user: User) {
+        self.init(unsafeResultMap: ["__typename": "AuthenticatedUser", "token": token, "user": user.resultMap])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var token: String {
+        get {
+          return resultMap["token"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "token")
+        }
+      }
+
+      public var user: User {
+        get {
+          return User(unsafeResultMap: resultMap["user"]! as! ResultMap)
+        }
+        set {
+          resultMap.updateValue(newValue.resultMap, forKey: "user")
+        }
+      }
+
+      public struct User: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["User"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+            GraphQLField("email", type: .nonNull(.scalar(String.self))),
+            GraphQLField("firstName", type: .nonNull(.scalar(String.self))),
+            GraphQLField("lastName", type: .nonNull(.scalar(String.self))),
+            GraphQLField("middleName", type: .scalar(String.self)),
+            GraphQLField("gender", type: .nonNull(.scalar(String.self))),
+            GraphQLField("age", type: .nonNull(.scalar(Int.self))),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: GraphQLID, email: String, firstName: String, lastName: String, middleName: String? = nil, gender: String, age: Int) {
+          self.init(unsafeResultMap: ["__typename": "User", "id": id, "email": email, "firstName": firstName, "lastName": lastName, "middleName": middleName, "gender": gender, "age": age])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return resultMap["id"]! as! GraphQLID
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var email: String {
+          get {
+            return resultMap["email"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "email")
+          }
+        }
+
+        public var firstName: String {
+          get {
+            return resultMap["firstName"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "firstName")
+          }
+        }
+
+        public var lastName: String {
+          get {
+            return resultMap["lastName"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "lastName")
+          }
+        }
+
+        public var middleName: String? {
+          get {
+            return resultMap["middleName"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "middleName")
+          }
+        }
+
+        public var gender: String {
+          get {
+            return resultMap["gender"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "gender")
+          }
+        }
+
+        public var age: Int {
+          get {
+            return resultMap["age"]! as! Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "age")
+          }
+        }
+      }
+    }
+  }
+}
+
+public final class SignUpMutation: GraphQLMutation {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    mutation SignUp($signUpEmailInput: SignUpWithEmailInput!) {
+      signUpWithEmail(input: $signUpEmailInput) {
+        __typename
+        token
+      }
+    }
+    """
+
+  public let operationName: String = "SignUp"
+
+  public var signUpEmailInput: SignUpWithEmailInput
+
+  public init(signUpEmailInput: SignUpWithEmailInput) {
+    self.signUpEmailInput = signUpEmailInput
+  }
+
+  public var variables: GraphQLMap? {
+    return ["signUpEmailInput": signUpEmailInput]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Mutation"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("signUpWithEmail", arguments: ["input": GraphQLVariable("signUpEmailInput")], type: .object(SignUpWithEmail.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(signUpWithEmail: SignUpWithEmail? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Mutation", "signUpWithEmail": signUpWithEmail.flatMap { (value: SignUpWithEmail) -> ResultMap in value.resultMap }])
+    }
+
+    /// Sign up user using email and password credentials
+    public var signUpWithEmail: SignUpWithEmail? {
+      get {
+        return (resultMap["signUpWithEmail"] as? ResultMap).flatMap { SignUpWithEmail(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "signUpWithEmail")
+      }
+    }
+
+    public struct SignUpWithEmail: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["AuthenticatedUser"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("token", type: .nonNull(.scalar(String.self))),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(token: String) {
+        self.init(unsafeResultMap: ["__typename": "AuthenticatedUser", "token": token])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var token: String {
+        get {
+          return resultMap["token"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "token")
+        }
+      }
+    }
+  }
+}
