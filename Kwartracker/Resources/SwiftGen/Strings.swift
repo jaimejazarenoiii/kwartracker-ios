@@ -11,6 +11,47 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
 
+  internal enum AddTransactionPage {
+    /// Add Transaction
+    internal static let titleBar = L10n.tr("Localizable", "add_transaction_page.title_bar")
+    internal enum Button {
+      /// Add
+      internal static let add = L10n.tr("Localizable", "add_transaction_page.button.add")
+      /// Next
+      internal static let next = L10n.tr("Localizable", "add_transaction_page.button.next")
+    }
+    internal enum FieldInput {
+      /// Enter transaction name
+      internal static let enterTransactionName = L10n.tr("Localizable", "add_transaction_page.field_input.enter_transaction_name")
+      /// Select Category
+      internal static let selectCategory = L10n.tr("Localizable", "add_transaction_page.field_input.select_category")
+      /// DD / MM / YYYY
+      internal static let selectDate = L10n.tr("Localizable", "add_transaction_page.field_input.select_date")
+      /// Select transaction type
+      internal static let selectTransactionType = L10n.tr("Localizable", "add_transaction_page.field_input.select_transaction_type")
+      /// Enter name of person
+      internal static let spentWithThisPerson = L10n.tr("Localizable", "add_transaction_page.field_input.spent_with_this_person")
+      /// Select wallet to add
+      internal static let whichWalletDoYouWantToAdd = L10n.tr("Localizable", "add_transaction_page.field_input.which_wallet_do_you_want_to_add")
+    }
+    internal enum FieldLabel {
+      /// Category
+      internal static let categoy = L10n.tr("Localizable", "add_transaction_page.field_label.categoy")
+      /// Enter amount
+      internal static let enterAmount = L10n.tr("Localizable", "add_transaction_page.field_label.enter_amount")
+      /// Select date
+      internal static let selectDate = L10n.tr("Localizable", "add_transaction_page.field_label.select_date")
+      /// Spent with this person
+      internal static let spentWithThisPerson = L10n.tr("Localizable", "add_transaction_page.field_label.spent_with_this_person")
+      /// Transaction name
+      internal static let transactionName = L10n.tr("Localizable", "add_transaction_page.field_label.transaction_name")
+      /// Transaction type
+      internal static let transactionType = L10n.tr("Localizable", "add_transaction_page.field_label.transaction_type")
+      /// Which wallet do you want it to add?
+      internal static let whichWalletDoYouWantToAdd = L10n.tr("Localizable", "add_transaction_page.field_label.which_wallet_do_you_want_to_add")
+    }
+  }
+
   internal enum AlertSheet {
     internal enum Body {
       /// Are you sure you want to delete this?
@@ -26,6 +67,27 @@ internal enum L10n {
       /// Confirmation
       internal static let confirmation = L10n.tr("Localizable", "alert_sheet.title.confirmation")
     }
+  }
+
+  internal enum CalendarPage {
+    internal enum Label {
+      /// Apply
+      internal static let apply = L10n.tr("Localizable", "calendar_page.label.apply")
+    }
+  }
+
+  internal enum CategoryDetailPage {
+    /// Category Parent
+    internal static let categoryParent = L10n.tr("Localizable", "category_detail_page.category_parent")
+    /// Category Parent Name
+    internal static let categoryParentName = L10n.tr("Localizable", "category_detail_page.category_parent_name")
+    /// Category Name
+    internal static let navigationTitle = L10n.tr("Localizable", "category_detail_page.navigation_title")
+  }
+
+  internal enum CategoryPage {
+    /// Search Category
+    internal static let searchItemPlaceholder = L10n.tr("Localizable", "category_page.search_item_placeholder")
   }
 
   internal enum ChangePasswordPage {
@@ -118,6 +180,27 @@ internal enum L10n {
     }
   }
 
+  internal enum ProfilePage {
+    /// 2F ESY Bldg, corner Ma Cristina St and Juana Osmeña St, Cebu City, Cebu, Philippines 6000
+    internal static let dummyAddress = L10n.tr("Localizable", "profile_page.dummy_address")
+    /// January 01, 1998
+    internal static let dummyBirthdate = L10n.tr("Localizable", "profile_page.dummy_birthdate")
+    /// Samantha Mae Tagli
+    internal static let dummyName = L10n.tr("Localizable", "profile_page.dummy_name")
+    /// 09012345678
+    internal static let dummyNumber = L10n.tr("Localizable", "profile_page.dummy_number")
+    /// My Profile
+    internal static let title = L10n.tr("Localizable", "profile_page.title")
+    internal enum Label {
+      /// Address
+      internal static let address = L10n.tr("Localizable", "profile_page.label.address")
+      /// Birthdate
+      internal static let birthdate = L10n.tr("Localizable", "profile_page.label.birthdate")
+      /// Contact Number
+      internal static let contactNumber = L10n.tr("Localizable", "profile_page.label.contact_number")
+    }
+  }
+
   internal enum SettingsPage {
     /// Settings
     internal static let navigationTitle = L10n.tr("Localizable", "settings_page.navigation_title")
@@ -126,6 +209,25 @@ internal enum L10n {
       internal static let categories = L10n.tr("Localizable", "settings_page.navigation_item.categories")
       /// Login and Security
       internal static let loginAndSecurity = L10n.tr("Localizable", "settings_page.navigation_item.login_and_security")
+    }
+  }
+
+  internal enum SideMenu {
+    internal enum Label {
+      /// Home
+      internal static let home = L10n.tr("Localizable", "side_menu.label.home")
+      /// Logout
+      internal static let logout = L10n.tr("Localizable", "side_menu.label.logout")
+      /// My Profile
+      internal static let myProfile = L10n.tr("Localizable", "side_menu.label.myProfile")
+      /// Reports
+      internal static let reports = L10n.tr("Localizable", "side_menu.label.reports")
+      /// Settings
+      internal static let settings = L10n.tr("Localizable", "side_menu.label.settings")
+      /// Transaction
+      internal static let transaction = L10n.tr("Localizable", "side_menu.label.transaction")
+      /// Wallets
+      internal static let wallets = L10n.tr("Localizable", "side_menu.label.wallets")
     }
   }
 
@@ -199,6 +301,63 @@ internal enum L10n {
       /// Create\nAccount
       internal static let createAccount = L10n.tr("Localizable", "sign_up_page.title.create_account")
     }
+  }
+
+  internal enum TransactionDetailPage {
+    /// Transaction
+    internal static let titleBar = L10n.tr("Localizable", "transaction_detail_page.title_bar")
+    internal enum Label {
+      /// Added to wallet
+      internal static let addedToWallet = L10n.tr("Localizable", "transaction_detail_page.label.added_to_wallet")
+      /// Category
+      internal static let category = L10n.tr("Localizable", "transaction_detail_page.label.category")
+      /// Spent with
+      internal static let spentWith = L10n.tr("Localizable", "transaction_detail_page.label.spent_with")
+      /// Transaction date
+      internal static let transactionDate = L10n.tr("Localizable", "transaction_detail_page.label.transaction_date")
+      /// Transaction type
+      internal static let transactionType = L10n.tr("Localizable", "transaction_detail_page.label.transaction_type")
+    }
+  }
+
+  internal enum TransactionsCreateFormModal {
+    /// Default date range
+    internal static let title = L10n.tr("Localizable", "transactions_create_form_modal.title")
+    internal enum ButtonTitle {
+      /// Apply
+      internal static let apply = L10n.tr("Localizable", "transactions_create_form_modal.button_title.apply")
+    }
+    internal enum InputField {
+      /// Select category
+      internal static let category = L10n.tr("Localizable", "transactions_create_form_modal.input_field.category")
+      /// This week
+      internal static let dateRange = L10n.tr("Localizable", "transactions_create_form_modal.input_field.date_range")
+      /// All wallet
+      internal static let walletType = L10n.tr("Localizable", "transactions_create_form_modal.input_field.wallet_type")
+    }
+    internal enum InputLabel {
+      /// Category
+      internal static let category = L10n.tr("Localizable", "transactions_create_form_modal.input_label.category")
+      /// Date range
+      internal static let dateRange = L10n.tr("Localizable", "transactions_create_form_modal.input_label.date_range")
+      /// Wallet Type
+      internal static let walletType = L10n.tr("Localizable", "transactions_create_form_modal.input_label.wallet_type")
+    }
+  }
+
+  internal enum TransactionsPage {
+    /// + %@
+    internal static func addAmount(_ p1: Any) -> String {
+      return L10n.tr("Localizable", "transactions_page.add_amount", String(describing: p1))
+    }
+    /// - %@
+    internal static func deductAmount(_ p1: Any) -> String {
+      return L10n.tr("Localizable", "transactions_page.deduct_amount", String(describing: p1))
+    }
+    /// Transactions
+    internal static let titleBar = L10n.tr("Localizable", "transactions_page.title_bar")
+    /// Search Transaction
+    internal static let transactionSearchPlaceholder = L10n.tr("Localizable", "transactions_page.transaction_search_placeholder")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

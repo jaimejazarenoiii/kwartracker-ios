@@ -24,24 +24,6 @@ struct LoginAndSecuritBodyView_Previews: PreviewProvider {
     }
 }
 
-private struct EditButtonView: View {
-    private let buttonSize: CGFloat = 15
-    private let buttonPadding: CGFloat = 13
-
-    var body: some View {
-        HStack {
-            Button(action: {}, label: {
-                Image(uiImage: Asset.Images.editIcon.image)
-                    .resizable()
-                    .frame(width: buttonSize, height: buttonSize, alignment: .center)
-            }).buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.solitudeGrey.color,
-                                             padding: buttonPadding))
-        }
-        .frame(maxWidth: .infinity, alignment: .trailing)
-        .padding([.top, .horizontal])
-    }
-}
-
 private struct LoginDetailsView: View {
     private let fontSize: CGFloat = 15
     private let bottomMargin: CGFloat = 8
@@ -49,21 +31,17 @@ private struct LoginDetailsView: View {
     var body: some View {
         Group {
             VStack(alignment: .leading) {
-                TextGroup(text: L10n.LoginAndSecurityPage.Label.email,
+                TextGroupView(text: L10n.LoginAndSecurityPage.Label.email,
                           fontSize: fontSize,
                           bottomMargin: bottomMargin,
                           fontColor: Color(Asset.Colors.spindleGrey.color))
-                TextGroup(text: L10n.LoginAndSecurityPage.DummyData.email,
-                          fontSize: nil,
-                          bottomMargin: nil,
+                TextGroupView(text: L10n.LoginAndSecurityPage.DummyData.email,
                           fontColor: Color(Asset.Colors.nightRider.color))
-                TextGroup(text: L10n.SignInPage.Label.password,
+                TextGroupView(text: L10n.SignInPage.Label.password,
                           fontSize: fontSize,
                           bottomMargin: bottomMargin,
                           fontColor: Color(Asset.Colors.spindleGrey.color))
-                TextGroup(text: L10n.LoginAndSecurityPage.DummyData.password,
-                          fontSize: nil,
-                          bottomMargin: nil,
+                TextGroupView(text: L10n.LoginAndSecurityPage.DummyData.password,
                           fontColor: Color(Asset.Colors.nightRider.color))
 
                 ButtonView(actionHandler: {}, actionLabel: .changePassword)
@@ -72,23 +50,5 @@ private struct LoginDetailsView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
         }
-    }
-}
-
-private struct TextGroup: View {
-    let text: String
-    let fontSize: CGFloat?
-    let bottomMargin: CGFloat?
-    let fontColor: Color
-    
-    private let defaultFontSize: CGFloat = 17
-    private let defaultBottomMargin: CGFloat = 15
-
-    var body: some View {
-        Text(text)
-            .font(Font.system(size: fontSize ?? defaultFontSize))
-            .fontWeight(.bold)
-            .padding(.bottom, bottomMargin ?? defaultBottomMargin)
-            .foregroundColor(fontColor)
     }
 }

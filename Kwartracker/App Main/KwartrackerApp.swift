@@ -19,7 +19,12 @@ struct KwartrackerAppSwiftUI: App {
     )
     var body: some Scene {
         WindowGroup {
-            SignInView()
+            if KeyChainKeys.isLoggedIn() {
+                // For the meantime, show text view
+                Text("You are logged in.")
+            } else {
+                SignInView()
+            }
         }
     }
 }

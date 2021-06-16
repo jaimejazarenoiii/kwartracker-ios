@@ -22,13 +22,20 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
   internal enum Colors {
+    internal static let activeGrey = ColorAsset(name: "ActiveGrey")
+    internal static let asureishWhite = ColorAsset(name: "AsureishWhite")
     internal static let blueberry = ColorAsset(name: "Blueberry")
     internal static let charcoal = ColorAsset(name: "Charcoal")
+    internal static let loblolly = ColorAsset(name: "Loblolly")
     internal static let mintGreen = ColorAsset(name: "MintGreen")
+    internal static let mysticBlueGrey = ColorAsset(name: "MysticBlueGrey")
+    internal static let niagaraGreen = ColorAsset(name: "NiagaraGreen")
     internal static let nightRider = ColorAsset(name: "NightRider")
     internal static let persianGreen = ColorAsset(name: "PersianGreen")
+    internal static let quartz = ColorAsset(name: "Quartz")
     internal static let romanRed = ColorAsset(name: "RomanRed")
     internal static let solitudeGrey = ColorAsset(name: "SolitudeGrey")
+    internal static let solitudeGreyShade2 = ColorAsset(name: "SolitudeGreyShade2")
     internal static let spindleGrey = ColorAsset(name: "SpindleGrey")
     internal static let teal = ColorAsset(name: "Teal")
     internal static let turquoise = ColorAsset(name: "Turquoise")
@@ -36,8 +43,10 @@ internal enum Asset {
   }
   internal enum Images {
     internal static let addIcon = ImageAsset(name: "AddIcon")
+    internal static let addIconTeal = ImageAsset(name: "AddIcon_Teal")
     internal static let appleIcon = ImageAsset(name: "AppleIcon")
     internal static let arrowLeftIcon = ImageAsset(name: "ArrowLeftIcon")
+    internal static let arrowLeftIconWhite = ImageAsset(name: "ArrowLeftIcon_White")
     internal static let arrowRightIcon = ImageAsset(name: "ArrowRightIcon")
     internal static let calendarIcon = ImageAsset(name: "CalendarIcon")
     internal static let chartIcon = ImageAsset(name: "ChartIcon")
@@ -54,11 +63,13 @@ internal enum Asset {
     internal static let profileIcon = ImageAsset(name: "ProfileIcon")
     internal static let reportIcon = ImageAsset(name: "ReportIcon")
     internal static let salaryIcon = ImageAsset(name: "SalaryIcon")
+    internal static let searchIcon = ImageAsset(name: "SearchIcon")
     internal static let settingsIcon = ImageAsset(name: "SettingsIcon")
     internal static let transactionIcon = ImageAsset(name: "TransactionIcon")
     internal static let trashIcon2 = ImageAsset(name: "TrashIcon-2")
     internal static let trashIcon = ImageAsset(name: "TrashIcon")
     internal static let walletIcon = ImageAsset(name: "WalletIcon")
+    internal static let icSample = ImageAsset(name: "ic_sample")
     internal static let sampleImage = ImageAsset(name: "sampleImage")
   }
 }

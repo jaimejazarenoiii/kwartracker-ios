@@ -8,5 +8,8 @@
 import Foundation
 
 struct AppState {
-    init() {}
+    var transactionState: TransactionsViewState
+    init() {
+        transactionState = TransactionsViewState()
+    }
 }
