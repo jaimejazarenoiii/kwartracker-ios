@@ -91,6 +91,7 @@
 		7A17D13A26298695005BB190 /* SNSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13926298695005BB190 /* SNSButton.swift */; };
 		7A21C8CF266785C40007D30F /* MyProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A21C8CE266785C40007D30F /* MyProfileHeaderView.swift */; };
 		7A734D92262FFAA900557EF7 /* BWNeumorphicRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A734D91262FFAA900557EF7 /* BWNeumorphicRectangle.swift */; };
+		7A7467452678ADE500A991EA /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7467442678ADE500A991EA /* SignUpViewModel.swift */; };
 		7A7FA1322637B70A00484F51 /* FootnoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7FA1312637B70A00484F51 /* FootnoteButton.swift */; };
 		7A9741EE26705F8500747CF2 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9741ED26705F8500747CF2 /* SignInViewModel.swift */; };
 		7A9741F02670609E00747CF2 /* SignUpMutation.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 7A9741EF2670609E00747CF2 /* SignUpMutation.graphql */; };
@@ -241,6 +242,7 @@
 		7A17D13926298695005BB190 /* SNSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSButton.swift; sourceTree = "<group>"; };
 		7A21C8CE266785C40007D30F /* MyProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileHeaderView.swift; sourceTree = "<group>"; };
 		7A734D91262FFAA900557EF7 /* BWNeumorphicRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BWNeumorphicRectangle.swift; sourceTree = "<group>"; };
+		7A7467442678ADE500A991EA /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		7A7FA1312637B70A00484F51 /* FootnoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootnoteButton.swift; sourceTree = "<group>"; };
 		7A9741ED26705F8500747CF2 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		7A9741EF2670609E00747CF2 /* SignUpMutation.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SignUpMutation.graphql; sourceTree = "<group>"; };
@@ -779,6 +781,14 @@
 			path = "Sign-in Reusables";
 			sourceTree = "<group>";
 		};
+		7A7467462678ADE900A991EA /* Sign-up View-Model */ = {
+			isa = PBXGroup;
+			children = (
+				7A7467442678ADE500A991EA /* SignUpViewModel.swift */,
+			);
+			path = "Sign-up View-Model";
+			sourceTree = "<group>";
+		};
 		7A9741EC26705F5300747CF2 /* Sign-in View-Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -891,8 +901,9 @@
 		C6A089802637C6D200E6653E /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				C65699C02637C8EE00D24D2F /* Content */,
 				C6249AA72637EB8C00C55B31 /* SignUpView.swift */,
+				C65699C02637C8EE00D24D2F /* Content */,
+				7A7467462678ADE900A991EA /* Sign-up View-Model */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -1246,6 +1257,7 @@
 				047B510A265D0D8E009158F7 /* SideBarStack.swift in Sources */,
 				047E2B3B265B9C1B00D1EB9C /* SideMenu.swift in Sources */,
 				C6249AA82637EB8C00C55B31 /* SignUpView.swift in Sources */,
+				7A7467452678ADE500A991EA /* SignUpViewModel.swift in Sources */,
 				C65699C32637C91400D24D2F /* SignUpFooterView.swift in Sources */,
 				24AC7C9C265F65FD00CE4282 /* CategoryBodyView.swift in Sources */,
 				7AD9B8732626EC2A00CF0EA6 /* SkeletalView.swift in Sources */,
