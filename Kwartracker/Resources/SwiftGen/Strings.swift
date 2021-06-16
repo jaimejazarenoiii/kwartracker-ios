@@ -69,6 +69,13 @@ internal enum L10n {
     }
   }
 
+  internal enum CalendarPage {
+    internal enum Label {
+      /// Apply
+      internal static let apply = L10n.tr("Localizable", "calendar_page.label.apply")
+    }
+  }
+
   internal enum CategoryDetailPage {
     /// Category Parent
     internal static let categoryParent = L10n.tr("Localizable", "category_detail_page.category_parent")
