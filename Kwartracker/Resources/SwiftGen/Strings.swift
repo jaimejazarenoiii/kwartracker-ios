@@ -71,6 +71,13 @@ internal enum L10n {
     }
   }
 
+  internal enum CalendarPage {
+    internal enum Label {
+      /// Apply
+      internal static let apply = L10n.tr("Localizable", "calendar_page.label.apply")
+    }
+  }
+
   internal enum Card {
     internal enum Title {
       /// Available Balance

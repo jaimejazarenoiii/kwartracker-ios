@@ -1,4 +1,7 @@
 // English
+
+"calendar_page.label.apply" = "Apply";
+
 "add_transaction_page.button.add" = "Add";
 "add_transaction_page.button.next" = "Next";
 "add_transaction_page.field_label.which_wallet_do_you_want_to_add" = "Which wallet do you want it to add?";
