@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct SignUpBodyView: View {
-    @State private var email: String = ""
-    @State private var password: String = ""
+    @StateObject private var viewModel = SignUpViewModel()
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -18,10 +17,12 @@ struct SignUpBodyView: View {
                     .font(.system(size: 40))
                     .fontWeight(.medium)
                     .fixedSize(horizontal: false, vertical: true)
-                UserField(fieldType: .email, textValue: $email)
-                UserField(fieldType: .password, textValue: $password)
+                UserField(fieldType: .email, textValue: $viewModel.email)
+                UserField(fieldType: .password, textValue: $viewModel.password)
                 Group {
-                    SNSButton(actionHandler: {}, actionLabel: .signUp).padding(.top, 15)
+                    SNSButton(actionHandler: {
+                        viewModel.doRegisterUser()
+                    }, actionLabel: .signUp).padding(.top, 15)
                     HStack {
                         Spacer()
                         Text(L10n.SignUpPage.Label.or)
@@ -30,6 +31,9 @@ struct SignUpBodyView: View {
                     SNSButton(actionHandler: {}, actionLabel: .signUpGoogle)
                     SNSButton(actionHandler: {}, actionLabel: .signUpApple)
                         .padding(.top)
+                }
+                .fullScreenCover(isPresented: $viewModel.isAuthenticated) {
+                    AlertView()
                 }
                 Group {
                     HStack {
