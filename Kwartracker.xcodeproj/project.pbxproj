@@ -84,6 +84,8 @@
 		2952CC52267B49950038A6C5 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2952CC4D267B49950038A6C5 /* ProgressView.swift */; };
 		2952CC53267B49950038A6C5 /* CardTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2952CC4E267B49950038A6C5 /* CardTargetView.swift */; };
 		2952CC54267B49950038A6C5 /* CardPageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2952CC4F267B49950038A6C5 /* CardPageControlView.swift */; };
+		2952CC5E267B4B520038A6C5 /* AddNewWalletPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2952CC5C267B4B520038A6C5 /* AddNewWalletPage.swift */; };
+		2952CC5F267B4B520038A6C5 /* AddWalletFieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2952CC5D267B4B520038A6C5 /* AddWalletFieldsView.swift */; };
 		29611D7D265F69F80076568D /* SelectedDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29611D7C265F69F80076568D /* SelectedDayView.swift */; };
 		298536F32660DBAA0024A25C /* NeumorphicEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298536F22660DBAA0024A25C /* NeumorphicEffect.swift */; };
 		29945297267B1E370002C5E3 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C786263534FE00F33B72 /* Wallet.swift */; };
@@ -274,6 +276,8 @@
 		2952CC4D267B49950038A6C5 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		2952CC4E267B49950038A6C5 /* CardTargetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTargetView.swift; sourceTree = "<group>"; };
 		2952CC4F267B49950038A6C5 /* CardPageControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPageControlView.swift; sourceTree = "<group>"; };
+		2952CC5C267B4B520038A6C5 /* AddNewWalletPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewWalletPage.swift; sourceTree = "<group>"; };
+		2952CC5D267B4B520038A6C5 /* AddWalletFieldsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWalletFieldsView.swift; sourceTree = "<group>"; };
 		29611D7C265F69F80076568D /* SelectedDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDayView.swift; sourceTree = "<group>"; };
 		298536F22660DBAA0024A25C /* NeumorphicEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicEffect.swift; sourceTree = "<group>"; };
 		2994531D267B2D960002C5E3 /* KTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KTextfield.swift; sourceTree = "<group>"; };
@@ -855,6 +859,15 @@
 			path = Contents;
 			sourceTree = "<group>";
 		};
+		2952CC5B267B4B520038A6C5 /* Add New Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				2952CC5C267B4B520038A6C5 /* AddNewWalletPage.swift */,
+				2952CC5D267B4B520038A6C5 /* AddWalletFieldsView.swift */,
+			);
+			path = "Add New Wallet";
+			sourceTree = "<group>";
+		};
 		298536F12660DB8A0024A25C /* Neumorphic Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -876,6 +889,7 @@
 		29AE102B262EAF3D00B383CF /* Wallet Page */ = {
 			isa = PBXGroup;
 			children = (
+				2952CC5B267B4B520038A6C5 /* Add New Wallet */,
 				2952CC49267B49950038A6C5 /* Card Views */,
 				29464F5826380F3400E6E082 /* WalletActionButtonView.swift */,
 				29AB675C2645326400D375A6 /* WalletActionButtonWithLabel.swift */,
@@ -1406,6 +1420,7 @@
 				7A21C8CF266785C40007D30F /* MyProfileHeaderView.swift in Sources */,
 				24AC7C9E265F661300CE4282 /* CategoryView.swift in Sources */,
 				29945322267B2DDD0002C5E3 /* AdaptsToKeyboard.swift in Sources */,
+				2952CC5E267B4B520038A6C5 /* AddNewWalletPage.swift in Sources */,
 				7AD9B86B2626EC0000CF0EA6 /* SignInHeaderView.swift in Sources */,
 				047E2AD0265B82B700D1EB9C /* ProfileView.swift in Sources */,
 				16895014264AC06B00EED051 /* SelectableFieldForm.swift in Sources */,
@@ -1451,6 +1466,7 @@
 				7A734D92262FFAA900557EF7 /* BWNeumorphicRectangle.swift in Sources */,
 				29327584264E4CE300E8BA8B /* WalletType.swift in Sources */,
 				29D35FA5264BEDB500C4DD48 /* WalletSectionHeader.swift in Sources */,
+				2952CC5F267B4B520038A6C5 /* AddWalletFieldsView.swift in Sources */,
 				2952CC52267B49950038A6C5 /* ProgressView.swift in Sources */,
 				7AD9B8892626F3A300CF0EA6 /* SignInView.swift in Sources */,
 				291DFF942632D61B00DAC0EF /* WalletOneCardCenterView.swift in Sources */,

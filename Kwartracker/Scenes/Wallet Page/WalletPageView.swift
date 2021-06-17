@@ -30,7 +30,7 @@ struct WalletPageView: View {
                 } rightBarViewContent: {
                     
                     NavigationLink(
-                        destination: TransactionsView(), // will change to add wallet
+                        destination: AddNewWalletPage(),
                         isActive: $buttonToggle) {
                         
                         Button(action: {
