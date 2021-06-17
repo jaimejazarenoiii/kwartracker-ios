@@ -111,6 +111,25 @@ internal enum L10n {
     }
   }
 
+  internal enum EditCategoryPage {
+    /// Parent Category Name
+    internal static let dummyDataParentCategoryName = L10n.tr("Localizable", "edit_category_page.dummy_data_parent_category_name")
+    internal enum ContentText {
+      /// Make parent category?
+      internal static let makeParentCategory = L10n.tr("Localizable", "edit_category_page.content_text.make_parent_category")
+      /// Select Icon
+      internal static let selectIcon = L10n.tr("Localizable", "edit_category_page.content_text.select_icon")
+      /// Select Parent
+      internal static let selectParent = L10n.tr("Localizable", "edit_category_page.content_text.select_parent")
+      /// Select Parent Category
+      internal static let selectParentCategory = L10n.tr("Localizable", "edit_category_page.content_text.select_parent_category")
+      /// NO
+      internal static let toggleOff = L10n.tr("Localizable", "edit_category_page.content_text.toggle_off")
+      /// YES
+      internal static let toggleOn = L10n.tr("Localizable", "edit_category_page.content_text.toggle_on")
+    }
+  }
+
   internal enum EditProfilePage {
     /// My Profile
     internal static let navigationTitle = L10n.tr("Localizable", "edit_profile_page.navigation_title")

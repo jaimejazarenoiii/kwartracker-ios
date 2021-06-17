@@ -137,3 +137,12 @@
 
 // Categories pages
 "category_page.search_item_placeholder" = "Search Category";
+
+// Edit Category Page
+"edit_category_page.content_text.select_icon" = "Select Icon";
+"edit_category_page.content_text.select_parent" = "Select Parent";
+"edit_category_page.content_text.toggle_on" = "YES";
+"edit_category_page.content_text.toggle_off" = "NO";
+"edit_category_page.content_text.make_parent_category" = "Make parent category?";
+"edit_category_page.content_text.select_parent_category" = "Select Parent Category";
+"edit_category_page.dummy_data_parent_category_name" = "Parent Category Name";
