@@ -1,6 +1,8 @@
 // Filipino
 
+"button.label.save" = "Save";
 "calendar_page.label.apply" = "Apply";
+"currency" = "Currency";
 
 "add_transaction_page.button.add" = "Add";
 "add_transaction_page.button.next" = "Next";
@@ -57,22 +59,6 @@
 "sign_up_page.label.already_have_an_account" = "Already have an account?";
 "sign_up_page.button.sign_in" = "Sign In";
 
-// wallet
-"card.title.savings" = "Savings";
-"card.title.budget" = "Budget";
-"card.title.goal" = "Goal";
-"card.title.available_balance" = "Available Balance";
-"view_all" = "View All";
-"wallet.action_button.edit_wallet" = "Edit Wallet";
-"wallet.action_button.add_transaction" = "Add Transaction";
-"wallet.title.my_wallet" = "My Wallets";
-"wallet.target.to_target_amount" = "to target amount";
-"wallet.target.to_target_date" = "to target date";
-"wallet.type.budget" = "Budget";
-"wallet.type.goal" = "Goal";
-"wallet.type.savings" = "Savings";
-"wallet.message.wallet_not_found" = "Wallet does not exist.";
-
 "transaction_detail_page.label.added_to_wallet" = "Added to wallet";
 "transaction_detail_page.label.category" = "Category";
 "transaction_detail_page.label.transaction_date" = "Transaction date";
@@ -83,6 +69,24 @@
 "transactions_page.transaction_search_placeholder" = "Search Transaction";
 "transactions_page.add_amount" = "+ %@";
 "transactions_page.deduct_amount" = "- %@";
+
+// wallet
+"card.title.savings" = "Savings";
+"card.title.budget" = "Budget";
+"card.title.goal" = "Goal";
+"card.title.available_balance" = "Available Balance";
+"view_all" = "View All";
+"wallet.action_button.edit_wallet" = "Edit Wallet";
+"wallet.action_button.add_transaction" = "Add Transaction";
+"wallet.title.add_wallet" = "Add Wallet";
+"wallet.title.my_wallet" = "My Wallets";
+"wallet.target.to_target_amount" = "to target amount";
+"wallet.target.to_target_date" = "to target date";
+"wallet_type.budget" = "Budget";
+"wallet_type.goal" = "Goal";
+"wallet_type.savings" = "Savings";
+"wallet.message.wallet_not_found" = "Wallet does not exist.";
+
 "transactions_create_form_modal.button_title.apply" = "Apply";
 "transactions_create_form_modal.input_field.date_range" = "This week";
 "transactions_create_form_modal.input_field.category" = "Select category";
@@ -128,7 +132,7 @@
 // Settings Page
 "settings_page.navigation_title" = "Settings";
 "settings_page.navigation_item.login_and_security" = "Login and Security";
-"edit_profile_page.navigation_item.categories" = "Categories";
+"settings_page.navigation_item.categories" = "Categories";
 
 // Login And Security Page
 "login_and_security_page.label.email" = "Email Address";

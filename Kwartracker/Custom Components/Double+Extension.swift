@@ -15,4 +15,13 @@ extension Double {
         numberFormatter.decimalSeparator = "."
         return numberFormatter.string(from: NSNumber(value: self)) ?? ""
     }
+    
+    func amountOnCurrency(currency: String) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.minimumFractionDigits = 2
+        formatter.decimalSeparator = "."
+        formatter.locale = Locale(identifier: currency)
+        return formatter.string(from: NSNumber(value: self)) ?? "0"
+    }
 }

@@ -1,6 +1,8 @@
 // English
 
+"button.label.save" = "Save";
 "calendar_page.label.apply" = "Apply";
+"currency" = "Currency";
 
 "add_transaction_page.button.add" = "Add";
 "add_transaction_page.button.next" = "Next";

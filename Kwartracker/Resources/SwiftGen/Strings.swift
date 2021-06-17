@@ -10,6 +10,8 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// Currency
+  internal static let currency = L10n.tr("Localizable", "currency")
   /// View All
   internal static let viewAll = L10n.tr("Localizable", "view_all")
 
@@ -68,6 +70,13 @@ internal enum L10n {
     internal enum Title {
       /// Confirmation
       internal static let confirmation = L10n.tr("Localizable", "alert_sheet.title.confirmation")
+    }
+  }
+
+  internal enum Button {
+    internal enum Label {
+      /// Save
+      internal static let save = L10n.tr("Localizable", "button.label.save")
     }
   }
 
