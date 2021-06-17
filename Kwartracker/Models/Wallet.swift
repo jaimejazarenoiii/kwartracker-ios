@@ -8,9 +8,29 @@
 import Foundation
 
 struct Wallet {
+    var id: Int
     var title: String = ""
     var type: String = ""
     var currency: Currency = .philippinePeso
     var total: Double = 0
     var targetRawDate: String = ""
+    
+    var dateTime: Date? {
+        targetRawDate.toDate("yyyy-MM-dd")?.date
+    }
+    
+    var targetDateCount: DateComponents? {
+        guard let date = dateTime else { return nil }
+        let diffs = Calendar.current.dateComponents([.year, .month, .day], from: Date(), to: date)
+        return diffs
+    }
+
+    func createTransactionErrorMessage() -> String? {
+        if !title.isEmpty &&
+            !type.isEmpty &&
+            dateTime != nil {
+            return nil
+        }
+        return "Please fill up required fields (title, category)"
+    }
 }

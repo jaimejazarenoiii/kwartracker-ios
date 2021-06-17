@@ -10,7 +10,6 @@ import SwiftUI
 struct CircleButtonStyle: ButtonStyle {
     var buttonColor: UIColor
     var padding: CGFloat = 15
-
     private let lineWidth: CGFloat = 4
     private let blurRadius: CGFloat = 4
     private let blurOffset = CGPoint(x: 2, y: 2)
@@ -20,7 +19,6 @@ struct CircleButtonStyle: ButtonStyle {
     private let whiteOpacity: Double = 0.7
     private let whiteShadowRadius: CGFloat = 10
     private let whiteShadowOffset = CGPoint(x: -5, y: -5)
-
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding(padding)

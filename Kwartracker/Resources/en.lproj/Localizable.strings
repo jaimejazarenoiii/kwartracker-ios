@@ -68,6 +68,22 @@
 "transactions_page.add_amount" = "+ %@";
 "transactions_page.deduct_amount" = "- %@";
 
+// wallet
+"card.title.savings" = "Savings";
+"card.title.budget" = "Budget";
+"card.title.goal" = "Goal";
+"card.title.available_balance" = "Available Balance";
+"view_all" = "View All";
+"wallet.action_button.edit_wallet" = "Edit Wallet";
+"wallet.action_button.add_transaction" = "Add Transaction";
+"wallet.title.my_wallet" = "My Wallets";
+"wallet.target.to_target_amount" = "to target amount";
+"wallet.target.to_target_date" = "to target date";
+"wallet_type.budget" = "Budget";
+"wallet_type.goal" = "Goal";
+"wallet_type.savings" = "Savings";
+"wallet.message.wallet_not_found" = "Wallet does not exist.";
+
 "transactions_create_form_modal.button_title.apply" = "Apply";
 "transactions_create_form_modal.input_field.date_range" = "This week";
 "transactions_create_form_modal.input_field.category" = "Select category";
