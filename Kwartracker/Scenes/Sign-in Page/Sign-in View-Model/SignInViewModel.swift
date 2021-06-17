@@ -13,9 +13,13 @@ final class SignInViewModel: ObservableObject {
     @Published var password: String = ""
     @Published var isAuthenticated: Bool = false
     
+    private var isFetching = false
     var userInfo: SignInMutation.Data.SignInWithEmail?
     
     func doUserLogin() {
+        guard !isFetching else { return }
+        isFetching = true
+        
         let loginCredentials = CredentialsInput(email: email, password: password)
         let mutation = SignInMutation(signInCredential: loginCredentials)
         
@@ -31,6 +35,8 @@ final class SignInViewModel: ObservableObject {
             case .failure(let error):
                 print("Failure! Error: \(error)")
             }
+            
+            self.isFetching = false
         }
     }
 }

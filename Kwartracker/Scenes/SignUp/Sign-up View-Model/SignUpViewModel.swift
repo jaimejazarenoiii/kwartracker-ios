@@ -13,9 +13,13 @@ final class SignUpViewModel: ObservableObject {
     @Published var password: String = ""
     @Published var isAuthenticated: Bool = false
     
+    private var isFetching = false
     var token: String = ""
     
     func doRegisterUser() {
+        guard !isFetching else { return }
+        isFetching = true
+        
         let profileInfo = ProfileInput(firstName: "", lastName: "", gender: 0, age: 18)
         let signupCredentials = SignUpWithEmailInput(email: email, password: password,
                                                      passwordConfirmation: password, profile: profileInfo)
@@ -34,6 +38,8 @@ final class SignUpViewModel: ObservableObject {
             case .failure(let error):
                 print("Failure! Error: \(error)")
             }
+            
+            self.isFetching = false
         }
     }
 }
