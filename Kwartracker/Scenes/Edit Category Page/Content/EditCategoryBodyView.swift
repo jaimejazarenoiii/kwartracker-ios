@@ -127,7 +127,7 @@ private struct DropDown: View {
             .padding(.leading)
             .onTapGesture(perform: {
                 if !isParent {
-                    withAnimation(.spring().speed(dropDownAnimationSpeed)) {
+                    withAnimation(Animation.spring().speed(dropDownAnimationSpeed)) {
                         show.toggle()
                     }
                 }
