@@ -82,6 +82,7 @@
 "wallet_type.budget" = "Budget";
 "wallet_type.goal" = "Goal";
 "wallet_type.savings" = "Savings";
+"wallet.message.wallet_not_found" = "Wallet does not exist.";
 
 "transactions_create_form_modal.button_title.apply" = "Apply";
 "transactions_create_form_modal.input_field.date_range" = "This week";

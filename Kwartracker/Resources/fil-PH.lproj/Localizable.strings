@@ -71,6 +71,7 @@
 "wallet.type.budget" = "Budget";
 "wallet.type.goal" = "Goal";
 "wallet.type.savings" = "Savings";
+"wallet.message.wallet_not_found" = "Wallet does not exist.";
 
 "transaction_detail_page.label.added_to_wallet" = "Added to wallet";
 "transaction_detail_page.label.category" = "Category";

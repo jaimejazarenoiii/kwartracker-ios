@@ -382,6 +382,10 @@ internal enum L10n {
       /// Edit Wallet
       internal static let editWallet = L10n.tr("Localizable", "wallet.action_button.edit_wallet")
     }
+    internal enum Message {
+      /// Wallet does not exist.
+      internal static let walletNotFound = L10n.tr("Localizable", "wallet.message.wallet_not_found")
+    }
     internal enum Target {
       /// to target amount
       internal static let toTargetAmount = L10n.tr("Localizable", "wallet.target.to_target_amount")

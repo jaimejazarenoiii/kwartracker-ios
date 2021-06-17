@@ -21,7 +21,6 @@ struct Wallet {
     
     var targetDateCount: DateComponents? {
         guard let date = dateTime else { return nil }
-
         let diffs = Calendar.current.dateComponents([.year, .month, .day], from: Date(), to: date)
         return diffs
     }

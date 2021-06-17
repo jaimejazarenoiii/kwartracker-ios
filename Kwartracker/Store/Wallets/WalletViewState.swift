@@ -30,13 +30,13 @@ struct WalletViewState {
             if let index = state.wallets.enumerated().first(where: { $0.element.id == wallet.id })?.offset {
                 state.wallets[index] = wallet
             } else {
-                state.walletErrorMessage = "Wallet does not exist."
+                state.walletErrorMessage = L10n.Wallet.Message.walletNotFound
             }
         case .delete(let index):
             if index < state.wallets.count && index >= 0 {
                 state.wallets.remove(at: index)
             } else {
-                state.walletErrorMessage = "Wallet does not exist."
+                state.walletErrorMessage = L10n.Wallet.Message.walletNotFound
             }
         }
         return Empty().eraseToAnyPublisher()

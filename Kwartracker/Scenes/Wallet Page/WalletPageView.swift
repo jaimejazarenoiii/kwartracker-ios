@@ -11,9 +11,9 @@ struct WalletPageView: View {
     @EnvironmentObject var store: AppStore
     @State private var margin: CGFloat = 30
     @State private var buttonToggle: Bool = false
-    private var separator: UIColor = Asset.Colors.spindleGrey.color
-    private var separatorHeight: CGFloat = 0.5
-    private var navIconSize: CGFloat = 10
+    private let separator: UIColor = Asset.Colors.spindleGrey.color
+    private let separatorHeight: CGFloat = 0.5
+    private let navIconSize: CGFloat = 10
     var body: some View {
         SkeletalView {
             NavigationBarView(

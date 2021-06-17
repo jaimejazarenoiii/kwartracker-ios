@@ -8,17 +8,19 @@
 import SwiftUI
 
 struct WalletSectionHeader: View {
+    private let fontSizeHeader: CGFloat = 16
+    private let fontSizLabel: CGFloat = 12
     var body: some View {
         HStack {
             Text(L10n.TransactionsPage.titleBar)
-                .font(.system(size: 16, weight: .bold))
+                .font(.system(size: fontSizeHeader, weight: .bold))
                 .foregroundColor(Color(Asset.Colors.charcoal.color))
             
             Spacer()
             Button(action: {
             }, label: {
                 Text(L10n.viewAll)
-                    .font(.system(size: 12, weight: .bold))
+                    .font(.system(size: fontSizLabel, weight: .bold))
                     .underline()
                     .foregroundColor(Color(Asset.Colors.spindleGrey.color))
             })
