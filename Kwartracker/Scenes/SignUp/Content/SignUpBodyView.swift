@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct SignUpBodyView: View {
-    @StateObject private var viewModel = SignUpViewModel()
+    @State var email: String = ""
+    @State var password: String = ""
+    @EnvironmentObject var store: AppStore
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -17,11 +19,12 @@ struct SignUpBodyView: View {
                     .font(.system(size: 40))
                     .fontWeight(.medium)
                     .fixedSize(horizontal: false, vertical: true)
-                UserField(fieldType: .email, textValue: $viewModel.email)
-                UserField(fieldType: .password, textValue: $viewModel.password)
+                UserField(fieldType: .email, textValue: $email)
+                UserField(fieldType: .password, textValue: $password)
                 Group {
                     SNSButton(actionHandler: {
-                        viewModel.doRegisterUser()
+                        let userInfo = UserAuthInfo(email: email, password: password)
+                        store.send(.authView(action: .create(user: userInfo, store: store)))
                     }, actionLabel: .signUp).padding(.top, 15)
                     HStack {
                         Spacer()
@@ -32,7 +35,7 @@ struct SignUpBodyView: View {
                     SNSButton(actionHandler: {}, actionLabel: .signUpApple)
                         .padding(.top)
                 }
-                .fullScreenCover(isPresented: $viewModel.isAuthenticated) {
+                .fullScreenCover(isPresented: Binding<Bool>.constant(store.state.authState.isAuthenticated)) {
                     AlertView()
                 }
                 Group {

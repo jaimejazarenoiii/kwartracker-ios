@@ -12,7 +12,6 @@ struct SignInContentView: View {
     @State private var password: String = ""
     @State var showingSignIn = false
     @State var showingSignUp = false
-    @State var isAuthenticated = false
     
     private let headerTextFontSize: CGFloat = 40
     private let sideMargin: CGFloat = 30
@@ -44,7 +43,7 @@ struct SignInContentView: View {
                 store.send(.authView(action: .login(user: info, store: store)))
             }, actionLabel: .signIn)
             .padding(.top)
-            .fullScreenCover(isPresented: $isAuthenticated) {
+            .fullScreenCover(isPresented: Binding<Bool>.constant(store.state.authState.isAuthenticated)) {
                 AlertView()
             }
             

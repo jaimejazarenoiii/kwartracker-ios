@@ -15,7 +15,6 @@ struct SignInView: View {
             SignInHeaderView()
         }, body: {
             SignInContentView()
-                .environmentObject(store)
         })
     }
 }
