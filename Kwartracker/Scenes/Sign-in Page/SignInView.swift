@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct SignInView: View {
+    @EnvironmentObject var store: AppStore
+    
     var body: some View {
         SkeletalView(header: {
             SignInHeaderView()
         }, body: {
             SignInContentView()
+                .environmentObject(store)
         })
     }
 }

@@ -34,7 +34,7 @@ func authReducer(
             switch result {
             case .success(let graphQLResult):
                 if let token = graphQLResult.data?.signUpWithEmail?.token {
-                    // state.userToken = token
+                    
                 }
             case .failure(let error):
                 // state.errorMessage = error.localizedDescription
