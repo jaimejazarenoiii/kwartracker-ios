@@ -12,6 +12,7 @@ struct SignInContentView: View {
     @State private var password: String = ""
     @State var showingSignIn = false
     @State var showingSignUp = false
+    @State var isAuthenticated = false
     
     private let headerTextFontSize: CGFloat = 40
     private let sideMargin: CGFloat = 30
@@ -19,7 +20,7 @@ struct SignInContentView: View {
     private let snsOrTopMargin: CGFloat = 5
     private let footNoteTopMargin: CGFloat = 25
     
-    @StateObject private var viewModel = SignInViewModel()
+    @EnvironmentObject var store: AppStore
     
     private var HeaderText: some View {
         Text(L10n.SignInPage.Title.welcomeBack)
@@ -31,19 +32,19 @@ struct SignInContentView: View {
     
     private var UserFields: some View {
         Group {
-            UserField(fieldType: .email, textValue: $viewModel.email)
-            UserField(fieldType: .password, textValue: $viewModel.password)
+            UserField(fieldType: .email, textValue: $email)
+            UserField(fieldType: .password, textValue: $password)
         }
     }
     
     private var SNSActions: some View {
         Group {
             SNSButton(actionHandler: {
-                self.viewModel.doUserLogin()
-                // self.showingSignIn.toggle()
+                let info = UserAuthInfo(email: email, password: password)
+                store.send(.authView(action: .login(user: info)))
             }, actionLabel: .signIn)
             .padding(.top)
-            .fullScreenCover(isPresented: $viewModel.isAuthenticated) {
+            .fullScreenCover(isPresented: $isAuthenticated) {
                 AlertView()
             }
             

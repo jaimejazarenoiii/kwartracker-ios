@@ -20,6 +20,7 @@ struct KwartrackerApp: App {
                 Text("You are logged in.")
             } else {
                 SignInView()
+                    .environmentObject(store)
             }
         }
     }

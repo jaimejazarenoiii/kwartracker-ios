@@ -17,7 +17,6 @@ final class SignUpViewModel: ObservableObject {
     var token: String = ""
     
     func doRegisterUser() {
-        guard !isFetching else { return }
         isFetching = true
         
         let profileInfo = ProfileInput(firstName: "", lastName: "", gender: 0, age: 18)
@@ -38,8 +37,6 @@ final class SignUpViewModel: ObservableObject {
             case .failure(let error):
                 print("Failure! Error: \(error)")
             }
-            
-            self.isFetching = false
         }
     }
 }
