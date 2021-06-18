@@ -68,13 +68,3 @@ func authReducer(
     
     return Empty().eraseToAnyPublisher()
 }
-
-fileprivate enum SignUpResponse {
-    case registrationSuccess(token: String, state: AuthenticationViewState)
-    case error(message: String)
-}
-
-fileprivate enum SignInResponse {
-    case signInSuccess(userInfo: SignInMutation.Data.SignInWithEmail)
-    case error(message: String)
-}
