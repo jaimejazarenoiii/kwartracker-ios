@@ -1,25 +1,14 @@
 //
-//  AddWalletFieldsView.swift
+//  AddNewWalletPage+Fields.swift
 //  Kwartracker
 //
-//  Created by Leah Joy Ylaya on 5/18/21.
+//  Created by Leah Joy Ylaya on 6/18/21.
 //
 
 import SwiftUI
 
-struct AddWalletFieldsView: View {
-    @Binding var walletNameValue: String
-    @Binding var walletCurrency: Currency?
-    @Binding var walletTypeValue: WalletType
-    @Binding var targetAmountValue: String
-    @Binding var savedToValue: String
-    @Binding var targetDateStr: String
-    @Binding var includeTotalBalanceFlag: Bool
-    @State private var menuPresenting: Bool = false
-    @State var transactionFieldType: TransactionFieldType = .dateRange
-    private let spacing: CGFloat = 30
-
-    var body: some View {
+extension AddNewWalletPage {
+    internal var Fields: some View {
         VStack(alignment: .leading) {
             TextFieldForm(
                 label: L10n.Wallet.Label.walletName,
@@ -36,11 +25,6 @@ struct AddWalletFieldsView: View {
 
             Spacer()
                 .frame(height: spacing)
-            
-//            KToggleView(isActive: $includeTotalBalanceFlag,
-//                        headerLabel: L10n.Wallet.Label.includeOverallTotalBalance,
-//                        leftLabel: L10n.yes.uppercased(),
-//                        rightLabel: L10n.no.uppercased())
         }
         .padding([.trailing, .leading, .bottom],
                  UIScreen.main.bounds.width * 0.07)
@@ -55,8 +39,8 @@ struct AddWalletFieldsView: View {
                 label: L10n.currency,
                 selectLabel: walletCurrency == nil ?
                     L10n.Wallet.Placeholder.selectWalletCurrency :
-                    walletCurrency!.localeNumberFormat,
-                showOptions: $menuPresenting,
+                    Currency.getType(walletCurrency!).stringValue,
+                showOptions: $currencyMenuPresented,
                 transactionSelection: $transactionFieldType
             )
         }
@@ -69,10 +53,10 @@ struct AddWalletFieldsView: View {
             SelectableFieldForm(
                 defaultSelectionType: .walletType,
                 label: L10n.Wallet.Label.walletType,
-                selectLabel: walletTypeValue == .none ?
+                selectLabel: walletTypeValue == nil ?
                     L10n.Wallet.Placeholder.selectWalletType :
-                    walletTypeValue.stringValue,
-                showOptions: $menuPresenting,
+                    walletTypeValue!,
+                showOptions: $walletTypeMenuPresented,
                 transactionSelection: $transactionFieldType
             )
         }
@@ -80,8 +64,8 @@ struct AddWalletFieldsView: View {
 
     private var GoalField: some View {
         Group {
-            if walletTypeValue != .none {
-                if walletTypeValue == .goal {
+            if walletTypeValue != nil {
+                if WalletType.getType(walletTypeValue!) == .goal {
                     if walletCurrency != nil {
                         Spacer()
                             .frame(height: spacing)
@@ -100,7 +84,7 @@ struct AddWalletFieldsView: View {
                         selectLabel: targetDateStr.isEmpty ?
                             L10n.Wallet.Placeholder.targetDate :
                             targetDateStr,
-                        showOptions: $menuPresenting,
+                        showOptions: $calendarPresented,
                         transactionSelection: $transactionFieldType
                     )
                 }

@@ -25,5 +25,18 @@ enum WalletType: Int {
             return ""
         }
     }
+    
+    static func getType(_ stringValue: String) -> WalletType {
+        switch stringValue {
+        case L10n.WalletType.budget:
+            return .budget
+        case L10n.WalletType.goal:
+            return .goal
+        case L10n.WalletType.savings:
+            return .savings
+        default:
+            return .none
+        }
+    }
 }
 

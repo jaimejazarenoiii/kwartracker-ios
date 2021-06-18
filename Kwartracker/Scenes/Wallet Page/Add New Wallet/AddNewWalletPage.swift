@@ -8,26 +8,31 @@
 import SwiftUI
 
 struct AddNewWalletPage: View {
-    @State private var buttonToggle: Bool = false
-    @State private var cardSize: CGSize = .zero
-    @State private var cardName: String = ""
-    @State private var cardType: WalletType = .none
-    @State private var cardCurrency: Currency?
-    @State private var targetAmount: String = ""
-    @State private var targetDateStr: String = ""
-    @State private var savedTo: String = ""
-    @State private var includeTotalBalanceFlag: Bool = true
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @State internal var buttonToggle: Bool = false
+    @State internal var cardSize: CGSize = .zero
+    @State internal var walletNameValue: String = ""
+    @State internal var walletCurrency: String? = nil
+    @State internal var walletTypeValue: String? = nil
+    @State internal var targetAmountValue: String = ""
+    @State internal var savedToValue: String = ""
+    @State internal var targetDateStr: String = ""
+    @State internal var includeTotalBalanceFlag: Bool = false
+    @State internal var currencyMenuPresented: Bool = false
+    @State internal var walletTypeMenuPresented: Bool = false
+    @State internal var calendarPresented: Bool = false
+    @State var transactionFieldType: TransactionFieldType = .dateRange
     
-    private let spacing: CGFloat = 30
-    private let disableOpacityValue: Double = 0.48
-    private let enableOpacityValue: Double = 1
-    private var baseSize: CGSize = CGSize(width: 238, height: 155)
-    private let navIconSize: CGFloat = 10
-    private var isSaveButtonEnabled: Bool {
-        return !cardName.isEmpty &&
-            cardCurrency != nil &&
-            !savedTo.isEmpty &&
-            cardType != .none
+    internal let spacing: CGFloat = 30
+    internal let disableOpacityValue: Double = 0.48
+    internal let enableOpacityValue: Double = 1
+    internal var baseSize: CGSize = CGSize(width: 238, height: 155)
+    internal let navIconSize: CGFloat = 10
+    internal var isSaveButtonEnabled: Bool {
+        return !walletNameValue.isEmpty &&
+            walletCurrency != nil &&
+            !savedToValue.isEmpty &&
+            walletCurrency != nil
     }
     
     init() {
@@ -38,60 +43,57 @@ struct AddNewWalletPage: View {
                                                    baseSize: baseSize)
         self._cardSize = State(initialValue: CGSize(width: newWidth,
                                                    height: calculatedHeight))
-        
     }
     
     var body: some View {
-        NavigationView {
-            SkeletalView {
-                NavigationBarView(
-                    title: L10n.Wallet.Title.addWallet) {
-                    Button(action: {
-                    }) {
-                        Image(uiImage: Asset.Images.arrowLeftIconWhite.image)
-                            .frame(width: navIconSize, height: navIconSize)
-                    }
-                    .buttonStyle(
-                        CircleButtonStyle(buttonColor: Asset.Colors.teal.color)
-                    )
-                } rightBarViewContent: {
-                    
-                    NavigationLink(
-                        destination: TransactionsView(), // will change to add wallet
-                        isActive: $buttonToggle) {
-                        
-                        Button(action: {
-                            buttonToggle.toggle()
-                        }, label: {
-                            Image(uiImage: Asset.Images.addIcon.image)
-                                .renderingMode(.template)
-                                .foregroundColor(Color(Asset.Colors.teal.color))
-                                .frame(width: navIconSize, height: navIconSize)
-                        })
-                        .buttonStyle(CircleButtonStyle(buttonColor: .white))
-                    }
+        ZStack {
+            MainBody
+            OptionAlert
+        }
+    }
+    
+    var MainBody: some View {
+        SkeletalView {
+            NavigationBarView(
+                title: L10n.Wallet.Title.addWallet) {
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Image(uiImage: Asset.Images.arrowLeftIconWhite.image)
+                        .frame(width: navIconSize, height: navIconSize)
                 }
-            } body: {
-                ScrollView(showsIndicators: true) {
-                    VStack {
-                        Spacer()
-                            .frame(height: spacing)
-                        CardView(name: $cardName,
-                                 type: $cardType,
-                                 size: cardSize)
-                        Spacer()
-                            .frame(height: spacing)
-                        AddWalletFieldsView(walletNameValue: $cardName,
-                                            walletCurrency: $cardCurrency,
-                                            walletTypeValue: $cardType,
-                                            targetAmountValue: $targetAmount,
-                                            savedToValue: $savedTo,
-                                            targetDateStr: $targetDateStr,
-                                            includeTotalBalanceFlag: $includeTotalBalanceFlag)
+                .buttonStyle(
+                    CircleButtonStyle(buttonColor: Asset.Colors.teal.color)
+                )
+            } rightBarViewContent: {
+                Button(action: {
+                    if isSaveButtonEnabled {
+                        buttonToggle.toggle()
                     }
-                }
-                .adaptsToKeyboard()
+                }, label: {
+                    Text(L10n.Button.Label.save)
+                        .foregroundColor(Color(Asset.Colors.solitudeGrey.color)
+                                            .opacity(isSaveButtonEnabled ?
+                                                        enableOpacityValue :
+                                                        disableOpacityValue))
+                        .font(.system(size: 16,
+                                      weight: .bold))
+                }).disabled(isSaveButtonEnabled)
             }
-        }.navigationBarHidden(true)
+        } body: {
+            ScrollView(showsIndicators: true) {
+                VStack {
+                    Spacer()
+                        .frame(height: spacing)
+                    CardView(name: $walletNameValue,
+                             type: Binding.constant(WalletType.getType(walletTypeValue ?? "")),
+                             size: cardSize)
+                    Spacer()
+                        .frame(height: spacing)
+                    Fields
+                }
+            }
+            .adaptsToKeyboard()
+        }
     }
 }

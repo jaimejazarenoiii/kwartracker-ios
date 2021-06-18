@@ -36,6 +36,29 @@ struct Wallet {
         }
     }
     
+    var currencyStr: String? {
+        get {
+            let newCurrency = currency ?? .philippinePeso
+            return newCurrency.localeNumberFormat
+        }
+        set {
+            let defaultValue = Currency.philippinePeso
+            currency = Currency.getType(newValue ?? defaultValue.localeNumberFormat)
+            
+        }
+    }
+    
+    var walletTypeStr: String? {
+        get {
+            return type.stringValue
+        }
+        set {
+            type = WalletType.getType(newValue ?? "")
+            
+        }
+    }
+    
+    
     var remainingAmountNeeded: String {
         let amount = targetAmount - total
         return amount.amountOnCurrency(currency: currency?.localeNumberFormat ??
