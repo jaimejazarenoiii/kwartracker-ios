@@ -24,7 +24,7 @@ func authReducer(
     environment: World
 ) -> AnyPublisher<AuthenticationViewAction, Never> {
     switch action {
-    case .create(let userInfo):
+    case .create(let userInfo, let store):
         let profileInfo = ProfileInput(firstName: "", lastName: "", gender: 0, age: 18)
         let signupCredentials = SignUpWithEmailInput(email: userInfo.email, password: userInfo.password,
                                                      passwordConfirmation: userInfo.password, profile: profileInfo)
@@ -34,15 +34,15 @@ func authReducer(
             switch result {
             case .success(let graphQLResult):
                 if let token = graphQLResult.data?.signUpWithEmail?.token {
-                    
+                    store.send(.authView(action: .setUserToken(token: token)))
                 }
             case .failure(let error):
-                // state.errorMessage = error.localizedDescription
+                store.send(.authView(action: .setErrorMessage(message: error.localizedDescription)))
                 break
             }
         }
         break
-    case .login(let userInfo):
+    case .login(let userInfo, let store):
         let loginCredentials = CredentialsInput(email: userInfo.email, password: userInfo.password)
         let mutation = SignInMutation(signInCredential: loginCredentials)
         
@@ -50,15 +50,20 @@ func authReducer(
             switch result {
             case .success(let graphQLResult):
                 if let data = graphQLResult.data?.signInWithEmail {
-                    // state.userToken = data.token
+                    store.send(.authView(action: .setUserToken(token: data.token)))
                 }
                 break
             case .failure(let error):
-                // state.errorMessage = error.localizedDescription
+                store.send(.authView(action: .setErrorMessage(message: error.localizedDescription)))
                 break
             }
         }
         break
+    case .setUserToken(let token):
+        state.userToken = token
+        break
+    case .setErrorMessage(let message):
+        state.errorMessage = message
     }
     
     return Empty().eraseToAnyPublisher()
