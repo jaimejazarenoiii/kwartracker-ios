@@ -9,7 +9,9 @@ import Foundation
 
 struct AppState {
     var transactionState: TransactionsViewState
+    var walletState: WalletViewState
     init() {
         transactionState = TransactionsViewState()
+        walletState = WalletViewState()
     }
 }

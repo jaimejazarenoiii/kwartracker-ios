@@ -51,45 +51,16 @@ private extension UserField {
                 .keyboardType(.emailAddress)
                 .modifier(PlaceholderStyle(showPlaceHolder: textValue.isEmpty,
                                            placeholder: fieldType.placeholder))
-        case .lastName, .firstName, .contactNumber:
+        case .lastName, .firstName, .contactNumber, .address, .category:
             TextField(field.placeholder, text: $textValue)
                 .modifier(PlaceholderStyle(showPlaceHolder: textValue.isEmpty,
                                            placeholder: fieldType.placeholder))
-        case .password:
-            SecureField(field.placeholder, text: $textValue)
-                .modifier(PlaceholderStyle(showPlaceHolder: textValue.isEmpty,
-                                           placeholder: fieldType.placeholder))
-        case .newPassword:
-            SecureField(field.placeholder, text: $textValue)
-                .modifier(PlaceholderStyle(showPlaceHolder: textValue.isEmpty,
-                                           placeholder: fieldType.placeholder))
-        case .confirmNewPassword:
+        case .password, .newPassword, .confirmNewPassword:
             SecureField(field.placeholder, text: $textValue)
                 .modifier(PlaceholderStyle(showPlaceHolder: textValue.isEmpty,
                                            placeholder: fieldType.placeholder))
         case .birthDate:
             BirthdateField(textValue: $textValue, placeholder: field.placeholder)
-        case .address:
-            TextField(field.placeholder, text: $textValue)
-                .modifier(PlaceholderStyle(showPlaceHolder: textValue.isEmpty,
-                                           placeholder: fieldType.placeholder))
-        }
-    }
-}
-
-struct PlaceholderStyle: ViewModifier {
-    var showPlaceHolder: Bool
-    var placeholder: String
-
-    public func body(content: Content) -> some View {
-        ZStack(alignment: .leading) {
-            if showPlaceHolder {
-                Text(placeholder)
-                    .italic()
-                    .foregroundColor(.secondary)
-            }
-            content
-                .foregroundColor(Color.black)
         }
     }
 }

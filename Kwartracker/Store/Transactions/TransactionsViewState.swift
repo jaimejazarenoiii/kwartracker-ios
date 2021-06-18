@@ -60,7 +60,7 @@ extension TransactionsViewState {
             title: "March 15 Payroll",
             category: .init(id: 1, title: "Salary"),
             amount: 10000,
-            wallet: Wallet(),
+            wallet: Wallet(id: 1),
             rawDateTime: "2021-03-05"
         ),
         Transaction(
@@ -68,7 +68,7 @@ extension TransactionsViewState {
             title: "House Rental",
             category: .init(id: 2, title: "BILLS"),
             amount: 5000,
-            wallet: Wallet(),
+            wallet: Wallet(id: 1),
             rawDateTime: "2021-03-05"
         ),
         Transaction(
@@ -76,7 +76,7 @@ extension TransactionsViewState {
             title: "Sideline Payment",
             category: .init(id: 3, title: "Salary"),
             amount: 10000,
-            wallet: Wallet(),
+            wallet: Wallet(id: 1),
             rawDateTime: "2021-03-05"
         ),
         Transaction(
@@ -84,7 +84,7 @@ extension TransactionsViewState {
             title: "Sideline Payment",
             category: .init(id: 4, title: "Salary"),
             amount: 100000,
-            wallet: Wallet(),
+            wallet: Wallet(id: 1),
             rawDateTime: "2021-03-05"
         )
     ]

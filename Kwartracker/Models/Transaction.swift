@@ -13,7 +13,7 @@ struct Transaction {
     var title: String = ""
     var category: Category
     var amount: Double = 0
-    var wallet: Wallet = Wallet()
+    var wallet: Wallet = Wallet(id: 0)
     var rawDateTime: String = ""
     var recurring: Bool = false
     var with: String = ""
@@ -29,6 +29,18 @@ struct Transaction {
         formatter.numberStyle = .currency
         formatter.locale = Locale(identifier: wallet.currency.localeNumberFormat)
         return formatter.string(from: NSNumber(value: amount)) ?? "0"
+    }
+
+    func getRawDateTime(format: String = "yyyy-MM-dd") -> String? {
+        dateTime?.toFormat(format)
+    }
+
+    func getDay() -> String {
+        "\(dateTime?.day ?? 1)"
+    }
+
+    func getMonth() -> String {
+        getRawDateTime(format: "MMM") ?? ""
     }
 
     var dayDisplay: String {

@@ -10,6 +10,8 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// View All
+  internal static let viewAll = L10n.tr("Localizable", "view_all")
 
   internal enum AddTransactionPage {
     /// Add Transaction
@@ -69,6 +71,26 @@ internal enum L10n {
     }
   }
 
+  internal enum CalendarPage {
+    internal enum Label {
+      /// Apply
+      internal static let apply = L10n.tr("Localizable", "calendar_page.label.apply")
+    }
+  }
+
+  internal enum Card {
+    internal enum Title {
+      /// Available Balance
+      internal static let availableBalance = L10n.tr("Localizable", "card.title.available_balance")
+      /// Budget
+      internal static let budget = L10n.tr("Localizable", "card.title.budget")
+      /// Goal
+      internal static let goal = L10n.tr("Localizable", "card.title.goal")
+      /// Savings
+      internal static let savings = L10n.tr("Localizable", "card.title.savings")
+    }
+  }
+
   internal enum CategoryDetailPage {
     /// Category Parent
     internal static let categoryParent = L10n.tr("Localizable", "category_detail_page.category_parent")
@@ -101,6 +123,25 @@ internal enum L10n {
       internal static let label = L10n.tr("Localizable", "change_password_page.new_password.label")
       /// Enter new password
       internal static let placeholder = L10n.tr("Localizable", "change_password_page.new_password.placeholder")
+    }
+  }
+
+  internal enum EditCategoryPage {
+    /// Parent Category Name
+    internal static let dummyDataParentCategoryName = L10n.tr("Localizable", "edit_category_page.dummy_data_parent_category_name")
+    internal enum ContentText {
+      /// Make parent category?
+      internal static let makeParentCategory = L10n.tr("Localizable", "edit_category_page.content_text.make_parent_category")
+      /// Select Icon
+      internal static let selectIcon = L10n.tr("Localizable", "edit_category_page.content_text.select_icon")
+      /// Select Parent
+      internal static let selectParent = L10n.tr("Localizable", "edit_category_page.content_text.select_parent")
+      /// Select Parent Category
+      internal static let selectParentCategory = L10n.tr("Localizable", "edit_category_page.content_text.select_parent_category")
+      /// NO
+      internal static let toggleOff = L10n.tr("Localizable", "edit_category_page.content_text.toggle_off")
+      /// YES
+      internal static let toggleOn = L10n.tr("Localizable", "edit_category_page.content_text.toggle_on")
     }
   }
 
@@ -351,6 +392,38 @@ internal enum L10n {
     internal static let titleBar = L10n.tr("Localizable", "transactions_page.title_bar")
     /// Search Transaction
     internal static let transactionSearchPlaceholder = L10n.tr("Localizable", "transactions_page.transaction_search_placeholder")
+  }
+
+  internal enum Wallet {
+    internal enum ActionButton {
+      /// Add Transaction
+      internal static let addTransaction = L10n.tr("Localizable", "wallet.action_button.add_transaction")
+      /// Edit Wallet
+      internal static let editWallet = L10n.tr("Localizable", "wallet.action_button.edit_wallet")
+    }
+    internal enum Message {
+      /// Wallet does not exist.
+      internal static let walletNotFound = L10n.tr("Localizable", "wallet.message.wallet_not_found")
+    }
+    internal enum Target {
+      /// to target amount
+      internal static let toTargetAmount = L10n.tr("Localizable", "wallet.target.to_target_amount")
+      /// to target date
+      internal static let toTargetDate = L10n.tr("Localizable", "wallet.target.to_target_date")
+    }
+    internal enum Title {
+      /// My Wallets
+      internal static let myWallet = L10n.tr("Localizable", "wallet.title.my_wallet")
+    }
+  }
+
+  internal enum WalletType {
+    /// Budget
+    internal static let budget = L10n.tr("Localizable", "wallet_type.budget")
+    /// Goal
+    internal static let goal = L10n.tr("Localizable", "wallet_type.goal")
+    /// Savings
+    internal static let savings = L10n.tr("Localizable", "wallet_type.savings")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
