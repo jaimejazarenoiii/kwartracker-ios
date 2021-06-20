@@ -71,7 +71,8 @@ line_length: 120
 excluded:
   - Pods/
   - vendor/bundle/
-  - Kwartracker/API.swift
+  - Kwartracker/ApolloClient/API.swift
+  - fastlane/SnapshotHelper.swift
 reporter: "xcode"
 custom_rules:
   localized_lensing:

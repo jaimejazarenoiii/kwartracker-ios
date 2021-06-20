@@ -31,6 +31,7 @@
 		164E97F02614ACF000D84B7F /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97EE2614ACF000D84B7F /* Assets.swift */; };
 		164E988D2615C4BA00D84B7F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164E988C2615C4BA00D84B7F /* Colors.xcassets */; };
 		1652AEE42646A52E003542CD /* SearchTransactionFormModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652AEE32646A52E003542CD /* SearchTransactionFormModalView.swift */; };
+		165A8CB9267F0DCE007DE03D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A8CB8267F0DCE007DE03D /* API.swift */; };
 		16606D292647966B005F2CF5 /* OptionSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16606D282647966B005F2CF5 /* OptionSelectView.swift */; };
 		16606D462647B5FF005F2CF5 /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16606D452647B5FF005F2CF5 /* TransactionDetailView.swift */; };
 		16606D4B2647C0F9005F2CF5 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16606D4A2647C0F9005F2CF5 /* NavigationBarView.swift */; };
@@ -45,7 +46,6 @@
 		16C5C77D2635349F00F33B72 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C77C2635349F00F33B72 /* Transaction.swift */; };
 		16C5C7982636296600F33B72 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C7972636296600F33B72 /* Currency.swift */; };
 		16CCE730264F78B000345778 /* SampleSignInAndSignUp.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16CCE72F264F78B000345778 /* SampleSignInAndSignUp.graphql */; };
-		16CCE740264F820F00345778 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CCE73F264F820F00345778 /* API.swift */; };
 		16CCE7452651E4F900345778 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 16CCE7442651E4F900345778 /* KeychainSwift */; };
 		16CCE7492651E53400345778 /* KeyChainKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CCE7482651E53400345778 /* KeyChainKeys.swift */; };
 		16CCE74D2651E57700345778 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CCE74C2651E57700345778 /* Network.swift */; };
@@ -211,6 +211,7 @@
 		164E988C2615C4BA00D84B7F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		1652AEE32646A52E003542CD /* SearchTransactionFormModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTransactionFormModalView.swift; sourceTree = "<group>"; };
 		1652AEEC2646A67D003542CD /* SelectableFieldForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableFieldForm.swift; sourceTree = "<group>"; };
+		165A8CB8267F0DCE007DE03D /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		16606D282647966B005F2CF5 /* OptionSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelectView.swift; sourceTree = "<group>"; };
 		16606D452647B5FF005F2CF5 /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
 		16606D4A2647C0F9005F2CF5 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
@@ -235,7 +236,6 @@
 		16C5C7A426362E5300F33B72 /* TransactionsViewAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewAction.swift; sourceTree = "<group>"; };
 		16CCE726264EBD6800345778 /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		16CCE72F264F78B000345778 /* SampleSignInAndSignUp.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SampleSignInAndSignUp.graphql; sourceTree = "<group>"; };
-		16CCE73F264F820F00345778 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		16CCE7482651E53400345778 /* KeyChainKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainKeys.swift; sourceTree = "<group>"; };
 		16CCE74C2651E57700345778 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		16FC4F4A265C7F6700D1B7E2 /* CircleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonStyle.swift; sourceTree = "<group>"; };
@@ -414,6 +414,7 @@
 		163E592C260CB88E00E54401 /* Kwartracker */ = {
 			isa = PBXGroup;
 			children = (
+				165A8C63267F0677007DE03D /* ApolloClient */,
 				16C5C7962636295900F33B72 /* Enums */,
 				163E5B61260F2E0900E54401 /* App Main */,
 				163E5B70260F338600E54401 /* Constants */,
@@ -425,11 +426,6 @@
 				163E5B74260F34E400E54401 /* Resources */,
 				7AB88B1C262805C500E2DFD3 /* Custom Components */,
 				163E5936260CB89100E54401 /* Info.plist */,
-				16CCE726264EBD6800345778 /* schema.json */,
-				16CCE72F264F78B000345778 /* SampleSignInAndSignUp.graphql */,
-				7A9741F12670639F00747CF2 /* SignInMutation.graphql */,
-				7A9741EF2670609E00747CF2 /* SignUpMutation.graphql */,
-				16CCE73F264F820F00345778 /* API.swift */,
 				163E5933260CB89100E54401 /* Preview Content */,
 			);
 			path = Kwartracker;
@@ -568,6 +564,26 @@
 				16606D282647966B005F2CF5 /* OptionSelectView.swift */,
 			);
 			path = "Form Inputs";
+			sourceTree = "<group>";
+		};
+		165A8C63267F0677007DE03D /* ApolloClient */ = {
+			isa = PBXGroup;
+			children = (
+				165A8C95267F0BDB007DE03D /* Mutations */,
+				16CCE726264EBD6800345778 /* schema.json */,
+				165A8CB8267F0DCE007DE03D /* API.swift */,
+			);
+			path = ApolloClient;
+			sourceTree = "<group>";
+		};
+		165A8C95267F0BDB007DE03D /* Mutations */ = {
+			isa = PBXGroup;
+			children = (
+				16CCE72F264F78B000345778 /* SampleSignInAndSignUp.graphql */,
+				7A9741F12670639F00747CF2 /* SignInMutation.graphql */,
+				7A9741EF2670609E00747CF2 /* SignUpMutation.graphql */,
+			);
+			path = Mutations;
 			sourceTree = "<group>";
 		};
 		16606D3C2647B5BF005F2CF5 /* Transaction Detail */ = {
@@ -1299,7 +1315,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://staging-kwartracker.jaimejazarenoiii.me/graphql\"\n";
+			shellScript = "# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=ApolloClient/schema.json ApolloClient/API.swift\n\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://staging-kwartracker.jaimejazarenoiii.me/graphql\"\n";
 		};
 		212A3F62359ED7E67B9CFF95 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1483,8 +1499,8 @@
 				16606D462647B5FF005F2CF5 /* TransactionDetailView.swift in Sources */,
 				164E95F226122BD200D84B7F /* AppReducer.swift in Sources */,
 				2932757A264E4AAA00E8BA8B /* WalletViewState.swift in Sources */,
-				16CCE740264F820F00345778 /* API.swift in Sources */,
 				24AC7CBC2665DF9500CE4282 /* EditCategoryView.swift in Sources */,
+				165A8CB9267F0DCE007DE03D /* API.swift in Sources */,
 				24AC7C96265CB12700CE4282 /* LoginAndSecuritBodyView.swift in Sources */,
 				C65699C42637C91400D24D2F /* SignUpBodyView.swift in Sources */,
 				24AC7CB02664C2AF00CE4282 /* TextGroupView.swift in Sources */,
