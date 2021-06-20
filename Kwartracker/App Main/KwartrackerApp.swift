@@ -30,8 +30,18 @@ struct KwartrackerAppSwiftUI: App {
 }
 
 struct RootView: View {
+    let store: AppStore = AppStore(
+        initialState: .init(),
+        reducer: AppReducer.appReducer,
+        environment: World()
+    )
+
     var body: some View {
-        SignInView()
+        if KeyChainKeys.isLoggedIn() {
+            Text("You are logged in.")
+        } else {
+            SignInView().environmentObject(store)
+        }
     }
 }
 
