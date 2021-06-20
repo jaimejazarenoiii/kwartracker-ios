@@ -31,6 +31,7 @@
 		164E97F02614ACF000D84B7F /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97EE2614ACF000D84B7F /* Assets.swift */; };
 		164E988D2615C4BA00D84B7F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164E988C2615C4BA00D84B7F /* Colors.xcassets */; };
 		1652AEE42646A52E003542CD /* SearchTransactionFormModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652AEE32646A52E003542CD /* SearchTransactionFormModalView.swift */; };
+		165A8C4A267F002C007DE03D /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A8C49267F002C007DE03D /* TransactionService.swift */; };
 		16606D292647966B005F2CF5 /* OptionSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16606D282647966B005F2CF5 /* OptionSelectView.swift */; };
 		16606D462647B5FF005F2CF5 /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16606D452647B5FF005F2CF5 /* TransactionDetailView.swift */; };
 		16606D4B2647C0F9005F2CF5 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16606D4A2647C0F9005F2CF5 /* NavigationBarView.swift */; };
@@ -206,6 +207,7 @@
 		164E988C2615C4BA00D84B7F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		1652AEE32646A52E003542CD /* SearchTransactionFormModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTransactionFormModalView.swift; sourceTree = "<group>"; };
 		1652AEEC2646A67D003542CD /* SelectableFieldForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableFieldForm.swift; sourceTree = "<group>"; };
+		165A8C49267F002C007DE03D /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
 		16606D282647966B005F2CF5 /* OptionSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelectView.swift; sourceTree = "<group>"; };
 		16606D452647B5FF005F2CF5 /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
 		16606D4A2647C0F9005F2CF5 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
@@ -556,6 +558,14 @@
 			path = "Form Inputs";
 			sourceTree = "<group>";
 		};
+		165A8C44267F0010007DE03D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				165A8C49267F002C007DE03D /* TransactionService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		16606D3C2647B5BF005F2CF5 /* Transaction Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -630,6 +640,7 @@
 		16B24BAE261A8D170002065D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				165A8C44267F0010007DE03D /* Services */,
 				16CCE74C2651E57700345778 /* Network.swift */,
 			);
 			path = Network;
@@ -1453,6 +1464,7 @@
 				16606D462647B5FF005F2CF5 /* TransactionDetailView.swift in Sources */,
 				164E95F226122BD200D84B7F /* AppReducer.swift in Sources */,
 				2932757A264E4AAA00E8BA8B /* WalletViewState.swift in Sources */,
+				165A8C4A267F002C007DE03D /* TransactionService.swift in Sources */,
 				16CCE740264F820F00345778 /* API.swift in Sources */,
 				24AC7CBC2665DF9500CE4282 /* EditCategoryView.swift in Sources */,
 				24AC7C96265CB12700CE4282 /* LoginAndSecuritBodyView.swift in Sources */,
