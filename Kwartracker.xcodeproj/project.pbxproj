@@ -32,6 +32,7 @@
 		164E988D2615C4BA00D84B7F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164E988C2615C4BA00D84B7F /* Colors.xcassets */; };
 		1652AEE42646A52E003542CD /* SearchTransactionFormModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652AEE32646A52E003542CD /* SearchTransactionFormModalView.swift */; };
 		165A8CB9267F0DCE007DE03D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A8CB8267F0DCE007DE03D /* API.swift */; };
+		165A8CBE267F0ED9007DE03D /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A8CBD267F0ED9007DE03D /* AuthenticationService.swift */; };
 		16606D292647966B005F2CF5 /* OptionSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16606D282647966B005F2CF5 /* OptionSelectView.swift */; };
 		16606D462647B5FF005F2CF5 /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16606D452647B5FF005F2CF5 /* TransactionDetailView.swift */; };
 		16606D4B2647C0F9005F2CF5 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16606D4A2647C0F9005F2CF5 /* NavigationBarView.swift */; };
@@ -212,6 +213,7 @@
 		1652AEE32646A52E003542CD /* SearchTransactionFormModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTransactionFormModalView.swift; sourceTree = "<group>"; };
 		1652AEEC2646A67D003542CD /* SelectableFieldForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableFieldForm.swift; sourceTree = "<group>"; };
 		165A8CB8267F0DCE007DE03D /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		165A8CBD267F0ED9007DE03D /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		16606D282647966B005F2CF5 /* OptionSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelectView.swift; sourceTree = "<group>"; };
 		16606D452647B5FF005F2CF5 /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
 		16606D4A2647C0F9005F2CF5 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 		163E592C260CB88E00E54401 /* Kwartracker */ = {
 			isa = PBXGroup;
 			children = (
+				165A8CBC267F0EC7007DE03D /* Service */,
 				165A8C63267F0677007DE03D /* ApolloClient */,
 				16C5C7962636295900F33B72 /* Enums */,
 				163E5B61260F2E0900E54401 /* App Main */,
@@ -584,6 +587,14 @@
 				7A9741EF2670609E00747CF2 /* SignUpMutation.graphql */,
 			);
 			path = Mutations;
+			sourceTree = "<group>";
+		};
+		165A8CBC267F0EC7007DE03D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				165A8CBD267F0ED9007DE03D /* AuthenticationService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		16606D3C2647B5BF005F2CF5 /* Transaction Detail */ = {
@@ -1403,6 +1414,7 @@
 				299452B9267B1F200002C5E3 /* TransactionsViewState.swift in Sources */,
 				299452B2267B1EE40002C5E3 /* AppAction.swift in Sources */,
 				299452AD267B1EB30002C5E3 /* PopupContentView.swift in Sources */,
+				165A8CBE267F0ED9007DE03D /* AuthenticationService.swift in Sources */,
 				299452A1267B1E840002C5E3 /* View+Extensions.swift in Sources */,
 				2994529C267B1E6F0002C5E3 /* SNSButton.swift in Sources */,
 				29945297267B1E370002C5E3 /* Wallet.swift in Sources */,

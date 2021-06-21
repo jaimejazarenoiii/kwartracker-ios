@@ -26,35 +26,35 @@ func authReducer(
     switch action {
     case .create(let userInfo, let store):
         let profileInfo = ProfileInput(firstName: "", lastName: "", gender: 0, age: 18)
-        let signupCredentials = SignUpWithEmailInput(email: userInfo.email, password: userInfo.password,
-                                                     passwordConfirmation: userInfo.password, profile: profileInfo)
-        let mutation = SignUpMutation(signUpEmailInput: signupCredentials)
-        
-        Network.shared.apollo.perform(mutation: mutation) { result in
+        let signupCredentials = SignUpWithEmailInput(
+            email: userInfo.email,
+            password: userInfo.password,
+            passwordConfirmation: userInfo.password,
+            profile: profileInfo
+        )
+        environment.authenticationService.signUp(signUpCredential: signupCredentials) { result in
             switch result {
-            case .success(let graphQLResult):
-                if let token = graphQLResult.data?.signUpWithEmail?.token {
+            case .success(let response):
+                if let token = response.data?.signUpWithEmail?.token {
                     store.send(.authView(action: .setUserToken(token: token)))
                 }
+                break
             case .failure(let error):
-                store.send(.authView(action: .setErrorMessage(message: error.localizedDescription)))
+                debugPrint("[Authentication][logging in] error: \(error)")
                 break
             }
         }
         break
     case .login(let userInfo, let store):
         let loginCredentials = CredentialsInput(email: userInfo.email, password: userInfo.password)
-        let mutation = SignInMutation(signInCredential: loginCredentials)
-        
-        Network.shared.apollo.perform(mutation: mutation) { result in
+        environment.authenticationService.signIn(credentialInput: loginCredentials) { result in
             switch result {
-            case .success(let graphQLResult):
-                if let data = graphQLResult.data?.signInWithEmail {
-                    store.send(.authView(action: .setUserToken(token: data.token)))
-                }
+            case .success(let response):
+                guard let data = response.data?.signInWithEmail else { return }
+                store.send(.authView(action: .setUserToken(token: data.token)))
                 break
             case .failure(let error):
-                store.send(.authView(action: .setErrorMessage(message: error.localizedDescription)))
+                debugPrint("[Authentication][logging in] error: \(error)")
                 break
             }
         }
