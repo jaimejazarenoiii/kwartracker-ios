@@ -76,18 +76,6 @@ class MockAuthServiceClient {
         }
         """
     
-    init(shouldErrorRequest: Bool = false, shouldLoginError: Bool = false, shouldSignupError: Bool = false) {
-        self.shouldErrorRequest = shouldErrorRequest
-        self.shouldLoginWithError = shouldLoginError
-        self.shouldSignupWithError = shouldSignupError
-    }
-    
-    func reset() {
-        shouldErrorRequest = false
-        shouldLoginWithError = false
-        shouldSignupWithError = false
-    }
-    
     private func createJSONObject(_ mockObject: String) -> JSONObject? {
         guard let data = mockObject.data(using: .utf8) else { return nil }
         
@@ -100,6 +88,8 @@ class MockAuthServiceClient {
             print(error.localizedDescription)
             return nil
         }
+        
+        return nil
     }
 }
 
@@ -115,7 +105,7 @@ extension MockAuthServiceClient: AuthenticationServiceDelegate {
             completion(.failure(error))
         } else {
             if shouldLoginWithError {
-                if let errorJSONObject = createJSONObject(signupErrorResponse) {
+                if let errorJSONObject = createJSONObject(loginErrorResponse) {
                     let error = GraphQLError(errorJSONObject)
                     
                     completion(.success(GraphQLResult<SignInMutation.Data>(
@@ -123,7 +113,7 @@ extension MockAuthServiceClient: AuthenticationServiceDelegate {
                         extensions: nil,
                         errors: [error],
                         source: .server,
-                        dependentKeys: nil
+                        dependentKeys: Set<CacheKey>(arrayLiteral: CacheKey(0))
                     )))
                 }
             } else {
@@ -138,6 +128,8 @@ extension MockAuthServiceClient: AuthenticationServiceDelegate {
                 )))
             }
         }
+        
+        return MockServiceTransport()
     }
     
     func signUp(
@@ -174,5 +166,13 @@ extension MockAuthServiceClient: AuthenticationServiceDelegate {
                 )))
             }
         }
+        
+        return MockServiceTransport()
+    }
+}
+
+class MockServiceTransport: Cancellable {
+    func cancel() {
+        
     }
 }

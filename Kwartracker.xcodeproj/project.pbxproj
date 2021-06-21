@@ -139,6 +139,7 @@
 		7AEFD57826803B0000EAD90F /* MockAuthServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEFD57726803B0000EAD90F /* MockAuthServiceClient.swift */; };
 		7AEFD57D2680619100EAD90F /* Keychain+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEFD57C2680619100EAD90F /* Keychain+Extensions.swift */; };
 		7AEFD57F2680623F00EAD90F /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEFD57E2680623F00EAD90F /* Data.swift */; };
+		7AEFD58126806A4100EAD90F /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEFD58026806A4100EAD90F /* AuthenticationTests.swift */; };
 		7FE718881CB43731FBDE3CA8 /* Pods_Kwartracker_KwartrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5FF1E2AB4ED121C5D59731 /* Pods_Kwartracker_KwartrackerUITests.framework */; };
 		9A063C037CD795723F7C8978 /* Pods_KwartrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6486F0961C2844C8AE5C0AA9 /* Pods_KwartrackerTests.framework */; };
 		A9CFE877880189ECE3F83CB8 /* Pods_Kwartracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D507178A90E22E9AB2ABF11A /* Pods_Kwartracker.framework */; };
@@ -324,6 +325,7 @@
 		7AEFD57726803B0000EAD90F /* MockAuthServiceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthServiceClient.swift; sourceTree = "<group>"; };
 		7AEFD57C2680619100EAD90F /* Keychain+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keychain+Extensions.swift"; sourceTree = "<group>"; };
 		7AEFD57E2680623F00EAD90F /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		7AEFD58026806A4100EAD90F /* AuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTests.swift; sourceTree = "<group>"; };
 		9E15A147209E6A913358D61B /* Pods-KwartrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KwartrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-KwartrackerTests/Pods-KwartrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE5FF1E2AB4ED121C5D59731 /* Pods_Kwartracker_KwartrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kwartracker_KwartrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6081ADB2652765E003BB9CB /* DialogStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogStatus.swift; sourceTree = "<group>"; };
@@ -454,6 +456,7 @@
 				163E593F260CB89100E54401 /* KwartrackerTests.swift */,
 				163E5941260CB89100E54401 /* Info.plist */,
 				166A9CC22643775C00805A16 /* TransactionsTests.swift */,
+				7AEFD58026806A4100EAD90F /* AuthenticationTests.swift */,
 				7AEFD57926805C4B00EAD90F /* Mocks */,
 			);
 			path = KwartrackerTests;
@@ -1565,6 +1568,7 @@
 				166A9CC32643775C00805A16 /* TransactionsTests.swift in Sources */,
 				7AEFD57826803B0000EAD90F /* MockAuthServiceClient.swift in Sources */,
 				163E5940260CB89100E54401 /* KwartrackerTests.swift in Sources */,
+				7AEFD58126806A4100EAD90F /* AuthenticationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
