@@ -162,3 +162,6 @@
 "edit_category_page.content_text.make_parent_category" = "Make parent category?";
 "edit_category_page.content_text.select_parent_category" = "Select Parent Category";
 "edit_category_page.dummy_data_parent_category_name" = "Parent Category Name";
+
+// User token key
+"auth.key.user_token" = "userToken";

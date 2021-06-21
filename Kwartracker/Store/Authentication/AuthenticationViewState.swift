@@ -10,7 +10,6 @@ import Combine
 import Apollo
 
 struct AuthenticationViewState {
-    var isRequesting = false
     var userToken = ""
     var errorMessage: String?
     var isAuthenticated: Bool {
@@ -61,6 +60,11 @@ func authReducer(
         break
     case .setUserToken(let token):
         state.userToken = token
+        
+        let data = Data(from: token)
+        let status = KeyChain.save(key: L10n.Auth.Key.userToken, data: data)
+        
+        print("status: ", status)
         break
     case .setErrorMessage(let message):
         state.errorMessage = message

@@ -71,6 +71,13 @@ internal enum L10n {
     }
   }
 
+  internal enum Auth {
+    internal enum Key {
+      /// userToken
+      internal static let userToken = L10n.tr("Localizable", "auth.key.user_token")
+    }
+  }
+
   internal enum CalendarPage {
     internal enum Label {
       /// Apply
