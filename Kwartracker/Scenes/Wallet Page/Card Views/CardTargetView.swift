@@ -29,14 +29,12 @@ struct CardTargetView: View {
     
     var body: some View {
         ZStack(alignment: .leading) {
-            NeumorphicEffect(rectSize: CGSize(width: frameWidth,
-                                              height: self.setHeightRatio(width: frameWidth,
-                                                                          baseSize: baseFrame)),
-                             cornerRadius: rectRadius)
+            NeumorphicEffect(rectSize: CGSize(width: frameWidth, height: self.setHeightRatio(width: frameWidth,
+                                               baseSize: baseFrame)), cornerRadius: rectRadius)
             VStack {
                 HStack {
                     TargetViewLabel(bottomLabel: L10n.Wallet.Target.toTargetAmount,
-                                    targetValue: wallet.total.withCommas)
+                                    targetValue: wallet.remainingAmountNeeded)
                     Rectangle()
                         .fill(Color(Asset.Colors.iron.color))
                         .frame(width: separatorSize.width,
