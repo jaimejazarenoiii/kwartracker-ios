@@ -19,7 +19,7 @@ struct Wallet {
     var includeToOverallTotalBalance: Bool = true
     
     var isAllowedToSave: Bool {
-        return !title.isEmpty &&
+        !title.isEmpty &&
             !savedTo.isEmpty &&
             type != .none &&
             currency != nil
