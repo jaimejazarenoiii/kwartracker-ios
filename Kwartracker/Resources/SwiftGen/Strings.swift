@@ -10,6 +10,8 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// Currency
+  internal static let currency = L10n.tr("Localizable", "currency")
   /// View All
   internal static let viewAll = L10n.tr("Localizable", "view_all")
 
@@ -68,6 +70,13 @@ internal enum L10n {
     internal enum Title {
       /// Confirmation
       internal static let confirmation = L10n.tr("Localizable", "alert_sheet.title.confirmation")
+    }
+  }
+
+  internal enum Button {
+    internal enum Label {
+      /// Save
+      internal static let save = L10n.tr("Localizable", "button.label.save")
     }
   }
 
@@ -401,9 +410,35 @@ internal enum L10n {
       /// Edit Wallet
       internal static let editWallet = L10n.tr("Localizable", "wallet.action_button.edit_wallet")
     }
+    internal enum Label {
+      /// Include in overall total balance?
+      internal static let includeOverallTotalBalance = L10n.tr("Localizable", "wallet.label.include_overall_total_balance")
+      /// Saved to
+      internal static let savedTo = L10n.tr("Localizable", "wallet.label.saved_to")
+      /// Target Amount
+      internal static let targetAmount = L10n.tr("Localizable", "wallet.label.target_amount")
+      /// Target Date
+      internal static let targetDate = L10n.tr("Localizable", "wallet.label.target_date")
+      /// Wallet Name
+      internal static let walletName = L10n.tr("Localizable", "wallet.label.wallet_name")
+      /// Wallet Type
+      internal static let walletType = L10n.tr("Localizable", "wallet.label.wallet_type")
+    }
     internal enum Message {
-      /// Wallet does not exist.
+      /// Wallet does not exist
       internal static let walletNotFound = L10n.tr("Localizable", "wallet.message.wallet_not_found")
+    }
+    internal enum Placeholder {
+      /// Enter wallet name
+      internal static let enterWalletName = L10n.tr("Localizable", "wallet.placeholder.enter_wallet_name")
+      /// Enter your target amount
+      internal static let enterYourTargetAmount = L10n.tr("Localizable", "wallet.placeholder.enter_your_target_amount")
+      /// Select wallet currency
+      internal static let selectWalletCurrency = L10n.tr("Localizable", "wallet.placeholder.select_wallet_currency")
+      /// Select wallet type
+      internal static let selectWalletType = L10n.tr("Localizable", "wallet.placeholder.select_wallet_type")
+      /// DD / MM / YYYY
+      internal static let targetDate = L10n.tr("Localizable", "wallet.placeholder.target_date")
     }
     internal enum Target {
       /// to target amount
@@ -412,6 +447,8 @@ internal enum L10n {
       internal static let toTargetDate = L10n.tr("Localizable", "wallet.target.to_target_date")
     }
     internal enum Title {
+      /// Add Wallet
+      internal static let addWallet = L10n.tr("Localizable", "wallet.title.add_wallet")
       /// My Wallets
       internal static let myWallet = L10n.tr("Localizable", "wallet.title.my_wallet")
     }

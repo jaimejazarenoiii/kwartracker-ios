@@ -20,7 +20,7 @@ struct WalletViewState {
     ) -> AnyPublisher<WalletViewActions, Never> {
         switch action {
         case .add(let wallet):
-            if let errorMessage = wallet.createTransactionErrorMessage(),
+            if let errorMessage = wallet.createWalletErrorMessage(),
                !errorMessage.isEmpty {
                 state.walletErrorMessage = errorMessage
             } else {
@@ -47,25 +47,26 @@ struct WalletViewState {
         static let sampleWallets: [Wallet] = [
             Wallet(id: 1,
                    title: "Security Bank",
-                   type: WalletType.savings.rawValue,
+                   type: WalletType.savings,
                    currency: .philippinePeso,
                    total: 1_000_000,
                    targetRawDate: ""),
             Wallet(id: 2,
                    title: "France Trip",
-                   type: WalletType.goal.rawValue,
+                   type: WalletType.goal,
                    currency: .philippinePeso,
-                   total: 1_000_000,
+                   total: 10_000,
+                   targetAmount: 100_000,
                    targetRawDate: "2025-06-30"),
             Wallet(id: 3,
                    title: "Samgyupsal",
-                   type: WalletType.budget.rawValue,
+                   type: WalletType.budget,
                    currency: .philippinePeso,
                    total: 10_000,
                    targetRawDate: ""),
             Wallet(id: 4,
                    title: "Ramen",
-                   type: WalletType.budget.rawValue,
+                   type: WalletType.budget,
                    currency: .philippinePeso,
                    total: 5_000,
                    targetRawDate: "")

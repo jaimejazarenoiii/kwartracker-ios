@@ -125,5 +125,5 @@ struct SearchTransactionFormModalView: View {
 }
 
 enum TransactionFieldType: Int {
-    case dateRange, walletType, category
+    case dateRange, walletType, category, currency, calendar
 }
