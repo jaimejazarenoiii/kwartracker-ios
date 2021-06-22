@@ -102,7 +102,10 @@ extension MockAuthServiceClient: AuthenticationServiceDelegate {
     ) -> Cancellable {
         if shouldErrorRequest {
             let error = NSError(domain: "", code: 422,
-                                userInfo: [NSLocalizedDescriptionKey: "Unable to make request"])
+                                userInfo: [
+                                    NSLocalizedDescriptionKey: "Unable to make request",
+                                    NSLocalizedDescriptionKey: "422"
+                                ])
             
             completion(.failure(error))
         } else {

@@ -10,10 +10,15 @@ import Combine
 import Apollo
 
 struct AuthenticationViewState {
-    var userToken = ""
     var errorMessage: String?
     var isAuthenticated: Bool {
-        !userToken.isEmpty
+        get {
+            if errorMessage == nil {
+                return KeyChain.load(key: KeyChainKeys.userTokenKey) != nil
+            }
+            
+            return false
+        }
     }
 }
 
@@ -31,14 +36,19 @@ func authReducer(
             passwordConfirmation: userInfo.password,
             profile: profileInfo
         )
-        environment.authenticationService.signUp(signUpCredential: signupCredentials) { result in
+        _ = environment.authenticationService.signUp(signUpCredential: signupCredentials) { result in
             switch result {
             case .success(let response):
+                if let error = response.errors, let errorMessage = error.first?.localizedDescription {
+                    store.send(.authView(action: .setErrorMessage(message: errorMessage)))
+                }
+                
                 if let token = response.data?.signUpWithEmail?.token {
                     store.send(.authView(action: .setUserToken(token: token)))
                 }
                 break
             case .failure(let error):
+                store.send(.authView(action: .setErrorMessage(message: error.localizedDescription)))
                 debugPrint("[Authentication][logging in] error: \(error)")
                 break
             }
@@ -46,24 +56,27 @@ func authReducer(
         break
     case .login(let userInfo, let store):
         let loginCredentials = CredentialsInput(email: userInfo.email, password: userInfo.password)
-        environment.authenticationService.signIn(credentialInput: loginCredentials) { result in
+        _ = environment.authenticationService.signIn(credentialInput: loginCredentials) { result in
             switch result {
             case .success(let response):
-                guard let data = response.data?.signInWithEmail else { return }
-                store.send(.authView(action: .setUserToken(token: data.token)))
+                if let error = response.errors, let errorMessage = error.first?.localizedDescription {
+                    store.send(.authView(action: .setErrorMessage(message: errorMessage)))
+                }
+                
+                if let data = response.data?.signInWithEmail {
+                    store.send(.authView(action: .setUserToken(token: data.token)))
+                }
                 break
             case .failure(let error):
+                store.send(.authView(action: .setErrorMessage(message: error.localizedDescription)))
                 debugPrint("[Authentication][logging in] error: \(error)")
                 break
             }
         }
         break
     case .setUserToken(let token):
-        state.userToken = token
-        
-        let data = Data(from: token)
-        let status = KeyChain.save(key: KeyChainKeys.userTokenKey, data: data)
-        
+        let status = KeyChain.save(key: KeyChainKeys.userTokenKey, value: token)
+        state.errorMessage = nil
         print("status: ", status)
         break
     case .setErrorMessage(let message):

@@ -11,7 +11,12 @@ import UIKit
 // https://stackoverflow.com/a/37539998
 class KeyChain {
 
-    class func save(key: String, data: Data) -> OSStatus {
+    class func save(key: String, value: String) -> OSStatus {
+        guard let data = value.data(using: String.Encoding.utf8) else {
+            debugPrint("Unable to parse string into utf-8 data!")
+            return noErr
+        }
+        
         let query = [
             kSecClass as String: kSecClassGenericPassword as String,
             kSecAttrAccount as String: key,
@@ -31,11 +36,22 @@ class KeyChain {
             kSecMatchLimit as String: kSecMatchLimitOne
         ] as [String: Any]
 
-        var dataTypeRef: AnyObject? = nil
+        var result: AnyObject?
+        
+        let status = withUnsafeMutablePointer(to: &result) {
+          SecItemCopyMatching(query as CFDictionary, UnsafeMutablePointer($0))
+        }
+        
+        return status == noErr ? result as? Data : nil
+    }
+    
+    class func delete(key: String) -> OSStatus {
+        let query = [
+            kSecClass as String: kSecClassGenericPassword as String,
+            kSecAttrAccount as String: key
+        ] as [String: Any]
 
-        let status: OSStatus = SecItemCopyMatching(query as CFDictionary, &dataTypeRef)
-
-        return status == noErr ? dataTypeRef as? Data : nil
+        return SecItemDelete(query as CFDictionary)
     }
 
     class func createUniqueID() -> String {
