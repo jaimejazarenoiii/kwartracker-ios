@@ -11,6 +11,14 @@ enum Currency {
     case philippinePeso
     case usDollar
     
+    static func getType(by hash: Int) -> Currency? {
+        switch hash {
+        case 1: return .philippinePeso
+        case 2: return .usDollar
+        default: return nil
+        }
+    }
+    
     static func getType(_ locale: String) -> Currency {
         switch locale {
         case "fil_PH": return .philippinePeso

@@ -11,7 +11,7 @@ struct Wallet {
     var id: Int
     var title: String = ""
     var type: WalletType = .none
-    var currency: Currency?
+    var currency: Int = 0
     var total: Double = 0
     var targetAmount: Double = 0
     var targetRawDate: String = ""
@@ -22,28 +22,28 @@ struct Wallet {
         !title.isEmpty &&
             !savedTo.isEmpty &&
             type != .none &&
-            currency != nil
+            currencyObj != nil
     }
     
     var targetAmountWithCommas: String {
         get {
-            targetAmount.amountOnCurrency(currency: currency?.localeNumberFormat ??
+            targetAmount.amountOnCurrency(currency: currencyObj?.localeNumberFormat ??
                                     Currency.philippinePeso.localeNumberFormat)
         }
         set {
-            targetAmount = newValue.toDoubleWith(currency: currency?.localeNumberFormat ??
+            targetAmount = newValue.toDoubleWith(currency: currencyObj?.localeNumberFormat ??
                                                     Currency.philippinePeso.localeNumberFormat)
         }
     }
     
     var currencyStr: String? {
         get {
-            let newCurrency = currency ?? .philippinePeso
+            let newCurrency = currencyObj ?? .philippinePeso
             return newCurrency.localeNumberFormat
         }
         set {
             let defaultValue = Currency.philippinePeso
-            currency = Currency.getType(newValue ?? defaultValue.localeNumberFormat)
+            currencyObj = Currency.getType(newValue ?? defaultValue.localeNumberFormat)
             
         }
     }
@@ -58,10 +58,18 @@ struct Wallet {
         }
     }
     
+    var currencyObj: Currency? {
+        get {
+            Currency.getType(by: currency)
+        }
+        set {
+            currency = newValue?.hashValue ?? 0
+        }
+    }
     
     var remainingAmountNeeded: String {
         let amount = targetAmount - total
-        return amount.amountOnCurrency(currency: currency?.localeNumberFormat ??
+        return amount.amountOnCurrency(currency: currencyObj?.localeNumberFormat ??
                                         Currency.philippinePeso.localeNumberFormat)
     }
     
@@ -78,7 +86,7 @@ struct Wallet {
 
     func createWalletErrorMessage() -> String? {
         if !title.isEmpty &&
-            currency != nil &&
+            currencyObj != nil &&
             dateTime != nil {
             return nil
         }
