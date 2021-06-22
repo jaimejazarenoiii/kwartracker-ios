@@ -62,7 +62,7 @@ func authReducer(
         state.userToken = token
         
         let data = Data(from: token)
-        let status = KeyChain.save(key: L10n.Auth.Key.userToken, data: data)
+        let status = KeyChain.save(key: KeyChainKeys.userTokenKey, data: data)
         
         print("status: ", status)
         break

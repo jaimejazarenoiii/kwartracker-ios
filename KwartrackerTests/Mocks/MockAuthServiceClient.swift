@@ -80,8 +80,10 @@ class MockAuthServiceClient {
         guard let data = mockObject.data(using: .utf8) else { return nil }
         
         do {
-            if let jsonObject = try JSONSerialization.jsonObject(with: data,
-                                                                 options: .allowFragments) as? Dictionary<String, Any> {
+            if let jsonObject = try JSONSerialization.jsonObject(
+                with: data,
+                options: .allowFragments
+            ) as? Dictionary<String, Any> {
                 return jsonObject
             }
         } catch let error {

@@ -9,6 +9,7 @@ import KeychainSwift
 
 enum KeyChainKeys {
     static let loginKey = "login"
+    static let userTokenKey = "userToken"
 
     static func getLoginKeyChain() -> String {
         KeychainSwift().get(loginKey) ?? ""
