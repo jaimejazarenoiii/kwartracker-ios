@@ -78,6 +78,8 @@
 		24CAF6122681E94100CEBD48 /* UserProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CAF6112681E94100CEBD48 /* UserProfileService.swift */; };
 		24CAF6152681EABB00CEBD48 /* UserProfileViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CAF6142681EABB00CEBD48 /* UserProfileViewState.swift */; };
 		24CAF6172681EAD800CEBD48 /* UserProfileViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CAF6162681EAD800CEBD48 /* UserProfileViewAction.swift */; };
+		24CAF619268324A500CEBD48 /* UserProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CAF618268324A500CEBD48 /* UserProfileTests.swift */; };
+		24CAF61B26832D6E00CEBD48 /* MockUserProfileServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CAF61A26832D6E00CEBD48 /* MockUserProfileServiceClient.swift */; };
 		290CA1B2261EABE400239EA7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 290CA1B1261EABE400239EA7 /* swiftgen.yml */; };
 		291DFF942632D61B00DAC0EF /* WalletOneCardCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291DFF932632D61B00DAC0EF /* WalletOneCardCenterView.swift */; };
 		2932757A264E4AAA00E8BA8B /* WalletViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29327579264E4AAA00E8BA8B /* WalletViewState.swift */; };
@@ -288,6 +290,8 @@
 		24CAF6112681E94100CEBD48 /* UserProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileService.swift; sourceTree = "<group>"; };
 		24CAF6142681EABB00CEBD48 /* UserProfileViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewState.swift; sourceTree = "<group>"; };
 		24CAF6162681EAD800CEBD48 /* UserProfileViewAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewAction.swift; sourceTree = "<group>"; };
+		24CAF618268324A500CEBD48 /* UserProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTests.swift; sourceTree = "<group>"; };
+		24CAF61A26832D6E00CEBD48 /* MockUserProfileServiceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserProfileServiceClient.swift; sourceTree = "<group>"; };
 		290CA1B1261EABE400239EA7 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		291DFF932632D61B00DAC0EF /* WalletOneCardCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletOneCardCenterView.swift; sourceTree = "<group>"; };
 		29327579264E4AAA00E8BA8B /* WalletViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewState.swift; sourceTree = "<group>"; };
@@ -481,7 +485,9 @@
 				163E593F260CB89100E54401 /* KwartrackerTests.swift */,
 				163E5941260CB89100E54401 /* Info.plist */,
 				166A9CC22643775C00805A16 /* TransactionsTests.swift */,
-				7AEFD58026806A4100EAD90F /* AuthenticationViewStateTests.swift */,
+                7AEFD58026806A4100EAD90F /* AuthenticationViewStateTests.swift */,
+				7AEFD58026806A4100EAD90F /* AuthenticationTests.swift */,
+				24CAF618268324A500CEBD48 /* UserProfileTests.swift */,
 				7AEFD57926805C4B00EAD90F /* Mocks */,
 			);
 			path = KwartrackerTests;
@@ -1125,6 +1131,7 @@
 			isa = PBXGroup;
 			children = (
 				7AEFD57726803B0000EAD90F /* MockAuthServiceClient.swift */,
+				24CAF61A26832D6E00CEBD48 /* MockUserProfileServiceClient.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -1633,7 +1640,10 @@
 				166A9CC32643775C00805A16 /* TransactionsTests.swift in Sources */,
 				7AEFD57826803B0000EAD90F /* MockAuthServiceClient.swift in Sources */,
 				163E5940260CB89100E54401 /* KwartrackerTests.swift in Sources */,
-				7AEFD58126806A4100EAD90F /* AuthenticationViewStateTests.swift in Sources */,
+                7AEFD58126806A4100EAD90F /* AuthenticationViewStateTests.swift in Sources */,
+				24CAF61B26832D6E00CEBD48 /* MockUserProfileServiceClient.swift in Sources */,
+				7AEFD58126806A4100EAD90F /* AuthenticationTests.swift in Sources */,
+				24CAF619268324A500CEBD48 /* UserProfileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
