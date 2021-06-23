@@ -729,3 +729,156 @@ public final class SignUpMutation: GraphQLMutation {
     }
   }
 }
+
+public final class FetchProfileQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query FetchProfile {
+      profile {
+        __typename
+        email
+        id
+        firstName
+        middleName
+        lastName
+        age
+        gender
+      }
+    }
+    """
+
+  public let operationName: String = "FetchProfile"
+
+  public init() {
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("profile", type: .object(Profile.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(profile: Profile? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "profile": profile.flatMap { (value: Profile) -> ResultMap in value.resultMap }])
+    }
+
+    /// Current user profile
+    public var profile: Profile? {
+      get {
+        return (resultMap["profile"] as? ResultMap).flatMap { Profile(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "profile")
+      }
+    }
+
+    public struct Profile: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["User"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("email", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("firstName", type: .nonNull(.scalar(String.self))),
+          GraphQLField("middleName", type: .scalar(String.self)),
+          GraphQLField("lastName", type: .nonNull(.scalar(String.self))),
+          GraphQLField("age", type: .nonNull(.scalar(Int.self))),
+          GraphQLField("gender", type: .nonNull(.scalar(String.self))),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(email: String, id: GraphQLID, firstName: String, middleName: String? = nil, lastName: String, age: Int, gender: String) {
+        self.init(unsafeResultMap: ["__typename": "User", "email": email, "id": id, "firstName": firstName, "middleName": middleName, "lastName": lastName, "age": age, "gender": gender])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var email: String {
+        get {
+          return resultMap["email"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "email")
+        }
+      }
+
+      public var id: GraphQLID {
+        get {
+          return resultMap["id"]! as! GraphQLID
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var firstName: String {
+        get {
+          return resultMap["firstName"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "firstName")
+        }
+      }
+
+      public var middleName: String? {
+        get {
+          return resultMap["middleName"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "middleName")
+        }
+      }
+
+      public var lastName: String {
+        get {
+          return resultMap["lastName"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "lastName")
+        }
+      }
+
+      public var age: Int {
+        get {
+          return resultMap["age"]! as! Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "age")
+        }
+      }
+
+      public var gender: String {
+        get {
+          return resultMap["gender"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "gender")
+        }
+      }
+    }
+  }
+}

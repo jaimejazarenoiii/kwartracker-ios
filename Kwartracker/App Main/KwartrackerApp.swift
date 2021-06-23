@@ -21,7 +21,7 @@ struct KwartrackerApp: App {
                 // For the meantime, show text view
                 Text("You are logged in.")
             } else {
-                SignInView()
+                MyProfileView()
                     .environmentObject(store)
             }
         }

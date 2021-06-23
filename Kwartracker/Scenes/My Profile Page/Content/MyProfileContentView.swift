@@ -13,18 +13,23 @@ struct MyProfileContentView: View {
     private let topMargin: CGFloat = 15
     private let editHorizontalMargin: CGFloat = -15
     
+    @EnvironmentObject var store: AppStore
+    
     var body: some View {
         VStack(alignment: .leading) {
             TopRightButtonView(image: Asset.Images.editIcon.image)
                 .padding(.horizontal, editHorizontalMargin)
             
-            MyProfileCardView()
-            MyProfileDetailView()
+            MyProfileCardView(user: store.state.userProfileState.user)
+            MyProfileDetailView(user: store.state.userProfileState.user)
             
             Spacer()
         }
         .padding([.leading, .trailing], horizontalMargin)
         .padding(.top, topMargin)
+        .onAppear(perform: {
+            store.send(.userProfileView(action: .fetchProfile(store: store)))
+        })
     }
 }
 
@@ -36,13 +41,16 @@ struct MyProfileContentView_Previews: PreviewProvider {
 }
 
 private struct MyProfileCardView: View {
-    let name: String = L10n.ProfilePage.dummyName
+    let user: FetchProfileQuery.Data.Profile?
+
     private let cardHeight: CGFloat = 190
     private let fontSize: CGFloat = 15
     private let horizontalMargin: CGFloat = 30
     private let verticalMargin: CGFloat = 10
     
     var body: some View {
+        let name = "\(self.user?.firstName ?? "") \(user?.middleName ?? "") \(user?.lastName ?? "")"
+        
         ZStack {
             NeumorphicEffect(rectSize: CGSize(width: UIScreen.main.bounds.width - (horizontalMargin * 2),
                                               height: cardHeight))
@@ -62,9 +70,14 @@ private struct MyProfileCardView: View {
 
 
 private struct MyProfileDetailView: View {
+    let user: FetchProfileQuery.Data.Profile?
+
     var body: some View {
         Group {
-            ProfileDetailsLabel(label: L10n.ProfilePage.Label.contactNumber, value: L10n.ProfilePage.dummyNumber)
+            ProfileDetailsLabel(
+                label: L10n.ProfilePage.Label.contactNumber,
+                value: user?.email ?? "Test lang sa"
+            )
             ProfileDetailsLabel(label: L10n.ProfilePage.Label.birthdate, value: L10n.ProfilePage.dummyBirthdate)
             ProfileDetailsLabel(label: L10n.ProfilePage.Label.address, value: L10n.ProfilePage.dummyAddress)
         }
