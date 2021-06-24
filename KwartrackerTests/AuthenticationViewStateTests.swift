@@ -18,6 +18,7 @@ class AuthenticationViewStateTests: XCTestCase {
 
     override func tearDown() {
         mockAuthService = nil
+        _ = KeyChain.delete(key: KeyChainKeys.userTokenKey)
         super.tearDown()
     }
     
@@ -117,6 +118,5 @@ class AuthenticationViewStateTests: XCTestCase {
         store.send(.authView(action: .create(user: credentials, store: store)))
         
         XCTAssertNotNil(store.state.authState.errorMessage)
-        
     }
 }

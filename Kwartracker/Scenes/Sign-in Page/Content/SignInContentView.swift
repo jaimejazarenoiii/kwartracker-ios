@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SignInContentView: View {
+    @EnvironmentObject var store: AppStore
     @State private var email: String = ""
     @State private var password: String = ""
     @State var showingSignIn = false
@@ -18,8 +19,6 @@ struct SignInContentView: View {
     private let topHeadMargin: CGFloat = 70
     private let snsOrTopMargin: CGFloat = 5
     private let footNoteTopMargin: CGFloat = 25
-    
-    @EnvironmentObject var store: AppStore
     
     private var HeaderText: some View {
         Text(L10n.SignInPage.Title.welcomeBack)

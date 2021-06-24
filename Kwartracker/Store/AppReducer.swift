@@ -24,11 +24,13 @@ enum AppReducer {
             .map(AppAction.transactionsView)
             .eraseToAnyPublisher()
         case let .authView(action: action):
-            return authReducer(state: &state.authState,
-                               action: action,
-                               environment: environment)
-                .map(AppAction.authView)
-                .eraseToAnyPublisher()
+            return authReducer(
+                state: &state.authState,
+                action: action,
+                environment: environment
+            )
+            .map(AppAction.authView)
+            .eraseToAnyPublisher()
         }
     }
 }

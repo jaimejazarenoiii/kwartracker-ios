@@ -81,6 +81,7 @@ func authReducer(
         break
     case .setErrorMessage(let message):
         state.errorMessage = message
+        break
     }
     
     return Empty().eraseToAnyPublisher()
