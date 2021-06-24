@@ -8,7 +8,6 @@
 
 import Foundation
 import Apollo
-import KeychainSwift
 
 class TokenAddingInterceptor: ApolloInterceptor {
     func interceptAsync<Operation: GraphQLOperation>(
@@ -17,20 +16,11 @@ class TokenAddingInterceptor: ApolloInterceptor {
         response: HTTPResponse<Operation>?,
         completion: @escaping (Result<GraphQLResult<Operation.Data>, Error>) -> Void) {
     
-        // let keychain
-        let _ = KeychainSwift()
-        
-        request.addHeader(
-            name: "Authorization",
-            value: "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlhdCI6MTYyNDQxNTE0MCwiZXhwIjoxNjMyMTkxMTQwfQ.g0lhxdpsxNjRT2ZRVr4keQC-WUwLONbY33WS5yfiwmQ"
-        )
-        
-        /*
-         * Actual implementation based on documentation
-         if let token = keychain.get(LoginViewController.loginKeychainKey) {
-            request.addHeader(name: "Authorization", value: token)
-         }
-        */
+        if let data = KeyChain.load(key: KeyChainKeys.getLoginKeyChain()) {
+            let token = String(data: data, encoding: .utf8)
+
+            request.addHeader(name: "Authorization", value: token ?? "")
+        }
                 
         chain.proceedAsync(request: request,
                            response: response,

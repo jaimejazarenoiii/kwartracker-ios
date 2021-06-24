@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct MyProfileContentView: View {
+    @EnvironmentObject var store: AppStore
+
     private let neumorphicBoxHeight: CGFloat = 190
     private let horizontalMargin: CGFloat = 30
     private let topMargin: CGFloat = 15
     private let editHorizontalMargin: CGFloat = -15
-    
-    @EnvironmentObject var store: AppStore
     
     var body: some View {
         VStack(alignment: .leading) {
