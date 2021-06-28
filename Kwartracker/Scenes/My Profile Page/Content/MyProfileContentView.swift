@@ -47,10 +47,11 @@ private struct MyProfileCardView: View {
     private let fontSize: CGFloat = 15
     private let horizontalMargin: CGFloat = 30
     private let verticalMargin: CGFloat = 10
+    private var name: String {
+        "\(self.user?.firstName ?? "") \(user?.middleName ?? "") \(user?.lastName ?? "")"
+    }
     
     var body: some View {
-        let name = "\(self.user?.firstName ?? "") \(user?.middleName ?? "") \(user?.lastName ?? "")"
-        
         ZStack {
             NeumorphicEffect(rectSize: CGSize(width: UIScreen.main.bounds.width - (horizontalMargin * 2),
                                               height: cardHeight))
@@ -76,7 +77,7 @@ private struct MyProfileDetailView: View {
         Group {
             ProfileDetailsLabel(
                 label: L10n.ProfilePage.Label.contactNumber,
-                value: user?.email ?? "Test lang sa"
+                value: user?.email ?? ""
             )
             ProfileDetailsLabel(label: L10n.ProfilePage.Label.birthdate, value: L10n.ProfilePage.dummyBirthdate)
             ProfileDetailsLabel(label: L10n.ProfilePage.Label.address, value: L10n.ProfilePage.dummyAddress)

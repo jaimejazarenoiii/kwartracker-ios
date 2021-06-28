@@ -15,11 +15,11 @@ class TokenAddingInterceptor: ApolloInterceptor {
         request: HTTPRequest<Operation>,
         response: HTTPResponse<Operation>?,
         completion: @escaping (Result<GraphQLResult<Operation.Data>, Error>) -> Void) {
-    
-        if let data = KeyChain.load(key: KeyChainKeys.getLoginKeyChain()) {
-            let token = String(data: data, encoding: .utf8)
 
-            request.addHeader(name: "Authorization", value: token ?? "")
+        if let data = KeyChain.load(key: KeyChainKeys.getLoginKeyChain()) {
+            guard let token = String(data: data, encoding: .utf8) else { return }
+
+            request.addHeader(name: "Authorization", value: token)
         }
                 
         chain.proceedAsync(request: request,

@@ -22,14 +22,6 @@ class Network {
         return ApolloClient(networkTransport: transport, store: store)
     }()
 
-//    private init() {
-//        setApolloClientURL(Network.stagingURL)
-//    }
-//
-//    func setApolloClientURL(_ url: URL) {
-//        apollo = ApolloClient(url: url)
-//    }
-
     func test() {
         if KeyChainKeys.isLoggedIn() {
             debugPrint("is logged in: \(KeyChainKeys.getLoginKeyChain())")
