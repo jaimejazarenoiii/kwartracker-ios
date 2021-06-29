@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SignUpBodyView: View {
-    @EnvironmentObject var store: AppStore
+    @EnvironmentObject private var store: AppStore
     @State var email: String = ""
     @State var password: String = ""
     

@@ -10,14 +10,17 @@ import XCTest
 
 class AuthenticationViewStateTests: XCTestCase {
     var mockAuthService: MockAuthServiceClient!
+    var state: AuthenticationViewState!
     
     override func setUp() {
         super.setUp()
         mockAuthService = MockAuthServiceClient()
+        state = AuthenticationViewState()
     }
 
     override func tearDown() {
         mockAuthService = nil
+        state = nil
         _ = KeyChain.delete(key: KeyChainKeys.userTokenKey)
         super.tearDown()
     }
@@ -52,7 +55,7 @@ class AuthenticationViewStateTests: XCTestCase {
                                        environment: world)
         
         let credentials = UserAuthInfo(email: "test@test.com", password: "admin123")
-        store.send(.authView(action: .login(user: credentials, store: store)))
+        _ = authReducer(state: &state, action: .login(user: credentials, store: store), environment: world)
         
         XCTAssertNotNil(store.state.authState.errorMessage)
     }
@@ -87,7 +90,7 @@ class AuthenticationViewStateTests: XCTestCase {
                                        environment: world)
         
         let credentials = UserAuthInfo(email: "test@test.com", password: "admin123")
-        store.send(.authView(action: .create(user: credentials, store: store)))
+        _ = authReducer(state: &state, action: .create(user: credentials, store: store), environment: world)
         
         XCTAssertNotNil(store.state.authState.errorMessage)
     }
@@ -101,7 +104,7 @@ class AuthenticationViewStateTests: XCTestCase {
                                        environment: world)
         
         let credentials = UserAuthInfo(email: "test@test.com", password: "admin123")
-        store.send(.authView(action: .create(user: credentials, store: store)))
+        _ = authReducer(state: &state, action: .login(user: credentials, store: store), environment: world)
         
         XCTAssertNotNil(store.state.authState.errorMessage)
     }
@@ -115,7 +118,7 @@ class AuthenticationViewStateTests: XCTestCase {
                                        environment: world)
         
         let credentials = UserAuthInfo(email: "test@test.com", password: "admin123")
-        store.send(.authView(action: .create(user: credentials, store: store)))
+        _ = authReducer(state: &state, action: .create(user: credentials, store: store), environment: world)
         
         XCTAssertNotNil(store.state.authState.errorMessage)
     }

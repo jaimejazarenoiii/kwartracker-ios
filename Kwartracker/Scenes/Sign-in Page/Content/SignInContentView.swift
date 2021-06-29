@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SignInContentView: View {
-    @EnvironmentObject var store: AppStore
+    @EnvironmentObject private var store: AppStore
     @State private var email: String = ""
     @State private var password: String = ""
     @State var showingSignIn = false
