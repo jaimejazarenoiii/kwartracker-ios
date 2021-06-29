@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OptionItem {
+struct OptionItem: Hashable {
     var description: String
     var value: String
     var isSelected: Bool = false

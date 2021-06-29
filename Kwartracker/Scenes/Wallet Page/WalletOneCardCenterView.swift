@@ -44,7 +44,7 @@ struct WalletOneCardCenterView: View {
         VStack {
             HStack(spacing: itemSpacing) {
                 ForEach(wallets, id: \.id) { wallet in
-                    CardView(cardSize: cardSize, wallet: wallet)
+                    CardView(size: cardSize, wallet: wallet)
                 }
             }
             .frame(width: UIScreen.main.bounds.width)
@@ -65,7 +65,7 @@ struct WalletOneCardCenterView: View {
             CardPageControlView(index: $page, maxIndex: wallets.count)
                 .padding([.top, .bottom], margin)
             
-            WalletActionButtonView()
+            WalletActionButtonView(wallet: wallets[page - 1])
             
             Spacer()
                 .frame(height: margin)
@@ -104,7 +104,7 @@ struct WalletOneCardCenterView: View {
         
         page = abs(Int(index - CGFloat(wallets.count)))
         let type = wallets[page - 1].type
-        showTargetView = (type == WalletType.goal.rawValue)
+        showTargetView = type == WalletType.goal
         
         // Set final offset (snapping to item)
         let newOffset = index * cardSize.width
