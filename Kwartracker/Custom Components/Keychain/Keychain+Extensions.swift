@@ -17,11 +17,11 @@ class KeyChain {
             return noErr
         }
         
-        let query = [
+        let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword as String,
             kSecAttrAccount as String: key,
             kSecValueData as String: data
-        ] as [String: Any]
+        ]
 
         SecItemDelete(query as CFDictionary)
 
@@ -29,12 +29,12 @@ class KeyChain {
     }
 
     class func load(key: String) -> Data? {
-        let query = [
+        let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrAccount as String: key,
             kSecReturnData as String: kCFBooleanTrue!,
             kSecMatchLimit as String: kSecMatchLimitOne
-        ] as [String: Any]
+        ]
 
         var result: AnyObject?
         
@@ -46,10 +46,10 @@ class KeyChain {
     }
     
     class func delete(key: String) -> OSStatus {
-        let query = [
+        let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword as String,
             kSecAttrAccount as String: key
-        ] as [String: Any]
+        ]
 
         return SecItemDelete(query as CFDictionary)
     }

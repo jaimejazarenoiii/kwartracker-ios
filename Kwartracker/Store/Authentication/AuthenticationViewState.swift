@@ -14,7 +14,7 @@ struct AuthenticationViewState {
     var isAuthenticated: Bool {
         get {
             if errorMessage == nil {
-                return KeyChain.load(key: KeyChainKeys.userTokenKey) != nil
+                return KeyChain.load(key: KeyChainKeys.loginTokenKey) != nil
             }
             
             return false
@@ -75,7 +75,7 @@ func authReducer(
         }
         break
     case .setUserToken(let token):
-        let status = KeyChain.save(key: KeyChainKeys.userTokenKey, value: token)
+        let status = KeyChain.save(key: KeyChainKeys.loginTokenKey, value: token)
         state.errorMessage = nil
         print("status: ", status)
         break

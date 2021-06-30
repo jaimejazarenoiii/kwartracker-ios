@@ -21,7 +21,7 @@ class AuthenticationViewStateTests: XCTestCase {
     override func tearDown() {
         mockAuthService = nil
         state = nil
-        _ = KeyChain.delete(key: KeyChainKeys.userTokenKey)
+        _ = KeyChain.delete(key: KeyChainKeys.loginTokenKey)
         super.tearDown()
     }
     
@@ -36,7 +36,7 @@ class AuthenticationViewStateTests: XCTestCase {
         
         XCTAssertNil(store.state.authState.errorMessage)
         
-        guard let keychainToken = KeyChain.load(key: KeyChainKeys.userTokenKey) else {
+        guard let keychainToken = KeyChain.load(key: KeyChainKeys.loginTokenKey) else {
             XCTAssert(false)
             return
         }
@@ -71,7 +71,7 @@ class AuthenticationViewStateTests: XCTestCase {
         
         XCTAssertNil(store.state.authState.errorMessage)
         
-        guard let keychainToken = KeyChain.load(key: KeyChainKeys.userTokenKey) else {
+        guard let keychainToken = KeyChain.load(key: KeyChainKeys.loginTokenKey) else {
             XCTAssert(false)
             return
         }

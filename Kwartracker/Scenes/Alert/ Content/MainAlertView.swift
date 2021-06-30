@@ -14,11 +14,7 @@ struct MainAlertView: View {
     var body: some View {
         VStack {
             MessageView(state: dialogStatus)
-            ButtonView(actionHandler: {
-                // Temp action for removing usertoken keychain
-                let status = KeyChain.delete(key: KeyChainKeys.userTokenKey)
-                debugPrint(status)
-            }, actionLabel: .success)
+            ButtonView(actionHandler: {}, actionLabel: .success)
         }
         .padding(.all, 20)
         .frame(width: 220, height: 240, alignment: .center)
