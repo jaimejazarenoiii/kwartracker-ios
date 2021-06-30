@@ -137,6 +137,8 @@
 		7AA77F1F2660D6C200C700A2 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA77F1E2660D6C200C700A2 /* MyProfileView.swift */; };
 		7AA77F212660D77500C700A2 /* MyProfileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA77F202660D77500C700A2 /* MyProfileContentView.swift */; };
 		7AA77F242660ED6000C700A2 /* ProfilePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA77F232660ED6000C700A2 /* ProfilePictureView.swift */; };
+		7AAB98A0268C416300E7545C /* CocoaLumberjackSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7AAB989F268C416300E7545C /* CocoaLumberjackSwift */; };
+		7AAB98A2268C416300E7545C /* CocoaLumberjack in Frameworks */ = {isa = PBXBuildFile; productRef = 7AAB98A1268C416300E7545C /* CocoaLumberjack */; };
 		7AB1B91E26438C7C00853FAC /* RoundedCornerRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1B91D26438C7C00853FAC /* RoundedCornerRectangle.swift */; };
 		7AD9B86B2626EC0000CF0EA6 /* SignInHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9B86A2626EC0000CF0EA6 /* SignInHeaderView.swift */; };
 		7AD9B8732626EC2A00CF0EA6 /* SkeletalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD9B8722626EC2A00CF0EA6 /* SkeletalView.swift */; };
@@ -359,6 +361,8 @@
 			files = (
 				29ED9DA8265E34EA004C303E /* SwiftDate in Frameworks */,
 				A9CFE877880189ECE3F83CB8 /* Pods_Kwartracker.framework in Frameworks */,
+				7AAB98A2268C416300E7545C /* CocoaLumberjack in Frameworks */,
+				7AAB98A0268C416300E7545C /* CocoaLumberjackSwift in Frameworks */,
 				16CCE7452651E4F900345778 /* KeychainSwift in Frameworks */,
 				16CD1B05264901F100272FCA /* ApolloWebSocket in Frameworks */,
 				16CD1B03264901F100272FCA /* Apollo in Frameworks */,
@@ -1201,6 +1205,8 @@
 				16CD1B04264901F100272FCA /* ApolloWebSocket */,
 				16CCE7442651E4F900345778 /* KeychainSwift */,
 				29ED9DA7265E34EA004C303E /* SwiftDate */,
+				7AAB989F268C416300E7545C /* CocoaLumberjackSwift */,
+				7AAB98A1268C416300E7545C /* CocoaLumberjack */,
 			);
 			productName = Kwartracker;
 			productReference = 163E592A260CB88E00E54401 /* Kwartracker.app */;
@@ -1280,6 +1286,7 @@
 				16CD1B01264901F100272FCA /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				16CCE7432651E4F900345778 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				29ED9DA6265E34EA004C303E /* XCRemoteSwiftPackageReference "SwiftDate" */,
+				7AAB989E268C416300E7545C /* XCRemoteSwiftPackageReference "CocoaLumberjack" */,
 			);
 			productRefGroup = 163E592B260CB88E00E54401 /* Products */;
 			projectDirPath = "";
@@ -1948,6 +1955,14 @@
 				minimumVersion = 6.3.1;
 			};
 		};
+		7AAB989E268C416300E7545C /* XCRemoteSwiftPackageReference "CocoaLumberjack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CocoaLumberjack/CocoaLumberjack.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.7.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1970,6 +1985,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 29ED9DA6265E34EA004C303E /* XCRemoteSwiftPackageReference "SwiftDate" */;
 			productName = SwiftDate;
+		};
+		7AAB989F268C416300E7545C /* CocoaLumberjackSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7AAB989E268C416300E7545C /* XCRemoteSwiftPackageReference "CocoaLumberjack" */;
+			productName = CocoaLumberjackSwift;
+		};
+		7AAB98A1268C416300E7545C /* CocoaLumberjack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7AAB989E268C416300E7545C /* XCRemoteSwiftPackageReference "CocoaLumberjack" */;
+			productName = CocoaLumberjack;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
