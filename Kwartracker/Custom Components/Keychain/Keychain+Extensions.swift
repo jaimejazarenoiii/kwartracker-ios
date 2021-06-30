@@ -7,13 +7,14 @@
 
 import Security
 import UIKit
+import CocoaLumberjackSwift
 
 // https://stackoverflow.com/a/37539998
 class KeyChain {
 
     class func save(key: String, value: String) -> OSStatus {
         guard let data = value.data(using: String.Encoding.utf8) else {
-            debugPrint("Unable to parse string into utf-8 data!")
+            DDLogWarn("[KeyChain][Save] Unable to parse string into utf-8 data!")
             return noErr
         }
         

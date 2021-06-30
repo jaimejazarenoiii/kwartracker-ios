@@ -8,6 +8,7 @@
 import SwiftUI
 import Combine
 import Apollo
+import CocoaLumberjackSwift
 
 struct AuthenticationViewState {
     var errorMessage: String?
@@ -48,7 +49,7 @@ func authReducer(
                 break
             case .failure(let error):
                 store.send(.authView(action: .setErrorMessage(message: error.localizedDescription)))
-                debugPrint("[Authentication][logging in] error: \(error)")
+                DDLogError("[Authentication][sign up] error: \(error)")
                 break
             }
         }
@@ -68,7 +69,7 @@ func authReducer(
                 break
             case .failure(let error):
                 store.send(.authView(action: .setErrorMessage(message: error.localizedDescription)))
-                debugPrint("[Authentication][logging in] error: \(error)")
+                DDLogError("[Authentication][sign in] error: \(error)")
                 break
             }
         }
