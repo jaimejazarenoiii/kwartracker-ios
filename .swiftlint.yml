@@ -72,6 +72,7 @@ excluded:
   - Pods/
   - vendor/bundle/
   - Kwartracker/API.swift
+  - fastlane/SnapshotHelper.swift
 reporter: "xcode"
 custom_rules:
   localized_lensing:
