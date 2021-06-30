@@ -16,7 +16,6 @@ struct AuthenticationViewState {
             if errorMessage == nil {
                 return KeyChain.load(key: KeyChainKeys.loginTokenKey) != nil
             }
-            
             return false
         }
     }

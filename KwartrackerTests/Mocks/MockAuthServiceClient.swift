@@ -176,7 +176,5 @@ extension MockAuthServiceClient: AuthenticationServiceDelegate {
 }
 
 class MockServiceTransport: Cancellable {
-    func cancel() {
-        
-    }
+    func cancel() {}
 }
