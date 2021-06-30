@@ -1527,7 +1527,6 @@
 				298536F32660DBAA0024A25C /* NeumorphicEffect.swift in Sources */,
 				2932757F264E4AE800E8BA8B /* WalletViewActions.swift in Sources */,
 				7A9716FC267C495600D106AF /* AuthenticationViewState.swift in Sources */,
-				29327571264E3D5C00E8BA8B /* TargetViewLabel.swift in Sources */,
 				24AC7CC02665E01A00CE4282 /* TopRightButtonView.swift in Sources */,
 				16606D292647966B005F2CF5 /* OptionSelectView.swift in Sources */,
 				24AC7CA82664BF8200CE4282 /* CategoryDetailView.swift in Sources */,
