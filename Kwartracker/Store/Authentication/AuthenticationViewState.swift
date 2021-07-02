@@ -11,11 +11,12 @@ import Apollo
 import CocoaLumberjackSwift
 
 struct AuthenticationViewState {
+    private var isRequesting: Bool = false
     var errorMessage: String?
     var isAuthenticated: Bool {
         get {
             if errorMessage == nil {
-                return KeyChain.load(key: KeyChainKeys.loginTokenKey) != nil
+                return KeyChainKeys.isLoggedIn()
             }
             return false
         }
@@ -28,7 +29,18 @@ func authReducer(
     environment: World
 ) -> AnyPublisher<AuthenticationViewAction, Never> {
     switch action {
-    case .create(let userInfo, let store):
+    case .login(let userInfo):
+        let loginCredentials = CredentialsInput(email: userInfo.email, password: userInfo.password)
+        
+        return environment.authenticationService.signIn(credentialInput: loginCredentials)
+            .map {
+                AuthenticationViewAction.setUserToken(token: $0.signInWithEmail?.token)
+            }
+            .catch {
+                Just(AuthenticationViewAction.setErrorMessage(message: $0.localizedDescription))
+            }
+            .eraseToAnyPublisher()
+    case .create(let userInfo):
         let profileInfo = ProfileInput(firstName: "", lastName: "", gender: 0, age: 18)
         let signupCredentials = SignUpWithEmailInput(
             email: userInfo.email,
@@ -36,48 +48,20 @@ func authReducer(
             passwordConfirmation: userInfo.password,
             profile: profileInfo
         )
-        _ = environment.authenticationService.signUp(signUpCredential: signupCredentials) { result in
-            switch result {
-            case .success(let response):
-                if let error = response.errors, let errorMessage = error.first?.localizedDescription {
-                    store.send(.authView(action: .setErrorMessage(message: errorMessage)))
-                }
-                
-                if let token = response.data?.signUpWithEmail?.token {
-                    store.send(.authView(action: .setUserToken(token: token)))
-                }
-                break
-            case .failure(let error):
-                store.send(.authView(action: .setErrorMessage(message: error.localizedDescription)))
-                DDLogError("[Authentication][sign up] error: \(error)")
-                break
+        
+        return environment.authenticationService.signUp(signUpCredential: signupCredentials)
+            .map {
+                AuthenticationViewAction.setUserToken(token: $0.signUpWithEmail?.token)
             }
-        }
-        break
-    case .login(let userInfo, let store):
-        let loginCredentials = CredentialsInput(email: userInfo.email, password: userInfo.password)
-        _ = environment.authenticationService.signIn(credentialInput: loginCredentials) { result in
-            switch result {
-            case .success(let response):
-                if let error = response.errors, let errorMessage = error.first?.localizedDescription {
-                    store.send(.authView(action: .setErrorMessage(message: errorMessage)))
-                }
-                
-                if let data = response.data?.signInWithEmail {
-                    store.send(.authView(action: .setUserToken(token: data.token)))
-                }
-                break
-            case .failure(let error):
-                store.send(.authView(action: .setErrorMessage(message: error.localizedDescription)))
-                DDLogError("[Authentication][sign in] error: \(error)")
-                break
-            }
-        }
-        break
+            .catch { Just(AuthenticationViewAction.setErrorMessage(message: $0.localizedDescription)) }
+            .assertNoFailure()
+            .eraseToAnyPublisher()
     case .setUserToken(let token):
-        let status = KeyChain.save(key: KeyChainKeys.loginTokenKey, value: token)
-        state.errorMessage = nil
-        print("status: ", status)
+        if let token = token {
+            let status = KeyChain.save(key: KeyChainKeys.loginTokenKey, value: token)
+            state.errorMessage = nil
+            DDLogInfo("[Keychain][save] Status: \(status)")
+        }
         break
     case .setErrorMessage(let message):
         state.errorMessage = message

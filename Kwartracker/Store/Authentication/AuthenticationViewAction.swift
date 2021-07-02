@@ -8,8 +8,8 @@
 import Foundation
 
 enum AuthenticationViewAction {
-    case create(user: UserAuthInfo, store: AppStore)
-    case login(user: UserAuthInfo, store: AppStore)
-    case setUserToken(token: String)
-    case setErrorMessage(message: String)
+    case create(user: UserAuthInfo)
+    case login(user: UserAuthInfo)
+    case setUserToken(token: String?)
+    case setErrorMessage(message: String?)
 }

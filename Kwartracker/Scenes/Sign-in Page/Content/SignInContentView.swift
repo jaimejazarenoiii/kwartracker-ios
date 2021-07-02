@@ -39,7 +39,7 @@ struct SignInContentView: View {
         Group {
             SNSButton(actionHandler: {
                 let info = UserAuthInfo(email: email, password: password)
-                store.send(.authView(action: .login(user: info, store: store)))
+                store.send(.authView(action: .login(user: info)))
             }, actionLabel: .signIn)
             .padding(.top)
             .fullScreenCover(isPresented: Binding<Bool>.constant(store.state.authState.isAuthenticated)) {

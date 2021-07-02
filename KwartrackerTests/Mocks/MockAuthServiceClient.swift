@@ -7,6 +7,7 @@
 
 import Foundation
 import Apollo
+import Combine
 @testable import Kwartracker
 
 class MockAuthServiceClient {
@@ -96,85 +97,37 @@ class MockAuthServiceClient {
 }
 
 extension MockAuthServiceClient: AuthenticationServiceDelegate {
-    @discardableResult func signIn(
-        credentialInput input: CredentialsInput,
-        completion: @escaping (Result<GraphQLResult<SignInMutation.Data>, Error>) -> Void
-    ) -> Cancellable {
-        if shouldErrorRequest {
-            let error = NSError(domain: "", code: 422,
-                                userInfo: [
-                                    NSLocalizedDescriptionKey: "Unable to make request"
-                                ])
-            
-            completion(.failure(error))
-        } else {
-            if shouldLoginWithError {
-                if let errorJSONObject = createJSONObject(loginErrorResponse) {
-                    let error = GraphQLError(errorJSONObject)
-                    
-                    completion(.success(GraphQLResult<SignInMutation.Data>(
-                        data: nil,
-                        extensions: nil,
-                        errors: [error],
-                        source: .server,
-                        dependentKeys: Set<CacheKey>(arrayLiteral: CacheKey(0))
-                    )))
-                }
-            } else {
-                let data = SignInMutation.Data(signInWithEmail: loginResponse)
+    func signIn(credentialInput input: CredentialsInput) -> AnyPublisher<SignInMutation.Data, Error> {
+        Future<SignInMutation.Data, Error> { promise in
+            if self.shouldErrorRequest {
+                let error = NSError(domain: "", code: 422,
+                                    userInfo: [
+                                        NSLocalizedDescriptionKey: "Unable to make request"
+                                    ])
                 
-                completion(.success(GraphQLResult<SignInMutation.Data>(
-                    data: data,
-                    extensions: nil,
-                    errors: nil,
-                    source: .server,
-                    dependentKeys: nil
-                )))
+                promise(.failure(error))
+            } else {
+                let data = SignInMutation.Data(signInWithEmail: self.loginResponse)
+                promise(.success(data))
             }
         }
-        
-        return MockServiceTransport()
+        .eraseToAnyPublisher()
     }
     
-    func signUp(
-        signUpCredential input: SignUpWithEmailInput,
-        completion: @escaping (Result<GraphQLResult<SignUpMutation.Data>, Error>) -> Void
-    ) -> Cancellable {
-        if shouldErrorRequest {
-            let error = NSError(domain: "", code: 422,
-                                userInfo: [NSLocalizedDescriptionKey: "Unable to make request"])
-            
-            completion(.failure(error))
-        } else {
-            if shouldSignupWithError {
-                if let errorJSONObject = createJSONObject(signupErrorResponse) {
-                    let error = GraphQLError(errorJSONObject)
-                    
-                    completion(.success(GraphQLResult<SignUpMutation.Data>(
-                        data: nil,
-                        extensions: nil,
-                        errors: [error],
-                        source: .server,
-                        dependentKeys: nil
-                    )))
-                }
-            } else {
-                let data = SignUpMutation.Data(signUpWithEmail: registrationResponse)
+    func signUp(signUpCredential input: SignUpWithEmailInput) -> AnyPublisher<SignUpMutation.Data, Error> {
+        Future<SignUpMutation.Data, Error> { promise in
+            if self.shouldErrorRequest {
+                let error = NSError(domain: "", code: 422,
+                                    userInfo: [NSLocalizedDescriptionKey: "Unable to make request"])
                 
-                completion(.success(GraphQLResult<SignUpMutation.Data>(
-                    data: data,
-                    extensions: nil,
-                    errors: nil,
-                    source: .server,
-                    dependentKeys: nil
-                )))
+                promise(.failure(error))
+            } else {
+                let data = SignUpMutation.Data(signUpWithEmail: self.registrationResponse)
+                promise(.success(data))
             }
+
         }
-        
-        return MockServiceTransport()
+        .eraseToAnyPublisher()
     }
 }
 
-class MockServiceTransport: Cancellable {
-    func cancel() {}
-}

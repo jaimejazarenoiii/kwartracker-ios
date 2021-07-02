@@ -10,18 +10,15 @@ import XCTest
 
 class AuthenticationViewStateTests: XCTestCase {
     var mockAuthService: MockAuthServiceClient!
-    var state: AuthenticationViewState!
     
     override func setUp() {
         super.setUp()
         mockAuthService = MockAuthServiceClient()
-        state = AuthenticationViewState()
+        _ = KeyChain.delete(key: KeyChainKeys.loginTokenKey)
     }
 
     override func tearDown() {
         mockAuthService = nil
-        state = nil
-        _ = KeyChain.delete(key: KeyChainKeys.loginTokenKey)
         super.tearDown()
     }
     
@@ -32,7 +29,7 @@ class AuthenticationViewStateTests: XCTestCase {
                                        environment: world)
         
         let credentials = UserAuthInfo(email: "test@test.com", password: "admin123")
-        store.send(.authView(action: .login(user: credentials, store: store)))
+        store.send(.authView(action: .login(user: credentials)))
         
         XCTAssertNil(store.state.authState.errorMessage)
         
@@ -46,20 +43,6 @@ class AuthenticationViewStateTests: XCTestCase {
         XCTAssertNotNil(userToken)
     }
     
-    func testFailedUserLogin() {
-        mockAuthService.shouldLoginWithError = true
-        
-        let world = World(authenticationService: mockAuthService)
-        let store = AppStore(initialState: .init(),
-                                       reducer: AppReducer.appReducer,
-                                       environment: world)
-        
-        let credentials = UserAuthInfo(email: "test@test.com", password: "admin123")
-        _ = authReducer(state: &state, action: .login(user: credentials, store: store), environment: world)
-        
-        XCTAssertNotNil(store.state.authState.errorMessage)
-    }
-    
     func testSuccessfulUserRegistration() {
         let world = World(authenticationService: mockAuthService)
         let store = AppStore(initialState: .init(),
@@ -67,7 +50,7 @@ class AuthenticationViewStateTests: XCTestCase {
                                        environment: world)
         
         let credentials = UserAuthInfo(email: "test@test.com", password: "admin123")
-        store.send(.authView(action: .create(user: credentials, store: store)))
+        store.send(.authView(action: .create(user: credentials)))
         
         XCTAssertNil(store.state.authState.errorMessage)
         
@@ -81,20 +64,6 @@ class AuthenticationViewStateTests: XCTestCase {
         XCTAssertNotNil(userToken)
     }
 
-    func testFailedUserRegistration() {
-        mockAuthService.shouldSignupWithError = true
-        
-        let world = World(authenticationService: mockAuthService)
-        let store = AppStore(initialState: .init(),
-                                       reducer: AppReducer.appReducer,
-                                       environment: world)
-        
-        let credentials = UserAuthInfo(email: "test@test.com", password: "admin123")
-        _ = authReducer(state: &state, action: .create(user: credentials, store: store), environment: world)
-        
-        XCTAssertNotNil(store.state.authState.errorMessage)
-    }
-    
     func testFailedLoginServiceRequest() {
         mockAuthService.shouldErrorRequest = true
         
@@ -104,7 +73,7 @@ class AuthenticationViewStateTests: XCTestCase {
                                        environment: world)
         
         let credentials = UserAuthInfo(email: "test@test.com", password: "admin123")
-        _ = authReducer(state: &state, action: .login(user: credentials, store: store), environment: world)
+        store.send(.authView(action: .login(user: credentials)))
         
         XCTAssertNotNil(store.state.authState.errorMessage)
     }
@@ -118,7 +87,7 @@ class AuthenticationViewStateTests: XCTestCase {
                                        environment: world)
         
         let credentials = UserAuthInfo(email: "test@test.com", password: "admin123")
-        _ = authReducer(state: &state, action: .create(user: credentials, store: store), environment: world)
+        store.send(.authView(action: .create(user: credentials)))
         
         XCTAssertNotNil(store.state.authState.errorMessage)
     }

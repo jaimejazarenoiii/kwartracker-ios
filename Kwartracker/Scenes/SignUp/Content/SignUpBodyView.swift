@@ -24,7 +24,7 @@ struct SignUpBodyView: View {
                 Group {
                     SNSButton(actionHandler: {
                         let userInfo = UserAuthInfo(email: email, password: password)
-                        store.send(.authView(action: .create(user: userInfo, store: store)))
+                        store.send(.authView(action: .create(user: userInfo)))
                     }, actionLabel: .signUp).padding(.top, 15)
                     HStack {
                         Spacer()
