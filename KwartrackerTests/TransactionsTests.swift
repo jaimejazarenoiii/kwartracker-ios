@@ -9,128 +9,101 @@ import XCTest
 @testable import Kwartracker
 
 class TransactionsTests: XCTestCase {
-    var state: TransactionsViewState!
+    var store: AppStore!
 
     override func setUp() {
         super.setUp()
-        state = TransactionsViewState(transactions: [])
+        store = AppStore(
+            initialState: .init(),
+            reducer: AppReducer.appReducer,
+            environment: World()
+        )
     }
 
     override func tearDown() {
-        state = nil
+        store = nil
         super.tearDown()
     }
 
-    /// Test for successful insertion of transaction to list.
+    /**
+     Test for successful insertion of transaction to list.
+     */
     func testSuccessfulAddTransaction() {
         // Inputs
         let newTransaction = Transaction.unitTestTransaction
+        store.send(.transactionsView(action: .add(transaction: newTransaction)))
 
-        // Process
-        _ = transactionsViewReducer(state: &state, action: .add(transaction: newTransaction), environment: World())
-
-        // Assert
-        let newTransactionExist = state.transactions.contains(where: { $0.id == newTransaction.id })
-        let emptyErrorMessage = state.transactionErrorMessage.isEmpty
-        XCTAssert(newTransactionExist)
-        XCTAssert(emptyErrorMessage)
+        // Assertions
+        XCTAssert(store.state.transactionState.transactions.contains(where: { $0.id == newTransaction.id }))
     }
 
-    /// Test for failed insertion of transaction to list.
-    func testFailingAddTransaction() {
-        // Inputs
-        let newTransaction = Transaction.unitTestInvalidTransaction
-
-        // Process
-        _ = transactionsViewReducer(state: &state, action: .add(transaction: newTransaction), environment: World())
-
-        // Assert
-        let newTransactionExist = state.transactions.contains(where: { $0.id == newTransaction.id })
-        let emptyErrorMessage = state.transactionErrorMessage.isEmpty
-        XCTAssertFalse(newTransactionExist)
-        XCTAssertFalse(emptyErrorMessage)
-    }
-
-    /// Test for successful edit / update of a transaction.
-    func testSuccessfulEditTransaction() {
-        // Inputs
-        let newTransaction = Transaction.unitTestTransaction
-        var editedTransaction = newTransaction
-        editedTransaction.title = "Salary"
-        editedTransaction.amount = 100
-
-        // Process
-        _ = transactionsViewReducer(state: &state, action: .add(transaction: newTransaction), environment: World())
-        _ = transactionsViewReducer(state: &state, action: .edit(transaction: editedTransaction), environment: World())
-
-        // Assert
-        let isEditedTransactionUpdated = state.transactions
-            .contains(where: {
-                $0.id == editedTransaction.id &&
-                    $0.title == editedTransaction.title &&
-                    $0.amount == editedTransaction.amount
-        })
-        let emptyErrorMessage = state.transactionErrorMessage.isEmpty
-        XCTAssert(isEditedTransactionUpdated)
-        XCTAssert(emptyErrorMessage)
-    }
-
-    /// Test for failed edit / update of a transaction.
-    func testFailingEditTransaction() {
-        // Inputs
-        let newTransaction = Transaction.unitTestTransaction
-        var editedTransaction = newTransaction
-        editedTransaction.id = 2
-        editedTransaction.title = "Salary"
-        editedTransaction.amount = 100
-
-        // Process
-        _ = transactionsViewReducer(state: &state, action: .add(transaction: newTransaction), environment: World())
-        _ = transactionsViewReducer(state: &state, action: .edit(transaction: editedTransaction), environment: World())
-
-        // Assert
-        let isEditedTransactionUpdated = state.transactions
-            .contains(where: {
-                $0.id == editedTransaction.id &&
-                    $0.title == editedTransaction.title &&
-                    $0.amount == editedTransaction.amount
-        })
-        let emptyErrorMessage = state.transactionErrorMessage.isEmpty
-        XCTAssertFalse(isEditedTransactionUpdated)
-        XCTAssertFalse(emptyErrorMessage)
-    }
-
-    /// Test for successful removal of a transaction from the list.
-    func testSuccessfulDeleteTransaction() {
+    /**
+     Test for a failure add transaction without calling add process.
+     */
+    func testFailureAddTransactionWithoutCallingAddTransaction() {
         // Inputs
         let newTransaction = Transaction.unitTestTransaction
 
-        // Process
-        _ = transactionsViewReducer(state: &state, action: .add(transaction: newTransaction), environment: World())
-        let index = state.transactions.firstIndex(where: { $0.id == newTransaction.id }) ?? -1
-        _ = transactionsViewReducer(state: &state, action: .delete(index: index), environment: World())
-
-        // Assert
-        let isTransactionRemoved = !state.transactions.contains(where: { $0.id == newTransaction.id })
-        let emptyErrorMessage = state.transactionErrorMessage.isEmpty
-        XCTAssert(isTransactionRemoved)
-        XCTAssert(emptyErrorMessage)
+        // Assertions
+        XCTAssertFalse(store.state.transactionState.transactions.contains(where: { $0.id == newTransaction.id }))
     }
 
-    /// Test for successful removal of a transaction fromt the list.
-    func testFailingDeleteTransaction() {
+    /**
+     Test for successful create transaction request.
+     */
+    func testSuccessfulCreateTransactionRequest() {
         // Inputs
         let newTransaction = Transaction.unitTestTransaction
+        store.send(.transactionsView(action: .createTransactionRequest(transaction: newTransaction)))
 
-        // Process
-        _ = transactionsViewReducer(state: &state, action: .add(transaction: newTransaction), environment: World())
-        let index = -1
-        _ = transactionsViewReducer(state: &state, action: .delete(index: index), environment: World())
+        // Add delay for api request
+        let expect = expectation(description: "Create new transaction request")
+        DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
+            expect.fulfill()
+        }
+        wait(for: [expect], timeout: 2)
 
-        // Assert
-        let isTransactionRemoved = !state.transactions.contains(where: { $0.id == newTransaction.id })
-        let emptyErrorMessage = state.transactionErrorMessage.isEmpty
-        XCTAssertFalse(isTransactionRemoved)
-        XCTAssertFalse(emptyErrorMessage)
+        // Assertions
+        XCTAssert(store.state.transactionState.transactions.contains(where: { $0.id == newTransaction.id }))
+    }
+
+    /**
+     Test for successful fetch / load first page of transactions
+     */
+    func testSuccessfulLoadTransactions() {
+        // Inputs, refresh transactions, get first page.
+        store.send(.transactionsView(action: .refreshTransactions))
+
+        // Add delay for api request
+        let expect = expectation(description: "Create new transaction request")
+        DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
+            expect.fulfill()
+        }
+        wait(for: [expect], timeout: 2)
+
+        // Assertions
+        let transactionState = store.state.transactionState
+        XCTAssertFalse(transactionState.transactions.isEmpty)
+        XCTAssert(transactionState.transactionErrorMessage.isEmpty)
+    }
+
+    /**
+     Test for successful update of an existing transaction.
+     */
+    func testSuccessfulUpdateTransaction() {
+        // Run for adding the transaction
+        testSuccessfulAddTransaction()
+
+        // Update transaction
+        var transaction = Transaction.unitTestTransaction
+        transaction.title = "Updated transaction"
+        store.send(.transactionsView(action: .update(transaction: transaction)))
+
+        // Assertions
+        let successfullyUpdated = store.state.transactionState.transactions
+            .contains(where: { $0.id == transaction.id &&
+                $0.title == transaction.title
+            })
+        XCTAssert(successfullyUpdated)
     }
 }

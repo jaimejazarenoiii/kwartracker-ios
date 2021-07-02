@@ -10,11 +10,13 @@ import SwiftUI
 import Combine
 
 struct TransactionsViewState {
-    var transactions: [Transaction] = sampleTransactions
+    var transactions: [Transaction] = []
     var transaction: Transaction? = nil
     var transactionErrorMessage: String = ""
-    var fetchRequestState: APIRequestState = .notStarted
     var shouldShowLoadmore: Bool = false
+    var fetchRequestState: APIRequestState = .notStarted
+    var createTransactionRequestState: APIRequestState = .notStarted
+    var updateTransactionRequestState: APIRequestState = .notStarted
 }
 
 func transactionsViewReducer(
@@ -23,32 +25,71 @@ func transactionsViewReducer(
     environment: World
 ) -> AnyPublisher<TransactionsViewAction, Never> {
     switch action {
-    case .add(let transaction):
-        if let errorMessage = transaction.createTransactionErrorMessage(),
-           !errorMessage.isEmpty {
-            state.transactionErrorMessage = errorMessage
+    case .createTransactionRequest(let transaction):
+        if !state.createTransactionRequestState.isRequesting {
+            state.createTransactionRequestState = .requesting
+            return environment.transactionService.createNew(transaction: transaction)
+                .subscribe(on: DispatchQueue.main)
+                .map { TransactionsViewAction.add(transaction: $0) }
+                .catch { Just(TransactionsViewAction.setErrorMessage(message: $0.localizedDescription)) }
+                .eraseToAnyPublisher()
         } else {
-            state.transactions.append(transaction)
+            // TBD: What to do when there is an ongoing request for creating new transaction?
         }
-    case .edit(let transaction):
+        break
+
+    case .add(let transaction):
+        state.createTransactionRequestState = .success
+        state.transactions.append(transaction)
+        break
+
+    case .updateTransactionRequest(let transaction):
+        if !state.updateTransactionRequestState.isRequesting {
+            return environment.transactionService.update(transaction: transaction)
+                .subscribe(on: DispatchQueue.main)
+                .map { TransactionsViewAction.update(transaction: $0) }
+                .catch { Just(TransactionsViewAction.setErrorMessage(message: $0.localizedDescription)) }
+                .eraseToAnyPublisher()
+        }
+        break
+
+    case .update(let transaction):
         if let index = state.transactions.enumerated().first(where: { $0.element.id == transaction.id })?.offset {
             state.transactions[index] = transaction
-        } else {
-            state.transactionErrorMessage = "Transaction item does not exist."
         }
+        break
+
+    case .deleteTransactionRequest: break
+
     case .delete(let index):
         if index < state.transactions.count && index >= 0 {
             state.transactions.remove(at: index)
         } else {
             state.transactionErrorMessage = "Transaction item does not exist."
         }
+        break
+
     case .refreshTransactions:
-        break
-    case .loadMoreTransactions:
-        break
+        return environment.transactionService.getTransactions()
+            .subscribe(on: DispatchQueue.main)
+            .map { TransactionsViewAction.setTransactionList(transactions: $0) }
+            .catch { Just(TransactionsViewAction.setErrorMessage(message: $0.localizedDescription)) }
+            .eraseToAnyPublisher()
+
+    case .loadMoreTransactions: break
+        
     case .setLoadmoreShown(let show):
         state.shouldShowLoadmore = show
         break
+
+    case .setTransactionList(let transactions):
+        state.transactions += transactions
+        break
+
+    case .setErrorMessage(let message):
+        state.transactionErrorMessage = message
+        break
+    default: break
     }
     return Empty().eraseToAnyPublisher()
 }
