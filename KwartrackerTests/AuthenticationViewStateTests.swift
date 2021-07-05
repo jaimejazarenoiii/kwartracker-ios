@@ -31,6 +31,12 @@ class AuthenticationViewStateTests: XCTestCase {
         let credentials = UserAuthInfo(email: "test@test.com", password: "admin123")
         store.send(.authView(action: .login(user: credentials)))
         
+        let expect = expectation(description: "Sign in registered user")
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
+            expect.fulfill()
+        }
+        wait(for: [expect], timeout: 1)
+        
         XCTAssertNil(store.state.authState.errorMessage)
         
         guard let keychainToken = KeyChain.load(key: KeyChainKeys.loginTokenKey) else {
@@ -51,6 +57,12 @@ class AuthenticationViewStateTests: XCTestCase {
         
         let credentials = UserAuthInfo(email: "test@test.com", password: "admin123")
         store.send(.authView(action: .create(user: credentials)))
+        
+        let expect = expectation(description: "Create new user account")
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
+            expect.fulfill()
+        }
+        wait(for: [expect], timeout: 1)
         
         XCTAssertNil(store.state.authState.errorMessage)
         
@@ -75,6 +87,12 @@ class AuthenticationViewStateTests: XCTestCase {
         let credentials = UserAuthInfo(email: "test@test.com", password: "admin123")
         store.send(.authView(action: .login(user: credentials)))
         
+        let expect = expectation(description: "Error login request")
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
+            expect.fulfill()
+        }
+        wait(for: [expect], timeout: 1)
+        
         XCTAssertNotNil(store.state.authState.errorMessage)
     }
     
@@ -88,6 +106,12 @@ class AuthenticationViewStateTests: XCTestCase {
         
         let credentials = UserAuthInfo(email: "test@test.com", password: "admin123")
         store.send(.authView(action: .create(user: credentials)))
+        
+        let expect = expectation(description: "Error registration request")
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
+            expect.fulfill()
+        }
+        wait(for: [expect], timeout: 1)
         
         XCTAssertNotNil(store.state.authState.errorMessage)
     }
