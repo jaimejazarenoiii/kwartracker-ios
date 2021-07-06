@@ -35,9 +35,6 @@ struct SignUpBodyView: View {
                     SNSButton(actionHandler: {}, actionLabel: .signUpApple)
                         .padding(.top)
                 }
-                .fullScreenCover(isPresented: Binding<Bool>.constant(store.state.authState.isAuthenticated)) {
-                    AlertView()
-                }
                 Group {
                     HStack {
                         Spacer()

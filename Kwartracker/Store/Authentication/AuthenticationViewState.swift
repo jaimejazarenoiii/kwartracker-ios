@@ -60,6 +60,7 @@ func authReducer(
         if let token = token {
             let status = KeyChain.save(key: KeyChainKeys.loginTokenKey, value: token)
             state.errorMessage = nil
+            UserDefaults.standard.set(true, forKey: "isLoggedIn")
             DDLogInfo("[Keychain][save] Status: \(status)")
         }
         break

@@ -13,6 +13,8 @@ struct KwartrackerApp: App {
                                    reducer: AppReducer.appReducer,
                                    environment: World())
 
+    @AppStorage("isLoggedIn") private var isLoggedIn: Bool = false
+    
     var body: some Scene {
         WindowGroup {
             if KeyChainKeys.isLoggedIn() {

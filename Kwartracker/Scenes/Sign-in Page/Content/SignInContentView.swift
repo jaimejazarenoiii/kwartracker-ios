@@ -42,9 +42,6 @@ struct SignInContentView: View {
                 store.send(.authView(action: .login(user: info)))
             }, actionLabel: .signIn)
             .padding(.top)
-            .fullScreenCover(isPresented: Binding<Bool>.constant(store.state.authState.isAuthenticated)) {
-                AlertView()
-            }
             
             HStack {
                 Spacer()
