@@ -17,7 +17,7 @@ struct KwartrackerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if KeyChainKeys.isLoggedIn() {
+            if isLoggedIn {
                 // For the meantime, show text view
                 Text("You are logged in.")
             } else {
