@@ -271,7 +271,6 @@
 		24AC7CA72664BF8200CE4282 /* CategoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailView.swift; sourceTree = "<group>"; };
 		24AC7CA92664BFF200CE4282 /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
 		24AC7CAB2664C15300CE4282 /* CategoryDetailBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailBodyView.swift; sourceTree = "<group>"; };
-		24AC7CAD2664C1CC00CE4282 /* EditButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditButtonView.swift; sourceTree = "<group>"; };
 		24AC7CAF2664C2AF00CE4282 /* TextGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextGroupView.swift; sourceTree = "<group>"; };
 		24AC7CBB2665DF9500CE4282 /* EditCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryView.swift; sourceTree = "<group>"; };
 		24AC7CBD2665DFCE00CE4282 /* EditCategoryBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryBodyView.swift; sourceTree = "<group>"; };
@@ -1159,7 +1158,6 @@
 				047B5109265D0D8E009158F7 /* SideBarStack.swift */,
 				246D7235265B54CE0011F960 /* BirthdateField.swift */,
 				7AA77F232660ED6000C700A2 /* ProfilePictureView.swift */,
-				24AC7CAD2664C1CC00CE4282 /* EditButtonView.swift */,
 				24AC7CAF2664C2AF00CE4282 /* TextGroupView.swift */,
 				24AC7CBF2665E01A00CE4282 /* TopRightButtonView.swift */,
 			);
