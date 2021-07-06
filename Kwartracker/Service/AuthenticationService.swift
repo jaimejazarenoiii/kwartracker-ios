@@ -33,10 +33,8 @@ struct AuthenticationService: AuthenticationServiceDelegate {
                 case .success(let response):
                     if let data = response.data, data.signInWithEmail != nil {
                         promise(.success(data))
-                    } else {
-                        if let error = response.errors?.first {
-                            promise(.failure(error))
-                        }
+                    } else if let error = response.errors?.first {
+                        promise(.failure(error))
                     }
                     break
                 case .failure(let error):
@@ -61,10 +59,8 @@ struct AuthenticationService: AuthenticationServiceDelegate {
                 case .success(let response):
                     if let data = response.data {
                         promise(.success(data))
-                    } else {
-                        if let error = response.errors?.first {
-                            promise(.failure(error))
-                        }
+                    } else if let error = response.errors?.first {
+                        promise(.failure(error))
                     }
                     break
                 case .failure(let error):
