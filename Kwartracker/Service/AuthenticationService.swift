@@ -47,7 +47,6 @@ struct AuthenticationService: AuthenticationServiceDelegate {
         .eraseToAnyPublisher()
     }
     
-    
     @discardableResult func signUp(
         signUpCredential input: SignUpWithEmailInput
     ) -> AnyPublisher<SignUpMutation.Data, Error> {
