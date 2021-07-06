@@ -979,7 +979,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7A17D1302629863A005BB190 /* Sign-in Reusables */ = {
+		7A17D1302629863A005BB190 /* Authentication Reusables */ = {
 			isa = PBXGroup;
 			children = (
 				7A17D13126298678005BB190 /* UserField.swift */,
@@ -988,7 +988,7 @@
 				7A734D91262FFAA900557EF7 /* BWNeumorphicRectangle.swift */,
 				7A7FA1312637B70A00484F51 /* FootnoteButton.swift */,
 			);
-			path = "Sign-in Reusables";
+			path = "Authentication Reusables";
 			sourceTree = "<group>";
 		};
 		7A9716F9267C493300D106AF /* Authentication */ = {
@@ -1084,7 +1084,6 @@
 			children = (
 				7AD9B86A2626EC0000CF0EA6 /* SignInHeaderView.swift */,
 				7AD9B8802626F17400CF0EA6 /* SignInContentView.swift */,
-				7A17D1302629863A005BB190 /* Sign-in Reusables */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -1153,6 +1152,7 @@
 		C6CDDCC92638134600CB1562 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				7A17D1302629863A005BB190 /* Authentication Reusables */,
 				C6CDDCCA2638135B00CB1562 /* ButtonView.swift */,
 				294715692668A5550067F481 /* MessageView.swift */,
 				047E2ACF265B82B700D1EB9C /* ProfileView.swift */,
