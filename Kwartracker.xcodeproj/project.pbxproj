@@ -153,7 +153,7 @@
 		C6081ADC2652765E003BB9CB /* DialogStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6081ADB2652765E003BB9CB /* DialogStatus.swift */; };
 		C6249AA82637EB8C00C55B31 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6249AA72637EB8C00C55B31 /* SignUpView.swift */; };
 		C65699C32637C91400D24D2F /* SignUpFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65699C12637C91400D24D2F /* SignUpFooterView.swift */; };
-		C65699C42637C91400D24D2F /* SignUpBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65699C22637C91400D24D2F /* SignUpBodyView.swift */; };
+		C65699C42637C91400D24D2F /* SignUpContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65699C22637C91400D24D2F /* SignUpContentView.swift */; };
 		C6CDDCB0263811F700CB1562 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CDDCAF263811F700CB1562 /* AlertView.swift */; };
 		C6CDDCC52638125C00CB1562 /* MainAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CDDCC42638125C00CB1562 /* MainAlertView.swift */; };
 		C6CDDCCB2638135B00CB1562 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CDDCCA2638135B00CB1562 /* ButtonView.swift */; };
@@ -343,7 +343,7 @@
 		C6081ADB2652765E003BB9CB /* DialogStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogStatus.swift; sourceTree = "<group>"; };
 		C6249AA72637EB8C00C55B31 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		C65699C12637C91400D24D2F /* SignUpFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpFooterView.swift; sourceTree = "<group>"; };
-		C65699C22637C91400D24D2F /* SignUpBodyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpBodyView.swift; sourceTree = "<group>"; };
+		C65699C22637C91400D24D2F /* SignUpContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpContentView.swift; sourceTree = "<group>"; };
 		C6CDDCAF263811F700CB1562 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		C6CDDCC42638125C00CB1562 /* MainAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAlertView.swift; sourceTree = "<group>"; };
 		C6CDDCCA2638135B00CB1562 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
@@ -1118,7 +1118,7 @@
 		C65699C02637C8EE00D24D2F /* Content */ = {
 			isa = PBXGroup;
 			children = (
-				C65699C22637C91400D24D2F /* SignUpBodyView.swift */,
+				C65699C22637C91400D24D2F /* SignUpContentView.swift */,
 				C65699C12637C91400D24D2F /* SignUpFooterView.swift */,
 			);
 			path = Content;
@@ -1579,7 +1579,7 @@
 				24AC7CBC2665DF9500CE4282 /* EditCategoryView.swift in Sources */,
 				165A8CB9267F0DCE007DE03D /* API.swift in Sources */,
 				24AC7C96265CB12700CE4282 /* LoginAndSecuritBodyView.swift in Sources */,
-				C65699C42637C91400D24D2F /* SignUpBodyView.swift in Sources */,
+				C65699C42637C91400D24D2F /* SignUpContentView.swift in Sources */,
 				24AC7CB02664C2AF00CE4282 /* TextGroupView.swift in Sources */,
 				7AA77F242660ED6000C700A2 /* ProfilePictureView.swift in Sources */,
 				163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */,

@@ -11,7 +11,7 @@ import Apollo
 import CocoaLumberjackSwift
 
 struct AuthenticationViewState {
-    private var isRequesting: Bool = false
+    var isRequesting: Bool = false
     var errorMessage: String?
     var isAuthenticated: Bool {
         get {
@@ -30,6 +30,9 @@ func authReducer(
 ) -> AnyPublisher<AuthenticationViewAction, Never> {
     switch action {
     case .login(let userInfo):
+        guard !state.isRequesting else { break }
+        state.isRequesting = true
+        
         let loginCredentials = CredentialsInput(email: userInfo.email, password: userInfo.password)
         
         return environment.authenticationService.signIn(credentialInput: loginCredentials)
@@ -41,6 +44,9 @@ func authReducer(
             }
             .eraseToAnyPublisher()
     case .create(let userInfo):
+        guard !state.isRequesting else { break }
+        state.isRequesting = true
+        
         let profileInfo = ProfileInput(firstName: "", lastName: "", gender: 0, age: 18)
         let signupCredentials = SignUpWithEmailInput(
             email: userInfo.email,
@@ -57,6 +63,8 @@ func authReducer(
             .assertNoFailure()
             .eraseToAnyPublisher()
     case .setUserToken(let token):
+        state.isRequesting = false
+        
         if let token = token {
             let status = KeyChain.save(key: KeyChainKeys.loginTokenKey, value: token)
             state.errorMessage = nil
@@ -65,6 +73,7 @@ func authReducer(
         }
         break
     case .setErrorMessage(let message):
+        state.isRequesting = false
         state.errorMessage = message
         break
     }

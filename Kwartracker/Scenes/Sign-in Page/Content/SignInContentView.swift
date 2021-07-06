@@ -41,6 +41,7 @@ struct SignInContentView: View {
                 let info = UserAuthInfo(email: email, password: password)
                 store.send(.authView(action: .login(user: info)))
             }, actionLabel: .signIn)
+            .disabled(store.state.authState.isRequesting)
             .padding(.top)
             
             HStack {
