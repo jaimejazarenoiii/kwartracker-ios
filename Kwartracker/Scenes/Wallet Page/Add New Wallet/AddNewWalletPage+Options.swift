@@ -14,10 +14,10 @@ extension AddNewWalletPage {
                 OptionView(presented: $currencyMenuPresented,
                            selectedItem: $walletCurrency,
                            options:
-                            [OptionItem(description: Currency.philippinePeso.stringValue,
-                                        value: Currency.philippinePeso.localeNumberFormat),
-                             OptionItem(description: Currency.usDollar.stringValue,
-                                        value: Currency.usDollar.localeNumberFormat)])
+                            [OptionItem(description: Currency.philippinePeso.rawValue.stringValue,
+                                        value: Currency.philippinePeso.rawValue.stringValue),
+                             OptionItem(description: Currency.usDollar.rawValue.stringValue,
+                                        value: Currency.usDollar.rawValue.stringValue)])
                     .background(BackgroundBlurView())
                     .ignoresSafeArea()
                     .transition(.opacity)

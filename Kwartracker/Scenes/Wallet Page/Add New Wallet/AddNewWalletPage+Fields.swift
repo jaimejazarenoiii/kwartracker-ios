@@ -39,7 +39,7 @@ extension AddNewWalletPage {
                 label: L10n.currency,
                 selectLabel: walletCurrency == nil ?
                     L10n.Wallet.Placeholder.selectWalletCurrency :
-                    Currency.getType(walletCurrency!).stringValue,
+                    Currency(stringValue: walletCurrency!)!.rawValue.stringValue,
                 showOptions: $currencyMenuPresented,
                 transactionSelection: $transactionFieldType
             )

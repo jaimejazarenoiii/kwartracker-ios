@@ -75,8 +75,8 @@ struct CardView: View {
                         Text(L10n.Card.Title.availableBalance.uppercased())
                             .modifier(CardLabel())
                         Text(wallet!.total.amountOnCurrency(
-                                currency: wallet!.currencyObj?.localeNumberFormat ??
-                                    Currency.philippinePeso.localeNumberFormat))
+                                currency: wallet!.currency?.rawValue.locale ??
+                                    Currency.philippinePeso.rawValue.locale))
                             .modifier(CardLabelValue())
                     }.padding([.top, .bottom], 2)
                 } else {

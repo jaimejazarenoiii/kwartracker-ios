@@ -10,41 +10,44 @@ import Foundation
 struct Wallet {
     var id: Int
     var title: String = ""
-    var type: WalletType = .none
-    var currency: Int = 0
-    var total: Double = 0
+    var type: WalletType = .savings
+    var currency: Currency?
     var targetAmount: Double = 0
     var targetRawDate: String = ""
     var savedTo: String = ""
     var includeToOverallTotalBalance: Bool = true
+    var transactions = [Transaction]()
+    
+    var total: Double {
+        transactions.map({$0.amount}).reduce(.zero, +)
+    }
     
     var isAllowedToSave: Bool {
         !title.isEmpty &&
             !savedTo.isEmpty &&
             type != .none &&
-            currencyObj != nil
+            currency != nil
     }
     
     var targetAmountWithCommas: String {
         get {
-            targetAmount.amountOnCurrency(currency: currencyObj?.localeNumberFormat ??
-                                    Currency.philippinePeso.localeNumberFormat)
+            let value = currency ?? .philippinePeso
+            return targetAmount.amountOnCurrency(currency: value.rawValue.locale)
         }
         set {
-            targetAmount = newValue.toDoubleWith(currency: currencyObj?.localeNumberFormat ??
-                                                    Currency.philippinePeso.localeNumberFormat)
+            let value = currency ?? .philippinePeso
+            targetAmount = newValue.toDoubleWith(currency: value.rawValue.locale)
         }
     }
     
     var currencyStr: String? {
         get {
-            let newCurrency = currencyObj ?? .philippinePeso
-            return newCurrency.localeNumberFormat
+            let newCurrency = currency ?? Currency.philippinePeso
+            return newCurrency.rawValue.stringValue
         }
         set {
-            let defaultValue = Currency.philippinePeso
-            currencyObj = Currency.getType(newValue ?? defaultValue.localeNumberFormat)
-            
+            let value = newValue ?? Currency.philippinePeso.rawValue.stringValue
+            currency = Currency(stringValue: value)
         }
     }
     
@@ -58,19 +61,11 @@ struct Wallet {
         }
     }
     
-    var currencyObj: Currency? {
-        get {
-            Currency.getType(by: currency)
-        }
-        set {
-            currency = newValue?.hashValue ?? 0
-        }
-    }
     
     var remainingAmountNeeded: String {
         let amount = targetAmount - total
-        return amount.amountOnCurrency(currency: currencyObj?.localeNumberFormat ??
-                                        Currency.philippinePeso.localeNumberFormat)
+        let currencyVal = currency ?? .philippinePeso
+        return amount.amountOnCurrency(currency: currencyVal.rawValue.locale)
     }
     
     var dateTime: Date? {
@@ -86,7 +81,7 @@ struct Wallet {
 
     func createWalletErrorMessage() -> String? {
         if !title.isEmpty &&
-            currencyObj != nil &&
+            currency != nil &&
             dateTime != nil {
             return nil
         }
