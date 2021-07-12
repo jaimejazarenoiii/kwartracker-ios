@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AddNewWalletPage: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject var store: AppStore
+    
     @State internal var buttonToggle: Bool = false
     @State internal var cardSize: CGSize = .zero
     @State internal var walletNameValue: String = ""
@@ -31,8 +33,7 @@ struct AddNewWalletPage: View {
     internal var isSaveButtonEnabled: Bool {
         return !walletNameValue.isEmpty &&
             walletCurrency != nil &&
-            !savedToValue.isEmpty &&
-            walletCurrency != nil
+            !targetAmountValue.isEmpty
     }
     
     init() {
@@ -49,7 +50,8 @@ struct AddNewWalletPage: View {
         ZStack {
             MainBody
             OptionAlert
-        }
+     
+        }.navigationBarHidden(true)
     }
     
     var MainBody: some View {

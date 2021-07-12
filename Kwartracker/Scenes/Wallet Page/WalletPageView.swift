@@ -28,11 +28,11 @@ struct WalletPageView: View {
                         CircleButtonStyle(buttonColor: Asset.Colors.teal.color)
                     )
                 } rightBarViewContent: {
-                    
                     NavigationLink(
-                        destination: AddNewWalletPage(),
+                        destination: AddNewWalletPage()
+                            .environmentObject(store),
                         isActive: $buttonToggle) {
-                        
+
                         Button(action: {
                             buttonToggle.toggle()
                         }, label: {
@@ -45,29 +45,36 @@ struct WalletPageView: View {
                     }
                 }
             } body: {
-                ScrollView(showsIndicators: true) {
-                    VStack {
-                        WalletOneCardCenterView(wallets: store.state.walletState.wallets)
-                        
-                        Spacer()
-                            .frame(height: margin)
-                        
-                        WalletSectionHeader()
-                        
-                        Spacer()
-                            .frame(height: margin)
-                        ForEach(store.state.transactionState.transactions, id: \.id) {
-                            TransactionRow(transaction: $0)
-                            Rectangle()
-                                .fill(Color(separator))
-                                .frame(height: separatorHeight)
+                if store.state.walletState.requestState.isRequesting {
+                    ActivityIndicator()
+                        .frame(width: 200, height: 200)
+                        .foregroundColor(Color(Asset.Colors.teal.color))
+                } else {
+                    ScrollView(showsIndicators: true) {
+                        VStack {
+                            WalletCardView(wallets: store.state.walletState.wallets) { transactions in
+                                Spacer()
+                                    .frame(height: margin)
+
+                                WalletSectionHeader()
+
+                                Spacer()
+                                    .frame(height: margin)
+                                ForEach(transactions, id: \.id) {
+                                    TransactionRow(transaction: $0)
+                                    Rectangle()
+                                        .fill(Color(separator))
+                                        .frame(height: separatorHeight)
+                                }
+                                .frame(width: UIScreen.main.bounds.width * 0.8)
+                            }
+                            .environmentObject(store)
                         }
-                        .frame(width: UIScreen.main.bounds.width * 0.8)
-                    }
-                    .padding(.top, margin)
-                }.background(Color(Asset.Colors.solitudeGrey.color))
+                        .padding(.top, margin)
+                    }.background(Color(Asset.Colors.solitudeGrey.color))
+                }
             }
-        }.navigationBarHidden(true)
-        
+            .navigationBarHidden(true)
+        }
     }
 }

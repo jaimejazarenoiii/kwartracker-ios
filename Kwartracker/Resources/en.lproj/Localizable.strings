@@ -78,6 +78,7 @@
 "view_all" = "View All";
 "wallet.action_button.edit_wallet" = "Edit Wallet";
 "wallet.action_button.add_transaction" = "Add Transaction";
+"wallet.label.amount" = "Amount";
 "wallet.label.include_overall_total_balance" = "Include in overall total balance?";
 "wallet.label.target_amount" = "Target Amount";
 "wallet.label.target_date" = "Target Date";
@@ -86,7 +87,7 @@
 "wallet.label.saved_to" = "Saved to";
 "wallet.message.wallet_not_found" = "Wallet does not exist";
 "wallet.placeholder.enter_wallet_name" = "Enter wallet name";
-"wallet.placeholder.enter_your_target_amount" = "Enter your target amount";
+"wallet.placeholder.enter_your_initial_amount" = "Enter your initial amount";
 "wallet.placeholder.select_wallet_currency" = "Select wallet currency";
 "wallet.placeholder.select_wallet_type" = "Select wallet type";
 "wallet.placeholder.target_date" = "DD / MM / YYYY";

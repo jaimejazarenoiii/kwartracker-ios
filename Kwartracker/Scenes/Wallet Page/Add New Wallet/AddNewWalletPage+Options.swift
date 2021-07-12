@@ -35,12 +35,8 @@ extension AddNewWalletPage {
                 OptionView(presented: $walletTypeMenuPresented,
                            selectedItem: $walletTypeValue,
                            options:
-                            [OptionItem(description: WalletType.budget.stringValue,
-                                        value: WalletType.budget.stringValue),
-                             OptionItem(description: WalletType.savings.stringValue,
-                                        value: WalletType.savings.stringValue),
-                             OptionItem(description: WalletType.goal.stringValue,
-                                        value: WalletType.goal.stringValue)])
+                            [OptionItem(description: WalletType.savings.stringValue,
+                                        value: WalletType.savings.stringValue)])
                     .background(BackgroundBlurView())
                     .ignoresSafeArea()
             }
