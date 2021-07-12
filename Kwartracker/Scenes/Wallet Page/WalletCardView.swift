@@ -86,10 +86,9 @@ struct WalletCardView<TransactionView: View>: View {
                 })
             )
             
-            CardPageControlView(index: $page, maxIndex: wallets.count)
-                    .padding([.top, .bottom], margin)
-            
             if !wallets.isEmpty {
+                CardPageControlView(index: $page, maxIndex: wallets.count)
+                        .padding([.top, .bottom], margin)
                 WalletActionButtonView
             }
             
