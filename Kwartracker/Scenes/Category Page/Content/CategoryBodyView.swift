@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CategoryBodyView: View {
+    @EnvironmentObject private var store: AppStore
     @State var search = ""
     
     private let shadowRadius: CGFloat = 8
@@ -29,9 +30,21 @@ struct CategoryBodyView: View {
                                           shadowOffset: shadowOffset)
         
                     HStack {
-                        TextField(L10n.CategoryPage.searchItemPlaceholder, text: $search)
-                            .modifier(PlaceholderStyle(showPlaceHolder: search.isEmpty,
-                                                           placeholder: L10n.CategoryPage.searchItemPlaceholder))
+                        let searchBinding = Binding<String>(
+                            get: { search },
+                            set: {
+                                search = $0
+                                store.send(.categoryView(action: .categorySearch(term: search)))
+                            }
+                        )
+                        TextField(
+                            L10n.CategoryPage.searchItemPlaceholder,
+                            text: searchBinding,
+                            onEditingChanged: { _ in },
+                            onCommit: { store.send(.categoryView(action: .commitCategorySearch)) }
+                        )
+                        .modifier(PlaceholderStyle(showPlaceHolder: search.isEmpty,
+                                                   placeholder: L10n.CategoryPage.searchItemPlaceholder))
                         Image(uiImage: Asset.Images.searchIcon.image)
                             .resizable()
                             .frame(width: searchButtonSize, height: searchButtonSize, alignment: .center)
