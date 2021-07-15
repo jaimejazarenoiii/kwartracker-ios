@@ -80,7 +80,7 @@ struct AddNewWalletPage: View {
                                                         disableOpacityValue))
                         .font(.system(size: 16,
                                       weight: .bold))
-                }).disabled(isSaveButtonEnabled)
+                }).disabled(!isSaveButtonEnabled)
             }
         } body: {
             ScrollView(showsIndicators: true) {
@@ -94,7 +94,15 @@ struct AddNewWalletPage: View {
                         .frame(height: spacing)
                     Fields
                 }
+                .onTapGesture { 
+                    UIApplication.shared.endEditing()
+                }
             }
+            .gesture(DragGesture()
+                .onChanged({ _ in
+                    UIApplication.shared.endEditing()
+                })
+            )
             .adaptsToKeyboard()
         }
     }
