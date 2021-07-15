@@ -89,6 +89,7 @@
 		2952CC5E267B4B520038A6C5 /* AddNewWalletPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2952CC5C267B4B520038A6C5 /* AddNewWalletPage.swift */; };
 		2952CC68267B5D920038A6C5 /* OptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2952CC67267B5D920038A6C5 /* OptionView.swift */; };
 		29611D7D265F69F80076568D /* SelectedDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29611D7C265F69F80076568D /* SelectedDayView.swift */; };
+		297EEB9126A03671001BF88F /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297EEB9026A03671001BF88F /* UIApplication+Extension.swift */; };
 		298536F32660DBAA0024A25C /* NeumorphicEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298536F22660DBAA0024A25C /* NeumorphicEffect.swift */; };
 		29945297267B1E370002C5E3 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C786263534FE00F33B72 /* Wallet.swift */; };
 		2994529C267B1E6F0002C5E3 /* SNSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D13926298695005BB190 /* SNSButton.swift */; };
@@ -283,6 +284,7 @@
 		2952CC5C267B4B520038A6C5 /* AddNewWalletPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewWalletPage.swift; sourceTree = "<group>"; };
 		2952CC67267B5D920038A6C5 /* OptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionView.swift; sourceTree = "<group>"; };
 		29611D7C265F69F80076568D /* SelectedDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDayView.swift; sourceTree = "<group>"; };
+		297EEB9026A03671001BF88F /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		298536F22660DBAA0024A25C /* NeumorphicEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicEffect.swift; sourceTree = "<group>"; };
 		29945321267B2DDD0002C5E3 /* AdaptsToKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptsToKeyboard.swift; sourceTree = "<group>"; };
 		2994532F267B314D0002C5E3 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -990,6 +992,7 @@
 				169DA4712644C8A60063204F /* CircularLoaderView.swift */,
 				16606D4A2647C0F9005F2CF5 /* NavigationBarView.swift */,
 				29DF8B92269C13EA007D69CC /* ActivityIndicator.swift */,
+				297EEB9026A03671001BF88F /* UIApplication+Extension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1377,6 +1380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				299452EB267B203D0002C5E3 /* LinearGradient+Extensions.swift in Sources */,
+				297EEB9126A03671001BF88F /* UIApplication+Extension.swift in Sources */,
 				299452E4267B20240002C5E3 /* PopupConfirmationView.swift in Sources */,
 				299452E1267B20190002C5E3 /* TransactionRow.swift in Sources */,
 				299452DC267B1FFB0002C5E3 /* Category.swift in Sources */,
