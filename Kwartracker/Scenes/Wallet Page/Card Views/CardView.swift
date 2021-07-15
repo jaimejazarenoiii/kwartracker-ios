@@ -12,6 +12,11 @@ struct CardView: View {
     private let bigBubbleWidth: CGFloat = 140
     private let labelLeading: CGFloat = 25
     private let spacing: CGFloat = 30
+    private let cardColorRadius: CGFloat = 1.0
+    private let cardColorOpacity: Double = 0.3
+    private let shadowRadius: CGFloat = 5
+    private let shadowX: CGFloat = 0
+    private let shadowY: CGFloat = 15
     @State private var bubbleOpacity: Double = 0.18
     @State private var bubbleRadiusBlur: CGFloat = 3.0
     @State private var cornerRadius: CGFloat = 25
@@ -49,7 +54,7 @@ struct CardView: View {
     
     var body: some View {
         ZStack(alignment: .leading) {
-            cardColor.blur(radius: 1.0)
+            cardColor.blur(radius: cardColorRadius)
             Circle()
                 .fill(Color.white)
                 .frame(width: smallBubbleWidth)
@@ -88,7 +93,7 @@ struct CardView: View {
         .frame(width: cardSize.width, height: cardSize.height)
         .cornerRadius(cornerRadius)
         .clipped()
-        .shadow(color: cardColor.opacity(0.3),
-            radius: 5, x: 0, y: 15)
+        .shadow(color: cardColor.opacity(cardColorOpacity),
+                radius: shadowRadius, x: shadowX, y: shadowY)
     }
 }

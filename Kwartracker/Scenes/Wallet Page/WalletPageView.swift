@@ -14,6 +14,7 @@ struct WalletPageView: View {
     private let separator: UIColor = Asset.Colors.spindleGrey.color
     private let separatorHeight: CGFloat = 0.5
     private let navIconSize: CGFloat = 10
+    private let loaderSize: CGFloat = 200
     var body: some View {
         NavigationView {
             SkeletalView {
@@ -47,7 +48,7 @@ struct WalletPageView: View {
             } body: {
                 if store.state.walletState.requestState.isRequesting {
                     ActivityIndicator()
-                        .frame(width: 200, height: 200)
+                        .frame(width: loaderSize, height: loaderSize)
                         .foregroundColor(Color(Asset.Colors.teal.color))
                 } else {
                     ScrollView(showsIndicators: true) {
