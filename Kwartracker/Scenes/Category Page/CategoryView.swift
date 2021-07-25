@@ -45,8 +45,7 @@ private struct CategoryHeaderView: View {
             )
         } rightBarViewContent: {
             NavigationLink(
-                destination: EditCategoryView(categoryName: "Add Category")
-                    .environmentObject(store),
+                destination: AddCategoryView().environmentObject(store),
                 isActive: $isAddCategoryLinkActive
             ) {
                 Button(action: {
