@@ -12,8 +12,7 @@ struct SignUpView: View {
         SkeletalView(header: {
             SignInHeaderView()
         }, body: {
-            SignUpBodyView()
-            SignUpFooterView()
+            SignUpContentView()
         })
     }
 }

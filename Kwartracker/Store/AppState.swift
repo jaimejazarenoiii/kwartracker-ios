@@ -10,8 +10,10 @@ import Foundation
 struct AppState {
     var transactionState: TransactionsViewState
     var walletState: WalletViewState
+    var authState: AuthenticationViewState
     init() {
         transactionState = TransactionsViewState()
         walletState = WalletViewState()
+        authState = AuthenticationViewState()
     }
 }

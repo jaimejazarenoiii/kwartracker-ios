@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SignInContentView: View {
+    @EnvironmentObject private var store: AppStore
     @State private var email: String = ""
     @State private var password: String = ""
     @State var showingSignIn = false
@@ -37,12 +38,11 @@ struct SignInContentView: View {
     private var SNSActions: some View {
         Group {
             SNSButton(actionHandler: {
-                self.showingSignIn.toggle()
+                let info = UserAuthInfo(email: email, password: password)
+                store.send(.authView(action: .login(user: info)))
             }, actionLabel: .signIn)
+            .disabled(store.state.authState.isRequesting)
             .padding(.top)
-            .fullScreenCover(isPresented: $showingSignIn) {
-                AlertView()
-            }
             
             HStack {
                 Spacer()
