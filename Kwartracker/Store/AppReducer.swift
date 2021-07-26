@@ -23,6 +23,14 @@ enum AppReducer {
             )
             .map(AppAction.transactionsView)
             .eraseToAnyPublisher()
+        case let .authView(action: action):
+            return authReducer(
+                state: &state.authState,
+                action: action,
+                environment: environment
+            )
+            .map(AppAction.authView)
+            .eraseToAnyPublisher()
         case .walletView(action: let action):
             return walletReducer(
                 state: &state.walletState,

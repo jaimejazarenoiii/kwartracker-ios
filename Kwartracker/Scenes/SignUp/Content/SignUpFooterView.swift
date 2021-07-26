@@ -10,9 +10,13 @@ import SwiftUI
 struct SignUpFooterView: View {
     @State var showingSignIn = false
     
+    private let sideMargin: CGFloat = 30
+    
     var body: some View {
         VStack {
             Divider()
+                .padding([.leading, .trailing], -sideMargin)
+            
             HStack {
                 Text(L10n.SignUpPage.Label.alreadyHaveAnAccount)
                     .font(.footnote)
@@ -28,7 +32,7 @@ struct SignUpFooterView: View {
                     SignInView()
                 }
             }
-            .padding([.top, .bottom], 30)
+            .padding([.top, .bottom], sideMargin)
         }
     }
 }
