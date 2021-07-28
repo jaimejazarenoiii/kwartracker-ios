@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MyProfileContentView: View {
-    @EnvironmentObject var store: AppStore
+    @EnvironmentObject private var store: AppStore
 
     private let neumorphicBoxHeight: CGFloat = 190
     private let horizontalMargin: CGFloat = 30
@@ -28,7 +28,7 @@ struct MyProfileContentView: View {
         .padding([.leading, .trailing], horizontalMargin)
         .padding(.top, topMargin)
         .onAppear(perform: {
-            store.send(.userProfileView(action: .fetchProfile(store: store)))
+            store.send(.userProfileView(action: .fetchProfile))
         })
     }
 }
@@ -58,7 +58,7 @@ private struct MyProfileCardView: View {
             
             VStack {
                 ProfilePictureView()
-                
+            
                 Text(name)
                     .font(.system(size: fontSize))
                     .padding(.top)

@@ -8,7 +8,7 @@
 import Foundation
 
 enum UserProfileViewAction {
-    case fetchProfile(store: AppStore)
-    case setUserDetail(_ user: FetchProfileQuery.Data.Profile)
+    case fetchProfile
+    case setUserDetail(_ user: FetchProfileQuery.Data.Profile?)
     case errorMessage(_ string: String)
 }

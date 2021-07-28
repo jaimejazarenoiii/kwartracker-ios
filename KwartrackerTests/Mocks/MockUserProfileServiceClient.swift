@@ -7,6 +7,7 @@
 
 import Foundation
 import Apollo
+import Combine
 @testable import Kwartracker
 
 class MockUserProfileServiceClient {
@@ -65,28 +66,21 @@ class MockUserProfileServiceClient {
 }
 
 extension MockUserProfileServiceClient: UserProfileServiceDelegate {
-    @discardableResult func getProfile(
-        completion: @escaping (Result<GraphQLResult<FetchProfileQuery.Data>, Error>) -> Void) -> Cancellable {
-        if shouldErrorRequest {
-            let error = NSError(
-                domain: "",
-                code: 401,
-                userInfo: [NSLocalizedDescriptionKey: "Unable to make request"]
-            )
-            
-            completion(.failure(error))
-        } else {
-            let data = FetchProfileQuery.Data(profile: response)
-            
-            completion(.success(GraphQLResult<FetchProfileQuery.Data>(
-                data: data,
-                extensions: nil,
-                errors: nil,
-                source: .server,
-                dependentKeys: nil
-            )))
+    @discardableResult func getProfile() -> AnyPublisher<FetchProfileQuery.Data, Error> {
+        Future<FetchProfileQuery.Data, Error> { promise in
+            if self.shouldErrorRequest {
+                let error = NSError(
+                    domain: "",
+                    code: 401,
+                    userInfo: [NSLocalizedDescriptionKey: "Unable to make request"]
+                )
+                
+                promise(.failure(error))
+            } else {
+                let data = FetchProfileQuery.Data(profile: self.response)
+                promise(.success(data))
+            }
         }
-        
-        return MockServiceTransport()
+        .eraseToAnyPublisher()
     }
 }

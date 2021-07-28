@@ -11,6 +11,7 @@ import Combine
 
 struct UserProfileViewState {
     var user: FetchProfileQuery.Data.Profile? = nil
+    var isRequesting: Bool = false
     var errorMessage: String?
 }
 
@@ -20,22 +21,17 @@ func userProfileReducer(
     environment: World
 ) -> AnyPublisher<UserProfileViewAction, Never> {
     switch action {
-    case .fetchProfile(let store):
-        environment.userProfileService.getProfile() { result in
-            switch result {
-                case .success(let response):
-                    if let data = response.data?.profile {
-                        DispatchQueue.main.async {
-                            store.send(.userProfileView(action: .setUserDetail(data)))
-                        }
-                    }
-                break
-                case .failure(let error):
-                    print("Fetching user data error in \(error)")
-                break
+    case .fetchProfile:
+        guard !state.isRequesting else { break }
+        state.isRequesting = true
+        
+        return environment.userProfileService.getProfile()
+            .map {
+                UserProfileViewAction.setUserDetail($0.profile)
             }
-        }
-        break
+            .catch { Just(UserProfileViewAction.errorMessage($0.localizedDescription)) }
+            .assertNoFailure()
+            .eraseToAnyPublisher()
     case .setUserDetail(let user):
         state.user = user
     case .errorMessage(let string):

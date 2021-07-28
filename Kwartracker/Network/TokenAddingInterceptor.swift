@@ -16,7 +16,7 @@ class TokenAddingInterceptor: ApolloInterceptor {
         response: HTTPResponse<Operation>?,
         completion: @escaping (Result<GraphQLResult<Operation.Data>, Error>) -> Void) {
 
-        if let data = KeyChain.load(key: KeyChainKeys.getLoginKeyChain()) {
+        if let data = KeyChain.load(key: KeyChainKeys.loginTokenKey) {
             guard let token = String(data: data, encoding: .utf8) else { return }
 
             request.addHeader(name: "Authorization", value: token)

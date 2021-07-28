@@ -6,20 +6,33 @@
 //
 
 import Apollo
+import Combine
+import CocoaLumberjackSwift
 
 protocol UserProfileServiceDelegate {
-    func getProfile(
-        completion: @escaping (Result<GraphQLResult<FetchProfileQuery.Data>, Error>) -> Void
-    ) -> Cancellable
+    func getProfile() -> AnyPublisher<FetchProfileQuery.Data, Error>
 }
 
 struct UserProfileService: UserProfileServiceDelegate {
-    @discardableResult func getProfile(
-        completion: @escaping (Result<GraphQLResult<FetchProfileQuery.Data>, Error>) -> Void
-    ) -> Cancellable {
-        Network.shared.apollo.fetch(
-            query: FetchProfileQuery(),
-            resultHandler: { completion($0) }
-        )
+    @discardableResult func getProfile() -> AnyPublisher<FetchProfileQuery.Data, Error> {
+        Future<FetchProfileQuery.Data, Error> { promise in
+            Network.shared.apollo.fetch(
+               query: FetchProfileQuery()
+            ) { result in
+                switch result {
+                case .success(let response):
+                    if response.data != nil {
+                        promise(.success(response.data!))
+                    }
+                    
+                    break
+                case .failure(let error):
+                    DDLogError("[Fetching Profile] error: \(error)")
+                    promise(.failure(error))
+                    break
+                }
+            }
+        }
+        .eraseToAnyPublisher()
     }
 }
