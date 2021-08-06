@@ -30,6 +30,15 @@
 		164E97EF2614ACF000D84B7F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97ED2614ACF000D84B7F /* Strings.swift */; };
 		164E97F02614ACF000D84B7F /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E97EE2614ACF000D84B7F /* Assets.swift */; };
 		164E988D2615C4BA00D84B7F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164E988C2615C4BA00D84B7F /* Colors.xcassets */; };
+		167A04CE26650FAC008E9A5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167A04CD26650FAC008E9A5C /* AppDelegate.swift */; };
+		16CCE71D264EB00000345778 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 16CCE71C264EB00000345778 /* SwiftDate */; };
+		16CCE730264F78B000345778 /* SampleSignInAndSignUp.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16CCE72F264F78B000345778 /* SampleSignInAndSignUp.graphql */; };
+		16CCE740264F820F00345778 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CCE73F264F820F00345778 /* API.swift */; };
+		16CCE7452651E4F900345778 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 16CCE7442651E4F900345778 /* KeychainSwift */; };
+		16CCE7492651E53400345778 /* KeyChainKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CCE7482651E53400345778 /* KeyChainKeys.swift */; };
+		16CCE74D2651E57700345778 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CCE74C2651E57700345778 /* Network.swift */; };
+		16CD1B03264901F100272FCA /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 16CD1B02264901F100272FCA /* Apollo */; };
+		16CD1B05264901F100272FCA /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 16CD1B04264901F100272FCA /* ApolloWebSocket */; };
 		1652AEE42646A52E003542CD /* SearchTransactionFormModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652AEE32646A52E003542CD /* SearchTransactionFormModalView.swift */; };
 		165A8CB9267F0DCE007DE03D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A8CB8267F0DCE007DE03D /* API.swift */; };
 		165A8CBE267F0ED9007DE03D /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A8CBD267F0ED9007DE03D /* AuthenticationService.swift */; };
@@ -229,6 +238,12 @@
 		164E97ED2614ACF000D84B7F /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		164E97EE2614ACF000D84B7F /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		164E988C2615C4BA00D84B7F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		167A04CD26650FAC008E9A5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		16CCE726264EBD6800345778 /* schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		16CCE72F264F78B000345778 /* SampleSignInAndSignUp.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SampleSignInAndSignUp.graphql; sourceTree = "<group>"; };
+		16CCE73F264F820F00345778 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		16CCE7482651E53400345778 /* KeyChainKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainKeys.swift; sourceTree = "<group>"; };
+		16CCE74C2651E57700345778 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		1652AEE32646A52E003542CD /* SearchTransactionFormModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTransactionFormModalView.swift; sourceTree = "<group>"; };
 		1652AEEC2646A67D003542CD /* SelectableFieldForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableFieldForm.swift; sourceTree = "<group>"; };
 		165A8CB8267F0DCE007DE03D /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -467,6 +482,7 @@
 				7AB88B1C262805C500E2DFD3 /* Custom Components */,
 				163E5936260CB89100E54401 /* Info.plist */,
 				163E5933260CB89100E54401 /* Preview Content */,
+				167A04CD26650FAC008E9A5C /* AppDelegate.swift */,
 			);
 			path = Kwartracker;
 			sourceTree = "<group>";
@@ -1543,6 +1559,7 @@
 				2952CC50267B49950038A6C5 /* TargetViewLabel.swift in Sources */,
 				047E2B3B265B9C1B00D1EB9C /* SideMenu.swift in Sources */,
 				C6249AA82637EB8C00C55B31 /* SignUpView.swift in Sources */,
+				167A04CE26650FAC008E9A5C /* AppDelegate.swift in Sources */,
 				29327593264E729000E8BA8B /* Double+Extension.swift in Sources */,
 				C65699C32637C91400D24D2F /* SignUpFooterView.swift in Sources */,
 				24AC7C9C265F65FD00CE4282 /* CategoryBodyView.swift in Sources */,
