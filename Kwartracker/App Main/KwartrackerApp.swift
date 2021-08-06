@@ -22,7 +22,7 @@ struct KwartrackerApp: App {
         WindowGroup {
             if isLoggedIn {
                 // For the meantime, show text view
-                Text("You are logged in.")
+                HomeView()
             } else {
                 SignInView()
                     .environmentObject(store)

@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct SideMenuView: View {
-    
-    @State private var selectedItemId: String = ""
-    @State private var sideMenu: SideMenu?
+
+    @State private var selectedItemId: SideMenu = .home
     
     let listTopBottom: CGFloat = 3
     let listLeftRight: CGFloat = 0
@@ -28,10 +27,11 @@ struct SideMenuView: View {
         VStack(alignment: .leading) {
             ProfileView()
             List {
-                ForEach(SideMenu.sideMenuList) { item in
-                    ListButtonView(actionHandler: {
-                        selectedItemId = item.id
-                    }, sideMenu: item)
+                ForEach(SideMenu.sideMenuList, id: \.self) { item in
+                    SideMenuRow(sideMenu: item, isSelected: selectedItemId == item)
+                    .onTapGesture {
+                        selectedItemId = item
+                    }
                 }
                 .listRowInsets(EdgeInsets(top: listTopBottom, leading: listLeftRight,
                                           bottom: listTopBottom, trailing: listLeftRight))
@@ -56,34 +56,28 @@ struct SideMenuView: View {
     }
 }
 
-struct ListButtonView: View {
-    let actionHandler: (() -> Void)
+struct SideMenuRow: View {
     var sideMenu: SideMenu
-    @State var didTap: Bool = false
+    let isSelected: Bool
     let imgHeight: CGFloat = 20
     let size: CGFloat = 16
     let imagePadding: CGFloat = 10
     
     var body: some View {
-        Button(action: {
-            if didTap {
-                didTap = false
-            } else {
-                didTap = true
-            }
-        }) {
-            HStack {
-                Image(uiImage: sideMenu.image)
-                    .renderingMode(.template)
-                    .frame(width: size, height: imgHeight, alignment: .leading)
-                    .foregroundColor(didTap ? Color(Asset.Colors.teal.color) : .white)
-                    .padding(.leading, imagePadding)
-                Text(sideMenu.text)
-                    .font(.system(size: size))
-                    .foregroundColor(didTap ? Color(Asset.Colors.teal.color) : .white)
-                Spacer()
-            }
-        }.buttonStyle(PrimaryButtonStyle(didPressed: didTap))
+        HStack {
+            Image(uiImage: sideMenu.image)
+                .renderingMode(.template)
+                .frame(width: size, height: imgHeight, alignment: .leading)
+                .foregroundColor(isSelected ? Color(Asset.Colors.teal.color) : .white)
+                .padding(.leading, imagePadding)
+            Text(sideMenu.text)
+                .font(.system(size: size))
+                .foregroundColor(isSelected ? Color(Asset.Colors.teal.color) : .white)
+                .frame(height: 60)
+            Spacer()
+        }
+        .background(isSelected ? Color.white : Color(Asset.Colors.teal.color))
+        .cornerRadius(20)
     }
 }
 
