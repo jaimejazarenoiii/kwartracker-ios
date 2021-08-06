@@ -24,13 +24,13 @@ struct AuthenticationService: AuthenticationServiceDelegate {
     @discardableResult func signIn(
         credentialInput input: CredentialsInput
         ) -> AnyPublisher<SignInMutation.Data, Error> {
-        
         Future<SignInMutation.Data, Error> { promise in
             Network.shared.apollo.perform(
                 mutation: SignInMutation(signInCredential: input)
             ) { result in
                 switch result {
                 case .success(let response):
+                    DDLogInfo("[Authentication][sign in] success response: \(response)")
                     if let data = response.data, data.signInWithEmail != nil {
                         promise(.success(data))
                     } else if let error = response.errors?.first {
@@ -56,6 +56,7 @@ struct AuthenticationService: AuthenticationServiceDelegate {
             ) { result in
                 switch result {
                 case .success(let response):
+                    DDLogInfo("[Authentication][sign up] success response: \(response)")
                     if let data = response.data {
                         promise(.success(data))
                     } else if let error = response.errors?.first {
