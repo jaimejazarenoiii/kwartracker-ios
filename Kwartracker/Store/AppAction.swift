@@ -9,4 +9,5 @@ import Foundation
 
 enum AppAction {
     case transactionsView(action: TransactionsViewAction)
+    case authView(action: AuthenticationViewAction)
 }

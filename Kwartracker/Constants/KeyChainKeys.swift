@@ -8,10 +8,15 @@
 import KeychainSwift
 
 enum KeyChainKeys {
-    static let loginKey = "login"
+    static let loginTokenKey = "loginToken"
 
     static func getLoginKeyChain() -> String {
-        KeychainSwift().get(loginKey) ?? ""
+        if let data = KeyChain.load(key: loginTokenKey),
+           let loginToken = String(data: data, encoding: .utf8) {
+                return loginToken
+        }
+        
+        return ""
     }
 
     static func isLoggedIn() -> Bool {
