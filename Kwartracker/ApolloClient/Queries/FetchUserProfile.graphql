@@ -1,0 +1,11 @@
+query FetchProfile {
+  profile {
+    email
+    id
+    firstName
+    middleName
+    lastName
+    age
+    gender
+  }
+}
