@@ -9,28 +9,31 @@ import SwiftUI
 
 struct AddCategoryView: View {
     @State var title = "Add Category"
-    @State var category = ""
+    @State var inputCategoryName = ""
     @State var isParent = false
     @State var makeParent = true
+
     @State private var isAddCategoryLinkActive: Bool = false
     @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     @EnvironmentObject private var store: AppStore
+
+    private let addCategoryHeaderTop: CGFloat = 10
 
     var body: some View {
         SkeletalView(header: {
             AddCategoryHeaderView(
                 title: $title,
                 presentationMode: presentationMode,
-                isAddCategoryLinkActive: $isAddCategoryLinkActive
+                isAddCategoryLinkActive: $isAddCategoryLinkActive,
+                isSaveButtonDisabled: .constant(inputCategoryName.isEmpty)
             )
-            .padding(.top, 10)
+            .padding(.top, addCategoryHeaderTop)
         }, body: {
-            AddCategoryBodyView(
-                category: $category,
+            AddCategoryForm(
+                inputCategoryName: $inputCategoryName,
                 isParent: $isParent,
                 makeParent: $makeParent
             )
-            .environmentObject(store)
         })
         .navigationBarHidden(true)
     }
@@ -40,10 +43,12 @@ private struct AddCategoryHeaderView: View {
     @Binding var title: String
     @Binding var presentationMode: PresentationMode
     @Binding var isAddCategoryLinkActive: Bool
+    @Binding var isSaveButtonDisabled: Bool
 
     private let imageSize: CGSize = CGSize(width: 10, height: 10)
     private let backButtonSize: CGFloat = 40
-    private let colorOpacity: Double = 0.3
+    private let saveButtonDisabledOpacity: Double = 0.3
+    private let saveButtonEnabledOpacity: Double = 1
 
     var body: some View {
         NavigationBarView(title: title) {
@@ -56,20 +61,22 @@ private struct AddCategoryHeaderView: View {
             .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.teal.color))
         } rightBarViewContent: {
             Button(action: {}, label: {
+                let colorOpacity = isSaveButtonDisabled ? saveButtonDisabledOpacity : saveButtonEnabledOpacity
                 Text(L10n.EditProfilePage.NavigationButtonItem.save)
                     .fontWeight(.bold)
                     .foregroundColor(.white).opacity(colorOpacity)
             })
             .frame(width: backButtonSize, alignment: .center)
+            .disabled(isSaveButtonDisabled)
         }
     }
 }
 
-private struct AddCategoryBodyView: View {
-    @Binding var category: String
+private struct AddCategoryForm: View {
+    @Binding var inputCategoryName: String
     @Binding var isParent: Bool
     @Binding var makeParent: Bool
-    @EnvironmentObject private var store: AppStore
+
     private let cornerRadius: CGFloat = 30
     private let rectangleSize: CGFloat = 100
     private let textOpacity: Double = 0.5
@@ -91,7 +98,7 @@ private struct AddCategoryBodyView: View {
                 .padding()
                 .frame(maxWidth: .infinity, alignment: .center)
 
-                UserField(fieldType: .category, textValue: $category)
+                UserField(fieldType: .category, textValue: $inputCategoryName)
                     .padding(.horizontal)
 
                 VStack(alignment: .leading) {
@@ -106,7 +113,6 @@ private struct AddCategoryBodyView: View {
                                 offText: L10n.EditCategoryPage.ContentText.toggleOff
                             )
                         )
-                    Text(makeParent ? "Disable dropdown" : "Enable dropdown")
                 }
                 .padding()
             }
