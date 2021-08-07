@@ -21,7 +21,7 @@ struct KwartrackerApp: App {
     var body: some Scene {
         WindowGroup {
             if isLoggedIn {
-                MyProfileView()
+                HomeView()
                     .environmentObject(store)
             } else {
                 SignInView()
