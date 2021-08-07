@@ -10,6 +10,7 @@ import SwiftUI
 struct SideMenuView: View {
     
     @Binding private var selectedItemId: SideMenu
+    @Binding var showSidebar: Bool
     
     private let listTopBottom: CGFloat = 3
     private let listLeftRight: CGFloat = 0
@@ -18,8 +19,12 @@ struct SideMenuView: View {
     private let logoutBtnPadding: CGFloat = 25
     private let bodyPadding: CGFloat = 30
 
-    init(selectedItem: Binding<SideMenu>) {
+    init(
+        selectedItem: Binding<SideMenu>,
+        showSidebar: Binding<Bool>
+    ) {
         self._selectedItemId = selectedItem
+        self._showSidebar = showSidebar
         UITableView.appearance().separatorStyle = .none
         UITableView.appearance().backgroundColor = Asset.Colors.teal.color
     }
@@ -32,6 +37,9 @@ struct SideMenuView: View {
                 ForEach(SideMenu.sideMenuList, id: \.self) { item in
                     SideMenuRow(sideMenu: item, isSelected: selectedItemId == item)
                     .onTapGesture {
+                        if selectedItemId != item {
+                            showSidebar = false
+                        }
                         selectedItemId = item
                     }
                 }

@@ -26,9 +26,13 @@ struct HomeView: View {
             }
 
         return SideBarStack(sidebarWidth: sideBarWidth, showSidebar: $showSidebar) {
-            SideMenuView(selectedItem: $selectedMenu)
+            SideMenuView(selectedItem: $selectedMenu, showSidebar: $showSidebar)
         } content: {
-            TransactionHistoryView(showSidebar: $showSidebar)
+            if selectedMenu == .myProfile {
+                MyProfileSideMenuView(showSidebar: $showSidebar)
+            } else {
+                TransactionHistoryView(showSidebar: $showSidebar)
+            }
         }
         .edgesIgnoringSafeArea(.all)
         .gesture(drag)
