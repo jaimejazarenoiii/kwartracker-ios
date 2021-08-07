@@ -9,8 +9,8 @@ import Foundation
 import Apollo
 
 class Network {
-    private static let stagingURL: URL = URL(string: "https://staging-kwartracker.jaimejazarenoiii.me/graphql")!
     static let shared = Network()
+    private static let stagingURL: URL = URL(string: "https://staging-kwartracker.jaimejazarenoiii.me/graphql")!
 
     private(set) var apollo: ApolloClient = {
         let client = URLSessionClient()
