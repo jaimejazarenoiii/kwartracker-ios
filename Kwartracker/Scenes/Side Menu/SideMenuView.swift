@@ -9,17 +9,22 @@ import SwiftUI
 
 struct SideMenuView: View {
     
-    @State private var selectedItemId: String = ""
-    @State private var sideMenu: SideMenu?
+    @Binding private var selectedItemId: SideMenu
+    @Binding var showSidebar: Bool
     
-    let listTopBottom: CGFloat = 3
-    let listLeftRight: CGFloat = 0
-    let frameSize: CGFloat = 15
-    let fontSize: CGFloat = 16
-    let logoutBtnPadding: CGFloat = 25
-    let bodyPadding: CGFloat = 30
-    
-    init() {
+    private let listTopBottom: CGFloat = 3
+    private let listLeftRight: CGFloat = 0
+    private let frameSize: CGFloat = 15
+    private let fontSize: CGFloat = 16
+    private let logoutBtnPadding: CGFloat = 25
+    private let bodyPadding: CGFloat = 30
+
+    init(
+        selectedItem: Binding<SideMenu>,
+        showSidebar: Binding<Bool>
+    ) {
+        self._selectedItemId = selectedItem
+        self._showSidebar = showSidebar
         UITableView.appearance().separatorStyle = .none
         UITableView.appearance().backgroundColor = Asset.Colors.teal.color
     }
@@ -27,16 +32,22 @@ struct SideMenuView: View {
     var body: some View {
         VStack(alignment: .leading) {
             ProfileView()
+
             List {
-                ForEach(SideMenu.sideMenuList) { item in
-                    ListButtonView(actionHandler: {
-                        selectedItemId = item.id
-                    }, sideMenu: item)
+                ForEach(SideMenu.sideMenuList, id: \.self) { item in
+                    SideMenuRow(sideMenu: item, isSelected: selectedItemId == item)
+                    .onTapGesture {
+                        if selectedItemId != item {
+                            showSidebar = false
+                        }
+                        selectedItemId = item
+                    }
                 }
                 .listRowInsets(EdgeInsets(top: listTopBottom, leading: listLeftRight,
                                           bottom: listTopBottom, trailing: listLeftRight))
             }
             .listStyle(SidebarListStyle())
+                
             Button(action: {}) {
                 HStack {
                     Image(uiImage: Asset.Images.powerIcon.image)
@@ -56,34 +67,31 @@ struct SideMenuView: View {
     }
 }
 
-struct ListButtonView: View {
-    let actionHandler: (() -> Void)
-    var sideMenu: SideMenu
-    @State var didTap: Bool = false
-    let imgHeight: CGFloat = 20
-    let size: CGFloat = 16
-    let imagePadding: CGFloat = 10
+struct SideMenuRow: View {
+    let sideMenu: SideMenu
+    let isSelected: Bool
+
+    private let imgHeight: CGFloat = 20
+    private let size: CGFloat = 16
+    private let imagePadding: CGFloat = 10
+    private let textHeight: CGFloat = 60
+    private let cornerRadius: CGFloat = 20
     
     var body: some View {
-        Button(action: {
-            if didTap {
-                didTap = false
-            } else {
-                didTap = true
-            }
-        }) {
-            HStack {
-                Image(uiImage: sideMenu.image)
-                    .renderingMode(.template)
-                    .frame(width: size, height: imgHeight, alignment: .leading)
-                    .foregroundColor(didTap ? Color(Asset.Colors.teal.color) : .white)
-                    .padding(.leading, imagePadding)
-                Text(sideMenu.text)
-                    .font(.system(size: size))
-                    .foregroundColor(didTap ? Color(Asset.Colors.teal.color) : .white)
-                Spacer()
-            }
-        }.buttonStyle(PrimaryButtonStyle(didPressed: didTap))
+        HStack {
+            Image(uiImage: sideMenu.image)
+                .renderingMode(.template)
+                .frame(width: size, height: imgHeight, alignment: .leading)
+                .foregroundColor(isSelected ? Color(Asset.Colors.teal.color) : .white)
+                .padding(.leading, imagePadding)
+            Text(sideMenu.text)
+                .font(.system(size: size))
+                .foregroundColor(isSelected ? Color(Asset.Colors.teal.color) : .white)
+                .frame(height: textHeight)
+            Spacer()
+        }
+        .background(isSelected ? Color.white : Color(Asset.Colors.teal.color))
+        .cornerRadius(cornerRadius)
     }
 }
 

@@ -11,10 +11,9 @@ enum KeyChainKeys {
     static let loginTokenKey = "loginToken"
 
     static func getLoginKeyChain() -> String {
-        if let data = KeyChain.load(key: loginTokenKey) {
-            if let loginToken = String(data: data, encoding: .utf8) {
+        if let data = KeyChain.load(key: loginTokenKey),
+           let loginToken = String(data: data, encoding: .utf8) {
                 return loginToken
-            }
         }
         
         return ""
