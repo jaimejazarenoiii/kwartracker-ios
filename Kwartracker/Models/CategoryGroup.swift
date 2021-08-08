@@ -63,4 +63,24 @@ extension Array where Element == CategoryGroup {
     func sortedById() -> [CategoryGroup] {
         sorted(by: { $0.id > $1.id })
     }
+
+    func filterBy(term: String) -> [CategoryGroup] {
+        let termLowerCased = term.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+        if termLowerCased.isEmpty {
+            return self
+        } else {
+            return filter {
+                $0.categories
+                    .contains { $0.title.lowercased().contains(termLowerCased) }
+            }
+        }
+    }
+}
+
+extension CategoryGroup {
+    init(group: CategoryGroupsQuery.Data.CategoryGroup) {
+        id = Int(group.id) ?? 0
+        title = group.title ?? ""
+        categories = (group.categories ?? []).map { Category(category: $0) }
+    }
 }

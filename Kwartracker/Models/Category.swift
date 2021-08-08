@@ -48,4 +48,20 @@ extension Array where Element == Category {
     func sortedById() -> [Category] {
         sorted(by: { $0.id > $1.id })
     }
+
+    func filterBy(term: String) ->[Category] {
+        filter {
+            term.isEmpty ? true :
+                $0.title.lowercased().contains(term.lowercased())
+        }
+    }
+}
+
+extension Category {
+    init(category: CategoryGroupsQuery.Data.CategoryGroup.Category) {
+        id = category.id.hashValue
+        title = category.title ?? ""
+        budgets = []
+        transactions = []
+    }
 }

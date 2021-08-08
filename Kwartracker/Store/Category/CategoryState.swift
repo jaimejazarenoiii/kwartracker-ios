@@ -8,6 +8,13 @@
 import CocoaLumberjackSwift
 
 struct CategoryState {
+    // Category group list
+    var searchCategory = ""
+    var categoryListIsRequesting = false
+    var categoryGroups = [CategoryGroup]()
+    var categoryGroupListErrorMessage = ""
+
+    // Add category
     var addCategoryIsRequesting = false
     var addCategoryErrorMessage: String?
 }

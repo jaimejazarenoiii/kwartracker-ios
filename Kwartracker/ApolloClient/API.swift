@@ -866,6 +866,168 @@ public final class SignUpMutation: GraphQLMutation {
   }
 }
 
+public final class CategoryGroupsQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query CategoryGroups {
+      categoryGroups {
+        __typename
+        id
+        title
+        categories {
+          __typename
+          id
+          title
+        }
+      }
+    }
+    """
+
+  public let operationName: String = "CategoryGroups"
+
+  public init() {
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("categoryGroups", type: .list(.nonNull(.object(CategoryGroup.selections)))),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(categoryGroups: [CategoryGroup]? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "categoryGroups": categoryGroups.flatMap { (value: [CategoryGroup]) -> [ResultMap] in value.map { (value: CategoryGroup) -> ResultMap in value.resultMap } }])
+    }
+
+    /// Find all wallets
+    public var categoryGroups: [CategoryGroup]? {
+      get {
+        return (resultMap["categoryGroups"] as? [ResultMap]).flatMap { (value: [ResultMap]) -> [CategoryGroup] in value.map { (value: ResultMap) -> CategoryGroup in CategoryGroup(unsafeResultMap: value) } }
+      }
+      set {
+        resultMap.updateValue(newValue.flatMap { (value: [CategoryGroup]) -> [ResultMap] in value.map { (value: CategoryGroup) -> ResultMap in value.resultMap } }, forKey: "categoryGroups")
+      }
+    }
+
+    public struct CategoryGroup: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["CategoryGroup"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("title", type: .scalar(String.self)),
+          GraphQLField("categories", type: .list(.nonNull(.object(Category.selections)))),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(id: GraphQLID, title: String? = nil, categories: [Category]? = nil) {
+        self.init(unsafeResultMap: ["__typename": "CategoryGroup", "id": id, "title": title, "categories": categories.flatMap { (value: [Category]) -> [ResultMap] in value.map { (value: Category) -> ResultMap in value.resultMap } }])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID {
+        get {
+          return resultMap["id"]! as! GraphQLID
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var title: String? {
+        get {
+          return resultMap["title"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "title")
+        }
+      }
+
+      public var categories: [Category]? {
+        get {
+          return (resultMap["categories"] as? [ResultMap]).flatMap { (value: [ResultMap]) -> [Category] in value.map { (value: ResultMap) -> Category in Category(unsafeResultMap: value) } }
+        }
+        set {
+          resultMap.updateValue(newValue.flatMap { (value: [Category]) -> [ResultMap] in value.map { (value: Category) -> ResultMap in value.resultMap } }, forKey: "categories")
+        }
+      }
+
+      public struct Category: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["Category"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+            GraphQLField("title", type: .scalar(String.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: GraphQLID, title: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Category", "id": id, "title": title])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return resultMap["id"]! as! GraphQLID
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var title: String? {
+          get {
+            return resultMap["title"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "title")
+          }
+        }
+      }
+    }
+  }
+}
+
 public final class FetchProfileQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =

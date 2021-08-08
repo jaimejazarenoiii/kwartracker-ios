@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import CocoaLumberjackSwift
 
 struct CategoryBodyView: View {
     @EnvironmentObject private var store: AppStore
     @State var search = ""
+    @State var selectedData: (group: CategoryGroup, category: Category?)? = nil
+
+    @State private var detailLinkIsActive = false
     
     private let shadowRadius: CGFloat = 8
     private let shadowOffset = CGPoint(x: 6, y: 6)
@@ -18,34 +22,59 @@ struct CategoryBodyView: View {
     private let bottomMargin: CGFloat = 8
     private let bodyMargin: CGFloat = 0
 
-    let categoryGroups = CategoryGroup.dummyCategoryGroup
     
     var body: some View {
         VStack {
-            let searchBinding = Binding<String>(
-                get: { search },
-                set: {
-                    search = $0
-                    store.send(.categoryView(action: .categorySearch(term: search)))
-                }
-            )
-            SearchFieldView(searchTerm: searchBinding)
+            SearchFieldView(onCommitAction: performSearch,
+                            searchTerm: $search)
                 .padding(.bottom, 10)
                 .padding([.top, .leading, .trailing], 30)
 
             ScrollView(.vertical, showsIndicators: false) {
-                ForEach(categoryGroups, id: \.id) { categoryGroup in
-                    let categories = categoryGroup.categories
-                    CategoryListView(
-                        title: categoryGroup.title,
-                        subCategory: categories.isEmpty ? nil : categories
+                ForEach(categoryGroupsResult(), id: \.id) { categoryGroup in
+                    CategoryGroupView(
+                        categoryGroup: categoryGroup,
+                        onSelect: { onSelect(categoryGroup: $0, category: nil) }
                     )
                     .padding([.top, .bottom], 10)
+                    if !categoryGroup.categories.isEmpty {
+                        CategoriesView(
+                            categories: categoryGroup.categories,
+                            onSelect: { onSelect(categoryGroup: nil, category: $0) }
+                        )
+                    }
                 }
                 .padding(.top, 10)
                 .padding([.leading, .trailing], 20)
             }
+
+            NavigationLink(
+                // will change the destination to category detail view
+                destination: TransactionDetailView(transaction: .unitTestTransaction),
+                isActive: $detailLinkIsActive,
+                label: { EmptyView() }
+            )
+            .hidden()
         }
+        .onAppear(perform: fetchCategoryGroup)
+    }
+
+    private func fetchCategoryGroup() {
+        store.send(.category(action: .getAllCategoryGroups))
+        store.send(.category(action: .getAllCategoryGroupsRequest))
+    }
+
+    private func categoryGroupsResult() -> [CategoryGroup] {
+        store.state.categoryState.categoryGroups.filterBy(term: search)
+    }
+
+    private func performSearch() {
+        DDLogInfo("[CategorySearch] perform search")
+    }
+
+    private func onSelect(categoryGroup: CategoryGroup?, category: Category?) {
+        debugPrint("test: \(categoryGroup) || \(category)")
+        detailLinkIsActive = true
     }
 }
 
