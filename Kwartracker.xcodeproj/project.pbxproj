@@ -27,6 +27,8 @@
 		164C3BD226BE0DC500745684 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164C3BD126BE0DC500745684 /* HomeView.swift */; };
 		164C3BE726BE236100745684 /* MyProfileSideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164C3BE626BE236100745684 /* MyProfileSideMenuView.swift */; };
 		164C3BED26BE238300745684 /* SideMenuPageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164C3BEC26BE238300745684 /* SideMenuPageDelegate.swift */; };
+		164C3C1926BF4FC700745684 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 164C3C1826BF4FC700745684 /* RealmSwift */; };
+		164C3C1B26BF4FC700745684 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 164C3C1A26BF4FC700745684 /* Realm */; };
 		164E95E726121B6400D84B7F /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E95E626121B6400D84B7F /* Store.swift */; };
 		164E95EC2612224100D84B7F /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E95EB2612224100D84B7F /* AppState.swift */; };
 		164E95F226122BD200D84B7F /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E95F126122BD200D84B7F /* AppReducer.swift */; };
@@ -388,11 +390,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				164C3C1926BF4FC700745684 /* RealmSwift in Frameworks */,
 				29ED9DA8265E34EA004C303E /* SwiftDate in Frameworks */,
 				A9CFE877880189ECE3F83CB8 /* Pods_Kwartracker.framework in Frameworks */,
 				7AAB98A2268C416300E7545C /* CocoaLumberjack in Frameworks */,
 				7AAB98A0268C416300E7545C /* CocoaLumberjackSwift in Frameworks */,
 				16CCE7452651E4F900345778 /* KeychainSwift in Frameworks */,
+				164C3C1B26BF4FC700745684 /* Realm in Frameworks */,
 				16CD1B05264901F100272FCA /* ApolloWebSocket in Frameworks */,
 				16CD1B03264901F100272FCA /* Apollo in Frameworks */,
 			);
@@ -1290,6 +1294,8 @@
 				29ED9DA7265E34EA004C303E /* SwiftDate */,
 				7AAB989F268C416300E7545C /* CocoaLumberjackSwift */,
 				7AAB98A1268C416300E7545C /* CocoaLumberjack */,
+				164C3C1826BF4FC700745684 /* RealmSwift */,
+				164C3C1A26BF4FC700745684 /* Realm */,
 			);
 			productName = Kwartracker;
 			productReference = 163E592A260CB88E00E54401 /* Kwartracker.app */;
@@ -1370,6 +1376,7 @@
 				16CCE7432651E4F900345778 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				29ED9DA6265E34EA004C303E /* XCRemoteSwiftPackageReference "SwiftDate" */,
 				7AAB989E268C416300E7545C /* XCRemoteSwiftPackageReference "CocoaLumberjack" */,
+				164C3C1726BF4FC700745684 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = 163E592B260CB88E00E54401 /* Products */;
 			projectDirPath = "";
@@ -2030,6 +2037,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		164C3C1726BF4FC700745684 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.12.0;
+			};
+		};
 		16CCE7432651E4F900345778 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
@@ -2065,6 +2080,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		164C3C1826BF4FC700745684 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 164C3C1726BF4FC700745684 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+		164C3C1A26BF4FC700745684 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 164C3C1726BF4FC700745684 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
 		16CCE7442651E4F900345778 /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 16CCE7432651E4F900345778 /* XCRemoteSwiftPackageReference "keychain-swift" */;
