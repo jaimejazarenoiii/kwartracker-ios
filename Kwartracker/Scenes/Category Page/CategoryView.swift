@@ -43,9 +43,9 @@ private struct CategoryHeaderView: View {
             .buttonStyle(
                 CircleButtonStyle(buttonColor: Asset.Colors.teal.color)
             )
-        } rightBarViewContent: {
+        } rightBarViewContent: {    
             NavigationLink(
-                destination: AddCategoryView().environmentObject(store),
+                destination: AddCategoryView(),
                 isActive: $isAddCategoryLinkActive
             ) {
                 Button(action: {

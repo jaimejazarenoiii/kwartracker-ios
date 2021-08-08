@@ -10,8 +10,7 @@ import SwiftUI
 struct AddCategoryView: View {
     @State var title = "Add Category"
     @State var inputCategoryName = ""
-    @State var isParent = false
-    @State var makeParent = true
+    @State var inputIsParent = true
 
     @State private var isAddCategoryLinkActive: Bool = false
     @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
@@ -25,17 +24,23 @@ struct AddCategoryView: View {
                 title: $title,
                 presentationMode: presentationMode,
                 isAddCategoryLinkActive: $isAddCategoryLinkActive,
-                isSaveButtonDisabled: .constant(inputCategoryName.isEmpty)
+                isSaveButtonDisabled: .constant(inputCategoryName.isEmpty),
+                addCategoryAction: addCategory
             )
             .padding(.top, addCategoryHeaderTop)
         }, body: {
             AddCategoryForm(
                 inputCategoryName: $inputCategoryName,
-                isParent: $isParent,
-                makeParent: $makeParent
+                makeParent: $inputIsParent
             )
         })
         .navigationBarHidden(true)
+    }
+
+    private func addCategory() {
+        if inputIsParent {
+            store.send(.category(action: .parentCategoryAddRequest(title: inputCategoryName)))
+        }
     }
 }
 
@@ -44,6 +49,7 @@ private struct AddCategoryHeaderView: View {
     @Binding var presentationMode: PresentationMode
     @Binding var isAddCategoryLinkActive: Bool
     @Binding var isSaveButtonDisabled: Bool
+    var addCategoryAction: (() -> Void)
 
     private let imageSize: CGSize = CGSize(width: 10, height: 10)
     private let backButtonSize: CGFloat = 40
@@ -60,7 +66,16 @@ private struct AddCategoryHeaderView: View {
             }
             .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.teal.color))
         } rightBarViewContent: {
-            Button(action: {}, label: {
+//            Button(action: {
+//            }, label: {
+//                let colorOpacity = isSaveButtonDisabled ? saveButtonDisabledOpacity : saveButtonEnabledOpacity
+//                Text(L10n.EditProfilePage.NavigationButtonItem.save)
+//                    .fontWeight(.bold)
+//                    .foregroundColor(.white).opacity(colorOpacity)
+//            })
+//            .frame(width: backButtonSize, alignment: .center)
+//            .disabled(isSaveButtonDisabled)
+            Button(action: addCategoryAction, label: {
                 let colorOpacity = isSaveButtonDisabled ? saveButtonDisabledOpacity : saveButtonEnabledOpacity
                 Text(L10n.EditProfilePage.NavigationButtonItem.save)
                     .fontWeight(.bold)
@@ -74,7 +89,6 @@ private struct AddCategoryHeaderView: View {
 
 private struct AddCategoryForm: View {
     @Binding var inputCategoryName: String
-    @Binding var isParent: Bool
     @Binding var makeParent: Bool
 
     private let cornerRadius: CGFloat = 30

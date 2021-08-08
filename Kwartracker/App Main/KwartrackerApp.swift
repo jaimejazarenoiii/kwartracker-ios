@@ -23,6 +23,8 @@ struct KwartrackerApp: App {
             if isLoggedIn {
 //                HomeView().environmentObject(store)
                 CategoryView().environmentObject(store)
+//                EditCategoryView()
+//                SettingsView()
             } else {
                 SignInView().environmentObject(store)
             }

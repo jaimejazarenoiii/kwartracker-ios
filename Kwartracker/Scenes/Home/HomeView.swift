@@ -30,6 +30,8 @@ struct HomeView: View {
         } content: {
             if selectedMenu == .myProfile {
                 MyProfileSideMenuView(showSidebar: $showSidebar)
+            } else if selectedMenu == .settings {
+                SettingsView()
             } else {
                 TransactionHistoryView(showSidebar: $showSidebar)
             }

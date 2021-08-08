@@ -18,7 +18,7 @@ struct CategoryBodyView: View {
     private let bottomMargin: CGFloat = 8
     private let bodyMargin: CGFloat = 0
 
-    let categories = Category.dummyData
+    let categoryGroups = CategoryGroup.dummyCategoryGroup
     
     var body: some View {
         VStack {
@@ -34,9 +34,13 @@ struct CategoryBodyView: View {
                 .padding([.top, .leading, .trailing], 30)
 
             ScrollView(.vertical, showsIndicators: false) {
-                ForEach(categories) { category in
-                    CategoryListView(title: category.title, subCategory: category.childCategories)
-                        .padding([.top, .bottom], 10)
+                ForEach(categoryGroups, id: \.id) { categoryGroup in
+                    let categories = categoryGroup.categories
+                    CategoryListView(
+                        title: categoryGroup.title,
+                        subCategory: categories.isEmpty ? nil : categories
+                    )
+                    .padding([.top, .bottom], 10)
                 }
                 .padding(.top, 10)
                 .padding([.leading, .trailing], 20)
