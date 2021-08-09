@@ -11,4 +11,5 @@ import Foundation
 // https://vimeo.com/291588126
 struct World {
     var authenticationService: AuthenticationServiceDelegate = AuthenticationService()
+    var userProfileService: UserProfileServiceDelegate = UserProfileService()
 }

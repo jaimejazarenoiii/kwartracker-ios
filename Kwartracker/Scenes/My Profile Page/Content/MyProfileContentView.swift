@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MyProfileContentView: View {
+    @EnvironmentObject private var store: AppStore
+
     private let neumorphicBoxHeight: CGFloat = 190
     private let horizontalMargin: CGFloat = 30
     private let topMargin: CGFloat = 15
@@ -18,13 +20,16 @@ struct MyProfileContentView: View {
             TopRightButtonView(image: Asset.Images.editIcon.image)
                 .padding(.horizontal, editHorizontalMargin)
             
-            MyProfileCardView()
-            MyProfileDetailView()
+            MyProfileCardView(user: store.state.userProfileState.user)
+            MyProfileDetailView(user: store.state.userProfileState.user)
             
             Spacer()
         }
         .padding([.leading, .trailing], horizontalMargin)
         .padding(.top, topMargin)
+        .onAppear(perform: {
+            store.send(.userProfileView(action: .fetchProfile))
+        })
     }
 }
 
@@ -36,11 +41,15 @@ struct MyProfileContentView_Previews: PreviewProvider {
 }
 
 private struct MyProfileCardView: View {
-    let name: String = L10n.ProfilePage.dummyName
+    let user: FetchProfileQuery.Data.Profile?
+
     private let cardHeight: CGFloat = 190
     private let fontSize: CGFloat = 15
     private let horizontalMargin: CGFloat = 30
     private let verticalMargin: CGFloat = 10
+    private var name: String {
+        "\(self.user?.firstName ?? "") \(user?.middleName ?? "") \(user?.lastName ?? "")"
+    }
     
     var body: some View {
         ZStack {
@@ -49,7 +58,7 @@ private struct MyProfileCardView: View {
             
             VStack {
                 ProfilePictureView()
-                
+            
                 Text(name)
                     .font(.system(size: fontSize))
                     .padding(.top)
@@ -62,9 +71,14 @@ private struct MyProfileCardView: View {
 
 
 private struct MyProfileDetailView: View {
+    let user: FetchProfileQuery.Data.Profile?
+
     var body: some View {
         Group {
-            ProfileDetailsLabel(label: L10n.ProfilePage.Label.contactNumber, value: L10n.ProfilePage.dummyNumber)
+            ProfileDetailsLabel(
+                label: L10n.ProfilePage.Label.contactNumber,
+                value: user?.email ?? ""
+            )
             ProfileDetailsLabel(label: L10n.ProfilePage.Label.birthdate, value: L10n.ProfilePage.dummyBirthdate)
             ProfileDetailsLabel(label: L10n.ProfilePage.Label.address, value: L10n.ProfilePage.dummyAddress)
         }
