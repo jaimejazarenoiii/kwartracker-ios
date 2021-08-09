@@ -11,19 +11,25 @@ import SwiftUI
 
 
 protocol WalletServiceDelegate {
-    func fetch() -> AnyPublisher<[Wallet], Error>
+    func fetch() -> AnyPublisher<[Wallet], GraphQLError>
     func addWallet(wallet: Wallet) -> AnyPublisher<Wallet, GraphQLError>
-    func editWallet(wallet: Wallet) -> AnyPublisher<Wallet, Error>
+    func editWallet(wallet: Wallet) -> AnyPublisher<Wallet, GraphQLError>
 }
 
 struct WalletService: WalletServiceDelegate {
-    func fetch() -> AnyPublisher<[Wallet], Error> {
-        Future<[Wallet], Error> { promise in
+    func fetch() -> AnyPublisher<[Wallet], GraphQLError> {
+        Future<[Wallet], GraphQLError> { promise in
             DispatchQueue.main.async {
                 Network.shared.apollo.fetch(query: FetchWalletsQuery()) { result in
                     switch result {
                     case .success(let response):
-                        guard let data = response.data?.wallets else { return }
+                        guard let data = response.data?.wallets else {
+                            if response.errors != nil {
+                                let first = response.errors?.first
+                                promise(.failure(first!))
+                            }
+                            return
+                        }
                         var wallets = [Wallet]()
                         for wData in data {
                             var transactions = [Transaction]()
@@ -54,7 +60,8 @@ struct WalletService: WalletServiceDelegate {
                         promise(.success(wallets))
                         break
                     case .failure(let error):
-                        promise(.failure(error))
+                        let err = GraphQLError(["message": error.localizedDescription])
+                        promise(.failure(err))
                         break
                     }
                 }
@@ -120,8 +127,8 @@ struct WalletService: WalletServiceDelegate {
         .eraseToAnyPublisher()
     }
     
-    func editWallet(wallet: Wallet) -> AnyPublisher<Wallet, Error> {
-        return Future<Wallet, Error> { promise in
+    func editWallet(wallet: Wallet) -> AnyPublisher<Wallet, GraphQLError> {
+        return Future<Wallet, GraphQLError> { promise in
             DispatchQueue.main.async {
                 let input = EditWalletInput(
                     id: "\(wallet.id)",
@@ -133,7 +140,13 @@ struct WalletService: WalletServiceDelegate {
                         resultHandler: { result in
                             switch result {
                             case .success(let response):
-                                guard let data = response.data?.editWallet else { return }
+                                guard let data = response.data?.editWallet else {
+                                    if response.errors != nil {
+                                        let first = response.errors?.first
+                                        promise(.failure(first!))
+                                    }
+                                    return
+                                }
                                 var editWallet = Wallet(id: Int(data.id) ?? 0,
                                                         title: data.title,
                                                         currency: Currency(stringValue: data.currency),
@@ -159,7 +172,8 @@ struct WalletService: WalletServiceDelegate {
                                 promise(.success(editWallet))
                                 break
                             case .failure(let error):
-                                promise(.failure(error))
+                                let err = GraphQLError(["message": error.localizedDescription])
+                                promise(.failure(err))
                                 break
                             }
                         }

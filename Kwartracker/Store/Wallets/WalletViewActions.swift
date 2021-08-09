@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Apollo
 
 enum WalletViewActions {
     case fetch
@@ -14,5 +15,5 @@ enum WalletViewActions {
     case delete(wallet: Wallet)
     case append(wallets: [Wallet])
     case update(wallet: Wallet)
-    case error(error: String)
+    case error(error: GraphQLError)
 }

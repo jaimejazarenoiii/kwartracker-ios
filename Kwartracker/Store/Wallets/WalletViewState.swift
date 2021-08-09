@@ -26,7 +26,7 @@ func walletReducer(
             return environment.walletService.fetch()
                 .subscribe(on: DispatchQueue.main)
                 .map { WalletViewActions.append(wallets: $0) }
-                .catch { Just(WalletViewActions.error(error: $0.localizedDescription)) }
+                .catch { Just(WalletViewActions.error(error: $0)) }
                 .eraseToAnyPublisher()
         }
         break
@@ -36,7 +36,7 @@ func walletReducer(
             return environment.walletService.addWallet(wallet: wallet)
                 .subscribe(on: DispatchQueue.main)
                 .map { WalletViewActions.append(wallets: [$0]) }
-                .catch { Just(WalletViewActions.error(error: $0.localizedDescription)) }
+                .catch { Just(WalletViewActions.error(error: $0)) }
                 .eraseToAnyPublisher()
         }
         break
@@ -46,7 +46,7 @@ func walletReducer(
             return environment.walletService.editWallet(wallet: wallet)
                 .subscribe(on: DispatchQueue.main)
                 .map { WalletViewActions.update(wallet: $0) }
-                .catch { Just(WalletViewActions.error(error: $0.localizedDescription)) }
+                .catch { Just(WalletViewActions.error(error: $0)) }
                 .eraseToAnyPublisher()
         }
         break
@@ -64,7 +64,7 @@ func walletReducer(
         break
     case .error(let error):
         state.requestState = .finished
-        state.walletErrorMessage = error
+        state.walletErrorMessage = error.message ?? ""
         break
     }
     return Empty().eraseToAnyPublisher()
