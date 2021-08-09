@@ -18,18 +18,147 @@ protocol WalletServiceDelegate {
 
 struct WalletService: WalletServiceDelegate {
     func fetch() -> AnyPublisher<[Wallet], Error> {
-        Future<[Wallet], Error> { _ in
-        }.eraseToAnyPublisher()
+        Future<[Wallet], Error> { promise in
+            DispatchQueue.main.async {
+                Network.shared.apollo.fetch(query: FetchWalletsQuery()) { result in
+                    switch result {
+                    case .success(let response):
+                        guard let data = response.data?.wallets else { return }
+                        var wallets = [Wallet]()
+                        for wData in data {
+                            var transactions = [Transaction]()
+                            var wallet = Wallet(id: Int(wData.id) ?? 0,
+                                       title: wData.title,
+                                       currency: Currency(stringValue: wData.currency))
+                            if let tData = wData.transactions {
+                                for transaction in tData {
+                                    let category = transaction.category
+                                    transactions.append(
+                                        Transaction(
+                                            id: Int(transaction.id) ?? 0,
+                                            title: transaction.title ?? "",
+                                            category: Category(
+                                                id: Int(category?.id ?? "0") ?? 0,
+                                                title: category?.title ?? ""),
+                                            amount: transaction.amount,
+                                            wallet: wallet,
+                                            rawDateTime: transaction.datetime)
+                                    )
+                                }
+                            }
+                            wallet.transactions = transactions
+                            wallets.append(
+                                wallet
+                            )
+                        }
+                        promise(.success(wallets))
+                        break
+                    case .failure(let error):
+                        promise(.failure(error))
+                        break
+                    }
+                }
+            }
+        }
+        .eraseToAnyPublisher()
     }
     
     func addWallet(wallet: Wallet) -> AnyPublisher<Wallet, Error> {
-        Future<Wallet, Error> { _ in
-        }.eraseToAnyPublisher()
+        return Future<Wallet, Error> { promise in
+            DispatchQueue.main.async {
+                let input = AddWalletInput(
+                    title: wallet.title,
+                    currency: wallet.currency.hashValue,
+                    amount: wallet.total)
+                Network.shared.apollo
+                    .perform(
+                        mutation: AddWalletMutation(addWalletInput: input),
+                        resultHandler: { result in
+                            switch result {
+                            case .success(let response):
+                                guard let data = response.data?.addWallet else { return }
+                                var newWallet = Wallet(id: Int(data.id) ?? 0,
+                                           title: data.title,
+                                           currency: Currency(stringValue: data.currency),
+                                           targetRawDate: "")
+                                var transactions = [Transaction]()
+                                if let tData = data.transactions {
+                                    for transaction in tData {
+                                        let category = transaction.category
+                                        transactions.append(
+                                            Transaction(
+                                                id: Int(transaction.id) ?? 0,
+                                                title: transaction.title ?? "",
+                                                category: Category(
+                                                    id: Int(category?.id ?? "0") ?? 0,
+                                                    title: category?.title ?? ""),
+                                                amount: transaction.amount,
+                                                wallet: newWallet,
+                                                rawDateTime: transaction.datetime)
+                                        )
+                                    }
+                                }
+                                newWallet.transactions = transactions
+                                promise(.success(newWallet))
+                                break
+                            case .failure(let error):
+                                promise(.failure(error))
+                                break
+                            }
+                        }
+                    )
+            }
+        }
+        .eraseToAnyPublisher()
     }
     
     func editWallet(wallet: Wallet) -> AnyPublisher<Wallet, Error> {
-        Future<Wallet, Error> { _ in
-        }.eraseToAnyPublisher()
+        return Future<Wallet, Error> { promise in
+            DispatchQueue.main.async {
+                let input = EditWalletInput(
+                    id: "\(wallet.id)",
+                    title: wallet.title,
+                    currency: 3)
+                Network.shared.apollo
+                    .perform(
+                        mutation: EditWalletMutation(editWalletInput: input),
+                        resultHandler: { result in
+                            switch result {
+                            case .success(let response):
+                                guard let data = response.data?.editWallet else { return }
+                                var editWallet = Wallet(id: Int(data.id) ?? 0,
+                                                        title: data.title,
+                                                        currency: Currency(stringValue: data.currency),
+                                                        targetRawDate: "")
+                                var transactions = [Transaction]()
+                                if let tData = data.transactions {
+                                    for transaction in tData {
+                                        let category = transaction.category
+                                        transactions.append(
+                                            Transaction(
+                                                id: Int(transaction.id) ?? 0,
+                                                title: transaction.title ?? "",
+                                                category: Category(
+                                                    id: Int(category?.id ?? "0") ?? 0,
+                                                    title: category?.title ?? ""),
+                                                amount: transaction.amount,
+                                                wallet: editWallet,
+                                                rawDateTime: transaction.datetime)
+                                        )
+                                    }
+                                }
+                                editWallet.transactions = transactions
+                                promise(.success(editWallet))
+                                break
+                            case .failure(let error):
+                                promise(.failure(error))
+                                break
+                            }
+                        }
+                    )
+            }
+        }
+        .eraseToAnyPublisher()
     }
     
 }

@@ -101,6 +101,9 @@
 		2952CC54267B49950038A6C5 /* CardPageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2952CC4F267B49950038A6C5 /* CardPageControlView.swift */; };
 		2952CC5E267B4B520038A6C5 /* AddNewWalletPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2952CC5C267B4B520038A6C5 /* AddNewWalletPage.swift */; };
 		2952CC68267B5D920038A6C5 /* OptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2952CC67267B5D920038A6C5 /* OptionView.swift */; };
+		295D970B26C0C8DE00AB19CF /* FetchWallet.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 295D970A26C0C8DE00AB19CF /* FetchWallet.graphql */; };
+		295D970F26C0C90800AB19CF /* EditWallet.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 295D970E26C0C90800AB19CF /* EditWallet.graphql */; };
+		295D971326C0C91F00AB19CF /* AddWallet.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 295D971226C0C91F00AB19CF /* AddWallet.graphql */; };
 		29611D7D265F69F80076568D /* SelectedDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29611D7C265F69F80076568D /* SelectedDayView.swift */; };
 		297EEB9126A03671001BF88F /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297EEB9026A03671001BF88F /* UIApplication+Extension.swift */; };
 		298536F32660DBAA0024A25C /* NeumorphicEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298536F22660DBAA0024A25C /* NeumorphicEffect.swift */; };
@@ -319,6 +322,9 @@
 		2952CC4F267B49950038A6C5 /* CardPageControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPageControlView.swift; sourceTree = "<group>"; };
 		2952CC5C267B4B520038A6C5 /* AddNewWalletPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewWalletPage.swift; sourceTree = "<group>"; };
 		2952CC67267B5D920038A6C5 /* OptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionView.swift; sourceTree = "<group>"; };
+		295D970A26C0C8DE00AB19CF /* FetchWallet.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = FetchWallet.graphql; sourceTree = "<group>"; };
+		295D970E26C0C90800AB19CF /* EditWallet.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = EditWallet.graphql; sourceTree = "<group>"; };
+		295D971226C0C91F00AB19CF /* AddWallet.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = AddWallet.graphql; sourceTree = "<group>"; };
 		29611D7C265F69F80076568D /* SelectedDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDayView.swift; sourceTree = "<group>"; };
 		297EEB9026A03671001BF88F /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		298536F22660DBAA0024A25C /* NeumorphicEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicEffect.swift; sourceTree = "<group>"; };
@@ -657,6 +663,8 @@
 			isa = PBXGroup;
 			children = (
 				16CCE72F264F78B000345778 /* SampleSignInAndSignUp.graphql */,
+				295D971226C0C91F00AB19CF /* AddWallet.graphql */,
+				295D970E26C0C90800AB19CF /* EditWallet.graphql */,
 				7A9741F12670639F00747CF2 /* SignInMutation.graphql */,
 				7A9741EF2670609E00747CF2 /* SignUpMutation.graphql */,
 			);
@@ -943,6 +951,7 @@
 			isa = PBXGroup;
 			children = (
 				24CAF60B2681E6AC00CEBD48 /* FetchUserProfile.graphql */,
+				295D970A26C0C8DE00AB19CF /* FetchWallet.graphql */,
 			);
 			path = Queries;
 			sourceTree = "<group>";
@@ -1383,8 +1392,11 @@
 				7A9741F22670639F00747CF2 /* SignInMutation.graphql in Resources */,
 				24CAF60C2681E6AC00CEBD48 /* FetchUserProfile.graphql in Resources */,
 				163E5932260CB89100E54401 /* Images.xcassets in Resources */,
+				295D970B26C0C8DE00AB19CF /* FetchWallet.graphql in Resources */,
+				295D971326C0C91F00AB19CF /* AddWallet.graphql in Resources */,
 				7A9741F02670609E00747CF2 /* SignUpMutation.graphql in Resources */,
 				16CCE730264F78B000345778 /* SampleSignInAndSignUp.graphql in Resources */,
+				295D970F26C0C90800AB19CF /* EditWallet.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
