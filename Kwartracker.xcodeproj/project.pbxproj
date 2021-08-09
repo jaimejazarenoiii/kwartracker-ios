@@ -106,6 +106,9 @@
 		295D971326C0C91F00AB19CF /* AddWallet.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 295D971226C0C91F00AB19CF /* AddWallet.graphql */; };
 		295D971C26C0CC9F00AB19CF /* MockWalletServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295D971B26C0CC9F00AB19CF /* MockWalletServiceClient.swift */; };
 		295D972026C0CCC500AB19CF /* WalletTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295D971F26C0CCC500AB19CF /* WalletTest.swift */; };
+		295D972B26C0F54800AB19CF /* EditWalletPage+Fields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295D972826C0F54800AB19CF /* EditWalletPage+Fields.swift */; };
+		295D972C26C0F54800AB19CF /* EditWalletPage+Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295D972926C0F54800AB19CF /* EditWalletPage+Options.swift */; };
+		295D972D26C0F54800AB19CF /* EditWalletPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295D972A26C0F54800AB19CF /* EditWalletPage.swift */; };
 		29611D7D265F69F80076568D /* SelectedDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29611D7C265F69F80076568D /* SelectedDayView.swift */; };
 		297EEB9126A03671001BF88F /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297EEB9026A03671001BF88F /* UIApplication+Extension.swift */; };
 		298536F32660DBAA0024A25C /* NeumorphicEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298536F22660DBAA0024A25C /* NeumorphicEffect.swift */; };
@@ -329,6 +332,9 @@
 		295D971226C0C91F00AB19CF /* AddWallet.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = AddWallet.graphql; sourceTree = "<group>"; };
 		295D971B26C0CC9F00AB19CF /* MockWalletServiceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWalletServiceClient.swift; sourceTree = "<group>"; };
 		295D971F26C0CCC500AB19CF /* WalletTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTest.swift; sourceTree = "<group>"; };
+		295D972826C0F54800AB19CF /* EditWalletPage+Fields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditWalletPage+Fields.swift"; sourceTree = "<group>"; };
+		295D972926C0F54800AB19CF /* EditWalletPage+Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditWalletPage+Options.swift"; sourceTree = "<group>"; };
+		295D972A26C0F54800AB19CF /* EditWalletPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditWalletPage.swift; sourceTree = "<group>"; };
 		29611D7C265F69F80076568D /* SelectedDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDayView.swift; sourceTree = "<group>"; };
 		297EEB9026A03671001BF88F /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		298536F22660DBAA0024A25C /* NeumorphicEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicEffect.swift; sourceTree = "<group>"; };
@@ -1010,6 +1016,16 @@
 			path = "Add New Wallet";
 			sourceTree = "<group>";
 		};
+		295D972726C0F54800AB19CF /* Edit Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				295D972826C0F54800AB19CF /* EditWalletPage+Fields.swift */,
+				295D972926C0F54800AB19CF /* EditWalletPage+Options.swift */,
+				295D972A26C0F54800AB19CF /* EditWalletPage.swift */,
+			);
+			path = "Edit Wallet";
+			sourceTree = "<group>";
+		};
 		298536F12660DB8A0024A25C /* Neumorphic Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1031,6 +1047,7 @@
 		29AE102B262EAF3D00B383CF /* Wallet Page */ = {
 			isa = PBXGroup;
 			children = (
+				295D972726C0F54800AB19CF /* Edit Wallet */,
 				2952CC5B267B4B520038A6C5 /* Add New Wallet */,
 				2952CC49267B49950038A6C5 /* Card Views */,
 				29464F5826380F3400E6E082 /* WalletCardView+ActionButton.swift */,
@@ -1554,6 +1571,7 @@
 				297EEB9126A03671001BF88F /* UIApplication+Extension.swift in Sources */,
 				299452E4267B20240002C5E3 /* PopupConfirmationView.swift in Sources */,
 				299452E1267B20190002C5E3 /* TransactionRow.swift in Sources */,
+				295D972B26C0F54800AB19CF /* EditWalletPage+Fields.swift in Sources */,
 				299452DC267B1FFB0002C5E3 /* Category.swift in Sources */,
 				299452D7267B1FE90002C5E3 /* Imageable.swift in Sources */,
 				299452D2267B1FD20002C5E3 /* FieldType.swift in Sources */,
@@ -1652,10 +1670,12 @@
 				2952CC68267B5D920038A6C5 /* OptionView.swift in Sources */,
 				7AD9B8812626F17400CF0EA6 /* SignInContentView.swift in Sources */,
 				29F04570265CA33300842C8B /* PlaceholderStyle.swift in Sources */,
+				295D972D26C0F54800AB19CF /* EditWalletPage.swift in Sources */,
 				7A9716FE267C496400D106AF /* AuthenticationViewAction.swift in Sources */,
 				7A971700267C4A8300D106AF /* UserAuthInfo.swift in Sources */,
 				29F32986265BAA2300C1F807 /* CalendarTableView.swift in Sources */,
 				2952CC54267B49950038A6C5 /* CardPageControlView.swift in Sources */,
+				295D972C26C0F54800AB19CF /* EditWalletPage+Options.swift in Sources */,
 				29F3297E265BA63B00C1F807 /* DayView.swift in Sources */,
 				7AB1B91E26438C7C00853FAC /* RoundedCornerRectangle.swift in Sources */,
 				7A734D92262FFAA900557EF7 /* BWNeumorphicRectangle.swift in Sources */,

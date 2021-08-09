@@ -12,7 +12,7 @@ extension WalletCardView {
         HStack {
             HStack {
                 NavigationLink(
-                    destination: AddNewWalletPage() // will change to edit later
+                    destination: EditWalletPage(wallet: wallets[page - 1])
                         .environmentObject(store),
                     isActive: $editToggle) {
                     Button(action: {

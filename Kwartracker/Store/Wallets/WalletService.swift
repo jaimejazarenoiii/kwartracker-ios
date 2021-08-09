@@ -129,11 +129,12 @@ struct WalletService: WalletServiceDelegate {
     
     func editWallet(wallet: Wallet) -> AnyPublisher<Wallet, GraphQLError> {
         return Future<Wallet, GraphQLError> { promise in
+            let currency = wallet.currency ?? Currency.philippinePeso
             DispatchQueue.main.async {
                 let input = EditWalletInput(
                     id: "\(wallet.id)",
                     title: wallet.title,
-                    currency: 3)
+                    currency: currency.rawValue.id)
                 Network.shared.apollo
                     .perform(
                         mutation: EditWalletMutation(editWalletInput: input),
