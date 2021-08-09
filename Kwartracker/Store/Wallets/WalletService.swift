@@ -12,7 +12,7 @@ import SwiftUI
 
 protocol WalletServiceDelegate {
     func fetch() -> AnyPublisher<[Wallet], Error>
-    func addWallet(wallet: Wallet) -> AnyPublisher<Wallet, Error>
+    func addWallet(wallet: Wallet) -> AnyPublisher<Wallet, GraphQLError>
     func editWallet(wallet: Wallet) -> AnyPublisher<Wallet, Error>
 }
 
@@ -63,20 +63,27 @@ struct WalletService: WalletServiceDelegate {
         .eraseToAnyPublisher()
     }
     
-    func addWallet(wallet: Wallet) -> AnyPublisher<Wallet, Error> {
-        return Future<Wallet, Error> { promise in
+    func addWallet(wallet: Wallet) -> AnyPublisher<Wallet, GraphQLError> {
+        return Future<Wallet, GraphQLError> { promise in
             DispatchQueue.main.async {
+                let currency = wallet.currency ?? Currency.philippinePeso
                 let input = AddWalletInput(
                     title: wallet.title,
-                    currency: wallet.currency.hashValue,
-                    amount: wallet.total)
+                    currency: currency.rawValue.id,
+                    amount: wallet.targetAmount)
                 Network.shared.apollo
                     .perform(
                         mutation: AddWalletMutation(addWalletInput: input),
                         resultHandler: { result in
                             switch result {
                             case .success(let response):
-                                guard let data = response.data?.addWallet else { return }
+                                guard let data = response.data?.addWallet else {
+                                    if response.errors != nil {
+                                        let first = response.errors?.first
+                                        promise(.failure(first!))
+                                    }
+                                    return
+                                }
                                 var newWallet = Wallet(id: Int(data.id) ?? 0,
                                            title: data.title,
                                            currency: Currency(stringValue: data.currency),
@@ -102,7 +109,8 @@ struct WalletService: WalletServiceDelegate {
                                 promise(.success(newWallet))
                                 break
                             case .failure(let error):
-                                promise(.failure(error))
+                                let err = GraphQLError(["message": error.localizedDescription])
+                                promise(.failure(err))
                                 break
                             }
                         }

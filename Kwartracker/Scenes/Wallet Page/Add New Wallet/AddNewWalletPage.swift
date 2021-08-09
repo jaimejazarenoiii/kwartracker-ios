@@ -25,6 +25,7 @@ struct AddNewWalletPage: View {
     @State internal var calendarPresented: Bool = false
     @State var transactionFieldType: TransactionFieldType = .dateRange
     
+    private let loaderSize: CGFloat = 200
     internal let spacing: CGFloat = 30
     internal let disableOpacityValue: Double = 0.48
     internal let enableOpacityValue: Double = 1
@@ -47,11 +48,17 @@ struct AddNewWalletPage: View {
     }
     
     var body: some View {
-        ZStack {
-            MainBody
-            OptionAlert
-     
-        }.navigationBarHidden(true)
+        if store.state.walletState.requestState.isRequesting {
+            ActivityIndicator()
+                .frame(width: loaderSize, height: loaderSize)
+                .foregroundColor(Color(Asset.Colors.teal.color))
+        } else {
+            ZStack {
+                MainBody
+                OptionAlert
+         
+            }.navigationBarHidden(true)
+        }
     }
     
     var MainBody: some View {
@@ -70,7 +77,7 @@ struct AddNewWalletPage: View {
             } rightBarViewContent: {
                 Button(action: {
                     if isSaveButtonEnabled {
-                        buttonToggle.toggle()
+                        addWalletAction()
                     }
                 }, label: {
                     Text(L10n.Button.Label.save)
@@ -94,7 +101,7 @@ struct AddNewWalletPage: View {
                         .frame(height: spacing)
                     Fields
                 }
-                .onTapGesture { 
+                .onTapGesture {
                     UIApplication.shared.endEditing()
                 }
             }
@@ -105,5 +112,20 @@ struct AddNewWalletPage: View {
             )
             .adaptsToKeyboard()
         }
+    }
+    
+    private func addWalletAction() {
+        let currency = Currency(stringValue: walletCurrency!) ?? Currency.philippinePeso
+        let newWallet = Wallet(id: 0,
+                               title: walletNameValue,
+                               type: WalletType.getType(walletTypeValue ?? ""),
+                               currency: currency,
+                               targetAmount: targetAmountValue.toDoubleWith(currency: currency.rawValue.locale),
+                               targetRawDate: "",
+                               savedTo: "",
+                               includeToOverallTotalBalance: false,
+                               transactions: [])
+        store.send(.walletView(action: .add(wallet: newWallet)))
+        presentationMode.wrappedValue.dismiss()
     }
 }

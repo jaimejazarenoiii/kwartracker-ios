@@ -75,6 +75,9 @@ struct WalletPageView: View {
                     }.background(Color(Asset.Colors.solitudeGrey.color))
                 }
             }
+            .onAppear(perform: {
+                store.send(.walletView(action: .fetch))
+            })
             .navigationBarHidden(true)
         }
     }
