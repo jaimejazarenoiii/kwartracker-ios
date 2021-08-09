@@ -104,6 +104,8 @@
 		295D970B26C0C8DE00AB19CF /* FetchWallet.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 295D970A26C0C8DE00AB19CF /* FetchWallet.graphql */; };
 		295D970F26C0C90800AB19CF /* EditWallet.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 295D970E26C0C90800AB19CF /* EditWallet.graphql */; };
 		295D971326C0C91F00AB19CF /* AddWallet.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 295D971226C0C91F00AB19CF /* AddWallet.graphql */; };
+		295D971C26C0CC9F00AB19CF /* MockWalletServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295D971B26C0CC9F00AB19CF /* MockWalletServiceClient.swift */; };
+		295D972026C0CCC500AB19CF /* WalletTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295D971F26C0CCC500AB19CF /* WalletTest.swift */; };
 		29611D7D265F69F80076568D /* SelectedDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29611D7C265F69F80076568D /* SelectedDayView.swift */; };
 		297EEB9126A03671001BF88F /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297EEB9026A03671001BF88F /* UIApplication+Extension.swift */; };
 		298536F32660DBAA0024A25C /* NeumorphicEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298536F22660DBAA0024A25C /* NeumorphicEffect.swift */; };
@@ -325,6 +327,8 @@
 		295D970A26C0C8DE00AB19CF /* FetchWallet.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = FetchWallet.graphql; sourceTree = "<group>"; };
 		295D970E26C0C90800AB19CF /* EditWallet.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = EditWallet.graphql; sourceTree = "<group>"; };
 		295D971226C0C91F00AB19CF /* AddWallet.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = AddWallet.graphql; sourceTree = "<group>"; };
+		295D971B26C0CC9F00AB19CF /* MockWalletServiceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWalletServiceClient.swift; sourceTree = "<group>"; };
+		295D971F26C0CCC500AB19CF /* WalletTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTest.swift; sourceTree = "<group>"; };
 		29611D7C265F69F80076568D /* SelectedDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDayView.swift; sourceTree = "<group>"; };
 		297EEB9026A03671001BF88F /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		298536F22660DBAA0024A25C /* NeumorphicEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicEffect.swift; sourceTree = "<group>"; };
@@ -503,6 +507,7 @@
 			isa = PBXGroup;
 			children = (
 				163E593F260CB89100E54401 /* KwartrackerTests.swift */,
+				295D971F26C0CCC500AB19CF /* WalletTest.swift */,
 				163E5941260CB89100E54401 /* Info.plist */,
 				166A9CC22643775C00805A16 /* TransactionsTests.swift */,
 				7AEFD58026806A4100EAD90F /* AuthenticationViewStateTests.swift */,
@@ -1173,6 +1178,7 @@
 			isa = PBXGroup;
 			children = (
 				7AEFD57726803B0000EAD90F /* MockAuthServiceClient.swift */,
+				295D971B26C0CC9F00AB19CF /* MockWalletServiceClient.swift */,
 				24CAF61A26832D6E00CEBD48 /* MockUserProfileServiceClient.swift */,
 			);
 			path = Mocks;
@@ -1691,6 +1697,8 @@
 				166A9CC32643775C00805A16 /* TransactionsTests.swift in Sources */,
 				7AEFD57826803B0000EAD90F /* MockAuthServiceClient.swift in Sources */,
 				163E5940260CB89100E54401 /* KwartrackerTests.swift in Sources */,
+				295D972026C0CCC500AB19CF /* WalletTest.swift in Sources */,
+				295D971C26C0CC9F00AB19CF /* MockWalletServiceClient.swift in Sources */,
 				7AEFD58126806A4100EAD90F /* AuthenticationViewStateTests.swift in Sources */,
 				24CAF61B26832D6E00CEBD48 /* MockUserProfileServiceClient.swift in Sources */,
 				7AEFD58126806A4100EAD90F /* AuthenticationViewStateTests.swift in Sources */,
