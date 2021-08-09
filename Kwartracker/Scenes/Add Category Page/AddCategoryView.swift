@@ -13,34 +13,70 @@ struct AddCategoryView: View {
     @State var inputIsParent = true
 
     @State private var isAddCategoryLinkActive: Bool = false
+    @State private var showCategoryOptions = false
+    @State private var selectedCategoryGroup: CategoryGroup?
+    @State private var selectedCategoryGroupId: String?
     @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     @EnvironmentObject private var store: AppStore
 
     private let addCategoryHeaderTop: CGFloat = 10
+    private var categoryGroups: [CategoryGroup] {
+        store.state.categoryState.categoryGroups.map { group -> CategoryGroup in
+            var groupOnly = group
+            groupOnly.categories = []
+            return groupOnly
+        }
+    }
+    private var categoryGroupOptions: [OptionItem] {
+        categoryGroups.map { OptionItem(description: $0.title, value: "\($0.id)") }
+    }
 
     var body: some View {
-        SkeletalView(header: {
-            AddCategoryHeaderView(
-                title: $title,
-                presentationMode: presentationMode,
-                isAddCategoryLinkActive: $isAddCategoryLinkActive,
-                isSaveButtonDisabled: .constant(inputCategoryName.isEmpty),
-                addCategoryAction: addCategory
-            )
-            .padding(.top, addCategoryHeaderTop)
-        }, body: {
-            AddCategoryForm(
-                inputCategoryName: $inputCategoryName,
-                makeParent: $inputIsParent
-            )
-        })
+        ZStack {
+            SkeletalView(header: {
+                AddCategoryHeaderView(
+                    title: $title,
+                    presentationMode: presentationMode,
+                    isAddCategoryLinkActive: $isAddCategoryLinkActive,
+                    isSaveButtonDisabled: .constant(inputCategoryName.isEmpty),
+                    addCategoryAction: addCategory
+                )
+                .padding(.top, addCategoryHeaderTop)
+            }, body: {
+                AddCategoryForm(
+                    inputCategoryName: $inputCategoryName,
+                    makeParent: $inputIsParent,
+                    showCategoryOptions: $showCategoryOptions,
+                    selectedParentCategory: getSelectedCategoryGroup()
+                )
+            })
+
+            Group {
+                if showCategoryOptions {
+                    OptionView(
+                        presented: $showCategoryOptions,
+                        selectedItem: $selectedCategoryGroupId,
+                        options: categoryGroupOptions
+                    )
+                    .transition(.opacity)
+                }
+            }
+        }
         .navigationBarHidden(true)
     }
 
     private func addCategory() {
         if inputIsParent {
             store.send(.category(action: .parentCategoryAddRequest(title: inputCategoryName)))
+        } else {
+            guard let groupId = getSelectedCategoryGroup()?.id, groupId > 0 else { return }
+            store.send(.category(action: .addCategoryRequest(title: inputCategoryName, categoryGroupId: groupId)))
         }
+    }
+
+    private func getSelectedCategoryGroup() -> CategoryGroup? {
+        guard let groupId = Int(selectedCategoryGroupId ?? "") else { return nil }
+        return categoryGroups.first(where: { $0.id == groupId })
     }
 }
 
@@ -66,15 +102,6 @@ private struct AddCategoryHeaderView: View {
             }
             .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.teal.color))
         } rightBarViewContent: {
-//            Button(action: {
-//            }, label: {
-//                let colorOpacity = isSaveButtonDisabled ? saveButtonDisabledOpacity : saveButtonEnabledOpacity
-//                Text(L10n.EditProfilePage.NavigationButtonItem.save)
-//                    .fontWeight(.bold)
-//                    .foregroundColor(.white).opacity(colorOpacity)
-//            })
-//            .frame(width: backButtonSize, alignment: .center)
-//            .disabled(isSaveButtonDisabled)
             Button(action: addCategoryAction, label: {
                 let colorOpacity = isSaveButtonDisabled ? saveButtonDisabledOpacity : saveButtonEnabledOpacity
                 Text(L10n.EditProfilePage.NavigationButtonItem.save)
@@ -90,6 +117,8 @@ private struct AddCategoryHeaderView: View {
 private struct AddCategoryForm: View {
     @Binding var inputCategoryName: String
     @Binding var makeParent: Bool
+    @Binding var showCategoryOptions: Bool
+    var selectedParentCategory: CategoryGroup?
 
     private let cornerRadius: CGFloat = 30
     private let rectangleSize: CGFloat = 100
@@ -120,6 +149,7 @@ private struct AddCategoryForm: View {
                         .font(.footnote)
                         .foregroundColor(Color(Asset.Colors.spindleGrey.color))
                         .padding(.top)
+
                     Toggle("", isOn: $makeParent)
                         .toggleStyle(
                             CustomToggle(
@@ -127,6 +157,17 @@ private struct AddCategoryForm: View {
                                 offText: L10n.EditCategoryPage.ContentText.toggleOff
                             )
                         )
+
+                    if !makeParent {
+                        SelectableFieldForm(defaultSelectionType: .category,
+                                            label: "Select parent category",
+                                            selectLabel: selectedParentCategory == nil ? "Parent category name" :
+                                                (selectedParentCategory?.title ?? ""),
+                                            showOptions: $showCategoryOptions,
+                                            transactionSelection: .constant(.category))
+                            .padding(.top, 10)
+                    }
+
                 }
                 .padding()
             }

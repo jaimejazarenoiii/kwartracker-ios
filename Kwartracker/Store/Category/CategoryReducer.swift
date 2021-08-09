@@ -46,6 +46,20 @@ func categoryReducer(
         state.addCategoryIsRequesting = false
         state.addCategoryErrorMessage = error.localizedDescription
         break
+    case .addCategoryRequest(let title, let categoryGroupId):
+        state.addCategoryIsRequesting = true
+        return environment.categoryService.addCategory(categoryGroupId: categoryGroupId, title: title)
+            .map { CategoryAction.addCategoryHandleResponse(response: $0) }
+            .catch { Just(.addCategoryHandleError(error: $0)) }
+            .eraseToAnyPublisher()
+    case .addCategoryHandleResponse:
+        state.addCategoryIsRequesting = false
+        state.categoryGroups = environment.categoryService.getAllCategoryGroups()
+        break
+    case .addCategoryHandleError(let error):
+        state.addCategoryIsRequesting = false
+        state.addCategoryErrorMessage = error.localizedDescription
+        break
     }
     return Empty().eraseToAnyPublisher()
 }

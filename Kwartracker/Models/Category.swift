@@ -59,7 +59,7 @@ extension Array where Element == Category {
 
 extension Category {
     init(category: CategoryGroupsQuery.Data.CategoryGroup.Category) {
-        id = category.id.hashValue
+        id = Int(category.id) ?? 0
         title = category.title ?? ""
         budgets = []
         transactions = []
