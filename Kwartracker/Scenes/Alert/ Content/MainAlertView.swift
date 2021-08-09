@@ -20,7 +20,7 @@ struct MainAlertView: View {
             }, actionLabel: .success)
         }
         .fullScreenCover(isPresented: $willMoveToNextScreen) {
-            MyProfileView()
+            MyProfileView(navigationBackAction: {})
         }
         .padding(.all, 20)
         .frame(width: 220, height: 240, alignment: .center)
