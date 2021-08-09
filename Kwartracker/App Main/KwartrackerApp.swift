@@ -9,17 +9,20 @@ import SwiftUI
 
 @main
 struct KwartrackerApp: App {
-    let store: AppStore = AppStore(initialState: .init(),
-                                   reducer: AppReducer.appReducer,
-                                   environment: World())
-
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @AppStorage("isLoggedIn") private var isLoggedIn: Bool = false
-    
+
+    let store: AppStore = AppStore(
+        initialState: .init(),
+        reducer: AppReducer.appReducer,
+        environment: World()
+    )
+
     var body: some Scene {
         WindowGroup {
             if isLoggedIn {
-                // For the meantime, show text view
-                Text("You are logged in.")
+                HomeView()
+                    .environmentObject(store)
             } else {
                 SignInView()
                     .environmentObject(store)

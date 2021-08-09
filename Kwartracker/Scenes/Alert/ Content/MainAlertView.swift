@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct MainAlertView: View {
-    
+    @State private var willMoveToNextScreen = false
+
     let dialogStatus: DialogStatus
     
     var body: some View {
         VStack {
             MessageView(state: dialogStatus)
-            ButtonView(actionHandler: {}, actionLabel: .success)
+            ButtonView(actionHandler: {
+                willMoveToNextScreen.toggle()
+            }, actionLabel: .success)
+        }
+        .fullScreenCover(isPresented: $willMoveToNextScreen) {
+            MyProfileView()
         }
         .padding(.all, 20)
         .frame(width: 220, height: 240, alignment: .center)

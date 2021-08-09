@@ -12,4 +12,5 @@ import Foundation
 struct World {
     var walletService: WalletServiceDelegate = WalletService()
     var authenticationService: AuthenticationServiceDelegate = AuthenticationService()
+    var userProfileService: UserProfileServiceDelegate = UserProfileService()
 }
