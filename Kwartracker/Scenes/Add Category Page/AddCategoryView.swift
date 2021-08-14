@@ -57,7 +57,10 @@ struct AddCategoryView: View {
                         selectedItem: $selectedCategoryGroupId,
                         options: categoryGroupOptions
                     )
+                    .background(BackgroundBlurView())
+                    .ignoresSafeArea()
                     .transition(.opacity)
+                    .animation(.easeIn)
                 }
             }
         }
