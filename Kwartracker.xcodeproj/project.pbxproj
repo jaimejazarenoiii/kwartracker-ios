@@ -77,6 +77,8 @@
 		16CCE74D2651E57700345778 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CCE74C2651E57700345778 /* Network.swift */; };
 		16CD1B03264901F100272FCA /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 16CD1B02264901F100272FCA /* Apollo */; };
 		16CD1B05264901F100272FCA /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 16CD1B04264901F100272FCA /* ApolloWebSocket */; };
+		16F4DC2626C7B071004E00BB /* EditParentCategory.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16F4DC2526C7B071004E00BB /* EditParentCategory.graphql */; };
+		16F4DC2A26C7B0FC004E00BB /* EditCategory.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16F4DC2926C7B0FC004E00BB /* EditCategory.graphql */; };
 		244A3B7E263A644E00D8B08B /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244A3B7D263A644E00D8B08B /* EditProfileView.swift */; };
 		244A3B81263A652500D8B08B /* EditProfileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244A3B80263A652500D8B08B /* EditProfileContentView.swift */; };
 		246D7236265B54CE0011F960 /* BirthdateField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246D7235265B54CE0011F960 /* BirthdateField.swift */; };
@@ -307,6 +309,8 @@
 		16CCE72F264F78B000345778 /* SampleSignInAndSignUp.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SampleSignInAndSignUp.graphql; sourceTree = "<group>"; };
 		16CCE7482651E53400345778 /* KeyChainKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainKeys.swift; sourceTree = "<group>"; };
 		16CCE74C2651E57700345778 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		16F4DC2526C7B071004E00BB /* EditParentCategory.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = EditParentCategory.graphql; sourceTree = "<group>"; };
+		16F4DC2926C7B0FC004E00BB /* EditCategory.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = EditCategory.graphql; sourceTree = "<group>"; };
 		16FC4F4A265C7F6700D1B7E2 /* CircleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonStyle.swift; sourceTree = "<group>"; };
 		16FC4F50265C7F9D00D1B7E2 /* LinearGradient+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinearGradient+Extensions.swift"; sourceTree = "<group>"; };
 		242950A526578AF10075C054 /* PopupConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupConfirmationView.swift; sourceTree = "<group>"; };
@@ -730,6 +734,8 @@
 				7A9741EF2670609E00747CF2 /* SignUpMutation.graphql */,
 				164C3C0926BE4B1C00745684 /* AddParentCategoryMutation.graphql */,
 				1695912926C122D400A2F97B /* AddCategoryMutation.graphql */,
+				16F4DC2526C7B071004E00BB /* EditParentCategory.graphql */,
+				16F4DC2926C7B0FC004E00BB /* EditCategory.graphql */,
 			);
 			path = Mutations;
 			sourceTree = "<group>";
@@ -1462,6 +1468,8 @@
 				164E988D2615C4BA00D84B7F /* Colors.xcassets in Resources */,
 				290CA1B2261EABE400239EA7 /* swiftgen.yml in Resources */,
 				164E97E82614AC2900D84B7F /* Localizable.strings in Resources */,
+				16F4DC2626C7B071004E00BB /* EditParentCategory.graphql in Resources */,
+				16F4DC2A26C7B0FC004E00BB /* EditCategory.graphql in Resources */,
 				163E5935260CB89100E54401 /* Preview Assets.xcassets in Resources */,
 				7A9741F22670639F00747CF2 /* SignInMutation.graphql in Resources */,
 				24CAF60C2681E6AC00CEBD48 /* FetchUserProfile.graphql in Resources */,

@@ -1,0 +1,10 @@
+mutation EditParentCategory($input: EditCategoryGroupInput!) {
+    editCategoryGroup(input: $input) {
+        id
+        title
+        categories {
+            id
+            title
+        }
+    }
+}
