@@ -39,8 +39,10 @@ func categoryReducer(
             .catch { Just(.parentCategoryHandleError(error: $0)) }
             .eraseToAnyPublisher()
     case .parentCategoryHandleResponse:
+        state.addCategoryIsDone = true
         state.addCategoryIsRequesting = false
-        state.categoryGroups = environment.categoryService.getAllCategoryGroups()   
+        state.categoryGroups = environment.categoryService.getAllCategoryGroups()
+        state.isAddCategoryLinkActive = false
         break
     case .parentCategoryHandleError(let error):
         state.addCategoryIsRequesting = false
@@ -55,10 +57,15 @@ func categoryReducer(
     case .addCategoryHandleResponse:
         state.addCategoryIsRequesting = false
         state.categoryGroups = environment.categoryService.getAllCategoryGroups()
+        state.addCategoryIsDone = true
+        state.isAddCategoryLinkActive = false
         break
     case .addCategoryHandleError(let error):
         state.addCategoryIsRequesting = false
         state.addCategoryErrorMessage = error.localizedDescription
+        break
+    case .addCategoryLinkActive(let active):
+        state.isAddCategoryLinkActive = active
         break
     }
     return Empty().eraseToAnyPublisher()

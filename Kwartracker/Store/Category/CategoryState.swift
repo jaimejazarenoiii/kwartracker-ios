@@ -17,4 +17,6 @@ struct CategoryState {
     // Add category
     var addCategoryIsRequesting = false
     var addCategoryErrorMessage: String?
+    var addCategoryIsDone = false
+    var isAddCategoryLinkActive = false
 }

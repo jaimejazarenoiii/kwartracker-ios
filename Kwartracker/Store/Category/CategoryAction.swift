@@ -21,4 +21,5 @@ enum CategoryAction {
     case addCategoryRequest(title: String, categoryGroupId: Int)
     case addCategoryHandleResponse(response: Category?)
     case addCategoryHandleError(error: ApiError)
+    case addCategoryLinkActive(active: Bool)
 }

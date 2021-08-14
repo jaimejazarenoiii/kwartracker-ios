@@ -11,12 +11,12 @@ struct AddCategoryView: View {
     @State var title = "Add Category"
     @State var inputCategoryName = ""
     @State var inputIsParent = true
+    var backAction: (() -> Void)
 
     @State private var isAddCategoryLinkActive: Bool = false
     @State private var showCategoryOptions = false
     @State private var selectedCategoryGroup: CategoryGroup?
     @State private var selectedCategoryGroupId: String?
-    @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     @EnvironmentObject private var store: AppStore
 
     private let addCategoryHeaderTop: CGFloat = 10
@@ -36,9 +36,8 @@ struct AddCategoryView: View {
             SkeletalView(header: {
                 AddCategoryHeaderView(
                     title: $title,
-                    presentationMode: presentationMode,
-                    isAddCategoryLinkActive: $isAddCategoryLinkActive,
                     isSaveButtonDisabled: .constant(inputCategoryName.isEmpty),
+                    backAction: backAction,
                     addCategoryAction: addCategory
                 )
                 .padding(.top, addCategoryHeaderTop)
@@ -82,9 +81,8 @@ struct AddCategoryView: View {
 
 private struct AddCategoryHeaderView: View {
     @Binding var title: String
-    @Binding var presentationMode: PresentationMode
-    @Binding var isAddCategoryLinkActive: Bool
     @Binding var isSaveButtonDisabled: Bool
+    var backAction: (() -> Void)
     var addCategoryAction: (() -> Void)
 
     private let imageSize: CGSize = CGSize(width: 10, height: 10)
@@ -94,9 +92,7 @@ private struct AddCategoryHeaderView: View {
 
     var body: some View {
         NavigationBarView(title: title) {
-            Button(action: {
-                $presentationMode.wrappedValue.dismiss()
-            }) {
+            Button(action: backAction) {
                 Image(uiImage: Asset.Images.arrowLeftIconWhite.image)
                     .frame(width: imageSize.width, height: imageSize.height)
             }
