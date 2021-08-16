@@ -9,12 +9,13 @@ import SwiftUI
 
 struct TopRightButtonView: View {
     let image: UIImage
+    var btnAction: (() -> ())
     private let buttonSize: CGFloat = 15
     private let buttonPadding: CGFloat = 13
 
     var body: some View {
         HStack {
-            Button(action: {}, label: {
+            Button(action: btnAction, label: {
                 Image(uiImage: image)
                     .resizable()
                     .frame(width: buttonSize, height: buttonSize, alignment: .center)
@@ -28,7 +29,7 @@ struct TopRightButtonView: View {
 
 struct EditButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        TopRightButtonView(image: Asset.Images.editIcon.image)
+        TopRightButtonView(image: Asset.Images.editIcon.image, btnAction: {})
             .previewLayout(.sizeThatFits)
     }
 }

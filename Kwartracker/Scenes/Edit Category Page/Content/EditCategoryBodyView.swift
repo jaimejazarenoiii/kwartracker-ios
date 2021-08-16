@@ -18,7 +18,7 @@ struct EditCategoryBodyView: View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
                 if !isParent {
-                    TopRightButtonView(image: Asset.Images.trashIcon.image)
+                    TopRightButtonView(image: Asset.Images.trashIcon.image, btnAction: {})
                 }
                 
                 VStack {

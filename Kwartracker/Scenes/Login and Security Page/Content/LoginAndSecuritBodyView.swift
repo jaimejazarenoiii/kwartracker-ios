@@ -10,7 +10,7 @@ import SwiftUI
 struct LoginAndSecuritBodyView: View {
     var body: some View {
         VStack {
-            TopRightButtonView(image: Asset.Images.editIcon.image)
+            TopRightButtonView(image: Asset.Images.editIcon.image, btnAction: {})
             LoginDetailsView()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
