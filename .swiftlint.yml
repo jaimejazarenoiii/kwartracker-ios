@@ -67,7 +67,9 @@ disabled_rules:
   - void_return
   - weak_delegate
   - xctfail_message
-line_length: 120
+line_length:
+  warning: 120
+  ignores_comments: true
 excluded:
   - Pods/
   - vendor/bundle/
