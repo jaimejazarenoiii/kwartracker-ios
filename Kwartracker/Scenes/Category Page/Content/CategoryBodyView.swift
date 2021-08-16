@@ -58,16 +58,15 @@ struct CategoryBodyView: View {
                 .padding([.leading, .trailing], 20)
             }
 
-            NavigationLink(
-                destination: CategoryDetailView(
-                    categoryGroup: selectedCategoryGroup,
-                    category: selectedCategory) {
-                    detailLinkIsActive = false
-                },
-                isActive: $detailLinkIsActive,
-                label: { EmptyView() }
-            )
-            .hidden()
+            NavigationLink(destination: CategoryDetailView(
+                            categoryGroup: selectedCategoryGroup,
+                            category: selectedCategory,
+                            backAction: {
+                                detailLinkIsActive = false
+                            }), isActive: $detailLinkIsActive) {
+                EmptyView()
+            }
+            .isDetailLink(false)
         }
         .onAppear(perform: fetchCategoryGroup)
     }
