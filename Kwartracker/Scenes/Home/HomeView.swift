@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var store: AppStore
     @State var showSidebar: Bool = false
     @State var selectedMenu: SideMenu = .home
 
@@ -29,9 +30,11 @@ struct HomeView: View {
             SideMenuView(selectedItem: $selectedMenu, showSidebar: $showSidebar)
         } content: {
             if selectedMenu == .myProfile {
-                MyProfileSideMenuView(showSidebar: $showSidebar)
+                MyProfileView { showSidebar = true }
             } else if selectedMenu == .settings {
-                SettingsView()
+                NavigationView {
+                    SettingsView { showSidebar = true }
+                }
             } else {
                 TransactionHistoryView(showSidebar: $showSidebar)
             }

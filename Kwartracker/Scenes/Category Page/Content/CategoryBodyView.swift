@@ -14,7 +14,9 @@ struct CategoryBodyView: View {
     @State var selectedData: (group: CategoryGroup, category: Category?)? = nil
 
     @State private var detailLinkIsActive = false
-    
+    @State private var selectedCategoryGroup: CategoryGroup = CategoryGroup(id: 0, title: "")
+    @State private var selectedCategory: Category?
+
     private let shadowRadius: CGFloat = 8
     private let shadowOffset = CGPoint(x: 6, y: 6)
     private let rectRadius: CGFloat = 17
@@ -34,13 +36,21 @@ struct CategoryBodyView: View {
                 ForEach(categoryGroupsResult(), id: \.id) { categoryGroup in
                     CategoryGroupView(
                         categoryGroup: categoryGroup,
-                        onSelect: { onSelect(categoryGroup: $0, category: nil) }
+                        onSelect: { _ in
+                            selectedCategoryGroup = categoryGroup
+                            selectedCategory = nil
+                            detailLinkIsActive = true
+                        }
                     )
                     .padding([.top, .bottom], 10)
                     if !categoryGroup.categories.isEmpty {
                         CategoriesView(
                             categories: categoryGroup.categories,
-                            onSelect: { onSelect(categoryGroup: nil, category: $0) }
+                            onSelect: {
+                                selectedCategoryGroup = categoryGroup
+                                selectedCategory = $0
+                                detailLinkIsActive = true
+                            }
                         )
                     }
                 }
@@ -49,8 +59,11 @@ struct CategoryBodyView: View {
             }
 
             NavigationLink(
-                // will change the destination to category detail view
-                destination: TransactionDetailView(transaction: .unitTestTransaction),
+                destination: CategoryDetailView(
+                    categoryGroup: selectedCategoryGroup,
+                    category: selectedCategory) {
+                    detailLinkIsActive = false
+                },
                 isActive: $detailLinkIsActive,
                 label: { EmptyView() }
             )
@@ -70,11 +83,6 @@ struct CategoryBodyView: View {
 
     private func performSearch() {
         DDLogInfo("[CategorySearch] perform search")
-    }
-
-    private func onSelect(categoryGroup: CategoryGroup?, category: Category?) {
-        debugPrint("test: \(categoryGroup) || \(category)")
-        detailLinkIsActive = true
     }
 }
 
