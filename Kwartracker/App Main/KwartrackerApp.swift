@@ -24,8 +24,7 @@ struct KwartrackerApp: App {
                 HomeView()
                     .environmentObject(store)
             } else {
-                SignInView()
-                    .environmentObject(store)
+                CategoryView().environmentObject(store)
             }
         }
     }
