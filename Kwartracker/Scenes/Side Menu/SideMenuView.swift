@@ -37,7 +37,7 @@ struct SideMenuView: View {
                 ForEach(SideMenu.sideMenuList, id: \.self) { item in
                     SideMenuRow(sideMenu: item, isSelected: selectedItemId == item)
                     .onTapGesture {
-                        if selectedItemId != item {
+                        if showSidebar {
                             showSidebar = false
                         }
                         selectedItemId = item
