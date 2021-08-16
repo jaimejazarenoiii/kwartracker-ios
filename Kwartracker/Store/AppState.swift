@@ -12,15 +12,13 @@ struct AppState {
     var walletState: WalletViewState
     var authState: AuthenticationViewState
     var userProfileState: UserProfileViewState
-    var categoryState: CategoryViewState
-    var categoryState1: CategoryState
+    var categoryState: CategoryState
 
     init() {
         transactionState = TransactionsViewState()
         walletState = WalletViewState()
         authState = AuthenticationViewState()
         userProfileState = UserProfileViewState()
-        categoryState = CategoryViewState()
-        categoryState1 = CategoryState()
+        categoryState = CategoryState()
     }
 }

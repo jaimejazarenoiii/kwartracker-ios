@@ -39,17 +39,9 @@ enum AppReducer {
             )
             .map(AppAction.userProfileView)
             .eraseToAnyPublisher()
-        case let .categoryView(action: action):
-            return categoryViewReducer(
-                state: &state.categoryState,
-                action: action,
-                environment: environment
-            )
-            .map(AppAction.categoryView)
-            .eraseToAnyPublisher()
         case let .category(action: action):
             return categoryReducer(
-                state: &state.categoryState1,
+                state: &state.categoryState,
                 action: action,
                 environment: environment
             )

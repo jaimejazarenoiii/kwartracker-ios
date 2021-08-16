@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SearchFieldView: View {
     var searchFieldPlaceholder: String = "Search..."
+    var onCommitAction: (() -> Void)
     @Binding var searchTerm: String
 
     private let rectangleCornerRadius: CGFloat = 15
@@ -33,14 +34,13 @@ struct SearchFieldView: View {
                 .shadow(color: whiteShadowColor, radius: shadowRadius, x: whiteShadowXY, y: whiteShadowXY)
                 .overlay(
                     HStack {
-                        TextField(
-                            searchFieldPlaceholder,
-                            text: $searchTerm
-                        )
+                        TextField(searchFieldPlaceholder,
+                                  text: $searchTerm,
+                                  onCommit: onCommitAction)
                         .background(Color.clear)
                         .frame(height: rectangleFrameHeight, alignment: .center)
                         .padding(.leading, textFieldLeadingPadding)
-                        .keyboardType(.default)
+                        .keyboardType(.webSearch)
 
                         Spacer()
 

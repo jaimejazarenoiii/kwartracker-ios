@@ -62,6 +62,10 @@
 		1683C9022629C76F00B1D4D8 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683C9012629C76F00B1D4D8 /* TransactionsView.swift */; };
 		16895014264AC06B00EED051 /* SelectableFieldForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16895013264AC06B00EED051 /* SelectableFieldForm.swift */; };
 		16895034264AC78100EED051 /* TextFieldForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16895033264AC78100EED051 /* TextFieldForm.swift */; };
+		168C8F6026BFAE4200419FDF /* CategoryGroups.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 168C8F5F26BFAE4200419FDF /* CategoryGroups.graphql */; };
+		168C8F6626BFDF5900419FDF /* CategoryGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C8F6526BFDF5900419FDF /* CategoryGroupView.swift */; };
+		168C8F6A26BFDFB400419FDF /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C8F6926BFDFB400419FDF /* CategoryRow.swift */; };
+		168C8F6E26BFDFF400419FDF /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C8F6D26BFDFF400419FDF /* CategoriesView.swift */; };
 		169DA46D2644C76F0063204F /* APIRequestState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169DA46C2644C76F0063204F /* APIRequestState.swift */; };
 		169DA4722644C8A60063204F /* CircularLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169DA4712644C8A60063204F /* CircularLoaderView.swift */; };
 		16C5C77D2635349F00F33B72 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C77C2635349F00F33B72 /* Transaction.swift */; };
@@ -283,6 +287,10 @@
 		1683C9132629C81100B1D4D8 /* LinearGradient+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinearGradient+Extensions.swift"; sourceTree = "<group>"; };
 		16895013264AC06B00EED051 /* SelectableFieldForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableFieldForm.swift; sourceTree = "<group>"; };
 		16895033264AC78100EED051 /* TextFieldForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldForm.swift; sourceTree = "<group>"; };
+		168C8F5F26BFAE4200419FDF /* CategoryGroups.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CategoryGroups.graphql; sourceTree = "<group>"; };
+		168C8F6526BFDF5900419FDF /* CategoryGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGroupView.swift; sourceTree = "<group>"; };
+		168C8F6926BFDFB400419FDF /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
+		168C8F6D26BFDFF400419FDF /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		169DA46C2644C76F0063204F /* APIRequestState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestState.swift; sourceTree = "<group>"; };
 		169DA4712644C8A60063204F /* CircularLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularLoaderView.swift; sourceTree = "<group>"; };
 		16C5C7772635347A00F33B72 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
@@ -1008,6 +1016,7 @@
 			isa = PBXGroup;
 			children = (
 				24CAF60B2681E6AC00CEBD48 /* FetchUserProfile.graphql */,
+				168C8F5F26BFAE4200419FDF /* CategoryGroups.graphql */,
 			);
 			path = Queries;
 			sourceTree = "<group>";
@@ -1187,6 +1196,9 @@
 				169DA4712644C8A60063204F /* CircularLoaderView.swift */,
 				16606D4A2647C0F9005F2CF5 /* NavigationBarView.swift */,
 				1673C22726AD9F6F009733F7 /* SearchFieldView.swift */,
+				168C8F6526BFDF5900419FDF /* CategoryGroupView.swift */,
+				168C8F6926BFDFB400419FDF /* CategoryRow.swift */,
+				168C8F6D26BFDFF400419FDF /* CategoriesView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1450,6 +1462,7 @@
 				163E5935260CB89100E54401 /* Preview Assets.xcassets in Resources */,
 				7A9741F22670639F00747CF2 /* SignInMutation.graphql in Resources */,
 				24CAF60C2681E6AC00CEBD48 /* FetchUserProfile.graphql in Resources */,
+				168C8F6026BFAE4200419FDF /* CategoryGroups.graphql in Resources */,
 				163E5932260CB89100E54401 /* Images.xcassets in Resources */,
 				7A9741F02670609E00747CF2 /* SignUpMutation.graphql in Resources */,
 				16CCE730264F78B000345778 /* SampleSignInAndSignUp.graphql in Resources */,
@@ -1684,6 +1697,7 @@
 				2952CC53267B49950038A6C5 /* CardTargetView.swift in Sources */,
 				2952CC51267B49950038A6C5 /* CardView.swift in Sources */,
 				29AE102D262EAF5D00B383CF /* WalletPageView.swift in Sources */,
+				168C8F6626BFDF5900419FDF /* CategoryGroupView.swift in Sources */,
 				24CAF6122681E94100CEBD48 /* UserProfileService.swift in Sources */,
 				2947156A2668A5550067F481 /* MessageView.swift in Sources */,
 				C6CDDCC52638125C00CB1562 /* MainAlertView.swift in Sources */,
@@ -1711,6 +1725,7 @@
 				246D7236265B54CE0011F960 /* BirthdateField.swift in Sources */,
 				2952CC68267B5D920038A6C5 /* OptionView.swift in Sources */,
 				7AD9B8812626F17400CF0EA6 /* SignInContentView.swift in Sources */,
+				168C8F6A26BFDFB400419FDF /* CategoryRow.swift in Sources */,
 				29F04570265CA33300842C8B /* PlaceholderStyle.swift in Sources */,
 				7A9716FE267C496400D106AF /* AuthenticationViewAction.swift in Sources */,
 				7A971700267C4A8300D106AF /* UserAuthInfo.swift in Sources */,
@@ -1742,6 +1757,7 @@
 				24AC7CBC2665DF9500CE4282 /* EditCategoryView.swift in Sources */,
 				165A8CB9267F0DCE007DE03D /* API.swift in Sources */,
 				24AC7C96265CB12700CE4282 /* LoginAndSecuritBodyView.swift in Sources */,
+				168C8F6E26BFDFF400419FDF /* CategoriesView.swift in Sources */,
 				C65699C42637C91400D24D2F /* SignUpContentView.swift in Sources */,
 				24AC7CB02664C2AF00CE4282 /* TextGroupView.swift in Sources */,
 				7AA77F242660ED6000C700A2 /* ProfilePictureView.swift in Sources */,
