@@ -15,7 +15,7 @@ struct CategoryView: View {
             CategoryHeaderView(navigationBackAction: navigationBackAction)
                 .padding(.top, 10)
         }, body: {
-            CategoryBodyView().environmentObject(store)
+            CategoryBodyView()
         })
         .navigationBarHidden(true)
     }
