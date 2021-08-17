@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct CategoryListView: View {
+    @State var show: Bool = false
     var title: String
-    let subCategory: [Category]?
-    
-    @State private var show: Bool = false
+    var subCategory: [Category] = []
+    var isParent: Bool
     
     private let shadowRadius: CGFloat = 0
     private let shadowOffset = CGPoint(x: 0, y: 0)
@@ -34,13 +34,9 @@ struct CategoryListView: View {
                     .padding(.leading, verticalMargin)
                 Text(title)
                     .font(.system(size: fontSize))
-                    .onTapGesture {
-                        withAnimation(Animation.spring().speed(animationSpeed)) {
-                            if subCategory != nil {
-                                show.toggle()
-                            }
-                        }
-                    }
+            }
+            .onTapGesture {
+                withAnimation(Animation.spring().speed(animationSpeed)) {}
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -58,11 +54,11 @@ struct CategoryListView: View {
                 .foregroundColor(Color(Asset.Colors.activeGrey.color))
             )
         )
-        
-        if show {
+
+        if !subCategory.isEmpty, show {
             VStack(alignment: .leading, spacing: 4) {
-                ForEach(subCategory!) { sub in
-                    CategoryListView(title: sub.title, subCategory: nil)
+                ForEach(subCategory) { sub in
+                    CategoryListView(title: sub.title, isParent: false)
                 }
                 .padding(.vertical, verticalMargin)
                 .padding(.leading, leftMargin)

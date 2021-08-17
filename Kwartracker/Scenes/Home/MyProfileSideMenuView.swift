@@ -15,6 +15,6 @@ struct MyProfileSideMenuView: SideMenuPageDelegate, View {
     }
 
     var body: some View {
-        MyProfileView()
+        MyProfileView(navigationBackAction: {})
     }
 }
