@@ -39,6 +39,14 @@ enum AppReducer {
             )
             .map(AppAction.userProfileView)
             .eraseToAnyPublisher()
+        case let .category(action: action):
+            return categoryReducer(
+                state: &state.categoryState,
+                action: action,
+                environment: environment
+            )
+            .map(AppAction.category)
+            .eraseToAnyPublisher()
         }
     }
 }

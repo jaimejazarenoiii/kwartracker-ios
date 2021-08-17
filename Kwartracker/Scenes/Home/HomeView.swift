@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var store: AppStore
     @State var showSidebar: Bool = false
     @State var selectedMenu: SideMenu = .home
 
@@ -28,11 +29,15 @@ struct HomeView: View {
         return SideBarStack(sidebarWidth: sideBarWidth, showSidebar: $showSidebar) {
             SideMenuView(selectedItem: $selectedMenu, showSidebar: $showSidebar)
         } content: {
-            if selectedMenu == .myProfile {
-                MyProfileSideMenuView(showSidebar: $showSidebar)
-            } else {
-                TransactionHistoryView(showSidebar: $showSidebar)
-            }
+            TransactionHistoryView(showSidebar: $showSidebar)
+                .opacity([SideMenu.home, .transaction, .wallets, .reports].contains(selectedMenu) ? 1 : 0)
+
+            MyProfileView(navigationBackAction: { showSidebar = true })
+                .opacity(selectedMenu == .myProfile ? 1 : 0)
+
+            NavigationView {
+                SettingsView(navigationBackAction: { showSidebar = true })
+            }.opacity(selectedMenu == .settings ? 1 : 0)
         }
         .edgesIgnoringSafeArea(.all)
         .gesture(drag)

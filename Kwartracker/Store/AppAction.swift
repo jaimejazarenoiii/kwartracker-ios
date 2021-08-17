@@ -11,4 +11,5 @@ enum AppAction {
     case transactionsView(action: TransactionsViewAction)
     case authView(action: AuthenticationViewAction)
     case userProfileView(action: UserProfileViewAction)
+    case category(action: CategoryAction)
 }

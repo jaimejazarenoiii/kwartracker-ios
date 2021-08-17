@@ -1,0 +1,6 @@
+mutation AddParentCategory($input: AddCategoryGroupInput!) {
+    addCategoryGroup(input: $input) {
+        id
+        title
+    }
+}
