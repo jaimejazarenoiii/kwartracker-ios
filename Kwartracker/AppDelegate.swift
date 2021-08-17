@@ -6,24 +6,30 @@
 //
 
 import SwiftUI
-import CocoaLumberjackSwift 
+import CocoaLumberjackSwift
+import RealmSwift
 
 final class AppDelegate: NSObject, UIApplicationDelegate {
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
-        DDOSLogger.sharedInstance.configure()
+        configDDOSLoger()
+        configRealm()
         if CommandLine.arguments.contains("testing") {
             // clear your app state before running UI tests here.
             UIView.setAnimationsEnabled(false)
         }
         return true
     }
-}
 
-extension DDOSLogger {
-    func configure() {
+    private func configRealm() {
+        let config = Realm.Configuration(readOnly: false, deleteRealmIfMigrationNeeded: true)
+        Realm.Configuration.defaultConfiguration = config
+        DDLogInfo("Configure realm.")
+    }
+
+    private func configDDOSLoger() {
         DDLog.add(DDOSLogger.sharedInstance)
         let fileLogger: DDFileLogger = DDFileLogger()
         fileLogger.rollingFrequency = 60 * 60 * 24

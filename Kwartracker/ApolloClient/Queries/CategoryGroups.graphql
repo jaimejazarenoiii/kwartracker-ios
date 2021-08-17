@@ -1,0 +1,10 @@
+query CategoryGroups {
+    categoryGroups {
+        id
+        title
+        categories {
+            id
+            title
+        }
+    }
+}

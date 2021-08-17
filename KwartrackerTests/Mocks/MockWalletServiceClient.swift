@@ -88,8 +88,8 @@ class MockWalletServiceClient {
 }
 
 extension MockWalletServiceClient: WalletServiceDelegate {
-    func fetch() -> AnyPublisher<[Wallet], Error> {
-        Future<[Wallet], Error> { [weak self] promise in
+    func fetch() -> AnyPublisher<[Wallet], GraphQLError> {
+        Future<[Wallet], GraphQLError> { [weak self] promise in
             guard let self = self else { return }
             if !self.shouldFetchWithError {
                 guard let data = self.fetchResponse.wallets else { return }
@@ -133,8 +133,8 @@ extension MockWalletServiceClient: WalletServiceDelegate {
         .eraseToAnyPublisher()
     }
     
-    func addWallet(wallet: Wallet) -> AnyPublisher<Wallet, Error> {
-        return Future<Wallet, Error> { [weak self] promise in
+    func addWallet(wallet: Wallet) -> AnyPublisher<Wallet, GraphQLError> {
+        return Future<Wallet, GraphQLError> { [weak self] promise in
             guard let self = self else { return }
             if !self.shouldAddWithError {
                 let data = self.addResponse
@@ -154,8 +154,8 @@ extension MockWalletServiceClient: WalletServiceDelegate {
         .eraseToAnyPublisher()
     }
     
-    func editWallet(wallet: Wallet) -> AnyPublisher<Wallet, Error> {
-        return Future<Wallet, Error> { [weak self] promise in
+    func editWallet(wallet: Wallet) -> AnyPublisher<Wallet, GraphQLError> {
+        return Future<Wallet, GraphQLError> { [weak self] promise in
             guard let self = self else { return }
             if !self.shouldEditWithError {
                 let data = self.editResponse
