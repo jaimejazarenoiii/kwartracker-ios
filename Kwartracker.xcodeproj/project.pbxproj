@@ -69,6 +69,7 @@
 		1695912A26C122D400A2F97B /* AddCategoryMutation.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 1695912926C122D400A2F97B /* AddCategoryMutation.graphql */; };
 		169DA46D2644C76F0063204F /* APIRequestState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169DA46C2644C76F0063204F /* APIRequestState.swift */; };
 		169DA4722644C8A60063204F /* CircularLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169DA4712644C8A60063204F /* CircularLoaderView.swift */; };
+		169F1B2226CBF09C005DECA1 /* CategoryFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169F1B2126CBF09C005DECA1 /* CategoryFormView.swift */; };
 		169F1B2826CBF142005DECA1 /* Procedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169F1B2726CBF142005DECA1 /* Procedure.swift */; };
 		16C5C77D2635349F00F33B72 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C77C2635349F00F33B72 /* Transaction.swift */; };
 		16C5C7982636296600F33B72 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C7972636296600F33B72 /* Currency.swift */; };
@@ -298,6 +299,7 @@
 		1695912926C122D400A2F97B /* AddCategoryMutation.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = AddCategoryMutation.graphql; sourceTree = "<group>"; };
 		169DA46C2644C76F0063204F /* APIRequestState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestState.swift; sourceTree = "<group>"; };
 		169DA4712644C8A60063204F /* CircularLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularLoaderView.swift; sourceTree = "<group>"; };
+		169F1B2126CBF09C005DECA1 /* CategoryFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFormView.swift; sourceTree = "<group>"; };
 		169F1B2726CBF142005DECA1 /* Procedure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Procedure.swift; sourceTree = "<group>"; };
 		16C5C7772635347A00F33B72 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 		16C5C77C2635349F00F33B72 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
@@ -581,6 +583,7 @@
 		163E5963260CBF0400E54401 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				169F1B2026CBF076005DECA1 /* Category Form View */,
 				164C3BD026BE0DB600745684 /* Home */,
 				29F32961265B9FDF00C1F807 /* Calendar */,
 				04E071E8265E722A000DD4A2 /* Extensions */,
@@ -822,6 +825,14 @@
 				163DABCB264B59CA00DCBB47 /* BrowsePhotoField.swift */,
 			);
 			path = "Form Inputs";
+			sourceTree = "<group>";
+		};
+		169F1B2026CBF076005DECA1 /* Category Form View */ = {
+			isa = PBXGroup;
+			children = (
+				169F1B2126CBF09C005DECA1 /* CategoryFormView.swift */,
+			);
+			path = "Category Form View";
 			sourceTree = "<group>";
 		};
 		16B24BAE261A8D170002065D /* Network */ = {
@@ -1747,6 +1758,7 @@
 				7A971700267C4A8300D106AF /* UserAuthInfo.swift in Sources */,
 				29F32986265BAA2300C1F807 /* CalendarTableView.swift in Sources */,
 				2952CC54267B49950038A6C5 /* CardPageControlView.swift in Sources */,
+				169F1B2226CBF09C005DECA1 /* CategoryFormView.swift in Sources */,
 				29F3297E265BA63B00C1F807 /* DayView.swift in Sources */,
 				7AB1B91E26438C7C00853FAC /* RoundedCornerRectangle.swift in Sources */,
 				7A734D92262FFAA900557EF7 /* BWNeumorphicRectangle.swift in Sources */,
