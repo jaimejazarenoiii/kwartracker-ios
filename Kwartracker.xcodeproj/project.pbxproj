@@ -69,6 +69,7 @@
 		1695912A26C122D400A2F97B /* AddCategoryMutation.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 1695912926C122D400A2F97B /* AddCategoryMutation.graphql */; };
 		169DA46D2644C76F0063204F /* APIRequestState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169DA46C2644C76F0063204F /* APIRequestState.swift */; };
 		169DA4722644C8A60063204F /* CircularLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169DA4712644C8A60063204F /* CircularLoaderView.swift */; };
+		169F1B2826CBF142005DECA1 /* Procedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169F1B2726CBF142005DECA1 /* Procedure.swift */; };
 		16C5C77D2635349F00F33B72 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C77C2635349F00F33B72 /* Transaction.swift */; };
 		16C5C7982636296600F33B72 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C7972636296600F33B72 /* Currency.swift */; };
 		16CCE730264F78B000345778 /* SampleSignInAndSignUp.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16CCE72F264F78B000345778 /* SampleSignInAndSignUp.graphql */; };
@@ -297,6 +298,7 @@
 		1695912926C122D400A2F97B /* AddCategoryMutation.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = AddCategoryMutation.graphql; sourceTree = "<group>"; };
 		169DA46C2644C76F0063204F /* APIRequestState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestState.swift; sourceTree = "<group>"; };
 		169DA4712644C8A60063204F /* CircularLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularLoaderView.swift; sourceTree = "<group>"; };
+		169F1B2726CBF142005DECA1 /* Procedure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Procedure.swift; sourceTree = "<group>"; };
 		16C5C7772635347A00F33B72 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 		16C5C77C2635349F00F33B72 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		16C5C781263534EA00F33B72 /* Imageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imageable.swift; sourceTree = "<group>"; };
@@ -853,6 +855,7 @@
 				16C5C7972636296600F33B72 /* Currency.swift */,
 				29327583264E4CE300E8BA8B /* WalletType.swift */,
 				169DA46C2644C76F0063204F /* APIRequestState.swift */,
+				169F1B2726CBF142005DECA1 /* Procedure.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1704,6 +1707,7 @@
 				29945330267B314D0002C5E3 /* String+Extension.swift in Sources */,
 				16CCE7492651E53400345778 /* KeyChainKeys.swift in Sources */,
 				1652AEE42646A52E003542CD /* SearchTransactionFormModalView.swift in Sources */,
+				169F1B2826CBF142005DECA1 /* Procedure.swift in Sources */,
 				164E95FF26122C5E00D84B7F /* World.swift in Sources */,
 				29AB675D2645326400D375A6 /* WalletActionButtonWithLabel.swift in Sources */,
 				2952CC53267B49950038A6C5 /* CardTargetView.swift in Sources */,
