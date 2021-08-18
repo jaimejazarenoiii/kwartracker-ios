@@ -35,9 +35,13 @@ struct CategoryDetailView: View {
                 })
                 .padding(.top, 10)
 
-                NavigationLink(
-                    destination: EditCategoryView(backAction: { isEditCategoryLinkActive = false }),
-                    isActive: $isEditCategoryLinkActive) {
+                NavigationLink(destination: CategoryFormView(categoryGroup: categoryGroup,
+                                                             category: category,
+                                                             procedure: Procedure.edit,
+                                                             backAction: {
+                                                                isEditCategoryLinkActive = false
+                                                             }),
+                               isActive: $isEditCategoryLinkActive) {
                     EmptyView()
                 }
                 .isDetailLink(false)

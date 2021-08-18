@@ -36,7 +36,7 @@ private struct CategoryHeaderView: View {
             .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.teal.color))
         } rightBarViewContent: {
             NavigationLink(
-                destination: AddCategoryView(backAction: { goBackToCategoryListView() }),
+                destination: CategoryFormView(backAction: { goBackToCategoryListView() }),
                 isActive: .constant(store.state.categoryState.isAddCategoryLinkActive)
             ) {
                 Button(action: {
