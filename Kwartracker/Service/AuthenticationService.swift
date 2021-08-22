@@ -9,6 +9,7 @@ import SwiftUI
 import Combine
 import Apollo
 import CocoaLumberjackSwift
+import RealmSwift
 
 protocol AuthenticationServiceDelegate {
     func signIn(
@@ -32,6 +33,7 @@ struct AuthenticationService: AuthenticationServiceDelegate {
                 case .success(let response):
                     DDLogInfo("[Authentication][sign in] success response: \(response)")
                     if let data = response.data, data.signInWithEmail != nil {
+                        purgeRealmData()
                         promise(.success(data))
                     } else if let error = response.errors?.first {
                         promise(.failure(error))
@@ -58,6 +60,7 @@ struct AuthenticationService: AuthenticationServiceDelegate {
                 case .success(let response):
                     DDLogInfo("[Authentication][sign up] success response: \(response)")
                     if let data = response.data {
+                        purgeRealmData()
                         promise(.success(data))
                     } else if let error = response.errors?.first {
                         promise(.failure(error))
@@ -71,5 +74,19 @@ struct AuthenticationService: AuthenticationServiceDelegate {
             }
         }
         .eraseToAnyPublisher()
+    }
+
+    /**
+     Clears realm objects, better call this on a successful login.
+     */
+    private func purgeRealmData() {
+        do {
+            let realm = try? Realm()
+            try realm?.write {
+                realm?.deleteAll()
+            }
+        } catch let error {
+            DDLogError("[Realm] error: \(error)")
+        }
     }
 }
