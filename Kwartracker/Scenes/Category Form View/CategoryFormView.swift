@@ -99,7 +99,7 @@ struct CategoryFormView: View {
             VStack(alignment: .leading) {
 
                 if procedure == .edit {
-                    TopRightButtonView(image: Asset.Images.trashIcon.image, btnAction: {})
+                    TopRightButtonView(image: Asset.Images.trashIcon.image, btnAction: deleteCategory)
                 }
 
                 VStack {
@@ -189,5 +189,14 @@ struct CategoryFormView: View {
     private func getSelectedCategoryGroup() -> CategoryGroup? {
         guard let groupId = Int(selectedCategoryGroupId ?? "") else { return nil }
         return categoryGroups.first(where: { $0.id == groupId })
+    }
+
+    private func deleteCategory() {
+        guard procedure == .edit, let currentGroupId = currentGroupId else { return }
+        if isParentInput {
+            store.send(.category(action: .deleteCategoryGroup(id: currentGroupId)))
+        } else if let categoryId = category?.id {
+            store.send(.category(action: .deleteCategory(id: categoryId, groupId: currentGroupId)))
+        }
     }
 }

@@ -108,6 +108,23 @@ func categoryReducer(
     case .setCategoryDetailLinkActive(let active):
         state.isCategoryDetailLinkActive = active
         break
+    case .deleteCategoryGroup(let id):
+        return environment.categoryService.deleteCategoryGroup(id: id)
+            .map { _ in CategoryAction.deleteCategoryHandleResponse }
+            .catch { Just(.deleteCategoryhandleError(error: $0)) }
+            .eraseToAnyPublisher()
+    case .deleteCategory(let id, let groupId):
+        return environment.categoryService.deleteCategory(id: id, groupId: groupId)
+            .map { _ in CategoryAction.deleteCategoryHandleResponse }
+            .catch { Just(.deleteCategoryhandleError(error: $0)) }
+            .eraseToAnyPublisher()
+    case .deleteCategoryHandleResponse:
+        state.categoryGroups = environment.categoryService.getAllCategoryGroups()
+        state.isCategoryDetailLinkActive = false
+        break
+    case .deleteCategoryhandleError(let error):
+        state.addCategoryErrorMessage = error.localizedDescription
+        break
     }
     return Empty().eraseToAnyPublisher()
 }

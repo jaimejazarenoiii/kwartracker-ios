@@ -34,4 +34,8 @@ enum CategoryAction {
 
     // Category Detail
     case setCategoryDetailLinkActive(active: Bool)
+    case deleteCategoryGroup(id: Int)
+    case deleteCategory(id: Int, groupId: Int)
+    case deleteCategoryHandleResponse
+    case deleteCategoryhandleError(error: ApiError)
 }

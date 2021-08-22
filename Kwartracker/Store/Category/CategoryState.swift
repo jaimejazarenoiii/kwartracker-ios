@@ -22,4 +22,7 @@ struct CategoryState {
 
     // Edit Category
     var isEditCategoryLinkActive = false
+
+    // Edit Detail
+    var isCategoryDetailLinkActive = false
 }

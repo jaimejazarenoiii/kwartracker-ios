@@ -24,6 +24,10 @@ protocol CategoryServiceDelegate {
     -> AnyPublisher<CategoryGroup?, ApiError>
     func editCategory(category: Category, groupId: Int, prevGroupId: Int)
     -> AnyPublisher<Category?, ApiError>
+    func deleteCategoryGroup(id: Int)
+    -> AnyPublisher<[CategoryGroup], ApiError>
+    func deleteCategory(id: Int, groupId: Int)
+    -> AnyPublisher<[Category], ApiError>
 }
 
 struct CategoryService: CategoryServiceDelegate {
@@ -188,6 +192,24 @@ struct CategoryService: CategoryServiceDelegate {
                     promise(.failure(apiError))
                 }
             }
+        }
+        .eraseToAnyPublisher()
+    }
+
+    func deleteCategoryGroup(id: Int)
+    -> AnyPublisher<[CategoryGroup], ApiError> {
+        Future<[CategoryGroup], ApiError> { promise in
+            delete(categoryGroup: id)
+            promise(.success([]))
+        }
+        .eraseToAnyPublisher()
+    }
+
+    func deleteCategory(id: Int, groupId: Int)
+    -> AnyPublisher<[Category], ApiError> {
+        Future<[Category], ApiError> { promise in
+            delete(category: id, fromCategoryGroupId: groupId)
+            promise(.success([]))
         }
         .eraseToAnyPublisher()
     }
