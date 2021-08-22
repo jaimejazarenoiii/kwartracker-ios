@@ -13,18 +13,21 @@ enum APIRequestState {
     case success
     case failed(err: Error)
     case finished
+
     /**
      Returns true if state is requesting.
      */
     var isRequesting: Bool {
         self == .requesting
     }
+
     /**
      Returns true if state is success.
      */
     var isSuccessful: Bool {
         self == .success
     }
+
     /**
      Returns true if state is failed.
      */
@@ -34,6 +37,7 @@ enum APIRequestState {
         default: return false
         }
     }
+
     /**
      Return error for failed state only.
      */
@@ -43,6 +47,7 @@ enum APIRequestState {
         default: return nil
         }
     }
+    
     /**
      Returns true if state is finished.
      */

@@ -1,0 +1,21 @@
+query FetchWallets {
+  wallets {
+    currency
+    id
+    title
+    transactions {
+      id
+      amount
+      title
+      datetime
+      category {
+        id
+        title
+        budgets {
+          id
+          amount
+        }
+      }
+    }
+  }
+}

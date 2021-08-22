@@ -10,14 +10,17 @@ import SwiftUI
 struct TargetViewLabel: View {
     var bottomLabel: String
     var targetValue: String
+    private let spacing: CGFloat = 2
+    private let targetValueFontSize: CGFloat = 14
+    private let bottomLabelFontSize: CGFloat = 12
     var body: some View {
-        VStack(alignment: .leading, spacing: 2) {
+        VStack(alignment: .leading, spacing: spacing) {
             Text(targetValue)
-                .font(.system(size: 14,
+                .font(.system(size: targetValueFontSize,
                               weight: .bold))
                 .foregroundColor(Color(Asset.Colors.teal.color))
             Text(bottomLabel)
-                .font(.system(size: 12))
+                .font(.system(size: bottomLabelFontSize))
                 .foregroundColor(Color(Asset.Colors.nightRider.color))
         }
     }

@@ -22,6 +22,7 @@ struct SelectableFieldForm: View {
                     .font(.system(size: 15))
                 ZStack {
                     Button(action: {
+                        UIApplication.shared.endEditing()
                         showOptions.toggle()
                         transactionSelection = defaultSelectionType
                     }) {

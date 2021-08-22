@@ -1,19 +1,19 @@
 //
-//  AddNewWalletPage+Fields.swift
+//  EditWalletPage+Fields.swift
 //  Kwartracker
 //
-//  Created by Leah Joy Ylaya on 6/18/21.
+//  Created by Leah Joy Ylaya on 6/29/21.
 //
 
 import SwiftUI
 
-extension AddNewWalletPage {
+extension EditWalletPage {
     internal var Fields: some View {
         VStack(alignment: .leading) {
             TextFieldForm(
                 label: L10n.Wallet.Label.walletName,
                 placeholder: L10n.Wallet.Placeholder.enterWalletName,
-                inputValue: $walletNameValue
+                inputValue: $wallet.title
             )
             .accessibilityIdentifier("walletName") // use for ui test
             
@@ -37,9 +37,9 @@ extension AddNewWalletPage {
             SelectableFieldForm(
                 defaultSelectionType: .currency,
                 label: L10n.currency,
-                selectLabel: walletCurrency == nil ?
+                selectLabel: wallet.currency == nil ?
                     L10n.Wallet.Placeholder.selectWalletCurrency :
-                    Currency(stringValue: walletCurrency!)!.rawValue.stringValue,
+                    wallet.currency!.rawValue.stringValue ,
                 showOptions: $currencyMenuPresented,
                 transactionSelection: $transactionFieldType
             )
@@ -53,9 +53,9 @@ extension AddNewWalletPage {
             SelectableFieldForm(
                 defaultSelectionType: .walletType,
                 label: L10n.Wallet.Label.walletType,
-                selectLabel: walletTypeValue == nil ?
+                selectLabel: wallet.type == .none ?
                     L10n.Wallet.Placeholder.selectWalletType :
-                    walletTypeValue!,
+                    wallet.type.stringValue,
                 showOptions: $walletTypeMenuPresented,
                 transactionSelection: $transactionFieldType
             )
@@ -64,25 +64,17 @@ extension AddNewWalletPage {
 
     private var GoalField: some View {
         Group {
-            if walletTypeValue != nil {
-                    if walletCurrency != nil {
-                        Spacer()
-                            .frame(height: spacing)
-                        TextFieldForm(
-                            label: L10n.Wallet.Label.amount,
-                            placeholder: L10n.Wallet.Placeholder.enterYourInitialAmount,
-                            inputValue: $targetAmountValue
-                        )
-                    }
-                if walletTypeValue == WalletType.goal.stringValue {
+            if wallet.type != .none {
+                if wallet.currency != nil {
+                    if wallet.type == .goal {
                     Spacer()
                         .frame(height: spacing)
                     SelectableFieldForm(
                         defaultSelectionType: .calendar,
                         label: L10n.Wallet.Label.targetDate,
-                        selectLabel: targetDateStr.isEmpty ?
+                        selectLabel: wallet.targetRawDate.isEmpty ?
                             L10n.Wallet.Placeholder.targetDate :
-                            targetDateStr,
+                            wallet.targetRawDate,
                         showOptions: $calendarPresented,
                         transactionSelection: $transactionFieldType
                     )
@@ -96,6 +88,8 @@ extension AddNewWalletPage {
 //                    placeholder: "L10n.Wallet.Label.savedTo",
 //                    inputValue: $savedToValue
 //                )
+//            }
+                }
             }
         }
     }

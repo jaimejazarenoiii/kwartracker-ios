@@ -30,10 +30,13 @@ struct HomeView: View {
             SideMenuView(selectedItem: $selectedMenu, showSidebar: $showSidebar)
         } content: {
             TransactionHistoryView(showSidebar: $showSidebar)
-                .opacity([SideMenu.home, .transaction, .wallets, .reports].contains(selectedMenu) ? 1 : 0)
+                .opacity([SideMenu.home, .transaction, .reports].contains(selectedMenu) ? 1 : 0)
 
             MyProfileView(navigationBackAction: { showSidebar = true })
                 .opacity(selectedMenu == .myProfile ? 1 : 0)
+            
+            WalletPageView(navigationBackAction: { showSidebar = true })
+                .opacity(selectedMenu == .wallets ? 1 : 0)
 
             NavigationView {
                 SettingsView(navigationBackAction: { showSidebar = true })

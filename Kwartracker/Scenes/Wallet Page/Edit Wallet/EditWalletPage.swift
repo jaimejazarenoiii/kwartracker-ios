@@ -1,43 +1,37 @@
 //
-//  AddNewWalletPage.swift
+//  EditWalletPage.swift
 //  Kwartracker
 //
-//  Created by Leah Joy Ylaya on 5/17/21.
+//  Created by Leah Joy Ylaya on 6/29/21.
 //
 
 import SwiftUI
 
-struct AddNewWalletPage: View {
+struct EditWalletPage: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var store: AppStore
     
     @State internal var buttonToggle: Bool = false
     @State internal var cardSize: CGSize = .zero
-    @State internal var walletNameValue: String = ""
-    @State internal var walletCurrency: String? = nil
-    @State internal var walletTypeValue: String? = nil
-    @State internal var targetAmountValue: String = ""
-    @State internal var savedToValue: String = ""
-    @State internal var targetDateStr: String = ""
     @State internal var includeTotalBalanceFlag: Bool = false
     @State internal var currencyMenuPresented: Bool = false
     @State internal var walletTypeMenuPresented: Bool = false
     @State internal var calendarPresented: Bool = false
     @State var transactionFieldType: TransactionFieldType = .dateRange
     
-    private let loaderSize: CGFloat = 200
     internal let spacing: CGFloat = 30
     internal let disableOpacityValue: Double = 0.48
     internal let enableOpacityValue: Double = 1
     internal var baseSize: CGSize = CGSize(width: 238, height: 155)
     internal let navIconSize: CGFloat = 10
     internal var isSaveButtonEnabled: Bool {
-        return !walletNameValue.isEmpty &&
-            walletCurrency != nil &&
-            !targetAmountValue.isEmpty
+        return !wallet.title.isEmpty &&
+            wallet.currency != nil
     }
+    @State internal var wallet: Wallet
     
-    init() {
+    init(wallet: Wallet) {
+        self._wallet = State(initialValue: wallet)
         let maxWidth: CGFloat = 238
         let calculatedWidth = UIScreen.main.bounds.width * 0.65
         let newWidth = maxWidth < calculatedWidth ? maxWidth : calculatedWidth
@@ -46,25 +40,17 @@ struct AddNewWalletPage: View {
         self._cardSize = State(initialValue: CGSize(width: newWidth,
                                                    height: calculatedHeight))
     }
-    
     var body: some View {
-        if store.state.walletState.requestState.isRequesting {
-            ActivityIndicator()
-                .frame(width: loaderSize, height: loaderSize)
-                .foregroundColor(Color(Asset.Colors.teal.color))
-        } else {
-            ZStack {
-                MainBody
-                OptionAlert
-         
-            }.navigationBarHidden(true)
-        }
+        ZStack {
+            MainBody
+            OptionAlert
+        }.navigationBarHidden(true)
     }
     
     var MainBody: some View {
         SkeletalView {
             NavigationBarView(
-                title: L10n.Wallet.Title.addWallet) {
+                title: L10n.Wallet.ActionButton.editWallet) {
                 Button(action: {
                     presentationMode.wrappedValue.dismiss()
                 }) {
@@ -77,7 +63,10 @@ struct AddNewWalletPage: View {
             } rightBarViewContent: {
                 Button(action: {
                     if isSaveButtonEnabled {
-                        addWalletAction()
+                        store.send(.walletView(action: .edit(wallet: wallet)))
+                        if !store.state.walletState.requestState.isRequesting {
+                            presentationMode.wrappedValue.dismiss()
+                       }
                     }
                 }, label: {
                     Text(L10n.Button.Label.save)
@@ -94,38 +83,13 @@ struct AddNewWalletPage: View {
                 VStack {
                     Spacer()
                         .frame(height: spacing)
-                    CardView(name: $walletNameValue,
-                             type: Binding.constant(WalletType.getType(walletTypeValue ?? "")),
-                             size: cardSize)
+                    CardView(size: cardSize, wallet: wallet)
                     Spacer()
                         .frame(height: spacing)
                     Fields
                 }
-                .onTapGesture {
-                    UIApplication.shared.endEditing()
-                }
             }
-            .gesture(DragGesture()
-                .onChanged({ _ in
-                    UIApplication.shared.endEditing()
-                })
-            )
             .adaptsToKeyboard()
         }
-    }
-    
-    private func addWalletAction() {
-        let currency = Currency(stringValue: walletCurrency!) ?? Currency.philippinePeso
-        let newWallet = Wallet(id: 0,
-                               title: walletNameValue,
-                               type: WalletType.getType(walletTypeValue ?? ""),
-                               currency: currency,
-                               targetAmount: targetAmountValue.toDoubleWith(currency: currency.rawValue.locale),
-                               targetRawDate: "",
-                               savedTo: "",
-                               includeToOverallTotalBalance: false,
-                               transactions: [])
-        store.send(.walletView(action: .add(wallet: newWallet)))
-        presentationMode.wrappedValue.dismiss()
     }
 }

@@ -1,0 +1,21 @@
+mutation AddWallet($addWalletInput: AddWalletInput!){
+  addWallet(input:$addWalletInput) {
+      currency
+    id
+    title
+    transactions {
+      id
+      amount
+      title
+      datetime
+      category {
+        id
+        title
+        budgets {
+          id
+          amount
+        }
+      }
+    }
+  }
+}

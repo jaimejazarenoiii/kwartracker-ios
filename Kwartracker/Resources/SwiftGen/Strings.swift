@@ -411,6 +411,8 @@ internal enum L10n {
       internal static let editWallet = L10n.tr("Localizable", "wallet.action_button.edit_wallet")
     }
     internal enum Label {
+      /// Amount
+      internal static let amount = L10n.tr("Localizable", "wallet.label.amount")
       /// Include in overall total balance?
       internal static let includeOverallTotalBalance = L10n.tr("Localizable", "wallet.label.include_overall_total_balance")
       /// Saved to
@@ -431,8 +433,8 @@ internal enum L10n {
     internal enum Placeholder {
       /// Enter wallet name
       internal static let enterWalletName = L10n.tr("Localizable", "wallet.placeholder.enter_wallet_name")
-      /// Enter your target amount
-      internal static let enterYourTargetAmount = L10n.tr("Localizable", "wallet.placeholder.enter_your_target_amount")
+      /// Enter your initial amount
+      internal static let enterYourInitialAmount = L10n.tr("Localizable", "wallet.placeholder.enter_your_initial_amount")
       /// Select wallet currency
       internal static let selectWalletCurrency = L10n.tr("Localizable", "wallet.placeholder.select_wallet_currency")
       /// Select wallet type

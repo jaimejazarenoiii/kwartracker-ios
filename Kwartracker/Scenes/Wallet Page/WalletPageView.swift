@@ -14,13 +14,14 @@ struct WalletPageView: View {
     private let separator: UIColor = Asset.Colors.spindleGrey.color
     private let separatorHeight: CGFloat = 0.5
     private let navIconSize: CGFloat = 10
+    private let loaderSize: CGFloat = 200
+    var navigationBackAction: (() -> Void)
     var body: some View {
         NavigationView {
             SkeletalView {
                 NavigationBarView(
                     title: L10n.Wallet.Title.myWallet) {
-                    Button(action: {
-                    }) {
+                    Button(action: navigationBackAction) {
                         Image(uiImage: Asset.Images.arrowLeftIconWhite.image)
                             .frame(width: navIconSize, height: navIconSize)
                     }
@@ -28,11 +29,11 @@ struct WalletPageView: View {
                         CircleButtonStyle(buttonColor: Asset.Colors.teal.color)
                     )
                 } rightBarViewContent: {
-                    
                     NavigationLink(
-                        destination: AddNewWalletPage(),
+                        destination: AddNewWalletPage()
+                            .environmentObject(store),
                         isActive: $buttonToggle) {
-                        
+
                         Button(action: {
                             buttonToggle.toggle()
                         }, label: {
@@ -45,29 +46,39 @@ struct WalletPageView: View {
                     }
                 }
             } body: {
-                ScrollView(showsIndicators: true) {
-                    VStack {
-                        WalletOneCardCenterView(wallets: store.state.walletState.wallets)
-                        
-                        Spacer()
-                            .frame(height: margin)
-                        
-                        WalletSectionHeader()
-                        
-                        Spacer()
-                            .frame(height: margin)
-                        ForEach(store.state.transactionState.transactions, id: \.id) {
-                            TransactionRow(transaction: $0)
-                            Rectangle()
-                                .fill(Color(separator))
-                                .frame(height: separatorHeight)
+                if store.state.walletState.requestState.isRequesting {
+                    ActivityIndicator()
+                        .frame(width: loaderSize, height: loaderSize)
+                        .foregroundColor(Color(Asset.Colors.teal.color))
+                } else {
+                    ScrollView(showsIndicators: true) {
+                        VStack {
+                            WalletCardView(wallets: store.state.walletState.wallets) { transactions in
+                                Spacer()
+                                    .frame(height: margin)
+
+                                WalletSectionHeader()
+
+                                Spacer()
+                                    .frame(height: margin)
+                                ForEach(transactions, id: \.id) {
+                                    TransactionRow(transaction: $0)
+                                    Rectangle()
+                                        .fill(Color(separator))
+                                        .frame(height: separatorHeight)
+                                }
+                                .frame(width: UIScreen.main.bounds.width * 0.8)
+                            }
+                            .environmentObject(store)
                         }
-                        .frame(width: UIScreen.main.bounds.width * 0.8)
-                    }
-                    .padding(.top, margin)
-                }.background(Color(Asset.Colors.solitudeGrey.color))
+                        .padding(.top, margin)
+                    }.background(Color(Asset.Colors.solitudeGrey.color))
+                }
             }
-        }.navigationBarHidden(true)
-        
+            .onAppear(perform: {
+                store.send(.walletView(action: .fetch))
+            })
+            .navigationBarHidden(true)
+        }
     }
 }
