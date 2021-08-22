@@ -1,0 +1,31 @@
+mutation DeleteCategoryMutation($input: DeleteCategoryInput!) {
+    deleteCategory(input: $input) {
+        id
+        title
+        budgets {
+            amount
+            category {
+                id
+                title
+            }
+            createdAt
+            id
+            updatedAt
+        }
+        transactions {
+            amount
+            category {
+                id
+                title
+            }
+            datetime
+            id
+            title
+            wallet {
+                currency
+                id
+                title
+            }
+        }
+    }
+}

@@ -83,8 +83,9 @@ extension CategoryServiceDelegate {
             guard let cachedGroup = realm.objects(CategoryGroupObject.self)
                     .first(where: { $0.id == id })
             else { return }
+            let categories = cachedGroup.categories
             try realm.write {
-                cachedGroup.categories.removeAll()
+                realm.delete(categories)
                 realm.delete(cachedGroup)
             }
         } catch let error {

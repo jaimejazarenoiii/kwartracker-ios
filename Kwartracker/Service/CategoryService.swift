@@ -199,8 +199,27 @@ struct CategoryService: CategoryServiceDelegate {
     func deleteCategoryGroup(id: Int)
     -> AnyPublisher<[CategoryGroup], ApiError> {
         Future<[CategoryGroup], ApiError> { promise in
+            let input = DeleteCategoryGroupInput(id: "\(id)")
+            let mutation = DeleteCategoryGroupMutationMutation(input: input)
             delete(categoryGroup: id)
-            promise(.success([]))
+            Network.shared.apollo.perform(mutation: mutation) { result in
+                do {
+                    let errors = try result.get().errors
+                    let data = try result.get().data
+                    if let errors = errors {
+                        DDLogError("[CategoryService] error: \(errors)")
+                        let errorMessage = errors.map { $0.description }.joined(separator: "\n")
+                        promise(.failure(.custom(description: errorMessage)))
+                    } else {
+                        DDLogInfo("[CategoryService] data: \(String(describing: data))")
+                        promise(.success([]))
+                    }
+                } catch let error {
+                    let apiError = ApiError.custom(description: error.localizedDescription)
+                    DDLogError("[CategoryService] error: \(apiError)")
+                    promise(.failure(apiError))
+                }
+            }
         }
         .eraseToAnyPublisher()
     }
@@ -209,7 +228,26 @@ struct CategoryService: CategoryServiceDelegate {
     -> AnyPublisher<[Category], ApiError> {
         Future<[Category], ApiError> { promise in
             delete(category: id, fromCategoryGroupId: groupId)
-            promise(.success([]))
+            let input = DeleteCategoryInput(id: "\(id)")
+            let mutation = DeleteCategoryMutationMutation(input: input)
+            Network.shared.apollo.perform(mutation: mutation) { result in
+                do {
+                    let errors = try result.get().errors
+                    let data = try result.get().data
+                    if let errors = errors {
+                        DDLogError("[CategoryService] error: \(errors)")
+                        let errorMessage = errors.map { $0.description }.joined(separator: "\n")
+                        promise(.failure(.custom(description: errorMessage)))
+                    } else {
+                        DDLogInfo("[CategoryService] data: \(String(describing: data))")
+                        promise(.success([]))
+                    }
+                } catch let error {
+                    let apiError = ApiError.custom(description: error.localizedDescription)
+                    DDLogError("[CategoryService] error: \(apiError)")
+                    promise(.failure(apiError))
+                }
+            }
         }
         .eraseToAnyPublisher()
     }
