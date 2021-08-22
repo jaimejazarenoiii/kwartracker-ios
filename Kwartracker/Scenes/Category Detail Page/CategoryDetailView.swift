@@ -11,8 +11,7 @@ struct CategoryDetailView: View {
     var categoryGroup: CategoryGroup
     var category: Category?
     var backAction: (() -> Void)
-
-    @State var isEditCategoryLinkActive = false
+    @EnvironmentObject private var store: AppStore
 
     var body: some View {
         SkeletalView(header: {
@@ -31,17 +30,15 @@ struct CategoryDetailView: View {
         }, body: {
             VStack(alignment: .leading) {
                 TopRightButtonView(image: Asset.Images.editIcon.image, btnAction: {
-                    isEditCategoryLinkActive = true
+                    store.send(.category(action: .setEditCategoryLink(active: true)))
                 })
                 .padding(.top, 10)
 
                 NavigationLink(destination: CategoryFormView(categoryGroup: categoryGroup,
                                                              category: category,
                                                              procedure: Procedure.edit,
-                                                             backAction: {
-                                                                isEditCategoryLinkActive = false
-                                                             }),
-                               isActive: $isEditCategoryLinkActive) {
+                                                             backAction: categoryFormBackAction),
+                               isActive: .constant(store.state.categoryState.isEditCategoryLinkActive)) {
                     EmptyView()
                 }
                 .isDetailLink(false)
@@ -71,6 +68,10 @@ struct CategoryDetailView: View {
             return categoryGroup.title
         }
         return category.title
+    }
+
+    private func categoryFormBackAction() {
+        store.send(.category(action: .setEditCategoryLink(active: false)))
     }
 }
 
