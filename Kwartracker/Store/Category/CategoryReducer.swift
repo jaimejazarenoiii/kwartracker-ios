@@ -67,6 +67,47 @@ func categoryReducer(
     case .addCategoryLinkActive(let active):
         state.isAddCategoryLinkActive = active
         break
+    case .editCategoryGroupRequest(let categoryGroup):
+        state.addCategoryIsRequesting = true
+        return environment.categoryService.editCategoryGroup(categoryGroup: categoryGroup)
+            .map { CategoryAction.editCategoryGroupHandleResponse(response: $0) }
+            .catch { Just(.editCategoryGroupHandleError(error: $0)) }
+            .eraseToAnyPublisher()
+    case .editCategoryGroupHandleResponse:
+        state.addCategoryIsRequesting = false
+        state.categoryGroups = environment.categoryService.getAllCategoryGroups()
+        state.addCategoryIsDone = true
+        state.isCategoryDetailLinkActive = false
+        break
+    case .editCategoryGroupHandleError(let error):
+        state.addCategoryIsRequesting = false
+        state.addCategoryErrorMessage = error.localizedDescription
+        break
+    case .editCategoryRequest(let category, let groupId, let prevGroupId):
+        state.addCategoryIsRequesting = true
+        return environment.categoryService
+            .editCategory(category: category,
+                          groupId: groupId,
+                          prevGroupId: prevGroupId)
+            .map { CategoryAction.editCategoryHandleResponse(response: $0) }
+            .catch { Just(.editCategoryHandleError(error: $0)) }
+            .eraseToAnyPublisher()
+    case .editCategoryHandleResponse:
+        state.addCategoryIsRequesting = false
+        state.categoryGroups = environment.categoryService.getAllCategoryGroups()
+        state.addCategoryIsDone = true
+        state.isCategoryDetailLinkActive = false
+        break
+    case .editCategoryHandleError(let error):
+        state.addCategoryIsRequesting = false
+        state.addCategoryErrorMessage = error.localizedDescription
+        break
+    case .setEditCategoryLink(let active):
+        state.isEditCategoryLinkActive = active
+        break
+    case .setCategoryDetailLinkActive(let active):
+        state.isCategoryDetailLinkActive = active
+        break
     }
     return Empty().eraseToAnyPublisher()
 }

@@ -22,4 +22,16 @@ enum CategoryAction {
     case addCategoryHandleResponse(response: Category?)
     case addCategoryHandleError(error: ApiError)
     case addCategoryLinkActive(active: Bool)
+
+    // Edit category
+    case editCategoryGroupRequest(categoryGroup: CategoryGroup)
+    case editCategoryGroupHandleResponse(response: CategoryGroup?)
+    case editCategoryGroupHandleError(error: ApiError)
+    case editCategoryRequest(category: Category, groupId: Int, previousGroupId: Int)
+    case editCategoryHandleResponse(response: Category?)
+    case editCategoryHandleError(error: ApiError)
+    case setEditCategoryLink(active: Bool)
+
+    // Category Detail
+    case setCategoryDetailLinkActive(active: Bool)
 }

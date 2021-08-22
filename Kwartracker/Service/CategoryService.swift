@@ -20,69 +20,10 @@ protocol CategoryServiceDelegate {
     -> AnyPublisher<CategoryGroup?, ApiError>
     func addCategory(categoryGroupId: Int, title: String)
     -> AnyPublisher<Category?, ApiError>
-}
-
-extension CategoryServiceDelegate {
-    func getAllCategoryGroups() -> [CategoryGroup] {
-        do {
-            let realm = try Realm()
-            return realm.objects(CategoryGroupObject.self).map { CategoryGroup(managedObject: $0) }
-        } catch let error {
-            DDLogError("[CategoryService] error: \(error.localizedDescription)")
-        }
-        return []
-    }
-
-    func saveFetched(data: CategoryGroupsQuery.Data?) -> [CategoryGroup] {
-        guard let categoryGroups = data?.categoryGroups else { return [] }
-        let categoryGroupsToSave = categoryGroups.map { CategoryGroup(group: $0) }
-        do {
-            let realm = try Realm()
-            try realm.write {
-                realm.add(categoryGroupsToSave.map { $0.managedObject() }, update: .modified)
-            }
-            return categoryGroupsToSave
-        } catch let error {
-            DDLogError("[CategoryService] error: \(error.localizedDescription)")
-        }
-        return []
-    }
-
-    func save(categoryGroup data: AddParentCategoryMutation.Data?) -> CategoryGroup? {
-        if let group = data?.addCategoryGroup,
-           let id = Int(group.id) {
-            let categoryGroup = CategoryGroup(id: id, title: group.title ?? "")
-            do {
-                let realm = try Realm()
-                try realm.write {
-                    realm.add(categoryGroup.managedObject())
-                }
-                return categoryGroup
-            } catch let error {
-                DDLogError("[CategoryService] error: \(error.localizedDescription)")
-            }
-        }
-        return nil
-    }
-
-    func save(category data: AddCategoryMutation.Data?, categoryGroupId: Int) -> Category? {
-        guard let categoryData = data?.addCategory, let id = Int(categoryData.id) else { return nil }
-        do {
-            let realm = try Realm()
-            guard let cachedGroup = realm
-                    .objects(CategoryGroupObject.self)
-                    .first(where: { $0.id == categoryGroupId }) else { return nil }
-            let category = Category(id: id, title: categoryData.title ?? "")
-            try realm.write {
-                cachedGroup.categories.append(category.managedObject())
-                realm.add(cachedGroup, update: .modified)
-            }
-            return category
-        } catch let error {
-            DDLogError("[CategoryService] error: \(error.localizedDescription)")
-        }
-        return nil
-    }
+    func editCategoryGroup(categoryGroup: CategoryGroup)
+    -> AnyPublisher<CategoryGroup?, ApiError>
+    func editCategory(category: Category, groupId: Int, prevGroupId: Int)
+    -> AnyPublisher<Category?, ApiError>
 }
 
 struct CategoryService: CategoryServiceDelegate {
@@ -131,8 +72,12 @@ struct CategoryService: CategoryServiceDelegate {
                             promise(.failure(.custom(description: errorMessage)))
                         } else {
                             DDLogInfo("[CategoryService] data: \(String(describing: data))")
-                            let savedCategoryGroup = save(categoryGroup: data)
-                            promise(.success(savedCategoryGroup))
+                            var categoryGroup: CategoryGroup? = nil
+                            if let response = data?.addCategoryGroup {
+                                categoryGroup = CategoryGroup(mutation: response)
+                                add(categoryGroup: categoryGroup!)
+                            }
+                            promise(.success(categoryGroup))
                         }
                     } catch let error {
                         let apiError = ApiError.custom(description: error.localizedDescription)
@@ -159,12 +104,87 @@ struct CategoryService: CategoryServiceDelegate {
                     } else {
                         let data = try result.get().data
                         DDLogInfo("[CategoryService] data: \(String(describing: data))")
-                        let category = save(category: data, categoryGroupId: categoryGroupId)
+                        var category: Category? = nil
+                        if let response = data?.addCategory,
+                           let id = Int(response.id) {
+                            category = Category(id: id, title: response.title ?? "")
+                            add(category: category!, groupId: categoryGroupId)
+                        }
                         promise(.success(category))
                     }
                 } catch let error {
                     DDLogError("[CategoryService] error: \(error.localizedDescription)")
                     let apiError = ApiError.custom(description: error.localizedDescription)
+                    promise(.failure(apiError))
+                }
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+
+    @discardableResult
+    func editCategoryGroup(categoryGroup: CategoryGroup) -> AnyPublisher<CategoryGroup?, ApiError> {
+        Future<CategoryGroup?, ApiError> { promise in
+            let input = EditCategoryGroupInput(id: "\(categoryGroup.id)", title: categoryGroup.title)
+            let mutation = EditParentCategoryMutation(input: input)
+            DDLogInfo("[CategoryService] add parent category: \(input)")
+            Network.shared.apollo
+                .perform(mutation: mutation) { result in
+                    do {
+                        let errors = try result.get().errors
+                        let data = try result.get().data
+                        if let errors = errors {
+                            DDLogError("[CategoryService] error: \(errors)")
+                            let errorMessage = errors.map { $0.description }.joined(separator: "\n")
+                            promise(.failure(.custom(description: errorMessage)))
+                        } else {
+                            DDLogInfo("[CategoryService] data: \(String(describing: data))")
+                            var categoryGroup: CategoryGroup? = nil
+                            if let response = data?.editCategoryGroup {
+                                categoryGroup = CategoryGroup(mutation: response)
+                                update(categoryGroup: categoryGroup!.id, title: categoryGroup!.title)
+                            }
+                            promise(.success(categoryGroup))
+                        }
+                    } catch let error {
+                        let apiError = ApiError.custom(description: error.localizedDescription)
+                        DDLogError("[CategoryService] error: \(apiError)")
+                        promise(.failure(apiError))
+                    }
+                }
+        }
+        .eraseToAnyPublisher()
+    }
+
+    func editCategory(category: Category, groupId: Int, prevGroupId: Int) -> AnyPublisher<Category?, ApiError> {
+        Future<Category?, ApiError> { promise in
+            let input = EditCategoryInput(id: "\(category.id)",
+                                          title: category.title,
+                                          categoryGroupId: "\(groupId)")
+            let mutation = EditCategoryMutation(input: input)
+            Network.shared.apollo.perform(mutation: mutation) { result in
+                do {
+                    let errors = try result.get().errors
+                    let data = try result.get().data
+                    if let errors = errors {
+                        DDLogError("[CategoryService] error: \(errors)")
+                        let errorMessage = errors.map { $0.description }.joined(separator: "\n")
+                        promise(.failure(.custom(description: errorMessage)))
+                    } else {
+                        DDLogInfo("[CategoryService] data: \(String(describing: data))")
+                        var categoryResponse: Category? = nil
+                        if let response = data?.editCategory {
+                            categoryResponse = Category(id: category.id, title: response.title ?? "")
+                            update(category: categoryResponse!.id,
+                                   title: categoryResponse!.title,
+                                   previousGroupId: prevGroupId,
+                                   newGroupId: groupId)
+                        }
+                        promise(.success(categoryResponse))
+                    }
+                } catch let error {
+                    let apiError = ApiError.custom(description: error.localizedDescription)
+                    DDLogError("[CategoryService] error: \(apiError)")
                     promise(.failure(apiError))
                 }
             }

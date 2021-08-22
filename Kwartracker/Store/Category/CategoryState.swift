@@ -19,4 +19,7 @@ struct CategoryState {
     var addCategoryErrorMessage: String?
     var addCategoryIsDone = false
     var isAddCategoryLinkActive = false
+
+    // Edit Category
+    var isEditCategoryLinkActive = false
 }
