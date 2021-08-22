@@ -33,12 +33,12 @@ struct SettingsView: View {
                 categoryLinkIsActive: $categoryLinkIsActive
             )
             
-            NavigationLink(destination: CategoryView(navigationBackAction: {
-                categoryLinkIsActive = false
-            }).environmentObject(store), isActive: $categoryLinkIsActive) {
+            NavigationLink(
+                destination: CategoryView(navigationBackAction: { categoryLinkIsActive = false }),
+                isActive: $categoryLinkIsActive) {
                 EmptyView()
             }
-            .hidden()
+            .isDetailLink(false)
         })
         .navigationBarHidden(true)
     }

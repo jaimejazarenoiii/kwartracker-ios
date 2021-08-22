@@ -13,7 +13,7 @@ struct CategoryDetailBodyView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
-                TopRightButtonView(image: Asset.Images.editIcon.image)
+                TopRightButtonView(image: Asset.Images.editIcon.image, btnAction: {})
                 
                 CategoryCardView(categoryName: categoryName)
                 

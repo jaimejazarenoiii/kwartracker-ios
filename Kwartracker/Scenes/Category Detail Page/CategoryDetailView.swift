@@ -12,6 +12,8 @@ struct CategoryDetailView: View {
     var category: Category?
     var backAction: (() -> Void)
 
+    @State var isEditCategoryLinkActive = false
+
     var body: some View {
         SkeletalView(header: {
             NavigationBarView(
@@ -28,8 +30,17 @@ struct CategoryDetailView: View {
             }
         }, body: {
             VStack(alignment: .leading) {
-                TopRightButtonView(image: Asset.Images.editIcon.image)
-                    .padding(.top, 10)
+                TopRightButtonView(image: Asset.Images.editIcon.image, btnAction: {
+                    isEditCategoryLinkActive = true
+                })
+                .padding(.top, 10)
+
+                NavigationLink(
+                    destination: EditCategoryView(backAction: { isEditCategoryLinkActive = false }),
+                    isActive: $isEditCategoryLinkActive) {
+                    EmptyView()
+                }
+                .isDetailLink(false)
 
                 CategoryCardView(categoryName: categoryName)
                     .frame(height: 200)

@@ -17,7 +17,7 @@ struct MyProfileContentView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            TopRightButtonView(image: Asset.Images.editIcon.image)
+            TopRightButtonView(image: Asset.Images.editIcon.image, btnAction: {})
                 .padding(.horizontal, editHorizontalMargin)
             
             MyProfileCardView(user: store.state.userProfileState.user)
