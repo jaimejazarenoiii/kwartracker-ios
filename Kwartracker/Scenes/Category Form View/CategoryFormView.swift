@@ -18,6 +18,7 @@ struct CategoryFormView: View {
     @State private var selectedCategoryGroupId: String? = nil
     private var procedure: Procedure = .add
     private var backAction: () -> ()
+    private var currentGroupId: Int? = nil
     private var categoryGroups: [CategoryGroup] {
         store.state.categoryState.categoryGroups.map { group -> CategoryGroup in
             var groupOnly = group
@@ -53,10 +54,12 @@ struct CategoryFormView: View {
             self._categoryInput = State(initialValue: category.title)
             self._isParentInput = State(initialValue: false)
             self._selectedCategoryGroupId = State(initialValue: "\(categoryGroup.id)")
+            currentGroupId = categoryGroup.id
         } else if let categoryGroup = categoryGroup {
             self._title = State(initialValue: categoryGroup.title)
             self._categoryInput = State(initialValue: categoryGroup.title)
             self._isParentInput = State(initialValue: true)
+            currentGroupId = categoryGroup.id
         }
     }
 
@@ -115,27 +118,30 @@ struct CategoryFormView: View {
                 UserField(fieldType: .category, textValue: $categoryInput)
                     .padding(.horizontal)
 
-                VStack(alignment: .leading) {
-                    Text(L10n.EditCategoryPage.ContentText.makeParentCategory)
-                        .font(.footnote)
-                        .foregroundColor(Color(Asset.Colors.spindleGrey.color))
-                        .padding(.top)
-                    Toggle("", isOn: $isParentInput)
-                        .toggleStyle(CustomToggle(onText: L10n.EditCategoryPage.ContentText.toggleOn,
-                                                  offText: L10n.EditCategoryPage.ContentText.toggleOff))
-                }.padding()
+                if !(procedure == .edit && isParentInput) {
+                    VStack(alignment: .leading) {
+                        Text(L10n.EditCategoryPage.ContentText.makeParentCategory)
+                            .font(.footnote)
+                            .foregroundColor(Color(Asset.Colors.spindleGrey.color))
+                            .padding(.top)
+                        Toggle("", isOn: $isParentInput)
+                            .toggleStyle(CustomToggle(onText: L10n.EditCategoryPage.ContentText.toggleOn,
+                                                      offText: L10n.EditCategoryPage.ContentText.toggleOff))
+                    }.padding()
 
-                let selectedCategoryGroup = getSelectedCategoryGroup()
-                SelectableFieldForm(
-                    defaultSelectionType: .category,
-                    label: L10n.EditCategoryPage.ContentText.selectParentCategory,
-                    selectLabel: selectedCategoryGroup == nil
-                        ? "Parent category name" : (selectedCategoryGroup?.title ?? ""),
-                    showOptions: $showCategoryOptions,
-                    transactionSelection: .constant(.category)
-                )
-                .padding([.top, .leading, .trailing], 10)
-                .disabled(isParentInput)
+                    let selectedCategoryGroup = getSelectedCategoryGroup()
+                    SelectableFieldForm(
+                        defaultSelectionType: .category,
+                        label: L10n.EditCategoryPage.ContentText.selectParentCategory,
+                        selectLabel: selectedCategoryGroup == nil
+                            ? "Parent category name" : (selectedCategoryGroup?.title ?? ""),
+                        showOptions: $showCategoryOptions,
+                        transactionSelection: .constant(.category)
+                    )
+                    .padding([.top, .leading, .trailing], 10)
+                    .disabled(isParentInput)
+                }
+
             }.padding()
         }
     }
@@ -163,6 +169,19 @@ struct CategoryFormView: View {
             } else {
                 guard let groupId = Int(selectedCategoryGroupId ?? ""), groupId > 0 else { return }
                 store.send(.category(action: .addCategoryRequest(title: categoryInput, categoryGroupId: groupId)))
+            }
+        } else if var categoryGroup = categoryGroup {
+            if let selectedGroup = getSelectedCategoryGroup() {
+                categoryGroup = selectedGroup
+            }
+            if isParentInput {
+                let categoryGroupInput = CategoryGroup(id: categoryGroup.id, title: categoryInput)
+                store.send(.category(action: .editCategoryGroupRequest(categoryGroup: categoryGroupInput)))
+            } else if let category = category {
+                let categoryData = Category(id: category.id, title: categoryInput)
+                store.send(.category(action: .editCategoryRequest(category: categoryData,
+                                                                  groupId: categoryGroup.id,
+                                                                  previousGroupId: currentGroupId!)))
             }
         }
     }
