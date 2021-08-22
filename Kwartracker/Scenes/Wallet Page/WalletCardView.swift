@@ -1,5 +1,5 @@
 //
-//  WalletCardScrollView.swift
+//  WalletCardView.swift
 //  Kwartracker
 //
 //  Created by Leah Joy Ylaya on 4/23/21.
@@ -7,35 +7,58 @@
 
 import SwiftUI
 
-struct WalletOneCardCenterView: View {
-    private var wallets = [Wallet]()
-    private var wallet = Wallet(id: 0)
+struct WalletCardView<TransactionView: View>: View {
+    @EnvironmentObject var store: AppStore
+    @State private var scrollOffset: CGFloat = 0
+    @State private var dragOffset: CGFloat = 0
+    @State internal var page: Int = 1
+    @State private var showTargetView: Bool = false
+    @State internal var editToggle: Bool = false
+    
+    private let transactionView: ([Transaction]) -> TransactionView
+    internal let iconColor: String = Asset.Colors.spindleGrey.name
+    internal let editIconName: String = Asset.Images.editIcon.name
+    internal let editLabel: String = L10n.Wallet.ActionButton.editWallet
+    internal let addTransactionIcon: String = Asset.Images.addIcon.name
+    internal let addTransactionLabel: String = L10n.Wallet.ActionButton.addTransaction
+    internal let buttonSize: CGFloat = 10
+    internal let padding: CGFloat = 10
+    internal let fontSize: CGFloat = 12
+    
     private var baseSize: CGSize = CGSize(width: 238, height: 155)
     private var itemSpacing: CGFloat = 20
     private var margin: CGFloat = 30
-    @State private var scrollOffset: CGFloat = 0
-    @State private var dragOffset: CGFloat = 0
-    @State private var cardSize: CGSize = .zero
-    @State private var page: Int = 1
-    @State private var showTargetView: Bool = false
+    private var cardSize: CGSize = .zero
+    var wallets = [Wallet]()
+    
+    private var transactions: [Transaction] {
+        if wallets.count > 0 {
+            return wallets[page - 1].transactions
+        }
+        return [Transaction]()
+    }
     
     ///https://levelup.gitconnected.com/snap-to-item-scrolling-debccdcbb22f
-    init(wallets: [Wallet]) {
+    init(
+        wallets: [Wallet],
+        @ViewBuilder transactionView: @escaping([Transaction]) -> TransactionView
+    ) {
+        self.transactionView = transactionView
         let maxWidth: CGFloat = 238
         let calculatedWidth = UIScreen.main.bounds.width * 0.65
         let newWidth = maxWidth < calculatedWidth ? maxWidth : calculatedWidth
         let calculatedHeight = self.setHeightRatio(width: newWidth,
                                                    baseSize: baseSize)
-        self._cardSize = State(initialValue: CGSize(width: newWidth,
-                                                   height: calculatedHeight))
+        self.cardSize = CGSize(width: newWidth,
+                                height: calculatedHeight)
         self.wallets = wallets
         // Calculate Total Content Width
-        let contentWidth: CGFloat = CGFloat(wallets.count) * cardSize.width + CGFloat(wallets.count - 1) * itemSpacing
+        let contentWidth: CGFloat = CGFloat(wallets.count) * cardSize.width +
+            CGFloat(wallets.count - 1) * itemSpacing
         let screenWidth = UIScreen.main.bounds.width
         
         // Set Initial Offset to first Item
         let initialOffset = (contentWidth/2.0) - (screenWidth/2.0) + ((screenWidth - cardSize.width) / 2.0)
-        
         self._scrollOffset = State(initialValue: initialOffset)
         self._dragOffset = State(initialValue: 0)
     }
@@ -62,10 +85,12 @@ struct WalletOneCardCenterView: View {
                     }
                 })
             )
-            CardPageControlView(index: $page, maxIndex: wallets.count)
-                .padding([.top, .bottom], margin)
             
-            WalletActionButtonView(wallet: wallets[page - 1])
+            if !wallets.isEmpty {
+                CardPageControlView(index: $page, maxIndex: wallets.count)
+                        .padding([.top, .bottom], margin)
+                WalletActionButtonView
+            }
             
             Spacer()
                 .frame(height: margin)
@@ -74,6 +99,8 @@ struct WalletOneCardCenterView: View {
                 CardTargetView(wallet: wallets[page - 1])
             }
         }
+        
+        self.transactionView(transactions)
     }
     
     func animateScroll(with event: DragGesture.Value) -> CGFloat {
@@ -104,7 +131,7 @@ struct WalletOneCardCenterView: View {
         
         page = abs(Int(index - CGFloat(wallets.count)))
         let type = wallets[page - 1].type
-        showTargetView = type == WalletType.goal
+        showTargetView = (type == WalletType.goal)
         
         // Set final offset (snapping to item)
         let newOffset = index * cardSize.width

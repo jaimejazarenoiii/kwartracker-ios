@@ -10,13 +10,17 @@ import Foundation
 struct Wallet {
     var id: Int
     var title: String = ""
-    var type: WalletType = .none
+    var type: WalletType = .savings
     var currency: Currency?
-    var total: Double = 0
     var targetAmount: Double = 0
     var targetRawDate: String = ""
     var savedTo: String = ""
     var includeToOverallTotalBalance: Bool = true
+    var transactions = [Transaction]()
+    
+    var total: Double {
+        transactions.map({$0.amount}).reduce(.zero, +)
+    }
     
     var isAllowedToSave: Bool {
         !title.isEmpty &&
@@ -27,24 +31,23 @@ struct Wallet {
     
     var targetAmountWithCommas: String {
         get {
-            targetAmount.amountOnCurrency(currency: currency?.localeNumberFormat ??
-                                    Currency.philippinePeso.localeNumberFormat)
+            let value = currency ?? .philippinePeso
+            return targetAmount.amountOnCurrency(currency: value.rawValue.locale)
         }
         set {
-            targetAmount = newValue.toDoubleWith(currency: currency?.localeNumberFormat ??
-                                                    Currency.philippinePeso.localeNumberFormat)
+            let value = currency ?? .philippinePeso
+            targetAmount = newValue.toDoubleWith(currency: value.rawValue.locale)
         }
     }
     
     var currencyStr: String? {
         get {
-            let newCurrency = currency ?? .philippinePeso
-            return newCurrency.localeNumberFormat
+            let newCurrency = currency ?? Currency.philippinePeso
+            return newCurrency.rawValue.stringValue
         }
         set {
-            let defaultValue = Currency.philippinePeso
-            currency = Currency.getType(newValue ?? defaultValue.localeNumberFormat)
-            
+            let value = newValue ?? Currency.philippinePeso.rawValue.stringValue
+            currency = Currency(stringValue: value)
         }
     }
     
@@ -61,8 +64,8 @@ struct Wallet {
     
     var remainingAmountNeeded: String {
         let amount = targetAmount - total
-        return amount.amountOnCurrency(currency: currency?.localeNumberFormat ??
-                                        Currency.philippinePeso.localeNumberFormat)
+        let currencyVal = currency ?? .philippinePeso
+        return amount.amountOnCurrency(currency: currencyVal.rawValue.locale)
     }
     
     var dateTime: Date? {

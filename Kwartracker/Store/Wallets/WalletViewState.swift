@@ -9,38 +9,65 @@ import SwiftUI
 import Combine
 
 struct WalletViewState {
-    var wallets: [Wallet] = sampleWallets
-    var wallet: Wallet? = nil
+    var wallets: [Wallet] = [Wallet]()
+    var requestState: APIRequestState = .notStarted
     var walletErrorMessage: String = ""
-    
-    func walletReducer(
-        state: inout WalletViewState,
-        action: WalletViewActions,
-        environment: World
-    ) -> AnyPublisher<WalletViewActions, Never> {
-        switch action {
-        case .add(let wallet):
-            if let errorMessage = wallet.createWalletErrorMessage(),
-               !errorMessage.isEmpty {
-                state.walletErrorMessage = errorMessage
-            } else {
-                state.wallets.append(wallet)
-            }
-        case .edit(let wallet):
-            if let index = state.wallets.enumerated().first(where: { $0.element.id == wallet.id })?.offset {
-                state.wallets[index] = wallet
-            } else {
-                state.walletErrorMessage = L10n.Wallet.Message.walletNotFound
-            }
-        case .delete(let index):
-            if index < state.wallets.count && index >= 0 {
-                state.wallets.remove(at: index)
-            } else {
-                state.walletErrorMessage = L10n.Wallet.Message.walletNotFound
-            }
+}
+
+func walletReducer(
+    state: inout WalletViewState,
+    action: WalletViewActions,
+    environment: World
+) -> AnyPublisher<WalletViewActions, Never> {
+    switch action {
+    case .fetch:
+        if !state.requestState.isRequesting {
+            state.requestState = .requesting
+            return environment.walletService.fetch()
+                .subscribe(on: DispatchQueue.main)
+                .map { WalletViewActions.append(wallets: $0) }
+                .catch { Just(WalletViewActions.error(error: $0)) }
+                .eraseToAnyPublisher()
         }
-        return Empty().eraseToAnyPublisher()
+        break
+    case .add(let wallet):
+        if !state.requestState.isRequesting {
+            state.requestState = .requesting
+            return environment.walletService.addWallet(wallet: wallet)
+                .subscribe(on: DispatchQueue.main)
+                .map { WalletViewActions.append(wallets: [$0]) }
+                .catch { Just(WalletViewActions.error(error: $0)) }
+                .eraseToAnyPublisher()
+        }
+        break
+    case .edit(let wallet):
+        if !state.requestState.isRequesting {
+            state.requestState = .requesting
+            return environment.walletService.editWallet(wallet: wallet)
+                .subscribe(on: DispatchQueue.main)
+                .map { WalletViewActions.update(wallet: $0) }
+                .catch { Just(WalletViewActions.error(error: $0)) }
+                .eraseToAnyPublisher()
+        }
+        break
+    case .delete( _):
+        break
+    case .append(wallets: let wallets):
+        state.wallets.append(contentsOf: wallets)
+        state.requestState = .success
+        break
+    case .update(let wallet):
+        if let row = state.wallets.firstIndex(where: {$0.id == wallet.id}) {
+            state.wallets[row] = wallet
+        }
+        state.requestState = .success
+        break
+    case .error(let error):
+        state.requestState = .finished
+        state.walletErrorMessage = error.message ?? ""
+        break
     }
+    return Empty().eraseToAnyPublisher()
 }
 
     extension WalletViewState {
@@ -49,28 +76,24 @@ struct WalletViewState {
                    title: "Security Bank",
                    type: WalletType.savings,
                    currency: .philippinePeso,
-                   total: 1_000_000,
                    targetRawDate: ""),
             Wallet(id: 2,
                    title: "France Trip",
                    type: WalletType.goal,
                    currency: .philippinePeso,
-                   total: 10_000,
                    targetAmount: 100_000,
                    targetRawDate: "2025-06-30"),
             Wallet(id: 3,
                    title: "Samgyupsal",
                    type: WalletType.budget,
                    currency: .philippinePeso,
-                   total: 10_000,
                    targetRawDate: ""),
             Wallet(id: 4,
                    title: "Ramen",
                    type: WalletType.budget,
                    currency: .philippinePeso,
-                   total: 5_000,
                    targetRawDate: "")
         ]
 
-        static let unitTestState = TransactionsViewState(transactions: TransactionsViewState.sampleTransactions)
+        static let unitTestList = sampleWallets
     }

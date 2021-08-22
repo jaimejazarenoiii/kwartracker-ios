@@ -39,7 +39,7 @@ extension AddNewWalletPage {
                 label: L10n.currency,
                 selectLabel: walletCurrency == nil ?
                     L10n.Wallet.Placeholder.selectWalletCurrency :
-                    Currency.getType(walletCurrency!).stringValue,
+                    Currency(stringValue: walletCurrency!)!.rawValue.stringValue,
                 showOptions: $currencyMenuPresented,
                 transactionSelection: $transactionFieldType
             )
@@ -65,17 +65,16 @@ extension AddNewWalletPage {
     private var GoalField: some View {
         Group {
             if walletTypeValue != nil {
-                if WalletType.getType(walletTypeValue!) == .goal {
                     if walletCurrency != nil {
                         Spacer()
                             .frame(height: spacing)
                         TextFieldForm(
-                            label: L10n.Wallet.Label.targetAmount,
-                            placeholder: L10n.Wallet.Placeholder.enterYourTargetAmount,
+                            label: L10n.Wallet.Label.amount,
+                            placeholder: L10n.Wallet.Placeholder.enterYourInitialAmount,
                             inputValue: $targetAmountValue
                         )
                     }
-
+                if walletTypeValue == WalletType.goal.stringValue {
                     Spacer()
                         .frame(height: spacing)
                     SelectableFieldForm(
@@ -88,13 +87,15 @@ extension AddNewWalletPage {
                         transactionSelection: $transactionFieldType
                     )
                 }
-                Spacer()
-                    .frame(height: spacing)
-                TextFieldForm(
-                    label: L10n.Wallet.Label.savedTo,
-                    placeholder: L10n.Wallet.Label.savedTo,
-                    inputValue: $savedToValue
-                )
+                
+                // not included in API yet
+//                Spacer()
+//                    .frame(height: spacing)
+//                TextFieldForm(
+//                    label: "L10n.Wallet.Label.savedTo",
+//                    placeholder: "L10n.Wallet.Label.savedTo",
+//                    inputValue: $savedToValue
+//                )
             }
         }
     }

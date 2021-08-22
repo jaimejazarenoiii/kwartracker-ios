@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AddNewWalletPage: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject var store: AppStore
+    
     @State internal var buttonToggle: Bool = false
     @State internal var cardSize: CGSize = .zero
     @State internal var walletNameValue: String = ""
@@ -23,6 +25,7 @@ struct AddNewWalletPage: View {
     @State internal var calendarPresented: Bool = false
     @State var transactionFieldType: TransactionFieldType = .dateRange
     
+    private let loaderSize: CGFloat = 200
     internal let spacing: CGFloat = 30
     internal let disableOpacityValue: Double = 0.48
     internal let enableOpacityValue: Double = 1
@@ -31,8 +34,7 @@ struct AddNewWalletPage: View {
     internal var isSaveButtonEnabled: Bool {
         return !walletNameValue.isEmpty &&
             walletCurrency != nil &&
-            !savedToValue.isEmpty &&
-            walletCurrency != nil
+            !targetAmountValue.isEmpty
     }
     
     init() {
@@ -46,9 +48,16 @@ struct AddNewWalletPage: View {
     }
     
     var body: some View {
-        ZStack {
-            MainBody
-            OptionAlert
+        if store.state.walletState.requestState.isRequesting {
+            ActivityIndicator()
+                .frame(width: loaderSize, height: loaderSize)
+                .foregroundColor(Color(Asset.Colors.teal.color))
+        } else {
+            ZStack {
+                MainBody
+                OptionAlert
+         
+            }.navigationBarHidden(true)
         }
     }
     
@@ -68,7 +77,7 @@ struct AddNewWalletPage: View {
             } rightBarViewContent: {
                 Button(action: {
                     if isSaveButtonEnabled {
-                        buttonToggle.toggle()
+                        addWalletAction()
                     }
                 }, label: {
                     Text(L10n.Button.Label.save)
@@ -78,7 +87,7 @@ struct AddNewWalletPage: View {
                                                         disableOpacityValue))
                         .font(.system(size: 16,
                                       weight: .bold))
-                }).disabled(isSaveButtonEnabled)
+                }).disabled(!isSaveButtonEnabled)
             }
         } body: {
             ScrollView(showsIndicators: true) {
@@ -92,8 +101,31 @@ struct AddNewWalletPage: View {
                         .frame(height: spacing)
                     Fields
                 }
+                .onTapGesture {
+                    UIApplication.shared.endEditing()
+                }
             }
+            .gesture(DragGesture()
+                .onChanged({ _ in
+                    UIApplication.shared.endEditing()
+                })
+            )
             .adaptsToKeyboard()
         }
+    }
+    
+    private func addWalletAction() {
+        let currency = Currency(stringValue: walletCurrency!) ?? Currency.philippinePeso
+        let newWallet = Wallet(id: 0,
+                               title: walletNameValue,
+                               type: WalletType.getType(walletTypeValue ?? ""),
+                               currency: currency,
+                               targetAmount: targetAmountValue.toDoubleWith(currency: currency.rawValue.locale),
+                               targetRawDate: "",
+                               savedTo: "",
+                               includeToOverallTotalBalance: false,
+                               transactions: [])
+        store.send(.walletView(action: .add(wallet: newWallet)))
+        presentationMode.wrappedValue.dismiss()
     }
 }
