@@ -10,6 +10,7 @@ import SwiftUI
 struct OptionView: View {
     @Binding var presented: Bool
     @Binding var selectedItem: String?
+    @State private var tempSelectedItem: String? = nil
     var options: [OptionItem]
     private let radius: CGFloat = 0.5
     private let padding: CGFloat = 10
@@ -20,7 +21,7 @@ struct OptionView: View {
     private let rectRadius: CGFloat = 30
     private let iconSize: CGFloat = 30
     private let iconCornerRadius: CGFloat = 10
-    private let rowHeight: CGFloat = 60
+    private let rowHeight: CGFloat = 65
     private var modalHeight: CGFloat {
         let height = rowHeight * CGFloat(options.count)
         let maxHeight =  UIScreen.main.bounds.height * 0.75
@@ -29,15 +30,27 @@ struct OptionView: View {
         }
         return height
     }
+    
+    init(presented: Binding<Bool>, selectedItem: Binding<String?>, options: [OptionItem]) {
+        self._presented = presented
+        self._selectedItem = selectedItem
+        self._tempSelectedItem = State(wrappedValue: selectedItem.wrappedValue)
+        self.options = options
+    }
 
     var body: some View {
         ZStack {
-            Color.clear
-                .blur(radius: radius)
-                .ignoresSafeArea()
+            Button(action: {
+                presented.toggle()
+            }, label: {
+                Color.clear
+                    .blur(radius: radius)
+                    .ignoresSafeArea()
+            })
             
             Group {
                 Button(action: {
+                    selectedItem = tempSelectedItem
                     presented.toggle()
                 }, label: {
                     ZStack {
@@ -62,8 +75,7 @@ struct OptionView: View {
                 ScrollView(.vertical, showsIndicators: true) {
                     ForEach(options, id: \.self) { option in
                         Button(action: {
-                            debugPrint("row is selected")
-                            selectedItem = option.value
+                            tempSelectedItem = option.value
                         }, label: {
                             VStack(alignment: .leading) {
                                 Spacer()
@@ -85,7 +97,7 @@ struct OptionView: View {
                         })
                         .background(
                             RoundedRectangle(cornerRadius: iconCornerRadius)
-                                .fill(option.value == selectedItem ?
+                                .fill(option.value == tempSelectedItem ?
                                         Color(Asset.Colors.mysticBlueGrey.color) :
                                         Color.clear)
                                 .cornerRadius(padding, corners: .allCorners)

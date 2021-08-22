@@ -27,8 +27,8 @@ struct Transaction {
     var amountCurrencyDisplay: String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
-        formatter.locale = Locale(identifier: wallet.currency?.localeNumberFormat
-                                    ?? Currency.philippinePeso.localeNumberFormat)
+        let currency = wallet.currency ?? .philippinePeso
+        formatter.locale = Locale(identifier: currency.rawValue.locale)
         return formatter.string(from: NSNumber(value: amount)) ?? "0"
     }
 

@@ -10,26 +10,48 @@ import Foundation
 enum Currency {
     case philippinePeso
     case usDollar
+    typealias RawValue = CurrencyValue
     
-    static func getType(_ locale: String) -> Currency {
-        switch locale {
-        case "fil_PH": return .philippinePeso
-        case "en_US": return .usDollar
-        default: return .philippinePeso
+    struct CurrencyValue {
+        let id: Int
+        let locale: String
+        let stringValue: String
+        
+        static var philippinePeso: CurrencyValue {
+            return CurrencyValue(id: 0, locale: "fil_PH", stringValue: "php")
+        }
+        
+        static var usDollar: CurrencyValue {
+            return CurrencyValue(id: 1, locale: "en_US", stringValue: "usd")
         }
     }
-
-    var localeNumberFormat: String {
+    
+    var rawValue: RawValue {
         switch self {
-        case .philippinePeso: return "fil_PH"
-        case .usDollar: return "en_US"
+        case .philippinePeso:
+            return .philippinePeso
+        case .usDollar:
+            return .usDollar
         }
     }
     
-    var stringValue: String {
-        switch self {
-        case .philippinePeso: return "Philippine Peso"
-        case .usDollar: return "US Dollar"
+    init?(stringValue: String) {
+        switch stringValue {
+        case "php":
+            self = .philippinePeso
+        case "usd":
+            self = .usDollar
+        default: return nil
+        }
+    }
+    
+    init?(id: Int) {
+        switch id {
+        case 0:
+            self = .philippinePeso
+        case 1:
+            self = .usDollar
+        default: return nil
         }
     }
 }
