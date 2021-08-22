@@ -15,13 +15,13 @@ struct WalletPageView: View {
     private let separatorHeight: CGFloat = 0.5
     private let navIconSize: CGFloat = 10
     private let loaderSize: CGFloat = 200
+    var navigationBackAction: (() -> Void)
     var body: some View {
         NavigationView {
             SkeletalView {
                 NavigationBarView(
                     title: L10n.Wallet.Title.myWallet) {
-                    Button(action: {
-                    }) {
+                    Button(action: navigationBackAction) {
                         Image(uiImage: Asset.Images.arrowLeftIconWhite.image)
                             .frame(width: navIconSize, height: navIconSize)
                     }

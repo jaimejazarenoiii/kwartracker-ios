@@ -23,6 +23,7 @@ func walletReducer(
     case .fetch:
         if !state.requestState.isRequesting {
             state.requestState = .requesting
+            state.wallets.removeAll()
             return environment.walletService.fetch()
                 .subscribe(on: DispatchQueue.main)
                 .map { WalletViewActions.append(wallets: $0) }
