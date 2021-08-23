@@ -42,7 +42,6 @@ func categoryReducer(
         state.addCategoryIsDone = true
         state.addCategoryIsRequesting = false
         state.categoryGroups = environment.categoryService.getAllCategoryGroups()
-        state.isAddCategoryLinkActive = false
         break
     case .parentCategoryHandleError(let error):
         state.addCategoryIsRequesting = false
@@ -58,13 +57,15 @@ func categoryReducer(
         state.addCategoryIsRequesting = false
         state.categoryGroups = environment.categoryService.getAllCategoryGroups()
         state.addCategoryIsDone = true
-        state.isAddCategoryLinkActive = false
         break
     case .addCategoryHandleError(let error):
         state.addCategoryIsRequesting = false
         state.addCategoryErrorMessage = error.localizedDescription
         break
     case .addCategoryLinkActive(let active):
+        if active {
+            state.addCategoryIsDone = false
+        }
         state.isAddCategoryLinkActive = active
         break
     case .editCategoryGroupRequest(let categoryGroup):
