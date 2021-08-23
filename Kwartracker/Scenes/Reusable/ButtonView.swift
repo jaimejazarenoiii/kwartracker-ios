@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ButtonView: View {
     let actionHandler: (() -> Void)
-    let actionLabel: Action
+    let actionLabel: String
+    var actionBtnColor: Color = Color(Asset.Colors.teal.color)
     
     private let shadowRadius: CGFloat = 8
     private let shadowOffset = CGPoint(x: 6, y: 6)
@@ -20,13 +21,13 @@ struct ButtonView: View {
         Button(action: actionHandler, label: {
             ZStack {
                 BWNeumorphicRectangle(rectRadius: rectRadius,
-                                      color: actionLabel.buttonColor,
+                                      color: actionBtnColor,
                                       shadowRadius: shadowRadius,
                                       shadowOffset: shadowOffset)
-                Text(actionLabel.text)
+                Text(actionLabel)
                     .foregroundColor(.white)
                     .font(.system(size: fontSize))
-                    .fontWeight(actionLabel.self == .changePassword ? .bold : .regular)
+                    .fontWeight(.regular)
             }
         })
     }

@@ -11,7 +11,11 @@ struct AlertView: View {
     var body: some View {
         ZStack {
             Color.gray.opacity(0.4).edgesIgnoringSafeArea(.all)
-            MainAlertView(dialogStatus: .success)
+            MainAlertView(topImage: Asset.Images.checkIcon.image,
+                          title: "",
+                          message: "",
+                          okAction: {},
+                          actionTitle: "")
                 .padding(.horizontal)
                 .fixedSize(horizontal: false, vertical: true)
                 .background(Color.white)
