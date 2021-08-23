@@ -166,12 +166,15 @@ struct CategoryFormView: View {
 
     private var alertView: some View {
         Group {
-            if store.state.categoryState.addCategoryIsDone,
-               procedure == .add {
+            if procedure == .add, store.state.categoryState.addCategoryIsDone {
                 ZStack {
                     BackgroundBlurView()
                         .ignoresSafeArea()
-                    MainAlertView(dialogStatus: .success, okAction: doneAction)
+                    MainAlertView(topImage: Asset.Images.checkIcon.image,
+                                  title: L10n.PopUpConfirmationModal.Title.success,
+                                  message: L10n.PopUpConfirmationModal.Label.Message.success,
+                                  okAction: doneAction,
+                                  actionTitle: "Cool")
                         .padding(.horizontal)
                         .fixedSize(horizontal: false, vertical: true)
                         .background(Color.white)
