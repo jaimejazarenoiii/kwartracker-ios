@@ -28,6 +28,7 @@ struct HomeView: View {
 
         return SideBarStack(sidebarWidth: sideBarWidth, showSidebar: $showSidebar) {
             SideMenuView(selectedItem: $selectedMenu, showSidebar: $showSidebar)
+                .environmentObject(store)
         } content: {
             TransactionHistoryView(showSidebar: $showSidebar)
                 .opacity([SideMenu.home, .transaction, .reports].contains(selectedMenu) ? 1 : 0)
