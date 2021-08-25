@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SideMenuView: View {
-    
+    @EnvironmentObject private var store: AppStore
     @Binding private var selectedItemId: SideMenu
     @Binding var showSidebar: Bool
     
@@ -41,6 +41,7 @@ struct SideMenuView: View {
                             showSidebar = false
                         }
                         selectedItemId = item
+                        loadSelectedItem()
                     }
                 }
                 .listRowInsets(EdgeInsets(top: listTopBottom, leading: listLeftRight,
@@ -64,6 +65,19 @@ struct SideMenuView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color(Asset.Colors.teal.color))
         .edgesIgnoringSafeArea(.all)
+    }
+    
+    private func loadSelectedItem() {
+        switch selectedItemId {
+        case .home, .reports, .settings, .transaction:
+            break
+        case .myProfile:
+            store.send(.userProfileView(action: .fetchProfile))
+            break
+        case .wallets:
+            store.send(.walletView(action: .fetch))
+            break
+        }
     }
 }
 

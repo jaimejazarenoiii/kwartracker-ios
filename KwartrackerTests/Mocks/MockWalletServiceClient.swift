@@ -33,40 +33,11 @@ class MockWalletServiceClient {
              FetchWalletsQuery.Data.Wallet(currency: "php", id: GraphQLID(1), title: "My BDO"),
             ]
     )
-    
-    let fetchErrorResponse = """
-        {
-          "data": {
-            "wallets": null
-          },
-          "errors": [
-            {
-              "message": "The field wallets on an object of type Query was hidden due to permissions",
-              "locations": [
-                {
-                  "line": 2,
-                  "column": 3
-                }
-              ],
-              "path": [
-                "wallets"
-              ]
-            }
-          ]
-        }
-    """
-    
-    let addEditErrorResponse = """
-        {
-          "errors": [
-            {
-              "message":"'2' is not a valid currency",
-              "backtrace":[""]
-            }
-          ],
-          "data":{}
-        }
-        """
+    let fetchErrorGraphQL = GraphQLError(
+        ["message":
+            "The field wallets on an object of type Query was hidden due to permissions"]
+    )
+    let addEditErrorResponse = GraphQLError(["message": "'2' is not a valid currency"])
     
     private func createJSONObject(_ mockObject: String) -> JSONObject? {
         guard let data = mockObject.data(using: .utf8) else { return nil }
@@ -123,10 +94,7 @@ extension MockWalletServiceClient: WalletServiceDelegate {
                 promise(.success(wallets))
                 
             } else {
-                if let errorJSONObject = self.createJSONObject(self.fetchErrorResponse) {
-                    let error = GraphQLError(errorJSONObject)
-                    promise(.failure(error))
-                }
+                promise(.failure(self.fetchErrorGraphQL))
                 
             }
         }
@@ -144,11 +112,7 @@ extension MockWalletServiceClient: WalletServiceDelegate {
                            targetRawDate: "")
                 promise(.success(newWallet))
             } else {
-                if let errorJSONObject = self.createJSONObject(self.addEditErrorResponse) {
-                    let error = GraphQLError(errorJSONObject)
-                    promise(.failure(error))
-                }
-                
+                promise(.failure(self.addEditErrorResponse))
             }
         }
         .eraseToAnyPublisher()
@@ -165,11 +129,7 @@ extension MockWalletServiceClient: WalletServiceDelegate {
                            targetRawDate: "")
                 promise(.success(newWallet))
             } else {
-                if let errorJSONObject = self.createJSONObject(self.addEditErrorResponse) {
-                    let error = GraphQLError(errorJSONObject)
-                    promise(.failure(error))
-                }
-                
+                promise(.failure(self.addEditErrorResponse))
             }
         }
         .eraseToAnyPublisher()
