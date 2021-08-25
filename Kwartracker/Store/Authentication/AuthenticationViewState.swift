@@ -76,6 +76,9 @@ func authReducer(
         state.isRequesting = false
         state.errorMessage = message
         break
+    case .logout:
+        UserDefaults.standard.setValue(false, forKey: "isLoggedIn")
+        break
     }
     
     return Empty().eraseToAnyPublisher()

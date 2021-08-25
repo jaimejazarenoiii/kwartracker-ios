@@ -12,4 +12,5 @@ enum AuthenticationViewAction {
     case login(user: UserAuthInfo)
     case setUserToken(token: String?)
     case setErrorMessage(message: String?)
+    case logout
 }

@@ -49,7 +49,7 @@ struct SideMenuView: View {
             }
             .listStyle(SidebarListStyle())
                 
-            Button(action: {}) {
+            Button(action: logout) {
                 HStack {
                     Image(uiImage: Asset.Images.powerIcon.image)
                         .resizable()
@@ -78,6 +78,10 @@ struct SideMenuView: View {
             store.send(.walletView(action: .fetch))
             break
         }
+    }
+
+    private func logout() {
+        store.send(.authView(action: .logout))
     }
 }
 
