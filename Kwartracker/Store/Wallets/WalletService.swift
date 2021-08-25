@@ -20,7 +20,8 @@ struct WalletService: WalletServiceDelegate {
     func fetch() -> AnyPublisher<[Wallet], GraphQLError> {
         Future<[Wallet], GraphQLError> { promise in
             DispatchQueue.main.async {
-                Network.shared.apollo.fetch(query: FetchWalletsQuery()) { result in
+                Network.shared.apollo.fetch(query: FetchWalletsQuery(),
+                                            cachePolicy: .fetchIgnoringCacheData) { result in
                     switch result {
                     case .success(let response):
                         guard let data = response.data?.wallets else {

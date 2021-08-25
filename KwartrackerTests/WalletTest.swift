@@ -47,7 +47,7 @@ class WalletTest: XCTestCase {
         DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
             expect.fulfill()
         }
-        wait(for: [expect], timeout: 1)
+        wait(for: [expect], timeout: 2)
         XCTAssert(!store.state.walletState.walletErrorMessage.isEmpty)
     }
     
@@ -70,7 +70,7 @@ class WalletTest: XCTestCase {
         DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
             expect.fulfill()
         }
-        wait(for: [expect], timeout: 1)
+        wait(for: [expect], timeout: 2)
         XCTAssert(!store.state.walletState.walletErrorMessage.isEmpty)
     }
     
@@ -95,7 +95,7 @@ class WalletTest: XCTestCase {
         DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
             expect.fulfill()
         }
-        wait(for: [expect], timeout: 1)
+        wait(for: [expect], timeout: 2)
         XCTAssert(!store.state.walletState.walletErrorMessage.isEmpty)
     }
 }
