@@ -13,4 +13,5 @@ enum AuthenticationViewAction {
     case setUserToken(token: String?)
     case setErrorMessage(message: String?)
     case logout
+    case setAccessPage(page: AccessPage)
 }
