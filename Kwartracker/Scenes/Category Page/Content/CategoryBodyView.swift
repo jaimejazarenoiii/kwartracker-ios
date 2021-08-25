@@ -12,8 +12,6 @@ struct CategoryBodyView: View {
     @EnvironmentObject private var store: AppStore
     @State var search = ""
     @State var selectedData: (group: CategoryGroup, category: Category?)? = nil
-
-    @State private var detailLinkIsActive = false
     @State private var selectedCategoryGroup: CategoryGroup = CategoryGroup(id: 0, title: "")
     @State private var selectedCategory: Category?
 
@@ -39,7 +37,7 @@ struct CategoryBodyView: View {
                         onSelect: { _ in
                             selectedCategoryGroup = categoryGroup
                             selectedCategory = nil
-                            detailLinkIsActive = true
+                            store.send(.category(action: .setCategoryDetailLinkActive(active: true)))
                         }
                     )
                     .padding([.top, .bottom], 10)
@@ -49,7 +47,7 @@ struct CategoryBodyView: View {
                             onSelect: {
                                 selectedCategoryGroup = categoryGroup
                                 selectedCategory = $0
-                                detailLinkIsActive = true
+                                store.send(.category(action: .setCategoryDetailLinkActive(active: true)))
                             }
                         )
                     }
@@ -62,8 +60,8 @@ struct CategoryBodyView: View {
                             categoryGroup: selectedCategoryGroup,
                             category: selectedCategory,
                             backAction: {
-                                detailLinkIsActive = false
-                            }), isActive: $detailLinkIsActive) {
+                                store.send(.category(action: .setCategoryDetailLinkActive(active: false)))
+                            }), isActive: .constant(store.state.categoryState.isCategoryDetailLinkActive)) {
                 EmptyView()
             }
             .isDetailLink(false)

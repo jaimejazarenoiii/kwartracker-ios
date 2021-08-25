@@ -71,6 +71,8 @@
 		169DA4722644C8A60063204F /* CircularLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169DA4712644C8A60063204F /* CircularLoaderView.swift */; };
 		169F1B2226CBF09C005DECA1 /* CategoryFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169F1B2126CBF09C005DECA1 /* CategoryFormView.swift */; };
 		169F1B2826CBF142005DECA1 /* Procedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169F1B2726CBF142005DECA1 /* Procedure.swift */; };
+		16A5B53226D270A90024A84E /* DeleteCategoryGroupMutation.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16A5B53126D270A90024A84E /* DeleteCategoryGroupMutation.graphql */; };
+		16A5B53B26D272610024A84E /* DeleteCategoryMutation.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16A5B53A26D272610024A84E /* DeleteCategoryMutation.graphql */; };
 		16C5C77D2635349F00F33B72 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C77C2635349F00F33B72 /* Transaction.swift */; };
 		16C5C7982636296600F33B72 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C7972636296600F33B72 /* Currency.swift */; };
 		16CCE730264F78B000345778 /* SampleSignInAndSignUp.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16CCE72F264F78B000345778 /* SampleSignInAndSignUp.graphql */; };
@@ -79,6 +81,7 @@
 		16CCE74D2651E57700345778 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CCE74C2651E57700345778 /* Network.swift */; };
 		16CD1B03264901F100272FCA /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 16CD1B02264901F100272FCA /* Apollo */; };
 		16CD1B05264901F100272FCA /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 16CD1B04264901F100272FCA /* ApolloWebSocket */; };
+		16EA801126D22611008C3B1B /* CategoryService+Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EA801026D22611008C3B1B /* CategoryService+Realm.swift */; };
 		16F4DC2626C7B071004E00BB /* EditParentCategory.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16F4DC2526C7B071004E00BB /* EditParentCategory.graphql */; };
 		16F4DC2A26C7B0FC004E00BB /* EditCategory.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16F4DC2926C7B0FC004E00BB /* EditCategory.graphql */; };
 		244A3B7E263A644E00D8B08B /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244A3B7D263A644E00D8B08B /* EditProfileView.swift */; };
@@ -311,6 +314,8 @@
 		169DA4712644C8A60063204F /* CircularLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularLoaderView.swift; sourceTree = "<group>"; };
 		169F1B2126CBF09C005DECA1 /* CategoryFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFormView.swift; sourceTree = "<group>"; };
 		169F1B2726CBF142005DECA1 /* Procedure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Procedure.swift; sourceTree = "<group>"; };
+		16A5B53126D270A90024A84E /* DeleteCategoryGroupMutation.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = DeleteCategoryGroupMutation.graphql; sourceTree = "<group>"; };
+		16A5B53A26D272610024A84E /* DeleteCategoryMutation.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = DeleteCategoryMutation.graphql; sourceTree = "<group>"; };
 		16C5C7772635347A00F33B72 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 		16C5C77C2635349F00F33B72 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		16C5C781263534EA00F33B72 /* Imageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imageable.swift; sourceTree = "<group>"; };
@@ -323,6 +328,7 @@
 		16CCE72F264F78B000345778 /* SampleSignInAndSignUp.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SampleSignInAndSignUp.graphql; sourceTree = "<group>"; };
 		16CCE7482651E53400345778 /* KeyChainKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainKeys.swift; sourceTree = "<group>"; };
 		16CCE74C2651E57700345778 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		16EA801026D22611008C3B1B /* CategoryService+Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryService+Realm.swift"; sourceTree = "<group>"; };
 		16F4DC2526C7B071004E00BB /* EditParentCategory.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = EditParentCategory.graphql; sourceTree = "<group>"; };
 		16F4DC2926C7B0FC004E00BB /* EditCategory.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = EditCategory.graphql; sourceTree = "<group>"; };
 		16FC4F4A265C7F6700D1B7E2 /* CircleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonStyle.swift; sourceTree = "<group>"; };
@@ -764,6 +770,8 @@
 				1695912926C122D400A2F97B /* AddCategoryMutation.graphql */,
 				16F4DC2526C7B071004E00BB /* EditParentCategory.graphql */,
 				16F4DC2926C7B0FC004E00BB /* EditCategory.graphql */,
+				16A5B53126D270A90024A84E /* DeleteCategoryGroupMutation.graphql */,
+				16A5B53A26D272610024A84E /* DeleteCategoryMutation.graphql */,
 			);
 			path = Mutations;
 			sourceTree = "<group>";
@@ -774,6 +782,7 @@
 				165A8CBD267F0ED9007DE03D /* AuthenticationService.swift */,
 				24CAF6112681E94100CEBD48 /* UserProfileService.swift */,
 				164C3C0526BE4A1700745684 /* CategoryService.swift */,
+				16EA801026D22611008C3B1B /* CategoryService+Realm.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1517,12 +1526,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				164C3C0A26BE4B1C00745684 /* AddParentCategoryMutation.graphql in Resources */,
+				16A5B53226D270A90024A84E /* DeleteCategoryGroupMutation.graphql in Resources */,
 				164E988D2615C4BA00D84B7F /* Colors.xcassets in Resources */,
 				290CA1B2261EABE400239EA7 /* swiftgen.yml in Resources */,
 				164E97E82614AC2900D84B7F /* Localizable.strings in Resources */,
 				16F4DC2626C7B071004E00BB /* EditParentCategory.graphql in Resources */,
 				16F4DC2A26C7B0FC004E00BB /* EditCategory.graphql in Resources */,
 				163E5935260CB89100E54401 /* Preview Assets.xcassets in Resources */,
+				16A5B53B26D272610024A84E /* DeleteCategoryMutation.graphql in Resources */,
 				7A9741F22670639F00747CF2 /* SignInMutation.graphql in Resources */,
 				24CAF60C2681E6AC00CEBD48 /* FetchUserProfile.graphql in Resources */,
 				168C8F6026BFAE4200419FDF /* CategoryGroups.graphql in Resources */,
@@ -1763,6 +1774,7 @@
 				16CCE7492651E53400345778 /* KeyChainKeys.swift in Sources */,
 				1652AEE42646A52E003542CD /* SearchTransactionFormModalView.swift in Sources */,
 				169F1B2826CBF142005DECA1 /* Procedure.swift in Sources */,
+				16EA801126D22611008C3B1B /* CategoryService+Realm.swift in Sources */,
 				164E95FF26122C5E00D84B7F /* World.swift in Sources */,
 				2952CC53267B49950038A6C5 /* CardTargetView.swift in Sources */,
 				2952CC51267B49950038A6C5 /* CardView.swift in Sources */,
@@ -2019,9 +2031,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"Kwartracker/Preview Content\"";
-				DEVELOPMENT_TEAM = UH6TFVQ36D;
+				DEVELOPMENT_TEAM = 3795Q8DW5P;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Kwartracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -2029,8 +2042,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kwartracker.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jaimejazarenoiii.kwartracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.jaimejazarenoiii.kwartracker";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2043,9 +2057,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"Kwartracker/Preview Content\"";
-				DEVELOPMENT_TEAM = UH6TFVQ36D;
+				DEVELOPMENT_TEAM = 3795Q8DW5P;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Kwartracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -2053,8 +2068,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kwartracker.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jaimejazarenoiii.kwartracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.jaimejazarenoiii.kwartracker";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2067,8 +2083,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UH6TFVQ36D;
+				DEVELOPMENT_TEAM = 8L7U423KS7;
 				INFOPLIST_FILE = KwartrackerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2090,8 +2107,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UH6TFVQ36D;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = KwartrackerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2101,6 +2120,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jacobearlpotolin.io.KwartrackerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kwartracker.app/Kwartracker";

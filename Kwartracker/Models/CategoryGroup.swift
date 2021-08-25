@@ -83,4 +83,20 @@ extension CategoryGroup {
         title = group.title ?? ""
         categories = (group.categories ?? []).map { Category(category: $0) }
     }
+
+    init(mutation data: AddParentCategoryMutation.Data.AddCategoryGroup) {
+        id = Int(data.id) ?? 0
+        title = data.title ?? ""
+        categories = []
+    }
+
+    init(mutation data: EditParentCategoryMutation.Data.EditCategoryGroup) {
+        id = Int(data.id) ?? 0
+        title = data.title ?? ""
+        categories = (data.categories ?? [])
+            .filter { Int($0.id) != nil }
+            .map {
+                Category(id: Int($0.id) ?? 0, title: $0.title ?? "")
+            }
+    }
 }

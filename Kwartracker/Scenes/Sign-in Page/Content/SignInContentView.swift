@@ -92,7 +92,7 @@ struct SignInContentView: View {
                         .foregroundColor(Color(Asset.Colors.teal.color))
                         .underline()
                 }.fullScreenCover(isPresented: $showingSignUp) {
-                    SignUpView()
+                    SignUpView().environmentObject(store)
                 }
                 
                 Spacer()

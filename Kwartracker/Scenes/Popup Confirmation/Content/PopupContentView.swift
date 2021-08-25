@@ -21,9 +21,12 @@ struct PopupContentView: View {
                     .padding(.bottom, horizontalMargin)
             }
             HStack {
-                ButtonView(actionHandler: {}, actionLabel: .delete)
+                ButtonView(actionHandler: {},
+                           actionLabel: L10n.PopUpConfirmationModal.Button.delete)
                     .padding(.leading, horizontalMargin)
-                ButtonView(actionHandler: {}, actionLabel: .cancel)
+                ButtonView(actionHandler: {},
+                           actionLabel: L10n.PopUpConfirmationModal.Button.cancel,
+                           actionBtnColor: Color(Asset.Colors.spindleGrey.color))
                     .padding(.trailing, horizontalMargin)
             }
         }
