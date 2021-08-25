@@ -72,6 +72,8 @@ struct CategoryFormView: View {
             })
 
             categoryOptionsModalView
+
+            alertView
         }
         .navigationBarHidden(true)
     }
@@ -162,6 +164,26 @@ struct CategoryFormView: View {
         }
     }
 
+    private var alertView: some View {
+        Group {
+            if procedure == .add, store.state.categoryState.addCategoryIsDone {
+                ZStack {
+                    BackgroundBlurView()
+                        .ignoresSafeArea()
+                    MainAlertView(topImage: Asset.Images.checkIcon.image,
+                                  title: L10n.PopUpConfirmationModal.Title.success,
+                                  message: L10n.PopUpConfirmationModal.Label.Message.success,
+                                  okAction: doneAction,
+                                  actionTitle: "Cool")
+                        .padding(.horizontal)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .background(Color.white)
+                        .cornerRadius(20)
+                }
+            }
+        }
+    }
+
     private func saveCategory() {
         if procedure == .add {
             if isParentInput {
@@ -197,6 +219,14 @@ struct CategoryFormView: View {
             store.send(.category(action: .deleteCategoryGroup(id: currentGroupId)))
         } else if let categoryId = category?.id {
             store.send(.category(action: .deleteCategory(id: categoryId, groupId: currentGroupId)))
+        }
+    }
+
+    private func doneAction() {
+        if procedure == .add {
+            store.send(.category(action: .addCategoryLinkActive(active: false)))
+        } else {
+            store.send(.category(action: .setCategoryDetailLinkActive(active: false)))
         }
     }
 }

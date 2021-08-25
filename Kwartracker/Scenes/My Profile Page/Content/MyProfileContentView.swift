@@ -27,9 +27,6 @@ struct MyProfileContentView: View {
         }
         .padding([.leading, .trailing], horizontalMargin)
         .padding(.top, topMargin)
-        .onAppear(perform: {
-            store.send(.userProfileView(action: .fetchProfile))
-        })
     }
 }
 

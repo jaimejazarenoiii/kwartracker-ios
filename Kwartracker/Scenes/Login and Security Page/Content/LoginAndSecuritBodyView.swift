@@ -44,7 +44,8 @@ private struct LoginDetailsView: View {
                 TextGroupView(text: L10n.LoginAndSecurityPage.DummyData.password,
                           fontColor: Color(Asset.Colors.nightRider.color))
 
-                ButtonView(actionHandler: {}, actionLabel: .changePassword)
+                ButtonView(actionHandler: {},
+                           actionLabel: L10n.ChangePasswordPage.navigationTitle)
                     .padding(.top)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
