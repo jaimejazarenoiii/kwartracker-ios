@@ -18,6 +18,7 @@ struct SignUpContentView: View {
     private let signInTopOffset: CGFloat = 15
     private let orSpacerTopOffset: CGFloat = 5
     private let footerNoteOffset: CGFloat = 25
+    private let sideMargin: CGFloat = 30
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -64,11 +65,36 @@ struct SignUpContentView: View {
                 }
                 .padding(.vertical, footerNoteOffset)
                 
-                SignUpFooterView()
+                signUpFooter
             }
             .padding(.horizontal, horizontalOffset)
             .padding(.top, topHeadMargin)
         }
+    }
+
+    private var signUpFooter: some View {
+        VStack {
+            Divider()
+                .padding([.leading, .trailing], -sideMargin)
+
+            HStack {
+                Text(L10n.SignUpPage.Label.alreadyHaveAnAccount)
+                    .font(.footnote)
+                    .foregroundColor(Color(Asset.Colors.nightRider.color))
+                
+                Button(action: toSignInPage) {
+                    Text(L10n.SignUpPage.Button.signIn)
+                        .font(.footnote)
+                        .foregroundColor(Color(Asset.Colors.teal.color))
+                        .underline()
+                }
+            }
+            .padding([.top, .bottom], sideMargin)
+        }
+    }
+
+    private func toSignInPage() {
+        store.send(.authView(action: .setAccessPage(page: .login)))
     }
 }
 
