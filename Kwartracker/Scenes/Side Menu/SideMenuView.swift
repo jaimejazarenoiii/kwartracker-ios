@@ -12,7 +12,7 @@ struct SideMenuView: View {
     @Binding private var selectedItemId: SideMenu
     @Binding var showSidebar: Bool
     
-    private let listTopBottom: CGFloat = 3
+    private let listTopBottom: CGFloat = 0
     private let listLeftRight: CGFloat = 0
     private let frameSize: CGFloat = 15
     private let fontSize: CGFloat = 16
@@ -46,6 +46,7 @@ struct SideMenuView: View {
                 }
                 .listRowInsets(EdgeInsets(top: listTopBottom, leading: listLeftRight,
                                           bottom: listTopBottom, trailing: listLeftRight))
+                .listRowBackground(Color(Asset.Colors.teal.color))
             }
             .listStyle(SidebarListStyle())
                 
@@ -109,7 +110,7 @@ struct SideMenuRow: View {
             Spacer()
         }
         .background(isSelected ? Color.white : Color(Asset.Colors.teal.color))
-        .cornerRadius(cornerRadius)
+        .cornerRadius(isSelected ? cornerRadius : 0)
     }
 }
 
