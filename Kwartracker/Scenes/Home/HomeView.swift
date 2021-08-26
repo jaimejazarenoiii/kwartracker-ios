@@ -29,18 +29,17 @@ struct HomeView: View {
         return SideBarStack(sidebarWidth: sideBarWidth, showSidebar: $showSidebar) {
             SideMenuView(selectedItem: $selectedMenu, showSidebar: $showSidebar)
         } content: {
-            TransactionHistoryView(showSidebar: $showSidebar)
-                .opacity([SideMenu.home, .transaction, .reports].contains(selectedMenu) ? 1 : 0)
-
-            MyProfileView(navigationBackAction: { showSidebar = true })
-                .opacity(selectedMenu == .myProfile ? 1 : 0)
-            
-            WalletPageView(navigationBackAction: { showSidebar = true })
-                .opacity(selectedMenu == .wallets ? 1 : 0)
-
-            NavigationView {
-                SettingsView(navigationBackAction: { showSidebar = true })
-            }.opacity(selectedMenu == .settings ? 1 : 0)
+            ZStack {
+                if selectedMenu == .myProfile {
+                    MyProfileView(navigationBackAction: { showSidebar = true })
+                } else if selectedMenu == .wallets {
+                    WalletPageView(navigationBackAction: { showSidebar = true })
+                } else if selectedMenu == .settings {
+                    SettingsView(navigationBackAction: { showSidebar = true })
+                } else {
+                    TransactionHistoryView(showSidebar: $showSidebar)
+                }
+            }
         }
         .edgesIgnoringSafeArea(.all)
         .gesture(drag)
