@@ -81,6 +81,7 @@
 		16CCE74D2651E57700345778 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CCE74C2651E57700345778 /* Network.swift */; };
 		16CD1B03264901F100272FCA /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 16CD1B02264901F100272FCA /* Apollo */; };
 		16CD1B05264901F100272FCA /* ApolloWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 16CD1B04264901F100272FCA /* ApolloWebSocket */; };
+		16D0F79926D680CD0024780B /* AccessPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D0F79826D680CD0024780B /* AccessPage.swift */; };
 		16EA801126D22611008C3B1B /* CategoryService+Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EA801026D22611008C3B1B /* CategoryService+Realm.swift */; };
 		16F4DC2626C7B071004E00BB /* EditParentCategory.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16F4DC2526C7B071004E00BB /* EditParentCategory.graphql */; };
 		16F4DC2A26C7B0FC004E00BB /* EditCategory.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16F4DC2926C7B0FC004E00BB /* EditCategory.graphql */; };
@@ -328,6 +329,7 @@
 		16CCE72F264F78B000345778 /* SampleSignInAndSignUp.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SampleSignInAndSignUp.graphql; sourceTree = "<group>"; };
 		16CCE7482651E53400345778 /* KeyChainKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainKeys.swift; sourceTree = "<group>"; };
 		16CCE74C2651E57700345778 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		16D0F79826D680CD0024780B /* AccessPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessPage.swift; sourceTree = "<group>"; };
 		16EA801026D22611008C3B1B /* CategoryService+Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryService+Realm.swift"; sourceTree = "<group>"; };
 		16F4DC2526C7B071004E00BB /* EditParentCategory.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = EditParentCategory.graphql; sourceTree = "<group>"; };
 		16F4DC2926C7B0FC004E00BB /* EditCategory.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = EditCategory.graphql; sourceTree = "<group>"; };
@@ -899,6 +901,7 @@
 				29327583264E4CE300E8BA8B /* WalletType.swift */,
 				169DA46C2644C76F0063204F /* APIRequestState.swift */,
 				169F1B2726CBF142005DECA1 /* Procedure.swift */,
+				16D0F79826D680CD0024780B /* AccessPage.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1749,6 +1752,7 @@
 				29327593264E729000E8BA8B /* Double+Extension.swift in Sources */,
 				C65699C32637C91400D24D2F /* SignUpFooterView.swift in Sources */,
 				24AC7C9C265F65FD00CE4282 /* CategoryBodyView.swift in Sources */,
+				16D0F79926D680CD0024780B /* AccessPage.swift in Sources */,
 				7AD9B8732626EC2A00CF0EA6 /* SkeletalView.swift in Sources */,
 				7A21C8CF266785C40007D30F /* MyProfileHeaderView.swift in Sources */,
 				164C3C2826BF5A4F00745684 /* CategoryReducer.swift in Sources */,

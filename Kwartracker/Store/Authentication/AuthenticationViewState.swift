@@ -79,6 +79,9 @@ func authReducer(
     case .logout:
         UserDefaults.standard.setValue(false, forKey: "isLoggedIn")
         break
+    case .setAccessPage(let page):
+        UserDefaults.standard.setValue(page.rawValue, forKey: "accessPage")
+        break
     }
     
     return Empty().eraseToAnyPublisher()

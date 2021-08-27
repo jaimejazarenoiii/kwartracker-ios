@@ -11,6 +11,7 @@ import SwiftUI
 struct KwartrackerApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @AppStorage("isLoggedIn") private var isLoggedIn: Bool = false
+    @AppStorage("accessPage") private var accessPage: Int = AccessPage.login.rawValue
 
     let store: AppStore = AppStore(
         initialState: .init(),
@@ -23,7 +24,11 @@ struct KwartrackerApp: App {
             if isLoggedIn {
                 HomeView().environmentObject(store)
             } else {
-                SignInView().environmentObject(store)
+                if AccessPage(rawValue: accessPage) == .login {
+                    SignInView().environmentObject(store)
+                } else {
+                    SignUpView().environmentObject(store)
+                }
             }
         }
     }

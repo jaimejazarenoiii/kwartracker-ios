@@ -84,15 +84,12 @@ struct SignInContentView: View {
                 Text(L10n.SignInPage.Label.noAccountYet)
                     .font(.footnote)
                     .foregroundColor(Color(Asset.Colors.nightRider.color))
-                Button(action: {
-                    self.showingSignUp.toggle()
-                }) {
+                
+                Button(action: toSignUpPage) {
                     Text(L10n.SignInPage.Button.signUp)
                         .font(.footnote)
                         .foregroundColor(Color(Asset.Colors.teal.color))
                         .underline()
-                }.fullScreenCover(isPresented: $showingSignUp) {
-                    SignUpView().environmentObject(store)
                 }
                 
                 Spacer()
@@ -118,6 +115,10 @@ struct SignInContentView: View {
             .padding([.leading, .trailing], sideMargin)
             .padding(.top, topHeadMargin)
         }
+    }
+
+    private func toSignUpPage() {
+        store.send(.authView(action: .setAccessPage(page: .signUp)))
     }
 }
 
