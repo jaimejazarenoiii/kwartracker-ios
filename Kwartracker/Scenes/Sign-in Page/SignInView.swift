@@ -8,12 +8,42 @@
 import SwiftUI
 
 struct SignInView: View {
+    @EnvironmentObject private var store: AppStore
+
     var body: some View {
-        SkeletalView(header: {
-            SignInHeaderView()
-        }, body: {
-            SignInContentView()
-        })
+        ZStack {
+            SkeletalView(header: {
+                SignInHeaderView()
+            }, body: {
+                SignInContentView()
+            })
+
+            alertView
+        }
+    }
+
+    private var alertView: some View {
+        Group {
+            if let errorMessage = store.state.authState.errorMessage, !errorMessage.isEmpty {
+                ZStack {
+                    BackgroundBlurView()
+                        .ignoresSafeArea()
+                    MainAlertView(topImage: nil,
+                                  title: "Error",
+                                  message: errorMessage,
+                                  okAction: doneAction,
+                                  actionTitle: "Okay")
+                        .padding(.horizontal)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .background(Color.white)
+                        .cornerRadius(20)
+                }
+            }
+        }
+    }
+
+    private func doneAction() {
+        store.send(.authView(action: .setErrorMessage(message: nil)))
     }
 }
 
