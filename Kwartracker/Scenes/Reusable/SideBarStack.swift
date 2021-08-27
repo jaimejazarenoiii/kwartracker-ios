@@ -38,23 +38,6 @@ struct SideBarStack<SidebarContent: View, Content: View>: View {
                 .offset(x: showSidebar ? sideBar : sideBarX * sidebarWidth, y: sideBar)
                 .animation(Animation.easeInOut.speed(animationSpeed))
             mainContent
-                .overlay(
-                    Group {
-                        if showSidebar {
-                            Color.white
-                                .opacity(showSidebar ? sideBarShowOpacity : sideBarOpacity)
-                                .onTapGesture {
-                                    self.showSidebar = false
-                                }
-                        } else {
-                            Color.clear
-                            .opacity(showSidebar ? sideBarOpacity : sideBarOpacity)
-                            .onTapGesture {
-                                self.showSidebar = false
-                            }
-                        }
-                    }
-                )
                 .offset(x: showSidebar ? sidebarWidth : sideBar, y: sideBar)
                 .animation(Animation.easeInOut.speed(animationSpeed))
         }

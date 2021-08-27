@@ -22,7 +22,10 @@ struct KwartrackerApp: App {
     var body: some Scene {
         WindowGroup {
             if isLoggedIn {
-                HomeView().environmentObject(store)
+                NavigationView {
+                    HomeView().navigationBarHidden(true)
+                }
+                .environmentObject(store)
             } else {
                 if AccessPage(rawValue: accessPage) == .login {
                     SignInView().environmentObject(store)
