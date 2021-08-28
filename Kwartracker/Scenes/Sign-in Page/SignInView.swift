@@ -29,10 +29,10 @@ struct SignInView: View {
                     BackgroundBlurView()
                         .ignoresSafeArea()
                     MainAlertView(topImage: nil,
-                                  title: "Error",
+                                  title: L10n.MainAlertView.errorTitle,
                                   message: errorMessage,
                                   okAction: doneAction,
-                                  actionTitle: "Okay")
+                                  actionTitle: L10n.MainAlertView.okayActionTitle)
                         .padding(.horizontal)
                         .fixedSize(horizontal: false, vertical: true)
                         .background(Color.white)
