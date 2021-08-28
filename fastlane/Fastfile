@@ -21,9 +21,26 @@ platform :ios do
     update_fastlane
   end
 
+  desc "Description of what the lane does"
+  lane :beta do
+    build_app(
+      scheme: ENV["SCHEME"],
+      workspace: ENV["WORKSPACE"],
+      codesigning_identity: ENV["CODESIGNING_IDENTITY"],
+      export_options: {
+        method: "app-store",
+        provisioningProfiles: {
+          ENV["APP_BUNDLE_ID"] => ENV["MATCH_APPSTORE"]
+        }
+      }
+    )
+
+    upload_to_testflight
+  end
+
   desc "Run tests using fastlane"
   lane :test do
-    scan(scheme: "Kwartracker")
+    scan(scheme: ENV["SCHEME"])
   end
 
   after_all do |lane|
