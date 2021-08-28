@@ -192,6 +192,19 @@ internal enum L10n {
     }
   }
 
+  internal enum MainAlertView {
+    /// Email is required.
+    internal static let emailIsRequiredMessage = L10n.tr("Localizable", "main_alert_view.email_is_required_message")
+    /// Error!
+    internal static let errorTitle = L10n.tr("Localizable", "main_alert_view.error_title")
+    /// Invalid email format.
+    internal static let invalidEmailFormatMessage = L10n.tr("Localizable", "main_alert_view.invalid_email_format_message")
+    /// Okay
+    internal static let okayActionTitle = L10n.tr("Localizable", "main_alert_view.okay_action_title")
+    /// Password is required.
+    internal static let passwordIsRequiredMessage = L10n.tr("Localizable", "main_alert_view.password_is_required_message")
+  }
+
   internal enum PopUpConfirmationModal {
     internal enum Button {
       /// Cancel
