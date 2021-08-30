@@ -7,26 +7,31 @@
 
 import SwiftUI
 
-struct AccessPageLayout<H: View, C: View>: View {
-    private let HeaderView: H
+struct AccessPageLayout<C: View>: View {
     private let contentView: C
     private let topBodyMargin: CGFloat = 5
     private let tealColor = Color(Asset.Colors.teal.color)
     private let solitudeGrayColor = Color(Asset.Colors.solitudeGrey.color)
     private let rectRadius: CGFloat = 60
+    private let leadingMargin: CGFloat = 40
+    private let contentSpacing: CGFloat = 10
 
-
-    init(@ViewBuilder header: @escaping () -> H, @ViewBuilder body: @escaping () -> C) {
-        self.HeaderView = header()
-        self.contentView = body()
+    init(@ViewBuilder content: @escaping () -> C) {
+        self.contentView = content()
     }
 
     var body: some View {
 
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
-                HeaderView
-                    .padding(.top, safeAreaInsets.top)
+                VStack {
+                    HStack(spacing: contentSpacing) {
+                        Image(Asset.Images.headerLogoIcon.name)
+                        Spacer()
+                    }
+                    .padding(.leading, leadingMargin)
+                }
+                .padding(.top, safeAreaInsets.top)
 
                 ZStack {
                     RoundedCornerRectangle(radius: rectRadius, corner: [.topLeft, .topRight])
