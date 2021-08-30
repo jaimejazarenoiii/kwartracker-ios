@@ -17,7 +17,6 @@ struct SignInView: View {
             }) {
                 SignInContentView()
             }
-            
             alertView
         }
     }
