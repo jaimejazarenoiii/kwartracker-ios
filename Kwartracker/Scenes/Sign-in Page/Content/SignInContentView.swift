@@ -30,8 +30,15 @@ struct SignInContentView: View {
     
     private var UserFields: some View {
         Group {
-            UserField(fieldType: .email, textValue: $email)
-            UserField(fieldType: .password, textValue: $password)
+            TextFieldForm(
+                label: L10n.SignInPage.Label.email,
+                placeholder: L10n.SignInPage.Field.enterEmailAddress,
+                inputValue: $email
+            )
+
+            SecureTextFieldForm(label: L10n.SignInPage.Label.password,
+                                placeholder: L10n.SignInPage.Field.enterPassword,
+                                inputValue: $password)
         }
     }
 
