@@ -59,6 +59,7 @@
 		16796F372664870900A99394 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16796F362664870900A99394 /* Date+Extensions.swift */; };
 		167A04CE26650FAC008E9A5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167A04CD26650FAC008E9A5C /* AppDelegate.swift */; };
 		167A050C2665214E008E9A5C /* RoundedRectangleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167A050B2665214E008E9A5C /* RoundedRectangleButtonStyle.swift */; };
+		167F270326DCEB4D0059CDDE /* SecureTextFieldForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167F270226DCEB4D0059CDDE /* SecureTextFieldForm.swift */; };
 		1683C9022629C76F00B1D4D8 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683C9012629C76F00B1D4D8 /* TransactionsView.swift */; };
 		1683EA3126D9CB10000196B8 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683EA3026D9CB10000196B8 /* Validator.swift */; };
 		16895014264AC06B00EED051 /* SelectableFieldForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16895013264AC06B00EED051 /* SelectableFieldForm.swift */; };
@@ -302,6 +303,7 @@
 		16796F362664870900A99394 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		167A04CD26650FAC008E9A5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		167A050B2665214E008E9A5C /* RoundedRectangleButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedRectangleButtonStyle.swift; sourceTree = "<group>"; };
+		167F270226DCEB4D0059CDDE /* SecureTextFieldForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextFieldForm.swift; sourceTree = "<group>"; };
 		1683C9012629C76F00B1D4D8 /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
 		1683C90A2629C7BB00B1D4D8 /* CircleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonStyle.swift; sourceTree = "<group>"; };
 		1683C9132629C81100B1D4D8 /* LinearGradient+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinearGradient+Extensions.swift"; sourceTree = "<group>"; };
@@ -860,6 +862,7 @@
 				16895013264AC06B00EED051 /* SelectableFieldForm.swift */,
 				16895033264AC78100EED051 /* TextFieldForm.swift */,
 				163DABCB264B59CA00DCBB47 /* BrowsePhotoField.swift */,
+				167F270226DCEB4D0059CDDE /* SecureTextFieldForm.swift */,
 			);
 			path = "Form Inputs";
 			sourceTree = "<group>";
@@ -1701,6 +1704,7 @@
 				297EEB9126A03671001BF88F /* UIApplication+Extension.swift in Sources */,
 				299452E4267B20240002C5E3 /* PopupConfirmationView.swift in Sources */,
 				299452E1267B20190002C5E3 /* TransactionRow.swift in Sources */,
+				167F270326DCEB4D0059CDDE /* SecureTextFieldForm.swift in Sources */,
 				295D972B26C0F54800AB19CF /* EditWalletPage+Fields.swift in Sources */,
 				299452DC267B1FFB0002C5E3 /* Category.swift in Sources */,
 				299452D7267B1FE90002C5E3 /* Imageable.swift in Sources */,
