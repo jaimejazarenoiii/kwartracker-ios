@@ -12,12 +12,12 @@ struct SignInView: View {
 
     var body: some View {
         ZStack {
-            SkeletalView(header: {
+            AccessPageLayout(header: {
                 SignInHeaderView()
-            }, body: {
+            }) {
                 SignInContentView()
-            })
-
+            }
+            
             alertView
         }
     }
