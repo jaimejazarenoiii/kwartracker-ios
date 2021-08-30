@@ -120,22 +120,20 @@ struct SignInContentView: View {
     }
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            VStack(alignment: .leading) {
-                
-                HeaderText
-                
-                UserFields
-                
-                SNSActions
-                
-                FootNoteActions
-                
-                FooterView
-            }
-            .padding([.leading, .trailing], sideMargin)
-            .padding(.top, topHeadMargin)
+        VStack(alignment: .leading) {
+            HeaderText
+
+            UserFields
+                .padding(.top, 20)
+
+            SNSActions
+
+            FootNoteActions
+
+            FooterView
         }
+        .padding([.leading, .trailing], sideMargin)
+        .padding(.top, topHeadMargin)
     }
 
     private func toSignUpPage() {
