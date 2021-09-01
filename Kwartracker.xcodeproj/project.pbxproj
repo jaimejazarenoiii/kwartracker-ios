@@ -24,6 +24,9 @@
 		163E5B64260F32A000E54401 /* Obfuscate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E5B63260F329F00E54401 /* Obfuscate.swift */; };
 		163E5B6C260F337600E54401 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E5B6B260F337600E54401 /* Secrets.swift */; };
 		164099A4269E4A61007EC40C /* AddCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164099A3269E4A61007EC40C /* AddCategoryView.swift */; };
+		16421D0826DF068E00C830AF /* ChangePasswordReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16421D0726DF068E00C830AF /* ChangePasswordReducer.swift */; };
+		16421D0E26DF06BC00C830AF /* ChangePasswordState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16421D0D26DF06BC00C830AF /* ChangePasswordState.swift */; };
+		16421D1226DF06C400C830AF /* ChangePasswordAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16421D1126DF06C400C830AF /* ChangePasswordAction.swift */; };
 		164C3BD226BE0DC500745684 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164C3BD126BE0DC500745684 /* HomeView.swift */; };
 		164C3BE726BE236100745684 /* MyProfileSideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164C3BE626BE236100745684 /* MyProfileSideMenuView.swift */; };
 		164C3BED26BE238300745684 /* SideMenuPageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164C3BEC26BE238300745684 /* SideMenuPageDelegate.swift */; };
@@ -267,6 +270,9 @@
 		163E5B63260F329F00E54401 /* Obfuscate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obfuscate.swift; sourceTree = "<group>"; };
 		163E5B6B260F337600E54401 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		164099A3269E4A61007EC40C /* AddCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryView.swift; sourceTree = "<group>"; };
+		16421D0726DF068E00C830AF /* ChangePasswordReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordReducer.swift; sourceTree = "<group>"; };
+		16421D0D26DF06BC00C830AF /* ChangePasswordState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordState.swift; sourceTree = "<group>"; };
+		16421D1126DF06C400C830AF /* ChangePasswordAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordAction.swift; sourceTree = "<group>"; };
 		164C3BD126BE0DC500745684 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		164C3BE626BE236100745684 /* MyProfileSideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileSideMenuView.swift; sourceTree = "<group>"; };
 		164C3BEC26BE238300745684 /* SideMenuPageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuPageDelegate.swift; sourceTree = "<group>"; };
@@ -601,6 +607,7 @@
 		163E5962260CBE0600E54401 /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				16421D0626DF065D00C830AF /* ChangePassword */,
 				164C3C1E26BF51A600745684 /* Category */,
 				24CAF6132681EA9800CEBD48 /* UserProfile */,
 				29327578264E4A8E00E8BA8B /* Wallets */,
@@ -690,6 +697,16 @@
 				164099A3269E4A61007EC40C /* AddCategoryView.swift */,
 			);
 			path = "Add Category Page";
+			sourceTree = "<group>";
+		};
+		16421D0626DF065D00C830AF /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				16421D0726DF068E00C830AF /* ChangePasswordReducer.swift */,
+				16421D0D26DF06BC00C830AF /* ChangePasswordState.swift */,
+				16421D1126DF06C400C830AF /* ChangePasswordAction.swift */,
+			);
+			path = ChangePassword;
 			sourceTree = "<group>";
 		};
 		164C3BD026BE0DB600745684 /* Home */ = {
@@ -1749,6 +1766,7 @@
 				167F26FD26DCE4870059CDDE /* AccessPageLayout.swift in Sources */,
 				169DA46D2644C76F0063204F /* APIRequestState.swift in Sources */,
 				164C3C4D26BF6F6400745684 /* CategoryObject.swift in Sources */,
+				16421D0E26DF06BC00C830AF /* ChangePasswordState.swift in Sources */,
 				163DABCC264B59CA00DCBB47 /* BrowsePhotoField.swift in Sources */,
 				16C5C77D2635349F00F33B72 /* Transaction.swift in Sources */,
 				7A17D13226298678005BB190 /* UserField.swift in Sources */,
@@ -1784,6 +1802,7 @@
 				164C3C0626BE4A1700745684 /* CategoryService.swift in Sources */,
 				16895014264AC06B00EED051 /* SelectableFieldForm.swift in Sources */,
 				29611D7D265F69F80076568D /* SelectedDayView.swift in Sources */,
+				16421D0826DF068E00C830AF /* ChangePasswordReducer.swift in Sources */,
 				C6081ADC2652765E003BB9CB /* DialogStatus.swift in Sources */,
 				24CAF6102681E71700CEBD48 /* NetworkInterceptorProvider.swift in Sources */,
 				24AC7CAC2664C15300CE4282 /* CategoryDetailBodyView.swift in Sources */,
@@ -1815,6 +1834,7 @@
 				16606D292647966B005F2CF5 /* OptionSelectView.swift in Sources */,
 				24AC7CA82664BF8200CE4282 /* CategoryDetailView.swift in Sources */,
 				2950DAFD267C4F4800D6A47F /* AddNewWalletPage+Fields.swift in Sources */,
+				16421D1226DF06C400C830AF /* ChangePasswordAction.swift in Sources */,
 				169DA4722644C8A60063204F /* CircularLoaderView.swift in Sources */,
 				29F3296B265BA04200C1F807 /* MonthView.swift in Sources */,
 				29F32958265B9F8500C1F807 /* Calendar+Extension.swift in Sources */,
