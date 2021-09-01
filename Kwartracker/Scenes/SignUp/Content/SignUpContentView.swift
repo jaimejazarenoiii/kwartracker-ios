@@ -27,9 +27,19 @@ struct SignUpContentView: View {
                     .font(.system(size: titleFontSize))
                     .fontWeight(.medium)
                     .fixedSize(horizontal: false, vertical: true)
-                
-                UserField(fieldType: .email, textValue: $email)
-                UserField(fieldType: .password, textValue: $password)
+
+                Group {
+                    TextFieldForm(
+                        label: L10n.SignInPage.Label.email,
+                        placeholder: L10n.SignInPage.Field.enterEmailAddress,
+                        inputValue: $email
+                    )
+
+                    SecureTextFieldForm(label: L10n.SignInPage.Label.password,
+                                        placeholder: L10n.SignInPage.Field.enterPassword,
+                                        inputValue: $password)
+                }
+                .padding(.top, 20)
                 
                 Group {
                     Button(action: {
@@ -46,11 +56,13 @@ struct SignUpContentView: View {
                     .buttonStyle(RoundedRectangleButtonStyle(buttonColor: Asset.Colors.teal.color,
                                                              isDisabled: snsButtonDisabled))
                     .disabled(snsButtonDisabled)
-                    .padding(.top, signInTopOffset)
+                    .padding(.top)
                     
                     HStack {
                         Spacer()
                         Text(L10n.SignUpPage.Label.or)
+                            .font(.footnote)
+                            .foregroundColor(Color(Asset.Colors.charcoal.color))
                         Spacer()
                      }
                     .padding(.top, orSpacerTopOffset)
@@ -63,16 +75,10 @@ struct SignUpContentView: View {
                 Group {
                     HStack {
                         Spacer()
-                        Button(action: {
-                        }) {
-                            Text(L10n.SignUpPage.Button.signUpGuest)
-                                .font(.footnote)
-                                .foregroundColor(.secondary)
-                                .underline()
-                        }
+                        FootnoteButton(action: {}, text: L10n.SignUpPage.Button.signUpGuest)
                     }
+                    .padding([.top, .bottom], footerNoteOffset)
                 }
-                .padding(.vertical, footerNoteOffset)
                 
                 signUpFooter
             }
