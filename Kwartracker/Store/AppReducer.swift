@@ -55,6 +55,12 @@ enum AppReducer {
             )
             .map(AppAction.category)
             .eraseToAnyPublisher()
+        case let .changePassword(action: action):
+            return changePasswordReducer(state: &state.changePasswordState,
+                                         action: action,
+                                         environment: environment)
+                .map(AppAction.changePassword)
+                .eraseToAnyPublisher()
         }
     }
 }

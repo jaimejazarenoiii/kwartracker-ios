@@ -12,7 +12,7 @@ struct ChangePasswordView: View {
 
     @State private var inputPassword = ""
     @State private var inputConfirmPassword = ""
-    @State private var isPasswordAndConfirmPasswordDoesNotMatch = false
+    @EnvironmentObject private var store: AppStore
 
     var body: some View {
         ZStack {
@@ -66,18 +66,18 @@ struct ChangePasswordView: View {
     }
 
     private func saveAction() {
-        isPasswordAndConfirmPasswordDoesNotMatch = inputPassword != inputConfirmPassword
+        store.send(.changePassword(action: .submit(password: inputPassword, confirmPassword: inputConfirmPassword)))
     }
 
     private var alertView: some View {
         Group {
-            if isPasswordAndConfirmPasswordDoesNotMatch {
+            if let errorMessage = store.state.changePasswordState.errorMessage {
                 ZStack {
                     BackgroundBlurView()
                         .ignoresSafeArea()
                     MainAlertView(topImage: nil,
                                   title: L10n.MainAlertView.errorTitle,
-                                  message: "Password and Confirm Password does not match!",
+                                  message: errorMessage,
                                   okAction: alertOkAction,
                                   actionTitle: L10n.MainAlertView.okayActionTitle)
                         .padding(.horizontal)
@@ -90,7 +90,7 @@ struct ChangePasswordView: View {
     }
 
     private func alertOkAction() {
-        isPasswordAndConfirmPasswordDoesNotMatch = false
+        store.send(.changePassword(action: .clearErrorMessage))
     }
 }
 

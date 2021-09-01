@@ -13,4 +13,5 @@ enum AppAction {
     case walletView(action: WalletViewActions)
     case userProfileView(action: UserProfileViewAction)
     case category(action: CategoryAction)
+    case changePassword(action: ChangePasswordAction)
 }
