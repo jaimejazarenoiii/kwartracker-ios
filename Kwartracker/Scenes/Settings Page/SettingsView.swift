@@ -39,6 +39,15 @@ struct SettingsView: View {
                 EmptyView()
             }
             .isDetailLink(false)
+
+            NavigationLink(
+                destination: LoginAndSecurityView(navigationBackAction: {
+                    loginSecurityLinkIsActive = false
+                }),
+                isActive: $loginSecurityLinkIsActive) {
+                EmptyView()
+            }
+            .isDetailLink(false)
         })
         .navigationBarHidden(true)
     }

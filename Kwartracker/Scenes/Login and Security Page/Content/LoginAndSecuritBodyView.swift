@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct LoginAndSecuritBodyView: View {
+    @Binding var isChangePasswordLinkActive: Bool
     var body: some View {
         VStack {
             TopRightButtonView(image: Asset.Images.editIcon.image, btnAction: {})
-            LoginDetailsView()
+            LoginDetailsView(isChangePasswordLinkActive: $isChangePasswordLinkActive)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .padding()
@@ -20,11 +21,13 @@ struct LoginAndSecuritBodyView: View {
 
 struct LoginAndSecuritBodyView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginAndSecuritBodyView()
+        LoginAndSecuritBodyView(isChangePasswordLinkActive: .constant(false))
     }
 }
 
 private struct LoginDetailsView: View {
+    @Binding var isChangePasswordLinkActive: Bool
+
     private let fontSize: CGFloat = 15
     private let bottomMargin: CGFloat = 8
 
@@ -44,9 +47,17 @@ private struct LoginDetailsView: View {
                 TextGroupView(text: L10n.LoginAndSecurityPage.DummyData.password,
                           fontColor: Color(Asset.Colors.nightRider.color))
 
-                ButtonView(actionHandler: {},
-                           actionLabel: L10n.ChangePasswordPage.navigationTitle)
-                    .padding(.top)
+                Button(action: {
+                    isChangePasswordLinkActive = true
+                }) {
+                    HStack {
+                        Spacer()
+                        Text(L10n.ChangePasswordPage.navigationTitle)
+                            .foregroundColor(.white)
+                        Spacer()
+                    }
+                }
+                .buttonStyle(RoundedRectangleButtonStyle(buttonColor: Asset.Colors.teal.color))
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
