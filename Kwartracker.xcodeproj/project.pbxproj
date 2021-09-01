@@ -60,6 +60,7 @@
 		167A04CE26650FAC008E9A5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167A04CD26650FAC008E9A5C /* AppDelegate.swift */; };
 		167A050C2665214E008E9A5C /* RoundedRectangleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167A050B2665214E008E9A5C /* RoundedRectangleButtonStyle.swift */; };
 		1683C9022629C76F00B1D4D8 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683C9012629C76F00B1D4D8 /* TransactionsView.swift */; };
+		1683EA3126D9CB10000196B8 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1683EA3026D9CB10000196B8 /* Validator.swift */; };
 		16895014264AC06B00EED051 /* SelectableFieldForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16895013264AC06B00EED051 /* SelectableFieldForm.swift */; };
 		16895034264AC78100EED051 /* TextFieldForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16895033264AC78100EED051 /* TextFieldForm.swift */; };
 		168C8F6026BFAE4200419FDF /* CategoryGroups.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 168C8F5F26BFAE4200419FDF /* CategoryGroups.graphql */; };
@@ -304,6 +305,7 @@
 		1683C9012629C76F00B1D4D8 /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
 		1683C90A2629C7BB00B1D4D8 /* CircleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonStyle.swift; sourceTree = "<group>"; };
 		1683C9132629C81100B1D4D8 /* LinearGradient+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinearGradient+Extensions.swift"; sourceTree = "<group>"; };
+		1683EA3026D9CB10000196B8 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		16895013264AC06B00EED051 /* SelectableFieldForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableFieldForm.swift; sourceTree = "<group>"; };
 		16895033264AC78100EED051 /* TextFieldForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldForm.swift; sourceTree = "<group>"; };
 		168C8F5F26BFAE4200419FDF /* CategoryGroups.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CategoryGroups.graphql; sourceTree = "<group>"; };
@@ -662,6 +664,7 @@
 			children = (
 				163E5B6B260F337600E54401 /* Secrets.swift */,
 				16CCE7482651E53400345778 /* KeyChainKeys.swift */,
+				1683EA3026D9CB10000196B8 /* Validator.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -1768,6 +1771,7 @@
 				C6081ADC2652765E003BB9CB /* DialogStatus.swift in Sources */,
 				24CAF6102681E71700CEBD48 /* NetworkInterceptorProvider.swift in Sources */,
 				24AC7CAC2664C15300CE4282 /* CategoryDetailBodyView.swift in Sources */,
+				1683EA3126D9CB10000196B8 /* Validator.swift in Sources */,
 				24AC7C94265CAED200CE4282 /* LoginAndSecurityView.swift in Sources */,
 				164C3BED26BE238300745684 /* SideMenuPageDelegate.swift in Sources */,
 				C6CDDCCB2638135B00CB1562 /* ButtonView.swift in Sources */,
@@ -2088,8 +2092,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8L7U423KS7;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = KwartrackerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2099,6 +2103,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jacobearlpotolin.io.KwartrackerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kwartracker.app/Kwartracker";
@@ -2137,8 +2143,9 @@
 			baseConfigurationReference = DF4D41E232EA75D22CD128E1 /* Pods-Kwartracker-KwartrackerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UH6TFVQ36D;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = KwartrackerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2147,6 +2154,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jacobearlpotolin.io.KwartrackerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Kwartracker;
@@ -2158,8 +2167,9 @@
 			baseConfigurationReference = DD3E9E5BB7FB306F0A54B049 /* Pods-Kwartracker-KwartrackerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UH6TFVQ36D;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = KwartrackerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2168,6 +2178,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jacobearlpotolin.io.KwartrackerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Kwartracker;

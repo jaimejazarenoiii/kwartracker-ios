@@ -30,6 +30,10 @@ func authReducer(
 ) -> AnyPublisher<AuthenticationViewAction, Never> {
     switch action {
     case .login(let userInfo):
+        if let errorMessage = userInfo.validationErrorMessage {
+            state.errorMessage = errorMessage
+            break
+        }
         guard !state.isRequesting else { break }
         state.isRequesting = true
         
@@ -44,6 +48,10 @@ func authReducer(
             }
             .eraseToAnyPublisher()
     case .create(let userInfo):
+        if let errorMessage = userInfo.validationErrorMessage {
+            state.errorMessage = errorMessage
+            break
+        }
         guard !state.isRequesting else { break }
         state.isRequesting = true
         

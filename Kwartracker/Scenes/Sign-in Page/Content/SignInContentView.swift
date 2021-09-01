@@ -34,14 +34,28 @@ struct SignInContentView: View {
             UserField(fieldType: .password, textValue: $password)
         }
     }
+
+    private var snsButtonDisabled: Bool {
+        store.state.authState.isRequesting ||
+            (!store.state.authState.isRequesting && (email.isEmpty || password.isEmpty))
+    }
     
     private var SNSActions: some View {
         Group {
-            SNSButton(actionHandler: {
+            Button(action: {
                 let info = UserAuthInfo(email: email, password: password)
                 store.send(.authView(action: .login(user: info)))
-            }, actionLabel: .signIn)
-            .disabled(store.state.authState.isRequesting)
+            }) {
+                HStack {
+                    Spacer()
+                    Text(L10n.SignInPage.Button.signIn)
+                        .foregroundColor(.white)
+                    Spacer()
+                }
+            }
+            .buttonStyle(RoundedRectangleButtonStyle(buttonColor: Asset.Colors.teal.color,
+                                                     isDisabled: snsButtonDisabled))
+            .disabled(snsButtonDisabled)
             .padding(.top)
             
             HStack {

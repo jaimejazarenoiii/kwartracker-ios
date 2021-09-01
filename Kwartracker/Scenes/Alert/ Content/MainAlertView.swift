@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainAlertView: View {
-    let topImage: UIImage
+    let topImage: UIImage?
     let title: String
     let message: String
     let okAction: (() -> ())

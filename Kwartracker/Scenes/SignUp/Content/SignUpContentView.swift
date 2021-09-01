@@ -32,12 +32,21 @@ struct SignUpContentView: View {
                 UserField(fieldType: .password, textValue: $password)
                 
                 Group {
-                    SNSButton(actionHandler: {
-                        let userInfo = UserAuthInfo(email: email, password: password)
-                        store.send(.authView(action: .create(user: userInfo)))
-                    }, actionLabel: .signUp)
+                    Button(action: {
+                        let info = UserAuthInfo(email: email, password: password)
+                        store.send(.authView(action: .create(user: info)))
+                    }) {
+                        HStack {
+                            Spacer()
+                            Text(L10n.SignInPage.Button.signUp)
+                                .foregroundColor(.white)
+                            Spacer()
+                        }
+                    }
+                    .buttonStyle(RoundedRectangleButtonStyle(buttonColor: Asset.Colors.teal.color,
+                                                             isDisabled: snsButtonDisabled))
+                    .disabled(snsButtonDisabled)
                     .padding(.top, signInTopOffset)
-                    .disabled(store.state.authState.isRequesting)
                     
                     HStack {
                         Spacer()
@@ -95,6 +104,11 @@ struct SignUpContentView: View {
 
     private func toSignInPage() {
         store.send(.authView(action: .setAccessPage(page: .login)))
+    }
+
+    private var snsButtonDisabled: Bool {
+        store.state.authState.isRequesting ||
+            (!store.state.authState.isRequesting && (email.isEmpty || password.isEmpty))
     }
 }
 

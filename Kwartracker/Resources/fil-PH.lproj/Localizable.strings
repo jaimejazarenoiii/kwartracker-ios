@@ -177,3 +177,10 @@
 "edit_category_page.content_text.make_parent_category" = "Make parent category?";
 "edit_category_page.content_text.select_parent_category" = "Select Parent Category";
 "edit_category_page.dummy_data_parent_category_name" = "Parent Category Name";
+
+// Main Alert View
+"main_alert_view.error_title" = "Error!";
+"main_alert_view.invalid_email_format_message" = "Invalid email format.";
+"main_alert_view.email_is_required_message" = "Email is required.";
+"main_alert_view.password_is_required_message" = "Password is required.";
+"main_alert_view.okay_action_title" = "Okay";
