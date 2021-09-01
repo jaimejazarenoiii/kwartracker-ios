@@ -30,8 +30,15 @@ struct SignInContentView: View {
     
     private var UserFields: some View {
         Group {
-            UserField(fieldType: .email, textValue: $email)
-            UserField(fieldType: .password, textValue: $password)
+            TextFieldForm(
+                label: L10n.SignInPage.Label.email,
+                placeholder: L10n.SignInPage.Field.enterEmailAddress,
+                inputValue: $email
+            )
+
+            SecureTextFieldForm(label: L10n.SignInPage.Label.password,
+                                placeholder: L10n.SignInPage.Field.enterPassword,
+                                inputValue: $password)
         }
     }
 
@@ -113,22 +120,20 @@ struct SignInContentView: View {
     }
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            VStack(alignment: .leading) {
-                
-                HeaderText
-                
-                UserFields
-                
-                SNSActions
-                
-                FootNoteActions
-                
-                FooterView
-            }
-            .padding([.leading, .trailing], sideMargin)
-            .padding(.top, topHeadMargin)
+        VStack(alignment: .leading) {
+            HeaderText
+
+            UserFields
+                .padding(.top, 20)
+
+            SNSActions
+
+            FootNoteActions
+
+            FooterView
         }
+        .padding([.leading, .trailing], sideMargin)
+        .padding(.top, topHeadMargin)
     }
 
     private func toSignUpPage() {
