@@ -27,6 +27,7 @@
 		16421D0826DF068E00C830AF /* ChangePasswordReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16421D0726DF068E00C830AF /* ChangePasswordReducer.swift */; };
 		16421D0E26DF06BC00C830AF /* ChangePasswordState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16421D0D26DF06BC00C830AF /* ChangePasswordState.swift */; };
 		16421D1226DF06C400C830AF /* ChangePasswordAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16421D1126DF06C400C830AF /* ChangePasswordAction.swift */; };
+		16421D1726DF0C2000C830AF /* ChangePasswordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16421D1626DF0C2000C830AF /* ChangePasswordTests.swift */; };
 		164C3BD226BE0DC500745684 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164C3BD126BE0DC500745684 /* HomeView.swift */; };
 		164C3BE726BE236100745684 /* MyProfileSideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164C3BE626BE236100745684 /* MyProfileSideMenuView.swift */; };
 		164C3BED26BE238300745684 /* SideMenuPageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164C3BEC26BE238300745684 /* SideMenuPageDelegate.swift */; };
@@ -273,6 +274,7 @@
 		16421D0726DF068E00C830AF /* ChangePasswordReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordReducer.swift; sourceTree = "<group>"; };
 		16421D0D26DF06BC00C830AF /* ChangePasswordState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordState.swift; sourceTree = "<group>"; };
 		16421D1126DF06C400C830AF /* ChangePasswordAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordAction.swift; sourceTree = "<group>"; };
+		16421D1626DF0C2000C830AF /* ChangePasswordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordTests.swift; sourceTree = "<group>"; };
 		164C3BD126BE0DC500745684 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		164C3BE626BE236100745684 /* MyProfileSideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileSideMenuView.swift; sourceTree = "<group>"; };
 		164C3BEC26BE238300745684 /* SideMenuPageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuPageDelegate.swift; sourceTree = "<group>"; };
@@ -582,6 +584,7 @@
 		163E593E260CB89100E54401 /* KwartrackerTests */ = {
 			isa = PBXGroup;
 			children = (
+				16421D1526DF0C0D00C830AF /* ChangePassword */,
 				163E593F260CB89100E54401 /* KwartrackerTests.swift */,
 				295D971F26C0CCC500AB19CF /* WalletTest.swift */,
 				163E5941260CB89100E54401 /* Info.plist */,
@@ -705,6 +708,14 @@
 				16421D0726DF068E00C830AF /* ChangePasswordReducer.swift */,
 				16421D0D26DF06BC00C830AF /* ChangePasswordState.swift */,
 				16421D1126DF06C400C830AF /* ChangePasswordAction.swift */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
+		16421D1526DF0C0D00C830AF /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				16421D1626DF0C2000C830AF /* ChangePasswordTests.swift */,
 			);
 			path = ChangePassword;
 			sourceTree = "<group>";
@@ -1903,6 +1914,7 @@
 			files = (
 				166A9CC32643775C00805A16 /* TransactionsTests.swift in Sources */,
 				7AEFD57826803B0000EAD90F /* MockAuthServiceClient.swift in Sources */,
+				16421D1726DF0C2000C830AF /* ChangePasswordTests.swift in Sources */,
 				163E5940260CB89100E54401 /* KwartrackerTests.swift in Sources */,
 				295D972026C0CCC500AB19CF /* WalletTest.swift in Sources */,
 				295D971C26C0CC9F00AB19CF /* MockWalletServiceClient.swift in Sources */,
