@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MyProfileContentView: View {
+    @Binding var isEditProfileViewLinkActive: Bool
     @EnvironmentObject private var store: AppStore
 
     private let neumorphicBoxHeight: CGFloat = 190
@@ -17,7 +18,7 @@ struct MyProfileContentView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            TopRightButtonView(image: Asset.Images.editIcon.image, btnAction: {})
+            TopRightButtonView(image: Asset.Images.editIcon.image, btnAction: goToEditProfileView)
                 .padding(.horizontal, editHorizontalMargin)
             
             MyProfileCardView(user: store.state.userProfileState.user)
@@ -28,11 +29,15 @@ struct MyProfileContentView: View {
         .padding([.leading, .trailing], horizontalMargin)
         .padding(.top, topMargin)
     }
+
+    private func goToEditProfileView() {
+        isEditProfileViewLinkActive = true
+    }
 }
 
 struct MyProfileContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MyProfileContentView()
+        MyProfileContentView(isEditProfileViewLinkActive: .constant(false))
             .previewLayout(.sizeThatFits)
     }
 }
