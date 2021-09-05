@@ -81,6 +81,7 @@
 		16A5B53226D270A90024A84E /* DeleteCategoryGroupMutation.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16A5B53126D270A90024A84E /* DeleteCategoryGroupMutation.graphql */; };
 		16A5B53B26D272610024A84E /* DeleteCategoryMutation.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16A5B53A26D272610024A84E /* DeleteCategoryMutation.graphql */; };
 		16B02B3B26E4683800C4705C /* Mutations.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16B02B3A26E4683800C4705C /* Mutations.graphql */; };
+		16B02B4926E4734200C4705C /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B02B4826E4734200C4705C /* UserDefaults+Extension.swift */; };
 		16C5C77D2635349F00F33B72 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C77C2635349F00F33B72 /* Transaction.swift */; };
 		16C5C7982636296600F33B72 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C7972636296600F33B72 /* Currency.swift */; };
 		16CCE730264F78B000345778 /* SampleSignInAndSignUp.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16CCE72F264F78B000345778 /* SampleSignInAndSignUp.graphql */; };
@@ -334,6 +335,7 @@
 		16A5B53126D270A90024A84E /* DeleteCategoryGroupMutation.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = DeleteCategoryGroupMutation.graphql; sourceTree = "<group>"; };
 		16A5B53A26D272610024A84E /* DeleteCategoryMutation.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = DeleteCategoryMutation.graphql; sourceTree = "<group>"; };
 		16B02B3A26E4683800C4705C /* Mutations.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Mutations.graphql; sourceTree = "<group>"; };
+		16B02B4826E4734200C4705C /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		16C5C7772635347A00F33B72 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 		16C5C77C2635349F00F33B72 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		16C5C781263534EA00F33B72 /* Imageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imageable.swift; sourceTree = "<group>"; };
@@ -918,6 +920,14 @@
 			path = "Category Form View";
 			sourceTree = "<group>";
 		};
+		16B02B4726E4733100C4705C /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				16B02B4826E4734200C4705C /* UserDefaults+Extension.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
 		16B24BAE261A8D170002065D /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -1284,6 +1294,7 @@
 		7AB88B1C262805C500E2DFD3 /* Custom Components */ = {
 			isa = PBXGroup;
 			children = (
+				16B02B4726E4733100C4705C /* UserDefaults */,
 				167F26FB26DCE4740059CDDE /* Layout */,
 				2994532F267B314D0002C5E3 /* String+Extension.swift */,
 				29327592264E729000E8BA8B /* Double+Extension.swift */,
@@ -1871,6 +1882,7 @@
 				7AD9B8812626F17400CF0EA6 /* SignInContentView.swift in Sources */,
 				168C8F6A26BFDFB400419FDF /* CategoryRow.swift in Sources */,
 				29F04570265CA33300842C8B /* PlaceholderStyle.swift in Sources */,
+				16B02B4926E4734200C4705C /* UserDefaults+Extension.swift in Sources */,
 				295D972D26C0F54800AB19CF /* EditWalletPage.swift in Sources */,
 				7A9716FE267C496400D106AF /* AuthenticationViewAction.swift in Sources */,
 				7A971700267C4A8300D106AF /* UserAuthInfo.swift in Sources */,
