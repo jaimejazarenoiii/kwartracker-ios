@@ -10,7 +10,7 @@ import SwiftUI
 import Combine
 
 struct UserProfileViewState {
-    var user: FetchProfileQuery.Data.Profile? = nil
+    var user: UserProfile? = nil
     var isRequesting: Bool = false
     var errorMessage: String?
 }
@@ -24,7 +24,6 @@ func userProfileReducer(
     case .fetchProfile:
         guard !state.isRequesting else { break }
         state.isRequesting = true
-        
         return environment.userProfileService.getProfile()
             .map {
                 UserProfileViewAction.setUserDetail($0.profile)
@@ -32,10 +31,14 @@ func userProfileReducer(
             .catch { Just(UserProfileViewAction.errorMessage($0.localizedDescription)) }
             .assertNoFailure()
             .eraseToAnyPublisher()
-    case .setUserDetail(let user):
-        state.user = user
+    case .setUserDetail:
+        state.isRequesting = false
+        state.user = UserDefaults.standard.retrieveUserProfile()
+        break
     case .errorMessage(let string):
+        state.isRequesting = false
         state.errorMessage = string
+        break
     }
     
     return Empty().eraseToAnyPublisher()

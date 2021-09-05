@@ -14,6 +14,9 @@
 		047E2B3B265B9C1B00D1EB9C /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E2B3A265B9C1B00D1EB9C /* SideMenu.swift */; };
 		04E071EA265E7241000DD4A2 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E071E9265E7241000DD4A2 /* UIView+Extensions.swift */; };
 		1620B95F269C7633000FF4F5 /* CategoryViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1620B95E269C7633000FF4F5 /* CategoryViewState.swift */; };
+		1624232026E47F1000F49207 /* EditProfileReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1624231F26E47F1000F49207 /* EditProfileReducer.swift */; };
+		1624232426E47F3100F49207 /* EditProfileState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1624232326E47F3100F49207 /* EditProfileState.swift */; };
+		1624232826E47F3B00F49207 /* EditProfileAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1624232726E47F3B00F49207 /* EditProfileAction.swift */; };
 		163DABCC264B59CA00DCBB47 /* BrowsePhotoField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163DABCB264B59CA00DCBB47 /* BrowsePhotoField.swift */; };
 		163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E592D260CB88E00E54401 /* KwartrackerApp.swift */; };
 		163E5930260CB88E00E54401 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E592F260CB88E00E54401 /* ContentView.swift */; };
@@ -80,6 +83,10 @@
 		169F1B2826CBF142005DECA1 /* Procedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169F1B2726CBF142005DECA1 /* Procedure.swift */; };
 		16A5B53226D270A90024A84E /* DeleteCategoryGroupMutation.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16A5B53126D270A90024A84E /* DeleteCategoryGroupMutation.graphql */; };
 		16A5B53B26D272610024A84E /* DeleteCategoryMutation.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16A5B53A26D272610024A84E /* DeleteCategoryMutation.graphql */; };
+		16B02B3B26E4683800C4705C /* Mutations.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16B02B3A26E4683800C4705C /* Mutations.graphql */; };
+		16B02B4926E4734200C4705C /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B02B4826E4734200C4705C /* UserDefaults+Extension.swift */; };
+		16B02B5126E4739C00C4705C /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B02B5026E4739C00C4705C /* UserProfile.swift */; };
+		16B02B5526E477F800C4705C /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B02B5426E477F800C4705C /* Gender.swift */; };
 		16C5C77D2635349F00F33B72 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C77C2635349F00F33B72 /* Transaction.swift */; };
 		16C5C7982636296600F33B72 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C7972636296600F33B72 /* Currency.swift */; };
 		16CCE730264F78B000345778 /* SampleSignInAndSignUp.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16CCE72F264F78B000345778 /* SampleSignInAndSignUp.graphql */; };
@@ -256,6 +263,9 @@
 		047E2B3A265B9C1B00D1EB9C /* SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		04E071E9265E7241000DD4A2 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		1620B95E269C7633000FF4F5 /* CategoryViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewState.swift; sourceTree = "<group>"; };
+		1624231F26E47F1000F49207 /* EditProfileReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileReducer.swift; sourceTree = "<group>"; };
+		1624232326E47F3100F49207 /* EditProfileState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileState.swift; sourceTree = "<group>"; };
+		1624232726E47F3B00F49207 /* EditProfileAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileAction.swift; sourceTree = "<group>"; };
 		163DABCB264B59CA00DCBB47 /* BrowsePhotoField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsePhotoField.swift; sourceTree = "<group>"; };
 		163E592A260CB88E00E54401 /* Kwartracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kwartracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		163E592D260CB88E00E54401 /* KwartrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KwartrackerApp.swift; sourceTree = "<group>"; };
@@ -332,6 +342,10 @@
 		169F1B2726CBF142005DECA1 /* Procedure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Procedure.swift; sourceTree = "<group>"; };
 		16A5B53126D270A90024A84E /* DeleteCategoryGroupMutation.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = DeleteCategoryGroupMutation.graphql; sourceTree = "<group>"; };
 		16A5B53A26D272610024A84E /* DeleteCategoryMutation.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = DeleteCategoryMutation.graphql; sourceTree = "<group>"; };
+		16B02B3A26E4683800C4705C /* Mutations.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Mutations.graphql; sourceTree = "<group>"; };
+		16B02B4826E4734200C4705C /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		16B02B5026E4739C00C4705C /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		16B02B5426E477F800C4705C /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		16C5C7772635347A00F33B72 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 		16C5C77C2635349F00F33B72 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		16C5C781263534EA00F33B72 /* Imageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imageable.swift; sourceTree = "<group>"; };
@@ -529,6 +543,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		1624231E26E47EF000F49207 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				1624231F26E47F1000F49207 /* EditProfileReducer.swift */,
+				1624232326E47F3100F49207 /* EditProfileState.swift */,
+				1624232726E47F3B00F49207 /* EditProfileAction.swift */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
 		163E5921260CB88E00E54401 = {
 			isa = PBXGroup;
 			children = (
@@ -612,6 +636,7 @@
 		163E5962260CBE0600E54401 /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				1624231E26E47EF000F49207 /* EditProfile */,
 				16421D0626DF065D00C830AF /* ChangePassword */,
 				164C3C1E26BF51A600745684 /* Category */,
 				24CAF6132681EA9800CEBD48 /* UserProfile */,
@@ -793,6 +818,7 @@
 				165A8C95267F0BDB007DE03D /* Mutations */,
 				16CCE726264EBD6800345778 /* schema.json */,
 				165A8CB8267F0DCE007DE03D /* API.swift */,
+				16B02B3A26E4683800C4705C /* Mutations.graphql */,
 			);
 			path = ApolloClient;
 			sourceTree = "<group>";
@@ -916,6 +942,14 @@
 			path = "Category Form View";
 			sourceTree = "<group>";
 		};
+		16B02B4726E4733100C4705C /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				16B02B4826E4734200C4705C /* UserDefaults+Extension.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
 		16B24BAE261A8D170002065D /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -937,6 +971,7 @@
 				16C5C7912636293900F33B72 /* Category.swift */,
 				7A9716FF267C4A8300D106AF /* UserAuthInfo.swift */,
 				164C3C4026BF69C700745684 /* Budget.swift */,
+				16B02B5026E4739C00C4705C /* UserProfile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -949,6 +984,7 @@
 				169DA46C2644C76F0063204F /* APIRequestState.swift */,
 				169F1B2726CBF142005DECA1 /* Procedure.swift */,
 				16D0F79826D680CD0024780B /* AccessPage.swift */,
+				16B02B5426E477F800C4705C /* Gender.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1282,6 +1318,7 @@
 		7AB88B1C262805C500E2DFD3 /* Custom Components */ = {
 			isa = PBXGroup;
 			children = (
+				16B02B4726E4733100C4705C /* UserDefaults */,
 				167F26FB26DCE4740059CDDE /* Layout */,
 				2994532F267B314D0002C5E3 /* String+Extension.swift */,
 				29327592264E729000E8BA8B /* Double+Extension.swift */,
@@ -1590,6 +1627,7 @@
 				168C8F6026BFAE4200419FDF /* CategoryGroups.graphql in Resources */,
 				1695912A26C122D400A2F97B /* AddCategoryMutation.graphql in Resources */,
 				163E5932260CB89100E54401 /* Images.xcassets in Resources */,
+				16B02B3B26E4683800C4705C /* Mutations.graphql in Resources */,
 				295D970B26C0C8DE00AB19CF /* FetchWallet.graphql in Resources */,
 				295D971326C0C91F00AB19CF /* AddWallet.graphql in Resources */,
 				7A9741F02670609E00747CF2 /* SignUpMutation.graphql in Resources */,
@@ -1754,9 +1792,11 @@
 				299452CD267B1FB60002C5E3 /* TransactionsViewAction.swift in Sources */,
 				299452C8267B1F710002C5E3 /* CircleButtonStyle.swift in Sources */,
 				299452C1267B1F530002C5E3 /* AddTransactionView.swift in Sources */,
+				16B02B5126E4739C00C4705C /* UserProfile.swift in Sources */,
 				299452BE267B1F3C0002C5E3 /* RoundedCorner.swift in Sources */,
 				299452B9267B1F200002C5E3 /* TransactionsViewState.swift in Sources */,
 				299452B2267B1EE40002C5E3 /* AppAction.swift in Sources */,
+				16B02B5526E477F800C4705C /* Gender.swift in Sources */,
 				299452AD267B1EB30002C5E3 /* PopupContentView.swift in Sources */,
 				164C3BD226BE0DC500745684 /* HomeView.swift in Sources */,
 				165A8CBE267F0ED9007DE03D /* AuthenticationService.swift in Sources */,
@@ -1790,6 +1830,7 @@
 				247480032628281200C7A9A8 /* NavigationHeaderView.swift in Sources */,
 				167A050C2665214E008E9A5C /* RoundedRectangleButtonStyle.swift in Sources */,
 				24AC7C90265B718900CE4282 /* SettingsBodyView.swift in Sources */,
+				1624232826E47F3B00F49207 /* EditProfileAction.swift in Sources */,
 				164C3C2C26BF5A8F00745684 /* CategoryAction.swift in Sources */,
 				04E071EA265E7241000DD4A2 /* UIView+Extensions.swift in Sources */,
 				1673C22826AD9F6F009733F7 /* SearchFieldView.swift in Sources */,
@@ -1830,6 +1871,7 @@
 				29945330267B314D0002C5E3 /* String+Extension.swift in Sources */,
 				16CCE7492651E53400345778 /* KeyChainKeys.swift in Sources */,
 				1652AEE42646A52E003542CD /* SearchTransactionFormModalView.swift in Sources */,
+				1624232026E47F1000F49207 /* EditProfileReducer.swift in Sources */,
 				16DE607026E058A40038E91E /* NavigationBarLayout.swift in Sources */,
 				169F1B2826CBF142005DECA1 /* Procedure.swift in Sources */,
 				16EA801126D22611008C3B1B /* CategoryService+Realm.swift in Sources */,
@@ -1852,6 +1894,7 @@
 				16421D1226DF06C400C830AF /* ChangePasswordAction.swift in Sources */,
 				169DA4722644C8A60063204F /* CircularLoaderView.swift in Sources */,
 				29F3296B265BA04200C1F807 /* MonthView.swift in Sources */,
+				1624232426E47F3100F49207 /* EditProfileState.swift in Sources */,
 				29F32958265B9F8500C1F807 /* Calendar+Extension.swift in Sources */,
 				164099A4269E4A61007EC40C /* AddCategoryView.swift in Sources */,
 				16895034264AC78100EED051 /* TextFieldForm.swift in Sources */,
@@ -1868,6 +1911,7 @@
 				7AD9B8812626F17400CF0EA6 /* SignInContentView.swift in Sources */,
 				168C8F6A26BFDFB400419FDF /* CategoryRow.swift in Sources */,
 				29F04570265CA33300842C8B /* PlaceholderStyle.swift in Sources */,
+				16B02B4926E4734200C4705C /* UserDefaults+Extension.swift in Sources */,
 				295D972D26C0F54800AB19CF /* EditWalletPage.swift in Sources */,
 				7A9716FE267C496400D106AF /* AuthenticationViewAction.swift in Sources */,
 				7A971700267C4A8300D106AF /* UserAuthInfo.swift in Sources */,

@@ -61,6 +61,12 @@ enum AppReducer {
                                          environment: environment)
                 .map(AppAction.changePassword)
                 .eraseToAnyPublisher()
+        case let .editProfile(action: action):
+            return editProfileReducer(state: &state.editProfileState,
+                                      action: action,
+                                      environment: environment)
+                .map(AppAction.editProfile)
+                .eraseToAnyPublisher()
         }
     }
 }
