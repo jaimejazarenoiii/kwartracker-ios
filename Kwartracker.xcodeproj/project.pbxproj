@@ -82,6 +82,7 @@
 		16A5B53B26D272610024A84E /* DeleteCategoryMutation.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16A5B53A26D272610024A84E /* DeleteCategoryMutation.graphql */; };
 		16B02B3B26E4683800C4705C /* Mutations.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16B02B3A26E4683800C4705C /* Mutations.graphql */; };
 		16B02B4926E4734200C4705C /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B02B4826E4734200C4705C /* UserDefaults+Extension.swift */; };
+		16B02B5526E477F800C4705C /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B02B5426E477F800C4705C /* Gender.swift */; };
 		16C5C77D2635349F00F33B72 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C77C2635349F00F33B72 /* Transaction.swift */; };
 		16C5C7982636296600F33B72 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C7972636296600F33B72 /* Currency.swift */; };
 		16CCE730264F78B000345778 /* SampleSignInAndSignUp.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16CCE72F264F78B000345778 /* SampleSignInAndSignUp.graphql */; };
@@ -336,6 +337,7 @@
 		16A5B53A26D272610024A84E /* DeleteCategoryMutation.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = DeleteCategoryMutation.graphql; sourceTree = "<group>"; };
 		16B02B3A26E4683800C4705C /* Mutations.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Mutations.graphql; sourceTree = "<group>"; };
 		16B02B4826E4734200C4705C /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		16B02B5426E477F800C4705C /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		16C5C7772635347A00F33B72 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 		16C5C77C2635349F00F33B72 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		16C5C781263534EA00F33B72 /* Imageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imageable.swift; sourceTree = "<group>"; };
@@ -962,6 +964,7 @@
 				169DA46C2644C76F0063204F /* APIRequestState.swift */,
 				169F1B2726CBF142005DECA1 /* Procedure.swift */,
 				16D0F79826D680CD0024780B /* AccessPage.swift */,
+				16B02B5426E477F800C4705C /* Gender.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1772,6 +1775,7 @@
 				299452BE267B1F3C0002C5E3 /* RoundedCorner.swift in Sources */,
 				299452B9267B1F200002C5E3 /* TransactionsViewState.swift in Sources */,
 				299452B2267B1EE40002C5E3 /* AppAction.swift in Sources */,
+				16B02B5526E477F800C4705C /* Gender.swift in Sources */,
 				299452AD267B1EB30002C5E3 /* PopupContentView.swift in Sources */,
 				164C3BD226BE0DC500745684 /* HomeView.swift in Sources */,
 				165A8CBE267F0ED9007DE03D /* AuthenticationService.swift in Sources */,
