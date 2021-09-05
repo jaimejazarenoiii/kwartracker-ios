@@ -82,6 +82,7 @@
 		16A5B53B26D272610024A84E /* DeleteCategoryMutation.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16A5B53A26D272610024A84E /* DeleteCategoryMutation.graphql */; };
 		16B02B3B26E4683800C4705C /* Mutations.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 16B02B3A26E4683800C4705C /* Mutations.graphql */; };
 		16B02B4926E4734200C4705C /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B02B4826E4734200C4705C /* UserDefaults+Extension.swift */; };
+		16B02B5126E4739C00C4705C /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B02B5026E4739C00C4705C /* UserProfile.swift */; };
 		16B02B5526E477F800C4705C /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B02B5426E477F800C4705C /* Gender.swift */; };
 		16C5C77D2635349F00F33B72 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C77C2635349F00F33B72 /* Transaction.swift */; };
 		16C5C7982636296600F33B72 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5C7972636296600F33B72 /* Currency.swift */; };
@@ -337,6 +338,7 @@
 		16A5B53A26D272610024A84E /* DeleteCategoryMutation.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = DeleteCategoryMutation.graphql; sourceTree = "<group>"; };
 		16B02B3A26E4683800C4705C /* Mutations.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Mutations.graphql; sourceTree = "<group>"; };
 		16B02B4826E4734200C4705C /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		16B02B5026E4739C00C4705C /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		16B02B5426E477F800C4705C /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		16C5C7772635347A00F33B72 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 		16C5C77C2635349F00F33B72 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
@@ -952,6 +954,7 @@
 				16C5C7912636293900F33B72 /* Category.swift */,
 				7A9716FF267C4A8300D106AF /* UserAuthInfo.swift */,
 				164C3C4026BF69C700745684 /* Budget.swift */,
+				16B02B5026E4739C00C4705C /* UserProfile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1772,6 +1775,7 @@
 				299452CD267B1FB60002C5E3 /* TransactionsViewAction.swift in Sources */,
 				299452C8267B1F710002C5E3 /* CircleButtonStyle.swift in Sources */,
 				299452C1267B1F530002C5E3 /* AddTransactionView.swift in Sources */,
+				16B02B5126E4739C00C4705C /* UserProfile.swift in Sources */,
 				299452BE267B1F3C0002C5E3 /* RoundedCorner.swift in Sources */,
 				299452B9267B1F200002C5E3 /* TransactionsViewState.swift in Sources */,
 				299452B2267B1EE40002C5E3 /* AppAction.swift in Sources */,
