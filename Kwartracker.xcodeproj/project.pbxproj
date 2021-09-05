@@ -14,6 +14,9 @@
 		047E2B3B265B9C1B00D1EB9C /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E2B3A265B9C1B00D1EB9C /* SideMenu.swift */; };
 		04E071EA265E7241000DD4A2 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E071E9265E7241000DD4A2 /* UIView+Extensions.swift */; };
 		1620B95F269C7633000FF4F5 /* CategoryViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1620B95E269C7633000FF4F5 /* CategoryViewState.swift */; };
+		1624232026E47F1000F49207 /* EditProfileReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1624231F26E47F1000F49207 /* EditProfileReducer.swift */; };
+		1624232426E47F3100F49207 /* EditProfileState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1624232326E47F3100F49207 /* EditProfileState.swift */; };
+		1624232826E47F3B00F49207 /* EditProfileAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1624232726E47F3B00F49207 /* EditProfileAction.swift */; };
 		163DABCC264B59CA00DCBB47 /* BrowsePhotoField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163DABCB264B59CA00DCBB47 /* BrowsePhotoField.swift */; };
 		163E592E260CB88E00E54401 /* KwartrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E592D260CB88E00E54401 /* KwartrackerApp.swift */; };
 		163E5930260CB88E00E54401 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163E592F260CB88E00E54401 /* ContentView.swift */; };
@@ -260,6 +263,9 @@
 		047E2B3A265B9C1B00D1EB9C /* SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		04E071E9265E7241000DD4A2 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		1620B95E269C7633000FF4F5 /* CategoryViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewState.swift; sourceTree = "<group>"; };
+		1624231F26E47F1000F49207 /* EditProfileReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileReducer.swift; sourceTree = "<group>"; };
+		1624232326E47F3100F49207 /* EditProfileState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileState.swift; sourceTree = "<group>"; };
+		1624232726E47F3B00F49207 /* EditProfileAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileAction.swift; sourceTree = "<group>"; };
 		163DABCB264B59CA00DCBB47 /* BrowsePhotoField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsePhotoField.swift; sourceTree = "<group>"; };
 		163E592A260CB88E00E54401 /* Kwartracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kwartracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		163E592D260CB88E00E54401 /* KwartrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KwartrackerApp.swift; sourceTree = "<group>"; };
@@ -537,6 +543,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		1624231E26E47EF000F49207 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				1624231F26E47F1000F49207 /* EditProfileReducer.swift */,
+				1624232326E47F3100F49207 /* EditProfileState.swift */,
+				1624232726E47F3B00F49207 /* EditProfileAction.swift */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
 		163E5921260CB88E00E54401 = {
 			isa = PBXGroup;
 			children = (
@@ -620,6 +636,7 @@
 		163E5962260CBE0600E54401 /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				1624231E26E47EF000F49207 /* EditProfile */,
 				16421D0626DF065D00C830AF /* ChangePassword */,
 				164C3C1E26BF51A600745684 /* Category */,
 				24CAF6132681EA9800CEBD48 /* UserProfile */,
@@ -1813,6 +1830,7 @@
 				247480032628281200C7A9A8 /* NavigationHeaderView.swift in Sources */,
 				167A050C2665214E008E9A5C /* RoundedRectangleButtonStyle.swift in Sources */,
 				24AC7C90265B718900CE4282 /* SettingsBodyView.swift in Sources */,
+				1624232826E47F3B00F49207 /* EditProfileAction.swift in Sources */,
 				164C3C2C26BF5A8F00745684 /* CategoryAction.swift in Sources */,
 				04E071EA265E7241000DD4A2 /* UIView+Extensions.swift in Sources */,
 				1673C22826AD9F6F009733F7 /* SearchFieldView.swift in Sources */,
@@ -1853,6 +1871,7 @@
 				29945330267B314D0002C5E3 /* String+Extension.swift in Sources */,
 				16CCE7492651E53400345778 /* KeyChainKeys.swift in Sources */,
 				1652AEE42646A52E003542CD /* SearchTransactionFormModalView.swift in Sources */,
+				1624232026E47F1000F49207 /* EditProfileReducer.swift in Sources */,
 				16DE607026E058A40038E91E /* NavigationBarLayout.swift in Sources */,
 				169F1B2826CBF142005DECA1 /* Procedure.swift in Sources */,
 				16EA801126D22611008C3B1B /* CategoryService+Realm.swift in Sources */,
@@ -1875,6 +1894,7 @@
 				16421D1226DF06C400C830AF /* ChangePasswordAction.swift in Sources */,
 				169DA4722644C8A60063204F /* CircularLoaderView.swift in Sources */,
 				29F3296B265BA04200C1F807 /* MonthView.swift in Sources */,
+				1624232426E47F3100F49207 /* EditProfileState.swift in Sources */,
 				29F32958265B9F8500C1F807 /* Calendar+Extension.swift in Sources */,
 				164099A4269E4A61007EC40C /* AddCategoryView.swift in Sources */,
 				16895034264AC78100EED051 /* TextFieldForm.swift in Sources */,
