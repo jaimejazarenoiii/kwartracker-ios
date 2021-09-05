@@ -21,8 +21,8 @@ struct MyProfileContentView: View {
             TopRightButtonView(image: Asset.Images.editIcon.image, btnAction: goToEditProfileView)
                 .padding(.horizontal, editHorizontalMargin)
             
-            MyProfileCardView(user: store.state.userProfileState.user)
-            MyProfileDetailView(user: store.state.userProfileState.user)
+            // MyProfileCardView(user: store.state.userProfileState.user)
+            // MyProfileDetailView(user: store.state.userProfileState.user)
             
             Spacer()
         }
