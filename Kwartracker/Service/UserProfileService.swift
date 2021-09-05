@@ -18,34 +18,35 @@ protocol UserProfileServiceDelegate {
 struct UserProfileService: UserProfileServiceDelegate {
     @discardableResult func getProfile() -> AnyPublisher<FetchProfileQuery.Data, Error> {
         Future<FetchProfileQuery.Data, Error> { promise in
-            Network.shared.apollo.fetch(
-               query: FetchProfileQuery()
-            ) { result in
-                switch result {
-                case .success(let response):
-                    if response.data != nil {
-                        promise(.success(response.data!))
+            Network.shared.apollo
+                .fetch(query: FetchProfileQuery(),
+                       cachePolicy: .fetchIgnoringCacheData) { result in
+                    switch result {
+                    case .success(let response):
+                        DDLogInfo("[FetchProfile] response: \(response.data?.profile)")
+                        if let profile = response.data?.profile,
+                           let profileId = Int(profile.id) {
+                            let genderRaw = Int(profile.gender ?? "") ?? 0
+                            let gender = Gender(rawValue: genderRaw) ?? .male
+                            let userProfile = UserProfile(id: profileId,
+                                                          email: profile.email,
+                                                          firstName: profile.firstName,
+                                                          middleName: profile.middleName,
+                                                          lastName: profile.lastName,
+                                                          age: profile.age,
+                                                          gender: gender)
+                            UserDefaults.standard.storeUserProfile(userProfile: userProfile)
+                        }
+                        if response.data != nil {
+                            promise(.success(response.data!))
+                        }
+                        break
+                    case .failure(let error):
+                        DDLogError("[Fetching Profile] error: \(error)")
+                        promise(.failure(error))
+                        break
                     }
-                    if let profile = response.data?.profile,
-                       let profileId = Int(profile.id) {
-                        let genderRaw = Int(profile.gender ?? "") ?? 0
-                        let gender = Gender(rawValue: genderRaw) ?? .male
-                        let userProfile = UserProfile(id: profileId,
-                                                      email: profile.email,
-                                                      firstName: profile.firstName,
-                                                      middleName: profile.middleName,
-                                                      lastName: profile.lastName,
-                                                      age: profile.age,
-                                                      gender: gender)
-                        UserDefaults.standard.storeUserProfile(userProfile: userProfile)
-                    }
-                    break
-                case .failure(let error):
-                    DDLogError("[Fetching Profile] error: \(error)")
-                    promise(.failure(error))
-                    break
                 }
-            }
         }
         .eraseToAnyPublisher()
     }
