@@ -9,24 +9,33 @@ import SwiftUI
 
 struct MyProfileView: View {
     var navigationBackAction: (() -> Void)
+    @State private var isEditProfileViewLinkActive = false
+
     var body: some View {
-        SkeletalView(header: {
-            NavigationBarView(
-                title: L10n.ProfilePage.title) {
-                Button(action: navigationBackAction) {
-                    Image(uiImage: Asset.Images.arrowLeftIconWhite.image)
-                        .frame(width: 10, height: 10)
+        ZStack {
+            NavigationBarLayout {
+                NavigationBarView(title: L10n.ProfilePage.title) {
+                    Button(action: navigationBackAction) {
+                        Image(uiImage: Asset.Images.arrowLeftIconWhite.image)
+                            .frame(width: 10, height: 10)
+                    }
+                    .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.teal.color))
+                } rightBarViewContent: {
+                    EmptyView()
                 }
-                .buttonStyle(
-                    CircleButtonStyle(buttonColor: Asset.Colors.teal.color)
-                )
-            } rightBarViewContent: {
+            } body: {
+                MyProfileContentView(isEditProfileViewLinkActive: $isEditProfileViewLinkActive)
+            }
+
+            NavigationLink(destination: EditProfileView(navigationBackAction: backToMyProfileAction),
+                           isActive: $isEditProfileViewLinkActive) {
                 EmptyView()
             }
-        }, body: {
-            MyProfileContentView()
-        })
+        }
+    }
 
+    private func backToMyProfileAction() {
+        isEditProfileViewLinkActive = false
     }
 }
 

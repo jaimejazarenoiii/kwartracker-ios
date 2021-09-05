@@ -11,14 +11,12 @@ struct EditProfileContentView: View {
     let fieldSideMargin: CGFloat = 25
 
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
                 ProfileImage()
                 UserFields()
                 Spacer()
             }
             .padding(.horizontal, fieldSideMargin)
-        }
     }
 }
 
