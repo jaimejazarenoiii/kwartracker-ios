@@ -797,6 +797,7 @@
 				165A8C95267F0BDB007DE03D /* Mutations */,
 				16CCE726264EBD6800345778 /* schema.json */,
 				165A8CB8267F0DCE007DE03D /* API.swift */,
+				16B02B3A26E4683800C4705C /* Mutations.graphql */,
 			);
 			path = ApolloClient;
 			sourceTree = "<group>";
