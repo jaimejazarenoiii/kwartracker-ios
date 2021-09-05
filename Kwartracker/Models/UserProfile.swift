@@ -19,6 +19,10 @@ struct UserProfile: Codable {
              middleName, lastName, age, gender
     }
 
+    var fullName: String {
+        "\(firstName) \(middleName ?? "") \(lastName)"
+    }
+
     var isEmailValid: Bool {
         Validator.isValidEmail(email: email)
     }
