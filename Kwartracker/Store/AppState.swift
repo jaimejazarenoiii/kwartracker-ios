@@ -14,6 +14,7 @@ struct AppState {
     var userProfileState: UserProfileViewState
     var categoryState: CategoryState
     var changePasswordState: ChangePasswordState
+    var editProfileState: EditProfileState
 
     init() {
         transactionState = TransactionsViewState()
@@ -22,5 +23,6 @@ struct AppState {
         userProfileState = UserProfileViewState()
         categoryState = CategoryState()
         changePasswordState = ChangePasswordState()
+        editProfileState = EditProfileState()
     }
 }

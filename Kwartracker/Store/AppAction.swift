@@ -14,4 +14,5 @@ enum AppAction {
     case userProfileView(action: UserProfileViewAction)
     case category(action: CategoryAction)
     case changePassword(action: ChangePasswordAction)
+    case editProfile(action: EditProfileAction)
 }
