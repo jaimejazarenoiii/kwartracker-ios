@@ -13,22 +13,19 @@ struct MyProfileView: View {
 
     var body: some View {
         ZStack {
-            SkeletalView(header: {
-                NavigationBarView(
-                    title: L10n.ProfilePage.title) {
+            NavigationBarLayout {
+                NavigationBarView(title: L10n.ProfilePage.title) {
                     Button(action: navigationBackAction) {
                         Image(uiImage: Asset.Images.arrowLeftIconWhite.image)
                             .frame(width: 10, height: 10)
                     }
-                    .buttonStyle(
-                        CircleButtonStyle(buttonColor: Asset.Colors.teal.color)
-                    )
+                    .buttonStyle(CircleButtonStyle(buttonColor: Asset.Colors.teal.color))
                 } rightBarViewContent: {
                     EmptyView()
                 }
-            }, body: {
+            } body: {
                 MyProfileContentView(isEditProfileViewLinkActive: $isEditProfileViewLinkActive)
-            })
+            }
 
             NavigationLink(destination: EditProfileView(navigationBackAction: backToMyProfileAction),
                            isActive: $isEditProfileViewLinkActive) {
