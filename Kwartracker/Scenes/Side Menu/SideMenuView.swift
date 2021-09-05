@@ -72,12 +72,10 @@ struct SideMenuView: View {
         switch selectedItemId {
         case .home, .reports, .settings, .transaction:
             break
-        case .myProfile:
-            store.send(.userProfileView(action: .fetchProfile))
-            break
         case .wallets:
             store.send(.walletView(action: .fetch))
             break
+        default: break
         }
     }
 
