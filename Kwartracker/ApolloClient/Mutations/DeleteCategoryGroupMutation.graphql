@@ -1,0 +1,20 @@
+mutation DeleteCategoryGroupMutation($input: DeleteCategoryGroupInput!) {
+    deleteCategoryGroup(input: $input) {
+        id
+        title
+        categories {
+            id
+            title
+            budgets {
+                amount
+                category {
+                    id
+                    title
+                }
+                createdAt
+                id
+                updatedAt
+            }
+        }
+    }
+}

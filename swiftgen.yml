@@ -1,0 +1,17 @@
+## refer here: https://github.com/SwiftGen/SwiftGen
+
+input_dir: Kwartracker/Resources/
+output_dir: Kwartracker/Resources/SwiftGen
+xcassets:
+  inputs:
+    - Images.xcassets
+    - Colors.xcassets
+  outputs:
+    templateName: swift5
+    output: Assets.swift
+strings:
+  inputs:
+    - en.lproj/Localizable.strings
+  outputs:
+    - templateName: structured-swift5
+      output: Strings.swift

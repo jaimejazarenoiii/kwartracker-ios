@@ -1,0 +1,1 @@
+swiftgen config run
